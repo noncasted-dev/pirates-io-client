@@ -1,0 +1,6 @@
+{
+  "name": "GamePlay.Services.Projectiles.Entity",
+  "references": [
+    "GUID:2435b9189672c5848ae4cc81c2cf0e13"
+  ]
+}

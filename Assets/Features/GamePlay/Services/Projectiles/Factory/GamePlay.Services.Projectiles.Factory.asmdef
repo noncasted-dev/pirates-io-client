@@ -1,0 +1,18 @@
+{
+  "name": "GamePlay.Services.Projectiles.Factory",
+  "rootNamespace": "",
+  "references": [
+    "GUID:9e24947de15b9834991c9d8411ea37cf",
+    "GUID:d89cb064a6d60b243b67336a6540d7a7",
+    "GUID:f92e69559c810c84888d449440e06595"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

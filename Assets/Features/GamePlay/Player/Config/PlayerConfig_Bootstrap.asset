@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22b38a7c9394e5083062612339bafde, type: 3}
+  m_Name: PlayerConfig_Bootstrap
+  m_EditorClassIdentifier: 
+  _rotation: {fileID: 11400000, guid: 5550f8f1b1db89d4fb2d52f3487aefe2, type: 2}
+  _stateMachine: {fileID: 11400000, guid: 9f0c65e507c6a68418b7f21f6dda1cd2, type: 2}
+  _weaponsHandler: {fileID: 11400000, guid: 962a49343378a6c49ae4ec652d0a8594, type: 2}
+  _floating: {fileID: 11400000, guid: 32638f2dddc8a84429619782e6a95ce7, type: 2}
+  _idle: {fileID: 11400000, guid: 5259be97fd0c23649819d17dc7f7e289, type: 2}
+  _none: {fileID: 11400000, guid: 5f113c4191f7d004cafda425f9522742, type: 2}
+  _rangeAttack: {fileID: 11400000, guid: 47e5c5c4930fa1349870fb1a7cd06070, type: 2}
+  _respawn: {fileID: 11400000, guid: 3b8e4c518bf56e143aad2088af2953f1, type: 2}
+  _run: {fileID: 11400000, guid: 4b6c419912f56d84fa45d748f61128fd, type: 2}

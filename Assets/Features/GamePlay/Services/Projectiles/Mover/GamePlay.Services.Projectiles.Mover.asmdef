@@ -1,0 +1,13 @@
+{
+  "name": "GamePlay.Services.Projectiles.Mover",
+  "references": [
+    "GUID:2471a91d0a7e4b545a50b8ff168394d3",
+    "GUID:04243451437dcfe48b583ab43ef0a8fa",
+    "GUID:67f67dcce9d9e8a43a8e45bc1fe5534c",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:5f85ab5dc178ff54c81b21f197b82d14",
+    "GUID:2435b9189672c5848ae4cc81c2cf0e13",
+    "GUID:fe4adae493555af4788e53948d7966ca",
+    "GUID:604a6a9c54ab4394f9e00f20d76cc837"
+  ]
+}

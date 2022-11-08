@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3d3f6ed6604abfb4c0ca389cd1bd83, type: 3}
+  m_Name: LogConfigs_LocalServices
+  m_EditorClassIdentifier: 
+  _projectiles: {fileID: 11400000, guid: 32774c8736a14f1458474c429655e05f, type: 2}
+  _levelCamera: {fileID: 11400000, guid: 3bbc9b010e6f22a46b9964560671835a, type: 2}
+  _transitionScreen: {fileID: 11400000, guid: 56000cf40bfb45943af30fe9a18322af, type: 2}

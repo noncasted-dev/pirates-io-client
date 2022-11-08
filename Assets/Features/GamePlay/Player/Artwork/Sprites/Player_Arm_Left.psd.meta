@@ -1,0 +1,1777 @@
+fileFormatVersion: 2
+guid: b050ad87b12417443823866820ee7e6e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Face_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc64a2babdc7fc0429630e5b052e9193
+      internalID: -1332167730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Face_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eacd7057ae332704e85da85f77afd6cc
+      internalID: 2100408813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Face_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7209ef23f7efd6d4392f70410ab845e1
+      internalID: -105105573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Face_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4a010bf4990d014f8b2b4e168207030
+      internalID: -2097635075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Face_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639dac2c54d3805479700305d9fd5bc6
+      internalID: -1342345707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Face_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c821b569ecf5f14ea79c24b91f29f4a
+      internalID: 1391464107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Face_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077ac2402c1ffdd4797f2398bcf922aa
+      internalID: -411273742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Face_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd68659f147c3e7409fc5ad7efad1ba5
+      internalID: -1021940074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Back_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03fc397a3f70b55479859371ed3614b4
+      internalID: 1945305646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Back_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d679ba4db03d34fbb0b51d62b56226
+      internalID: -2006348079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Back_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1403b05f11a6b84084faa833920e696
+      internalID: 1041229055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Back_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa942004f8548bd4197ee0076b294894
+      internalID: 1094001614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Back_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d249ab64b795904a9cefa1c0a794842
+      internalID: -1829223019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Back_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56465c57a797ed74d9a3deb62bcdc6ae
+      internalID: 1969181096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Back_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ce1f7549cf71d84ba556ac640379018
+      internalID: -1024440867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Back_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b71764022c3e1a4d8abdfb7cde5a7e6
+      internalID: -717690898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Down_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7bda4eb8fec397479c43204d74905ff
+      internalID: -1377198651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Down_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7274ec3d640d5c48bb93c61d4aea82a
+      internalID: 92173090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Down_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3ffd0936d29a44c99d0535aef71247
+      internalID: -177886658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Down_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5957c12dc658445bd169e183520fbc
+      internalID: -515118652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Down_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03e933564185e7418200899ed438224
+      internalID: -1909689372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Down_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f6ff5752cfb204a9ae270c4c087a0a
+      internalID: -155684655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Down_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b9ecfcc01a51b4e95e085f0bf079ea
+      internalID: -348879432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Down_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e952d0b02078a418cd420075575b74
+      internalID: -596557362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Up_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85af557e98a591b449a501d920188562
+      internalID: 1984496535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Up_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 539833f33c0ba4d4aa168fa1cc3fab1b
+      internalID: 60232108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Up_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1617ad382aa499c4fb83f500574862b6
+      internalID: -1599451655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Up_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76b0c624e9a4f74e9702c4944b0e4c8
+      internalID: 1370030751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Up_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d1217930b0aad48bfd227f02ab2eb6
+      internalID: 1358954309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Up_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8412146fd484f744adff68b5d20049f
+      internalID: 46406444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Up_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8cadb5b4b6c12a4da5f508760e8e2ce
+      internalID: 1194658125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Run_Up_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c935abb8a326734698acd5499deb4d7
+      internalID: 709070215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Idle_Face_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b5daea97af1afb4aa02a7e41a78928b
+      internalID: -432204161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Idle_Face_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5888c8edd2d8eef4e9f7d87df713b6ba
+      internalID: 49566213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Idle_Face_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c80e392b3a229d4ea3e94055caa1b66
+      internalID: -2048292877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Idle_Face_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d36e353ea56b86b458b315a65757195e
+      internalID: 1101318159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Idle_Face_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f83cf55a1ceba40a6fee6403655601
+      internalID: 2068322974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Idle_Back_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7833aad6716a2ea4cb0513856769de31
+      internalID: 625247638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Idle_Back_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809ddc1146c54b34fb874e3731df65ae
+      internalID: 1454612564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Idle_Back_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccf596d1f8311e24f8ea7e3e0e1a0033
+      internalID: 587216824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Idle_Back_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5b121458df839429cb038b2587f721
+      internalID: 534988891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_Idle_Back_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c474dccebabb7c43817f170cec0a829
+      internalID: -2007173220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Face_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.453125, y: 0.328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f9c25bf4ad96a42a72f61301a78ab8
+      internalID: -2104459078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Face_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.453125, y: 0.328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b989acdf8ab8740b319aeb218fcbe6
+      internalID: 1870884831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Face_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 576
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.453125, y: 0.328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be28e4197256a046a3530d6d9ec9751
+      internalID: 1624766379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Face_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.453125, y: 0.328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744ab395f35623c4dbd75661f3f55071
+      internalID: -1652065558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Face_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 576
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.453125, y: 0.328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afef0fbe864b92a4792750cd2303da57
+      internalID: -1543879821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Face_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 576
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.453125, y: 0.328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cf4cf2f6b974940bcd4934a856f38b
+      internalID: 464381529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Back_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.546875, y: 0.328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f2dc830c5555440932051faba8caee
+      internalID: 1696490896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Back_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 512
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.546875, y: 0.328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 654687e79e19c5940963f6ab5391ea5d
+      internalID: 1715611434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Back_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.546875, y: 0.328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3567caba9e4e2a948938acbe9addf32f
+      internalID: 1297493103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Back_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 512
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.546875, y: 0.328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55da0d287ded95140b730fdacb108d00
+      internalID: -1737130918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Back_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.546875, y: 0.328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c406df56ea58674e8c18b116ffd0c1f
+      internalID: -2134200803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Back_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 512
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.546875, y: 0.328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b854caf00a3bc6c419854751f4530404
+      internalID: 1744430725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Up_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.234375, y: 0.484375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91017a91923552e46b1090c53c99ba52
+      internalID: -1525453823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Up_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.234375, y: 0.484375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a04e85ba7b8c640b0e73e6336809a0
+      internalID: -1715525750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Up_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.234375, y: 0.484375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46363bde14c8d34ea6902c70de96c11
+      internalID: 1556711422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Up_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.234375, y: 0.484375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b02de01bd7967844887fd3dae8d45cf
+      internalID: 716643141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Up_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.234375, y: 0.484375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad428240827cc23468f30e9dd576abfc
+      internalID: -114278471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Up_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 448
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.234375, y: 0.484375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4a0ce33b0b49342ac52c4189d86bb1
+      internalID: -429363171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Down_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65625, y: 0.515625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2cf0ea197286104f830b847cfa5ddf3
+      internalID: -2020745014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Down_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65625, y: 0.515625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc856f10db4dbe45a2a03b444f91b8a
+      internalID: 1288714423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Down_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65625, y: 0.515625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d4524fc61d604429a1e48c650caccb
+      internalID: 875257321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Down_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65625, y: 0.515625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceda564b2e567d64abdb6cb3a085cf97
+      internalID: 126684422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Down_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65625, y: 0.515625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb9a291a58a8b5409e7b27131da32fa
+      internalID: -609868097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Arm_Left_RangeAttack_Down_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65625, y: 0.515625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dbfe47963b0108418b5a3ca87376e3f
+      internalID: -676595922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Player_Arm_Left_RangeAttack_Back_5: 1744430725
+      Player_Arm_Left_234: 236278129
+      Player_Arm_Left_168: -565143382
+      Player_Arm_Left_197: 1896861005
+      Player_Arm_Left_Run_Back_4: -1829223019
+      Player_Arm_Left_RangeAttack_Up_0: -1525453823
+      Player_Arm_Left_214: 2027747132
+      Player_Arm_Left_Idle_Face_3: 1101318159
+      Player_Arm_Left_143: 37757783
+      Player_Arm_Left_RangeAttack_Back_1: 1715611434
+      Player_Arm_Left_78: -1877585041
+      Player_Arm_Left_242: -613569413
+      Player_Arm_Left_58: -482497748
+      Player_Arm_Left_210: -525440366
+      Player_Arm_Left_183: 1858182506
+      Player_Arm_Left_170: -286818129
+      Player_Arm_Left_202: -479358379
+      Player_Arm_Left_240: -1092576437
+      Player_Arm_Left_RangeAttack_Down_1: 1288714423
+      Player_Arm_Left_Run_Up_3: 1370030751
+      Player_Arm_Left_180: 973187577
+      Player_Arm_Left_RangeAttack_Down_5: -676595922
+      Player_Arm_Left_27: -205827065
+      Player_Arm_Left_Idle_Back_4: -2007173220
+      Player_Arm_Left_152: -445012419
+      Player_Arm_Left_134: 1284949079
+      Player_Arm_Left_161: -357155204
+      Player_Arm_Left_RangeAttack_Back_2: 1297493103
+      Player_Arm_Left_71: -999355766
+      Player_Arm_Left_Run_Back_0: 1945305646
+      Player_Arm_Left_Idle_Face_1: 49566213
+      Player_Arm_Left_Idle_Back_2: 587216824
+      Player_Arm_Left_194: -480024434
+      Player_Arm_Left_171: -1953034452
+      Player_Arm_Left_150: -375692957
+      Player_Arm_Left_91: -1558811834
+      Player_Arm_Left_157: -2024437595
+      Player_Arm_Left_169: 1397972887
+      Player_Arm_Left_237: 404731060
+      Player_Arm_Left_139: 1814208441
+      Player_Arm_Left_221: -50947447
+      Player_Arm_Left_43: 1863115873
+      Player_Arm_Left_160: -215389778
+      Player_Arm_Left_RangeAttack_Face_3: -1652065558
+      Player_Arm_Left_Run_Down_3: -515118652
+      Player_Arm_Left_165: 557913487
+      Player_Arm_Left_205: 339557046
+      Player_Arm_Left_105: -663452458
+      Player_Arm_Left_192: -1240415302
+      Player_Arm_Left_136: 296162303
+      Player_Arm_Left_60: 2111943061
+      Player_Arm_Left_Run_Down_1: 92173090
+      Player_Arm_Left_56: -424434750
+      Player_Arm_Left_125: 552412579
+      Player_Arm_Left_244: -778423456
+      Player_Arm_Left_126: -1824829482
+      Player_Arm_Left_41: -804917245
+      Player_Arm_Left_195: 2083792791
+      Player_Arm_Left_215: -1352637933
+      Player_Arm_Left_239: -1817714297
+      Player_Arm_Left_59: 1747412707
+      Player_Arm_Left_11: -2095506552
+      Player_Arm_Left_79: 93559359
+      Player_Arm_Left_RangeAttack_Back_3: -1737130918
+      Player_Arm_Left_69: -845344188
+      Player_Arm_Left_213: 1017316745
+      Player_Arm_Left_15: 86101325
+      Player_Arm_Left_182: -1473880258
+      Player_Arm_Left_Idle_Face_4: 2068322974
+      Player_Arm_Left_RangeAttack_Back_4: -2134200803
+      Player_Arm_Left_137: -1346912413
+      Player_Arm_Left_181: 2005581528
+      Player_Arm_Left_172: 1072502190
+      Player_Arm_Left_57: 1517725425
+      Player_Arm_Left_159: -950753759
+      Player_Arm_Left_189: -1360901735
+      Player_Arm_Left_123: 98806928
+      Player_Arm_Left_RangeAttack_Face_4: -1543879821
+      Player_Arm_Left_188: 350539721
+      Player_Arm_Left_185: -642686697
+      Player_Arm_Left_90: -695763884
+      Player_Arm_Left_9: -994903200
+      Player_Arm_Left_109: -1675561048
+      Player_Arm_Left_86: 2081404862
+      Player_Arm_Left_Idle_Back_3: 534988891
+      Player_Arm_Left_156: 922231569
+      Player_Arm_Left_232: 818213394
+      Player_Arm_Left_Idle_Face_0: -432204161
+      Player_Arm_Left_158: -422106778
+      Player_Arm_Left_Run_Up_2: -1599451655
+      Player_Arm_Left_13: 2074580501
+      Player_Arm_Left_218: 2109826723
+      Player_Arm_Left_164: 803315024
+      Player_Arm_Left_231: -1989495739
+      Player_Arm_Left_103: -120721915
+      Player_Arm_Left_124: 291648413
+      Player_Arm_Left_178: -93450512
+      Player_Arm_Left_191: -649686525
+      Player_Arm_Left_72: 1674667251
+      Player_Arm_Left_151: -297926200
+      Player_Arm_Left_162: 55742087
+      Player_Arm_Left_248: 1335476576
+      Player_Arm_Left_120: -1784527485
+      Player_Arm_Left_203: -1718886620
+      Player_Arm_Left_62: -2139856052
+      Player_Arm_Left_253: -1426219267
+      Player_Arm_Left_Run_Back_1: -2006348079
+      Player_Arm_Left_RangeAttack_Face_0: -2104459078
+      Player_Arm_Left_135: -429996283
+      Player_Arm_Left_198: -469894711
+      Player_Arm_Left_200: -1232707804
+      Player_Arm_Left_238: -1485223685
+      Player_Arm_Left_Run_Face_4: -1342345707
+      Player_Arm_Left_255: 1665317810
+      Player_Arm_Left_227: 63555083
+      Player_Arm_Left_Run_Face_7: -1021940074
+      Player_Arm_Left_167: -1225394510
+      Player_Arm_Left_Run_Up_1: 60232108
+      Player_Arm_Left_29: 1467363342
+      Player_Arm_Left_121: 1766701883
+      Player_Arm_Left_Run_Face_6: -411273742
+      Player_Arm_Left_163: 1064305317
+      Player_Arm_Left_95: 1518009132
+      Player_Arm_Left_110: 28131314
+      Player_Arm_Left_25: -912882246
+      Player_Arm_Left_235: 168674067
+      Player_Arm_Left_RangeAttack_Down_2: 875257321
+      Player_Arm_Left_12: 1688385400
+      Player_Arm_Left_46: -309339664
+      Player_Arm_Left_140: 1008689417
+      Player_Arm_Left_193: 435905816
+      Player_Arm_Left_236: 1049670428
+      Player_Arm_Left_RangeAttack_Up_4: -114278471
+      Player_Arm_Left_Run_Up_5: 46406444
+      Player_Arm_Left_108: 1618648398
+      Player_Arm_Left_177: 800204986
+      Player_Arm_Left_246: 2136030146
+      Player_Arm_Left_47: 695763124
+      Player_Arm_Left_92: 1905536250
+      Player_Arm_Left_206: 451952206
+      Player_Arm_Left_111: 1877967506
+      Player_Arm_Left_118: -983990436
+      Player_Arm_Left_Run_Down_6: -348879432
+      Player_Arm_Left_93: 485335441
+      Player_Arm_Left_75: 1686694474
+      Player_Arm_Left_Run_Up_6: 1194658125
+      Player_Arm_Left_RangeAttack_Up_1: -1715525750
+      Player_Arm_Left_174: -603584466
+      Player_Arm_Left_Run_Face_0: -1332167730
+      Player_Arm_Left_Run_Face_5: 1391464107
+      Player_Arm_Left_Run_Down_2: -177886658
+      Player_Arm_Left_204: -1310508006
+      Player_Arm_Left_31: 2143519229
+      Player_Arm_Left_211: -565085990
+      Player_Arm_Left_155: 1053188014
+      Player_Arm_Left_Run_Up_0: 1984496535
+      Player_Arm_Left_61: 1542479198
+      Player_Arm_Left_87: -1322484110
+      Player_Arm_Left_Run_Back_6: -1024440867
+      Player_Arm_Left_Run_Face_3: -2097635075
+      Player_Arm_Left_Run_Down_0: -1377198651
+      Player_Arm_Left_40: -1411069183
+      Player_Arm_Left_RangeAttack_Face_2: 1624766379
+      Player_Arm_Left_104: 2139358426
+      Player_Arm_Left_208: -705584423
+      Player_Arm_Left_Idle_Back_1: 1454612564
+      Player_Arm_Left_45: 122123234
+      Player_Arm_Left_RangeAttack_Down_4: -609868097
+      Player_Arm_Left_73: -1866793020
+      Player_Arm_Left_Run_Face_2: -105105573
+      Player_Arm_Left_RangeAttack_Face_1: 1870884831
+      Player_Arm_Left_RangeAttack_Up_5: -429363171
+      Player_Arm_Left_247: -1688773826
+      Player_Arm_Left_212: 2050005439
+      Player_Arm_Left_201: -415917173
+      Player_Arm_Left_228: 1130098591
+      Player_Arm_Left_138: 1838935070
+      Player_Arm_Left_230: -1382056535
+      Player_Arm_Left_Run_Back_7: -717690898
+      Player_Arm_Left_184: -2049444655
+      Player_Arm_Left_229: 573552813
+      Player_Arm_Left_141: 1237713154
+      Player_Arm_Left_Run_Back_3: 1094001614
+      Player_Arm_Left_Idle_Back_0: 625247638
+      Player_Arm_Left_Run_Down_4: -1909689372
+      Player_Arm_Left_76: 340507277
+      Player_Arm_Left_175: 1451801051
+      Player_Arm_Left_179: 179515411
+      Player_Arm_Left_24: 1012114534
+      Player_Arm_Left_Run_Back_5: 1969181096
+      Player_Arm_Left_RangeAttack_Down_3: 126684422
+      Player_Arm_Left_119: 1527632909
+      Player_Arm_Left_199: 2098390384
+      Player_Arm_Left_209: 1028514782
+      Player_Arm_Left_42: -716504022
+      Player_Arm_Left_251: 1758747086
+      Player_Arm_Left_RangeAttack_Face_5: 464381529
+      Player_Arm_Left_217: 614873201
+      Player_Arm_Left_RangeAttack_Up_2: 1556711422
+      Player_Arm_Left_8: -708901701
+      Player_Arm_Left_252: 2068580534
+      Player_Arm_Left_94: -1372536977
+      Player_Arm_Left_89: -29092462
+      Player_Arm_Left_Run_Down_7: -596557362
+      Player_Arm_Left_233: -755727948
+      Player_Arm_Left_186: -1220712194
+      Player_Arm_Left_30: 1597454110
+      Player_Arm_Left_70: 398387458
+      Player_Arm_Left_74: -1724660758
+      Player_Arm_Left_Run_Up_7: 709070215
+      Player_Arm_Left_254: 727788791
+      Player_Arm_Left_127: -1343230360
+      Player_Arm_Left_166: 296417491
+      Player_Arm_Left_RangeAttack_Up_3: 716643141
+      Player_Arm_Left_106: 559632723
+      Player_Arm_Left_196: 880345095
+      Player_Arm_Left_142: -523580583
+      Player_Arm_Left_226: -1512085228
+      Player_Arm_Left_44: 661648771
+      Player_Arm_Left_85: -412917385
+      Player_Arm_Left_250: 2050019150
+      Player_Arm_Left_216: -44324440
+      Player_Arm_Left_RangeAttack_Back_0: 1696490896
+      Player_Arm_Left_Run_Up_4: 1358954309
+      Player_Arm_Left_88: -901325212
+      Player_Arm_Left_107: 48103393
+      Player_Arm_Left_220: 1043027202
+      Player_Arm_Left_224: 1818153068
+      Player_Arm_Left_243: 1311428138
+      Player_Arm_Left_249: -842301383
+      Player_Arm_Left_102: -1798157593
+      Player_Arm_Left_Run_Back_2: 1041229055
+      Player_Arm_Left_10: 353384720
+      Player_Arm_Left_176: 1212094013
+      Player_Arm_Left_28: -486423031
+      Player_Arm_Left_222: 254280833
+      Player_Arm_Left_122: -579856333
+      Player_Arm_Left_187: 671504962
+      Player_Arm_Left_Run_Face_1: 2100408813
+      Player_Arm_Left_225: 870646357
+      Player_Arm_Left_Idle_Face_2: -2048292877
+      Player_Arm_Left_207: 1869343310
+      Player_Arm_Left_63: 1880184951
+      Player_Arm_Left_154: -60610255
+      Player_Arm_Left_219: 146965924
+      Player_Arm_Left_26: -1599819200
+      Player_Arm_Left_153: 1967043843
+      Player_Arm_Left_173: 180070653
+      Player_Arm_Left_241: -30029040
+      Player_Arm_Left_RangeAttack_Down_0: -2020745014
+      Player_Arm_Left_245: -984932061
+      Player_Arm_Left_223: 575797361
+      Player_Arm_Left_190: -1635919667
+      Player_Arm_Left_14: 1448229569
+      Player_Arm_Left_77: 238754939
+      Player_Arm_Left_Run_Down_5: -155684655
+  spritePackingTag: 
+  pSDRemoveMatte: 1
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

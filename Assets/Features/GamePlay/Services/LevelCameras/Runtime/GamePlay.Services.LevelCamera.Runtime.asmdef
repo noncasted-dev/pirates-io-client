@@ -1,0 +1,16 @@
+{
+  "name": "GamePlay.Services.LevelCamera.Runtime",
+  "references": [
+    "GUID:17574602f5ff95941bc7eb946c3b4637",
+    "GUID:67f67dcce9d9e8a43a8e45bc1fe5534c",
+    "GUID:f51ebe6a0ceec4240a699833d6309b23",
+    "GUID:5f85ab5dc178ff54c81b21f197b82d14",
+    "GUID:d49f87d10289e9340861bf05e1f156f0",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:53d4551bcbb91394fbaf6bc9f0348986",
+    "GUID:93a72f0e04fe04849b1ed36f0000b52b",
+    "GUID:304598a766c781247877f81511375f98",
+    "GUID:04243451437dcfe48b583ab43ef0a8fa",
+    "GUID:c713b254602614c43a1d94a2a13ba844"
+  ]
+}

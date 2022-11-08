@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83a02703d662441286bf763bac4875b2, type: 3}
+  m_Name: PlayerState_RangeAttack
+  m_EditorClassIdentifier: 
+  _animation: {fileID: 11400000, guid: f9fe94f90327ddf4dacc70e6491dfe06, type: 2}
+  _config: {fileID: 11400000, guid: 0edc6d7967d7af54494a23b8a360da7f, type: 2}
+  _logSettings: {fileID: 11400000, guid: 2f4278a61629685469293603fd5af1d0, type: 2}
+  _definition: {fileID: 11400000, guid: 7aae13b0f64ae5d4693c521faa6c48e3, type: 2}

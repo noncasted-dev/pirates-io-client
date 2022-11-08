@@ -1,0 +1,7 @@
+{
+  "name": "Local.SceneObjects.Runtime",
+  "references": [
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:d6215a6c38968cd43adf265b38c94eed"
+  ]
+}

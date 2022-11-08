@@ -1,0 +1,22 @@
+{
+  "name": "Player.States.StateMachine.Runtime",
+  "rootNamespace": "",
+  "references": [
+    "GUID:47083761e726d344ebda60ec45a5396c",
+    "GUID:1df29afa6177f8e4fa19b25367556ac2",
+    "GUID:65c3fcbb851ff9441a22dd049195dc8f",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:8f9012bdd1b116c48ab480004500c8f3",
+    "GUID:2ef41f62c8dc5cb4c82d9f5e988ed71c",
+    "GUID:304598a766c781247877f81511375f98"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

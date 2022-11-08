@@ -1,0 +1,18 @@
+{
+    "name": "Local.SceneObjects.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:17574602f5ff95941bc7eb946c3b4637"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

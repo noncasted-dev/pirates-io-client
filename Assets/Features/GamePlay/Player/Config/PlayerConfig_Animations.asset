@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c649da827ed04bb18dc0d9c0cce98955, type: 3}
+  m_Name: PlayerConfig_Animations
+  m_EditorClassIdentifier: 
+  _idle: {fileID: 11400000, guid: d2f3053bf323c6842980867aa9b28738, type: 2}
+  _respawn: {fileID: 11400000, guid: c6a1df7adf7368d458f01633d33d8aa2, type: 2}
+  _run: {fileID: 11400000, guid: 99fe0e7146e682642a5274db4a4e0ba4, type: 2}
+  _rangeAttack: {fileID: 11400000, guid: f9fe94f90327ddf4dacc70e6491dfe06, type: 2}
+  _rotation: {fileID: 11400000, guid: 95876f79347cbb84f814d4e00b03607f, type: 2}

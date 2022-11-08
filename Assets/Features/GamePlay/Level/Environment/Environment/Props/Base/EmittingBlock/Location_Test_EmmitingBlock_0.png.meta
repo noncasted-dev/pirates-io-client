@@ -1,0 +1,1432 @@
+fileFormatVersion: 2
+guid: 9a154bfb450864141a4de571f504bfca
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 1
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 942
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f3f90d9d9a69245a542b2ecb5e34e4
+      internalID: -1898076999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_2
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 942
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da8094a7eb0ce8c40a15ae14d9a9582d
+      internalID: 1912326578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_3
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 942
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03dc7dfab5633ff47bab8a5b715aecf1
+      internalID: 1567076143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_4
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 942
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7abcf0a03b08ca4bbea88ad09ae1c4b
+      internalID: 479051964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 859
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0038c07c30c010d49941e3a6c49d5067
+      internalID: 184320618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_6
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 859
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51e9fae94c5ba9b4a95752769186340b
+      internalID: -852107434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_7
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 859
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01b68b77a5b735547ba44225c93f79f9
+      internalID: -1536191699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_8
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 859
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a8e5846f1237549b6da57578e67b3d
+      internalID: -778158691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_9
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 859
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d31c6de81d10ae243beb3e4906a2e0a4
+      internalID: 721790655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 776
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3018d51a17684e48acfdd5a9e300c8d
+      internalID: -1510718967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_11
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 776
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00de0101861133444ac632d79fed7aa2
+      internalID: -1490731003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_12
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 776
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98818331e3f7394b922593ec535e428
+      internalID: 1120619350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_13
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 776
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ecbc6481e6e4c4419a23f3c6e4f44d2
+      internalID: 1067832699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_14
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 776
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5556dc004da5a8468fc8f888a29624a
+      internalID: 282835449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 693
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9339b80f5fd18a41a1b38f8dd3f9e8a
+      internalID: 916413833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_16
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 693
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30492aad5e898df49a87a5871aa20678
+      internalID: -1846524810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_17
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 693
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a23b0bce88db344b62d6b4473697fa
+      internalID: 807348500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_18
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 693
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef50644d0589fd44b9d1ca2b08931e0
+      internalID: -743042844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_19
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 693
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25b72c772697d7499a5029f4d5399a3
+      internalID: -66902819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 610
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fc6ebbeff8da44ea2a8e9e73b3fe42
+      internalID: -549646209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_21
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 610
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc22fea7ab19b44db82e0ccc2df75ae
+      internalID: 1925913524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_22
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 610
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 618938d4d45b942449affd1ee6f9ca2d
+      internalID: -1776114647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_23
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 610
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5fe5bf1aa7789b4d881e2deae3bf28c
+      internalID: 278086285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_24
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 610
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0065f84170dda07448aa34b5b8c3f547
+      internalID: 1648479960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_25
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 527
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 820d7886ecd35e74187b8934ef9b7b8c
+      internalID: 319835965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_26
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 527
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9b32f93b93f7ff44ac601ed90ab9b8f
+      internalID: 311715306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_27
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 527
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168f4734569d5764b8320067a79ccd52
+      internalID: 688508285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_28
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 527
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad5c62ece0f2b748acea1397677cd6c
+      internalID: 1135112804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_29
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 527
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd5ae7f4a12b72c40ba3bacc1b252ee2
+      internalID: 439286791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_61
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 942
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a75f1524da11424993172ff50414d86
+      internalID: 85881609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_62
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 942
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e0b6caedd11f74baff353f848b559b
+      internalID: 965544073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_63
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 942
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957eb77b7741afe4ba0823736ee1dd33
+      internalID: -1694113397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_64
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 942
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feaa65527b99f084fb12cdf8da86eaac
+      internalID: 1207836242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_65
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 859
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e654dd79f3670409adae248a94f0ed
+      internalID: 1716614525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_66
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 859
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb294120e64b724191e0f58fca042d4
+      internalID: 203053706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_67
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 859
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371ecb9d4cd2e6e45885154c6b6afedc
+      internalID: -607074436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_68
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 859
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9f9cb20c946f04483549395b189409
+      internalID: -157842543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_69
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 859
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378631742b2a6294b9723a2f099b07f5
+      internalID: -783067678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_70
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 776
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3686f3ce24fb57e41b7099680cc8f1ec
+      internalID: -1283590480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_71
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 776
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f43fb5d158aae4dacf0941d6b28878
+      internalID: 896959507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_72
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 776
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5996079805ea2e94ea42662513da529f
+      internalID: -2093853002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_73
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 776
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55759bb87c4f81d4090817c40a874de2
+      internalID: 649050262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_74
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 776
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74827da954d7be54ab0964f1453eb1bf
+      internalID: 2047857432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_75
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 693
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0cbe4a2304e43a4c8b8698998e4ad94
+      internalID: -1066170864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_76
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 693
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916792a2abd8b5b4ab46aefb46fc64c1
+      internalID: -1073593007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_77
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 693
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da5cc83891b6f3419e4177e8108cea6
+      internalID: -2090535551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_78
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 693
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ba4e747e7104b43b103d430e4fe759
+      internalID: 1061771586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_79
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 693
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aea3ce2072b1084091fe58b12c695cc
+      internalID: 2068349269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_80
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 610
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba97f93cf9d6f6449e8d76c3c15c645
+      internalID: -2003049981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_81
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 610
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72bb4ac4518745840b01d70bfd1a8fcb
+      internalID: 1021568561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_82
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 610
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf2c83ff42f0fe8448985c8b98f168ac
+      internalID: -493657450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_83
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 610
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26cd7b02a627f57468248a691f321ba9
+      internalID: -1095437777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_84
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 610
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f868cde2f3a07e243aed923348f08fed
+      internalID: -2000733529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_85
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 527
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816a4c2b38e79de418fb1515c2d8d196
+      internalID: -915941046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_86
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 527
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e4fec0f5b2952499f968347974bdb9
+      internalID: 717230739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_87
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 527
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4befb10b9541ab418a8bdd239977d68
+      internalID: 515994742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_88
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 527
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e61f9a202c78aa4897e0e1d93774f4a
+      internalID: 1544494121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location_Test_EmmitingBlock_0_89
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 527
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47656cb19692d2047b95ce8ecc8c0d9a
+      internalID: 1496077642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: 56da06282925df24aae0f4b0130a8d58, type: 3}
+      name: _Emission
+    nameFileIdTable:
+      Location_Test_EmmitingBlock_0_39: -1892176750
+      Location_Test_EmmitingBlock_0_33: 437694857
+      Location_Test_EmmitingBlock_0_52: -929367838
+      Location_Test_EmmitingBlock_0_28: 1135112804
+      Location_Test_EmmitingBlock_0_37: 1641130579
+      Location_Test_EmmitingBlock_0_72: -2093853002
+      Location_Test_EmmitingBlock_0_55: -115219925
+      Location_Test_EmmitingBlock_0_74: 2047857432
+      Location_Test_EmmitingBlock_0_43: 1558956527
+      Location_Test_EmmitingBlock_0_18: -743042844
+      Location_Test_EmmitingBlock_0_58: -1330017622
+      Location_Test_EmmitingBlock_0_15: 916413833
+      Location_Test_EmmitingBlock_0_40: 1427909360
+      Location_Test_EmmitingBlock_0_35: 323697567
+      Location_Test_EmmitingBlock_0_66: 203053706
+      Location_Test_EmmitingBlock_0_76: -1073593007
+      Location_Test_EmmitingBlock_0_79: 2068349269
+      Location_Test_EmmitingBlock_0_45: -2096213863
+      Location_Test_EmmitingBlock_0_44: -111624795
+      Location_Test_EmmitingBlock_0_80: -2003049981
+      Location_Test_EmmitingBlock_0_38: -1308155637
+      Location_Test_EmmitingBlock_0_26: 311715306
+      Location_Test_EmmitingBlock_0_24: 1648479960
+      Location_Test_EmmitingBlock_0_68: -157842543
+      Location_Test_EmmitingBlock_0_57: 333854204
+      Location_Test_EmmitingBlock_0_46: 494325188
+      Location_Test_EmmitingBlock_0_6: -852107434
+      Location_Test_EmmitingBlock_0_67: -607074436
+      Location_Test_EmmitingBlock_0_41: -149770341
+      Location_Test_EmmitingBlock_0_85: -915941046
+      Location_Test_EmmitingBlock_0_4: 479051964
+      Location_Test_EmmitingBlock_0_14: 282835449
+      Location_Test_EmmitingBlock_0_84: -2000733529
+      Location_Test_EmmitingBlock_0_16: -1846524810
+      Location_Test_EmmitingBlock_0_50: 556343890
+      Location_Test_EmmitingBlock_0_34: -518393874
+      Location_Test_EmmitingBlock_0_23: 278086285
+      Location_Test_EmmitingBlock_0_20: -549646209
+      Location_Test_EmmitingBlock_0_64: 1207836242
+      Location_Test_EmmitingBlock_0_11: -1490731003
+      Location_Test_EmmitingBlock_0_82: -493657450
+      Location_Test_EmmitingBlock_0_36: 877756091
+      Location_Test_EmmitingBlock_0_51: 1440247634
+      Location_Test_EmmitingBlock_0_73: 649050262
+      Location_Test_EmmitingBlock_0_3: 1567076143
+      Location_Test_EmmitingBlock_0_63: -1694113397
+      Location_Test_EmmitingBlock_0_49: -1801313448
+      Location_Test_EmmitingBlock_0_1: -1898076999
+      Location_Test_EmmitingBlock_0_7: -1536191699
+      Location_Test_EmmitingBlock_0_77: -2090535551
+      Location_Test_EmmitingBlock_0_62: 965544073
+      Location_Test_EmmitingBlock_0_71: 896959507
+      Location_Test_EmmitingBlock_0_65: 1716614525
+      Location_Test_EmmitingBlock_0_0: 373905791
+      Location_Test_EmmitingBlock_0_86: 717230739
+      Location_Test_EmmitingBlock_0_17: 807348500
+      Location_Test_EmmitingBlock_0_89: 1496077642
+      Location_Test_EmmitingBlock_0_21: 1925913524
+      Location_Test_EmmitingBlock_0_27: 688508285
+      Location_Test_EmmitingBlock_0_47: 267496522
+      Location_Test_EmmitingBlock_0_13: 1067832699
+      Location_Test_EmmitingBlock_0_29: 439286791
+      Location_Test_EmmitingBlock_0_59: 1354811534
+      Location_Test_EmmitingBlock_0_10: -1510718967
+      Location_Test_EmmitingBlock_0_30: -1311627930
+      Location_Test_EmmitingBlock_0_42: -2085224445
+      Location_Test_EmmitingBlock_0_83: -1095437777
+      Location_Test_EmmitingBlock_0_25: 319835965
+      Location_Test_EmmitingBlock_0_12: 1120619350
+      Location_Test_EmmitingBlock_0_32: 372268920
+      Location_Test_EmmitingBlock_0_70: -1283590480
+      Location_Test_EmmitingBlock_0_48: -1294730467
+      Location_Test_EmmitingBlock_0_56: 1226752627
+      Location_Test_EmmitingBlock_0_61: 85881609
+      Location_Test_EmmitingBlock_0_60: -563056788
+      Location_Test_EmmitingBlock_0_81: 1021568561
+      Location_Test_EmmitingBlock_0_78: 1061771586
+      Location_Test_EmmitingBlock_0_5: 184320618
+      Location_Test_EmmitingBlock_0_53: -2145660386
+      Location_Test_EmmitingBlock_0_8: -778158691
+      Location_Test_EmmitingBlock_0_88: 1544494121
+      Location_Test_EmmitingBlock_0_2: 1912326578
+      Location_Test_EmmitingBlock_0_31: -1003314004
+      Location_Test_EmmitingBlock_0_87: 515994742
+      Location_Test_EmmitingBlock_0_9: 721790655
+      Location_Test_EmmitingBlock_0_69: -783067678
+      Location_Test_EmmitingBlock_0_75: -1066170864
+      Location_Test_EmmitingBlock_0_22: -1776114647
+      Location_Test_EmmitingBlock_0_19: -66902819
+      Location_Test_EmmitingBlock_0_54: -2010428618
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

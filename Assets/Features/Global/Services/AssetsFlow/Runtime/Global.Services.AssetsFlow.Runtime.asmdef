@@ -1,0 +1,24 @@
+{
+  "name": "Global.Services.AssetsFlow.Runtime",
+  "rootNamespace": "",
+  "references": [
+    "GUID:fb9b00a9a42c4c1459774b1ef88fcd74",
+    "GUID:401398c75a71e5444a495125c9dd1a21",
+    "GUID:3c8715d751e1a554690355e459994a18",
+    "GUID:304598a766c781247877f81511375f98",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:9e24947de15b9834991c9d8411ea37cf",
+    "GUID:f51ebe6a0ceec4240a699833d6309b23",
+    "GUID:84651a3751eca9349aac36a66bba901b",
+    "GUID:593a5b492d29ac6448b1ebf7f035ef33"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

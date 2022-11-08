@@ -1,0 +1,8 @@
+{
+  "name": "Global.GameLoops.Logs",
+  "references": [
+    "GUID:fe4adae493555af4788e53948d7966ca",
+    "GUID:94e5ca42c58876942a8ffdd1c63b952f",
+    "GUID:fb9b00a9a42c4c1459774b1ef88fcd74"
+  ]
+}

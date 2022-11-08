@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a62d52012bd245ed9edf427f9cae0543, type: 3}
+  m_Name: GlobalService_LoadingScreen
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 6782102528447005030, guid: 04ce4845fd341ad4a8b4c32af2821964, type: 3}
+  _logSettings: {fileID: 11400000, guid: 8cdb02bf0c2af0148ac73b1f0467cd00, type: 2}

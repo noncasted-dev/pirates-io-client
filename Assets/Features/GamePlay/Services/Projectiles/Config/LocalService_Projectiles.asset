@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599d9a9076284ff699f5ad8e4875a730, type: 3}
+  m_Name: LocalService_Projectiles
+  m_EditorClassIdentifier: 
+  _poolScene:
+    m_AssetGUID: 997ea43b3317d8145989d440d2590e89
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _prefab: {fileID: 4119975566583367187, guid: 79cc7c48f6310064aa12f9e87be19585, type: 3}
+  _moverConfig: {fileID: 11400000, guid: 714ca0f8fa54e8a43b777b596de5dbc0, type: 2}
+  _logSettings: {fileID: 11400000, guid: 32774c8736a14f1458474c429655e05f, type: 2}

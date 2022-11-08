@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d87a804771749258f9f4f5c6283de90, type: 3}
+  m_Name: PlayerComponent_Rotation
+  m_EditorClassIdentifier: 
+  _animatorFloatAsset: {fileID: 11400000, guid: 95876f79347cbb84f814d4e00b03607f, type: 2}
+  _logSettings: {fileID: 11400000, guid: 153fe8dd57a8cf14a9d2b9a3f413d377, type: 2}

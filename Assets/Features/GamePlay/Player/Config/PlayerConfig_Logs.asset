@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17692a0b27947458654bf2d4812cc07, type: 3}
+  m_Name: PlayerConfig_Logs
+  m_EditorClassIdentifier: 
+  _stateMachine: {fileID: 11400000, guid: 4619f10f73d0f34419340b8e200e06bc, type: 2}
+  _respawn: {fileID: 11400000, guid: c4154d4dc0c0eb347a0322bfa2194f4c, type: 2}
+  _idle: {fileID: 11400000, guid: ffc263a4b9645a4489f07d4a8ca479d3, type: 2}
+  _run: {fileID: 11400000, guid: 3b9c14981ae843d4a8f46eca09cb2923, type: 2}
+  _rangeAttack: {fileID: 11400000, guid: 2f4278a61629685469293603fd5af1d0, type: 2}
+  _none: {fileID: 11400000, guid: eea91ad4d57537f4db6210f5c8b61299, type: 2}
+  _floatingState: {fileID: 11400000, guid: bdfbb227761c1fe4182f1fed45841dab, type: 2}
+  _animator: {fileID: 11400000, guid: 4ff4ec3a22f7aea47955ae505e79301d, type: 2}
+  _spriteView: {fileID: 11400000, guid: 266d970930a23454e9674edf9476a8c6, type: 2}
+  _transform: {fileID: 11400000, guid: 881828713d0600647bd49975fced4cbc, type: 2}
+  _rigidBody: {fileID: 11400000, guid: e8516afd22ace2d4cb869c2cd4c919a7, type: 2}
+  _rotation: {fileID: 11400000, guid: 153fe8dd57a8cf14a9d2b9a3f413d377, type: 2}
+  _weaponsHandler: {fileID: 11400000, guid: 603b7dd937572e74fac560c42def28aa, type: 2}

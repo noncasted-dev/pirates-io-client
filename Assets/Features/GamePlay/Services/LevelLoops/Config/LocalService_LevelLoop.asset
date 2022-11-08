@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5722cd434ec44e52ad8384070e333966, type: 3}
+  m_Name: LocalService_LevelLoop
+  m_EditorClassIdentifier: 
+  _logSettings: {fileID: 11400000, guid: 31207c82d090b844aa4b7757eb91c258, type: 2}
+  _prefab: {fileID: 4947052624251553994, guid: 9d8e86b7e5aa2284aa2727ba5c91f167, type: 3}

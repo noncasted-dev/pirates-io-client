@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 1f1e86146eca22c48af38911ccc6d14d
+  m_SerializeEntries:
+  - m_GUID: fa9902c71b5f7cd4f98e1a5c19e15def
+    m_Address: Assets/Features/Global/Config/Global_Services.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 211184b564775c745a16cb548230d7ac
+    m_Address: Assets/Scenes/Menu.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4296669fed8eba84fa497f96039d4dc7
+    m_Address: Assets/Features/GamePlay/Level/Scenes/Level_Environment.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aace09c47546e5d43866b632d01fa5fc
+    m_Address: Assets/Features/GamePlay/Level/Scenes/Level_UI.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9096826b46746f24fb8a2acf5d2ee651
+    m_Address: Assets/Features/GamePlay/Level/Scenes/Level_Environment/VFX Profile.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4aa2dce30cfdde641a3ca89e71aef353
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dc97a0e4beba93a47adb4d2e72ab392c
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Bow.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 00fcb83de683a5c4ca9c8f318f95630f
+    m_Address: Assets/Features/GamePlay/Services/Projectiles/Implementation/Linear/Arrow.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9625c269bc9881e439d64313a01f55d0
+    m_Address: Assets/Features/GamePlay/Level/Config/Scenes/EmptyScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cc74b2dbaf6f6fb478f35525e38026b0
+    m_Address: Assets/Features/Local/Common/LocalServices.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 997ea43b3317d8145989d440d2590e89
+    m_Address: Assets/Features/GamePlay/Level/Config/Scenes/Pool_Projectiles.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: eedcecfd1a645e143a51a8b04ba06161, type: 2}
+    - {fileID: 11400000, guid: 6105bb1ababcaed4c9f87086c801afc6, type: 2}

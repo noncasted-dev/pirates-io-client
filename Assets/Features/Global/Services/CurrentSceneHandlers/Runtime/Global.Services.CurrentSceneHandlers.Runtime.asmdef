@@ -1,0 +1,15 @@
+{
+  "name": "Global.Services.CurrentSceneHandlers.Runtime",
+  "references": [
+    "GUID:d49f87d10289e9340861bf05e1f156f0",
+    "GUID:1145ec8c107f42c479e644b07eef9c9b",
+    "GUID:579e5a5c70a34914d87b1e5a12948aba",
+    "GUID:f51ebe6a0ceec4240a699833d6309b23",
+    "GUID:401398c75a71e5444a495125c9dd1a21",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:fb9b00a9a42c4c1459774b1ef88fcd74",
+    "GUID:09ebb73bf0f447d418c3031742da498a",
+    "GUID:af9984b749760ce48b92cc80221b4d17",
+    "GUID:304598a766c781247877f81511375f98"
+  ]
+}

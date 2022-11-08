@@ -1,0 +1,9 @@
+{
+  "name": "Player.States.StateMachine.Logs",
+  "references": [
+    "GUID:fe4adae493555af4788e53948d7966ca",
+    "GUID:94e5ca42c58876942a8ffdd1c63b952f",
+    "GUID:1df29afa6177f8e4fa19b25367556ac2",
+    "GUID:8f9012bdd1b116c48ab480004500c8f3"
+  ]
+}

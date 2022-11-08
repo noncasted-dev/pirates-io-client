@@ -1,0 +1,18 @@
+{
+  "name": "GamePlay.Player.Weapons.Bow.Views.Transform",
+  "rootNamespace": "",
+  "references": [
+    "GUID:8ceb11fc07ecc9847af1f8e5e77cb9f9",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:fe4adae493555af4788e53948d7966ca"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

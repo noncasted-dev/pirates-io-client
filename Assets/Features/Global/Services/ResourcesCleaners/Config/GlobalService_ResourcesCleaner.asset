@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a7c0ab7ac2401cb2c35686afc183cd, type: 3}
+  m_Name: GlobalService_ResourcesCleaner
+  m_EditorClassIdentifier: 
+  _logSettings: {fileID: 11400000, guid: 6c413d7e88eddf345ae21e8dbcc4f1fc, type: 2}
+  _prefab: {fileID: 1627906792721557671, guid: 442faa7916c17ce469d2bae64c34f75e, type: 3}

@@ -1,0 +1,27 @@
+{
+  "name": "Player.Entity.Components.Config",
+  "rootNamespace": "",
+  "references": [
+    "GUID:65c3fcbb851ff9441a22dd049195dc8f",
+    "GUID:8f9012bdd1b116c48ab480004500c8f3",
+    "GUID:9dab7ae2c0ec48340870bbfaaeedd676",
+    "GUID:304598a766c781247877f81511375f98",
+    "GUID:145d06f883cb2b94396d697c01e9bd09",
+    "GUID:6dd6a293518909e418954d8ea737c7b9",
+    "GUID:23cf091f4c6d7994ea810080cd2b498f",
+    "GUID:6c23017c98c13dc458609f259e5c6605",
+    "GUID:74bc9d8503dd202499c2bdd0a884b6ee",
+    "GUID:ab1b3c60e062ceb40ac9ae59913b9e15",
+    "GUID:736c4910aad47b541a8d2813ec862bcd",
+    "GUID:1c6116fdd8a4b1642a6ac9e51aa5a8d4"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

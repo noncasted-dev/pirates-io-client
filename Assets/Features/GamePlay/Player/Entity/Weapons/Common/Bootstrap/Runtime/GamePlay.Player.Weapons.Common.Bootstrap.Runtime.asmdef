@@ -1,0 +1,8 @@
+{
+  "name": "GamePlay.Player.Weapons.Common.Bootstrap.Runtime",
+  "references": [
+    "GUID:f51ebe6a0ceec4240a699833d6309b23",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:233fe32ee80fe2948881dd4bfd16d13c"
+  ]
+}

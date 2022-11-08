@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edcbdcb0f27f42dd877c804dac7f8c2b, type: 3}
+  m_Name: GlobalService_GlobalCamera
+  m_EditorClassIdentifier: 
+  _logSettings: {fileID: 11400000, guid: ae0a363b108f34e48a591b1a38d7f500, type: 2}
+  _prefab: {fileID: 6419607167493485886, guid: 553476d43ee9c0e4f8a12459397c017b, type: 3}

@@ -40,6 +40,7 @@ ExportedObj/
 *.user
 *.userprefs
 *.pidb
+*.DotSettings
 *.booproj
 *.svd
 *.pdb

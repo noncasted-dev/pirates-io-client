@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.ragon.client": "https://github.com/edmand46/Ragon-Unity-SDK.git",
     "com.unity.addressables": "1.19.19",
     "com.unity.collab-proxy": "1.17.6",
     "com.unity.collections": "1.2.4",

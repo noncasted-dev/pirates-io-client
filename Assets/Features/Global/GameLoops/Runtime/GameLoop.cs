@@ -50,6 +50,13 @@ namespace Global.GameLoops.Runtime
 
         private GlobalScope _scope;
 
+        public override void Begin()
+        {
+            _logger.OnBegin();
+
+            LoadMenu();
+        }
+        
         public void LoadLevel()
         {
             _logger.OnLoadLevel();
@@ -62,13 +69,6 @@ namespace Global.GameLoops.Runtime
             _logger.OnLoadMenu();
 
             LoadScene(_menu).Forget();
-        }
-
-        public override void Begin()
-        {
-            _logger.OnBegin();
-
-            LoadLevel();
         }
 
         private async UniTaskVoid LoadScene(ComposedSceneAsset asset)

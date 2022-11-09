@@ -14,6 +14,7 @@ using Global.Services.GlobalCameras.Runtime;
 using Global.Services.InputViews.Runtime;
 using Global.Services.LoadingScreens.Runtime;
 using Global.Services.Loggers.Runtime;
+using Global.Services.Network.Bootstrap;
 using Global.Services.ResourcesCleaners.Runtime;
 using Global.Services.ScenesFlow.Runtime;
 using Global.Services.Updaters.Runtime;
@@ -40,6 +41,7 @@ namespace Global.Services.Common.Config.Standard
         [SerializeField] [EditableObject] private UpdaterAsset _updater;
         [SerializeField] [EditableObject] private SceneObjectsAsset _sceneObject;
         [SerializeField] [EditableObject] private DebugConsoleAsset _debugConsole;
+        [SerializeField] [EditableObject] private NetworkAsset _network;
 
         public override GlobalServiceAsset[] GetAssets()
         {
@@ -59,7 +61,8 @@ namespace Global.Services.Common.Config.Standard
                 _scenesFlow,
                 _updater,
                 _sceneObject,
-                _debugConsole
+                _debugConsole,
+                _network
             };
         }
     }

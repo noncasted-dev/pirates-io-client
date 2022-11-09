@@ -4,6 +4,7 @@
     {
         private const string _root = "Global/";
         private const string _services = _root + "Services/";
+        private const string _network = _services + "Network/";
 
         public const string Config = _root + "Config/";
 
@@ -31,5 +32,9 @@
         public const string GameLoop = _services + "GameLoop/";
         public const string ObjectsPool = _services + "ObjectsPool/";
         public const string DebugConsole = _services + "DebugConsole/";
+        
+        public const string NetworkBootstrap = _network + "Bootstrap";
+        public const string NetworkConnection = _network + "Connector/";
+        public const string NetworkSession = _network + "Session/";
     }
 }

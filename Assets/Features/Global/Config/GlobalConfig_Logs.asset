@@ -12,17 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd6ca823c7841cabe4c1dde036192d8, type: 3}
   m_Name: GlobalConfig_Logs
   m_EditorClassIdentifier: 
-  _applicationProxy: {fileID: 11400000, guid: 667a16ad3a7a8ac469d6aa4ad6645fb8, type: 2}
-  _assetsFlow: {fileID: 11400000, guid: de512ef11455f1c4092fd1be635f8e4c, type: 2}
   _cameraUtils: {fileID: 11400000, guid: 1cba63034dad2114ba2854ae8a15a619, type: 2}
   _currentCamera: {fileID: 11400000, guid: ffc0d2ddf623f874f8082a902e16bd17, type: 2}
-  _currentSceneHandler: {fileID: 11400000, guid: 493e09e1e6bb89340bae950145dc2804, type: 2}
-  _filesFlow: {fileID: 11400000, guid: 72dc8a95d47e38f4aa6885297257b3b7, type: 2}
   _globalCamera: {fileID: 11400000, guid: ae0a363b108f34e48a591b1a38d7f500, type: 2}
-  _inputView: {fileID: 11400000, guid: 39996899f32e07342bc857aa456bdd59, type: 2}
-  _loadingScreen: {fileID: 11400000, guid: 8cdb02bf0c2af0148ac73b1f0467cd00, type: 2}
+  _assetsFlow: {fileID: 11400000, guid: de512ef11455f1c4092fd1be635f8e4c, type: 2}
+  _filesFlow: {fileID: 11400000, guid: 72dc8a95d47e38f4aa6885297257b3b7, type: 2}
+  _applicationProxy: {fileID: 11400000, guid: 667a16ad3a7a8ac469d6aa4ad6645fb8, type: 2}
   _resourcesCleaner: {fileID: 11400000, guid: 6c413d7e88eddf345ae21e8dbcc4f1fc, type: 2}
-  _scenesFlow: {fileID: 11400000, guid: 5c103c0f0f23975409bc085b4e2816ac, type: 2}
+  _inputView: {fileID: 11400000, guid: 39996899f32e07342bc857aa456bdd59, type: 2}
   _updater: {fileID: 11400000, guid: 546b071415f3d22438099fc51f56ef52, type: 2}
-  _sceneObject: {fileID: 11400000, guid: f0747f5ec1358c043a68ea8ea8c74292, type: 2}
   _gameLoop: {fileID: 11400000, guid: 7e230a644e906904d8c998a705cada24, type: 2}
+  _scenesFlow: {fileID: 11400000, guid: 5c103c0f0f23975409bc085b4e2816ac, type: 2}
+  _currentSceneHandler: {fileID: 11400000, guid: 493e09e1e6bb89340bae950145dc2804, type: 2}
+  _sceneObject: {fileID: 11400000, guid: f0747f5ec1358c043a68ea8ea8c74292, type: 2}
+  _loadingScreen: {fileID: 11400000, guid: 8cdb02bf0c2af0148ac73b1f0467cd00, type: 2}
+  _networkConnector: {fileID: 11400000, guid: eedb27641744d8740ade9adcb907b333, type: 2}
+  _networkJoin: {fileID: 11400000, guid: d58ef7f5be4c8694990f9cb5a1b5db3d, type: 2}
+  _networkLeave: {fileID: 11400000, guid: 0dc5ca597bf9ecc4b8331f6a8fadc285, type: 2}

@@ -27,3 +27,4 @@ MonoBehaviour:
   _updater: {fileID: 11400000, guid: 949a43ee6c5ebd44fb23e1cc06711427, type: 2}
   _sceneObject: {fileID: 11400000, guid: 6bfc1c1107733774cb653abb4a884963, type: 2}
   _debugConsole: {fileID: 11400000, guid: e3ab40223d3185148955ce7add75ce44, type: 2}
+  _network: {fileID: 11400000, guid: 587aa68a7c7f72e4a98930e9fc479710, type: 2}

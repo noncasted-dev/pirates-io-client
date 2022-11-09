@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52f3bae4c5b40f0b9d76eb70e8eb1ad, type: 3}
+  m_Name: GlobalService_NetworkBootstrap
+  m_EditorClassIdentifier: 
+  _connectionConfig: {fileID: 11400000, guid: 8442ad5626ccb9f48beae22b00a6ae0f, type: 2}
+  _connectorLogSettings: {fileID: 11400000, guid: eedb27641744d8740ade9adcb907b333, type: 2}
+  _sessionJoinLogSettings: {fileID: 11400000, guid: d58ef7f5be4c8694990f9cb5a1b5db3d, type: 2}
+  _sessionLeaveLogSettings: {fileID: 11400000, guid: 0dc5ca597bf9ecc4b8331f6a8fadc285, type: 2}
+  _prefab: {fileID: 628551598985665779, guid: e0a86d9d55bb30744869b3c41e89b234, type: 3}

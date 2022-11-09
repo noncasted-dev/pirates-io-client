@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.ragon.client": {
+      "version": "https://github.com/edmand46/Ragon-Unity-SDK.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "6352b23bf87c63313498e95271798ce91d9441e4"
+    },
     "com.unity.2d.animation": {
       "version": "7.0.8",
       "depth": 1,

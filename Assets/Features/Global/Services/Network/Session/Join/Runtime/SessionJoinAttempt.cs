@@ -18,7 +18,8 @@ namespace Global.Services.Network.Session.Join.Runtime
             RagonNetwork.Session.CreateOrJoin("game", 1, 300);
             
             var result = await _completion.Task;
-            
+            await UniTask.Yield();
+
             RagonNetwork.RemoveListener(this);
 
             return result;

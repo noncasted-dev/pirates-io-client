@@ -1,21 +1,30 @@
-﻿using Local.ComposedSceneConfig;
+﻿using Common.EditableScriptableObjects.Attributes;
+using Local.ComposedSceneConfig;
+using Local.Services.Abstract;
 using Menu.Common;
-using Menu.Flow;
+using Menu.Services.Common.Scope;
+using Menu.Services.MenuLoop.Runtime;
+using Menu.Services.UI.Runtime;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using VContainer.Unity;
 
-namespace Menu.Config
+namespace Menu.Bootstrap
 {
     [CreateAssetMenu(fileName = "Menu", menuName = MenuAssetsPaths.Root + "Scene")]
     public class MenuAsset : ComposedSceneAsset
     {
-        [SerializeField] private AssetReference _scene;
+        [SerializeField] [EditableObject] private MenuLoopAsset _loop;
+        [SerializeField] [EditableObject] private MenuUIAsset _ui;
+        
         [SerializeField] private MenuScope _scopePrefab;
 
-        protected override AssetReference[] AssignScenes()
+        protected override LocalServiceAsset[] AssignServices()
         {
-            return new[] { _scene };
+            return new LocalServiceAsset[]
+            {
+                _loop,
+                _ui
+            };
         }
 
         protected override LifetimeScope AssignScope()

@@ -13,7 +13,7 @@ using VContainer;
 namespace GamePlay.Services.LevelLoops.Runtime
 {
     [DisallowMultipleComponent]
-    public class LevelLoop : MonoBehaviour, ILevelLoop, ILocalLoadCallbackListener
+    public class LevelLoop : MonoBehaviour, ILocalLoadCallbackListener
     {
         [Inject]
         private void Construct(

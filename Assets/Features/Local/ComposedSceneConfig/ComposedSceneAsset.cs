@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Common.EditableScriptableObjects.Attributes;
 using Cysharp.Threading.Tasks;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Runtime.Abstract;
@@ -13,7 +14,7 @@ namespace Local.ComposedSceneConfig
 {
     public abstract class ComposedSceneAsset : ScriptableObject
     {
-        [SerializeField] private ComposedScenesConfig _config;
+        [SerializeField] [EditableObject] private ComposedScenesConfig _config;
 
         public async UniTask<ComposedSceneLoadResult> Load(LifetimeScope parent, ISceneLoader loader)
         {

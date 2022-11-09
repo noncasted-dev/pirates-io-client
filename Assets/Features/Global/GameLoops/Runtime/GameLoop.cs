@@ -10,7 +10,7 @@ using Global.Services.GlobalCameras.Runtime;
 using Global.Services.LoadingScreens.Runtime;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Local.ComposedSceneConfig;
-using Menu.Config;
+using Menu.Bootstrap;
 using UnityEngine;
 using VContainer;
 

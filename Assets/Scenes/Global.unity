@@ -207,6 +207,7 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  _camera: {fileID: 1965273504}
   _services: {fileID: 11400000, guid: 9f1bf9a9ecd36f24798ae8c6321b5fc2, type: 2}
 --- !u!4 &1105051734
 Transform:

@@ -18,7 +18,8 @@ namespace Global.Services.Network.Session.Leave.Runtime
             RagonNetwork.Session.Leave();
             
             var result = await _completion.Task;
-            
+            await UniTask.Yield();
+
             RagonNetwork.RemoveListener(this);
 
             return result;

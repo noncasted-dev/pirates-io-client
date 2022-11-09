@@ -9,7 +9,7 @@ using VContainer.Unity;
 namespace Global.Services.CameraUtilities.Runtime
 {
     [CreateAssetMenu(fileName = GlobalAssetsPaths.ServicePrefix + "CameraUtils",
-        menuName = GlobalAssetsPaths.CameraUtils + "Service", order = 1)]
+        menuName = GlobalAssetsPaths.CameraUtils + "Service")]
     public class CameraUtilsAsset : GlobalServiceAsset
     {
         [SerializeField] [EditableObject] private CameraUtilsLogSettings _logSettings;

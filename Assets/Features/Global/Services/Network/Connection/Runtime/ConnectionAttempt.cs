@@ -43,6 +43,7 @@ namespace Global.Services.Network.Connection.Runtime
             RagonNetwork.Session.AuthorizeWithKey("defaultkey", userName,Array.Empty<byte>());
             
             result = await _authorizationCompletion.Task;
+            await UniTask.Yield();
             
             RagonNetwork.RemoveListener(this);
             

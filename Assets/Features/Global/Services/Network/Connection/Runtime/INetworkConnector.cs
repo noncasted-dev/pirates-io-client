@@ -4,6 +4,6 @@ namespace Global.Services.Network.Connection.Runtime
 {
     public interface INetworkConnector
     {
-        UniTask<NetworkConnectResultType> Connect();
+        UniTask<NetworkConnectResultType> Connect(string userName);
     }
 }

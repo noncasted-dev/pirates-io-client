@@ -16,7 +16,8 @@ namespace Global.Bootstrappers
         [SerializeField] private GlobalScope _scope;
         [SerializeField] private GlobalGameLoopAsset _gameLoop;
         [SerializeField] private AssetReference _servicesScene;
-
+        [SerializeField] private GameObject _camera;
+        
         [SerializeField] private GlobalServicesConfig _services;
 
         private void Awake()
@@ -49,6 +50,8 @@ namespace Global.Bootstrappers
                 gameLoop = _gameLoop.Create(builder, binder.AddToModules);
             }
 
+            Destroy(_camera);
+            
             binder.InvokeFlowCallbacks();
 
             gameLoop.OnAwake();

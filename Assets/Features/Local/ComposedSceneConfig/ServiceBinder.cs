@@ -46,14 +46,20 @@ namespace Local.ComposedSceneConfig
             foreach (var component in _componentRegistrations)
             {
                 var componentBuilder = builder.RegisterComponent(component.Component);
+
                 if (component.IsAsImplementedInterfaces == true)
+                {
                     componentBuilder.AsImplementedInterfaces();
-                else
+                }
+                
+                if (component.Types.Count != 0)
+                {
                     foreach (var type in component.Types)
                         componentBuilder.As(type);
+                }
 
-                if (component.Types.Count != 0 && component.IsAsSelf == true)
-                    component.AsSelf();
+                if (component.Types.Count == 0 || component.IsAsSelf == true)
+                    componentBuilder.AsSelf();
 
                 foreach (var (key, value) in component.StringParameters)
                     componentBuilder.WithParameter(key, value);

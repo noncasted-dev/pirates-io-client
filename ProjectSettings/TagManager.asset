@@ -18,7 +18,7 @@ TagManager:
   - Player_Projectile
   - Enemy_Projecitle
   - PitCollision
-  - 
+  - RemotePlayer_Collision
   - 
   - 
   - 

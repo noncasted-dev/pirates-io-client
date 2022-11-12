@@ -59,10 +59,10 @@ GameObject:
   - component: {fileID: 3526914070284434364}
   - component: {fileID: 5236864739449218738}
   - component: {fileID: 7759638847808913012}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Player_Remote
   m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

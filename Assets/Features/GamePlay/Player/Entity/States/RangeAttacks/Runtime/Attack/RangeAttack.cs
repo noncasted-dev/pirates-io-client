@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using Cysharp.Threading.Tasks;
+using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
@@ -23,6 +24,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             IAnimatorView animatorView,
             IWeaponsHandler weapons,
             IRangeAttackRotator rotator,
+            IInertialMovement inertialMovement,
             IRotation rotation,
             IRangeAttackConfig config,
             RangeAttackAnimatorCallbackBridge animatorCallback,
@@ -35,6 +37,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             _animatorView = animatorView;
             _weapons = weapons;
             _rotator = rotator;
+            _inertialMovement = inertialMovement;
             _rotation = rotation;
             _animatorCallback = animatorCallback;
             _delay = new AttackDelay(config);
@@ -50,6 +53,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         private readonly RangeAttackLogger _logger;
         private readonly IRotation _rotation;
         private readonly IRangeAttackRotator _rotator;
+        private readonly IInertialMovement _inertialMovement;
 
         private readonly IStateMachine _stateMachine;
         private readonly IWeaponsHandler _weapons;
@@ -111,6 +115,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             _isStarted = false;
 
             _rotator.ToDefault();
+            _inertialMovement.Disable();
 
             _logger.OnBroke();
         }
@@ -127,11 +132,13 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
 
         private async UniTaskVoid Process()
         {
+            _stateMachine.Enter(this);
+
             _isStarted = true;
             _isShot = false;
             _delay.OnAttack();
-
-            _stateMachine.Enter(this);
+            _inertialMovement.Enable();
+            
             _logger.OnEntered();
 
             _rotator.Rotate(_direction);

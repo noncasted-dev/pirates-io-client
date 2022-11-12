@@ -1,4 +1,5 @@
 ﻿using Common.EditableScriptableObjects.Attributes;
+using GamePlay.Player.Entity.Components.InertialMovements.Logs;
 using GamePlay.Player.Entity.Components.Rotations.Logs;
 using GamePlay.Player.Entity.Components.StateMachines.Logs;
 using GamePlay.Player.Entity.Setup.Path;
@@ -38,8 +39,9 @@ namespace GamePlay.Player.Entity.Setup.Editor
         [SerializeField] [EditableObject] private TransformLogSettings _transform;
         [SerializeField] [EditableObject] private RigidBodyLogSettings _rigidBody;
 
-        [Space(100)] [Header("Components")] [SerializeField] [EditableObject]
-        private RotationLogSettings _rotation;
+        [Space(100)] [Header("Components")] 
+        [SerializeField] [EditableObject] private RotationLogSettings _rotation;
+        [SerializeField] [EditableObject] private InertialMovementLogSettings _inertialMovement;
 
         [SerializeField] [EditableObject] private WeaponsHandlerLogSettings _weaponsHandler;
     }

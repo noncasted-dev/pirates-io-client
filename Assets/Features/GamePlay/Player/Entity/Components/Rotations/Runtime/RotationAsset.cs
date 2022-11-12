@@ -20,7 +20,8 @@ namespace GamePlay.Player.Entity.Components.Rotations.Runtime
         {
             var animatorFloat = _animatorFloatAsset.CreateFloat();
 
-            builder.Register<RotationLogger>(Lifetime.Scoped).WithParameter("settings", _logSettings);
+            builder.Register<RotationLogger>(Lifetime.Scoped)
+                .WithParameter(_logSettings);
 
             builder.Register<Rotation>(Lifetime.Scoped)
                 .As<IRotation>()
@@ -31,7 +32,7 @@ namespace GamePlay.Player.Entity.Components.Rotations.Runtime
                 .AsSelf();
 
             builder.Register<AnimatorRotation>(Lifetime.Scoped)
-                .WithParameter("animatorFloat", animatorFloat)
+                .WithParameter(animatorFloat)
                 .As<IAnimatorRotation>()
                 .AsSelf();
         }

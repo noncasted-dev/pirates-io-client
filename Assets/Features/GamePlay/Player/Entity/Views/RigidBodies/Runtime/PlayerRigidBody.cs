@@ -41,6 +41,8 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
         private Rigidbody2D _rigidbody;
         private IUpdater _updater;
+        
+        public Vector2 Position => _rigidbody.position;
 
         public void OnAwake()
         {
@@ -76,8 +78,6 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
             _interactions.Clear();
         }
-
-        public Vector2 Position => _rigidbody.position;
 
         public void SetPosition(Vector2 position)
         {

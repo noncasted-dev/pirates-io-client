@@ -16,11 +16,12 @@ namespace GamePlay.Player.Entity.States.Idles.Runtime
 
         public override void Register(IContainerBuilder builder)
         {
-            builder.Register<IdleLogger>(Lifetime.Scoped).WithParameter("settings", _logSettings);
+            builder.Register<IdleLogger>(Lifetime.Scoped)
+                .WithParameter(_logSettings);
 
             builder.Register<Idle>(Lifetime.Scoped)
                 .As<IIdle>()
-                .WithParameter("definition", _definition);
+                .WithParameter(_definition);
         }
     }
 }

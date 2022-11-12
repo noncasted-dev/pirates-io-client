@@ -24,4 +24,5 @@ MonoBehaviour:
   _transform: {fileID: 11400000, guid: 881828713d0600647bd49975fced4cbc, type: 2}
   _rigidBody: {fileID: 11400000, guid: e8516afd22ace2d4cb869c2cd4c919a7, type: 2}
   _rotation: {fileID: 11400000, guid: 153fe8dd57a8cf14a9d2b9a3f413d377, type: 2}
+  _inertialMovement: {fileID: 11400000, guid: a1e0247e508190a4a8356911deeb153f, type: 2}
   _weaponsHandler: {fileID: 11400000, guid: 603b7dd937572e74fac560c42def28aa, type: 2}

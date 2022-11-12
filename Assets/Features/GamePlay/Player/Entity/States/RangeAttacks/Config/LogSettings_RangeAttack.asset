@@ -18,6 +18,6 @@ MonoBehaviour:
     _values: 0101010101010101010101
   _logParameters:
     Color: 5
-    _header: RangeAttack
+    _header: '[State][RangeAttack]'
     _isHeaderColoredColored: 1
     _isMessageColored: 0

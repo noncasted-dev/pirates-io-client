@@ -18,6 +18,6 @@ MonoBehaviour:
     _values: 0101
   _logParameters:
     Color: 0
-    _header: None
+    _header: '[State][None]'
     _isHeaderColoredColored: 1
     _isMessageColored: 0

@@ -1,4 +1,5 @@
 ﻿using Common.EditableScriptableObjects.Attributes;
+using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.Setup.Path;
@@ -14,5 +15,6 @@ namespace GamePlay.Player.Entity.Setup.Editor
         [SerializeField] [EditableObject] private RotationAsset _rotation;
         [SerializeField] [EditableObject] private StateMachineAsset _stateMachine;
         [SerializeField] [EditableObject] private WeaponsHandlerAsset _weaponsHandler;
+        [SerializeField] [EditableObject] private InertialMovementAsset _inertialMovement;
     }
 }

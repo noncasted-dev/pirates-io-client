@@ -18,6 +18,6 @@ MonoBehaviour:
     _values: 010101010101
   _logParameters:
     Color: 1
-    _header: Run
+    _header: '[State][Run]'
     _isHeaderColoredColored: 1
     _isMessageColored: 0

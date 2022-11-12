@@ -1,29 +1,26 @@
-﻿using GamePlay.Player.Entity.Components.StateMachines.Runtime;
+﻿using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
+using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
 using GamePlay.Player.Entity.States.Runs.Logs;
-using GamePlay.Player.Entity.Views.RigidBodies.Runtime;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
-using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.States.Runs.Runtime
 {
-    public class Run : IRun, IState, IPreFixedUpdatable
+    public class Run : IRun, IState
     {
         public Run(
             IStateMachine stateMachine,
-            IRigidBody rigidBody,
-            IUpdater updater,
-            IRunConfig runConfig,
+            IInertialMovement inertialMovement,
+            IRunConfig config,
             ISpriteFlipper spriteFlipper,
             StateDefinition definition,
             RunLogger logger)
         {
             _stateMachine = stateMachine;
-            _rigidBody = rigidBody;
-            _updater = updater;
-            _runConfig = runConfig;
+            _inertialMovement = inertialMovement;
+            _config = config;
 
             _spriteFlipper = spriteFlipper;
 
@@ -32,24 +29,15 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
         }
 
         private readonly RunLogger _logger;
-        private readonly IRigidBody _rigidBody;
-        private readonly IRunConfig _runConfig;
+        private readonly IRunConfig _config;
 
         private readonly ISpriteFlipper _spriteFlipper;
 
         private readonly IStateMachine _stateMachine;
-        private readonly IUpdater _updater;
+        private readonly IInertialMovement _inertialMovement;
 
         private Vector2 _input;
         private bool _isStarted;
-
-        public void OnPreFixedUpdate(float delta)
-        {
-            if (_isStarted == false)
-                Debug.LogError("Not started");
-
-            _rigidBody.Move(_input, _runConfig.Speed * delta);
-        }
 
         public bool HasInput => _input != Vector2.zero;
 
@@ -78,6 +66,7 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             if (_isStarted == false)
                 return;
 
+            _inertialMovement.Disable();
             _stateMachine.Exit();
         }
 
@@ -103,8 +92,6 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
 
             _isStarted = false;
 
-            _updater.Remove(this);
-
             _logger.OnBroke();
         }
 
@@ -115,9 +102,11 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             if (_isStarted == true)
                 return;
 
-            _isStarted = true;
             _stateMachine.Enter(this);
-            _updater.Add(this);
+            
+            _inertialMovement.Enable();
+            _inertialMovement.SetSpeed(_config.Speed);
+            _isStarted = true;
         }
 
         private void UpdateInput()

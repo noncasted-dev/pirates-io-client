@@ -16,7 +16,9 @@ namespace GamePlay.Player.Entity.States.Floating.Runtime
 
         public override void Register(IContainerBuilder builder)
         {
-            builder.Register<FloatingStateLogger>(Lifetime.Scoped).WithParameter("settings", _logSettings);
+            builder.Register<FloatingStateLogger>(Lifetime.Scoped)
+                .WithParameter(_logSettings);
+            
             builder.Register<FloatingState>(Lifetime.Scoped)
                 .As<IFloatingState>()
                 .AsSelf();

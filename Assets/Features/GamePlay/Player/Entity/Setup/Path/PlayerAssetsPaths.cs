@@ -23,6 +23,7 @@
         public const string Rotation = _components + "Rotation/";
         public const string WeaponsHandler = _components + "WeaponsHandler/";
         public const string StateMachine = _components + "StateMachine/";
+        public const string InertialMovement = _components + "InertialMovement/";
 
         public const string Floating = _states + "Floating/";
         public const string Idle = _states + "Idle/";

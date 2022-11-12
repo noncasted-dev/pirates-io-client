@@ -18,6 +18,6 @@ MonoBehaviour:
     _values: 0101
   _logParameters:
     Color: 2
-    _header: Respawn
+    _header: '[State][Respawn]'
     _isHeaderColoredColored: 1
     _isMessageColored: 0

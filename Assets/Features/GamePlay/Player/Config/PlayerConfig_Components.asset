@@ -15,3 +15,4 @@ MonoBehaviour:
   _rotation: {fileID: 11400000, guid: 5550f8f1b1db89d4fb2d52f3487aefe2, type: 2}
   _stateMachine: {fileID: 11400000, guid: 9f0c65e507c6a68418b7f21f6dda1cd2, type: 2}
   _weaponsHandler: {fileID: 11400000, guid: 962a49343378a6c49ae4ec652d0a8594, type: 2}
+  _inertialMovement: {fileID: 11400000, guid: 8a2c6c49d7fbad645a7a171a9b17d03e, type: 2}

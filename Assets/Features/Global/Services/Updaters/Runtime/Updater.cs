@@ -29,11 +29,8 @@ namespace Global.Services.Updaters.Runtime
         {
             var delta = Time.deltaTime * _speed;
 
-            _preUpdatables.FetchAdd();
-            _updatables.FetchAdd();
-
-            _preUpdatables.FetchRemove();
-            _updatables.FetchRemove();
+            _preUpdatables.Fetch();
+            _updatables.Fetch();
 
             foreach (var updatable in _preUpdatables.List)
                 updatable.OnPreUpdate(delta);
@@ -50,13 +47,9 @@ namespace Global.Services.Updaters.Runtime
         {
             var delta = Time.fixedDeltaTime * _speed;
 
-            _preFixedUpdatables.FetchAdd();
-            _fixedUpdatables.FetchAdd();
-            _postFixedUpdatables.FetchAdd();
-
-            _preFixedUpdatables.FetchRemove();
-            _fixedUpdatables.FetchRemove();
-            _postFixedUpdatables.FetchRemove();
+            _preFixedUpdatables.Fetch();
+            _fixedUpdatables.Fetch();
+            _postFixedUpdatables.Fetch();
 
             foreach (var updatable in _preFixedUpdatables.List)
                 updatable.OnPreFixedUpdate(delta);

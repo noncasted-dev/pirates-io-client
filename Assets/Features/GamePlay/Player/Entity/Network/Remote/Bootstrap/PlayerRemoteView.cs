@@ -1,12 +1,13 @@
 ﻿using System;
 using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Services.Projectiles.Factory;
+using Ragon.Client;
 using UnityEngine;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
 
 namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
 {
-    public class PlayerRemoteView : MonoBehaviour, IPoolObject<PlayerRemoteView>
+    public class PlayerRemoteView : RagonBehaviour, IPoolObject<PlayerRemoteView>
     {
         private Action<PlayerRemoteView> _returnToPool;
         
@@ -36,6 +37,11 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
         public void OnReturned()
         {
             
+        }
+
+        public override void OnDestroyedEntity()
+        {
+            _returnToPool?.Invoke(this);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Local.ComposedSceneConfig
     {
         public ComposedSceneLoadResult(
             IReadOnlyList<SceneLoadResult> scenes,
-            IReadOnlyList<ILocalSwitchCallbackListener> switchCallbacks,
+            IReadOnlyList<ILocalSwitchListener> switchCallbacks,
             LifetimeScope scope,
             Action loadedCallback)
         {
@@ -23,7 +23,7 @@ namespace Local.ComposedSceneConfig
         private readonly Action _loadedCallback;
         private readonly LifetimeScope _scope;
 
-        private readonly IReadOnlyList<ILocalSwitchCallbackListener> _switchCallbacks;
+        private readonly IReadOnlyList<ILocalSwitchListener> _switchCallbacks;
 
         public readonly IReadOnlyList<SceneLoadResult> Scenes;
 

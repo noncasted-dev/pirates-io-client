@@ -1,6 +1,6 @@
 ﻿namespace Local.Services.Abstract.Callbacks
 {
-    public interface ILocalAwakeCallbackListener
+    public interface ILocalAwakeListener
     {
         void OnAwake();
     }

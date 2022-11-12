@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GamePlay.Player.Entity.Network.Views.Transforms.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.RigidBodies.Logs;
 using Global.Services.Updaters.Runtime.Abstract;
@@ -19,8 +20,12 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
         IFixedUpdatable
     {
         [Inject]
-        private void Construct(ILogger logger, IUpdater updater)
+        private void Construct(
+            ILogger logger,
+            IUpdater updater,
+            INetworkTransform networkTransform)
         {
+            _networkTransform = networkTransform;
             _logger = new RigidBodyLogger(logger, _logSettings);
             _updater = updater;
         }
@@ -41,7 +46,8 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
         private Rigidbody2D _rigidbody;
         private IUpdater _updater;
-        
+        private INetworkTransform _networkTransform;
+
         public Vector2 Position => _rigidbody.position;
 
         public void OnAwake()
@@ -49,7 +55,7 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
             _rigidbody = GetComponent<Rigidbody2D>();
             _collider = GetComponent<CapsuleCollider2D>();
 
-            _currentPosition = _rigidbody.position;
+            _currentPosition = transform.position;
         }
 
         public void OnFixedUpdate(float delta)
@@ -74,7 +80,7 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
                 }
             }
 
-            _rigidbody.position = _currentPosition;
+            _networkTransform.SetPosition(_currentPosition);
 
             _interactions.Clear();
         }

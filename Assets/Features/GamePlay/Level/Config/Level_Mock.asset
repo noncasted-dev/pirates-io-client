@@ -21,3 +21,4 @@ MonoBehaviour:
   _projectiles: {fileID: 11400000, guid: cf3ddfa96992fb145b579ec979d2b621, type: 2}
   _transitionScreen: {fileID: 11400000, guid: 6a27838c5b181624abc4d150b8f015bb, type: 2}
   _networkSession: {fileID: 11400000, guid: d06a41550909daf4f9367c274f4140da, type: 2}
+  _remotePlayerBuilder: {fileID: 11400000, guid: 2cf4a4f9f5aee4748b53af82e2fe64aa, type: 2}

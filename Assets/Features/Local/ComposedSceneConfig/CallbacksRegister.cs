@@ -11,26 +11,26 @@ namespace Local.ComposedSceneConfig
     {
         private readonly List<ILocalAsyncAwakeListener> _asyncAwakes = new();
         private readonly List<ILocalAsyncBootstrappedListener> _asyncBootstrappers = new();
-        private readonly List<ILocalAwakeCallbackListener> _awakes = new();
-        private readonly List<ILocalLoadCallbackListener> _loads = new();
+        private readonly List<ILocalAwakeListener> _awakes = new();
+        private readonly List<ILocalLoadListener> _loads = new();
         private readonly List<IDependencyRegister> _registers = new();
         private readonly List<IDependencyResolver> _resolvers = new();
-        private readonly List<ILocalSwitchCallbackListener> _switches = new();
+        private readonly List<ILocalSwitchListener> _switches = new();
 
-        public IReadOnlyList<ILocalSwitchCallbackListener> SwitchCallbacks => _switches;
+        public IReadOnlyList<ILocalSwitchListener> SwitchCallbacks => _switches;
 
         public void ListenLoopCallbacks(object service)
         {
-            if (service is ILocalAwakeCallbackListener awake)
+            if (service is ILocalAwakeListener awake)
                 _awakes.Add(awake);
 
             if (service is ILocalAsyncAwakeListener asyncAwake)
                 _asyncAwakes.Add(asyncAwake);
 
-            if (service is ILocalSwitchCallbackListener switchCallback)
+            if (service is ILocalSwitchListener switchCallback)
                 _switches.Add(switchCallback);
 
-            if (service is ILocalLoadCallbackListener bootstrap)
+            if (service is ILocalLoadListener bootstrap)
                 _loads.Add(bootstrap);
             
             if (service is ILocalAsyncBootstrappedListener initializationLoopEnd)

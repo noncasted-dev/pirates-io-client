@@ -11,8 +11,8 @@ namespace GamePlay.Services.LevelCameras.Runtime
     public class LevelCamera :
         MonoBehaviour,
         ILevelCamera,
-        ILocalAwakeCallbackListener,
-        ILocalSwitchCallbackListener,
+        ILocalAwakeListener,
+        ILocalSwitchListener,
         IPostFixedUpdatable
     {
         [Inject]

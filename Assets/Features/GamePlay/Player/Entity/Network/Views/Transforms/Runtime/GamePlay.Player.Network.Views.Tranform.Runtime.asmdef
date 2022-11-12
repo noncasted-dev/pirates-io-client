@@ -1,0 +1,17 @@
+{
+    "name": "GamePlay.Player.Network.Views.Tranform.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:861b1281dab914af69d87c4345d0b1a2",
+        "GUID:96951d1161b4413458249663239c0b64"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

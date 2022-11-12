@@ -1,8 +1,8 @@
 ﻿using Common.EditableScriptableObjects.Attributes;
-using Features.GamePlay.Level.Environment.Chunks.Runtime;
+using GamePlay.Level.Environment.Chunks.Runtime;
 using UnityEngine;
 
-namespace Features.GamePlay.Level.Environment.Chunks.Editor
+namespace GamePlay.Level.Environment.Chunks.Editor
 {
     [DisallowMultipleComponent]
     public class ChunkBorderDrawer : MonoBehaviour

@@ -29,3 +29,4 @@ MonoBehaviour:
   _networkConnector: {fileID: 11400000, guid: eedb27641744d8740ade9adcb907b333, type: 2}
   _networkJoin: {fileID: 11400000, guid: d58ef7f5be4c8694990f9cb5a1b5db3d, type: 2}
   _networkLeave: {fileID: 11400000, guid: 0dc5ca597bf9ecc4b8331f6a8fadc285, type: 2}
+  _networkInstantiator: {fileID: 11400000, guid: a512584cb6420084ca6a32ef75e0d1b4, type: 2}

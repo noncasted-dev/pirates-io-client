@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Linq;
+using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow;
 using GamePlay.Player.Entity.Setup.Root;
 using UnityEngine;
@@ -15,7 +16,14 @@ namespace GamePlay.Player.Entity.Setup.Bootstrap
 
         public async UniTask Bootstrap(LifetimeScope parent)
         {
-            _builders = GetComponents<IPlayerContainerBuilder>();
+            var rootBuilders = GetComponentsInParent<IPlayerContainerBuilder>().ToList();
+            var bodyBuilders = GetComponents<IPlayerContainerBuilder>().ToList();
+
+            foreach (var builder in bodyBuilders)
+                rootBuilders.Remove(builder);
+            
+            _builders = rootBuilders.Concat(bodyBuilders).ToArray();
+            
             var scope = GetComponent<PlayerScope>();
 
             using (LifetimeScope.EnqueueParent(parent))

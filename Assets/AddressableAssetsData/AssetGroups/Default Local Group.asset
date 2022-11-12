@@ -65,6 +65,14 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Services/Network/Bootstrap/Config/NetworkSession.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 40f29fbd3bacb004e8387e99a4e99f96
+    m_Address: Assets/Features/GamePlay/Services/PlayerSpawn/RemoteBuilders/Config/Pool_RemoteViews.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 080bfc7bf6cf1204bb1fc0fc08b4c020
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
   m_SchemaSet:

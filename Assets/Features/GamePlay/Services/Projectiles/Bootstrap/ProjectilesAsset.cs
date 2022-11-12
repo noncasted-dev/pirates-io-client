@@ -1,4 +1,5 @@
 ﻿using Common.EditableScriptableObjects.Attributes;
+using Common.ObjectsPools.Runtime.Abstract;
 using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using GamePlay.Services.Projectiles.Factory;
@@ -23,7 +24,9 @@ namespace GamePlay.Services.Projectiles.Bootstrap
         [SerializeField] [EditableObject] private ProjectilesMoverConfigAsset _moverConfig;
         [SerializeField] [EditableObject] private ProjectilesLogSettings _logSettings;
 
-        public override async UniTask Create(IServiceBinder serviceBinder, ICallbacksRegister callbacksRegister,
+        public override async UniTask Create(
+            IServiceBinder serviceBinder,
+            ICallbacksRegister callbacksRegister,
             ISceneLoader sceneLoader)
         {
             var pool = Instantiate(_prefab);
@@ -31,14 +34,14 @@ namespace GamePlay.Services.Projectiles.Bootstrap
 
             serviceBinder.Register<ProjectilesPoolProvider>()
                 .As<IProjectilesPoolProvider>()
-                .WithParameter("poolProvider", pool.Handler);
+                .WithParameter<IPoolProvider>(pool.Handler);
 
             serviceBinder.Register<ProjectilesLogger>()
-                .WithParameter("settings", _logSettings)
+                .WithParameter(_logSettings)
                 .AsSelf();
 
             serviceBinder.Register<ProjectilesMover>()
-                .WithParameter("config", _moverConfig)
+                .WithParameter(_moverConfig)
                 .As<IProjectilesMover>()
                 .AsSelf();
 

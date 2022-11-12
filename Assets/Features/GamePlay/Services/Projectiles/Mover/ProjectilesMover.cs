@@ -13,8 +13,8 @@ namespace GamePlay.Services.Projectiles.Mover
     public class ProjectilesMover :
         IProjectilesMover,
         IFixedUpdatable,
-        ILocalAwakeCallbackListener,
-        ILocalSwitchCallbackListener
+        ILocalAwakeListener,
+        ILocalSwitchListener
     {
         public ProjectilesMover(
             IUpdater updater,

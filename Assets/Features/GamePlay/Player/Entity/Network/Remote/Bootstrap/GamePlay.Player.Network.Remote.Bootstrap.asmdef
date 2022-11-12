@@ -1,0 +1,4 @@
+{
+	"name": "GamePlay.Player.Network.Remote.Bootstrap",
+	"references":[ "GUID:fe4adae493555af4788e53948d7966ca", "GUID:b388e4ec28e7b0e40a886054c3e231af", "GUID:d89cb064a6d60b243b67336a6540d7a7" ]
+}

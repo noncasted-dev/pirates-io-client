@@ -1,7 +1,7 @@
 ﻿using GamePlay.Common.Paths;
 using UnityEngine;
 
-namespace Features.GamePlay.Level.Environment.Chunks.Runtime
+namespace GamePlay.Level.Environment.Chunks.Runtime
 {
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ConfigPrefix + "Chunk",
         menuName = GamePlayAssetsPaths.ChunkConfig)]

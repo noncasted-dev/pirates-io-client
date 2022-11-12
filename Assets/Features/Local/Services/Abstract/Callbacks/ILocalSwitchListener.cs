@@ -1,6 +1,6 @@
 ﻿namespace Local.Services.Abstract.Callbacks
 {
-    public interface ILocalSwitchCallbackListener
+    public interface ILocalSwitchListener
     {
         void OnEnabled();
         void OnDisabled();

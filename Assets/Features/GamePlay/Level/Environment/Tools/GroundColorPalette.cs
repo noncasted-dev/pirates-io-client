@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Features.GamePlay.Level.Environment.Tools
+namespace GamePlay.Level.Environment.Tools
 {
     [CreateAssetMenu(fileName = "GroundColorPalette", menuName = "GamePlay/Tools/GroundColorPalette")]
     public class GroundColorPalette : ScriptableObject

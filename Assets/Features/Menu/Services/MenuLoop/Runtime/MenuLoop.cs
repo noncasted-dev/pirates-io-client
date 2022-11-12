@@ -11,7 +11,7 @@ using VContainer;
 namespace Menu.Services.MenuLoop.Runtime
 {
     [DisallowMultipleComponent]
-    public class MenuLoop : MonoBehaviour, ILocalLoadCallbackListener, IMenuLoop
+    public class MenuLoop : MonoBehaviour, ILocalLoadListener, IMenuLoop
     {
         [Inject]
         private void Construct(

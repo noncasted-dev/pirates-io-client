@@ -10,7 +10,7 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(SpriteRenderer))]
-    public class PlayerSpriteViewView :
+    public class PlayerSpriteView :
         MonoBehaviour,
         IAwakeCallback,
         ISpriteSwitcher,

@@ -1,0 +1,17 @@
+{
+    "name": "GamePlay.Player.Network.Remote.Receivers.Sprites.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:861b1281dab914af69d87c4345d0b1a2",
+        "GUID:5a6ca98db01d77741890b42e259b7291"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

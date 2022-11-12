@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
-namespace Features.GamePlay.Level.Environment.Tools
+namespace GamePlay.Level.Environment.Tools
 {
     [DisallowMultipleComponent]
     [ExecuteAlways]

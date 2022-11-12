@@ -49,3 +49,4 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  _networkPrefab: {fileID: 770058313661532305, guid: 63238bad100a125489ae6b480d75b97f, type: 3}

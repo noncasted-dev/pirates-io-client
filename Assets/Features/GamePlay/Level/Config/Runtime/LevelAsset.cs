@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Common.Paths;
 using GamePlay.Level.Environment.Bootstrap;
 using GamePlay.Services.Common.Scope;
@@ -6,6 +7,7 @@ using GamePlay.Services.LevelCameras.Runtime;
 using GamePlay.Services.LevelLoops.Runtime;
 using GamePlay.Services.Network.Bootstrap.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
+using GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime;
 using GamePlay.Services.Projectiles.Bootstrap;
 using GamePlay.Services.TransitionScreens.Runtime;
 using Local.ComposedSceneConfig;
@@ -20,13 +22,14 @@ namespace GamePlay.Level.Config.Runtime
     {
         [SerializeField] private LevelScope _scopePrefab;
 
-        [SerializeField] private PlayerFactoryAsset _playerFactory;
-        [SerializeField] private LevelCameraAsset _levelCamera;
-        [SerializeField] private LevelLoopAsset _levelLoop;
-        [SerializeField] private LevelEnvironmentAsset _environment;
-        [SerializeField] private ProjectilesAsset _projectiles;
-        [SerializeField] private TransitionScreenAsset _transitionScreen;
-        [SerializeField] private NetworkSessionAsset _networkSession;
+        [SerializeField] [EditableObject] private PlayerFactoryAsset _playerFactory;
+        [SerializeField] [EditableObject] private LevelCameraAsset _levelCamera;
+        [SerializeField] [EditableObject] private LevelLoopAsset _levelLoop;
+        [SerializeField] [EditableObject] private LevelEnvironmentAsset _environment;
+        [SerializeField] [EditableObject] private ProjectilesAsset _projectiles;
+        [SerializeField] [EditableObject] private TransitionScreenAsset _transitionScreen;
+        [SerializeField] [EditableObject] private NetworkSessionAsset _networkSession;
+        [SerializeField] [EditableObject] private RemotePlayerBuilderAsset _remotePlayerBuilder;
 
         protected override LocalServiceAsset[] AssignServices()
         {
@@ -38,7 +41,8 @@ namespace GamePlay.Level.Config.Runtime
                 _environment,
                 _projectiles,
                 _transitionScreen,
-                _networkSession
+                _networkSession,
+                _remotePlayerBuilder
             };
 
             return list.ToArray();

@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a207708f05453c8b2b4ed96d45075c, type: 3}
   m_Name: RagonPrefabRegistry
   m_EditorClassIdentifier: 
-  _prefabs: []
+  _prefabs:
+  - EntityType: 1
+    Prefab: {fileID: 770058313661532305, guid: 63238bad100a125489ae6b480d75b97f, type: 3}
   Scan: 1

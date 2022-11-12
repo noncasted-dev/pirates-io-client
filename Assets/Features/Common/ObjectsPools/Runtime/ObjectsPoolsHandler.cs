@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Common.EditableScriptableObjects.Attributes;
 using Common.ObjectsPools.Runtime.Abstract;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace Common.ObjectsPools.Runtime
 {
     public class ObjectsPoolsHandler : MonoBehaviour, IObjectsPoolHandler, IPoolProvider
     {
-        [SerializeField] private PoolEntryAsset[] _entries;
+        [SerializeField] [EditableObject] private PoolEntryAsset[] _entries;
 
         private readonly Dictionary<object, IObjectsPool> _pools = new();
 

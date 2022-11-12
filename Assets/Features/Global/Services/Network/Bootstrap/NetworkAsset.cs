@@ -3,6 +3,8 @@ using Global.Common;
 using Global.Services.Common.Abstract;
 using Global.Services.Network.Connection.Logs;
 using Global.Services.Network.Connection.Runtime;
+using Global.Services.Network.Instantiators.Logs;
+using Global.Services.Network.Instantiators.Runtime;
 using Global.Services.Network.Session.Join.Logs;
 using Global.Services.Network.Session.Join.Runtime;
 using Global.Services.Network.Session.Leave.Logs;
@@ -21,6 +23,7 @@ namespace Global.Services.Network.Bootstrap
         [SerializeField] [EditableObject] private NetworkConnectorLogSettings _connectorLogSettings;
         [SerializeField] [EditableObject] private NetworkSessionJoinLogSettings _sessionJoinLogSettings;
         [SerializeField] [EditableObject] private NetworkSessionLeaveLogSettings _sessionLeaveLogSettings;
+        [SerializeField] [EditableObject] private NetworkInstantiatorLogSettings _instantiatorLogSettings;
 
         [SerializeField] private NetworkConnector _prefab;
 
@@ -31,18 +34,25 @@ namespace Global.Services.Network.Bootstrap
 
             var joiner = connector.GetComponent<NetworkSessionJoiner>();
             var leaver = connector.GetComponent<NetworkSessionLeaver>();
+            var instantiator = connector.GetComponent<NetworkInstantiator>();
 
             builder.Register<NetworkConnectorLogger>(Lifetime.Scoped)
-                .WithParameter("settings", _connectorLogSettings);
+                .WithParameter(_connectorLogSettings);
 
             builder.Register<NetworkSessionJoinLogger>(Lifetime.Scoped)
-                .WithParameter("settings", _sessionJoinLogSettings);
+                .WithParameter(_sessionJoinLogSettings);
 
             builder.Register<NetworkSessionLeaveLogger>(Lifetime.Scoped)
-                .WithParameter("settings", _sessionLeaveLogSettings);
+                .WithParameter(_sessionLeaveLogSettings);
+            
+            builder.Register<NetworkInstantiatorLogger>(Lifetime.Scoped)
+                .WithParameter(_instantiatorLogSettings);
+
+            builder.RegisterComponent(instantiator)
+                .As<INetworkInstantiator>();
 
             builder.RegisterComponent(connector)
-                .WithParameter("config", _connectionConfig)
+                .WithParameter(_connectionConfig)
                 .AsImplementedInterfaces();
 
             builder.RegisterComponent(joiner)
@@ -53,6 +63,7 @@ namespace Global.Services.Network.Bootstrap
 
             serviceBinder.AddToModules(connector);
             serviceBinder.ListenCallbacks(connector);
+            serviceBinder.ListenCallbacks(instantiator);
         }
     }
 }

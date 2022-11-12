@@ -12,6 +12,7 @@ using Global.Services.GlobalCameras.Logs;
 using Global.Services.InputViews.Logs;
 using Global.Services.LoadingScreens.Logs;
 using Global.Services.Network.Connection.Logs;
+using Global.Services.Network.Instantiators.Logs;
 using Global.Services.Network.Session.Join.Logs;
 using Global.Services.Network.Session.Leave.Logs;
 using Global.Services.ResourcesCleaners.Logs;
@@ -61,5 +62,6 @@ namespace Global.Services.Loggers.Editor
         [SerializeField] [EditableObject] private NetworkConnectorLogSettings _networkConnector;
         [SerializeField] [EditableObject] private NetworkSessionJoinLogSettings _networkJoin;
         [SerializeField] [EditableObject] private NetworkSessionLeaveLogSettings _networkLeave;
+        [SerializeField] [EditableObject] private NetworkInstantiatorLogSettings _networkInstantiator;
     }
 }

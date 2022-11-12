@@ -36,5 +36,6 @@
         public const string NetworkBootstrap = _network + "Bootstrap";
         public const string NetworkConnection = _network + "Connector/";
         public const string NetworkSession = _network + "Session/";
+        public const string NetworkInstantiator = _network + "Instantiator/";
     }
 }

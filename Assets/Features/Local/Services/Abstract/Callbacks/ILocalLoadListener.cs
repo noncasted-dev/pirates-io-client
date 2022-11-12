@@ -1,6 +1,6 @@
 ﻿namespace Local.Services.Abstract.Callbacks
 {
-    public interface ILocalLoadCallbackListener
+    public interface ILocalLoadListener
     {
         void OnLoaded();
     }

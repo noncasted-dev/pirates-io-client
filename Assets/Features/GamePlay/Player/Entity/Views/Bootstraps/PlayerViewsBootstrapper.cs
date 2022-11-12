@@ -17,7 +17,7 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
 {
     public class PlayerViewsBootstrapper : MonoBehaviour, IPlayerContainerBuilder
     {
-        [SerializeField] private PlayerSpriteViewView _sprite;
+        [SerializeField] private PlayerSpriteView _sprite;
         [SerializeField] private PlayerBodyTransform _transform;
         [SerializeField] private PlayerRotationPoint _rotationPoint;
         [SerializeField] private PlayerRigidBody _rigidBody;

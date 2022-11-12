@@ -1,6 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using Global.Services.Network.Connection.Runtime;
+using Global.Services.Network.Session.Join.Runtime;
 using Local.Services.Abstract.Callbacks;
 using Menu.Services.UI.Runtime;
 using UniRx;
@@ -15,8 +16,10 @@ namespace Menu.Services.MenuLoop.Runtime
         [Inject]
         private void Construct(
             INetworkConnector connector,
+            INetworkSessionJoiner sessionJoiner,
             IMenuUI menuUI)
         {
+            _sessionJoiner = sessionJoiner;
             _menuUI = menuUI;
             _connector = connector;
         }
@@ -24,6 +27,7 @@ namespace Menu.Services.MenuLoop.Runtime
         private IDisposable _playEvent;
         private INetworkConnector _connector;
         private IMenuUI _menuUI;
+        private INetworkSessionJoiner _sessionJoiner;
 
         private void OnEnable()
         {
@@ -55,13 +59,36 @@ namespace Menu.Services.MenuLoop.Runtime
             {
                 case NetworkConnectResultType.Success:
                 {
-                    var playFromMenu = new PlayFromMenuEvent();
-                    MessageBroker.Default.Publish(playFromMenu);
+                    TryJoin().Forget();
                     break;
                 }
                 case NetworkConnectResultType.Fail:
                 {
                     _menuUI.OnLoginWithError("Connection error");
+                    break;
+                }
+                default:
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+
+        private async UniTaskVoid TryJoin()
+        {
+            var result = await _sessionJoiner.JoinRandom();
+
+            switch (result)
+            {
+                case NetworkSessionJoinResultType.Success:
+                {
+                    var playFromMenu = new PlayFromMenuEvent();
+                    MessageBroker.Default.Publish(playFromMenu);
+                    break;
+                }
+                case NetworkSessionJoinResultType.Fail:
+                {
+                    _menuUI.OnLoginWithError("Session join error");
                     break;
                 }
                 default:

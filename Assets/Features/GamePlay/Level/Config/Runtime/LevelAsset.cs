@@ -4,6 +4,7 @@ using GamePlay.Level.Environment.Bootstrap;
 using GamePlay.Services.Common.Scope;
 using GamePlay.Services.LevelCameras.Runtime;
 using GamePlay.Services.LevelLoops.Runtime;
+using GamePlay.Services.Network.Bootstrap.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using GamePlay.Services.Projectiles.Bootstrap;
 using GamePlay.Services.TransitionScreens.Runtime;
@@ -25,6 +26,7 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField] private LevelEnvironmentAsset _environment;
         [SerializeField] private ProjectilesAsset _projectiles;
         [SerializeField] private TransitionScreenAsset _transitionScreen;
+        [SerializeField] private NetworkSessionAsset _networkSession;
 
         protected override LocalServiceAsset[] AssignServices()
         {
@@ -35,7 +37,8 @@ namespace GamePlay.Level.Config.Runtime
                 _levelLoop,
                 _environment,
                 _projectiles,
-                _transitionScreen
+                _transitionScreen,
+                _networkSession
             };
 
             return list.ToArray();

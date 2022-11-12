@@ -61,7 +61,7 @@ namespace Global.Services.AssetsFlow.Runtime
             await PreloadAsync();
 
             _logger.OnInstantiate(_result.AssetName);
-
+            Debug.Log(position);
             var gameObject = Object.Instantiate(_result.Instance, position, Quaternion.identity);
 
             _instances.AddLast(gameObject);

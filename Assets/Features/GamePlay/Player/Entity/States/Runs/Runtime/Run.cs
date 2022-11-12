@@ -1,9 +1,7 @@
-﻿using Common.Structs;
-using GamePlay.Player.Entity.Components.StateMachines.Runtime;
+﻿using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
 using GamePlay.Player.Entity.States.Runs.Logs;
-using GamePlay.Player.Entity.Views.Animators.Runtime;
 using GamePlay.Player.Entity.Views.RigidBodies.Runtime;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
@@ -19,9 +17,6 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             IUpdater updater,
             IRunConfig runConfig,
             ISpriteFlipper spriteFlipper,
-            IAnimatorView animatorView,
-            AnimatorFloat rotationFloat,
-            AnimationTrigger animation,
             StateDefinition definition,
             RunLogger logger)
         {
@@ -31,20 +26,13 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             _runConfig = runConfig;
 
             _spriteFlipper = spriteFlipper;
-            _animatorView = animatorView;
-            _rotationFloat = rotationFloat;
-            _animation = animation;
 
             Definition = definition;
             _logger = logger;
         }
 
-        private readonly AnimationTrigger _animation;
-        private readonly IAnimatorView _animatorView;
-
         private readonly RunLogger _logger;
         private readonly IRigidBody _rigidBody;
-        private readonly AnimatorFloat _rotationFloat;
         private readonly IRunConfig _runConfig;
 
         private readonly ISpriteFlipper _spriteFlipper;
@@ -127,8 +115,6 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             if (_isStarted == true)
                 return;
 
-            _animatorView.SetTrigger(_animation);
-
             _isStarted = true;
             _stateMachine.Enter(this);
             _updater.Add(this);
@@ -137,7 +123,6 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
         private void UpdateInput()
         {
             _spriteFlipper.FlipAlong(_input, true);
-            _animatorView.SetFloat(_rotationFloat, _input.GetAngle());
         }
     }
 }

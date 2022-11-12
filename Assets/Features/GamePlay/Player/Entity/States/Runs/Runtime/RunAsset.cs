@@ -13,8 +13,6 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
         menuName = PlayerAssetsPaths.Run + "State")]
     public class RunAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private RunAnimationTriggerAsset _animation;
-        [SerializeField] [EditableObject] private AnimatorFloatAsset _rotationFloat;
         [SerializeField] [EditableObject] private RunLogSettings _logSettings;
         [SerializeField] [EditableObject] private RunConfigAsset _config;
         [SerializeField] [EditableObject] private RunDefinition _definition;
@@ -28,16 +26,11 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
                 .WithParameter("asset", _config)
                 .As<IRunConfig>();
 
-            var animation = _animation.CreateTrigger();
-            var rotation = _rotationFloat.CreateFloat();
-
             builder.Register<RunInput>(Lifetime.Scoped)
                 .AsSelf();
 
             builder.Register<Run>(Lifetime.Scoped)
                 .WithParameter("definition", _definition)
-                .WithParameter("animation", animation)
-                .WithParameter("rotationFloat", rotation)
                 .As<IRun>();
         }
 

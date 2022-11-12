@@ -4,6 +4,7 @@ using Global.Services.ResourcesCleaners.Runtime;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Local.ComposedSceneConfig;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using VContainer;
 
 namespace Global.Services.CurrentSceneHandlers.Runtime
@@ -14,15 +15,18 @@ namespace Global.Services.CurrentSceneHandlers.Runtime
         private void Construct(
             ISceneUnloader unloader,
             IResourcesCleaner resourcesCleaner,
-            CurrentSceneHandlerLogger logger)
+            CurrentSceneHandlerLogger logger,
+            Scene global)
         {
             _logger = logger;
             _unloader = unloader;
             _resourcesCleaner = resourcesCleaner;
+            _global = global;
         }
 
         private ComposedSceneLoadResult _current;
         private CurrentSceneHandlerLogger _logger;
+        private Scene _global;
 
         private IResourcesCleaner _resourcesCleaner;
         private ISceneUnloader _unloader;
@@ -36,6 +40,8 @@ namespace Global.Services.CurrentSceneHandlers.Runtime
 
         public async UniTask Unload()
         {
+            SceneManager.SetActiveScene(_global);
+            
             if (_current == null)
             {
                 _logger.OnNoCurrentSceneError();

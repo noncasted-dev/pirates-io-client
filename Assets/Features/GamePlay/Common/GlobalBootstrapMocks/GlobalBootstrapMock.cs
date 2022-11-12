@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using GamePlay.Level.Config.Runtime;
 using Global.Bootstrappers;
-using Global.GameLoops.Abstract;
+using Global.GameLoops.Runtime;
 using Global.Services.Common.Config.Abstract;
 using Global.Services.Common.Scope;
 using Global.Services.ScenesFlow.Runtime.Abstract;
@@ -18,7 +18,7 @@ namespace GamePlay.Common.GlobalBootstrapMocks
     {
         private static bool _isBootstrapped = false;
         [SerializeField] private GlobalScope _scope;
-        [SerializeField] private GlobalGameLoopAsset _gameLoop;
+        [SerializeField] private GameLoopAsset _gameLoop;
         [SerializeField] private LevelAsset _level;
         [SerializeField] private AssetReference _servicesScene;
 
@@ -65,9 +65,11 @@ namespace GamePlay.Common.GlobalBootstrapMocks
                 foreach (var service in services)
                     service.Create(builder, binder);
 
-                _gameLoop.Create(builder, binder.AddToModules);
+                _gameLoop.Create(builder, binder);
             }
 
+            _scope.Container.Resolve<GameLoop>();
+            
             binder.InvokeFlowCallbacks();
         }
 

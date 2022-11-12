@@ -11,7 +11,7 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(CircleCollider2D))]
+    [RequireComponent(typeof(CapsuleCollider2D))]
     public class PlayerRigidBody : MonoBehaviour,
         IRigidBody,
         IAwakeCallback,
@@ -34,7 +34,7 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
         private readonly Queue<PhysicsMove> _moves = new();
         private readonly Queue<Vector2> _teleports = new();
 
-        private CircleCollider2D _collider;
+        private CapsuleCollider2D _collider;
 
         private Vector2 _currentPosition;
         private RigidBodyLogger _logger;
@@ -45,12 +45,15 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
         public void OnAwake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
-            _collider = GetComponent<CircleCollider2D>();
+            _collider = GetComponent<CapsuleCollider2D>();
+
+            _currentPosition = _rigidbody.position;
         }
 
         public void OnFixedUpdate(float delta)
         {
             foreach (var interaction in _interactions)
+            {
                 switch (interaction)
                 {
                     case PhysicsInteraction.Move:
@@ -67,6 +70,7 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
+            }
 
             _rigidbody.position = _currentPosition;
 
@@ -110,9 +114,11 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
                 var xPosition = _currentPosition;
                 xPosition.x += direction.x * distance;
 
-                var resultX = Physics2D.CircleCastNonAlloc(
+                var resultX = Physics2D.CapsuleCastNonAlloc(
                     xPosition,
-                    _collider.radius,
+                    _collider.size,
+                    _collider.direction,
+                    0f,
                     direction,
                     _buffer,
                     distance,
@@ -129,9 +135,11 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
                 var yPosition = resultPosition;
                 yPosition.y += direction.y * distance;
 
-                var resultY = Physics2D.CircleCastNonAlloc(
+                var resultY = Physics2D.CapsuleCastNonAlloc(
                     yPosition,
-                    _collider.radius,
+                    _collider.size,
+                    _collider.direction,
+                    0f,
                     direction,
                     _buffer,
                     distance,

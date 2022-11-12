@@ -1,5 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
-using Global.GameLoops.Abstract;
+using Global.GameLoops.Runtime;
 using Global.Services.Common.Config.Abstract;
 using Global.Services.Common.Scope;
 using UnityEngine;
@@ -14,7 +14,7 @@ namespace Global.Bootstrappers
     public class GameBootstrapper : MonoBehaviour
     {
         [SerializeField] private GlobalScope _scope;
-        [SerializeField] private GlobalGameLoopAsset _gameLoop;
+        [SerializeField] private GameLoopAsset _gameLoop;
         [SerializeField] private AssetReference _servicesScene;
         [SerializeField] private GameObject _camera;
         
@@ -31,8 +31,6 @@ namespace Global.Bootstrappers
 
             var binder = new ServiceBinder(scene.Scene);
 
-            GlobalGameLoop gameLoop = null;
-
             binder.AddToModules(_scope);
 
             using (LifetimeScope.Enqueue(OnConfiguration))
@@ -47,16 +45,14 @@ namespace Global.Bootstrappers
                 foreach (var service in services)
                     service.Create(builder, binder);
 
-                gameLoop = _gameLoop.Create(builder, binder.AddToModules);
+                _gameLoop.Create(builder, binder);
             }
 
             Destroy(_camera);
             
             binder.InvokeFlowCallbacks();
 
-            gameLoop.OnAwake();
-            gameLoop.OnBootstrapped();
-            gameLoop.Begin();
+            _scope.Container.Resolve<GameLoop>().Begin();
         }
     }
 }

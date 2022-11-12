@@ -45,7 +45,7 @@ namespace GamePlay.Services.Projectiles.Bootstrap
             var scene = await sceneLoader.Load(new EmptySceneLoadData(_poolScene));
             SceneManager.MoveGameObjectToScene(pool.gameObject, scene.Instance.Scene);
 
-            callbacksRegister.ListenFlowCallbacks(pool);
+            callbacksRegister.ListenLoopCallbacks(pool);
             callbacksRegister.ListenContainerCallbacks(pool);
 
             pool.OnSceneLoaded(scene.Instance.Scene);
@@ -54,7 +54,7 @@ namespace GamePlay.Services.Projectiles.Bootstrap
         public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
         {
             var mover = resolver.Resolve<ProjectilesMover>();
-            callbacksRegister.ListenFlowCallbacks(mover);
+            callbacksRegister.ListenLoopCallbacks(mover);
         }
     }
 }

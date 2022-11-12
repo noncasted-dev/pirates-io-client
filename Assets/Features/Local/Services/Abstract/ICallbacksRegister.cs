@@ -2,7 +2,7 @@
 {
     public interface ICallbacksRegister
     {
-        void ListenFlowCallbacks(object service);
+        void ListenLoopCallbacks(object service);
         void ListenContainerCallbacks(object service);
     }
 }

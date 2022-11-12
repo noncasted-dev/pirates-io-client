@@ -24,7 +24,7 @@ namespace Menu.Services.MenuLoop.Runtime
             serviceBinder.RegisterComponent(loop);
 
             serviceBinder.AddToModules(loop);
-            callbacksRegister.ListenFlowCallbacks(loop);
+            callbacksRegister.ListenLoopCallbacks(loop);
         }
 
         public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)

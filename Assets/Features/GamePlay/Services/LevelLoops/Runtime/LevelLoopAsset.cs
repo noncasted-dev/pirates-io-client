@@ -28,7 +28,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
             serviceBinder.RegisterComponent(levelLoop);
 
             serviceBinder.AddToModules(levelLoop);
-            callbacksRegister.ListenFlowCallbacks(levelLoop);
+            callbacksRegister.ListenLoopCallbacks(levelLoop);
         }
 
         public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)

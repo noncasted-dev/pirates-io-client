@@ -12,8 +12,6 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
     public class RespawnAsset : PlayerComponentAsset
     {
         [SerializeField] [EditableObject] private RespawnLogSettings _logSettings;
-        [SerializeField] [EditableObject] private RespawnAnimationTriggerAsset _animation;
-        [SerializeField] [EditableObject] private RespawnConfigAsset _configAsset;
         [SerializeField] [EditableObject] private RespawnDefinition _definition;
 
         public override void Register(IContainerBuilder builder)
@@ -21,13 +19,9 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
             builder.Register<RespawnLogger>(Lifetime.Scoped)
                 .WithParameter("settings", _logSettings);
 
-            var animation = _animation.CreateTrigger();
-
             builder.Register<Respawn>(Lifetime.Scoped)
                 .As<IRespawn>()
-                .WithParameter("definition", _definition)
-                .WithParameter("animation", animation)
-                .WithParameter("config", _configAsset);
+                .WithParameter("definition", _definition);
         }
     }
 }

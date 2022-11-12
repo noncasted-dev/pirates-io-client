@@ -25,11 +25,11 @@ namespace Global.Services.Network.Session.Join.Runtime
             return result;
         }
         
-        public void OnJoined()
+        public void OnLevel(string sceneName)
         {
             _completion.TrySetResult(NetworkSessionJoinResultType.Success);
         }
-        
+
         public void OnFailed(string message)
         {
             _failMessage = message;
@@ -42,6 +42,10 @@ namespace Global.Services.Network.Session.Join.Runtime
         public void OnAuthorized(string playerId, string playerName)
         {
             
+        }
+        
+        public void OnJoined()
+        {
         }
 
         public void OnLeaved()
@@ -65,10 +69,6 @@ namespace Global.Services.Network.Session.Join.Runtime
         }
 
         public void OnOwnerShipChanged(RagonPlayer player)
-        {
-        }
-
-        public void OnLevel(string sceneName)
         {
         }
 

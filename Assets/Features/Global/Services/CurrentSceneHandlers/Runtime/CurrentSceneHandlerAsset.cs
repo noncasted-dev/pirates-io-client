@@ -3,6 +3,7 @@ using Global.Common;
 using Global.Services.Common.Abstract;
 using Global.Services.CurrentSceneHandlers.Logs;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
 
@@ -21,11 +22,14 @@ namespace Global.Services.CurrentSceneHandlers.Runtime
             var sceneHandler = Instantiate(_prefab);
             sceneHandler.name = "CurrentSceneHandler";
 
+            var global = SceneManager.GetActiveScene();
+
             builder.Register<CurrentSceneHandlerLogger>(Lifetime.Scoped)
                 .WithParameter("settings", _logSettings);
 
             builder.RegisterComponent(sceneHandler)
-                .AsImplementedInterfaces();
+                .WithParameter("global", global)
+                .As<ICurrentSceneHandler>();
 
             serviceBinder.AddToModules(sceneHandler);
             serviceBinder.ListenCallbacks(sceneHandler);

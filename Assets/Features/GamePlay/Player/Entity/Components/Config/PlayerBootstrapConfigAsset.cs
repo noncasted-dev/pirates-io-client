@@ -9,7 +9,6 @@ using GamePlay.Player.Entity.States.None.Runtime;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime;
 using GamePlay.Player.Entity.States.Respawns.Runtime;
 using GamePlay.Player.Entity.States.Runs.Runtime;
-using GamePlay.Player.Entity.Weapons.Handler.Runtime;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.Components.Config
@@ -21,12 +20,10 @@ namespace GamePlay.Player.Entity.Components.Config
         [Header("Components")] [SerializeField] [EditableObject]
         private RotationAsset _rotation;
         [SerializeField] [EditableObject] private StateMachineAsset _stateMachine;
-        [SerializeField] [EditableObject] private WeaponsHandlerAsset _weaponsHandler;
         [Space(50)] [Header("States")] [SerializeField] [EditableObject]
         private FloatingStateAsset _floating;
         [SerializeField] [EditableObject] private IdleAsset _idle;
         [SerializeField] [EditableObject] private NoneAsset _none;
-        [SerializeField] [EditableObject] private RangeAttackAsset _rangeAttack;
         [SerializeField] [EditableObject] private RespawnAsset _respawn;
         [SerializeField] [EditableObject] private RunAsset _run;
 
@@ -36,12 +33,9 @@ namespace GamePlay.Player.Entity.Components.Config
             {
                 _rotation,
                 _stateMachine,
-                _weaponsHandler,
-
                 _floating,
                 _idle,
                 _none,
-                _rangeAttack,
                 _respawn,
                 _run
             };

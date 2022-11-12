@@ -1,15 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class FillValueNumber : MonoBehaviour
+namespace Common.Artwork.UI.UI_pack.Scripts
 {
-    public Image TargetImage;
-    // Update is called once per frame
-    void Update()
+    public class FillValueNumber : MonoBehaviour
     {
-        float amount = TargetImage.fillAmount * 100;
-        gameObject.GetComponent<Text>().text = amount.ToString("F0");
+        public Image TargetImage;
+        // Update is called once per frame
+        void Update()
+        {
+            float amount = TargetImage.fillAmount * 100;
+            gameObject.GetComponent<Text>().text = amount.ToString("F0");
+        }
     }
 }

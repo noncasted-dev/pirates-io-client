@@ -37,7 +37,7 @@ namespace GamePlay.Services.LevelCameras.Runtime
                 .AsSelf();
 
             serviceBinder.AddToModules(levelCamera);
-            callbacksRegister.ListenFlowCallbacks(levelCamera);
+            callbacksRegister.ListenLoopCallbacks(levelCamera);
         }
     }
 }

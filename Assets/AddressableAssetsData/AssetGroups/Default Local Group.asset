@@ -61,6 +61,10 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Level/Config/Scenes/Pool_Projectiles.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 68cf2bfb4788e2d40a1936f3f2345a8a
+    m_Address: Assets/Features/GamePlay/Services/Network/Bootstrap/Config/NetworkSession.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
   m_SchemaSet:

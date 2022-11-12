@@ -1,8 +1,7 @@
-﻿using System;
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using Global.Common;
-using Global.GameLoops.Abstract;
 using Global.GameLoops.Logs;
+using Global.Services.Common.Abstract;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -11,12 +10,12 @@ namespace Global.GameLoops.Runtime
 {
     [CreateAssetMenu(fileName = GlobalAssetsPaths.ServicePrefix + "Global",
         menuName = GlobalAssetsPaths.GameLoop + "Service", order = 0)]
-    public class GameLoopAsset : GlobalGameLoopAsset
+    public class GameLoopAsset : GlobalServiceAsset
     {
         [SerializeField] [EditableObject] private GameLoopLogSettings _logSettings;
         [SerializeField] private GameLoop _prefab;
 
-        public override GlobalGameLoop Create(IContainerBuilder builder, Action<MonoBehaviour> addToModules)
+        public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
         {
             var gameLoop = Instantiate(_prefab);
             gameLoop.name = "GameLoop";
@@ -25,10 +24,9 @@ namespace Global.GameLoops.Runtime
                 .WithParameter("settings", _logSettings);
 
             builder.RegisterComponent(gameLoop).AsImplementedInterfaces();
-
-            addToModules?.Invoke(gameLoop);
-
-            return gameLoop;
+            
+            serviceBinder.ListenCallbacks(gameLoop);
+            serviceBinder.AddToModules(gameLoop);
         }
     }
 }

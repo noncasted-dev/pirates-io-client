@@ -1,8 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using Cysharp.Threading.Tasks;
 using GamePlay.Level.Config.Runtime;
-using Global.GameLoops.Abstract;
 using Global.GameLoops.Flow;
 using Global.GameLoops.Logs;
+using Global.Services.Common.Abstract;
 using Global.Services.Common.Scope;
 using Global.Services.CurrentCameras.Runtime;
 using Global.Services.CurrentSceneHandlers.Runtime;
@@ -11,12 +12,14 @@ using Global.Services.LoadingScreens.Runtime;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Local.ComposedSceneConfig;
 using Menu.Bootstrap;
+using Menu.Services.MenuLoop.Runtime;
+using UniRx;
 using UnityEngine;
 using VContainer;
 
 namespace Global.GameLoops.Runtime
 {
-    public class GameLoop : GlobalGameLoop, IMenuLoader, ILevelLoader
+    public class GameLoop : MonoBehaviour, IMenuLoader, ILevelLoader, IGlobalServiceAwakeListener
     {
         [Inject]
         private void Construct(
@@ -50,7 +53,19 @@ namespace Global.GameLoops.Runtime
 
         private GlobalScope _scope;
 
-        public override void Begin()
+        private IDisposable _playFromMenuEvent;
+        
+        public void OnAwake()
+        {
+            _playFromMenuEvent = MessageBroker.Default.Receive<PlayFromMenuEvent>().Subscribe(OnPlayFromMenu);
+        }
+
+        private void OnDestroy()
+        {
+            _playFromMenuEvent?.Dispose();
+        }
+
+        public void Begin()
         {
             _logger.OnBegin();
 
@@ -71,13 +86,18 @@ namespace Global.GameLoops.Runtime
             LoadScene(_menu).Forget();
         }
 
+        private void OnPlayFromMenu(PlayFromMenuEvent data)
+        {
+            LoadLevel();
+        }
+
         private async UniTaskVoid LoadScene(ComposedSceneAsset asset)
         {
             _globalCamera.Enable();
             _currentCamera.SetCamera(_globalCamera.Camera);
 
             _loadingScreen.Show();
-
+            
             var unload = _currentSceneHandler.Unload();
             var result = await asset.Load(_scope, _loader);
 

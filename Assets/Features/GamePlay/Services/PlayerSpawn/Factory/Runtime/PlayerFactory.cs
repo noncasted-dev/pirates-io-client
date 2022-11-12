@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using Features.Global.Services.Profiles.Storage;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Root;
@@ -21,8 +22,10 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             INetworkInstantiator networkInstantiator,
             LevelScope scope,
             ISpawnPoints spawnPoints,
+            IProfileStorageProvider profileStorageProvider,
             PlayerFactoryLogger logger)
         {
+            _profileStorageProvider = profileStorageProvider;
             _networkInstantiator = networkInstantiator;
             _logger = logger;
             _spawnPoints = spawnPoints;
@@ -38,14 +41,15 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
         private LevelScope _scope;
         private ISpawnPoints _spawnPoints;
         private INetworkInstantiator _networkInstantiator;
+        private IProfileStorageProvider _profileStorageProvider;
 
         public async UniTask<IPlayerRoot> Create()
         {
             var spawnPoint = _spawnPoints.GetSpawnPoint();
-
-            var payload = new PlayerPayload();
-            var networkObject 
-                = await _networkInstantiator.Instantiate<PlayerNetworkRoot, PlayerPayload>(
+            
+            var payload = new PlayerPayload(_profileStorageProvider.UserName);
+            
+            var networkObject = await _networkInstantiator.Instantiate<PlayerNetworkRoot, PlayerPayload>(
                     _networkPrefab,
                     spawnPoint,
                     payload);

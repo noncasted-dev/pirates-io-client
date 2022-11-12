@@ -1,5 +1,6 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
+using Features.Global.Services.Profiles.Storage;
 using Global.Services.Network.Connection.Runtime;
 using Global.Services.Network.Session.Join.Runtime;
 using Local.Services.Abstract.Callbacks;
@@ -17,8 +18,10 @@ namespace Menu.Services.MenuLoop.Runtime
         private void Construct(
             INetworkConnector connector,
             INetworkSessionJoiner sessionJoiner,
-            IMenuUI menuUI)
+            IMenuUI menuUI,
+            IProfileStoragePresenter profileStoragePresenter)
         {
+            _profileStoragePresenter = profileStoragePresenter;
             _sessionJoiner = sessionJoiner;
             _menuUI = menuUI;
             _connector = connector;
@@ -28,6 +31,7 @@ namespace Menu.Services.MenuLoop.Runtime
         private INetworkConnector _connector;
         private IMenuUI _menuUI;
         private INetworkSessionJoiner _sessionJoiner;
+        private IProfileStoragePresenter _profileStoragePresenter;
 
         private void OnEnable()
         {
@@ -59,6 +63,7 @@ namespace Menu.Services.MenuLoop.Runtime
             {
                 case NetworkConnectResultType.Success:
                 {
+                    _profileStoragePresenter.SetUserName(userName);
                     TryJoin().Forget();
                     break;
                 }

@@ -1,4 +1,5 @@
 ﻿using Common.EditableScriptableObjects.Attributes;
+using Features.Global.Services.Profiles.Logs;
 using GamePlay.Common.SceneObjects.Logs;
 using Global.Common;
 using Global.GameLoops.Logs;
@@ -35,6 +36,7 @@ namespace Global.Services.Loggers.Editor
         [Header("Data")]
         [SerializeField] [EditableObject] private AssetsFlowLogSettings _assetsFlow;
         [SerializeField] [EditableObject] private FilesFlowLogSettings _filesFlow;
+        [SerializeField] [EditableObject] private ProfileLogSettings _profile;
         [Space(30)]
         
         [Header("System")]

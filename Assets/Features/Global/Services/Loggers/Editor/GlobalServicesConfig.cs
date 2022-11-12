@@ -1,4 +1,5 @@
 ﻿using Common.EditableScriptableObjects.Attributes;
+using Features.Global.Services.Profiles.Storage;
 using GamePlay.Common.SceneObjects.Global;
 using Global.Common;
 using Global.Services.ApplicationProxies.Runtime;
@@ -40,5 +41,6 @@ namespace Global.Services.Loggers.Editor
         [SerializeField] [EditableObject] private SceneObjectsAsset _sceneObject;
         [SerializeField] [EditableObject] private DebugConsoleAsset _debugConsole;
         [SerializeField] [EditableObject] private NetworkAsset _network;
+        [SerializeField] [EditableObject] private ProfileAsset _profile;
     }
 }

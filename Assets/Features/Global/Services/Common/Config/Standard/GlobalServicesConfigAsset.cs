@@ -1,4 +1,5 @@
 ﻿using Common.EditableScriptableObjects.Attributes;
+using Features.Global.Services.Profiles.Storage;
 using GamePlay.Common.SceneObjects.Global;
 using Global.Common;
 using Global.Services.ApplicationProxies.Runtime;
@@ -42,6 +43,7 @@ namespace Global.Services.Common.Config.Standard
         [SerializeField] [EditableObject] private SceneObjectsAsset _sceneObject;
         [SerializeField] [EditableObject] private DebugConsoleAsset _debugConsole;
         [SerializeField] [EditableObject] private NetworkAsset _network;
+        [SerializeField] [EditableObject] private ProfileAsset _profile;
 
         public override GlobalServiceAsset[] GetAssets()
         {
@@ -62,7 +64,8 @@ namespace Global.Services.Common.Config.Standard
                 _updater,
                 _sceneObject,
                 _debugConsole,
-                _network
+                _network,
+                _profile
             };
         }
     }

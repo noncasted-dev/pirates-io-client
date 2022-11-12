@@ -17,6 +17,7 @@ MonoBehaviour:
   _globalCamera: {fileID: 11400000, guid: ae0a363b108f34e48a591b1a38d7f500, type: 2}
   _assetsFlow: {fileID: 11400000, guid: de512ef11455f1c4092fd1be635f8e4c, type: 2}
   _filesFlow: {fileID: 11400000, guid: 72dc8a95d47e38f4aa6885297257b3b7, type: 2}
+  _profile: {fileID: 11400000, guid: d91a9f4ff0877a04ca742056c23aaa15, type: 2}
   _applicationProxy: {fileID: 11400000, guid: 667a16ad3a7a8ac469d6aa4ad6645fb8, type: 2}
   _resourcesCleaner: {fileID: 11400000, guid: 6c413d7e88eddf345ae21e8dbcc4f1fc, type: 2}
   _inputView: {fileID: 11400000, guid: 39996899f32e07342bc857aa456bdd59, type: 2}

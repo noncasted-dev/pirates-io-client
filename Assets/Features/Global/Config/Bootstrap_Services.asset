@@ -28,3 +28,4 @@ MonoBehaviour:
   _sceneObject: {fileID: 11400000, guid: 6bfc1c1107733774cb653abb4a884963, type: 2}
   _debugConsole: {fileID: 11400000, guid: e3ab40223d3185148955ce7add75ce44, type: 2}
   _network: {fileID: 11400000, guid: 587aa68a7c7f72e4a98930e9fc479710, type: 2}
+  _profile: {fileID: 11400000, guid: ec3ae8df80896754b88543c0bcd8516c, type: 2}

@@ -16,7 +16,6 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
             ILogger logger,
             IProjectilesPoolProvider projectiles)
         {
-            Debug.Log("Bootstrap remote");
         }
 
         public void SetPosition(Vector2 position)

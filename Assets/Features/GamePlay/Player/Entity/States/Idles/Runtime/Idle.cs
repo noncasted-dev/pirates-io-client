@@ -1,4 +1,5 @@
 ﻿using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
+using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
@@ -11,11 +12,13 @@ namespace GamePlay.Player.Entity.States.Idles.Runtime
         public Idle(
             IStateMachine stateMachine,
             IInertialMovement inertialMovement,
+            ISpriteRotation spriteRotation,
             IdleDefinition definition,
             IdleLogger logger)
         {
             _stateMachine = stateMachine;
             _inertialMovement = inertialMovement;
+            _spriteRotation = spriteRotation;
             Definition = definition;
             _logger = logger;
         }
@@ -24,20 +27,25 @@ namespace GamePlay.Player.Entity.States.Idles.Runtime
 
         private readonly IStateMachine _stateMachine;
         private readonly IInertialMovement _inertialMovement;
+        private readonly ISpriteRotation _spriteRotation;
 
         public StateDefinition Definition { get; }
 
         public void Enter()
         {
             _stateMachine.Enter(this);
+            
             _inertialMovement.Enable();
-
+            _spriteRotation.Start();
+            
             _logger.OnEntered();
         }
 
         public void Break()
         {
             _inertialMovement.Disable();
+            _spriteRotation.Stop();
+            
             _logger.OnBroke();
         }
     }

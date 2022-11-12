@@ -4,7 +4,6 @@
     {
         void ResetRotation();
         void RotateX(bool rotateSubSprites);
-        void RotateY(bool rotateSubSprites);
         void Start();
         void Stop();
     }

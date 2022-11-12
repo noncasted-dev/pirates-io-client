@@ -33,7 +33,9 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
         private float _lerpTime;
 
         private float _speed;
-        
+
+        public float XDirection => _currentDirection.x;
+
         public void Enable()
         {
             if (_isEnabled == true)

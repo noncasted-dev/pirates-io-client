@@ -1,9 +1,9 @@
 ﻿using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
+using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
 using GamePlay.Player.Entity.States.Runs.Logs;
-using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.States.Runs.Runtime
@@ -14,7 +14,7 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             IStateMachine stateMachine,
             IInertialMovement inertialMovement,
             IRunConfig config,
-            ISpriteFlipper spriteFlipper,
+            ISpriteRotation spriteRotation,
             StateDefinition definition,
             RunLogger logger)
         {
@@ -22,7 +22,7 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             _inertialMovement = inertialMovement;
             _config = config;
 
-            _spriteFlipper = spriteFlipper;
+            _spriteRotation = spriteRotation;
 
             Definition = definition;
             _logger = logger;
@@ -31,7 +31,7 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
         private readonly RunLogger _logger;
         private readonly IRunConfig _config;
 
-        private readonly ISpriteFlipper _spriteFlipper;
+        private readonly ISpriteRotation _spriteRotation;
 
         private readonly IStateMachine _stateMachine;
         private readonly IInertialMovement _inertialMovement;
@@ -40,16 +40,14 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
         private bool _isStarted;
 
         public bool HasInput => _input != Vector2.zero;
+        public StateDefinition Definition { get; }
 
         public void OnInput(Vector2 input)
         {
             _input = input;
 
             if (_isStarted == true)
-            {
-                UpdateInput();
                 return;
-            }
 
             if (_stateMachine.IsAvailable(Definition) == false)
                 return;
@@ -72,7 +70,7 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
 
         public void Enter()
         {
-            if (_input == Vector2.zero)
+            if (_input == Vector2.zero || _isStarted == true)
             {
                 _logger.OnEnterFromFloatingError();
                 return;
@@ -83,35 +81,25 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             Begin();
         }
 
-        public StateDefinition Definition { get; }
-
         public void Break()
         {
             if (_isStarted == false)
                 return;
 
             _isStarted = false;
+            _spriteRotation.Stop();
 
             _logger.OnBroke();
         }
 
         private void Begin()
         {
-            UpdateInput();
-
-            if (_isStarted == true)
-                return;
-
             _stateMachine.Enter(this);
             
             _inertialMovement.Enable();
             _inertialMovement.SetSpeed(_config.Speed);
+            _spriteRotation.Start();
             _isStarted = true;
-        }
-
-        private void UpdateInput()
-        {
-            _spriteFlipper.FlipAlong(_input, true);
         }
     }
 }

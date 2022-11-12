@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pool: {fileID: 2961728772525425528}
   _prefab:
-    m_AssetGUID: 
+    m_AssetGUID: 080bfc7bf6cf1204bb1fc0fc08b4c020
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

@@ -33,6 +33,8 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Sprites.Runtime
                 Horizontal.Left => true,
                 _ => throw new ArgumentOutOfRangeException()
             };
+
+            _previousPosition = position;
         }
     }
 }

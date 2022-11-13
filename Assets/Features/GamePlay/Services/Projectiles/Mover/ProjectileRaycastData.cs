@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace GamePlay.Services.Projectiles.Mover
+﻿namespace GamePlay.Services.Projectiles.Mover
 {
     public class ProjectileRaycastData
     {

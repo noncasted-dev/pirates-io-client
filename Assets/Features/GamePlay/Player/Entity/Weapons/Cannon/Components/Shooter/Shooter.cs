@@ -5,7 +5,6 @@ using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.ShootPoint;
 using GamePlay.Services.Projectiles.Factory;
 using GamePlay.Services.Projectiles.Implementation.Linear;
-using GamePlay.Services.Projectiles.Replicator.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.Updaters.Runtime.Abstract;

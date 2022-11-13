@@ -22,5 +22,6 @@
         public const string NetworkBootstrapper = _network + "Bootstrapper/";
         public const string RemotePlayerBuilder = _network + "RemotePlayerBuilder/";
         public const string ChunkConfig = Config + "ChunkConfig";
+        public const string VFX = _services + "VFX/";
     }
 }

@@ -73,6 +73,18 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 825e5fade78490e4fa915efd1c5568eb
+    m_Address: Assets/Features/GamePlay/Services/VFX/Pool/Config/Pool_VFX.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 113e5ee6e11266a4ebb54eaa0a26a492
+    m_Address: Assets/Features/GamePlay/Services/VFX/Pool/Config/CanonExplosion/Canon_0_Explosion.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6d41553e696af024f9ce0bcb66a78abd
+    m_Address: Assets/Features/GamePlay/Services/VFX/Pool/Config/CanonExplosion/VFX_CanonExplosion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
   m_SchemaSet:

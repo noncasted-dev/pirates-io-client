@@ -1,7 +1,9 @@
 ﻿using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim;
 using GamePlay.Player.Entity.Views.RigidBodies.Runtime;
 using GamePlay.Player.Entity.Views.RotationPoint;
+using GamePlay.Player.Entity.Views.ShootPoint;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Player.Entity.Views.WeaponsRoots.Runtime;
@@ -18,6 +20,8 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
         [SerializeField] private PlayerRotationPoint _rotationPoint;
         [SerializeField] private PlayerRigidBody _rigidBody;
         [SerializeField] private WeaponsRoot _weaponsRoot;
+        [SerializeField] private AimView _aim;
+        [SerializeField] private CannonShootPoint _shootPoint;
 
         public void OnBuild(IContainerBuilder builder)
         {
@@ -26,6 +30,8 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
             builder.RegisterComponent(_rotationPoint).AsImplementedInterfaces();
             builder.RegisterComponent(_rigidBody).AsImplementedInterfaces();
             builder.RegisterComponent(_weaponsRoot).AsImplementedInterfaces();
+            builder.RegisterComponent(_aim).AsImplementedInterfaces();
+            builder.RegisterComponent(_shootPoint).AsImplementedInterfaces();
         }
 
         public void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)

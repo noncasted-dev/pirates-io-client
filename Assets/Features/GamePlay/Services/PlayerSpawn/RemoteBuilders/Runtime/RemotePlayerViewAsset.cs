@@ -14,8 +14,6 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         menuName = GamePlayAssetsPaths.RemotePlayerBuilder + "View")]
     public class RemotePlayerViewAsset : PoolEntryAsset
     {
-        public override string Name => "RemotePlayerView";
-
         public override IObjectsPool Create(IObjectResolver resolver, Transform parent)
         {
             var projectiles = resolver.Resolve<IProjectilesPoolProvider>();

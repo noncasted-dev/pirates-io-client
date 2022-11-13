@@ -17,22 +17,25 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
             _updater = updater;
             _config = config;
             _logger = logger;
+
+            _curve = new InertiaCurve(_config);
         }
 
         private readonly InertialMovementConfigAsset _config;
+        private readonly InertiaCurve _curve;
         private readonly InertialMovementLogger _logger;
 
         private readonly IRigidBody _rigidBody;
         private readonly IUpdater _updater;
-        private Vector2 _currentDirection;
 
         private bool _isEnabled;
 
         private float _lerpTime;
 
         private float _speed;
+        
         private Vector2 _startDirection;
-
+        private Vector2 _currentDirection;
         private Vector2 _targetDirection;
 
         public float XDirection => _currentDirection.x;
@@ -93,7 +96,7 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
         {
             _lerpTime += _speed * delta * _config.LerpSpeed;
 
-            var progress = _config.Evaluate(_lerpTime, _startDirection, _targetDirection);
+            var progress = _curve.Evaluate(_lerpTime, _startDirection, _targetDirection);
             _currentDirection = Vector2.Lerp(_startDirection, _targetDirection, progress);
             var speed = _speed * delta;
 

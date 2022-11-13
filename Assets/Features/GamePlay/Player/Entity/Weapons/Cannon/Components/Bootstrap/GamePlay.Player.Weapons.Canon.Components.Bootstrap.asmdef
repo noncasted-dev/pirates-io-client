@@ -1,0 +1,9 @@
+{
+  "name": "GamePlay.Player.Weapons.Canon.Components.Bootstrap",
+  "references": [
+    "GUID:5e7079ca8f6615a47866f25ec94bae65",
+    "GUID:65c3fcbb851ff9441a22dd049195dc8f",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:aaedc93bbf702d34e8e6d773e0108d7c"
+  ]
+}

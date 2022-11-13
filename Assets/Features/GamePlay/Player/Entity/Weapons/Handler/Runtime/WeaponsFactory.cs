@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Root;
 using GamePlay.Player.Entity.Views.WeaponsRoots.Runtime;
-using GamePlay.Player.Entity.Weapons.Bow.Root;
+using GamePlay.Player.Entity.Weapons.Cannon.Root;
 using GamePlay.Player.Entity.Weapons.Common.Bootstrap.Runtime;
 using GamePlay.Player.Entity.Weapons.Handler.Logs;
 using Global.Services.AssetsFlow.Runtime.Abstract;
@@ -41,7 +41,7 @@ namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
             _weapons.Clear();
         }
 
-        public async UniTask<IBow> CreateBow(AssetReference reference)
+        public async UniTask<ICanon> CreateBow(AssetReference reference)
         {
             var instantiator = _instantiatorFactory.Create<IWeaponBootstrapper>(reference);
             _weapons.Add(instantiator);
@@ -52,7 +52,7 @@ namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
 
             _logger.OnInstantiated(result.Name);
 
-            return (IBow)result;
+            return (ICanon)result;
         }
     }
 }

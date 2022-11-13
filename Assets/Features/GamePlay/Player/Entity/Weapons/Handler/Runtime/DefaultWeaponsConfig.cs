@@ -8,10 +8,10 @@ namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
         menuName = PlayerAssetsPaths.WeaponsHandler + "DefaultWeapons")]
     public class DefaultWeaponsConfig : ScriptableObject
     {
-        [SerializeField] private AssetReference _range;
+        [SerializeField] private AssetReference _canon;
         [SerializeField] private AssetReference _melee;
 
-        public AssetReference Range => _range;
+        public AssetReference Canon => _canon;
         public AssetReference Melee => _melee;
     }
 }

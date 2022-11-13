@@ -6,6 +6,7 @@ using GamePlay.Services.LevelLoops.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using GamePlay.Services.Projectiles.Bootstrap;
 using GamePlay.Services.TransitionScreens.Runtime;
+using GamePlay.Services.VFX.Pool.Provider;
 using UnityEngine;
 
 namespace GamePlay.Services.Editor
@@ -20,5 +21,6 @@ namespace GamePlay.Services.Editor
         [SerializeField] [EditableObject] private ProjectilesAsset _projectiles;
         [SerializeField] [EditableObject] private TransitionScreenAsset _transitionScreen;
         [SerializeField] [EditableObject] private LevelEnvironmentAsset _levelEnvironment;
+        [SerializeField] [EditableObject] private VfxPoolAsset _vfxPool;
     }
 }

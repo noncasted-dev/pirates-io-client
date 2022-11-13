@@ -44,6 +44,7 @@ namespace Common.ObjectsPools.Runtime
             }
 
             poolObject.SetPosition(position);
+            poolObject.OnTaken();
 
             return poolObject;
         }

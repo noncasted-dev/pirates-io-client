@@ -19,7 +19,7 @@ TagManager:
   - Enemy_Projecitle
   - PitCollision
   - RemotePlayer_Collision
-  - 
+  - PlayerCannonShootArea
   - 
   - 
   - 

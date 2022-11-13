@@ -1,9 +1,9 @@
-﻿using GamePlay.Player.Entity.Weapons.Bow.Root;
+﻿using GamePlay.Player.Entity.Weapons.Cannon.Root;
 
 namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
 {
     public interface IWeaponsHandler
     {
-        IBow Bow { get; }
+        ICanon Canon { get; }
     }
 }

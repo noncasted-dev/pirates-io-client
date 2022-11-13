@@ -4,6 +4,7 @@ using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.RotationPoint;
 using Global.Services.InputViews.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
+using UnityEngine;
 
 namespace GamePlay.Player.Entity.Components.Rotations.Runtime
 {
@@ -44,6 +45,8 @@ namespace GamePlay.Player.Entity.Components.Rotations.Runtime
                 return _angle;
             }
         }
+
+        public Quaternion Quaternion => Quaternion.Euler(0f, 0f, _angle);
 
         public void OnEnabled()
         {

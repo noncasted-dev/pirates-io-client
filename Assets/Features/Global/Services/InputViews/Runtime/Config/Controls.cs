@@ -44,6 +44,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RangeAttackBreak"",
+                    ""type"": ""Button"",
+                    ""id"": ""a3c88cc7-5f7b-4e78-b274-8915fadf3a20"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -112,6 +121,28 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""RangeAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba5c74f2-8f6e-427b-8d54-4bd2dce24a44"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RangeAttackBreak"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c8a6cdc-d04e-4408-95c9-de740fb6ad17"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RangeAttackBreak"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -150,6 +181,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
         m_GamePlay_Movement = m_GamePlay.FindAction("Movement", throwIfNotFound: true);
         m_GamePlay_RangeAttack = m_GamePlay.FindAction("RangeAttack", throwIfNotFound: true);
+        m_GamePlay_RangeAttackBreak = m_GamePlay.FindAction("RangeAttackBreak", throwIfNotFound: true);
         // Debug
         m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
         m_Debug_Console = m_Debug.FindAction("Console", throwIfNotFound: true);
@@ -214,12 +246,14 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private IGamePlayActions m_GamePlayActionsCallbackInterface;
     private readonly InputAction m_GamePlay_Movement;
     private readonly InputAction m_GamePlay_RangeAttack;
+    private readonly InputAction m_GamePlay_RangeAttackBreak;
     public struct GamePlayActions
     {
         private @Controls m_Wrapper;
         public GamePlayActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_GamePlay_Movement;
         public InputAction @RangeAttack => m_Wrapper.m_GamePlay_RangeAttack;
+        public InputAction @RangeAttackBreak => m_Wrapper.m_GamePlay_RangeAttackBreak;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -235,6 +269,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @RangeAttack.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRangeAttack;
                 @RangeAttack.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRangeAttack;
                 @RangeAttack.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRangeAttack;
+                @RangeAttackBreak.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRangeAttackBreak;
+                @RangeAttackBreak.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRangeAttackBreak;
+                @RangeAttackBreak.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRangeAttackBreak;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -245,6 +282,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @RangeAttack.started += instance.OnRangeAttack;
                 @RangeAttack.performed += instance.OnRangeAttack;
                 @RangeAttack.canceled += instance.OnRangeAttack;
+                @RangeAttackBreak.started += instance.OnRangeAttackBreak;
+                @RangeAttackBreak.performed += instance.OnRangeAttackBreak;
+                @RangeAttackBreak.canceled += instance.OnRangeAttackBreak;
             }
         }
     }
@@ -286,6 +326,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnRangeAttack(InputAction.CallbackContext context);
+        void OnRangeAttackBreak(InputAction.CallbackContext context);
     }
     public interface IDebugActions
     {

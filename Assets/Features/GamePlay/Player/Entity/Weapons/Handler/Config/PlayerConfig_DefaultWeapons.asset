@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc09257bde44a5496a824518e073646, type: 3}
   m_Name: PlayerConfig_DefaultWeapons
   m_EditorClassIdentifier: 
-  _range:
+  _canon:
     m_AssetGUID: dc97a0e4beba93a47adb4d2e72ab392c
     m_SubObjectName: 
     m_SubObjectType: 

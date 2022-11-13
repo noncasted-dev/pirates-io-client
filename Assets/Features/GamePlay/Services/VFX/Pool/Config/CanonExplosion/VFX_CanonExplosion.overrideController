@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VFX_CanonExplosion
+  m_Controller: {fileID: 9100000, guid: fa1bd22195b26924b9dca79b16529769, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: f22a11aff1ed1d249998bf8a082018bf, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f22a11aff1ed1d249998bf8a082018bf, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c63cc82c36aa9ae4fa872a829c85a710, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ea37ddf51b085de40ac3c9b2c0610751, type: 2}

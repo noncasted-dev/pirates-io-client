@@ -20,3 +20,5 @@ MonoBehaviour:
   _none: {fileID: 11400000, guid: 5f113c4191f7d004cafda425f9522742, type: 2}
   _respawn: {fileID: 11400000, guid: 3b8e4c518bf56e143aad2088af2953f1, type: 2}
   _run: {fileID: 11400000, guid: 4b6c419912f56d84fa45d748f61128fd, type: 2}
+  _range: {fileID: 11400000, guid: 47e5c5c4930fa1349870fb1a7cd06070, type: 2}
+  _weaponsHandler: {fileID: 11400000, guid: 962a49343378a6c49ae4ec652d0a8594, type: 2}

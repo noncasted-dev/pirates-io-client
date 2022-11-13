@@ -9,9 +9,9 @@ namespace Common.ObjectsPools.Runtime
     {
         [SerializeField] private AssetReference _reference;
         [SerializeField] [Min(1)] private int _startupInstances;
-
+        [SerializeField] private string _name;
         public object Key => _reference.RuntimeKey;
-        public abstract string Name { get; }
+        public string Name => _name;
 
         protected int StartupInstances => _startupInstances;
         protected AssetReference Reference => _reference;

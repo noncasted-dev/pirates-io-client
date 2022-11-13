@@ -11,8 +11,6 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
     [CreateAssetMenu(fileName = "Projectile_Linear", menuName = GamePlayAssetsPaths.Projectiles + "Linear")]
     public class LinearProjectileAsset : PoolEntryAsset
     {
-        public override string Name => "Arrow";
-
         public override IObjectsPool Create(IObjectResolver resolver, Transform parent)
         {
             var projectilesMover = resolver.Resolve<IProjectilesMover>();

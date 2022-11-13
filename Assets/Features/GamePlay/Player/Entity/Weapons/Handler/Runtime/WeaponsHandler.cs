@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
-using GamePlay.Player.Entity.Weapons.Bow.Root;
+using GamePlay.Player.Entity.Weapons.Cannon.Root;
 
 namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
 {
@@ -17,22 +17,15 @@ namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
         private readonly DefaultWeaponsConfig _config;
         private readonly IWeaponsFactory _factory;
 
-        private IBow _bow;
+        private ICanon _canon;
 
         public async UniTask OnAsyncAwake()
         {
-            var rangeTask = UniTask.Create(async () => { _bow = await _factory.CreateBow(_config.Range); });
-
-            // var meleeTask = UniTask.Create(async () =>
-            // {
-            //     _melee = await _factory.Create(_config.Melee);
-            // });
-
-            //await UniTask.WhenAll(rangeTask, meleeTask);
+            var rangeTask = UniTask.Create(async () => { _canon = await _factory.CreateBow(_config.Canon); });
+            
             await rangeTask;
         }
-        //private IWeapon _melee;
 
-        public IBow Bow => _bow;
+        public ICanon Canon => _canon;
     }
 }

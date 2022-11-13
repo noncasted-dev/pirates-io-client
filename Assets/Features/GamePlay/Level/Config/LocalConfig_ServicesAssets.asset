@@ -18,3 +18,4 @@ MonoBehaviour:
   _projectiles: {fileID: 11400000, guid: cf3ddfa96992fb145b579ec979d2b621, type: 2}
   _transitionScreen: {fileID: 11400000, guid: 6a27838c5b181624abc4d150b8f015bb, type: 2}
   _levelEnvironment: {fileID: 11400000, guid: 02ac48fb866bdc743991afaa0fc74747, type: 2}
+  _vfxPool: {fileID: 11400000, guid: 4060695fef83f5e4eb3e0fc124b74ef4, type: 2}

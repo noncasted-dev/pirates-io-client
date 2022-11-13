@@ -2,6 +2,7 @@
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.States.Floating.Logs;
 using GamePlay.Player.Entity.States.Idles.Runtime;
+using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack;
 using GamePlay.Player.Entity.States.Runs.Runtime;
 
 namespace GamePlay.Player.Entity.States.Floating.Runtime
@@ -12,12 +13,14 @@ namespace GamePlay.Player.Entity.States.Floating.Runtime
             IStateMachine stateMachine,
             IIdle idle,
             IRun run,
+            IRangeAttack rangeAttack,
             FloatingStateLogger logger)
         {
             _stateMachine = stateMachine;
 
             _idle = idle;
             _run = run;
+            _rangeAttack = rangeAttack;
 
             _logger = logger;
         }
@@ -26,6 +29,7 @@ namespace GamePlay.Player.Entity.States.Floating.Runtime
 
         private readonly FloatingStateLogger _logger;
         private readonly IRun _run;
+        private readonly IRangeAttack _rangeAttack;
 
         private readonly IStateMachine _stateMachine;
 
@@ -33,6 +37,12 @@ namespace GamePlay.Player.Entity.States.Floating.Runtime
         {
             _logger.OnEntered();
 
+            if (_rangeAttack.HasInput == true)
+            {
+                _rangeAttack.Enter();
+                return;
+            }
+            
             if (_run.HasInput == true)
             {
                 _run.Enter();

@@ -21,7 +21,7 @@ namespace TMPro.Examples
 
         void Awake()
         {
-            // Get Reference to TextMeshPro Component
+            // Get Projectile to TextMeshPro Component
             m_textMeshPro = GetComponent<TMP_Text>();
             m_textMeshPro.text = label01;
             m_textMeshPro.enableWordWrapping = true;

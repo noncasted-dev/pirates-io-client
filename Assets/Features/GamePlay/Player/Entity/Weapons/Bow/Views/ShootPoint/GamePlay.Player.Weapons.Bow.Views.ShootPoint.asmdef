@@ -1,9 +1,0 @@
-{
-  "name": "GamePlay.Player.Weapons.Bow.Views.ShootPoint",
-  "references": [
-    "GUID:ef686d706e9141d43a435dca8eecdde5",
-    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
-    "GUID:5a6ca98db01d77741890b42e259b7291",
-    "GUID:8ceb11fc07ecc9847af1f8e5e77cb9f9"
-  ]
-}

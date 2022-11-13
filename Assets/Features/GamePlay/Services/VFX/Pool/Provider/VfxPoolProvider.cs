@@ -1,0 +1,20 @@
+﻿using Common.ObjectsPools.Runtime.Abstract;
+using UnityEngine.AddressableAssets;
+
+namespace GamePlay.Services.VFX.Pool.Provider
+{
+    public class VfxPoolProvider : IVfxPoolProvider
+    {
+        public VfxPoolProvider(IPoolProvider provider)
+        {
+            _provider = provider;
+        }
+        
+        private readonly IPoolProvider _provider;
+
+        public IObjectProvider<T> GetPool<T>(AssetReference reference) where T : class
+        {
+            return _provider.GetPool<T>(reference);
+        }
+    }
+}

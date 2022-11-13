@@ -7,8 +7,10 @@ using GamePlay.Player.Entity.Setup.Path;
 using GamePlay.Player.Entity.States.Floating.Runtime;
 using GamePlay.Player.Entity.States.Idles.Runtime;
 using GamePlay.Player.Entity.States.None.Runtime;
+using GamePlay.Player.Entity.States.RangeAttacks.Runtime;
 using GamePlay.Player.Entity.States.Respawns.Runtime;
 using GamePlay.Player.Entity.States.Runs.Runtime;
+using GamePlay.Player.Entity.Weapons.Handler.Runtime;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.Components.Config
@@ -28,6 +30,8 @@ namespace GamePlay.Player.Entity.Components.Config
         [SerializeField] [EditableObject] private NoneAsset _none;
         [SerializeField] [EditableObject] private RespawnAsset _respawn;
         [SerializeField] [EditableObject] private RunAsset _run;
+        [SerializeField] [EditableObject] private RangeAttackAsset _range;
+        [SerializeField] [EditableObject] private WeaponsHandlerAsset _weaponsHandler;
 
         public override PlayerComponentAsset[] GetAssets()
         {
@@ -40,7 +44,9 @@ namespace GamePlay.Player.Entity.Components.Config
                 _idle,
                 _none,
                 _respawn,
-                _run
+                _run,
+                _range,
+                _weaponsHandler
             };
         }
     }

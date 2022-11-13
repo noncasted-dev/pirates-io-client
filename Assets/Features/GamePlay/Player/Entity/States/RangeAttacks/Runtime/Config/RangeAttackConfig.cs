@@ -1,6 +1,4 @@
-﻿using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Dash;
-
-namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config
+﻿namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config
 {
     public class RangeAttackConfig : IRangeAttackConfig
     {
@@ -12,10 +10,14 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config
         private readonly RangeAttackConfigAsset _asset;
 
         public float Delay => _asset.Delay;
-
-        public DashParams CreateDashParams()
+        public AimParams CreateAimParams()
         {
-            return new DashParams(_asset.DashDistance, _asset.DashTime, _asset.DashCurve);
+            return new AimParams(
+                _asset.StartAimAngle,
+                _asset.EndAimAngle,
+                _asset.AimTime,
+                _asset.AimOverTime,
+                _asset.AimAdditionalSpread);
         }
     }
 }

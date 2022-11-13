@@ -39,7 +39,7 @@ namespace TMPro.Examples
             m_transform = transform;
             m_floatingText = new GameObject(this.name + " floating text");
 
-            // Reference to Transform is lost when TMP component is added since it replaces it by a RectTransform.
+            // Projectile to Transform is lost when TMP component is added since it replaces it by a RectTransform.
             //m_floatingText_Transform = m_floatingText.transform;
             //m_floatingText_Transform.position = m_transform.position + new Vector3(0, 15f, 0);
 

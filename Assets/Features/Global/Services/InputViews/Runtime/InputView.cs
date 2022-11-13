@@ -49,6 +49,7 @@ namespace Global.Services.InputViews.Runtime
         public event Action MovementCanceled;
         public event Action RangeAttackPerformed;
         public event Action RangeAttackCanceled;
+        public event Action RangeAttackBreakPerformed;
         public event Action DebugConsolePreformed;
 
         public float GetAngleFrom(Vector2 from)
@@ -104,6 +105,7 @@ namespace Global.Services.InputViews.Runtime
 
             _gamePlay.RangeAttack.performed += OnRangeAttackPerformed;
             _gamePlay.RangeAttack.canceled += OnRangeAttackCanceled;
+            _gamePlay.RangeAttackBreak.performed += OnRangeAttackBreakPerformed;
 
             _debug.Console.performed += OnDebugConsolePreformed;
         }
@@ -115,6 +117,7 @@ namespace Global.Services.InputViews.Runtime
 
             _gamePlay.RangeAttack.performed -= OnRangeAttackPerformed;
             _gamePlay.RangeAttack.canceled -= OnRangeAttackCanceled;
+            _gamePlay.RangeAttackBreak.performed -= OnRangeAttackBreakPerformed;
 
             _debug.Console.performed -= OnDebugConsolePreformed;
         }
@@ -147,6 +150,13 @@ namespace Global.Services.InputViews.Runtime
             _logger.OnRangeAttackCanceled();
 
             RangeAttackCanceled?.Invoke();
+        }
+        
+        private void OnRangeAttackBreakPerformed(InputAction.CallbackContext context)
+        {
+            _logger.OnRangeAttackCanceled();
+
+            RangeAttackBreakPerformed?.Invoke();
         }
 
         private void OnDebugConsolePreformed(InputAction.CallbackContext context)

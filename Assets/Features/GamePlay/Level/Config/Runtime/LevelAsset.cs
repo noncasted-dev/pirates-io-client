@@ -10,6 +10,7 @@ using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime;
 using GamePlay.Services.Projectiles.Bootstrap;
 using GamePlay.Services.TransitionScreens.Runtime;
+using GamePlay.Services.VFX.Pool.Provider;
 using Local.ComposedSceneConfig;
 using Local.Services.Abstract;
 using UnityEngine;
@@ -30,6 +31,7 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField] [EditableObject] private TransitionScreenAsset _transitionScreen;
         [SerializeField] [EditableObject] private NetworkSessionAsset _networkSession;
         [SerializeField] [EditableObject] private RemotePlayerBuilderAsset _remotePlayerBuilder;
+        [SerializeField] [EditableObject] private VfxPoolAsset _vfxPool;
 
         protected override LocalServiceAsset[] AssignServices()
         {
@@ -42,7 +44,8 @@ namespace GamePlay.Level.Config.Runtime
                 _projectiles,
                 _transitionScreen,
                 _networkSession,
-                _remotePlayerBuilder
+                _remotePlayerBuilder,
+                _vfxPool
             };
 
             return list.ToArray();

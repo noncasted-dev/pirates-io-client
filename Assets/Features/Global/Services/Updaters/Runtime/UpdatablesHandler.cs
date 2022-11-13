@@ -5,11 +5,11 @@ namespace Global.Services.Updaters.Runtime
 {
     public class UpdatablesHandler<T>
     {
-        private readonly List<T> _list = new();
         private readonly List<T> _addQueue = new();
-        private readonly List<T> _removeQueue = new();
+        private readonly List<T> _list = new();
 
         private readonly HashSet<T> _queue = new();
+        private readonly List<T> _removeQueue = new();
 
         public IReadOnlyList<T> List => _list;
         public int Count => _list.Count;
@@ -29,7 +29,7 @@ namespace Global.Services.Updaters.Runtime
             FetchAdd();
             FetchRemove();
         }
-        
+
         private void FetchAdd()
         {
             _list.AddRange(_addQueue);
@@ -47,7 +47,7 @@ namespace Global.Services.Updaters.Runtime
         private void ResolveOverlap(T updatable)
         {
             Debug.Log("[Update] Resolve overlap");
-            
+
             if (_addQueue.Contains(updatable) == true)
                 _addQueue.Remove(updatable);
 

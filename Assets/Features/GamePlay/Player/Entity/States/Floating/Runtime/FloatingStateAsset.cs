@@ -18,7 +18,7 @@ namespace GamePlay.Player.Entity.States.Floating.Runtime
         {
             builder.Register<FloatingStateLogger>(Lifetime.Scoped)
                 .WithParameter(_logSettings);
-            
+
             builder.Register<FloatingState>(Lifetime.Scoped)
                 .As<IFloatingState>()
                 .AsSelf();

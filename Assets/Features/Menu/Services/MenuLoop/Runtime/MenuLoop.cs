@@ -1,8 +1,8 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
-using Features.Global.Services.Profiles.Storage;
 using Global.Services.Network.Connection.Runtime;
 using Global.Services.Network.Session.Join.Runtime;
+using Global.Services.Profiles.Storage;
 using Local.Services.Abstract.Callbacks;
 using Menu.Services.UI.Runtime;
 using UniRx;
@@ -27,11 +27,12 @@ namespace Menu.Services.MenuLoop.Runtime
             _connector = connector;
         }
 
-        private IDisposable _playEvent;
         private INetworkConnector _connector;
         private IMenuUI _menuUI;
-        private INetworkSessionJoiner _sessionJoiner;
+
+        private IDisposable _playEvent;
         private IProfileStoragePresenter _profileStoragePresenter;
+        private INetworkSessionJoiner _sessionJoiner;
 
         private void OnEnable()
         {

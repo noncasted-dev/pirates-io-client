@@ -18,17 +18,17 @@ namespace Global.Services.Network.Session.Leave.Logs
             if (_settings.IsAvailable(NetworkSessionLeaveLogType.Attempt) == false)
                 return;
 
-            _logger.Log($"Leave started", _settings.LogParameters);
+            _logger.Log("Leave started", _settings.LogParameters);
         }
-        
+
         public void OnSuccess()
         {
             if (_settings.IsAvailable(NetworkSessionLeaveLogType.Success) == false)
                 return;
 
-            _logger.Log($"Leave completed", _settings.LogParameters);
+            _logger.Log("Leave completed", _settings.LogParameters);
         }
-        
+
         public void OnFailed(string message)
         {
             if (_settings.IsAvailable(NetworkSessionLeaveLogType.Fail) == false)

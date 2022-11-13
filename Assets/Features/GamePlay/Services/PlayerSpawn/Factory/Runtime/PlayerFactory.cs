@@ -1,5 +1,4 @@
 ﻿using Cysharp.Threading.Tasks;
-using Features.Global.Services.Profiles.Storage;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Root;
@@ -8,6 +7,7 @@ using GamePlay.Services.PlayerSpawn.Factory.Logs;
 using GamePlay.Services.PlayerSpawn.SpawnPoints;
 using Global.Services.AssetsFlow.Runtime.Abstract;
 using Global.Services.Network.Instantiators.Runtime;
+using Global.Services.Profiles.Storage;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
@@ -38,29 +38,29 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
 
         private IAssetInstantiator<GameObject> _instantiator;
         private PlayerFactoryLogger _logger;
-        private LevelScope _scope;
-        private ISpawnPoints _spawnPoints;
         private INetworkInstantiator _networkInstantiator;
         private IProfileStorageProvider _profileStorageProvider;
+        private LevelScope _scope;
+        private ISpawnPoints _spawnPoints;
 
         public async UniTask<IPlayerRoot> Create()
         {
             var spawnPoint = _spawnPoints.GetSpawnPoint();
-            
+
             var payload = new PlayerPayload(_profileStorageProvider.UserName);
-            
+
             var networkObject = await _networkInstantiator.Instantiate<PlayerNetworkRoot, PlayerPayload>(
-                    _networkPrefab,
-                    spawnPoint,
-                    payload);
-            
+                _networkPrefab,
+                spawnPoint,
+                payload);
+
             var playerObject = await _instantiator.InstantiateAsync(Vector2.zero);
             playerObject.name = "Player";
-            
+
             var playerTransform = playerObject.transform;
             playerTransform.parent = networkObject.transform;
             playerTransform.localPosition = Vector3.zero;
-            
+
             _logger.OnInstantiated(spawnPoint);
 
             var bootstrapper = playerObject.GetComponent<IPlayerBootstrapper>();

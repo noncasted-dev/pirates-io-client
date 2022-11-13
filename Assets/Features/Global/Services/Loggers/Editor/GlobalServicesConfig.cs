@@ -1,5 +1,4 @@
 ﻿using Common.EditableScriptableObjects.Attributes;
-using Features.Global.Services.Profiles.Storage;
 using GamePlay.Common.SceneObjects.Global;
 using Global.Common;
 using Global.Services.ApplicationProxies.Runtime;
@@ -14,6 +13,7 @@ using Global.Services.InputViews.Runtime;
 using Global.Services.LoadingScreens.Runtime;
 using Global.Services.Loggers.Runtime;
 using Global.Services.Network.Bootstrap;
+using Global.Services.Profiles.Storage;
 using Global.Services.ResourcesCleaners.Runtime;
 using Global.Services.ScenesFlow.Runtime;
 using Global.Services.Updaters.Runtime;

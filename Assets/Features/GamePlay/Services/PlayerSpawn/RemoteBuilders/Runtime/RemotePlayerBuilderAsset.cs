@@ -29,7 +29,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
 
             serviceBinder.RegisterComponent(builder)
                 .AsSelf();
-            
+
             serviceBinder.RegisterComponent(pool)
                 .AsSelf();
 

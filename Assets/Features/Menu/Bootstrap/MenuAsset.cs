@@ -15,7 +15,7 @@ namespace Menu.Bootstrap
     {
         [SerializeField] [EditableObject] private MenuLoopAsset _loop;
         [SerializeField] [EditableObject] private MenuUIAsset _ui;
-        
+
         [SerializeField] private MenuScope _scopePrefab;
 
         protected override LocalServiceAsset[] AssignServices()

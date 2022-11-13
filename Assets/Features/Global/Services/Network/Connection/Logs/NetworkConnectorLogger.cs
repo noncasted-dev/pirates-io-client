@@ -26,9 +26,9 @@ namespace Global.Services.Network.Connection.Logs
             if (_settings.IsAvailable(NetworkConnectorLogType.Success) == false)
                 return;
 
-            _logger.Log($"Connected successfully", _settings.LogParameters);
+            _logger.Log("Connected successfully", _settings.LogParameters);
         }
-        
+
         public void OnFailed(string message)
         {
             if (_settings.IsAvailable(NetworkConnectorLogType.Fail) == false)

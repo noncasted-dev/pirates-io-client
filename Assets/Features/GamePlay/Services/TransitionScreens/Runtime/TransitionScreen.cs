@@ -60,7 +60,7 @@ namespace GamePlay.Services.TransitionScreens.Runtime
 
             _current.Dispose();
             _current = null;
-            
+
             _canvas.SetActive(false);
         }
 
@@ -73,7 +73,7 @@ namespace GamePlay.Services.TransitionScreens.Runtime
 
             _current.Dispose();
             _current = null;
-            
+
             _canvas.SetActive(false);
         }
     }

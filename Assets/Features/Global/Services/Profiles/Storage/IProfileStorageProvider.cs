@@ -1,4 +1,4 @@
-﻿namespace Features.Global.Services.Profiles.Storage
+﻿namespace Global.Services.Profiles.Storage
 {
     public interface IProfileStorageProvider
     {

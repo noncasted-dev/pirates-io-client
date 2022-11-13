@@ -14,17 +14,17 @@ namespace Global.Services.Network.Session.Leave.Runtime
         {
             _logger = joinLogger;
         }
-        
+
         private NetworkSessionLeaveLogger _logger;
-        
+
         public async UniTask Leave()
         {
-            _logger.OnAttempted();            
-            
+            _logger.OnAttempted();
+
             RagonNetwork.Session.Leave();
-            
+
             _logger.OnSuccess();
-            
+
             var attempt = new SessionLeaveAttempt();
 
             var result = await attempt.Leave();

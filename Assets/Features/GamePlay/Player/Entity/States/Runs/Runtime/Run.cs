@@ -28,19 +28,19 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             _logger = logger;
         }
 
-        private readonly RunLogger _logger;
         private readonly IRunConfig _config;
+        private readonly IInertialMovement _inertialMovement;
+
+        private readonly RunLogger _logger;
 
         private readonly ISpriteRotation _spriteRotation;
 
         private readonly IStateMachine _stateMachine;
-        private readonly IInertialMovement _inertialMovement;
 
         private Vector2 _input;
         private bool _isStarted;
 
         public bool HasInput => _input != Vector2.zero;
-        public StateDefinition Definition { get; }
 
         public void OnInput(Vector2 input)
         {
@@ -81,6 +81,8 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             Begin();
         }
 
+        public StateDefinition Definition { get; }
+
         public void Break()
         {
             if (_isStarted == false)
@@ -95,7 +97,7 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
         private void Begin()
         {
             _stateMachine.Enter(this);
-            
+
             _inertialMovement.Enable();
             _inertialMovement.SetSpeed(_config.Speed);
             _spriteRotation.Start();

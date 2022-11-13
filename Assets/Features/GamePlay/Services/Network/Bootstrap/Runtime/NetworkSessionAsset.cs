@@ -16,7 +16,7 @@ namespace GamePlay.Services.Network.Bootstrap.Runtime
     {
         [SerializeField] private NetworkSessionBootstrapper _prefab;
         [SerializeField] private AssetReference _scene;
-        
+
         public override async UniTask Create(
             IServiceBinder serviceBinder,
             ICallbacksRegister callbacksRegister,
@@ -24,10 +24,10 @@ namespace GamePlay.Services.Network.Bootstrap.Runtime
         {
             var sceneLoadResult = await sceneLoader.Load(new TypedSceneLoadData<INetworkSessionBootstrapper>(_scene));
             SceneManager.SetActiveScene(sceneLoadResult.Instance.Scene);
-            
+
             var bootstrapper = Instantiate(_prefab);
             bootstrapper.name = "SessionNetworkBootstrapper";
-            
+
             serviceBinder.RegisterComponent(bootstrapper);
             callbacksRegister.ListenLoopCallbacks(bootstrapper);
         }

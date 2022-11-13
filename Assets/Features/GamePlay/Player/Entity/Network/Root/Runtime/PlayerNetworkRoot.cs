@@ -12,7 +12,7 @@ namespace GamePlay.Player.Entity.Network.Root.Runtime
             var userName = payload.UserName;
 
             if (IsMine == true)
-                gameObject.name = $"LocalPlayer";
+                gameObject.name = "LocalPlayer";
             else
                 gameObject.name = $"RemotePlayer_{userName}";
         }

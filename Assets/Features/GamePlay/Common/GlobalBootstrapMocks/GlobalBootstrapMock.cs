@@ -4,6 +4,8 @@ using Global.Bootstrappers;
 using Global.GameLoops.Runtime;
 using Global.Services.Common.Config.Abstract;
 using Global.Services.Common.Scope;
+using Global.Services.Network.Connection.Runtime;
+using Global.Services.Network.Session.Join.Runtime;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -16,7 +18,6 @@ namespace GamePlay.Common.GlobalBootstrapMocks
     [DisallowMultipleComponent]
     public class GlobalBootstrapMock : MonoBehaviour
     {
-        private static bool _isBootstrapped = false;
         [SerializeField] private GlobalScope _scope;
         [SerializeField] private GameLoopAsset _gameLoop;
         [SerializeField] private LevelAsset _level;
@@ -26,17 +27,7 @@ namespace GamePlay.Common.GlobalBootstrapMocks
 
         private void Awake()
         {
-            if (_isBootstrapped == true)
-                return;
-
-            _isBootstrapped = true;
-
             Process().Forget();
-        }
-
-        private void OnDestroy()
-        {
-            _isBootstrapped = false;
         }
 
         private async UniTask Process()
@@ -68,9 +59,18 @@ namespace GamePlay.Common.GlobalBootstrapMocks
                 _gameLoop.Create(builder, binder);
             }
 
-            _scope.Container.Resolve<GameLoop>();
-            
+            var container = _scope.Container;
+
+            container.Resolve<GameLoop>();
+
             binder.InvokeFlowCallbacks();
+
+            var connector = container.Resolve<INetworkConnector>();
+            var joiner = container.Resolve<INetworkSessionJoiner>();
+
+            var userName = $"Player_{Random.Range(0, 301)}";
+            await connector.Connect(userName);
+            await joiner.JoinRandom();
         }
 
         private async UniTask BootstrapLocal()

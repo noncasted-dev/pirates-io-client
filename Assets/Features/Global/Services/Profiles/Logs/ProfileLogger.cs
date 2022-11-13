@@ -1,6 +1,6 @@
 using Global.Services.Loggers.Runtime;
 
-namespace Features.Global.Services.Profiles.Logs
+namespace Global.Services.Profiles.Logs
 {
     public class ProfileLogger
     {

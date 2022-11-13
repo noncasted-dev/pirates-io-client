@@ -20,14 +20,14 @@ namespace Global.Services.DebugConsoles.Runtime
 
         private IInputView _inputView;
 
-        public void OnAwake()
-        {
-            _inputView.DebugConsolePreformed += OnDebugConsolePerformed;
-        }
-
         private void OnDestroy()
         {
             _inputView.DebugConsolePreformed -= OnDebugConsolePerformed;
+        }
+
+        public void OnAwake()
+        {
+            _inputView.DebugConsolePreformed += OnDebugConsolePerformed;
         }
 
         private void OnDebugConsolePerformed()

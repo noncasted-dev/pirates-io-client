@@ -5,27 +5,6 @@ namespace Global.Services.Network.Common
 {
     public class NetworkEvents : IRagonListener
     {
-        public event Action<string, string> Authorized;
-        public event Action Joined;
-        public event Action<string> Failed;
-        public event Action Leaved;
-        public event Action Connected;
-        public event Action Disconnected;
-        public event Action<RagonPlayer> PlayerJoined;
-        public event Action<RagonPlayer> PlayerLeft;
-        public event Action<RagonPlayer> OwnerShipChanged;
-        public event Action<string> LevelReceived;
-
-        public void Setup()
-        {
-            RagonNetwork.AddListener(this);
-        }
-
-        public void Dispose()
-        {
-            RagonNetwork.RemoveListener(this);
-        }
-        
         public void OnAuthorized(string playerId, string playerName)
         {
             Authorized?.Invoke(playerId, playerName);
@@ -74,6 +53,27 @@ namespace Global.Services.Network.Common
         public void OnLevel(string sceneName)
         {
             LevelReceived?.Invoke(sceneName);
+        }
+
+        public event Action<string, string> Authorized;
+        public event Action Joined;
+        public event Action<string> Failed;
+        public event Action Leaved;
+        public event Action Connected;
+        public event Action Disconnected;
+        public event Action<RagonPlayer> PlayerJoined;
+        public event Action<RagonPlayer> PlayerLeft;
+        public event Action<RagonPlayer> OwnerShipChanged;
+        public event Action<string> LevelReceived;
+
+        public void Setup()
+        {
+            RagonNetwork.AddListener(this);
+        }
+
+        public void Dispose()
+        {
+            RagonNetwork.RemoveListener(this);
         }
     }
 }

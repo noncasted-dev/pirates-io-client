@@ -15,31 +15,31 @@ namespace Global.Services.Network.Instantiators.Runtime
         {
             _logger = logger;
         }
-        
-        private static NetworkInstantiator _instance;
 
-        public static NetworkInstantiator Instance => _instance;
+        private static NetworkInstantiator _instance;
 
         private readonly Dictionary<int, UniTaskCompletionSource<GameObject>> _completions = new();
         private int _counter;
         private NetworkInstantiatorLogger _logger;
+
+        public static NetworkInstantiator Instance => _instance;
 
         public void OnAwake()
         {
             _instance = this;
         }
 
-        public async UniTask<T1> Instantiate<T1, T2>(GameObject prefab, Vector2 position, T2 payload) 
-            where T2 : NetworkPayload 
+        public async UniTask<T1> Instantiate<T1, T2>(GameObject prefab, Vector2 position, T2 payload)
+            where T2 : NetworkPayload
             where T1 : class
         {
             _counter++;
             payload.SetData(_counter, position);
-            
+
             _logger.OnRequested(position, prefab.name);
-            
+
             _completions.Add(_counter, new UniTaskCompletionSource<GameObject>());
-            
+
             RagonNetwork.Room.CreateEntity(prefab, payload);
 
             var result = await _completions[_counter].Task;

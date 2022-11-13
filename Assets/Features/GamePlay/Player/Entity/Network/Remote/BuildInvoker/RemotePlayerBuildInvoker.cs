@@ -1,7 +1,7 @@
 ﻿using GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime;
 using Ragon.Client;
 
-namespace Features.GamePlay.Player.Entity.Network.Remote.BuildInvoker
+namespace GamePlay.Player.Entity.Network.Remote.BuildInvoker
 {
     public class RemotePlayerBuildInvoker : RagonBehaviour
     {
@@ -9,7 +9,7 @@ namespace Features.GamePlay.Player.Entity.Network.Remote.BuildInvoker
         {
             if (IsMine == true)
                 return;
-            
+
             RemotePlayerBuilder.Instance.Build(gameObject);
         }
     }

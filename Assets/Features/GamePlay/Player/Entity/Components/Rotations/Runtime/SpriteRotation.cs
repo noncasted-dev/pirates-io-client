@@ -17,10 +17,11 @@ namespace GamePlay.Player.Entity.Components.Rotations.Runtime
             _updater = updater;
         }
 
+        private readonly IInertialMovement _inertialMovement;
+
         private readonly IRotation _rotation;
 
         private readonly ISpriteFlipper _spriteFlipper;
-        private readonly IInertialMovement _inertialMovement;
         private readonly IUpdater _updater;
 
         public void ResetRotation()

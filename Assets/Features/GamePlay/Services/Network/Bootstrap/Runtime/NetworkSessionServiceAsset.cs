@@ -6,6 +6,7 @@ namespace GamePlay.Services.Network.Bootstrap.Runtime
 {
     public abstract class NetworkSessionServiceAsset : ScriptableObject
     {
-        public abstract ISessionNetworkService Create(IServiceBinder serviceBinder, ICallbacksRegister callbacksRegister);
+        public abstract ISessionNetworkService Create(IServiceBinder serviceBinder,
+            ICallbacksRegister callbacksRegister);
     }
 }

@@ -18,21 +18,22 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
             _config = config;
             _logger = logger;
         }
-        
-        private readonly IRigidBody _rigidBody;
-        private readonly IUpdater _updater;
+
         private readonly InertialMovementConfigAsset _config;
         private readonly InertialMovementLogger _logger;
 
-        private bool _isEnabled;
-
-        private Vector2 _targetDirection;
-        private Vector2 _startDirection;
+        private readonly IRigidBody _rigidBody;
+        private readonly IUpdater _updater;
         private Vector2 _currentDirection;
+
+        private bool _isEnabled;
 
         private float _lerpTime;
 
         private float _speed;
+        private Vector2 _startDirection;
+
+        private Vector2 _targetDirection;
 
         public float XDirection => _currentDirection.x;
 
@@ -43,7 +44,7 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
                 _logger.OnEnableTwiceError();
                 return;
             }
-            
+
             _logger.OnEnabled();
 
             _isEnabled = true;
@@ -57,19 +58,19 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
                 _logger.OnDisableTwiceError();
                 return;
             }
-            
+
             _logger.OnDisabled();
 
             _isEnabled = false;
             _updater.Remove(this);
         }
-        
+
         public void SetDirection(Vector2 direction)
         {
             _targetDirection = direction;
             _startDirection = _currentDirection;
             _lerpTime = 0f;
-            
+
             _logger.OnDirectionSet(direction);
         }
 
@@ -78,7 +79,7 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
             _targetDirection = Vector2.zero;
             _startDirection = _currentDirection;
             _lerpTime = 0f;
-            
+
             _logger.OnDirectionReset();
         }
 
@@ -91,13 +92,13 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
         public void OnPreFixedUpdate(float delta)
         {
             _lerpTime += _speed * delta * _config.LerpSpeed;
-            
+
             var progress = _config.Evaluate(_lerpTime, _startDirection, _targetDirection);
             _currentDirection = Vector2.Lerp(_startDirection, _targetDirection, progress);
             var speed = _speed * delta;
-            
+
             _rigidBody.Move(_currentDirection, speed);
-            
+
             _logger.OnMove(speed, _lerpTime, progress, _startDirection, _targetDirection, _currentDirection);
         }
     }

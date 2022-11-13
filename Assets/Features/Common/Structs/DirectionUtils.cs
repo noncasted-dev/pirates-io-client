@@ -52,7 +52,7 @@ namespace Common.Structs
 
             return false;
         }
-        
+
         public static Horizontal ToHorizontal(float x)
         {
             if (x < 0)

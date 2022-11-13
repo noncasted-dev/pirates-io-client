@@ -18,17 +18,17 @@ namespace Global.Services.Network.Session.Join.Logs
             if (_settings.IsAvailable(NetworkSessionLogType.Attempt) == false)
                 return;
 
-            _logger.Log($"Join attempt", _settings.LogParameters);
+            _logger.Log("Join attempt", _settings.LogParameters);
         }
-        
+
         public void OnSuccess()
         {
             if (_settings.IsAvailable(NetworkSessionLogType.Success) == false)
                 return;
 
-            _logger.Log($"Joined successfully", _settings.LogParameters);
+            _logger.Log("Joined successfully", _settings.LogParameters);
         }
-        
+
         public void OnFailed(string message)
         {
             if (_settings.IsAvailable(NetworkSessionLogType.Fail) == false)

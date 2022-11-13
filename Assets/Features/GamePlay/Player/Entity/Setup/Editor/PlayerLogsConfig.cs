@@ -39,8 +39,8 @@ namespace GamePlay.Player.Entity.Setup.Editor
         [SerializeField] [EditableObject] private TransformLogSettings _transform;
         [SerializeField] [EditableObject] private RigidBodyLogSettings _rigidBody;
 
-        [Space(100)] [Header("Components")] 
-        [SerializeField] [EditableObject] private RotationLogSettings _rotation;
+        [Space(100)] [Header("Components")] [SerializeField] [EditableObject]
+        private RotationLogSettings _rotation;
         [SerializeField] [EditableObject] private InertialMovementLogSettings _inertialMovement;
 
         [SerializeField] [EditableObject] private WeaponsHandlerLogSettings _weaponsHandler;

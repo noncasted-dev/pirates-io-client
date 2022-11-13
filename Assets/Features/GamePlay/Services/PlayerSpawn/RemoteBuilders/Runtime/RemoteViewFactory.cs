@@ -26,9 +26,9 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         }
 
         private readonly IAssetInstantiatorFactory _instantiatorFactory;
-        private readonly IProjectilesPoolProvider _projectiles;
         private readonly ILogger _logger;
         private readonly Transform _parent;
+        private readonly IProjectilesPoolProvider _projectiles;
 
         private readonly AssetReference _reference;
 

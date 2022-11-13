@@ -10,21 +10,7 @@ namespace Global.Services.Network.Session.Join.Runtime
         private string _failMessage = string.Empty;
 
         public string FailMessage => _failMessage;
-        
-        public async UniTask<NetworkSessionJoinResultType> Join()
-        {
-            RagonNetwork.AddListener(this);
 
-            RagonNetwork.Session.CreateOrJoin("game", 1, 300);
-            
-            var result = await _completion.Task;
-            await UniTask.Yield();
-
-            RagonNetwork.RemoveListener(this);
-
-            return result;
-        }
-        
         public void OnLevel(string sceneName)
         {
             _completion.TrySetResult(NetworkSessionJoinResultType.Success);
@@ -33,17 +19,30 @@ namespace Global.Services.Network.Session.Join.Runtime
         public void OnFailed(string message)
         {
             _failMessage = message;
-            
+
             _completion.TrySetResult(NetworkSessionJoinResultType.Fail);
         }
-        
+
+        public async UniTask<NetworkSessionJoinResultType> Join()
+        {
+            RagonNetwork.AddListener(this);
+
+            RagonNetwork.Session.CreateOrJoin("game", 1, 300);
+
+            var result = await _completion.Task;
+            await UniTask.Yield();
+
+            RagonNetwork.RemoveListener(this);
+
+            return result;
+        }
+
         #region Unused
 
         public void OnAuthorized(string playerId, string playerName)
         {
-            
         }
-        
+
         public void OnJoined()
         {
         }

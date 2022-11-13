@@ -24,7 +24,7 @@ namespace Global.GameLoops.Runtime
                 .WithParameter("settings", _logSettings);
 
             builder.RegisterComponent(gameLoop).AsImplementedInterfaces();
-            
+
             serviceBinder.ListenCallbacks(gameLoop);
             serviceBinder.AddToModules(gameLoop);
         }

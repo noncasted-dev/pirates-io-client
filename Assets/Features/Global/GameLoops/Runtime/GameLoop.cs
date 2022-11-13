@@ -51,27 +51,20 @@ namespace Global.GameLoops.Runtime
         private ILoadingScreen _loadingScreen;
         private GameLoopLogger _logger;
 
-        private GlobalScope _scope;
-
         private IDisposable _playFromMenuEvent;
-        
-        public void OnAwake()
-        {
-            _playFromMenuEvent = MessageBroker.Default.Receive<PlayFromMenuEvent>().Subscribe(OnPlayFromMenu);
-        }
+
+        private GlobalScope _scope;
 
         private void OnDestroy()
         {
             _playFromMenuEvent?.Dispose();
         }
 
-        public void Begin()
+        public void OnAwake()
         {
-            _logger.OnBegin();
-
-            LoadMenu();
+            _playFromMenuEvent = MessageBroker.Default.Receive<PlayFromMenuEvent>().Subscribe(OnPlayFromMenu);
         }
-        
+
         public void LoadLevel()
         {
             _logger.OnLoadLevel();
@@ -86,6 +79,13 @@ namespace Global.GameLoops.Runtime
             LoadScene(_menu).Forget();
         }
 
+        public void Begin()
+        {
+            _logger.OnBegin();
+
+            LoadMenu();
+        }
+
         private void OnPlayFromMenu(PlayFromMenuEvent data)
         {
             LoadLevel();
@@ -97,7 +97,7 @@ namespace Global.GameLoops.Runtime
             _currentCamera.SetCamera(_globalCamera.Camera);
 
             _loadingScreen.Show();
-            
+
             var unload = _currentSceneHandler.Unload();
             var result = await asset.Load(_scope, _loader);
 

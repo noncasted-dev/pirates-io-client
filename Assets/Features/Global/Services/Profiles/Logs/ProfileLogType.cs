@@ -1,4 +1,4 @@
-namespace Features.Global.Services.Profiles.Logs
+namespace Global.Services.Profiles.Logs
 {
     public enum ProfileLogType
     {

@@ -1,4 +1,10 @@
 {
-	"name": "Global.Services.DebugConsole.Runtime",
-	"references":[ "GUID:3de88c88fbbb8f944b9210d496af9762", "GUID:fb9b00a9a42c4c1459774b1ef88fcd74", "GUID:b0214a6008ed146ff8f122a6a9c2f6cc", "GUID:401398c75a71e5444a495125c9dd1a21", "GUID:c713b254602614c43a1d94a2a13ba844" ]
+  "name": "Global.Services.DebugConsole.Runtime",
+  "references": [
+    "GUID:3de88c88fbbb8f944b9210d496af9762",
+    "GUID:fb9b00a9a42c4c1459774b1ef88fcd74",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:401398c75a71e5444a495125c9dd1a21",
+    "GUID:c713b254602614c43a1d94a2a13ba844"
+  ]
 }

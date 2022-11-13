@@ -32,7 +32,7 @@ namespace Local.ComposedSceneConfig
 
             if (service is ILocalLoadListener bootstrap)
                 _loads.Add(bootstrap);
-            
+
             if (service is ILocalAsyncBootstrappedListener initializationLoopEnd)
                 _asyncBootstrappers.Add(initializationLoopEnd);
         }
@@ -61,7 +61,7 @@ namespace Local.ComposedSceneConfig
 
             await UniTask.WhenAll(tasks);
         }
-        
+
         public async UniTask InvokeAsyncBootstrappedCallbacks()
         {
             var tasks = new UniTask[_asyncBootstrappers.Count];

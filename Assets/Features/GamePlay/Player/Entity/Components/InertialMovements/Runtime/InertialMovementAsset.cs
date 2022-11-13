@@ -21,7 +21,7 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
                 .WithParameter(_logSettings);
 
             builder.Register<InertialMovementInput>(Lifetime.Scoped);
-            
+
             builder.Register<InertialMovement>(Lifetime.Scoped)
                 .WithParameter(_config)
                 .As<IInertialMovement>()

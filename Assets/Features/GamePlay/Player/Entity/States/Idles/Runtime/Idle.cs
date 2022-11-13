@@ -23,29 +23,30 @@ namespace GamePlay.Player.Entity.States.Idles.Runtime
             _logger = logger;
         }
 
-        private readonly IdleLogger _logger;
-
-        private readonly IStateMachine _stateMachine;
         private readonly IInertialMovement _inertialMovement;
+
+        private readonly IdleLogger _logger;
         private readonly ISpriteRotation _spriteRotation;
 
-        public StateDefinition Definition { get; }
+        private readonly IStateMachine _stateMachine;
 
         public void Enter()
         {
             _stateMachine.Enter(this);
-            
+
             _inertialMovement.Enable();
             _spriteRotation.Start();
-            
+
             _logger.OnEntered();
         }
+
+        public StateDefinition Definition { get; }
 
         public void Break()
         {
             _inertialMovement.Disable();
             _spriteRotation.Stop();
-            
+
             _logger.OnBroke();
         }
     }

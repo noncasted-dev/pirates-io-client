@@ -1,19 +1,19 @@
 {
-    "name": "Global.Services.Network.Session.Leave.Runtime",
-    "rootNamespace": "",
-    "references": [
-        "GUID:f51ebe6a0ceec4240a699833d6309b23",
-        "GUID:9d046beab4ce7434fa0196de47edbb21",
-        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
-        "GUID:861b1281dab914af69d87c4345d0b1a2"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "Global.Services.Network.Session.Leave.Runtime",
+  "rootNamespace": "",
+  "references": [
+    "GUID:f51ebe6a0ceec4240a699833d6309b23",
+    "GUID:9d046beab4ce7434fa0196de47edbb21",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:861b1281dab914af69d87c4345d0b1a2"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }

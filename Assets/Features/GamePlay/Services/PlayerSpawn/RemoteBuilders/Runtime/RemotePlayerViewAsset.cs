@@ -28,7 +28,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
                 projectiles,
                 logger,
                 instantiatorFactory);
-            
+
             var provider = new ObjectProvider<PlayerRemoteView>(
                 null,
                 factory,

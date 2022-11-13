@@ -17,26 +17,26 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
             _logger = logger;
             _projectiles = projectiles;
         }
-        
-        private static RemotePlayerBuilder _instance;
 
-        public static RemotePlayerBuilder Instance => _instance;
+        private static RemotePlayerBuilder _instance;
 
         [SerializeField] private RemoteViewsPool _pool;
         [SerializeField] private AssetReference _prefab;
-        
-        private IProjectilesPoolProvider _projectiles;
         private ILogger _logger;
+
+        private IProjectilesPoolProvider _projectiles;
+
+        public static RemotePlayerBuilder Instance => _instance;
 
         public void OnAwake()
         {
-            _instance = this;   
+            _instance = this;
         }
 
         public void Build(GameObject remotePlayer)
         {
             var viewProvider = _pool.Handler.GetPool<PlayerRemoteView>(_prefab);
-            
+
             var view = viewProvider.Get(Vector2.zero);
 
             var rootTransform = remotePlayer.transform;
@@ -44,7 +44,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
 
             viewTransform.parent = rootTransform;
             viewTransform.localPosition = Vector3.zero;
-            
+
             view.Construct(_logger, _projectiles);
         }
     }

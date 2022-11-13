@@ -1,17 +1,17 @@
 {
-    "name": "GamePlay.Player.Network.Remote.BuildInvoker",
-    "rootNamespace": "",
-    "references": [
-        "GUID:861b1281dab914af69d87c4345d0b1a2",
-        "GUID:8b811e177471a084e92a2dfb33078774"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "GamePlay.Player.Network.Remote.BuildInvoker",
+  "rootNamespace": "",
+  "references": [
+    "GUID:861b1281dab914af69d87c4345d0b1a2",
+    "GUID:8b811e177471a084e92a2dfb33078774"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }

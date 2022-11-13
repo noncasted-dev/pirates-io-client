@@ -43,12 +43,10 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
         private Vector2 _currentPosition;
         private RigidBodyLogger _logger;
+        private INetworkTransform _networkTransform;
 
         private Rigidbody2D _rigidbody;
         private IUpdater _updater;
-        private INetworkTransform _networkTransform;
-
-        public Vector2 Position => _rigidbody.position;
 
         public void OnAwake()
         {
@@ -61,7 +59,6 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
         public void OnFixedUpdate(float delta)
         {
             foreach (var interaction in _interactions)
-            {
                 switch (interaction)
                 {
                     case PhysicsInteraction.Move:
@@ -78,12 +75,13 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
-            }
 
             _networkTransform.SetPosition(_currentPosition);
 
             _interactions.Clear();
         }
+
+        public Vector2 Position => _rigidbody.position;
 
         public void SetPosition(Vector2 position)
         {

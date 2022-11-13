@@ -6,19 +6,19 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace GamePlay.Player.Entity.Network.Views.Bootstrap
+namespace GamePlay.Player.Entity.Network.Local.Bootstrap
 {
     [DisallowMultipleComponent]
     public class PlayerLocalBootstrapper : MonoBehaviour, IPlayerContainerBuilder
     {
         [SerializeField] private NetworkTransform _transform;
         [SerializeField] private PlayerNetworkRoot _root;
-        
+
         public void OnBuild(IContainerBuilder builder)
         {
             builder.RegisterComponent(_transform)
                 .As<INetworkTransform>();
-            
+
             builder.RegisterComponent(_root)
                 .AsImplementedInterfaces();
         }

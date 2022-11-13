@@ -32,7 +32,7 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
             _cancellation?.Cancel();
             _cancellation?.Dispose();
             _cancellation = null;
-            
+
             _stateMachine.Exit();
         }
 

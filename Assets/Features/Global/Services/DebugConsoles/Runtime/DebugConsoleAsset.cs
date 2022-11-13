@@ -18,7 +18,7 @@ namespace Global.Services.DebugConsoles.Runtime
             debugConsole.name = "DebugConsole";
 
             builder.RegisterComponent(debugConsole);
-            
+
             serviceBinder.AddToModules(debugConsole);
             serviceBinder.ListenCallbacks(debugConsole);
         }

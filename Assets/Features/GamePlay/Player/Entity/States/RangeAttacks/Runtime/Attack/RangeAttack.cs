@@ -50,10 +50,10 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         private readonly IAnimatorView _animatorView;
         private readonly IRangeAttackDash _dash;
         private readonly AttackDelay _delay;
+        private readonly IInertialMovement _inertialMovement;
         private readonly RangeAttackLogger _logger;
         private readonly IRotation _rotation;
         private readonly IRangeAttackRotator _rotator;
-        private readonly IInertialMovement _inertialMovement;
 
         private readonly IStateMachine _stateMachine;
         private readonly IWeaponsHandler _weapons;
@@ -138,7 +138,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             _isShot = false;
             _delay.OnAttack();
             _inertialMovement.Enable();
-            
+
             _logger.OnEntered();
 
             _rotator.Rotate(_direction);

@@ -1,17 +1,17 @@
 {
-    "name": "Global.Services.Network.Loop.Runtime",
-    "rootNamespace": "",
-    "references": [
-        "GUID:861b1281dab914af69d87c4345d0b1a2",
-        "GUID:401398c75a71e5444a495125c9dd1a21"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "Global.Services.Network.Loop.Runtime",
+  "rootNamespace": "",
+  "references": [
+    "GUID:861b1281dab914af69d87c4345d0b1a2",
+    "GUID:401398c75a71e5444a495125c9dd1a21"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }

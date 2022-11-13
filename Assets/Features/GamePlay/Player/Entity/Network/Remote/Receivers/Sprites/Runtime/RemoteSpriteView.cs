@@ -8,8 +8,8 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Sprites.Runtime
     [RequireComponent(typeof(SpriteRenderer))]
     public class RemoteSpriteView : MonoBehaviour
     {
-        private SpriteRenderer _spriteRenderer;
         private Vector2 _previousPosition;
+        private SpriteRenderer _spriteRenderer;
 
         private void Awake()
         {
@@ -18,8 +18,8 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Sprites.Runtime
 
         private void FixedUpdate()
         {
-            var position = (Vector2) transform.position;
-            
+            var position = (Vector2)transform.position;
+
             if (_previousPosition == position)
                 return;
 

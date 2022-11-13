@@ -32,6 +32,21 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
 
         public GameObject GameObject => gameObject;
 
+        public void SetupPoolObject(Action<LinearProjectile> returnToPool)
+        {
+            _returnCallback = returnToPool;
+
+            _collider = GetComponent<BoxCollider2D>();
+        }
+
+        public void OnTaken()
+        {
+        }
+
+        public void OnReturned()
+        {
+        }
+
         public LayerMask LayerMask => _shootParams.LayerMask;
         public Vector2 Position => _position;
         public Vector2 Direction => _direction;
@@ -52,21 +67,6 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
             transform.rotation = Quaternion.Euler(0f, 0f, _angle);
 
             _mover.Add(this);
-        }
-        
-        public void SetupPoolObject(Action<LinearProjectile> returnToPool)
-        {
-            _returnCallback = returnToPool;
-
-            _collider = GetComponent<BoxCollider2D>();
-        }
-
-        public void OnTaken()
-        {
-        }
-
-        public void OnReturned()
-        {
         }
 
         public void SetPosition(Vector2 position)

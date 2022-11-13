@@ -1,7 +1,6 @@
 ﻿using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Random = UnityEngine.Random;
 
 namespace GamePlay.Level.Environment.Tools
 {
@@ -18,7 +17,7 @@ namespace GamePlay.Level.Environment.Tools
         [SerializeField] private GroundColorPalette _palette;
 
         private bool _isGenerating;
-        
+
         private void OnEnable()
         {
             Tilemap.tilemapTileChanged += TilemapChanged;
@@ -29,29 +28,29 @@ namespace GamePlay.Level.Environment.Tools
         {
             Tilemap.tilemapTileChanged -= TilemapChanged;
             _isGenerating = true;
-            
+
             var colors = _palette.GetColors();
-            
+
             _grassTop.ClearAllTiles();
-            
+
             _ground.ResizeBounds();
             _grassTop.ResizeBounds();
-            
+
             foreach (var tilePosition in _ground.cellBounds.allPositionsWithin)
-            {   
+            {
                 var position = _ground.CellToWorld(tilePosition);
-                
+
                 var color = colors[Random.Range(0, 3)];
-                
+
                 if (_ground.HasTile(tilePosition) == false)
                     continue;
-                
+
                 _grassTop.SetTile(tilePosition, _grassTile);
-                
+
                 SetColor(_grassTop, position, color);
                 SetColor(_ground, position, color);
             }
-            
+
             Tilemap.tilemapTileChanged += TilemapChanged;
             _isGenerating = false;
         }
@@ -76,20 +75,19 @@ namespace GamePlay.Level.Environment.Tools
         {
             if (_isGenerating == true)
                 return;
-            
+
             if (tilemap != _ground)
                 return;
 
             foreach (var tile in tiles)
-            {
                 if (_ground.HasTile(tile.position) == true)
                 {
                     var colors = _palette.GetColors();
                     var position = _ground.CellToWorld(tile.position);
                     var color = colors[Random.Range(0, 3)];
-                
+
                     _grassTop.SetTile(tile.position, _grassTile);
-                
+
                     SetColor(_grassTop, position, color);
                     SetColor(_ground, position, color);
                 }
@@ -98,7 +96,6 @@ namespace GamePlay.Level.Environment.Tools
                     _grassTop.SetTile(tile.position, null);
                     _grassDown.SetTile(tile.position, null);
                 }
-            }
         }
     }
 }

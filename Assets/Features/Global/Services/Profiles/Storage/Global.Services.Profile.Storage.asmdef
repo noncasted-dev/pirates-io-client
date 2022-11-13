@@ -1,4 +1,11 @@
 {
-	"name": "Global.Services.Profile.Storage",
-	"references":[ "GUID:776d03a35f1b52c4a9aed9f56d7b4229", "GUID:9f0d821f7847b0945914b88b7647341e", "GUID:b0214a6008ed146ff8f122a6a9c2f6cc", "GUID:fb9b00a9a42c4c1459774b1ef88fcd74", "GUID:304598a766c781247877f81511375f98", "GUID:401398c75a71e5444a495125c9dd1a21" ]
+  "name": "Global.Services.Profile.Storage",
+  "references": [
+    "GUID:776d03a35f1b52c4a9aed9f56d7b4229",
+    "GUID:9f0d821f7847b0945914b88b7647341e",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:fb9b00a9a42c4c1459774b1ef88fcd74",
+    "GUID:304598a766c781247877f81511375f98",
+    "GUID:401398c75a71e5444a495125c9dd1a21"
+  ]
 }

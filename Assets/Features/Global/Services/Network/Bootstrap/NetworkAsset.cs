@@ -44,7 +44,7 @@ namespace Global.Services.Network.Bootstrap
 
             builder.Register<NetworkSessionLeaveLogger>(Lifetime.Scoped)
                 .WithParameter(_sessionLeaveLogSettings);
-            
+
             builder.Register<NetworkInstantiatorLogger>(Lifetime.Scoped)
                 .WithParameter(_instantiatorLogSettings);
 
@@ -57,7 +57,7 @@ namespace Global.Services.Network.Bootstrap
 
             builder.RegisterComponent(joiner)
                 .As<INetworkSessionJoiner>();
-            
+
             builder.RegisterComponent(leaver)
                 .As<INetworkSessionLeaver>();
 

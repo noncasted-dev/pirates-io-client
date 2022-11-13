@@ -12,7 +12,7 @@ namespace Menu.Services.UI.Runtime
     public class MenuUIAsset : LocalServiceAsset
     {
         [SerializeField] private AssetReference _scene;
-        
+
         public override async UniTask Create(
             IServiceBinder serviceBinder,
             ICallbacksRegister callbacksRegister,
@@ -22,7 +22,7 @@ namespace Menu.Services.UI.Runtime
 
             var result = await sceneLoader.Load(request);
             var ui = result.Searched;
-            
+
             serviceBinder.RegisterComponent(ui)
                 .As<IMenuUI>();
 

@@ -9,15 +9,15 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
 {
     public class PlayerRemoteView : RagonBehaviour, IPoolObject<PlayerRemoteView>
     {
-        private Action<PlayerRemoteView> _returnToPool;
-        
-        public GameObject GameObject => gameObject;
-
         public void Construct(
             ILogger logger,
             IProjectilesPoolProvider projectiles)
         {
         }
+
+        private Action<PlayerRemoteView> _returnToPool;
+
+        public GameObject GameObject => gameObject;
 
         public void SetPosition(Vector2 position)
         {
@@ -31,12 +31,10 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
 
         public void OnTaken()
         {
-            
         }
 
         public void OnReturned()
         {
-            
         }
 
         public override void OnDestroyedEntity()

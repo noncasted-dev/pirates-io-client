@@ -1,7 +1,8 @@
 using Common.ReadOnlyDictionaries.Editor;
+using Global.Services.Profiles.Logs;
 using UnityEditor;
 
-namespace Features.Global.Services.Profiles.Logs
+namespace Global.Services.Loggers.Editor.Services
 {
     [CustomPropertyDrawer(typeof(ProfileLogs))]
     public class ProfileLogsDrawer : ReadonlyDictionaryPropertyDrawer

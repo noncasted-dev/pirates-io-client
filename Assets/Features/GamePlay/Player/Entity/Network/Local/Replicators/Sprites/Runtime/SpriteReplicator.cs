@@ -8,12 +8,11 @@ namespace GamePlay.Player.Entity.Network.Local.Replicators.Sprites.Runtime
         {
             _sender = sender;
         }
-        
+
         private readonly INetworkEventSender _sender;
-        
+
         public void OnFlip(bool isFlipped)
         {
-                
         }
     }
 }

@@ -19,11 +19,6 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
 
         public ObjectsPoolsHandler Handler => _handler;
 
-        public void OnSceneLoaded(Scene targetScene)
-        {
-            _targetScene = targetScene;
-        }
-        
         public void Resolve(IObjectResolver resolver)
         {
             _handler.Setup(resolver, _targetScene);
@@ -32,6 +27,11 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         public async UniTask OnAwakeAsync()
         {
             await _handler.Prepare();
+        }
+
+        public void OnSceneLoaded(Scene targetScene)
+        {
+            _targetScene = targetScene;
         }
     }
 }

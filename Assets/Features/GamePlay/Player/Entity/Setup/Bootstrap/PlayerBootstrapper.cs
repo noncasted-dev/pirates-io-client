@@ -21,9 +21,9 @@ namespace GamePlay.Player.Entity.Setup.Bootstrap
 
             foreach (var builder in bodyBuilders)
                 rootBuilders.Remove(builder);
-            
+
             _builders = rootBuilders.Concat(bodyBuilders).ToArray();
-            
+
             var scope = GetComponent<PlayerScope>();
 
             using (LifetimeScope.EnqueueParent(parent))

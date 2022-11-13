@@ -23,7 +23,7 @@ namespace Menu.Services.UI.Runtime
         {
             _playButton.onClick.RemoveListener(OnPlayClicked);
         }
-        
+
         public void OnLogin()
         {
             _loginBody.SetActive(true);
@@ -43,11 +43,11 @@ namespace Menu.Services.UI.Runtime
             _loginBody.SetActive(false);
             _loadingBody.SetActive(true);
         }
-        
+
         private void OnPlayClicked()
         {
             var userName = _nameInput.text;
-            
+
             if (string.IsNullOrWhiteSpace(userName) == true)
                 return;
 

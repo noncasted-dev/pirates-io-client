@@ -2,7 +2,7 @@ using Global.Common;
 using Global.Services.Loggers.Runtime;
 using UnityEngine;
 
-namespace Features.Global.Services.Profiles.Logs
+namespace Global.Services.Profiles.Logs
 {
     [CreateAssetMenu(fileName = GlobalAssetsPaths.LogsPrefix + "ProfileLog",
         menuName = GlobalAssetsPaths.Profile + "Logs")]

@@ -6,7 +6,7 @@
         {
             Name = name;
         }
-        
+
         public readonly string Name;
     }
 }

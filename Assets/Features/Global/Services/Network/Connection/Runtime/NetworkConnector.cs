@@ -22,9 +22,9 @@ namespace Global.Services.Network.Connection.Runtime
             _config = config;
         }
 
-        private readonly NetworkEvents _events = new();
-
         [SerializeField] private RagonEntityManager _entityManager;
+
+        private readonly NetworkEvents _events = new();
 
         private NetworkConnectionConfigAsset _config;
         private NetworkConnectorLogger _logger;
@@ -39,7 +39,7 @@ namespace Global.Services.Network.Connection.Runtime
             _logger.OnAttempt(_config.Ip, _config.Port);
 
             var attempt = new ConnectionAttempt(_config.Ip, _config.Port);
-            
+
             var result = await attempt.Connect(userName);
 
             switch (result)

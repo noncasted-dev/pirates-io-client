@@ -21,13 +21,13 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Logs
 
             _logger.Log($"Direction assigned: {direction}", _settings.LogParameters);
         }
-        
+
         public void OnDirectionReset()
         {
             if (_settings.IsAvailable(InertialMovementType.DirectionReset) == false)
                 return;
 
-            _logger.Log($"Direction reset", _settings.LogParameters);
+            _logger.Log("Direction reset", _settings.LogParameters);
         }
 
         public void OnSpeedSet(float speed)
@@ -62,31 +62,31 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Logs
             if (_settings.IsAvailable(InertialMovementType.Enable) == false)
                 return;
 
-            _logger.Log($"Enabled", _settings.LogParameters);
+            _logger.Log("Enabled", _settings.LogParameters);
         }
-        
+
         public void OnDisabled()
-        {   
+        {
             if (_settings.IsAvailable(InertialMovementType.Disable) == false)
                 return;
 
-            _logger.Log($"Disabled", _settings.LogParameters);
+            _logger.Log("Disabled", _settings.LogParameters);
         }
-        
+
         public void OnEnableTwiceError()
-        {   
+        {
             if (_settings.IsAvailable(InertialMovementType.EnableTwiceError) == false)
                 return;
 
-            _logger.Error($"Trying to enable twice", _settings.LogParameters);
+            _logger.Error("Trying to enable twice", _settings.LogParameters);
         }
-        
+
         public void OnDisableTwiceError()
-        {   
+        {
             if (_settings.IsAvailable(InertialMovementType.DisableTwiceError) == false)
                 return;
 
-            _logger.Error($"Trying to disable twice", _settings.LogParameters);
+            _logger.Error("Trying to disable twice", _settings.LogParameters);
         }
     }
 }

@@ -22,8 +22,8 @@ namespace Global.Services.InputViews.Runtime
         private ICameraUtils _cameraUtils;
 
         private Controls _controls;
-        private Controls.GamePlayActions _gamePlay;
         private Controls.DebugActions _debug;
+        private Controls.GamePlayActions _gamePlay;
 
         private InputViewLogger _logger;
 
@@ -38,7 +38,7 @@ namespace Global.Services.InputViews.Runtime
         {
             _controls = new Controls();
             _controls.Enable();
-            
+
             _gamePlay = _controls.GamePlay;
             _debug = _controls.Debug;
 
@@ -50,7 +50,6 @@ namespace Global.Services.InputViews.Runtime
         public event Action RangeAttackPerformed;
         public event Action RangeAttackCanceled;
         public event Action DebugConsolePreformed;
-        
 
         public float GetAngleFrom(Vector2 from)
         {
@@ -116,7 +115,7 @@ namespace Global.Services.InputViews.Runtime
 
             _gamePlay.RangeAttack.performed -= OnRangeAttackPerformed;
             _gamePlay.RangeAttack.canceled -= OnRangeAttackCanceled;
-            
+
             _debug.Console.performed -= OnDebugConsolePreformed;
         }
 

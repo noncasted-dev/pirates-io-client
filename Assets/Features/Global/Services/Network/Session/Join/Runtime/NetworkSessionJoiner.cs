@@ -20,7 +20,7 @@ namespace Global.Services.Network.Session.Join.Runtime
         public async UniTask<NetworkSessionJoinResultType> JoinRandom()
         {
             _joinLogger.OnAttempted();
-            
+
             var attempt = new SessionJoinAttempt();
 
             var result = await attempt.Join();

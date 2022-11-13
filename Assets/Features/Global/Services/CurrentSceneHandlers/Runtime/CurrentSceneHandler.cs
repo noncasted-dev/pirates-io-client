@@ -25,8 +25,8 @@ namespace Global.Services.CurrentSceneHandlers.Runtime
         }
 
         private ComposedSceneLoadResult _current;
-        private CurrentSceneHandlerLogger _logger;
         private Scene _global;
+        private CurrentSceneHandlerLogger _logger;
 
         private IResourcesCleaner _resourcesCleaner;
         private ISceneUnloader _unloader;
@@ -41,7 +41,7 @@ namespace Global.Services.CurrentSceneHandlers.Runtime
         public async UniTask Unload()
         {
             SceneManager.SetActiveScene(_global);
-            
+
             if (_current == null)
             {
                 _logger.OnNoCurrentSceneError();

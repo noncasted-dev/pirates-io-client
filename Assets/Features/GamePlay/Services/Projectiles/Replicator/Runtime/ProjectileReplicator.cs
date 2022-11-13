@@ -88,12 +88,18 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
 
             _eventSender.ReplicateEvent(
                 data,
-                RagonTarget.ExceptOwner,
+                RagonTarget.All,
                 RagonReplicationMode.Server);
         }
 
         private void OnProjectileReceived(RagonPlayer player, ProjectileInstantiateEvent data)
         {
+            if (player.IsMe == true)
+            {
+                Debug.Log("Replicated back");
+                return;
+            }
+            
             var distance = Vector2.Distance(data.Position, _positionProvider.Position);
             
             if (distance > _config.ReplicateDistance)

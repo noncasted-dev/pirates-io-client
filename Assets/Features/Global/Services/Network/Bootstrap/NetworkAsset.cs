@@ -3,6 +3,7 @@ using Global.Common;
 using Global.Services.Common.Abstract;
 using Global.Services.Network.Connection.Logs;
 using Global.Services.Network.Connection.Runtime;
+using Global.Services.Network.EventsRegistries.Runtime;
 using Global.Services.Network.Instantiators.Logs;
 using Global.Services.Network.Instantiators.Runtime;
 using Global.Services.Network.Session.Join.Logs;
@@ -60,6 +61,9 @@ namespace Global.Services.Network.Bootstrap
 
             builder.RegisterComponent(leaver)
                 .As<INetworkSessionLeaver>();
+
+            var networkRegistry = new NetworkEventsRegistry();
+            networkRegistry.Register();
 
             serviceBinder.AddToModules(connector);
             serviceBinder.ListenCallbacks(connector);

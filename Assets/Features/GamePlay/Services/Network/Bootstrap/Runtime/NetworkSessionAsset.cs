@@ -6,7 +6,6 @@ using Local.Services.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
-using VContainer;
 
 namespace GamePlay.Services.Network.Bootstrap.Runtime
 {
@@ -14,7 +13,6 @@ namespace GamePlay.Services.Network.Bootstrap.Runtime
         menuName = GamePlayAssetsPaths.NetworkBootstrapper + "Service")]
     public class NetworkSessionAsset : LocalServiceAsset
     {
-        [SerializeField] private NetworkSessionBootstrapper _prefab;
         [SerializeField] private AssetReference _scene;
 
         public override async UniTask Create(
@@ -24,17 +22,11 @@ namespace GamePlay.Services.Network.Bootstrap.Runtime
         {
             var sceneLoadResult = await sceneLoader.Load(new TypedSceneLoadData<INetworkSessionBootstrapper>(_scene));
             SceneManager.SetActiveScene(sceneLoadResult.Instance.Scene);
+            
+            var bootstrapper = sceneLoadResult.Searched;
+            bootstrapper.Bootstrap(serviceBinder, callbacksRegister);
 
-            var bootstrapper = Instantiate(_prefab);
-            bootstrapper.name = "SessionNetworkBootstrapper";
-
-            serviceBinder.RegisterComponent(bootstrapper);
             callbacksRegister.ListenLoopCallbacks(bootstrapper);
-        }
-
-        public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
-        {
-            resolver.Resolve<NetworkSessionBootstrapper>();
         }
     }
 }

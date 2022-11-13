@@ -15,7 +15,6 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         [SerializeField] [Min(0f)] private float _pushForce;
         [SerializeField] [Min(0f)] private float _speed;
         [SerializeField] [Min(0f)] private float _distance;
-        [SerializeField] [Min(0f)] private LayerMask _layerMask;
 
         [SerializeField] private AssetReference _projectile;
         [SerializeField] private AssetReference _vfx;
@@ -27,7 +26,6 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         public float PushForce => _pushForce;
         public float Speed => _speed;
         public float Distance => _distance;
-        public LayerMask LayerMask => _layerMask;
         public AssetReference Projectile => _projectile;
         public AssetReference Vfx => _vfx;
     }

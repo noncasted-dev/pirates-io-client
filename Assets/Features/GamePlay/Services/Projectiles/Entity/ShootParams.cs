@@ -8,22 +8,16 @@ namespace GamePlay.Services.Projectiles.Entity
     {
         public ShootParams(
             int damage,
-            float pushForce,
             float speed,
-            float distance,
-            LayerMask layerMask)
+            float distance)
         {
             Damage = damage;
-            PushForce = pushForce;
             Speed = speed;
-            LayerMask = layerMask;
             Distance = distance;
 
             _damage = damage;
-            _pushForce = pushForce;
             _speed = speed;
             _distance = distance;
-            _layerMask = layerMask;
         }
         
         [SerializeField] private int _shotsAmount;
@@ -34,8 +28,6 @@ namespace GamePlay.Services.Projectiles.Entity
         [SerializeField] private LayerMask _layerMask;
 
         public readonly int Damage;
-        public readonly LayerMask LayerMask;
-        public readonly float PushForce;
         public readonly float Speed;
         public readonly float Distance;
     }

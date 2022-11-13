@@ -3,6 +3,7 @@ using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Root;
 using GamePlay.Services.Common.Scope;
+using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Logs;
 using GamePlay.Services.PlayerSpawn.SpawnPoints;
 using Global.Services.AssetsFlow.Runtime.Abstract;
@@ -22,9 +23,11 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             INetworkInstantiator networkInstantiator,
             LevelScope scope,
             ISpawnPoints spawnPoints,
+            IPlayerTransformPresenter transformPresenter,
             IProfileStorageProvider profileStorageProvider,
             PlayerFactoryLogger logger)
         {
+            _transformPresenter = transformPresenter;
             _profileStorageProvider = profileStorageProvider;
             _networkInstantiator = networkInstantiator;
             _logger = logger;
@@ -42,6 +45,7 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
         private IProfileStorageProvider _profileStorageProvider;
         private LevelScope _scope;
         private ISpawnPoints _spawnPoints;
+        private IPlayerTransformPresenter _transformPresenter;
 
         public async UniTask<IPlayerRoot> Create()
         {
@@ -56,10 +60,14 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
 
             var playerObject = await _instantiator.InstantiateAsync(Vector2.zero);
             playerObject.name = "Player";
-
+            
             var playerTransform = playerObject.transform;
-            playerTransform.parent = networkObject.transform;
+            var networkTransform = networkObject.transform;
+            
+            playerTransform.parent = networkTransform;
             playerTransform.localPosition = Vector3.zero;
+            
+            _transformPresenter.AssignPlayer(networkTransform);
 
             _logger.OnInstantiated(spawnPoint);
 

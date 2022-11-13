@@ -26,23 +26,29 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
         private readonly IProjectilesMover _mover;
         
         private ShootParams _shootParams;
+        private bool _isLocal;
 
-        public void Setup(ShootParams shootParams)
+        public bool IsLocal => _isLocal;
+        
+        public void Setup(ShootParams shootParams, bool isLocal)
         {
             _shootParams = shootParams;
+            _isLocal = isLocal;
         }
 
         public void OnTriggered(IDamageReceiver damageReceiver)
         {
-            var damage = new Damage(
-                _shootParams.Damage,
-                _shootParams.PushForce, 
-                _transform.position);
-            
-            damageReceiver.ReceiveDamage(damage);
-
             _mover.Remove(_projectile);
             _returnToPool?.Invoke(_projectile);
+            
+            if (_isLocal == false)
+                return;
+            
+            var damage = new Damage(
+                _shootParams.Damage,
+                _transform.position);
+
+            damageReceiver.ReceiveDamage(damage);
         }
 
         public void OnCollided()

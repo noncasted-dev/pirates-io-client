@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using GamePlay.Services.Network.Service.Common.EntityProvider.Runtime;
 using Local.Services.Abstract;
 using Local.Services.Abstract.Callbacks;
 using Ragon.Client;
@@ -8,18 +9,21 @@ namespace GamePlay.Services.Network.Bootstrap.Runtime
 {
     [DisallowMultipleComponent]
     public class NetworkSessionBootstrapper :
-        MonoBehaviour,
+        RagonBehaviour,
         ILocalAsyncBootstrappedListener,
         INetworkSessionBootstrapper
     {
         public async UniTask OnBootstrappedAsync()
         {
-            Debug.Log("On scene loaded");
             RagonNetwork.Room.SceneLoaded();
         }
 
         public void Bootstrap(IServiceBinder serviceBinder, ICallbacksRegister callbacksRegister)
         {
+            serviceBinder.Register<NetworkEventsProvider>()
+                .WithParameter<RagonBehaviour>(this)
+                .As<INetworkSessionEventSender>()
+                .As<INetworkSessionEventListener>();
         }
     }
 }

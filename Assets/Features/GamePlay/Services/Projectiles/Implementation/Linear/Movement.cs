@@ -37,9 +37,9 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
             return data;
         }
 
-        public void Setup(LayerMask layerMask, float angle, MovementData data)
+        public void Setup(float angle, MovementData data)
         {
-            RaycastData.Setup(layerMask, angle);
+            RaycastData.Setup(angle);
             _data = data;
             _passedDistance = 0f;
         }

@@ -21,7 +21,9 @@
         public const string Environment = _services + "Environment/";
         public const string NetworkBootstrapper = _network + "Bootstrapper/";
         public const string RemotePlayerBuilder = _network + "RemotePlayerBuilder/";
+        public const string ProjectilesReplicator = _network + "ProjectilesReplicator/";
         public const string ChunkConfig = Config + "ChunkConfig";
         public const string VFX = _services + "VFX/";
+        public const string PlayerPositionProvider = _services + "PlayerPositionProvider/";
     }
 }

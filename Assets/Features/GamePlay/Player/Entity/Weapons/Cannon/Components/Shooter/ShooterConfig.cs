@@ -22,10 +22,8 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         {
             return new ShootParams(
                 _asset.Damage,
-                _asset.PushForce,
                 _asset.Speed, 
-                _asset.Distance,
-                _asset.LayerMask);
+                _asset.Distance);
         }
     }
 }

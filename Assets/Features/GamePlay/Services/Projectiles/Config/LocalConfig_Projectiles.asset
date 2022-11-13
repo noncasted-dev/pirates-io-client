@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hitBoxMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 256
+  _allInteractionsMask:
+    serializedVersion: 2
+    m_Bits: 384
   _bufferSize: 3

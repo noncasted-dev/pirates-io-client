@@ -2,7 +2,9 @@
 using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
 using GamePlay.Player.Entity.Views.ShootPoint;
+using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Implementation.Linear;
+using GamePlay.Services.Projectiles.Replicator.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
@@ -13,6 +15,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
     {
         public Shot(
             IUpdater updater,
+            IProjectileReplicator projectileReplicator,
             IShooterConfig config,
             IObjectProvider<LinearProjectile> projectiles,
             IObjectProvider<AnimatedVfx> vfx,
@@ -22,6 +25,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
             float spread)
         {
             _updater = updater;
+            _projectileReplicator = projectileReplicator;
             _config = config;
             _projectiles = projectiles;
             _shootPoint = shootPoint;
@@ -32,6 +36,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         }
 
         private readonly IUpdater _updater;
+        private readonly IProjectileReplicator _projectileReplicator;
         private readonly IShooterConfig _config;
         private readonly IObjectProvider<LinearProjectile> _projectiles;
         private readonly IObjectProvider<AnimatedVfx> _vfx;
@@ -71,14 +76,23 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 var resultAngle = _angle + randomAngle;
                 var shootPosition = _shootPoint.GetShootPoint(resultAngle);
                 var direction = AngleUtils.ToDirection(resultAngle);
-
+                
                 var projectile = _projectiles.Get(shootPosition);
-
-                projectile.Fire(shootPosition, direction, _config.CreateParams());
+                var parameters = _config.CreateParams();
+                
+                projectile.Fire(direction, parameters, true);
                 _vfx.Get(shootPosition);
 
                 _shotsRegistry[i] = true;
                 _shotCounter++;
+                
+                _projectileReplicator.Replicate(
+                    ProjectileType.Ordinary,
+                    shootPosition,
+                    resultAngle,
+                    parameters.Speed,
+                    parameters.Damage,
+                    parameters.Distance);
             }
 
             if (_shotCounter == _config.ShotsAmount || _cancellation.IsCancellationRequested == true)

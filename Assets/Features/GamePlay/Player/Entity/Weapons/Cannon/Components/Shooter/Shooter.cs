@@ -4,6 +4,7 @@ using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.ShootPoint;
 using GamePlay.Services.Projectiles.Factory;
 using GamePlay.Services.Projectiles.Implementation.Linear;
+using GamePlay.Services.Projectiles.Replicator.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.Updaters.Runtime.Abstract;
@@ -17,13 +18,15 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
             IShooterConfig config,
             IProjectilesPoolProvider projectilesPoolProvider,
             IShootPoint shootPoint,
-            IVfxPoolProvider vfxPoolProvider)
+            IVfxPoolProvider vfxPoolProvider,
+            IProjectileReplicator projectileReplicator)
         {
             _updater = updater;
             _config = config;
             _projectilesPoolProvider = projectilesPoolProvider;
             _shootPoint = shootPoint;
             _vfxPoolProvider = vfxPoolProvider;
+            _projectileReplicator = projectileReplicator;
         }
 
         private readonly IUpdater _updater;
@@ -31,6 +34,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         private readonly IProjectilesPoolProvider _projectilesPoolProvider;
         private readonly IShootPoint _shootPoint;
         private readonly IVfxPoolProvider _vfxPoolProvider;
+        private readonly IProjectileReplicator _projectileReplicator;
 
         private IObjectProvider<LinearProjectile> _projectiles;
         private IObjectProvider<AnimatedVfx> _vfx;
@@ -57,6 +61,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 
             var shot = new Shot(
                 _updater,
+                _projectileReplicator,
                 _config,
                 _projectiles,
                 _vfx,

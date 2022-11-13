@@ -24,6 +24,8 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
         }
 
         [SerializeField] [ReadOnly] private ShootParams _shootParams;
+        [SerializeField] [ReadOnly] private bool _isLocal;
+        
         [SerializeField] private BoxCollider2D _collider;
         [SerializeField] private TrailRenderer _trail;
         
@@ -39,21 +41,22 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
         public GameObject GameObject => gameObject;
 
         public void Fire(
-            Vector2 position,
             Vector2 direction,
-            ShootParams shootParams)
+            ShootParams shootParams,
+            bool isLocal)
         {
             _shootParams = shootParams;
-
+            _isLocal = isLocal;
+            
             var movementData = new MovementData(
                 direction,
                 shootParams.Speed,
                 shootParams.Distance);
-
+            
             var angle = direction.ToAngle();
 
-            _movement.Setup(shootParams.LayerMask, angle, movementData);
-            _actions.Setup(shootParams);
+            _movement.Setup(angle, movementData);
+            _actions.Setup(shootParams, isLocal);
             
             _mover.Add(this);
         }

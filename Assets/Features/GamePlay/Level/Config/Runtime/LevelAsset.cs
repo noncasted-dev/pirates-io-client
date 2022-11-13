@@ -6,9 +6,11 @@ using GamePlay.Services.Common.Scope;
 using GamePlay.Services.LevelCameras.Runtime;
 using GamePlay.Services.LevelLoops.Runtime;
 using GamePlay.Services.Network.Bootstrap.Runtime;
+using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime;
 using GamePlay.Services.Projectiles.Bootstrap;
+using GamePlay.Services.Projectiles.Replicator.Runtime;
 using GamePlay.Services.TransitionScreens.Runtime;
 using GamePlay.Services.VFX.Pool.Provider;
 using Local.ComposedSceneConfig;
@@ -32,6 +34,8 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField] [EditableObject] private NetworkSessionAsset _networkSession;
         [SerializeField] [EditableObject] private RemotePlayerBuilderAsset _remotePlayerBuilder;
         [SerializeField] [EditableObject] private VfxPoolAsset _vfxPool;
+        [SerializeField] [EditableObject] private ProjectileReplicatorAsset _projectileReplicator;
+        [SerializeField] [EditableObject] private PlayerPositionProviderAsset _playerPositionProvider;
 
         protected override LocalServiceAsset[] AssignServices()
         {
@@ -45,7 +49,9 @@ namespace GamePlay.Level.Config.Runtime
                 _transitionScreen,
                 _networkSession,
                 _remotePlayerBuilder,
-                _vfxPool
+                _vfxPool,
+                _projectileReplicator,
+                _playerPositionProvider
             };
 
             return list.ToArray();

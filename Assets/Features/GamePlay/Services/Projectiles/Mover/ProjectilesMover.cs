@@ -57,58 +57,65 @@ namespace GamePlay.Services.Projectiles.Mover
             jobHandle.Complete();
 
             for (var i = 0; i < job.Projectiles.Length; i++)
+                CheckCollision(_projectiles[i], job.Projectiles[i]);
+
+            array.Dispose();
+        }
+
+        private void CheckCollision(IMovableProjectile projectile, ProjectileMoveData data)
+        {
+            var raycastData = projectile.Movement.RaycastData;
+            var movement = projectile.Movement;
+
+            var size = new Vector2(data.PassedDistance, raycastData.ColliderHeight);
+
+            var result = Physics2D.OverlapBoxNonAlloc(
+                data.MiddlePoint,
+                size,
+                raycastData.Angle,
+                _buffer,
+                _config.AllInteractionsMask);
+
+            if (result == 0)
             {
-                var projectile = _projectiles[i];
+                movement.SetPosition(data.CurrentPosition);
+                movement.OnDistancePassed(data.PassedDistance);
+                return;
+            }
 
-                var data = job.Projectiles[i];
+            movement.SetPosition(data.MiddlePoint);
 
-                var raycastData = projectile.Movement.RaycastData;
-                var movement = projectile.Movement;
+            for (var i = 0; i < result; i++)
+            {
+                var target = _buffer[i];
+
+                if (target.IsTouchingLayers(_config.HitBoxMask) == false)
+                    continue;
                 
-                var size = new Vector2(data.PassedDistance, raycastData.ColliderHeight);
-
-                var result = Physics2D.OverlapBoxNonAlloc(
-                    data.MiddlePoint,
-                    size,
-                    raycastData.Angle,
-                    _buffer,
-                    raycastData.LayerMask);
-
-                if (result == 0)
+                if (target.TryGetComponent(out IDamageReceiver damageReceiver) == false)
                 {
-                    movement.SetPosition(data.CurrentPosition);
-                    movement.OnDistancePassed(data.PassedDistance);
+                    _logger.OnWrongTrigger(target.name);
                     continue;
                 }
 
-                movement.SetPosition(data.MiddlePoint);
-
-                for (var j = 0; j < result; j++)
+                if (damageReceiver.IsLocal == true)
                 {
-                    var target = _buffer[j];
-
-                    if (target == null)
-                        continue;
-
-                    if (target.IsTouchingLayers(_config.HitBoxMask) == true)
-                    {
-                        if (target.TryGetComponent(out IDamageReceiver damageReceiver) == false)
-                        {
-                            _logger.OnWrongTrigger(target.name);
-                            break;
-                        }
-
-                        projectile.Actions.OnTriggered(damageReceiver);
-                        _logger.OnTriggered(target.name);
-                        break;
-                    }
+                    movement.SetPosition(data.CurrentPosition);
+                    movement.OnDistancePassed(data.PassedDistance);
+                    return;
                 }
-
-                projectile.Actions.OnCollided();
-                _logger.OnCollided(_buffer[0].name);
+                
+                if (projectile.Actions.IsLocal == true)
+                {
+                    projectile.Actions.OnTriggered(damageReceiver);
+                    return;
+                }
+                
+                break;
             }
 
-            array.Dispose();
+            projectile.Actions.OnCollided();
+            _logger.OnCollided(_buffer[0].name);
         }
 
         public void OnAwake()

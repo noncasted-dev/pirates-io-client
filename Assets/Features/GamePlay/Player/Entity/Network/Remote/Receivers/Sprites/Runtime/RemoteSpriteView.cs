@@ -7,7 +7,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Sprites.Runtime
     [DisallowMultipleComponent]
     public class RemoteSpriteView : MonoBehaviour
     {
-        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private SpriteRenderer[] _spriteRenderers;
         
         private Vector2 _previousPosition;
 
@@ -22,12 +22,15 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Sprites.Runtime
 
             var flip = DirectionUtils.ToHorizontal(delta);
 
-            _spriteRenderer.flipX = flip switch
+            var isFLipped = flip switch
             {
                 Horizontal.Right => false,
                 Horizontal.Left => true,
                 _ => throw new ArgumentOutOfRangeException()
             };
+
+            foreach (var spriteRenderer in _spriteRenderers)
+                spriteRenderer.flipX = isFLipped;
 
             _previousPosition = position;
         }

@@ -10,6 +10,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         int ShotsAmount { get; }
         float ShotsDelay { get; }
         float ShotRandomDelay { get; }
-        ShootParams CreateParams();
+        float RandomDistance { get; }
+        ShootParams CreateParams(float additionalDistance);
     }
 }

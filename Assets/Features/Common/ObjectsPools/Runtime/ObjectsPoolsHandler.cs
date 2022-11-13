@@ -39,10 +39,19 @@ namespace Common.ObjectsPools.Runtime
             await UniTask.WhenAll(preloadTasks);
         }
 
+        public void InstantiateStartupInstances()
+        {
+            foreach (var objectHandler in _pools)
+                objectHandler.Value.InstantiateStartupInstances();
+        }
+
         public IObjectProvider<T> GetPool<T>(AssetReference reference) where T : class
         {
             if (_pools.ContainsKey(reference.RuntimeKey) == false)
+            {
+                Debug.LogError($"No key: {reference.Asset.name} found");
                 return null;
+            }
 
             var pool = _pools[reference.RuntimeKey];
             var provider = pool.GetProvider<T>();

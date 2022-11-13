@@ -17,13 +17,14 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         public int ShotsAmount => _asset.ShotsAmount;
         public float ShotsDelay => _asset.ShotsDelay;
         public float ShotRandomDelay => _asset.ShotRandomDelay;
+        public float RandomDistance => _asset.RandomDistance;
 
-        public ShootParams CreateParams()
+        public ShootParams CreateParams(float additionalDistance)
         {
             return new ShootParams(
                 _asset.Damage,
                 _asset.Speed, 
-                _asset.Distance);
+                _asset.Distance + additionalDistance);
         }
     }
 }

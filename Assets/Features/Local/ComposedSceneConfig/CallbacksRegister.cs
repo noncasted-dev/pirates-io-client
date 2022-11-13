@@ -11,6 +11,7 @@ namespace Local.ComposedSceneConfig
     {
         private readonly List<ILocalAsyncAwakeListener> _asyncAwakes = new();
         private readonly List<ILocalAsyncBootstrappedListener> _asyncBootstrappers = new();
+        private readonly List<ILocalBootstrappedListener> _bootstrappers = new();
         private readonly List<ILocalAwakeListener> _awakes = new();
         private readonly List<ILocalLoadListener> _loads = new();
         private readonly List<IDependencyRegister> _registers = new();
@@ -30,11 +31,14 @@ namespace Local.ComposedSceneConfig
             if (service is ILocalSwitchListener switchCallback)
                 _switches.Add(switchCallback);
 
-            if (service is ILocalLoadListener bootstrap)
-                _loads.Add(bootstrap);
+            if (service is ILocalLoadListener load)
+                _loads.Add(load);
 
-            if (service is ILocalAsyncBootstrappedListener initializationLoopEnd)
-                _asyncBootstrappers.Add(initializationLoopEnd);
+            if (service is ILocalBootstrappedListener bootstrap)
+                _bootstrappers.Add(bootstrap);            
+            
+            if (service is ILocalAsyncBootstrappedListener asyncBootstrap)
+                _asyncBootstrappers.Add(asyncBootstrap);
         }
 
         public void ListenContainerCallbacks(object service)
@@ -60,6 +64,12 @@ namespace Local.ComposedSceneConfig
                 tasks[i] = _asyncAwakes[i].OnAwakeAsync();
 
             await UniTask.WhenAll(tasks);
+        }
+        
+        public void InvokeBootstrappedCallbacks()
+        {
+            foreach (var bootstrap in _bootstrappers)
+                bootstrap.OnBootstrapped();
         }
 
         public async UniTask InvokeAsyncBootstrappedCallbacks()

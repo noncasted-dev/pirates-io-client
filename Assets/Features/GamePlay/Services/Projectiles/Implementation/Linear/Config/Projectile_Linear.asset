@@ -17,5 +17,10 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  _startupInstances: 1
+  _startupInstances: 50
   _name: CannonBall
+  _waterSplash:
+    m_AssetGUID: 7d98a44f42d19d440b066d5cd8581128
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

@@ -12,10 +12,10 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
     {
         [SerializeField] [Min(0f)] private float _replicateDistance = 40f;
         [SerializeField] private ProjectileTypeDictionary _projectiles;
-        [SerializeField] private AssetReference _vfx;
+        [SerializeField] private AssetReference _fire;
 
         public float ReplicateDistance => _replicateDistance;
-        public AssetReference Vfx => _vfx;
+        public AssetReference Fire => _fire;
         public IReadOnlyDictionary<ProjectileType, AssetReference> Projectiles => _projectiles;
     }
 }

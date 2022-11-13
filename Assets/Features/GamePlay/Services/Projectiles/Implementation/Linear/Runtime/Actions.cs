@@ -1,7 +1,9 @@
 ﻿using System;
+using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Common.Damages;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Mover.Abstract;
+using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using UnityEngine;
 
 namespace GamePlay.Services.Projectiles.Implementation.Linear
@@ -12,19 +14,22 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
             Transform transform,
             Action<LinearProjectile> returnToPool,
             LinearProjectile projectile,
-            IProjectilesMover mover)
+            IProjectilesMover mover,
+            IObjectProvider<AnimatedVfx> waterSplash)
         {
             _transform = transform;
             _returnToPool = returnToPool;
             _projectile = projectile;
             _mover = mover;
+            _waterSplash = waterSplash;
         }
 
         private readonly Transform _transform;
         private readonly Action<LinearProjectile> _returnToPool;
         private readonly LinearProjectile _projectile;
         private readonly IProjectilesMover _mover;
-        
+        private readonly IObjectProvider<AnimatedVfx> _waterSplash;
+
         private ShootParams _shootParams;
         private bool _isLocal;
 
@@ -61,6 +66,7 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
         {
             _mover.Remove(_projectile);
             _returnToPool?.Invoke(_projectile);
+            _waterSplash.Get(_transform.position);
         }
     }
 }

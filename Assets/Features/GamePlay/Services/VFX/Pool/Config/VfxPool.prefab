@@ -60,3 +60,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entries:
   - {fileID: 11400000, guid: 0d64feffcfd4746468ac42a370304235, type: 2}
+  - {fileID: 11400000, guid: 93551d88ca9f83b4087a403d08d336bf, type: 2}

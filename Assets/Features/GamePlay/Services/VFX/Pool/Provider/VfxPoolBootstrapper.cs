@@ -8,7 +8,11 @@ using VContainer;
 
 namespace GamePlay.Services.VFX.Pool.Provider
 {
-    public class VfxPoolBootstrapper : MonoBehaviour, ILocalAsyncAwakeListener, IDependencyResolver
+    public class VfxPoolBootstrapper : 
+        MonoBehaviour,
+        ILocalAsyncAwakeListener,
+        ILocalBootstrappedListener,
+        IDependencyResolver
     {
         [SerializeField] private ObjectsPoolsHandler _handler;
 
@@ -24,6 +28,11 @@ namespace GamePlay.Services.VFX.Pool.Provider
         public async UniTask OnAwakeAsync()
         {
             await _handler.Prepare();
+        }
+        
+        public void OnBootstrapped()
+        {
+            _handler.InstantiateStartupInstances();
         }
 
         public void OnSceneLoaded(Scene targetScene)

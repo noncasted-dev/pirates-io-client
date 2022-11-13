@@ -64,7 +64,10 @@ namespace Common.ObjectsPools.Runtime
         public async UniTask PreloadAsync()
         {
             await _factory.PreloadAsync();
+        }
 
+        public void InstantiateStartupInstances()
+        {
             for (var i = 0; i < _startupInstances; i++)
             {
                 var poolObject = _factory.Create(Vector2.zero);

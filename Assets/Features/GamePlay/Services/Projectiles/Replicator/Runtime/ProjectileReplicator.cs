@@ -19,7 +19,7 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
     public class ProjectileReplicator :
         MonoBehaviour,
         ILocalLoadListener,
-        ILocalAwakeListener,
+        ILocalBootstrappedListener,
         IProjectileReplicator
     {
         [Inject]
@@ -55,7 +55,7 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
             _eventListener.AddListener<ProjectileInstantiateEvent>(OnProjectileReceived);
         }
         
-        public void OnAwake()
+        public void OnBootstrapped()
         {
             foreach (var projectile in _config.Projectiles)
             {
@@ -65,7 +65,7 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
                 _projectiles.Add(projectile.Key, pool);
             }
 
-            _vfx = _vfxPoolProvider.GetPool<AnimatedVfx>(_config.Vfx);
+            _vfx = _vfxPoolProvider.GetPool<AnimatedVfx>(_config.Fire);
         }
 
         public void Replicate(
@@ -95,10 +95,7 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
         private void OnProjectileReceived(RagonPlayer player, ProjectileInstantiateEvent data)
         {
             if (player.IsMe == true)
-            {
-                Debug.Log("Replicated back");
                 return;
-            }
             
             var distance = Vector2.Distance(data.Position, _positionProvider.Position);
             

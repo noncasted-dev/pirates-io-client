@@ -78,7 +78,8 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 var direction = AngleUtils.ToDirection(resultAngle);
                 
                 var projectile = _projectiles.Get(shootPosition);
-                var parameters = _config.CreateParams();
+                var additionalDistance = Random.Range(-_config.RandomDistance, _config.RandomDistance);
+                var parameters = _config.CreateParams(additionalDistance);
                 
                 projectile.Fire(direction, parameters, true);
                 _vfx.Get(shootPosition);
@@ -92,7 +93,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                     resultAngle,
                     parameters.Speed,
                     parameters.Damage,
-                    parameters.Distance);
+                    additionalDistance);
             }
 
             if (_shotCounter == _config.ShotsAmount || _cancellation.IsCancellationRequested == true)

@@ -8,5 +8,6 @@ namespace Common.ObjectsPools.Runtime.Abstract
     {
         void Setup(IObjectResolver resolver, Scene targetScene);
         UniTask Prepare();
+        void InstantiateStartupInstances();
     }
 }

@@ -6,6 +6,7 @@ namespace Common.ObjectsPools.Runtime.Abstract
     {
         IObjectProvider<T> GetProvider<T>();
         UniTask PreloadAsync();
+        void InstantiateStartupInstances();
         void Unload();
     }
 }

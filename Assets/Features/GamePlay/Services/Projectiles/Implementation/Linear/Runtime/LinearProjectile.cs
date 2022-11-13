@@ -4,6 +4,7 @@ using Common.Structs;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Mover;
 using GamePlay.Services.Projectiles.Mover.Abstract;
+using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -17,8 +18,9 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
         IPoolObject<LinearProjectile>,
         IMovableProjectile
     {
-        public void Construct(IProjectilesMover mover)
+        public void Construct(IProjectilesMover mover, IObjectProvider<AnimatedVfx> vfx)
         {
+            _vfx = vfx;
             _mover = mover;
             _transform = transform;
         }
@@ -35,6 +37,7 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
         private Transform _transform;
 
         private Action<LinearProjectile> _returnCallback;
+        private IObjectProvider<AnimatedVfx> _vfx;
         public IProjectileMovement Movement => _movement;
         public IProjectileActions Actions => _actions;
 
@@ -76,7 +79,8 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
                 _transform, 
                 _returnCallback, 
                 this,
-                _mover);
+                _mover, 
+                _vfx);
             
             _movement = new Movement(
                 raycastData,

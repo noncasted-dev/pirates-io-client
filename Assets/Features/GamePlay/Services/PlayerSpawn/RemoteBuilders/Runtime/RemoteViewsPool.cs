@@ -11,6 +11,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
     [DisallowMultipleComponent]
     public class RemoteViewsPool : MonoBehaviour,
         ILocalAsyncAwakeListener,
+        ILocalBootstrappedListener,
         IDependencyResolver
     {
         [SerializeField] private ObjectsPoolsHandler _handler;
@@ -27,6 +28,11 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         public async UniTask OnAwakeAsync()
         {
             await _handler.Prepare();
+        }
+        
+        public void OnBootstrapped()
+        {
+            _handler.InstantiateStartupInstances();
         }
 
         public void OnSceneLoaded(Scene targetScene)

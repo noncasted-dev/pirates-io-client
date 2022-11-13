@@ -72,6 +72,7 @@ namespace Local.ComposedSceneConfig
             callbacksRegister.InvokeAwakeCallbacks();
             callbacksRegister.InvokeEnableCallback();
             await callbacksRegister.InvokeAsyncAwakeCallbacks();
+            callbacksRegister.InvokeBootstrappedCallbacks();
             await callbacksRegister.InvokeAsyncBootstrappedCallbacks();
 
             return new ComposedSceneLoadResult(

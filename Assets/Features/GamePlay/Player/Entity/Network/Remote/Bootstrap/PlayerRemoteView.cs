@@ -26,6 +26,8 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
         {
             _spriteTransform.Construct(logger, updater);
 
+            _spriteTransform.OnAwake();
+            
             var cannonReceiver = new CannonReceiver(
                 _spriteTransform as ISpriteTransform,
                 networkRoot,

@@ -93,7 +93,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                     resultAngle,
                     parameters.Speed,
                     parameters.Damage,
-                    additionalDistance);
+                    parameters.Distance);
             }
 
             if (_shotCounter == _config.ShotsAmount || _cancellation.IsCancellationRequested == true)

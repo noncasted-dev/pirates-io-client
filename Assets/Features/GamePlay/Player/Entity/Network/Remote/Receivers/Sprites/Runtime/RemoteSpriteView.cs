@@ -5,11 +5,11 @@ using UnityEngine;
 namespace GamePlay.Player.Entity.Network.Remote.Receivers.Sprites.Runtime
 {
     [DisallowMultipleComponent]
-    [RequireComponent(typeof(SpriteRenderer))]
     public class RemoteSpriteView : MonoBehaviour
     {
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+        
         private Vector2 _previousPosition;
-        private SpriteRenderer _spriteRenderer;
 
         private void Awake()
         {

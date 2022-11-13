@@ -11,11 +11,6 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Sprites.Runtime
         
         private Vector2 _previousPosition;
 
-        private void Awake()
-        {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-        }
-
         private void FixedUpdate()
         {
             var position = (Vector2)transform.position;

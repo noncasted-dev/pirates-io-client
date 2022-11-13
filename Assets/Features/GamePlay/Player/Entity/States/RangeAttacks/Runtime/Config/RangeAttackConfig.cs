@@ -10,6 +10,7 @@
         private readonly RangeAttackConfigAsset _asset;
 
         public float Delay => _asset.Delay;
+        
         public AimParams CreateAimParams()
         {
             return new AimParams(
@@ -18,6 +19,11 @@
                 _asset.AimTime,
                 _asset.AimOverTime,
                 _asset.AimAdditionalSpread);
+        }
+
+        public ImpactParams CreateImpactParams()
+        {
+            return new ImpactParams(_asset.ImpactDistance, _asset.ImpactTime);
         }
     }
 }

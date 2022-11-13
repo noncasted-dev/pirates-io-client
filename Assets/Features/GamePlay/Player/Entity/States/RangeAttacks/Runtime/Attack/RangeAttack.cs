@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using Common.Structs;
 using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
@@ -8,8 +9,8 @@ using GamePlay.Player.Entity.States.Common;
 using GamePlay.Player.Entity.States.RangeAttacks.Logs;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
+using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Player.Entity.Weapons.Handler.Runtime;
-using UnityEngine;
 
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
 {
@@ -23,6 +24,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             ISpriteRotation spriteRotation,
             IRangeAttackConfig config,
             IAimView aim,
+            ISpriteTransform spriteTransform,
             RangeAttackLogger logger)
         {
             _stateMachine = stateMachine;
@@ -30,7 +32,9 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             _weapons = weapons;
             _inertialMovement = inertialMovement;
             _spriteRotation = spriteRotation;
+            _config = config;
             _aim = aim;
+            _spriteTransform = spriteTransform;
             _delay = new AttackDelay(config);
             _logger = logger;
         }
@@ -39,21 +43,21 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         private readonly IInertialMovement _inertialMovement;
         private readonly RangeAttackLogger _logger;
         private readonly ISpriteRotation _spriteRotation;
+        private readonly IRangeAttackConfig _config;
         private readonly IAimView _aim;
+        private readonly ISpriteTransform _spriteTransform;
 
         private readonly IStateMachine _stateMachine;
         private readonly IWeaponsHandler _weapons;
 
         private bool _hasInput;
 
-        private bool _isShot;
         private bool _isStarted;
 
         public bool HasInput => _hasInput;
         public StateDefinition Definition { get; }
 
-
-        public void OnActionInput()
+        public void OnInput()
         {
             _hasInput = true;
 
@@ -69,9 +73,18 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             Process().Forget();
         }
 
-        public void OnAttackInputCanceled()
+        public void OnInputCanceled()
         {
             _hasInput = false;
+        }
+
+        public void OnInputBroke()
+        {
+            if (_isStarted == false)
+                return;
+            
+            _hasInput = false;
+            _stateMachine.Exit();
         }
 
         public void Enter()
@@ -95,7 +108,6 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             _stateMachine.Enter(this);
 
             _isStarted = true;
-            _isShot = false;
             _delay.OnAttack();
             _inertialMovement.Enable();
             _spriteRotation.Start();
@@ -104,24 +116,23 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
 
             var aim = await _aim.AimAsync();
 
-            if (aim.Type == AimResultType.Shot)
+            switch (aim.Type)
             {
-                Debug.Log("Shot");
-                _weapons.Canon.Shoot(aim.Angle, aim.Spread);
+                case AimResultType.Shot:
+                    var impactParams = _config.CreateImpactParams();
+                    var direction = -AngleUtils.ToDirection(aim.Angle);
+                    _spriteTransform.Impact(direction, impactParams.Distance, impactParams.Time);
+                    
+                    _weapons.Canon.Shoot(aim.Angle, aim.Spread);
+                    break;
+                case AimResultType.Broke:
+                    _hasInput = false;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
             
             _stateMachine.Exit();
-        }
-
-        private void OnShootReady()
-        {
-            if (_isShot == true)
-                return;
-
-            _isShot = true;
-
-            _logger.OnShootEvent();
-            //
         }
     }
 }

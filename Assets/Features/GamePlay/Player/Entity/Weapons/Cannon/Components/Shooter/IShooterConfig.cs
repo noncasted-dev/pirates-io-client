@@ -1,7 +1,7 @@
 ﻿using GamePlay.Services.Projectiles.Entity;
 using UnityEngine.AddressableAssets;
 
-namespace Features.GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
+namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 {
     public interface IShooterConfig
     {
@@ -9,6 +9,7 @@ namespace Features.GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         AssetReference Vfx { get; }
         int ShotsAmount { get; }
         float ShotsDelay { get; }
+        float ShotRandomDelay { get; }
         ShootParams CreateParams();
     }
 }

@@ -66,6 +66,9 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
             _cancellation?.Cancel();
             _cancellation?.Dispose();
             _cancellation = null;
+            
+            _left.gameObject.SetActive(false);
+            _right.gameObject.SetActive(false);
         }
     }
 }

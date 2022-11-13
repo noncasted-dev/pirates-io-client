@@ -22,6 +22,7 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
         [SerializeField] private WeaponsRoot _weaponsRoot;
         [SerializeField] private AimView _aim;
         [SerializeField] private CannonShootPoint _shootPoint;
+        [SerializeField] private PlayerSpriteTransform _spriteTransform;
 
         public void OnBuild(IContainerBuilder builder)
         {
@@ -32,6 +33,7 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
             builder.RegisterComponent(_weaponsRoot).AsImplementedInterfaces();
             builder.RegisterComponent(_aim).AsImplementedInterfaces();
             builder.RegisterComponent(_shootPoint).AsImplementedInterfaces();
+            builder.RegisterComponent(_spriteTransform).As<ISpriteTransform>();
         }
 
         public void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)
@@ -41,6 +43,7 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
             callbackRegister.Add(_rotationPoint);
             callbackRegister.Add(_rigidBody);
             callbackRegister.Add(_weaponsRoot);
+            callbackRegister.Add(_spriteTransform);
         }
     }
 }

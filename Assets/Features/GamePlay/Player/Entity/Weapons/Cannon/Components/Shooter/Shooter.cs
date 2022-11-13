@@ -1,31 +1,32 @@
 ﻿using System.Threading;
 using Common.ObjectsPools.Runtime.Abstract;
-using Common.Structs;
-using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.ShootPoint;
 using GamePlay.Services.Projectiles.Factory;
 using GamePlay.Services.Projectiles.Implementation.Linear;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
-using UnityEngine;
+using Global.Services.Updaters.Runtime.Abstract;
 
-namespace Features.GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
+namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 {
     public class Shooter : IShooter, IAwakeCallback
     {
         public Shooter(
+            IUpdater updater,
             IShooterConfig config,
             IProjectilesPoolProvider projectilesPoolProvider,
             IShootPoint shootPoint,
             IVfxPoolProvider vfxPoolProvider)
         {
+            _updater = updater;
             _config = config;
             _projectilesPoolProvider = projectilesPoolProvider;
             _shootPoint = shootPoint;
             _vfxPoolProvider = vfxPoolProvider;
         }
 
+        private readonly IUpdater _updater;
         private readonly IShooterConfig _config;
         private readonly IProjectilesPoolProvider _projectilesPoolProvider;
         private readonly IShootPoint _shootPoint;
@@ -54,28 +55,17 @@ namespace Features.GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 
             _cancellation = new CancellationTokenSource();
 
-            Process(angle, spread).Forget();
-        }
+            var shot = new Shot(
+                _updater,
+                _config,
+                _projectiles,
+                _vfx,
+                _shootPoint,
+                _cancellation.Token,
+                angle,
+                spread);
 
-        private async UniTaskVoid Process(float angle, float spread)
-        {
-            var halfSpread = spread / 2f;
-            for (var i = 0; i < _config.ShotsAmount; i++)
-            {
-                var randomAngle = Random.Range(-halfSpread, halfSpread);
-                var resultAngle = angle + randomAngle;
-                var shootPosition = _shootPoint.GetShootPoint(resultAngle);
-                var direction = AngleUtils.ToDirection(resultAngle);
-
-                var projectile = _projectiles.Get(shootPosition);
-
-                projectile.Fire(shootPosition, direction, _config.CreateParams());
-                _vfx.Get(shootPosition);
-
-                var delay = (int)(_config.ShotsDelay * 1000f);
-
-                await UniTask.Delay(delay, false, PlayerLoopTiming.Update, _cancellation.Token);
-            }
+            shot.Start();
         }
     }
 }

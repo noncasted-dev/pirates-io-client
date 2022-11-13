@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cfaaa150dc24a068d2357540505cc53, type: 3}
   m_Name: PlayerConfig_CannonShooter
   m_EditorClassIdentifier: 
-  _shotsAmount: 4
-  _shotsDelay: 0.3
+  _shotsAmount: 10
+  _shotsDelay: 0.05
+  _shotRandomDelay: 0.3
   _damage: 1
   _pushForce: 1
-  _speed: 10
+  _speed: 8
+  _distance: 10
   _layerMask:
     serializedVersion: 2
     m_Bits: 640

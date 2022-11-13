@@ -18,6 +18,7 @@ namespace GamePlay.Level.Environment.Tools
 
         private bool _isGenerating;
 
+        #if UNITY_EDITOR
         private void OnEnable()
         {
             Tilemap.tilemapTileChanged += TilemapChanged;
@@ -97,5 +98,7 @@ namespace GamePlay.Level.Environment.Tools
                     _grassDown.SetTile(tile.position, null);
                 }
         }
+#endif
+
     }
 }

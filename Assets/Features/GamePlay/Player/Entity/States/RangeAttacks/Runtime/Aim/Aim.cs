@@ -77,9 +77,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
             
             if (_isCanceled == true)
             {
-                Debug.Log("Canceled");
                 var spread = _parameters.EndAngle - angle + _parameters.AdditionalSpread;
-                Debug.Log($"Spread: {spread}");
                 var result = new AimResult(_rotation.Angle, spread, AimResultType.Shot);
                 _completion.TrySetResult(result);
                 
@@ -88,8 +86,6 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
 
             if (_currentTime > _parameters.Time + _parameters.OverTime)
             {
-                Debug.Log("Overtime");
-
                 var result = new AimResult(AimResultType.Broke);
                 _completion.TrySetResult(result); 
             }
@@ -97,8 +93,6 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
 
         private void Break()
         {
-            Debug.Log("Break");
-
             _updater.Remove(this);
             _input.RangeAttackCanceled -= OnRangeAttackCanceled;
         }

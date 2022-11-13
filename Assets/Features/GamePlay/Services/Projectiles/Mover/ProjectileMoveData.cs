@@ -2,9 +2,9 @@
 
 namespace GamePlay.Services.Projectiles.Mover
 {
-    public struct LinearProjectileData
+    public struct ProjectileMoveData
     {
-        public LinearProjectileData(
+        public ProjectileMoveData(
             Vector2 currentPosition,
             Vector2 direction,
             float speed)

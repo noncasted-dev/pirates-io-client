@@ -10,6 +10,7 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
         Horizontal Look { get; }
 
         void SetPosition(Vector2 position);
+        void SetLocalPosition(Vector2 position);
         void SetRotation(float angle);
     }
 }

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: PlayerConfig_RangeAttack
   m_EditorClassIdentifier: 
   _delay: 3
-  _startAimAngle: 90
+  _startAimAngle: 120
   _endAimAngle: 0
   _aimTime: 1
   _aimOverTime: 5
   _aimAdditionalSpread: 15
+  _impactDistance: 1
+  _impactTime: 0.3

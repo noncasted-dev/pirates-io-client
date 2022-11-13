@@ -5,6 +5,7 @@
         InputAction,
         InputDirection,
         ActionCanceled,
+        ActionBroke,
         DirectionCanceled,
         Entered,
         Broke,

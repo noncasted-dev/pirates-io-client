@@ -5,6 +5,7 @@ using GamePlay.Common.Paths;
 using GamePlay.Services.Projectiles.Factory;
 using GamePlay.Services.Projectiles.Logs;
 using GamePlay.Services.Projectiles.Mover;
+using GamePlay.Services.Projectiles.Mover.Abstract;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Local.Services.Abstract;

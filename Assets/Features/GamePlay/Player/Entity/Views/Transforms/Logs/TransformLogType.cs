@@ -4,6 +4,7 @@
     {
         PositionUse,
         PositionSet,
+        LocalPositionSet,
         RotationSet
     }
 }

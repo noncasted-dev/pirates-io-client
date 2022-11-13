@@ -4,5 +4,6 @@
     {
         float Delay { get; }
         AimParams CreateAimParams();
+        ImpactParams CreateImpactParams();
     }
 }

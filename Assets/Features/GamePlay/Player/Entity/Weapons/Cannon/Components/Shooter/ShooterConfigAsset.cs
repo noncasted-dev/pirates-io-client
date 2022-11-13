@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace Features.GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
+namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 {
     [CreateAssetMenu(fileName = PlayerAssetsPaths.ConfigPrefix + "BowShooter",
         menuName = PlayerAssetsPaths.BowShooter + "Config")]
@@ -10,9 +10,11 @@ namespace Features.GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
     {
         [SerializeField] [Min(0f)] private int _shotsAmount;
         [SerializeField] [Min(0f)] private float _shotsDelay;
+        [SerializeField] [Min(0f)] private float _shotRandomDelay;
         [SerializeField] [Min(0f)] private int _damage;
         [SerializeField] [Min(0f)] private float _pushForce;
         [SerializeField] [Min(0f)] private float _speed;
+        [SerializeField] [Min(0f)] private float _distance;
         [SerializeField] [Min(0f)] private LayerMask _layerMask;
 
         [SerializeField] private AssetReference _projectile;
@@ -20,9 +22,11 @@ namespace Features.GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 
         public int ShotsAmount => _shotsAmount;
         public float ShotsDelay => _shotsDelay;
+        public float ShotRandomDelay => _shotRandomDelay;
         public int Damage => _damage;
         public float PushForce => _pushForce;
         public float Speed => _speed;
+        public float Distance => _distance;
         public LayerMask LayerMask => _layerMask;
         public AssetReference Projectile => _projectile;
         public AssetReference Vfx => _vfx;

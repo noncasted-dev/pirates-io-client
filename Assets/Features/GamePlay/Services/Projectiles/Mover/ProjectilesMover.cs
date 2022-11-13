@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using GamePlay.Common.Damages;
-using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Logs;
+using GamePlay.Services.Projectiles.Mover.Abstract;
 using Global.Services.Updaters.Runtime.Abstract;
 using Local.Services.Abstract.Callbacks;
 using Unity.Collections;
@@ -26,12 +26,12 @@ namespace GamePlay.Services.Projectiles.Mover
             _logger = logger;
         }
 
-        private readonly List<IProjectile> _addQueue = new();
+        private readonly List<IMovableProjectile> _addQueue = new();
         private readonly ProjectilesMoverConfigAsset _config;
         private readonly ProjectilesLogger _logger;
 
-        private readonly List<IProjectile> _projectiles = new();
-        private readonly List<IProjectile> _removeQueue = new();
+        private readonly List<IMovableProjectile> _projectiles = new();
+        private readonly List<IMovableProjectile> _removeQueue = new();
 
         private readonly IUpdater _updater;
 
@@ -46,19 +46,12 @@ namespace GamePlay.Services.Projectiles.Mover
             if (_projectiles.Count == 0)
                 return;
 
-            var array = new NativeArray<LinearProjectileData>(_projectiles.Count, Allocator.TempJob);
+            var array = new NativeArray<ProjectileMoveData>(_projectiles.Count, Allocator.TempJob);
 
             for (var i = 0; i < array.Length; i++)
-            {
-                var projectile = _projectiles[i];
+                array[i] = _projectiles[i].Movement.CreateMoveData(delta);
 
-                array[i] = new LinearProjectileData(
-                    projectile.Position,
-                    projectile.Direction,
-                    projectile.Speed * delta);
-            }
-
-            var job = new MoveJob(array);
+            var job = new MoveJob(array, delta);
 
             var jobHandle = job.Schedule(array.Length, 1);
             jobHandle.Complete();
@@ -69,22 +62,26 @@ namespace GamePlay.Services.Projectiles.Mover
 
                 var data = job.Projectiles[i];
 
-                var size = new Vector2(data.PassedDistance, projectile.ColliderHeight);
+                var raycastData = projectile.Movement.RaycastData;
+                var movement = projectile.Movement;
+                
+                var size = new Vector2(data.PassedDistance, raycastData.ColliderHeight);
 
                 var result = Physics2D.OverlapBoxNonAlloc(
                     data.MiddlePoint,
                     size,
-                    projectile.Angle,
+                    raycastData.Angle,
                     _buffer,
-                    projectile.LayerMask);
+                    raycastData.LayerMask);
 
                 if (result == 0)
                 {
-                    projectile.SetPosition(data.CurrentPosition);
+                    movement.SetPosition(data.CurrentPosition);
+                    movement.OnDistancePassed(data.PassedDistance);
                     continue;
                 }
 
-                projectile.SetPosition(data.MiddlePoint);
+                movement.SetPosition(data.MiddlePoint);
 
                 for (var j = 0; j < result; j++)
                 {
@@ -101,13 +98,13 @@ namespace GamePlay.Services.Projectiles.Mover
                             break;
                         }
 
-                        projectile.OnTriggered(damageReceiver);
+                        projectile.Actions.OnTriggered(damageReceiver);
                         _logger.OnTriggered(target.name);
                         break;
                     }
                 }
 
-                projectile.OnCollided();
+                projectile.Actions.OnCollided();
                 _logger.OnCollided(_buffer[0].name);
             }
 
@@ -129,13 +126,13 @@ namespace GamePlay.Services.Projectiles.Mover
             _updater.Remove(this);
         }
 
-        public void Add(IProjectile projectile)
+        public void Add(IMovableProjectile projectile)
         {
             _addQueue.Add(projectile);
             _logger.OnAdd(_projectiles.Count);
         }
 
-        public void Remove(IProjectile projectile)
+        public void Remove(IMovableProjectile projectile)
         {
             _removeQueue.Add(projectile);
             _logger.OnRemove(_projectiles.Count - _removeQueue.Count);

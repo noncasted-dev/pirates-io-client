@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
-using Features.GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter;
 using GamePlay.Player.Entity.Setup.Flow;
+using GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter;
 using GamePlay.Player.Entity.Weapons.Cannon.Views.Sprites.Runtime;
 using GamePlay.Player.Entity.Weapons.Cannon.Views.Transforms;
 using UnityEngine;

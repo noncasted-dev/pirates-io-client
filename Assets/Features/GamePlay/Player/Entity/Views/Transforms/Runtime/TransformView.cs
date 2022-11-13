@@ -43,6 +43,13 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
             _logger.OnPositionSet(position);
         }
 
+        public void SetLocalPosition(Vector2 position)
+        {
+            _transform.localPosition = position;
+
+            _logger.OnLocalPositionSet(position);
+        }
+
         public void SetRotation(float angle)
         {
             _transform.localRotation = Quaternion.Euler(0f, 0f, angle);

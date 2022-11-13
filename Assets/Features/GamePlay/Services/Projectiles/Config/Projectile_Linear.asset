@@ -17,4 +17,5 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  _startupInstances: 10
+  _startupInstances: 1
+  _name: CannonBall

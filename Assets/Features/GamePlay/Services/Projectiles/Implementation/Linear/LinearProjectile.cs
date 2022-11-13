@@ -1,9 +1,9 @@
 ﻿using System;
 using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
-using GamePlay.Common.Damages;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Mover;
+using GamePlay.Services.Projectiles.Mover.Abstract;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -11,48 +11,32 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(BoxCollider2D))]
-    public class LinearProjectile : MonoBehaviour, IProjectile, IPoolObject<LinearProjectile>
+    public class LinearProjectile :
+        MonoBehaviour,
+        IProjectileStarter,
+        IPoolObject<LinearProjectile>,
+        IMovableProjectile
     {
         public void Construct(IProjectilesMover mover)
         {
             _mover = mover;
+            _transform = transform;
         }
 
         [SerializeField] [ReadOnly] private ShootParams _shootParams;
-
-        private float _angle;
-        private BoxCollider2D _collider;
-        private Vector2 _direction;
-
+        [SerializeField] private BoxCollider2D _collider;
+        [SerializeField] private TrailRenderer _trail;
+        
         private IProjectilesMover _mover;
-        private Vector2 _position;
-
-        private Action<LinearProjectile> _returnCallback;
+        private Movement _movement;
+        private Actions _actions;
         private Transform _transform;
 
+        private Action<LinearProjectile> _returnCallback;
+        public IProjectileMovement Movement => _movement;
+        public IProjectileActions Actions => _actions;
+
         public GameObject GameObject => gameObject;
-
-        public void SetupPoolObject(Action<LinearProjectile> returnToPool)
-        {
-            _returnCallback = returnToPool;
-
-            _collider = GetComponent<BoxCollider2D>();
-        }
-
-        public void OnTaken()
-        {
-        }
-
-        public void OnReturned()
-        {
-        }
-
-        public LayerMask LayerMask => _shootParams.LayerMask;
-        public Vector2 Position => _position;
-        public Vector2 Direction => _direction;
-        public float ColliderHeight => _collider.size.y;
-        public float Angle => _angle;
-        public float Speed => _shootParams.Speed;
 
         public void Fire(
             Vector2 position,
@@ -60,34 +44,51 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
             ShootParams shootParams)
         {
             _shootParams = shootParams;
-            _position = position;
-            _direction = direction;
-            _angle = _direction.GetAngle();
 
-            transform.rotation = Quaternion.Euler(0f, 0f, _angle);
+            var movementData = new MovementData(
+                direction,
+                shootParams.Speed,
+                shootParams.Distance);
 
+            var angle = direction.ToAngle();
+
+            _movement.Setup(shootParams.LayerMask, angle, movementData);
+            _actions.Setup(shootParams);
+            
             _mover.Add(this);
         }
 
         public void SetPosition(Vector2 position)
         {
-            _position = position;
-            transform.position = position;
+            _transform.position = position;
         }
 
-        public void OnCollided()
+        public void SetupPoolObject(Action<LinearProjectile> returnToPool)
         {
-            _mover.Remove(this);
-            _returnCallback?.Invoke(this);
+            _returnCallback = returnToPool;
+            
+            var raycastData = new ProjectileRaycastData(_collider.size.y);
+
+            _actions = new Actions(
+                _transform, 
+                _returnCallback, 
+                this,
+                _mover);
+            
+            _movement = new Movement(
+                raycastData,
+                _transform,
+                _actions.OnDropped);
         }
 
-        public void OnTriggered(IDamageReceiver damageReceiver)
+        public void OnTaken()
         {
-            var damage = new Damage(_shootParams.Damage, _shootParams.PushForce, Position);
-            damageReceiver.ReceiveDamage(damage);
+            _trail.Clear();
+        }
 
-            _mover.Remove(this);
-            _returnCallback?.Invoke(this);
+        public void OnReturned()
+        {
+            _trail.Clear();
         }
     }
 }

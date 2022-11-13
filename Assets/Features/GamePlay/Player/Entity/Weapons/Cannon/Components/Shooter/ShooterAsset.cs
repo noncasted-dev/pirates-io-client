@@ -5,7 +5,7 @@ using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
 using VContainer;
 
-namespace Features.GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
+namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 {
     [CreateAssetMenu(fileName = PlayerAssetsPaths.BowComponentPrefix + "BowShooter",
         menuName = PlayerAssetsPaths.BowShooter + "Component")]

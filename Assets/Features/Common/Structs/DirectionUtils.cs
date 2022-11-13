@@ -4,7 +4,7 @@ namespace Common.Structs
 {
     public static class DirectionUtils
     {
-        public static float GetAngle(this Vector2 direction)
+        public static float ToAngle(this Vector2 direction)
         {
             var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 

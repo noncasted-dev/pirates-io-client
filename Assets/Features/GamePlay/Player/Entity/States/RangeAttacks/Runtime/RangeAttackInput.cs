@@ -26,26 +26,35 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime
         {
             _input.RangeAttackPerformed += OnAttackPreformed;
             _input.RangeAttackCanceled += OnAttackCanceled;
+            _input.RangeAttackBreakPerformed += OnAttackBroke;
         }
 
         public void OnDisabled()
         {
             _input.RangeAttackPerformed -= OnAttackPreformed;
             _input.RangeAttackCanceled -= OnAttackCanceled;
+            _input.RangeAttackBreakPerformed -= OnAttackBroke;
         }
 
         private void OnAttackPreformed()
         {
             _logger.OnAttackInput();
 
-            _rangeAttack.OnActionInput();
+            _rangeAttack.OnInput();
         }
 
         private void OnAttackCanceled()
         {
             _logger.OnAttackCanceled();
 
-            _rangeAttack.OnAttackInputCanceled();
+            _rangeAttack.OnInputCanceled();
+        }
+
+        private void OnAttackBroke()
+        {
+            _logger.OnAttackBroke();
+
+            _rangeAttack.OnInputBroke();
         }
     }
 }

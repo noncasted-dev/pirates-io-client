@@ -1,4 +1,4 @@
-﻿namespace Features.GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
+﻿namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 {
     public interface IShooter
     {

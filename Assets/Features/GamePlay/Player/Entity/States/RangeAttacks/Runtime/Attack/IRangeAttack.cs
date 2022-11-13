@@ -3,8 +3,9 @@
     public interface IRangeAttack
     {
         bool HasInput { get; }
-        void OnActionInput();
-        void OnAttackInputCanceled();
+        void OnInput();
+        void OnInputCanceled();
+        void OnInputBroke();
         void Enter();
     }
 }

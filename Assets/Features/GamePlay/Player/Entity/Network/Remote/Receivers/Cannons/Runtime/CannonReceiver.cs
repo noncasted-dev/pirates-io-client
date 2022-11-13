@@ -28,7 +28,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Cannons.Runtime
 
         private void OnShoot(RagonPlayer player, ProjectileInstantiateEvent data)
         {
-            var direction = AngleUtils.ToDirection(data.Angle);
+            var direction = -AngleUtils.ToDirection(data.Angle);
             _spriteTransform.Impact(direction, _config.ImpactDistance, _config.ImpactTime);
             
             _projectileReplicator.Replicate(data);

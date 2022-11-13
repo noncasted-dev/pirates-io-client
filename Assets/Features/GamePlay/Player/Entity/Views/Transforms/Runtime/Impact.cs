@@ -27,6 +27,10 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 
         private float _currentTime;
 
+        private bool _isEnded;
+
+        public bool IsEnded => _isEnded;
+
         public void Start()
         {
             _updater.Add(this);
@@ -52,6 +56,8 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
             
             _transform.SetLocalPosition(Vector2.zero);
             _updater.Remove(this);
+
+            _isEnded = true;
         }
     }
 }

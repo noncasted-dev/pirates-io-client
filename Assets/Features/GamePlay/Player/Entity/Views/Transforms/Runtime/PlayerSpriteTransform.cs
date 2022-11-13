@@ -16,12 +16,16 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
         }
         
         private IUpdater _updater;
+        private Impact _last;
 
         public void Impact(Vector2 direction, float distance, float time)
         {
-            var impact = new Impact(_updater, this, direction, distance, time);
+            if (_last is { IsEnded: false })
+                return;
             
-            impact.Start();
+            _last = new Impact(_updater, this, direction, distance, time);
+            
+            _last.Start();
         }
     }
 }

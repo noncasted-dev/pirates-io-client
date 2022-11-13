@@ -1,5 +1,9 @@
 ﻿using GamePlay.Player.Entity.Network.Remote.Bootstrap;
+using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Services.Projectiles.Factory;
+using GamePlay.Services.Projectiles.Replicator.Runtime;
+using Global.Services.AssetsFlow.Runtime.Abstract;
+using Global.Services.Updaters.Runtime.Abstract;
 using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -12,20 +16,28 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
     public class RemotePlayerBuilder : MonoBehaviour, ILocalAwakeListener
     {
         [Inject]
-        private void Construct(IProjectilesPoolProvider projectiles, ILogger logger)
+        private void Construct(
+            IUpdater updater,
+            ILogger logger,
+            IProjectileReplicator replicator,
+            IAssetInstantiatorFactory instantiatorFactory)
         {
+            _updater = updater;
             _logger = logger;
-            _projectiles = projectiles;
+            _replicator = replicator;
+            _instantiatorFactory = instantiatorFactory;
         }
-
+        
         private static RemotePlayerBuilder _instance;
 
         [SerializeField] private RemoteViewsPool _pool;
         [SerializeField] private AssetReference _prefab;
+
+        private IAssetInstantiatorFactory _instantiatorFactory;
         private ILogger _logger;
-
-        private IProjectilesPoolProvider _projectiles;
-
+        private IProjectileReplicator _replicator;
+        private IUpdater _updater;
+        
         public static RemotePlayerBuilder Instance => _instance;
 
         public void OnAwake()
@@ -45,7 +57,9 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
             viewTransform.parent = rootTransform;
             viewTransform.localPosition = Vector3.zero;
 
-            view.Construct(_logger, _projectiles);
+            var networkRoot = rootTransform.GetComponent<PlayerNetworkRoot>();
+            
+            view.Construct(_logger, _updater, _replicator, networkRoot);
         }
     }
 }

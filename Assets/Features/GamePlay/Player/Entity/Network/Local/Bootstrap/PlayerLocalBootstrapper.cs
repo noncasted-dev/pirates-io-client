@@ -1,4 +1,5 @@
-﻿using GamePlay.Player.Entity.Network.Root.Runtime;
+﻿using GamePlay.Player.Entity.Network.Local.Replicators.Canons.Runtime;
+using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Network.Views.Transforms.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
@@ -20,7 +21,10 @@ namespace GamePlay.Player.Entity.Network.Local.Bootstrap
                 .As<INetworkTransform>();
 
             builder.RegisterComponent(_root)
-                .AsImplementedInterfaces();
+                .As<IPlayerEventSender>();
+
+            builder.Register<CannonReplicator>(Lifetime.Singleton)
+                .As<ICannonReplicator>();
         }
 
         public void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)

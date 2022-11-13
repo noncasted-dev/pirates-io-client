@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
+using GamePlay.Player.Entity.Network.Local.Replicators.Canons.Runtime;
 using GamePlay.Player.Entity.Views.ShootPoint;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Implementation.Linear;
@@ -15,7 +16,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
     {
         public Shot(
             IUpdater updater,
-            IProjectileReplicator projectileReplicator,
+            ICannonReplicator cannonReplicator,
             IShooterConfig config,
             IObjectProvider<LinearProjectile> projectiles,
             IObjectProvider<AnimatedVfx> vfx,
@@ -25,7 +26,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
             float spread)
         {
             _updater = updater;
-            _projectileReplicator = projectileReplicator;
+            _cannonReplicator = cannonReplicator;
             _config = config;
             _projectiles = projectiles;
             _shootPoint = shootPoint;
@@ -36,6 +37,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         }
 
         private readonly IUpdater _updater;
+        private readonly ICannonReplicator _cannonReplicator;
         private readonly IProjectileReplicator _projectileReplicator;
         private readonly IShooterConfig _config;
         private readonly IObjectProvider<LinearProjectile> _projectiles;
@@ -87,7 +89,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 _shotsRegistry[i] = true;
                 _shotCounter++;
                 
-                _projectileReplicator.Replicate(
+                _cannonReplicator.Replicate(
                     ProjectileType.Ordinary,
                     shootPosition,
                     resultAngle,

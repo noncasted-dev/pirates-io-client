@@ -3,10 +3,10 @@ using Ragon.Common;
 
 namespace GamePlay.Player.Entity.Network.Root.Runtime
 {
-    public interface INetworkEventSender
+    public interface IPlayerEventSender
     {
         public void ReplicateEvent<TEvent>(
-            TEvent evnt,
+            TEvent data,
             RagonTarget target = RagonTarget.All,
             RagonReplicationMode replicationMode = RagonReplicationMode.Server)
             where TEvent : IRagonEvent, new();

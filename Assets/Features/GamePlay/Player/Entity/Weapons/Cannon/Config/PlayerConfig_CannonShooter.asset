@@ -19,7 +19,7 @@ MonoBehaviour:
   _pushForce: 1
   _speed: 8
   _distance: 8
-  _randomDistance: 1
+  _randomDistance: 2
   _projectile:
     m_AssetGUID: 00fcb83de683a5c4ca9c8f318f95630f
     m_SubObjectName: 

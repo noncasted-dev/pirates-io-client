@@ -8,7 +8,7 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
     public class PlayerSpriteTransform : TransformView, ISpriteTransform
     {
         [Inject]
-        private void Construct(ILogger logger, IUpdater updater)
+        public void Construct(ILogger logger, IUpdater updater)
         {
             _updater = updater;
             

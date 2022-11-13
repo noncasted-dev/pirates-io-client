@@ -1,10 +1,11 @@
-﻿using Ragon.Client;
+﻿using System;
+using Ragon.Client;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.Network.Root.Runtime
 {
     [DisallowMultipleComponent]
-    public class PlayerNetworkRoot : RagonBehaviour, INetworkEventSender
+    public class PlayerNetworkRoot : RagonBehaviour, IPlayerEventSender, IPlayerEventListener
     {
         public override void OnCreatedEntity()
         {
@@ -15,6 +16,11 @@ namespace GamePlay.Player.Entity.Network.Root.Runtime
                 gameObject.name = "LocalPlayer";
             else
                 gameObject.name = $"RemotePlayer_{userName}";
+        }
+
+        public void AddListener<TEvent>(Action<RagonPlayer, TEvent> callback) where TEvent : IRagonEvent, new()
+        {
+            OnEvent(callback);
         }
     }
 }

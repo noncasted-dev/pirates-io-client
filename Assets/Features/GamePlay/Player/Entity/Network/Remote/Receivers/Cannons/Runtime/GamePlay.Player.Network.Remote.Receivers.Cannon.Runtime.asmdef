@@ -1,11 +1,13 @@
 {
-  "name": "GamePlay.Player.Network.Local.Canon.Runtime",
+  "name": "GamePlay.Player.Network.Remote.Receivers.Cannon.Runtime",
   "rootNamespace": "",
   "references": [
     "GUID:861b1281dab914af69d87c4345d0b1a2",
-    "GUID:2471a91d0a7e4b545a50b8ff168394d3",
+    "GUID:8ceb11fc07ecc9847af1f8e5e77cb9f9",
+    "GUID:74bc9d8503dd202499c2bdd0a884b6ee",
     "GUID:57d592813d0da5d4c862e153f707ff80",
-    "GUID:dd0026c9620df2e42a15a0e918addd39"
+    "GUID:dd0026c9620df2e42a15a0e918addd39",
+    "GUID:5a6ca98db01d77741890b42e259b7291"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

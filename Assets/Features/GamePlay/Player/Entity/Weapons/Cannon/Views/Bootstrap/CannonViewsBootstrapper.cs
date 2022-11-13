@@ -1,6 +1,5 @@
 ﻿using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
-using GamePlay.Player.Entity.Weapons.Cannon.Views.Animators.Runtime;
 using GamePlay.Player.Entity.Weapons.Cannon.Views.Sprites.Runtime;
 using GamePlay.Player.Entity.Weapons.Cannon.Views.Transforms;
 using UnityEngine;

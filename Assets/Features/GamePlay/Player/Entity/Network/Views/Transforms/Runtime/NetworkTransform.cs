@@ -59,7 +59,7 @@ namespace GamePlay.Player.Entity.Network.Views.Transforms.Runtime
             }
             
             _transform.position =
-                Vector3.Lerp(_transform.position, current, Time.deltaTime * _interpolationSpeed);
+                Vector3.Lerp(_transform.position, target, Time.deltaTime * _interpolationSpeed);
         }
     }
 }

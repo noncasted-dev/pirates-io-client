@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f466e35eac4c42dfae1e5adf334c96cf, type: 3}
   m_Name: LogSettings_HealthLog
   m_EditorClassIdentifier: 
-  _isEnabled: 1
+  _isEnabled: 0
   _logs:
     _keys: 0000000001000000020000000300000004000000
     _values: 0101010101

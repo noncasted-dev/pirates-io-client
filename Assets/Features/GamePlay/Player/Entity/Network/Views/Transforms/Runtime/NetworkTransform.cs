@@ -26,10 +26,6 @@ namespace GamePlay.Player.Entity.Network.Views.Transforms.Runtime
 
         public override void OnEntityTick()
         {
-            if (_localPosition == _lastReplicated)
-                return;
-
-            _lastReplicated = _localPosition;
             _position.Value = _localPosition;
         }
 

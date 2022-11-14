@@ -25,3 +25,4 @@ MonoBehaviour:
   _death: {fileID: 11400000, guid: 9586bf866351865499fac60d57e7a6e8, type: 2}
   _health: {fileID: 11400000, guid: d0483f8310e8173469a819bb0ef0a2af, type: 2}
   _damageProcessor: {fileID: 11400000, guid: 6df6549c6ceaca246a9db0f5a56960dd, type: 2}
+  _actionsState: {fileID: 11400000, guid: 5a24017a0f337ba45b5cf18d0d50a654, type: 2}

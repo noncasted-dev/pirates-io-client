@@ -1,5 +1,6 @@
 ﻿using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.Abstract;
+using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
 using GamePlay.Player.Entity.Components.DamageProcessors.Runtime;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
@@ -38,6 +39,7 @@ namespace GamePlay.Player.Entity.Components.Config
         [SerializeField] [EditableObject] private DeathAsset _death;
         [SerializeField] [EditableObject] private HealthAsset _health;
         [SerializeField] [EditableObject] private DamageProcessorAsset _damageProcessor;
+        [SerializeField] [EditableObject] private ActionsStateAsset _actionsState;
 
         public override PlayerComponentAsset[] GetAssets()
         {
@@ -55,7 +57,8 @@ namespace GamePlay.Player.Entity.Components.Config
                 _weaponsHandler,
                 _death,
                 _health,
-                _damageProcessor
+                _damageProcessor,
+                _actionsState
             };
         }
     }

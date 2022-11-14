@@ -29,7 +29,7 @@ namespace GamePlay.Player.Entity.Views.Transforms.Logs
 
             _logger.Log($"Set position: {position}", _settings.LogParameters);
         }
-        
+
         public void OnLocalPositionSet(Vector2 position)
         {
             if (_settings.IsAvailable(TransformLogType.LocalPositionSet) == false)

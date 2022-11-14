@@ -11,7 +11,7 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
     public class DeathAsset : PlayerComponentAsset
     {
         [SerializeField] [EditableObject] private DeathStateDefinition _definition;
-        
+
         public override void Register(IContainerBuilder builder)
         {
             builder.Register<Death>(Lifetime.Scoped)

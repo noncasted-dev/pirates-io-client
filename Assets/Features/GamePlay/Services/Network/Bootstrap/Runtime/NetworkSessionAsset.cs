@@ -22,7 +22,7 @@ namespace GamePlay.Services.Network.Bootstrap.Runtime
         {
             var sceneLoadResult = await sceneLoader.Load(new TypedSceneLoadData<INetworkSessionBootstrapper>(_scene));
             SceneManager.SetActiveScene(sceneLoadResult.Instance.Scene);
-            
+
             var bootstrapper = sceneLoadResult.Searched;
             bootstrapper.Bootstrap(serviceBinder, callbacksRegister);
 

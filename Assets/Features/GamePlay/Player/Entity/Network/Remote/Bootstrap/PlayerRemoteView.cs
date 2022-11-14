@@ -1,7 +1,7 @@
 ﻿using System;
 using Common.ObjectsPools.Runtime.Abstract;
-using Features.GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
 using GamePlay.Player.Entity.Network.Remote.Receivers.Cannons.Runtime;
+using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
@@ -17,11 +17,6 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
 {
     public class PlayerRemoteView : RagonBehaviour, IPoolObject<PlayerRemoteView>
     {
-        [SerializeField] private PlayerSpriteTransform _spriteTransform;
-        [SerializeField] private RangeAttackConfigAsset _config;
-        [SerializeField] private RemoteHitbox _hitbox;
-        [SerializeField] private PlayerSpriteView _spriteView;
-        
         public void Construct(
             ILogger logger,
             IUpdater updater,
@@ -34,15 +29,20 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
             _spriteView.OnAwake();
 
             _spriteTransform.OnAwake();
-            
+
             var cannonReceiver = new CannonReceiver(
                 _spriteTransform,
                 networkRoot,
                 projectileReplicator,
                 _config);
-            
+
             _hitbox.Construct(networkRoot, networkRoot, networkRoot, explosion);
         }
+
+        [SerializeField] private PlayerSpriteTransform _spriteTransform;
+        [SerializeField] private RangeAttackConfigAsset _config;
+        [SerializeField] private RemoteHitbox _hitbox;
+        [SerializeField] private PlayerSpriteView _spriteView;
 
         private Action<PlayerRemoteView> _returnToPool;
 

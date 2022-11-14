@@ -10,9 +10,9 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             Speed = speed;
             Distance = distance;
         }
-        
+
         public readonly Vector2 Direction;
-        public readonly float Speed;
         public readonly float Distance;
+        public readonly float Speed;
     }
 }

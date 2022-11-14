@@ -14,14 +14,15 @@ namespace GamePlay.Player.Entity.Network.Local.Replicators.Canons.Runtime
         {
             _eventSender = eventSender;
         }
-        
+
         private readonly IPlayerEventSender _eventSender;
 
         public string PlayerId => RagonNetwork.Room.LocalPlayer.Id;
 
-        public void Replicate(ProjectileType type, Vector2 position, float angle, float speed, int damage, float distance)
+        public void Replicate(ProjectileType type, Vector2 position, float angle, float speed, int damage,
+            float distance)
         {
-            var data = new ProjectileInstantiateEvent()
+            var data = new ProjectileInstantiateEvent
             {
                 Type = type,
                 Angle = angle,

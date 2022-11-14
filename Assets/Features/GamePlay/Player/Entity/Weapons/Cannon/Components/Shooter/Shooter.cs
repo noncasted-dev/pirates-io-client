@@ -4,7 +4,6 @@ using GamePlay.Player.Entity.Network.Local.Replicators.Canons.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.ShootPoint;
 using GamePlay.Services.Projectiles.Factory;
-using GamePlay.Services.Projectiles.Implementation.Linear;
 using GamePlay.Services.Projectiles.Implementation.Linear.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
@@ -30,16 +29,17 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
             _vfxPoolProvider = vfxPoolProvider;
         }
 
-        private readonly IUpdater _updater;
-        private readonly IShooterConfig _config;
         private readonly ICannonReplicator _cannonReplicator;
+        private readonly IShooterConfig _config;
         private readonly IProjectilesPoolProvider _projectilesPoolProvider;
         private readonly IShootPoint _shootPoint;
+
+        private readonly IUpdater _updater;
         private readonly IVfxPoolProvider _vfxPoolProvider;
+        private CancellationTokenSource _cancellation;
 
         private IObjectProvider<LinearProjectile> _projectiles;
         private IObjectProvider<AnimatedVfx> _vfx;
-        private CancellationTokenSource _cancellation;
 
         public void OnAwake()
         {

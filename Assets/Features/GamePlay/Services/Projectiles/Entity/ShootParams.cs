@@ -6,6 +6,17 @@ namespace GamePlay.Services.Projectiles.Entity
     [Serializable]
     public class ShootParams
     {
+        [SerializeField] private int _shotsAmount;
+        [SerializeField] private int _damage;
+        [SerializeField] private float _pushForce;
+        [SerializeField] private float _speed;
+        [SerializeField] private float _distance;
+        [SerializeField] private LayerMask _layerMask;
+
+        public readonly int Damage;
+        public readonly float Distance;
+        public readonly float Speed;
+
         public ShootParams(
             int damage,
             float speed,
@@ -19,16 +30,5 @@ namespace GamePlay.Services.Projectiles.Entity
             _speed = speed;
             _distance = distance;
         }
-        
-        [SerializeField] private int _shotsAmount;
-        [SerializeField] private int _damage;
-        [SerializeField] private float _pushForce;
-        [SerializeField] private float _speed;
-        [SerializeField] private float _distance;
-        [SerializeField] private LayerMask _layerMask;
-
-        public readonly int Damage;
-        public readonly float Speed;
-        public readonly float Distance;
     }
 }

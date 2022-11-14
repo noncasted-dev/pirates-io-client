@@ -8,7 +8,7 @@ using VContainer;
 
 namespace GamePlay.Services.Projectiles.Bootstrap
 {
-    public class ProjectilesBootstrapper : 
+    public class ProjectilesBootstrapper :
         MonoBehaviour,
         ILocalAsyncAwakeListener,
         ILocalBootstrappedListener,
@@ -29,7 +29,7 @@ namespace GamePlay.Services.Projectiles.Bootstrap
         {
             await _handler.Prepare();
         }
-        
+
         public void OnBootstrapped()
         {
             _handler.InstantiateStartupInstances();

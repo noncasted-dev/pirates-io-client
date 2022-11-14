@@ -19,22 +19,18 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
             _time = time;
         }
 
-        private readonly IUpdater _updater;
-        private readonly ITransform _transform;
         private readonly Vector2 _direction;
         private readonly float _distance;
         private readonly float _time;
+        private readonly ITransform _transform;
+
+        private readonly IUpdater _updater;
 
         private float _currentTime;
 
         private bool _isEnded;
 
         public bool IsEnded => _isEnded;
-
-        public void Start()
-        {
-            _updater.Add(this);
-        }
 
         public void OnFixedUpdate(float delta)
         {
@@ -53,11 +49,16 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 
             if (progress < 1)
                 return;
-            
+
             _transform.SetLocalPosition(Vector2.zero);
             _updater.Remove(this);
 
             _isEnded = true;
+        }
+
+        public void Start()
+        {
+            _updater.Add(this);
         }
     }
 }

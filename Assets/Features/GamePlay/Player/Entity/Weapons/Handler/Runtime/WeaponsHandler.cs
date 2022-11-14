@@ -22,7 +22,7 @@ namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
         public async UniTask OnAsyncAwake()
         {
             var rangeTask = UniTask.Create(async () => { _canon = await _factory.CreateBow(_config.Canon); });
-            
+
             await rangeTask;
         }
 

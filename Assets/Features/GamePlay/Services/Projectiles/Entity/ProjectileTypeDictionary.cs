@@ -7,6 +7,5 @@ namespace GamePlay.Services.Projectiles.Entity
     [Serializable]
     public class ProjectileTypeDictionary : ReadOnlyDictionary<ProjectileType, AssetReference>
     {
-        
     }
 }

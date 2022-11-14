@@ -8,7 +8,12 @@ namespace GamePlay.Player.Entity.Network.Root.Runtime
     public class PlayerNetworkRoot : RagonBehaviour, IPlayerEventSender, IPlayerEventListener
     {
         public bool IsLocal => Entity.IsMine;
-        
+
+        public void AddListener<TEvent>(Action<RagonPlayer, TEvent> callback) where TEvent : IRagonEvent, new()
+        {
+            OnEvent(callback);
+        }
+
         public override void OnCreatedEntity()
         {
             var payload = Entity.GetSpawnPayload<PlayerPayload>();
@@ -18,11 +23,6 @@ namespace GamePlay.Player.Entity.Network.Root.Runtime
                 gameObject.name = "LocalPlayer";
             else
                 gameObject.name = $"RemotePlayer_{userName}";
-        }
-
-        public void AddListener<TEvent>(Action<RagonPlayer, TEvent> callback) where TEvent : IRagonEvent, new()
-        {
-            OnEvent(callback);
         }
     }
 }

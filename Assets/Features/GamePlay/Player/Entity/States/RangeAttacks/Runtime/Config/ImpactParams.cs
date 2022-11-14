@@ -7,7 +7,7 @@
             Distance = distance;
             Time = time;
         }
-        
+
         public readonly float Distance;
         public readonly float Time;
     }

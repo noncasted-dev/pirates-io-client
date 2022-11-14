@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
 {
@@ -9,9 +8,9 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
         {
             _config = config;
         }
-        
+
         private readonly InertialMovementConfigAsset _config;
-        
+
         public float Evaluate(float currentTime, Vector2 startDirection, Vector2 targetDirection)
         {
             var distance = Vector2.Distance(startDirection, targetDirection);

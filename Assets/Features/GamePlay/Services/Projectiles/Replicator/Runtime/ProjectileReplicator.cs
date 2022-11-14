@@ -4,7 +4,6 @@ using Common.Structs;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Factory;
-using GamePlay.Services.Projectiles.Implementation.Linear;
 using GamePlay.Services.Projectiles.Implementation.Linear.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
@@ -34,12 +33,12 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
 
         private readonly Dictionary<ProjectileType, IObjectProvider<LinearProjectile>> _projectiles = new();
 
-        private IPlayerPositionProvider _positionProvider;
-
         private ProjectileReplicatorConfigAsset _config;
+
+        private IPlayerPositionProvider _positionProvider;
         private IProjectilesPoolProvider _projectilesPoolProvider;
-        private IVfxPoolProvider _vfxPoolProvider;
         private IObjectProvider<AnimatedVfx> _vfx;
+        private IVfxPoolProvider _vfxPoolProvider;
 
         public void OnBootstrapped()
         {
@@ -47,7 +46,7 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
             {
                 var pool =
                     _projectilesPoolProvider.GetPool<LinearProjectile>(projectile.Value);
-                
+
                 _projectiles.Add(projectile.Key, pool);
             }
 
@@ -57,16 +56,16 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
         public void Replicate(string creatorId, ProjectileInstantiateEvent data)
         {
             var distance = Vector2.Distance(data.Position, _positionProvider.Position);
-            
+
             if (distance > _config.ReplicateDistance)
                 return;
-            
+
             var direction = AngleUtils.ToDirection(data.Angle);
-            
+
             var projectile = _projectiles[data.Type].Get(data.Position);
-            
+
             var parameters = new ShootParams(data.Damage, data.Speed, data.Distance);
-                
+
             projectile.Fire(direction, parameters, true, creatorId);
             _vfx.Get(data.Position);
         }

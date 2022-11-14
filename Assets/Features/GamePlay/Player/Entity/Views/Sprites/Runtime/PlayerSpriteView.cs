@@ -40,6 +40,21 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
             _sprite = GetComponent<SpriteRenderer>();
         }
 
+        public void Flash(float time)
+        {
+            _sprite.material = _flash;
+
+            UniTask.Create(async () =>
+            {
+                var delay = (int)(time * 1000f);
+
+                await UniTask.Delay(
+                    delay, false, PlayerLoopTiming.Update, this.GetCancellationTokenOnDestroy());
+
+                _sprite.material = _defaultMaterial;
+            });
+        }
+
         public void ResetRotation()
         {
             _sprite.flipX = false;
@@ -123,21 +138,6 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
         public void RemoveSubSprite(SpriteRenderer subSprite)
         {
             _subSprites.Remove(subSprite);
-        }
-
-        public void Flash(float time)
-        {
-            _sprite.material = _flash;
-
-            UniTask.Create(async () =>
-            {
-                var delay = (int)(time * 1000f);
-
-                await UniTask.Delay(
-                    delay, false, PlayerLoopTiming.Update, this.GetCancellationTokenOnDestroy());
-
-                _sprite.material = _defaultMaterial;
-            });
         }
     }
 }

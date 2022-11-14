@@ -6,7 +6,7 @@
         {
             ColliderHeight = colliderHeight;
         }
-        
+
         public readonly float ColliderHeight;
 
         private float _angle;

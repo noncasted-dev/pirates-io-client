@@ -15,13 +15,14 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             _transform = transform;
             _droppedCallback = droppedCallback;
             RaycastData = raycastData;
-            
+
             transform.rotation = Quaternion.Euler(0f, 0f, raycastData.Angle);
         }
 
-        private MovementData _data;
-        private readonly Transform _transform;
         private readonly Action _droppedCallback;
+        private readonly Transform _transform;
+
+        private MovementData _data;
 
         private float _passedDistance;
 
@@ -31,17 +32,10 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
         {
             var data = new ProjectileMoveData(
                 _transform.position,
-                _data.Direction, 
+                _data.Direction,
                 _data.Speed);
 
             return data;
-        }
-
-        public void Setup(float angle, MovementData data)
-        {
-            RaycastData.Setup(angle);
-            _data = data;
-            _passedDistance = 0f;
         }
 
         public void SetPosition(Vector2 position)
@@ -57,13 +51,20 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 
             progress = Mathf.Clamp01(progress);
             progress = 1f - progress;
-            
-            var scale = Vector3.one * Mathf.Pow(progress, 1f/10f);
-            
+
+            var scale = Vector3.one * Mathf.Pow(progress, 1f / 10f);
+
             _transform.localScale = scale;
-            
+
             if (_passedDistance > _data.Distance)
                 _droppedCallback?.Invoke();
+        }
+
+        public void Setup(float angle, MovementData data)
+        {
+            RaycastData.Setup(angle);
+            _data = data;
+            _passedDistance = 0f;
         }
     }
 }

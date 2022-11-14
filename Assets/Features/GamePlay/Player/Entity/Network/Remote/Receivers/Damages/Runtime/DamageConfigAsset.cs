@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace Features.GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
+namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
 {
     [CreateAssetMenu(fileName = PlayerAssetsPaths.ConfigPrefix + "Damage",
         menuName = PlayerAssetsPaths.Damage + "Config")]

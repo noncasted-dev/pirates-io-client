@@ -29,7 +29,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         {
             await _handler.Prepare();
         }
-        
+
         public void OnBootstrapped()
         {
             _handler.InstantiateStartupInstances();

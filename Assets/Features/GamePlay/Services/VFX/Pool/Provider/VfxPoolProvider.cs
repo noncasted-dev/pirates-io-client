@@ -9,7 +9,7 @@ namespace GamePlay.Services.VFX.Pool.Provider
         {
             _provider = provider;
         }
-        
+
         private readonly IPoolProvider _provider;
 
         public IObjectProvider<T> GetPool<T>(AssetReference reference) where T : class

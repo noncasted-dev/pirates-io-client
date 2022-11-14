@@ -1,18 +1,18 @@
 {
-    "name": "Globa.Services.Network.EventsRegistry.Runtime",
-    "rootNamespace": "",
-    "references": [
-        "GUID:dd0026c9620df2e42a15a0e918addd39",
-        "GUID:861b1281dab914af69d87c4345d0b1a2",
-        "GUID:2e684bff8d6d2ba4e803383e33027d81"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "Globa.Services.Network.EventsRegistry.Runtime",
+  "rootNamespace": "",
+  "references": [
+    "GUID:dd0026c9620df2e42a15a0e918addd39",
+    "GUID:861b1281dab914af69d87c4345d0b1a2",
+    "GUID:2e684bff8d6d2ba4e803383e33027d81"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }

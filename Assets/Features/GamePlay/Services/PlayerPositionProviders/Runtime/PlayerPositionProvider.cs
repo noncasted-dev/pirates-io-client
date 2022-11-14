@@ -7,7 +7,7 @@ namespace GamePlay.Services.PlayerPositionProviders.Runtime
         private Transform _player;
 
         public Vector2 Position => GetPosition();
-        
+
         public void AssignPlayer(Transform player)
         {
             _player = player;

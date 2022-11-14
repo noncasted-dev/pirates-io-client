@@ -6,12 +6,11 @@ namespace GamePlay.Player.Entity.Views.ShootPoint
     [DisallowMultipleComponent]
     public class CannonShootPoint : MonoBehaviour, IShootPoint
     {
+        private const float _distance = 2f;
         [SerializeField] [Min(0f)] private float _offset;
 
         [SerializeField] private Transform _center;
         [SerializeField] private LayerMask _shootAreaMask;
-
-        private const float _distance = 2f;
 
         private readonly RaycastHit2D[] _buffer = new RaycastHit2D[1];
 
@@ -19,7 +18,7 @@ namespace GamePlay.Player.Entity.Views.ShootPoint
         {
             var origin = (Vector2)_center.position;
             var direction = AngleUtils.ToDirection(angle);
-            
+
             var hit = Physics2D.RaycastNonAlloc(
                 origin,
                 direction,
@@ -29,11 +28,11 @@ namespace GamePlay.Player.Entity.Views.ShootPoint
 
             if (hit == 0)
                 return transform.position;
-            
+
             var point = _buffer[0].point;
             point += direction * _offset;
 
-            return point;   
+            return point;
         }
     }
 }

@@ -8,7 +8,7 @@ using VContainer;
 
 namespace GamePlay.Services.VFX.Pool.Provider
 {
-    public class VfxPoolBootstrapper : 
+    public class VfxPoolBootstrapper :
         MonoBehaviour,
         ILocalAsyncAwakeListener,
         ILocalBootstrappedListener,
@@ -29,7 +29,7 @@ namespace GamePlay.Services.VFX.Pool.Provider
         {
             await _handler.Prepare();
         }
-        
+
         public void OnBootstrapped()
         {
             _handler.InstantiateStartupInstances();

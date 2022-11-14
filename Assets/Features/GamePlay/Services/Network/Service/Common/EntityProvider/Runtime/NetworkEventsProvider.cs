@@ -10,17 +10,18 @@ namespace GamePlay.Services.Network.Service.Common.EntityProvider.Runtime
         {
             _behaviour = behaviour;
         }
-        
+
         private readonly RagonBehaviour _behaviour;
-        
-        public void ReplicateEvent<TEvent>(TEvent data, RagonTarget target, RagonReplicationMode replicationMode) where TEvent : IRagonEvent, new()
-        {
-            _behaviour.ReplicateEvent(data, target, replicationMode);   
-        }
 
         public void AddListener<TEvent>(Action<RagonPlayer, TEvent> callback) where TEvent : IRagonEvent, new()
         {
             _behaviour.OnEvent(callback);
+        }
+
+        public void ReplicateEvent<TEvent>(TEvent data, RagonTarget target, RagonReplicationMode replicationMode)
+            where TEvent : IRagonEvent, new()
+        {
+            _behaviour.ReplicateEvent(data, target, replicationMode);
         }
     }
 }

@@ -7,10 +7,10 @@ namespace GamePlay.Player.Entity.Network.Views.Transforms.Runtime
     [DisallowMultipleComponent]
     public class NetworkTransform : RagonBehaviour, INetworkTransform
     {
+        private readonly RagonVector3 _position = new(Vector3.zero, RagonAxis.XY);
         private Vector2 _lastReplicated;
 
         private Vector2 _localPosition;
-        private readonly RagonVector3 _position = new(Vector3.zero, RagonAxis.XY);
 
         public void SetPosition(Vector2 position)
         {

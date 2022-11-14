@@ -27,43 +27,21 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 
         [SerializeField] [ReadOnly] private ShootParams _shootParams;
         [SerializeField] [ReadOnly] private bool _isLocal;
-        
+
         [SerializeField] private BoxCollider2D _collider;
         [SerializeField] private TrailRenderer _trail;
-        
-        private IProjectilesMover _mover;
-        private Movement _movement;
         private Actions _actions;
-        private Transform _transform;
+        private Movement _movement;
+
+        private IProjectilesMover _mover;
 
         private Action<LinearProjectile> _returnCallback;
+        private Transform _transform;
         private IObjectProvider<AnimatedVfx> _vfx;
         public IProjectileMovement Movement => _movement;
         public IProjectileActions Actions => _actions;
 
         public GameObject GameObject => gameObject;
-
-        public void Fire(
-            Vector2 direction,
-            ShootParams shootParams,
-            bool isLocal,
-            string creatorId)
-        {
-            _shootParams = shootParams;
-            _isLocal = isLocal;
-            
-            var movementData = new MovementData(
-                direction,
-                shootParams.Speed,
-                shootParams.Distance);
-            
-            var angle = direction.ToAngle();
-
-            _movement.Setup(angle, movementData);
-            _actions.Setup(shootParams, isLocal, creatorId);
-            
-            _mover.Add(this);
-        }
 
         public void SetPosition(Vector2 position)
         {
@@ -73,16 +51,16 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
         public void SetupPoolObject(Action<LinearProjectile> returnToPool)
         {
             _returnCallback = returnToPool;
-            
+
             var raycastData = new ProjectileRaycastData(_collider.size.y);
 
             _actions = new Actions(
-                _transform, 
-                _returnCallback, 
+                _transform,
+                _returnCallback,
                 this,
-                _mover, 
+                _mover,
                 _vfx);
-            
+
             _movement = new Movement(
                 raycastData,
                 _transform,
@@ -97,6 +75,28 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
         public void OnReturned()
         {
             _trail.Clear();
+        }
+
+        public void Fire(
+            Vector2 direction,
+            ShootParams shootParams,
+            bool isLocal,
+            string creatorId)
+        {
+            _shootParams = shootParams;
+            _isLocal = isLocal;
+
+            var movementData = new MovementData(
+                direction,
+                shootParams.Speed,
+                shootParams.Distance);
+
+            var angle = direction.ToAngle();
+
+            _movement.Setup(angle, movementData);
+            _actions.Setup(shootParams, isLocal, creatorId);
+
+            _mover.Add(this);
         }
     }
 }

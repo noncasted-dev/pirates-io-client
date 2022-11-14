@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using GamePlay.Player.Entity.Components.Healths.Runtime;
+﻿using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
@@ -23,17 +22,18 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
             Definition = definition;
         }
 
-        private readonly RespawnLogger _logger;
         private readonly RespawnConfigAsset _config;
-        private readonly IStateMachine _stateMachine;
         private readonly IHealth _health;
+
+        private readonly RespawnLogger _logger;
+        private readonly IStateMachine _stateMachine;
 
         public void Enter()
         {
             _stateMachine.Enter(this);
 
             _health.Respawn(_config.MaxHealth);
-            
+
             _logger.OnEntered();
             _stateMachine.Exit();
         }

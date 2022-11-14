@@ -2,6 +2,6 @@
 {
     public enum ProjectileType : byte
     {
-        Ordinary,
+        Ordinary
     }
 }

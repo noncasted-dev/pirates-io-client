@@ -8,6 +8,5 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
         menuName = PlayerAssetsPaths.Death + "Definition")]
     public class DeathStateDefinition : StateDefinition
     {
-
     }
 }

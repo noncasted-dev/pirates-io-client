@@ -15,7 +15,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config
         [SerializeField] [Min(0f)] private float _aimAdditionalSpread;
         [SerializeField] [Min(0f)] private float _impactDistance;
         [SerializeField] [Min(0f)] private float _impactTime;
-        
+
         public float Delay => _delay;
         public float StartAimAngle => _startAimAngle;
         public float EndAimAngle => _endAimAngle;

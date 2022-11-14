@@ -24,25 +24,19 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             _waterSplash = waterSplash;
         }
 
-        private readonly Transform _transform;
-        private readonly Action<LinearProjectile> _returnToPool;
-        private readonly LinearProjectile _projectile;
         private readonly IProjectilesMover _mover;
+        private readonly LinearProjectile _projectile;
+        private readonly Action<LinearProjectile> _returnToPool;
+
+        private readonly Transform _transform;
         private readonly IObjectProvider<AnimatedVfx> _waterSplash;
-        
-        private ShootParams _shootParams;
-        private bool _isLocal;
         private string _creatorId;
+        private bool _isLocal;
+
+        private ShootParams _shootParams;
 
         public bool IsLocal => _isLocal;
         public string CreatorId => _creatorId;
-
-        public void Setup(ShootParams shootParams, bool isLocal, string creatorId)
-        {
-            _creatorId = creatorId;
-            _shootParams = shootParams;
-            _isLocal = isLocal;
-        }
 
         public void OnTriggered(IDamageReceiver damageReceiver)
         {
@@ -66,6 +60,13 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
         {
             _mover.Remove(_projectile);
             _returnToPool?.Invoke(_projectile);
+        }
+
+        public void Setup(ShootParams shootParams, bool isLocal, string creatorId)
+        {
+            _creatorId = creatorId;
+            _shootParams = shootParams;
+            _isLocal = isLocal;
         }
 
         public void OnDropped()

@@ -2,7 +2,7 @@
 using Ragon.Client;
 using UnityEngine;
 
-namespace Features.GamePlay.Player.Entity.Components.DamageProcessors.Runtime
+namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
 {
     public class LocalHitbox : MonoBehaviour, IDamageReceiver
     {
@@ -11,7 +11,6 @@ namespace Features.GamePlay.Player.Entity.Components.DamageProcessors.Runtime
 
         public void ReceiveDamage(Damage damage, bool isProjectileLocal)
         {
-            
         }
     }
 }

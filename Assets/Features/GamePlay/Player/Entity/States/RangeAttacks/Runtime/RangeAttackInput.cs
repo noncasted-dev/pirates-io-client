@@ -17,7 +17,6 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime
             _logger = logger;
         }
 
-
         private readonly IInputView _input;
         private readonly RangeAttackLogger _logger;
         private readonly IRangeAttack _rangeAttack;

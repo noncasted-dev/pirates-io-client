@@ -11,8 +11,8 @@ namespace Local.ComposedSceneConfig
     {
         private readonly List<ILocalAsyncAwakeListener> _asyncAwakes = new();
         private readonly List<ILocalAsyncBootstrappedListener> _asyncBootstrappers = new();
-        private readonly List<ILocalBootstrappedListener> _bootstrappers = new();
         private readonly List<ILocalAwakeListener> _awakes = new();
+        private readonly List<ILocalBootstrappedListener> _bootstrappers = new();
         private readonly List<ILocalLoadListener> _loads = new();
         private readonly List<IDependencyRegister> _registers = new();
         private readonly List<IDependencyResolver> _resolvers = new();
@@ -35,8 +35,8 @@ namespace Local.ComposedSceneConfig
                 _loads.Add(load);
 
             if (service is ILocalBootstrappedListener bootstrap)
-                _bootstrappers.Add(bootstrap);            
-            
+                _bootstrappers.Add(bootstrap);
+
             if (service is ILocalAsyncBootstrappedListener asyncBootstrap)
                 _asyncBootstrappers.Add(asyncBootstrap);
         }
@@ -65,7 +65,7 @@ namespace Local.ComposedSceneConfig
 
             await UniTask.WhenAll(tasks);
         }
-        
+
         public void InvokeBootstrappedCallbacks()
         {
             foreach (var bootstrap in _bootstrappers)

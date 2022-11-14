@@ -10,7 +10,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
         }
 
         private readonly HealthLogger _logger;
-        
+
         private readonly int _max;
 
         private int _amount;
@@ -20,7 +20,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
         public void Respawn(int health)
         {
             _logger.OnRespawned(health);
-            
+
             _amount = health;
         }
 
@@ -31,7 +31,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
                 _logger.OnHealValueException(add);
                 add = 0;
             }
-            
+
             _amount += add;
 
             if (_amount > _max)
@@ -47,9 +47,9 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
                 _logger.OnDamageValueException(damage);
                 damage = 0;
             }
-            
+
             _amount -= damage;
-            
+
             _logger.OnDamaged(damage, _amount);
         }
     }

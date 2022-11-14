@@ -1,7 +1,7 @@
 ﻿using Ragon.Common;
 using UnityEngine;
 
-namespace Features.Common.RagonUtils
+namespace Common.RagonUtils
 {
     public static class SerializerUtils
     {
@@ -10,7 +10,7 @@ namespace Features.Common.RagonUtils
             serializer.WriteFloat(value.x);
             serializer.WriteFloat(value.y);
         }
-        
+
         public static Vector2 ReadVector(this RagonSerializer serializer)
         {
             return new Vector2(serializer.ReadFloat(), serializer.ReadFloat());

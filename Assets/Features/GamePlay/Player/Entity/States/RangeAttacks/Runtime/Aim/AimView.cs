@@ -24,22 +24,22 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
             _config = config;
             _rotation = rotation;
         }
-        
+
         [SerializeField] private Transform _left;
         [SerializeField] private Transform _right;
 
+        private CancellationTokenSource _cancellation;
+        private IRangeAttackConfig _config;
+        private IInputView _input;
+
         private IRotation _rotation;
         private IUpdater _updater;
-        private IRangeAttackConfig _config;
-
-        private CancellationTokenSource _cancellation;
-        private IInputView _input;
 
         public async UniTask<AimResult> AimAsync()
         {
             _left.gameObject.SetActive(true);
             _right.gameObject.SetActive(true);
-            
+
             _cancellation = new CancellationTokenSource();
             var parameters = _config.CreateAimParams();
 
@@ -52,9 +52,9 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
                 _input,
                 parameters,
                 _cancellation.Token);
-            
-            var result =  await aim.Process();
-            
+
+            var result = await aim.Process();
+
             _left.gameObject.SetActive(false);
             _right.gameObject.SetActive(false);
 
@@ -66,7 +66,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
             _cancellation?.Cancel();
             _cancellation?.Dispose();
             _cancellation = null;
-            
+
             _left.gameObject.SetActive(false);
             _right.gameObject.SetActive(false);
         }

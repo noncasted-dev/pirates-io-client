@@ -33,19 +33,19 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
             _replicator = replicator;
             _instantiatorFactory = instantiatorFactory;
         }
-        
+
         private static RemotePlayerBuilder _instance;
 
         [SerializeField] private RemoteViewsPool _pool;
         [SerializeField] private AssetReference _prefab;
         [SerializeField] private AssetReference _hitExplosionReference;
-        
+        private IObjectProvider<AnimatedVfx> _hitExplosionPool;
+
         private IAssetInstantiatorFactory _instantiatorFactory;
         private ILogger _logger;
         private IProjectileReplicator _replicator;
         private IUpdater _updater;
         private IVfxPoolProvider _vfxPoolProvider;
-        private IObjectProvider<AnimatedVfx> _hitExplosionPool;
 
         public static RemotePlayerBuilder Instance => _instance;
 
@@ -53,7 +53,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         {
             _instance = this;
         }
-        
+
         public void OnBootstrapped()
         {
             _hitExplosionPool = _vfxPoolProvider.GetPool<AnimatedVfx>(_hitExplosionReference);

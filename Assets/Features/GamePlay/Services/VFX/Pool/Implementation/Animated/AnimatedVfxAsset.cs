@@ -16,7 +16,7 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Animated
 
             var factory = new AnimatedVfxFactory(Reference, parent, instantiatorFactory);
             var provider = new ObjectProvider<AnimatedVfx>(null, factory, StartupInstances, parent);
-            
+
             return provider;
         }
     }

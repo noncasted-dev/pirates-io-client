@@ -10,7 +10,7 @@
         private readonly RangeAttackConfigAsset _asset;
 
         public float Delay => _asset.Delay;
-        
+
         public AimParams CreateAimParams()
         {
             return new AimParams(

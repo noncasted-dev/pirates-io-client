@@ -15,10 +15,10 @@
             OverTime = overTime;
             AdditionalSpread = additionalSpread;
         }
-        
+
         public readonly float StartAngle;
         public readonly float EndAngle;
-        public readonly float Time;     
+        public readonly float Time;
         public readonly float OverTime;
         public readonly float AdditionalSpread;
     }

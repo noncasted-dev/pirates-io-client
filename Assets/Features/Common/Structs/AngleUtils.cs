@@ -11,7 +11,7 @@ namespace Common.Structs
 
             return Horizontal.Right;
         }
-        
+
         public static void RotateAlong(this Transform transform, Vector2 direction)
         {
             var angle = direction.ToAngle();

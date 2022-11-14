@@ -7,12 +7,12 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
 {
     public class ProjectileInstantiateEvent : IRagonEvent
     {
-        public ProjectileType Type;
-        public Vector2 Position;
         public float Angle;
-        public float Speed;
         public int Damage;
         public float Distance;
+        public Vector2 Position;
+        public float Speed;
+        public ProjectileType Type;
 
         public void Serialize(RagonSerializer serializer)
         {

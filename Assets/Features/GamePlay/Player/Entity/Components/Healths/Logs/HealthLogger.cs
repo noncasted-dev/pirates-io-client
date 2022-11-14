@@ -25,10 +25,10 @@ namespace GamePlay.Player.Entity.Components.Healths.Logs
         {
             if (_settings.IsAvailable(HealthLogType.HealValueException) == false)
                 return;
-            
+
             _logger.Log($"Wrong heal value: {heal}", _settings.LogParameters);
         }
-        
+
         public void OnHealed(int heal, int result)
         {
             if (_settings.IsAvailable(HealthLogType.Respawn) == false)
@@ -41,12 +41,12 @@ namespace GamePlay.Player.Entity.Components.Healths.Logs
         {
             if (_settings.IsAvailable(HealthLogType.DamageValueException) == false)
                 return;
-            
+
             _logger.Log($"Wrong damage value {heal}", _settings.LogParameters);
         }
-        
+
         public void OnDamaged(int damage, int result)
-        {   
+        {
             if (_settings.IsAvailable(HealthLogType.Respawn) == false)
                 return;
 

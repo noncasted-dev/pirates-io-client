@@ -39,12 +39,13 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             _logger = logger;
         }
 
+        private readonly IAimView _aim;
+        private readonly IRangeAttackConfig _config;
+
         private readonly AttackDelay _delay;
         private readonly IInertialMovement _inertialMovement;
         private readonly RangeAttackLogger _logger;
         private readonly ISpriteRotation _spriteRotation;
-        private readonly IRangeAttackConfig _config;
-        private readonly IAimView _aim;
         private readonly ISpriteTransform _spriteTransform;
 
         private readonly IStateMachine _stateMachine;
@@ -55,7 +56,6 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         private bool _isStarted;
 
         public bool HasInput => _hasInput;
-        public StateDefinition Definition { get; }
 
         public void OnInput()
         {
@@ -82,7 +82,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         {
             if (_isStarted == false)
                 return;
-            
+
             _hasInput = false;
             _stateMachine.Exit();
         }
@@ -91,6 +91,8 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         {
             Process().Forget();
         }
+
+        public StateDefinition Definition { get; }
 
         public void Break()
         {
@@ -122,7 +124,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
                     var impactParams = _config.CreateImpactParams();
                     var direction = -AngleUtils.ToDirection(aim.Angle);
                     _spriteTransform.Impact(direction, impactParams.Distance, impactParams.Time);
-                    
+
                     _weapons.Canon.Shoot(aim.Angle, aim.Spread);
                     break;
                 case AimResultType.Broke:
@@ -131,7 +133,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            
+
             _stateMachine.Exit();
         }
     }

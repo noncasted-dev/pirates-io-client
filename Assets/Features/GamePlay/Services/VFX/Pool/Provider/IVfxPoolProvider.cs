@@ -4,6 +4,5 @@ namespace GamePlay.Services.VFX.Pool.Provider
 {
     public interface IVfxPoolProvider : IPoolProvider
     {
-        
     }
 }

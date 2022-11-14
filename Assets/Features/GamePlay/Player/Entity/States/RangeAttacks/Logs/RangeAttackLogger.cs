@@ -29,7 +29,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Logs
 
             _logger.Log("Attack input canceled", _settings.LogParameters);
         }
-        
+
         public void OnAttackBroke()
         {
             if (_settings.IsAvailable(RangeAttackLogType.ActionBroke) == false)

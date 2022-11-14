@@ -30,11 +30,11 @@ namespace GamePlay.Services.Projectiles.Mover
 
         private readonly List<IMovableProjectile> _addQueue = new();
         private readonly ProjectilesMoverConfigAsset _config;
+        private readonly int _hitBoxLayer;
         private readonly ProjectilesLogger _logger;
 
         private readonly List<IMovableProjectile> _projectiles = new();
         private readonly List<IMovableProjectile> _removeQueue = new();
-        private readonly int _hitBoxLayer;
 
         private readonly IUpdater _updater;
 
@@ -65,101 +65,6 @@ namespace GamePlay.Services.Projectiles.Mover
             array.Dispose();
         }
 
-        private void CheckCollision(IMovableProjectile projectile, ProjectileMoveData data)
-        {
-            var raycastData = projectile.Movement.RaycastData;
-            var movement = projectile.Movement;
-
-            var size = new Vector2(data.PassedDistance, raycastData.ColliderHeight);
-
-            var result = Physics2D.OverlapBoxNonAlloc(
-                data.MiddlePoint,
-                size,
-                raycastData.Angle,
-                _buffer,
-                _config.AllInteractionsMask);
-
-            if (result == 0)
-            {
-                movement.SetPosition(data.CurrentPosition);
-                movement.OnDistancePassed(data.PassedDistance);
-                return;
-            }
-            
-            Debug.Log($"On overlap: creator: {projectile.Actions.CreatorId}");
-            
-            for (var i = 0; i < result; i++)
-            {
-                var target = _buffer[i];
-
-                if (target.gameObject.layer != _hitBoxLayer)
-                {
-                    Debug.Log($"Layers not touched: config: {_hitBoxLayer}, target: {target.gameObject.layer}");
-                    continue;
-                }
-
-                if (target.TryGetComponent(out IDamageReceiver damageReceiver) == false)
-                {
-                    _logger.OnWrongTrigger(target.name);
-                    continue;
-                }
-
-                if (damageReceiver.IsLocal == true && projectile.Actions.CreatorId == damageReceiver.Id)
-                {
-                    Debug.Log($"1: receiver: {damageReceiver.Id}, projectile: {projectile.Actions.CreatorId}");
-                    movement.SetPosition(data.CurrentPosition);
-                    movement.OnDistancePassed(data.PassedDistance);
-                    return;
-                }
-
-                if (damageReceiver.IsLocal == true && projectile.Actions.IsLocal == false)
-                {
-                    Debug.Log($"2: receiver: {damageReceiver.Id}, projectile: {projectile.Actions.CreatorId}");
-
-                    projectile.Actions.Destroy();
-                    return;
-                }
-                
-                if (damageReceiver.IsLocal == false && projectile.Actions.CreatorId != damageReceiver.Id)
-                {
-                    Debug.Log($"3: receiver: {damageReceiver.Id}, projectile: {projectile.Actions.CreatorId}");
-
-                    movement.SetPosition(data.CurrentPosition);
-                    projectile.Actions.OnTriggered(damageReceiver);
-                    return;
-                }
-                
-                if (damageReceiver.IsLocal == false && projectile.Actions.CreatorId == damageReceiver.Id)
-                {
-                    Debug.Log($"4: receiver: {damageReceiver.Id}, projectile: {projectile.Actions.CreatorId}");
-
-                    movement.SetPosition(data.CurrentPosition);
-                    movement.OnDistancePassed(data.PassedDistance);
-                    return;
-                }
-                
-                if (damageReceiver.IsLocal == false && projectile.Actions.IsLocal == false)
-                {
-                    Debug.Log($"5: receiver: {damageReceiver.Id}, projectile: {projectile.Actions.CreatorId}");
-
-                    movement.SetPosition(data.CurrentPosition);
-                    projectile.Actions.OnTriggered(damageReceiver);
-                    return;
-                }
-
-                Debug.Log("No action");
-                
-                Debug.Log($"6: receiver: {damageReceiver.Id}, projectile: {projectile.Actions.CreatorId}");
-
-                _logger.OnTriggered(_buffer[i].name);
-                break;
-            }
-
-            movement.SetPosition(data.MiddlePoint);
-            projectile.Actions.OnCollided();
-            _logger.OnCollided(_buffer[0].name);
-        }
-
         public void OnAwake()
         {
             _buffer = new Collider2D[_config.BufferSize];
@@ -185,6 +90,88 @@ namespace GamePlay.Services.Projectiles.Mover
         {
             _removeQueue.Add(projectile);
             _logger.OnRemove(_projectiles.Count - _removeQueue.Count);
+        }
+
+        private void CheckCollision(IMovableProjectile projectile, ProjectileMoveData data)
+        {
+            var raycastData = projectile.Movement.RaycastData;
+            var movement = projectile.Movement;
+
+            var size = new Vector2(data.PassedDistance, raycastData.ColliderHeight);
+
+            var result = Physics2D.OverlapBoxNonAlloc(
+                data.MiddlePoint,
+                size,
+                raycastData.Angle,
+                _buffer,
+                _config.AllInteractionsMask);
+
+            if (result == 0)
+            {
+                movement.SetPosition(data.CurrentPosition);
+                movement.OnDistancePassed(data.PassedDistance);
+                return;
+            }
+
+            Debug.Log($"On overlap: creator: {projectile.Actions.CreatorId}");
+
+            for (var i = 0; i < result; i++)
+            {
+                var target = _buffer[i];
+
+                if (target.gameObject.layer != _hitBoxLayer)
+                {
+                    Debug.Log($"Layers not touched: config: {_hitBoxLayer}, target: {target.gameObject.layer}");
+                    continue;
+                }
+
+                if (target.TryGetComponent(out IDamageReceiver damageReceiver) == false)
+                {
+                    _logger.OnWrongTrigger(target.name);
+                    continue;
+                }
+
+                if (damageReceiver.IsLocal == true && projectile.Actions.CreatorId == damageReceiver.Id)
+                {
+                    movement.SetPosition(data.CurrentPosition);
+                    movement.OnDistancePassed(data.PassedDistance);
+                    return;
+                }
+
+                if (damageReceiver.IsLocal == true && projectile.Actions.IsLocal == false)
+                {
+                    projectile.Actions.Destroy();
+                    return;
+                }
+
+                if (damageReceiver.IsLocal == false && projectile.Actions.CreatorId != damageReceiver.Id)
+                {
+                    movement.SetPosition(data.CurrentPosition);
+                    projectile.Actions.OnTriggered(damageReceiver);
+                    return;
+                }
+
+                if (damageReceiver.IsLocal == false && projectile.Actions.CreatorId == damageReceiver.Id)
+                {
+                    movement.SetPosition(data.CurrentPosition);
+                    movement.OnDistancePassed(data.PassedDistance);
+                    return;
+                }
+
+                if (damageReceiver.IsLocal == false && projectile.Actions.IsLocal == false)
+                {
+                    movement.SetPosition(data.CurrentPosition);
+                    projectile.Actions.OnTriggered(damageReceiver);
+                    return;
+                }
+
+                _logger.OnTriggered(_buffer[i].name);
+                break;
+            }
+
+            movement.SetPosition(data.MiddlePoint);
+            projectile.Actions.OnCollided();
+            _logger.OnCollided(_buffer[0].name);
         }
 
         private void Fetch()

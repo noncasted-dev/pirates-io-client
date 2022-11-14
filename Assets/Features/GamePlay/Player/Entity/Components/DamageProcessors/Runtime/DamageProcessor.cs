@@ -1,8 +1,7 @@
 ﻿using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
-using Features.GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
-using GamePlay.Common.Damages;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
+using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.States.Deaths.Runtime;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
@@ -10,9 +9,8 @@ using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
 using Ragon.Client;
-using UnityEngine.AddressableAssets;
 
-namespace Features.GamePlay.Player.Entity.Components.DamageProcessors.Runtime
+namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
 {
     public class DamageProcessor
     {
@@ -35,17 +33,18 @@ namespace Features.GamePlay.Player.Entity.Components.DamageProcessors.Runtime
             listener.AddListener<DamageEvent>(OnDamageReceived);
         }
 
-        private readonly IHealth _health;
-        private readonly IDeath _death;
-        private readonly ISpriteFlash _flash;
-        private readonly IBodyTransform _transform;
-        private readonly IObjectProvider<AnimatedVfx> _explosion;
         private readonly DamageConfigAsset _config;
+        private readonly IDeath _death;
+        private readonly IObjectProvider<AnimatedVfx> _explosion;
+        private readonly ISpriteFlash _flash;
+
+        private readonly IHealth _health;
+        private readonly IBodyTransform _transform;
 
         private void OnDamageReceived(RagonPlayer player, DamageEvent damage)
         {
             _health.ApplyDamage(damage.Amount);
-            
+
             var explosion = _explosion.Get(damage.Origin);
             var direction = damage.Origin - _transform.Position;
             direction.Normalize();

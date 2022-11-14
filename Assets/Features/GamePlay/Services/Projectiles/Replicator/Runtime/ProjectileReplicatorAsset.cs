@@ -13,6 +13,7 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
     {
         [SerializeField] private ProjectileReplicator _prefab;
         [SerializeField] private ProjectileReplicatorConfigAsset _config;
+
         public override async UniTask Create(
             IServiceBinder serviceBinder,
             ICallbacksRegister callbacksRegister,

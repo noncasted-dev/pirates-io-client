@@ -8,14 +8,13 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Animated
     [RequireComponent(typeof(Animator))]
     public class AnimatedVfx : MonoBehaviour, IPoolObject<AnimatedVfx>
     {
-        private Action<AnimatedVfx> _returnToPool;
-
-        private Animator _animator;
-        
         private static readonly int Play = Animator.StringToHash("Play");
 
+        private Animator _animator;
+        private Action<AnimatedVfx> _returnToPool;
+
         public GameObject GameObject => gameObject;
-        
+
         public void SetPosition(Vector2 position)
         {
             transform.position = position;

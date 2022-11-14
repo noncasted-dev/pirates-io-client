@@ -28,8 +28,8 @@ namespace GamePlay.Player.Entity.States.Floating.Runtime
         private readonly IIdle _idle;
 
         private readonly FloatingStateLogger _logger;
-        private readonly IRun _run;
         private readonly IRangeAttack _rangeAttack;
+        private readonly IRun _run;
 
         private readonly IStateMachine _stateMachine;
 
@@ -42,7 +42,7 @@ namespace GamePlay.Player.Entity.States.Floating.Runtime
                 _rangeAttack.Enter();
                 return;
             }
-            
+
             if (_run.HasInput == true)
             {
                 _run.Enter();

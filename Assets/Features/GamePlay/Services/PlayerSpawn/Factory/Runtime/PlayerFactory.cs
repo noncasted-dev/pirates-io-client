@@ -60,13 +60,13 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
 
             var playerObject = await _instantiator.InstantiateAsync(Vector2.zero);
             playerObject.name = "Player";
-            
+
             var playerTransform = playerObject.transform;
             var networkTransform = networkObject.transform;
-            
+
             playerTransform.parent = networkTransform;
             playerTransform.localPosition = Vector3.zero;
-            
+
             _transformPresenter.AssignPlayer(networkTransform);
 
             _logger.OnInstantiated(spawnPoint);

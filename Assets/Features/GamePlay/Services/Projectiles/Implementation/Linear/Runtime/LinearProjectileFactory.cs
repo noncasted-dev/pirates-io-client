@@ -28,15 +28,15 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
         }
 
         private readonly IAssetInstantiatorFactory _instantiatorFactory;
-        private readonly IVfxPoolProvider _vfx;
         private readonly IProjectilesMover _mover;
         private readonly Transform _parent;
 
         private readonly AssetReference _reference;
+        private readonly IVfxPoolProvider _vfx;
         private readonly AssetReference _waterSplash;
+        private IAssetInstantiator<LinearProjectile> _instantiator;
 
         private IObjectProvider<AnimatedVfx> _waterSplashProvider;
-        private IAssetInstantiator<LinearProjectile> _instantiator;
 
         public async UniTask PreloadAsync()
         {

@@ -151,7 +151,7 @@ namespace Global.Services.InputViews.Runtime
 
             RangeAttackCanceled?.Invoke();
         }
-        
+
         private void OnRangeAttackBreakPerformed(InputAction.CallbackContext context)
         {
             _logger.OnRangeAttackCanceled();

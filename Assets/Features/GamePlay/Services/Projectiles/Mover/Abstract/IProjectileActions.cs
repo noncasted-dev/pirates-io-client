@@ -7,6 +7,7 @@ namespace GamePlay.Services.Projectiles.Mover.Abstract
         bool IsLocal { get; }
         string CreatorId { get; }
         void OnTriggered(IDamageReceiver damageReceiver);
+        void Destroy();
         void OnCollided();
     }
 }

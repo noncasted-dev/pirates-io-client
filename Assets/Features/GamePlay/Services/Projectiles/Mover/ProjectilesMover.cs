@@ -104,11 +104,17 @@ namespace GamePlay.Services.Projectiles.Mover
                     continue;
                 }
 
-                if (damageReceiver.IsLocal == true || damageReceiver.Id == projectile.Actions.CreatorId)
+                if (damageReceiver.IsLocal == true)
                 {
                     Debug.Log($"Move on: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
                     movement.SetPosition(data.CurrentPosition);
                     movement.OnDistancePassed(data.PassedDistance);
+                    return;
+                }
+
+                if (damageReceiver.Id == projectile.Actions.CreatorId)
+                {
+                    projectile.Actions.Destroy();
                     return;
                 }
                 

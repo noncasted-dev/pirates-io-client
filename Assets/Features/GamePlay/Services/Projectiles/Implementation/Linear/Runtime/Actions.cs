@@ -56,6 +56,12 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             damageReceiver.ReceiveDamage(damage, IsLocal);
         }
 
+        public void Destroy()
+        {
+            _mover.Remove(_projectile);
+            _returnToPool?.Invoke(_projectile);
+        }
+
         public void OnCollided()
         {
             _mover.Remove(_projectile);

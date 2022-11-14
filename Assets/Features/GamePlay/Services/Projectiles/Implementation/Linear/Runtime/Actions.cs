@@ -32,11 +32,14 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
         
         private ShootParams _shootParams;
         private bool _isLocal;
+        private string _creatorId;
 
         public bool IsLocal => _isLocal;
+        public string CreatorId => _creatorId;
 
-        public void Setup(ShootParams shootParams, bool isLocal)
+        public void Setup(ShootParams shootParams, bool isLocal, string creatorId)
         {
+            _creatorId = creatorId;
             _shootParams = shootParams;
             _isLocal = isLocal;
         }

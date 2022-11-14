@@ -2,6 +2,6 @@
 {
     public interface IProjectileReplicator
     {
-        void Replicate(ProjectileInstantiateEvent data);
+        void Replicate(string creatorId, ProjectileInstantiateEvent data);
     }
 }

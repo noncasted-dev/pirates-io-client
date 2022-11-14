@@ -46,7 +46,8 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
         public void Fire(
             Vector2 direction,
             ShootParams shootParams,
-            bool isLocal)
+            bool isLocal,
+            string creatorId)
         {
             _shootParams = shootParams;
             _isLocal = isLocal;
@@ -59,7 +60,7 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             var angle = direction.ToAngle();
 
             _movement.Setup(angle, movementData);
-            _actions.Setup(shootParams, isLocal);
+            _actions.Setup(shootParams, isLocal, creatorId);
             
             _mover.Add(this);
         }

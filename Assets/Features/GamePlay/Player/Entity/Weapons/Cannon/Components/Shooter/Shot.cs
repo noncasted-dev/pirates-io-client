@@ -84,7 +84,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 var additionalDistance = Random.Range(-_config.RandomDistance, _config.RandomDistance);
                 var parameters = _config.CreateParams(additionalDistance);
                 
-                projectile.Fire(direction, parameters, true);
+                projectile.Fire(direction, parameters, true, _cannonReplicator.PlayerId);
                 _vfx.Get(shootPosition);
 
                 _shotsRegistry[i] = true;

@@ -31,6 +31,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
         {
             _spriteTransform.Construct(logger, updater);
             _spriteView.Construct(logger);
+            _spriteView.OnAwake();
 
             _spriteTransform.OnAwake();
             

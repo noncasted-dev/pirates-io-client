@@ -104,7 +104,7 @@ namespace GamePlay.Services.Projectiles.Mover
                     continue;
                 }
 
-                if (damageReceiver.IsLocal == true)
+                if (damageReceiver.IsLocal == true || damageReceiver.Id == projectile.Actions.CreatorId)
                 {
                     movement.SetPosition(data.CurrentPosition);
                     movement.OnDistancePassed(data.PassedDistance);

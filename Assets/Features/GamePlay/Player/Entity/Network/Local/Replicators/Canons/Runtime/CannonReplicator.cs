@@ -1,6 +1,7 @@
 ﻿using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Replicator.Runtime;
+using Ragon.Client;
 using Ragon.Common;
 using UnityEngine;
 
@@ -15,6 +16,8 @@ namespace GamePlay.Player.Entity.Network.Local.Replicators.Canons.Runtime
         }
         
         private readonly IPlayerEventSender _eventSender;
+
+        public string PlayerId => RagonNetwork.Room.LocalPlayer.Id;
 
         public void Replicate(ProjectileType type, Vector2 position, float angle, float speed, int damage, float distance)
         {

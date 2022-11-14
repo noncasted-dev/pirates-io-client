@@ -31,7 +31,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Cannons.Runtime
             var direction = -AngleUtils.ToDirection(data.Angle);
             _spriteTransform.Impact(direction, _config.ImpactDistance, _config.ImpactTime);
             
-            _projectileReplicator.Replicate(data);
+            _projectileReplicator.Replicate(player.Id, data);
         }
     }
 }

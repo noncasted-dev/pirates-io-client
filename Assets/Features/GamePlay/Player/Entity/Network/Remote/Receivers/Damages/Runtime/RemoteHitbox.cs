@@ -32,7 +32,8 @@ namespace Features.GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runti
         private IObjectProvider<AnimatedVfx> _explosion;
 
         public bool IsLocal => _root.IsLocal;
-        
+        public string Id => RagonNetwork.Room.LocalPlayer.Id;
+
         public void ReceiveDamage(Damage damage, bool isProjectileLocal)
         {
             var damageEvent = new DamageEvent(damage);

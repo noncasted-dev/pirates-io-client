@@ -7,6 +7,7 @@ namespace GamePlay.Services.Projectiles.Entity
         void Fire(
             Vector2 direction,
             ShootParams shootParams,
-            bool isLocal);
+            bool isLocal,
+            string creatorId);
     }
 }

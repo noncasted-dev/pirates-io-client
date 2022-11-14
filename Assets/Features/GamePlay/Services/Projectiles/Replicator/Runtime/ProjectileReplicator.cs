@@ -54,7 +54,7 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
             _vfx = _vfxPoolProvider.GetPool<AnimatedVfx>(_config.Fire);
         }
 
-        public void Replicate(ProjectileInstantiateEvent data)
+        public void Replicate(string creatorId, ProjectileInstantiateEvent data)
         {
             var distance = Vector2.Distance(data.Position, _positionProvider.Position);
             
@@ -67,7 +67,7 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
             
             var parameters = new ShootParams(data.Damage, data.Speed, data.Distance);
                 
-            projectile.Fire(direction, parameters, true);
+            projectile.Fire(direction, parameters, true, creatorId);
             _vfx.Get(data.Position);
         }
     }

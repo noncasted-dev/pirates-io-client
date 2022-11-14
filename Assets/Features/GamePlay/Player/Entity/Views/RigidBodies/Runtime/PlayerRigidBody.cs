@@ -47,6 +47,8 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
         private Rigidbody2D _rigidbody;
         private IUpdater _updater;
+        
+        public Vector2 Position => _rigidbody.position;
 
         public void OnAwake()
         {
@@ -81,8 +83,6 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
             _interactions.Clear();
         }
 
-        public Vector2 Position => _rigidbody.position;
-
         public void SetPosition(Vector2 position)
         {
             _teleports.Enqueue(position);
@@ -111,51 +111,43 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
         private Vector2 ProcessMove(Vector2 direction, float distance)
         {
-            var resultPosition = _currentPosition;
+            return _currentPosition + direction * distance;
+        }
 
-            if (Mathf.Approximately(direction.x, 0f) == false)
+        private float Cast(Vector2 direction, float distance)
+        {
+            var result = Physics2D.CapsuleCastNonAlloc(
+                _currentPosition,
+                _collider.size,
+                _collider.direction,
+                0f,
+                direction,
+                _buffer,
+                distance,
+                _collideMask);
+
+            if (result == 0)
+                return distance;
+
+            var minDistance = float.MaxValue;
+
+            for (var i = 0; i < result; i++)
             {
-                var xPosition = _currentPosition;
-                xPosition.x += direction.x * distance;
+                var other = _buffer[i];
 
-                var resultX = Physics2D.CapsuleCastNonAlloc(
-                    xPosition,
-                    _collider.size,
-                    _collider.direction,
-                    0f,
-                    direction,
-                    _buffer,
-                    distance,
-                    _collideMask);
+                if (other.collider == _collider)
+                {
+                    minDistance = distance;
+                    continue;
+                }
 
-                if (resultX == 0)
-                    resultPosition.x += direction.x * distance;
-                else
-                    resultPosition.x += direction.x * _buffer[0].distance;
+                var distanceToOther = other.distance;
+
+                if (minDistance > distanceToOther)
+                    minDistance = distanceToOther;
             }
-
-            if (Mathf.Approximately(direction.y, 0f) == false)
-            {
-                var yPosition = resultPosition;
-                yPosition.y += direction.y * distance;
-
-                var resultY = Physics2D.CapsuleCastNonAlloc(
-                    yPosition,
-                    _collider.size,
-                    _collider.direction,
-                    0f,
-                    direction,
-                    _buffer,
-                    distance,
-                    _collideMask);
-
-                if (resultY == 0)
-                    resultPosition.y += direction.y * distance;
-                else
-                    resultPosition.y += direction.y * _buffer[0].distance;
-            }
-
-            return resultPosition;
+            
+            return minDistance;
         }
     }
 }

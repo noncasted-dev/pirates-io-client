@@ -19,6 +19,7 @@ namespace Features.GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runti
         private int _amount;
         private Vector2 _origin;
 
+        
         public int Amount => _amount;
         public Vector2 Origin => _origin;
         

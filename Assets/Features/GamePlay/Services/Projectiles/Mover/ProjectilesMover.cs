@@ -104,27 +104,42 @@ namespace GamePlay.Services.Projectiles.Mover
                     continue;
                 }
 
-                if (damageReceiver.IsLocal == true && damageReceiver.Id != projectile.Actions.CreatorId)
+                if (damageReceiver.IsLocal == true && projectile.Actions.IsLocal == true)
                 {
-                    Debug.Log($"Destroy projectile: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
-                    movement.SetPosition(data.MiddlePoint);
-                    projectile.Actions.Destroy();
-                    return;
-                }
-                
-                if (damageReceiver.IsLocal == true)
-                {
-                    Debug.Log($"Move on: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
+                    Debug.Log($"1: receiver: {damageReceiver.Id}, projectile: {projectile.Actions.CreatorId}");
                     movement.SetPosition(data.CurrentPosition);
                     movement.OnDistancePassed(data.PassedDistance);
                     return;
                 }
 
-                Debug.Log($"Triggered: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
+                if (damageReceiver.IsLocal == true && projectile.Actions.IsLocal == false)
+                {
+                    Debug.Log($"2: receiver: {damageReceiver.Id}, projectile: {projectile.Actions.CreatorId}");
 
-                movement.SetPosition(data.MiddlePoint);
+                    projectile.Actions.Destroy();
+                    return;
+                }
+                
+                if (damageReceiver.IsLocal == false && projectile.Actions.IsLocal == true)
+                {
+                    Debug.Log($"3: receiver: {damageReceiver.Id}, projectile: {projectile.Actions.CreatorId}");
 
-                projectile.Actions.OnTriggered(damageReceiver);
+                    projectile.Actions.OnTriggered(damageReceiver);
+                    return;
+                }
+                
+                if (damageReceiver.IsLocal == false && projectile.Actions.IsLocal == false)
+                {
+                    Debug.Log($"4: receiver: {damageReceiver.Id}, projectile: {projectile.Actions.CreatorId}");
+
+                    projectile.Actions.OnTriggered(damageReceiver);
+                    return;
+                }
+
+                Debug.Log("No action");
+                
+                Debug.Log($"5: receiver: {damageReceiver.Id}, projectile: {projectile.Actions.CreatorId}");
+
                 _logger.OnTriggered(_buffer[i].name);
                 break;
             }

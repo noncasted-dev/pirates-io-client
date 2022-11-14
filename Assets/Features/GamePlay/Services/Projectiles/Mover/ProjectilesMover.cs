@@ -104,7 +104,7 @@ namespace GamePlay.Services.Projectiles.Mover
                     continue;
                 }
 
-                if (damageReceiver.Id != projectile.Actions.CreatorId)
+                if (damageReceiver.IsLocal == true && damageReceiver.Id != projectile.Actions.CreatorId)
                 {
                     Debug.Log($"Destroy projectile: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
                     movement.SetPosition(data.MiddlePoint);

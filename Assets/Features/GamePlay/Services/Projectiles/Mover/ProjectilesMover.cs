@@ -85,9 +85,9 @@ namespace GamePlay.Services.Projectiles.Mover
                 movement.OnDistancePassed(data.PassedDistance);
                 return;
             }
-
-            movement.SetPosition(data.MiddlePoint);
-
+            
+            Debug.Log($"On overlap: creator: {projectile.Actions.CreatorId}");
+            
             for (var i = 0; i < result; i++)
             {
                 var target = _buffer[i];
@@ -114,17 +114,22 @@ namespace GamePlay.Services.Projectiles.Mover
 
                 if (damageReceiver.Id == projectile.Actions.CreatorId)
                 {
+                    Debug.Log($"Destroy projectile: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
+                    movement.SetPosition(data.MiddlePoint);
                     projectile.Actions.Destroy();
                     return;
                 }
                 
                 Debug.Log($"Triggered: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
 
+                movement.SetPosition(data.MiddlePoint);
+
                 projectile.Actions.OnTriggered(damageReceiver);
                 _logger.OnTriggered(_buffer[i].name);
                 break;
             }
 
+            movement.SetPosition(data.MiddlePoint);
             projectile.Actions.OnCollided();
             _logger.OnCollided(_buffer[0].name);
         }

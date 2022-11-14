@@ -29,6 +29,7 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
         [SerializeField] [EditableObject] private SpriteViewLogSettings _logSettings;
         [SerializeField] private Material _flash;
         [SerializeField] private List<SpriteRenderer> _subSprites;
+        [SerializeField] private Material _defaultMaterial;
 
         private SpriteViewLogger _logger;
 
@@ -87,7 +88,6 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
         {
             _sprite.material = material;
 
-
             _logger.OnMaterialSetted(material);
         }
 
@@ -127,8 +127,7 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
 
         public void Flash(float time)
         {
-            var current = _sprite.sharedMaterial;
-            _sprite.sharedMaterial = _flash;
+            _sprite.material = _flash;
 
             UniTask.Create(async () =>
             {
@@ -137,7 +136,7 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
                 await UniTask.Delay(
                     delay, false, PlayerLoopTiming.Update, this.GetCancellationTokenOnDestroy());
 
-                _sprite.sharedMaterial = current;
+                _sprite.material = _defaultMaterial;
             });
         }
     }

@@ -111,7 +111,7 @@ namespace GamePlay.Services.Projectiles.Mover
                     return;
                 }
                 
-                Debug.Log($"Triggered: {damageReceiver.Id}, target: {projectile.Actions.CreatorId}");
+                Debug.Log($"Triggered: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
 
                 projectile.Actions.OnTriggered(damageReceiver);
                 _logger.OnTriggered(_buffer[i].name);

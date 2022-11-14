@@ -106,7 +106,7 @@ namespace GamePlay.Services.Projectiles.Mover
 
                 if (damageReceiver.IsLocal == true || damageReceiver.Id == projectile.Actions.CreatorId)
                 {
-                    Debug.Log("Move on: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
+                    Debug.Log($"Move on: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
                     movement.SetPosition(data.CurrentPosition);
                     movement.OnDistancePassed(data.PassedDistance);
                     return;

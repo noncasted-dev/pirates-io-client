@@ -37,7 +37,7 @@ namespace GamePlay.Player.Entity.States.Floating.Runtime
         {
             _logger.OnEntered();
 
-            if (_rangeAttack.HasInput == true)
+            if (_rangeAttack.IsAvailable == true)
             {
                 _rangeAttack.Enter();
                 return;

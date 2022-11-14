@@ -2,7 +2,7 @@
 {
     public interface IRangeAttack
     {
-        bool HasInput { get; }
+        bool IsAvailable { get; }
         void OnInput();
         void OnInputCanceled();
         void OnInputBroke();

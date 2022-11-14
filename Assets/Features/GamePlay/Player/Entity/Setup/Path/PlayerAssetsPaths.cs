@@ -25,6 +25,7 @@
         public const string StateMachine = _components + "StateMachine/";
         public const string InertialMovement = _components + "InertialMovement/";
         public const string Health = _components + "Health/";
+        public const string ActionsState = _components + "ActionsState/";
 
         public const string Floating = _states + "Floating/";
         public const string Idle = _states + "Idle/";

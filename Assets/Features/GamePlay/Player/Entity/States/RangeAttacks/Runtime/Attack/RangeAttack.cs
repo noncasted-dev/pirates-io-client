@@ -1,6 +1,7 @@
 ﻿using System;
 using Common.Structs;
 using Cysharp.Threading.Tasks;
+using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
 using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
@@ -25,6 +26,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             IRangeAttackConfig config,
             IAimView aim,
             ISpriteTransform spriteTransform,
+            IActionsStateProvider actionsStateProvider,
             RangeAttackLogger logger)
         {
             _stateMachine = stateMachine;
@@ -35,6 +37,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             _config = config;
             _aim = aim;
             _spriteTransform = spriteTransform;
+            _actionsStateProvider = actionsStateProvider;
             _delay = new AttackDelay(config);
             _logger = logger;
         }
@@ -47,19 +50,22 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         private readonly RangeAttackLogger _logger;
         private readonly ISpriteRotation _spriteRotation;
         private readonly ISpriteTransform _spriteTransform;
+        private readonly IActionsStateProvider _actionsStateProvider;
 
         private readonly IStateMachine _stateMachine;
         private readonly IWeaponsHandler _weapons;
 
         private bool _hasInput;
-
         private bool _isStarted;
 
-        public bool HasInput => _hasInput;
+        public bool IsAvailable => _hasInput && _actionsStateProvider.CanShoot;
 
         public void OnInput()
         {
             _hasInput = true;
+            
+            if (_actionsStateProvider.CanShoot == false)
+                return;
 
             if (_isStarted == true)
                 return;

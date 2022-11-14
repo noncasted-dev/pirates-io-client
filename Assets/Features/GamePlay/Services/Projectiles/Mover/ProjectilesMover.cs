@@ -110,6 +110,8 @@ namespace GamePlay.Services.Projectiles.Mover
                     movement.OnDistancePassed(data.PassedDistance);
                     return;
                 }
+                
+                Debug.Log($"Triggered: {damageReceiver.Id}, target: {projectile.Actions.CreatorId}");
 
                 projectile.Actions.OnTriggered(damageReceiver);
                 _logger.OnTriggered(_buffer[i].name);

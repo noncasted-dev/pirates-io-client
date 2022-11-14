@@ -127,8 +127,8 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
 
         public void Flash(float time)
         {
-            var current = _sprite.material;
-            _sprite.material = _flash;
+            var current = _sprite.sharedMaterial;
+            _sprite.sharedMaterial = _flash;
 
             UniTask.Create(async () =>
             {
@@ -137,7 +137,7 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
                 await UniTask.Delay(
                     delay, false, PlayerLoopTiming.Update, this.GetCancellationTokenOnDestroy());
 
-                _sprite.material = current;
+                _sprite.sharedMaterial = current;
             });
         }
     }

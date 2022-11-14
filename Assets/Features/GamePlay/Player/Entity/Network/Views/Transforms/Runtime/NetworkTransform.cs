@@ -45,10 +45,10 @@ namespace GamePlay.Player.Entity.Network.Views.Transforms.Runtime
             var current = _transform.position;
             
             var distance = Vector3.Distance(target, current);
-
+            
             if (distance > _interpolationBreakDistance)
             {
-                _transform.position = current;
+                _transform.position = target;
                 return;
             }
             

@@ -16,12 +16,15 @@ namespace GamePlay.Player.Entity.Network.Views.Transforms.Runtime
         private Vector2 _localPosition;
 
         private Transform _transform;
+        private Rigidbody2D _rigidbody;
 
         private void Awake()
         {
             _transform = transform;
+            
+            _rigidbody = GetComponent<Rigidbody2D>();
         }
-
+        
         public void SetPosition(Vector2 position)
         {
             _localPosition = position;
@@ -32,6 +35,9 @@ namespace GamePlay.Player.Entity.Network.Views.Transforms.Runtime
         {
             var payload = Entity.GetSpawnPayload<NetworkPayload>();
             _position.Value = payload.Position;
+
+            if (IsMine == false)
+                _rigidbody.bodyType = RigidbodyType2D.Kinematic;
         }
 
         public override void OnEntityTick()

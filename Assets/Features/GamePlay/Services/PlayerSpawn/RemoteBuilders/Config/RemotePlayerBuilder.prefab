@@ -52,6 +52,11 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  _hitExplosionReference:
+    m_AssetGUID: 4db804528201f2a47ab31d032a65e07d
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!114 &2961728772525425528
 MonoBehaviour:
   m_ObjectHideFlags: 0

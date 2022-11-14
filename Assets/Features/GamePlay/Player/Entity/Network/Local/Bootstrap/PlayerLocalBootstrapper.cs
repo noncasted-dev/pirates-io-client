@@ -21,7 +21,8 @@ namespace GamePlay.Player.Entity.Network.Local.Bootstrap
                 .As<INetworkTransform>();
 
             builder.RegisterComponent(_root)
-                .As<IPlayerEventSender>();
+                .As<IPlayerEventSender>()
+                .As<IPlayerEventListener>();
 
             builder.Register<CannonReplicator>(Lifetime.Singleton)
                 .As<ICannonReplicator>();

@@ -24,6 +24,8 @@ namespace GamePlay.Services.Projectiles.Mover
             _updater = updater;
             _config = config;
             _logger = logger;
+
+            _hitBoxLayer = LayerMask.NameToLayer(_config.HitBoxLayer);
         }
 
         private readonly List<IMovableProjectile> _addQueue = new();
@@ -32,6 +34,7 @@ namespace GamePlay.Services.Projectiles.Mover
 
         private readonly List<IMovableProjectile> _projectiles = new();
         private readonly List<IMovableProjectile> _removeQueue = new();
+        private readonly int _hitBoxLayer;
 
         private readonly IUpdater _updater;
 
@@ -89,9 +92,12 @@ namespace GamePlay.Services.Projectiles.Mover
             {
                 var target = _buffer[i];
 
-                if (target.IsTouchingLayers(_config.HitBoxMask) == false)
+                if (target.gameObject.layer != _hitBoxLayer)
+                {
+                    Debug.Log($"Layers not touched: config: {_hitBoxLayer}, target: {target.gameObject.layer}");
                     continue;
-                
+                }
+
                 if (target.TryGetComponent(out IDamageReceiver damageReceiver) == false)
                 {
                     _logger.OnWrongTrigger(target.name);
@@ -104,13 +110,9 @@ namespace GamePlay.Services.Projectiles.Mover
                     movement.OnDistancePassed(data.PassedDistance);
                     return;
                 }
-                
-                if (projectile.Actions.IsLocal == true)
-                {
-                    projectile.Actions.OnTriggered(damageReceiver);
-                    return;
-                }
-                
+
+                projectile.Actions.OnTriggered(damageReceiver);
+                _logger.OnTriggered(_buffer[i].name);
                 break;
             }
 

@@ -1,9 +1,12 @@
 ﻿using Common.EditableScriptableObjects.Attributes;
+using Features.GamePlay.Player.Entity.Components.DamageProcessors.Runtime;
 using GamePlay.Player.Entity.Components.Abstract;
+using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.Setup.Path;
+using GamePlay.Player.Entity.States.Deaths.Runtime;
 using GamePlay.Player.Entity.States.Floating.Runtime;
 using GamePlay.Player.Entity.States.Idles.Runtime;
 using GamePlay.Player.Entity.States.None.Runtime;
@@ -32,6 +35,9 @@ namespace GamePlay.Player.Entity.Components.Config
         [SerializeField] [EditableObject] private RunAsset _run;
         [SerializeField] [EditableObject] private RangeAttackAsset _range;
         [SerializeField] [EditableObject] private WeaponsHandlerAsset _weaponsHandler;
+        [SerializeField] [EditableObject] private DeathAsset _death;
+        [SerializeField] [EditableObject] private HealthAsset _health;
+        [SerializeField] [EditableObject] private DamageProcessorAsset _damageProcessor;
 
         public override PlayerComponentAsset[] GetAssets()
         {
@@ -46,7 +52,10 @@ namespace GamePlay.Player.Entity.Components.Config
                 _respawn,
                 _run,
                 _range,
-                _weaponsHandler
+                _weaponsHandler,
+                _death,
+                _health,
+                _damageProcessor
             };
         }
     }

@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: PlayerState_Respawn
   m_EditorClassIdentifier: 
   _logSettings: {fileID: 11400000, guid: c4154d4dc0c0eb347a0322bfa2194f4c, type: 2}
-  _animation: {fileID: 11400000, guid: c6a1df7adf7368d458f01633d33d8aa2, type: 2}
-  _configAsset: {fileID: 11400000, guid: 7fea01dbd33ee2a4cbeb09d594c35bdb, type: 2}
   _definition: {fileID: 11400000, guid: e6129a423eda0b141b7ad347523b60ce, type: 2}
+  _config: {fileID: 11400000, guid: 7fea01dbd33ee2a4cbeb09d594c35bdb, type: 2}

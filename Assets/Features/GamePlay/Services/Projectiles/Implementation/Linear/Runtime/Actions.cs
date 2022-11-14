@@ -6,7 +6,7 @@ using GamePlay.Services.Projectiles.Mover.Abstract;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using UnityEngine;
 
-namespace GamePlay.Services.Projectiles.Implementation.Linear
+namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 {
     public class Actions : IProjectileActions
     {
@@ -29,12 +29,12 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
         private readonly LinearProjectile _projectile;
         private readonly IProjectilesMover _mover;
         private readonly IObjectProvider<AnimatedVfx> _waterSplash;
-
+        
         private ShootParams _shootParams;
         private bool _isLocal;
 
         public bool IsLocal => _isLocal;
-        
+
         public void Setup(ShootParams shootParams, bool isLocal)
         {
             _shootParams = shootParams;
@@ -45,15 +45,12 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear
         {
             _mover.Remove(_projectile);
             _returnToPool?.Invoke(_projectile);
-            
-            if (_isLocal == false)
-                return;
-            
+
             var damage = new Damage(
                 _shootParams.Damage,
                 _transform.position);
 
-            damageReceiver.ReceiveDamage(damage);
+            damageReceiver.ReceiveDamage(damage, IsLocal);
         }
 
         public void OnCollided()

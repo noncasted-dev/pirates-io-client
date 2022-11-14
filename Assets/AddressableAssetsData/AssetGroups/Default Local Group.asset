@@ -89,6 +89,10 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Services/VFX/Pool/Config/WaterSplash/VFX_WaterSplash.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 4db804528201f2a47ab31d032a65e07d
+    m_Address: Assets/Features/GamePlay/Services/VFX/Pool/Config/HitExplosion/VFX_HitExplosion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
   m_SchemaSet:

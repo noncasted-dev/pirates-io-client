@@ -24,6 +24,7 @@
         public const string WeaponsHandler = _components + "WeaponsHandler/";
         public const string StateMachine = _components + "StateMachine/";
         public const string InertialMovement = _components + "InertialMovement/";
+        public const string Health = _components + "Health/";
 
         public const string Floating = _states + "Floating/";
         public const string Idle = _states + "Idle/";
@@ -31,6 +32,8 @@
         public const string RangeAttack = _states + "RangeAttack/";
         public const string Respawn = _states + "Respawn/";
         public const string Run = _states + "Run/";
+        public const string Death = _states + "Death/";
+        public const string Damage = _components + "Damage/";
 
         public const string Animator = _views + "Animator/";
         public const string RigidBodies = _views + "Animator/";

@@ -1,0 +1,16 @@
+{
+    "name": "Common.RagonUtils",
+    "rootNamespace": "",
+    "references": [
+        "GUID:861b1281dab914af69d87c4345d0b1a2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

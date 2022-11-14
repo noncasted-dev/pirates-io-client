@@ -1,0 +1,33 @@
+{
+    "name": "GamePlay.Player.Components.DamageProcessor.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:2435b9189672c5848ae4cc81c2cf0e13",
+        "GUID:e053f075e62cf8b4ab18c4ca51216953",
+        "GUID:c4f71e0b631016a4db9b73be47757b2a",
+        "GUID:57d592813d0da5d4c862e153f707ff80",
+        "GUID:9a286a02eeeb6bc45a393a0ca6c650f9",
+        "GUID:8f9012bdd1b116c48ab480004500c8f3",
+        "GUID:65c3fcbb851ff9441a22dd049195dc8f",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:304598a766c781247877f81511375f98",
+        "GUID:aaedc93bbf702d34e8e6d773e0108d7c",
+        "GUID:2e684bff8d6d2ba4e803383e33027d81",
+        "GUID:861b1281dab914af69d87c4345d0b1a2",
+        "GUID:8a9adf1329731dc4e8e39d62bbf3da17",
+        "GUID:d89cb064a6d60b243b67336a6540d7a7",
+        "GUID:52f3e5fe5c078bc44b8db526fc0c79d5",
+        "GUID:5a6ca98db01d77741890b42e259b7291",
+        "GUID:8ceb11fc07ecc9847af1f8e5e77cb9f9",
+        "GUID:9e24947de15b9834991c9d8411ea37cf"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

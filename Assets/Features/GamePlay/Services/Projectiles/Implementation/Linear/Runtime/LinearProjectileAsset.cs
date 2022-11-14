@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
 
-namespace GamePlay.Services.Projectiles.Implementation.Linear
+namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 {
     [CreateAssetMenu(fileName = "Projectile_Linear", menuName = GamePlayAssetsPaths.Projectiles + "Linear")]
     public class LinearProjectileAsset : PoolEntryAsset

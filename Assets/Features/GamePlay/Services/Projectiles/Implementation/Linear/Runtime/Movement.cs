@@ -3,7 +3,7 @@ using GamePlay.Services.Projectiles.Mover;
 using GamePlay.Services.Projectiles.Mover.Abstract;
 using UnityEngine;
 
-namespace GamePlay.Services.Projectiles.Implementation.Linear
+namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 {
     public class Movement : IProjectileMovement
     {

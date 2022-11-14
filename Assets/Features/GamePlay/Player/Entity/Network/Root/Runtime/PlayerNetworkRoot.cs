@@ -7,6 +7,8 @@ namespace GamePlay.Player.Entity.Network.Root.Runtime
     [DisallowMultipleComponent]
     public class PlayerNetworkRoot : RagonBehaviour, IPlayerEventSender, IPlayerEventListener
     {
+        public bool IsLocal => Entity.IsMine;
+        
         public override void OnCreatedEntity()
         {
             var payload = Entity.GetSpawnPayload<PlayerPayload>();

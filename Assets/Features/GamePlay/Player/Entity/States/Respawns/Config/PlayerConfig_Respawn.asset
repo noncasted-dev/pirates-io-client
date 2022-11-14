@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042eea671a084a60be5a27837dcb9e84, type: 3}
   m_Name: PlayerConfig_Respawn
   m_EditorClassIdentifier: 
-  _material: {fileID: 2100000, guid: 7b799da1f1d5fba4089b54962fcbf1cb, type: 2}
+  _maxHealth: 100

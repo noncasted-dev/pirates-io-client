@@ -7,8 +7,8 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
         menuName = PlayerAssetsPaths.Respawn + "Config")]
     public class RespawnConfigAsset : ScriptableObject
     {
-        [SerializeField] private Material _material;
+        [SerializeField] private int _maxHealth;
 
-        public Material Material => _material;
+        public int MaxHealth => _maxHealth;
     }
 }

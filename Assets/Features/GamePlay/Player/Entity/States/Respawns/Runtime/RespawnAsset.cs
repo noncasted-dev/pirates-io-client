@@ -13,15 +13,17 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
     {
         [SerializeField] [EditableObject] private RespawnLogSettings _logSettings;
         [SerializeField] [EditableObject] private RespawnDefinition _definition;
+        [SerializeField] [EditableObject] private RespawnConfigAsset _config;
 
         public override void Register(IContainerBuilder builder)
         {
             builder.Register<RespawnLogger>(Lifetime.Scoped)
-                .WithParameter("settings", _logSettings);
+                .WithParameter(_logSettings);
 
             builder.Register<Respawn>(Lifetime.Scoped)
                 .As<IRespawn>()
-                .WithParameter("definition", _definition);
+                .WithParameter(_config)
+                .WithParameter(_definition);
         }
     }
 }

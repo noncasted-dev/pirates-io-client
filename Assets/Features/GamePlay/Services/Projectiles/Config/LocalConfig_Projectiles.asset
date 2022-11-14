@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af83e13ca99b40e597470b133758c143, type: 3}
   m_Name: LocalConfig_Projectiles
   m_EditorClassIdentifier: 
-  _hitBoxMask:
-    serializedVersion: 2
-    m_Bits: 256
+  _hitBoxLayer: Player_Hitbox
   _allInteractionsMask:
     serializedVersion: 2
     m_Bits: 384

@@ -3,6 +3,6 @@
     public interface IDamageReceiver
     {
         bool IsLocal { get; }
-        void ReceiveDamage(Damage damage);
+        void ReceiveDamage(Damage damage, bool isProjectileLocal);
     }
 }

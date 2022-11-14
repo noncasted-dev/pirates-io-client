@@ -7,7 +7,7 @@ using Global.Services.AssetsFlow.Runtime.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace GamePlay.Services.Projectiles.Implementation.Linear
+namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 {
     public class LinearProjectileFactory : IObjectFactory<LinearProjectile>
     {

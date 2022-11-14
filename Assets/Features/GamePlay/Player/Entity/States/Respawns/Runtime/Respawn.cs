@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
@@ -10,29 +11,30 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
     {
         public Respawn(
             IStateMachine stateMachine,
+            IHealth health,
             RespawnLogger logger,
-            StateDefinition definition)
+            RespawnConfigAsset config,
+            RespawnDefinition definition)
         {
             _stateMachine = stateMachine;
+            _health = health;
             _logger = logger;
+            _config = config;
             Definition = definition;
         }
 
         private readonly RespawnLogger _logger;
+        private readonly RespawnConfigAsset _config;
         private readonly IStateMachine _stateMachine;
-
-        private CancellationTokenSource _cancellation;
+        private readonly IHealth _health;
 
         public void Enter()
         {
             _stateMachine.Enter(this);
 
+            _health.Respawn(_config.MaxHealth);
+            
             _logger.OnEntered();
-
-            _cancellation?.Cancel();
-            _cancellation?.Dispose();
-            _cancellation = null;
-
             _stateMachine.Exit();
         }
 
@@ -40,10 +42,6 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
 
         public void Break()
         {
-            _cancellation?.Cancel();
-            _cancellation?.Dispose();
-            _cancellation = null;
-
             _logger.OnBroke();
         }
     }

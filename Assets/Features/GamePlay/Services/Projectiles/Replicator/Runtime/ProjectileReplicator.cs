@@ -5,6 +5,7 @@ using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Factory;
 using GamePlay.Services.Projectiles.Implementation.Linear;
+using GamePlay.Services.Projectiles.Implementation.Linear.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
 using Local.Services.Abstract.Callbacks;

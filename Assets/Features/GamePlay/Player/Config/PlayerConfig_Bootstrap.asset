@@ -22,3 +22,6 @@ MonoBehaviour:
   _run: {fileID: 11400000, guid: 4b6c419912f56d84fa45d748f61128fd, type: 2}
   _range: {fileID: 11400000, guid: 47e5c5c4930fa1349870fb1a7cd06070, type: 2}
   _weaponsHandler: {fileID: 11400000, guid: 962a49343378a6c49ae4ec652d0a8594, type: 2}
+  _death: {fileID: 11400000, guid: 9586bf866351865499fac60d57e7a6e8, type: 2}
+  _health: {fileID: 11400000, guid: d0483f8310e8173469a819bb0ef0a2af, type: 2}
+  _damageProcessor: {fileID: 11400000, guid: 6df6549c6ceaca246a9db0f5a56960dd, type: 2}

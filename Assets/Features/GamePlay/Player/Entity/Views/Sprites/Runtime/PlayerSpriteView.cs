@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Common.EditableScriptableObjects.Attributes;
+using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.Sprites.Logs;
 using UnityEngine;
@@ -16,16 +17,17 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
         ISpriteSwitcher,
         ISpriteMaterial,
         ISpriteFlipper,
-        ISpriteView
+        ISpriteView,
+        ISpriteFlash
     {
         [Inject]
-        private void Construct(ILogger logger)
+        public void Construct(ILogger logger)
         {
             _logger = new SpriteViewLogger(logger, _logSettings);
         }
 
         [SerializeField] [EditableObject] private SpriteViewLogSettings _logSettings;
-
+        [SerializeField] private Material _flash;
         [SerializeField] private List<SpriteRenderer> _subSprites;
 
         private SpriteViewLogger _logger;
@@ -121,6 +123,22 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
         public void RemoveSubSprite(SpriteRenderer subSprite)
         {
             _subSprites.Remove(subSprite);
+        }
+
+        public void Flash(float time)
+        {
+            var current = _sprite.material;
+            _sprite.material = _flash;
+
+            UniTask.Create(async () =>
+            {
+                var delay = (int)(time * 1000f);
+
+                await UniTask.Delay(
+                    delay, false, PlayerLoopTiming.Update, this.GetCancellationTokenOnDestroy());
+
+                _sprite.material = current;
+            });
         }
     }
 }

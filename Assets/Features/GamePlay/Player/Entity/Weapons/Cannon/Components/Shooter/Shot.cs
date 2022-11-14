@@ -5,6 +5,7 @@ using GamePlay.Player.Entity.Network.Local.Replicators.Canons.Runtime;
 using GamePlay.Player.Entity.Views.ShootPoint;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Implementation.Linear;
+using GamePlay.Services.Projectiles.Implementation.Linear.Runtime;
 using GamePlay.Services.Projectiles.Replicator.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using Global.Services.Updaters.Runtime.Abstract;

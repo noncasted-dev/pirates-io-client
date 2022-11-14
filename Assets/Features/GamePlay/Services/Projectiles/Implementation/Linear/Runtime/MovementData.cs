@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GamePlay.Services.Projectiles.Implementation.Linear
+namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 {
     public class MovementData
     {

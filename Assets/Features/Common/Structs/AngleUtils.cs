@@ -11,6 +11,14 @@ namespace Common.Structs
 
             return Horizontal.Right;
         }
+        
+        public static void RotateAlong(this Transform transform, Vector2 direction)
+        {
+            var angle = direction.ToAngle();
+            var rotation = Quaternion.Euler(0f, 0f, angle);
+
+            transform.rotation = rotation;
+        }
 
         public static Vector2 ToDirection(float angle)
         {

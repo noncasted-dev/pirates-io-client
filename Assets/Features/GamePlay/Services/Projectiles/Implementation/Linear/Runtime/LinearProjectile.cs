@@ -8,7 +8,7 @@ using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace GamePlay.Services.Projectiles.Implementation.Linear
+namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(BoxCollider2D))]

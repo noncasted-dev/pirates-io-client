@@ -104,6 +104,14 @@ namespace GamePlay.Services.Projectiles.Mover
                     continue;
                 }
 
+                if (damageReceiver.Id != projectile.Actions.CreatorId)
+                {
+                    Debug.Log($"Destroy projectile: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
+                    movement.SetPosition(data.MiddlePoint);
+                    projectile.Actions.Destroy();
+                    return;
+                }
+                
                 if (damageReceiver.IsLocal == true)
                 {
                     Debug.Log($"Move on: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
@@ -112,14 +120,6 @@ namespace GamePlay.Services.Projectiles.Mover
                     return;
                 }
 
-                /*if (damageReceiver.Id == projectile.Actions.CreatorId)
-                {
-                    Debug.Log($"Destroy projectile: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
-                    movement.SetPosition(data.MiddlePoint);
-                    projectile.Actions.Destroy();
-                    return;
-                }*/
-                
                 Debug.Log($"Triggered: receiver: {damageReceiver.Id}, creator: {projectile.Actions.CreatorId}");
 
                 movement.SetPosition(data.MiddlePoint);

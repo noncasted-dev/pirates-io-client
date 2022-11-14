@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 5236864739449218738}
   - component: {fileID: 7759638847808913012}
   - component: {fileID: 5221002631977502103}
+  - component: {fileID: 7802466685652348246}
   m_Layer: 6
   m_Name: Player_Remote
   m_TagString: Untagged
@@ -128,6 +129,20 @@ MonoBehaviour:
   _spriteRenderers:
   - {fileID: 6975670816349499795}
   - {fileID: 2895696635640094348}
+--- !u!114 &7802466685652348246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3871518644565369678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bc83e5a3cb445a90dec86c4f5bb247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitbox: {fileID: 3205208776571550568}
+  _collision: {fileID: 5236864739449218738}
 --- !u!1 &4219119310411048822
 GameObject:
   m_ObjectHideFlags: 0

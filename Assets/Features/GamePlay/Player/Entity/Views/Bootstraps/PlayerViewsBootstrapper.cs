@@ -1,4 +1,5 @@
-﻿using GamePlay.Player.Entity.Setup.Bootstrap;
+﻿using GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime;
+using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim;
 using GamePlay.Player.Entity.Views.RigidBodies.Runtime;
@@ -23,6 +24,7 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
         [SerializeField] private AimView _aim;
         [SerializeField] private CannonShootPoint _shootPoint;
         [SerializeField] private PlayerSpriteTransform _spriteTransform;
+        [SerializeField] private LocalAreaInteractor _areaInteractor;
 
         public void OnBuild(IContainerBuilder builder)
         {
@@ -34,6 +36,7 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
             builder.RegisterComponent(_aim).AsImplementedInterfaces();
             builder.RegisterComponent(_shootPoint).AsImplementedInterfaces();
             builder.RegisterComponent(_spriteTransform).As<ISpriteTransform>();
+            builder.RegisterComponent(_areaInteractor);
         }
 
         public void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)
@@ -44,6 +47,7 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
             callbackRegister.Add(_rigidBody);
             callbackRegister.Add(_weaponsRoot);
             callbackRegister.Add(_spriteTransform);
+            resolver.Resolve<LocalAreaInteractor>();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Features.GamePlay.Common.Areas.Common
+﻿namespace GamePlay.Common.Areas.Common.Runtime
 {
     public interface IAreaInteractor
     {

@@ -123,6 +123,13 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             _logger.OnEntered();
 
             var aim = await _aim.AimAsync();
+            
+            if (_actionsStateProvider.CanShoot == false)
+            {
+                _hasInput = false;
+                _stateMachine.Exit();
+                return;
+            }
 
             switch (aim.Type)
             {

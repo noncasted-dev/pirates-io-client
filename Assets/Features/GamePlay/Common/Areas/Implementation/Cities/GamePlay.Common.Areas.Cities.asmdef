@@ -1,3 +1,4 @@
 ﻿{
-  "name": "GamePlay.Common.Areas.Cities"
+  "name": "GamePlay.Common.Areas.Cities",
+  "references":[ "GUID:f09315e9cfc95e744a91762b4999b090" ]
 }

@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 710161118739580181}
   - component: {fileID: 3494044675534934861}
   - component: {fileID: 5197820324927245891}
+  - component: {fileID: -4100299532222470880}
   m_Layer: 6
   m_Name: Player_Local
   m_TagString: Untagged
@@ -508,6 +509,7 @@ MonoBehaviour:
   _aim: {fileID: 5143733716976567319}
   _shootPoint: {fileID: 5706463279442236699}
   _spriteTransform: {fileID: 958269550526828864}
+  _areaInteractor: {fileID: -4100299532222470880}
 --- !u!114 &1619435411979782750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +575,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 2.17, y: 0.94}
   m_Direction: 1
+--- !u!114 &-4100299532222470880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834022361475402687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39c1657430f4d50bd586cd93e4e830c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4179929927324340103
 GameObject:
   m_ObjectHideFlags: 0

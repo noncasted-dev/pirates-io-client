@@ -14,14 +14,14 @@ TagManager:
   - Player_Collision
   - Level_Collision
   - Player_Hitbox
-  - Enemy_Hitbox
+  - 
   - Player_Projectile
-  - Enemy_Projecitle
-  - PitCollision
-  - RemotePlayer_Collision
+  - 
+  - 
+  - 
   - PlayerCannonShootArea
   - 
-  - 
+  - AreaTrigger
   - 
   - 
   - 

@@ -73,9 +73,7 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
                         throw new ArgumentOutOfRangeException();
                 }
 
-            Debug.Log($"1: {_currentPosition}");
             _rigidbody.MovePosition(_currentPosition);
-            Debug.Log($"2: {_rigidbody.position}");
             
             _interactions.Clear();
         }

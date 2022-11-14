@@ -1,4 +1,10 @@
 {
-	"name": "GamePlay.Player.Components.Health.Runtime",
-	"references":[ "GUID:84f2dea373664bf4e868e4b6d71abddd", "GUID:304598a766c781247877f81511375f98", "GUID:8f9012bdd1b116c48ab480004500c8f3", "GUID:65c3fcbb851ff9441a22dd049195dc8f", "GUID:b0214a6008ed146ff8f122a6a9c2f6cc" ]
+  "name": "GamePlay.Player.Components.Health.Runtime",
+  "references": [
+    "GUID:84f2dea373664bf4e868e4b6d71abddd",
+    "GUID:304598a766c781247877f81511375f98",
+    "GUID:8f9012bdd1b116c48ab480004500c8f3",
+    "GUID:65c3fcbb851ff9441a22dd049195dc8f",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+  ]
 }

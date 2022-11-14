@@ -11,13 +11,13 @@ using ILogger = Global.Services.Loggers.Runtime.ILogger;
 namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 {
     [DisallowMultipleComponent]
-    [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(CapsuleCollider2D))]
     public class PlayerRigidBody : MonoBehaviour,
         IRigidBody,
         IAwakeCallback,
         ISwitchCallbacks,
-        IFixedUpdatable
+        IFixedUpdatable,
+        IUpdatable
     {
         [Inject]
         private void Construct(
@@ -31,15 +31,11 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
         }
 
         [SerializeField] private RigidBodyLogSettings _logSettings;
-        [SerializeField] private LayerMask _collideMask;
 
-        private readonly RaycastHit2D[] _buffer = new RaycastHit2D[1];
         private readonly Queue<PhysicsInteraction> _interactions = new();
 
         private readonly Queue<PhysicsMove> _moves = new();
         private readonly Queue<Vector2> _teleports = new();
-
-        private CapsuleCollider2D _collider;
 
         private Vector2 _currentPosition;
         private RigidBodyLogger _logger;
@@ -52,8 +48,7 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
         public void OnAwake()
         {
-            _rigidbody = GetComponent<Rigidbody2D>();
-            _collider = GetComponent<CapsuleCollider2D>();
+            _rigidbody = GetComponentInParent<Rigidbody2D>();
 
             _currentPosition = transform.position;
         }
@@ -78,8 +73,10 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
                         throw new ArgumentOutOfRangeException();
                 }
 
-            _networkTransform.SetPosition(_currentPosition);
-
+            Debug.Log($"1: {_currentPosition}");
+            _rigidbody.MovePosition(_currentPosition);
+            Debug.Log($"2: {_rigidbody.position}");
+            
             _interactions.Clear();
         }
 
@@ -101,12 +98,14 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
         public void OnEnabled()
         {
-            _updater.Add(this);
+            _updater.Add((IFixedUpdatable)this);
+            _updater.Add((IUpdatable)this);
         }
 
         public void OnDisabled()
         {
-            _updater.Remove(this);
+            _updater.Remove((IFixedUpdatable)this);
+            _updater.Remove((IUpdatable)this);
         }
 
         private Vector2 ProcessMove(Vector2 direction, float distance)
@@ -114,40 +113,10 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
             return _currentPosition + direction * distance;
         }
 
-        private float Cast(Vector2 direction, float distance)
+        public void OnUpdate(float delta)
         {
-            var result = Physics2D.CapsuleCastNonAlloc(
-                _currentPosition,
-                _collider.size,
-                _collider.direction,
-                0f,
-                direction,
-                _buffer,
-                distance,
-                _collideMask);
-
-            if (result == 0)
-                return distance;
-
-            var minDistance = float.MaxValue;
-
-            for (var i = 0; i < result; i++)
-            {
-                var other = _buffer[i];
-
-                if (other.collider == _collider)
-                {
-                    minDistance = distance;
-                    continue;
-                }
-
-                var distanceToOther = other.distance;
-
-                if (minDistance > distanceToOther)
-                    minDistance = distanceToOther;
-            }
-            
-            return minDistance;
+            _currentPosition = _rigidbody.position;
+            _networkTransform.SetPosition(_currentPosition);
         }
     }
 }

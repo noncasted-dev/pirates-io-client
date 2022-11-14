@@ -124,6 +124,7 @@ namespace GamePlay.Services.Projectiles.Mover
                 {
                     Debug.Log($"3: receiver: {damageReceiver.Id}, projectile: {projectile.Actions.CreatorId}");
 
+                    movement.SetPosition(data.CurrentPosition);
                     projectile.Actions.OnTriggered(damageReceiver);
                     return;
                 }
@@ -141,6 +142,7 @@ namespace GamePlay.Services.Projectiles.Mover
                 {
                     Debug.Log($"5: receiver: {damageReceiver.Id}, projectile: {projectile.Actions.CreatorId}");
 
+                    movement.SetPosition(data.CurrentPosition);
                     projectile.Actions.OnTriggered(damageReceiver);
                     return;
                 }

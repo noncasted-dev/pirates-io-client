@@ -1,3 +1,4 @@
 ﻿{
-  "name": "GamePlay.Cities.Instance.Root.Runtime"
+  "name": "GamePlay.Cities.Instance.Root.Runtime",
+  "references":[ "GUID:0b0b2266bcde4b75af0b0cecc7e29fea" ]
 }

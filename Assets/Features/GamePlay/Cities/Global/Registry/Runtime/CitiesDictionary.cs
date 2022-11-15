@@ -1,12 +1,12 @@
 ﻿using System;
 using Common.ReadOnlyDictionaries.Runtime;
-using GamePlay.Cities.Instance.Root.Runtime;
 using GamePlay.Factions.Common;
+using UnityEngine;
 
 namespace GamePlay.Cities.Global.Registry.Runtime
 {
     [Serializable]
-    public class CitiesDictionary : ReadOnlyDictionary<FactionType, CityRoot[]>
+    public class CitiesDictionary : ReadOnlyDictionary<FactionType, FactionCitiesDictionary>
     {
         
     }

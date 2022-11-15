@@ -1,4 +1,4 @@
 ﻿{
   "name": "GamePlay.Cities.Global.Registry.Runtime",
-  "references":[ "GUID:0b0b2266bcde4b75af0b0cecc7e29fea", "GUID:6d5a6f5224634f189e022f57902eb067", "GUID:94e5ca42c58876942a8ffdd1c63b952f" ]
+  "references":[ "GUID:0b0b2266bcde4b75af0b0cecc7e29fea", "GUID:6d5a6f5224634f189e022f57902eb067", "GUID:94e5ca42c58876942a8ffdd1c63b952f", "GUID:7b8432e16d990b646a1cf8e732c5bfe8" ]
 }

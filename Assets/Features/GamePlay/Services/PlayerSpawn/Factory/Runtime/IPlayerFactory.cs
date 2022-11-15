@@ -1,10 +1,11 @@
 ﻿using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Root;
+using UnityEngine;
 
 namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
 {
     public interface IPlayerFactory
     {
-        UniTask<IPlayerRoot> Create();
+        UniTask<IPlayerRoot> Create(Vector2 position);
     }
 }

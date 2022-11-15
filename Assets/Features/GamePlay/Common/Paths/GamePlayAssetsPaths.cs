@@ -9,9 +9,12 @@
         public const string ServicePrefix = "LocalService_";
         public const string NetworkPrefix = "SessionNetworkService_";
         public const string ConfigPrefix = "LocalConfig_";
+        public const string CityPrefix = "City_";
 
         private const string _services = Root + "Services/";
         private const string _network = _services + "Network/";
+        private const string _cities =  Root + "Cities/";
+        private const string _factions =  Root + "Factions/";
 
         public const string LevelCamera = _services + "LevelCamera/";
         public const string LevelLoop = _services + "LevelLoop/";
@@ -25,5 +28,8 @@
         public const string ChunkConfig = Config + "ChunkConfig";
         public const string VFX = _services + "VFX/";
         public const string PlayerPositionProvider = _services + "PlayerPositionProvider/";
+
+        public const string CityDefinition = _cities + "Definition";
+        public const string FactionSelection = _factions + "Selection";
     }
 }

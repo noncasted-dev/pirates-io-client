@@ -25,3 +25,4 @@ MonoBehaviour:
   _vfxPool: {fileID: 11400000, guid: 4060695fef83f5e4eb3e0fc124b74ef4, type: 2}
   _projectileReplicator: {fileID: 11400000, guid: 42c6d220049e3d742b9eef31a92fb828, type: 2}
   _playerPositionProvider: {fileID: 11400000, guid: 9faf1268f89221d4087f0bb8f10a679d, type: 2}
+  _factionSelection: {fileID: 11400000, guid: eb7e3448589df7d469657d4292c36f44, type: 2}

@@ -2,7 +2,7 @@
 {
     public class ActionsState : IActionsStatePresenter, IActionsStateProvider
     {
-        private bool _canShoot;
+        private bool _canShoot = true;
 
         public bool CanShoot => _canShoot;
 

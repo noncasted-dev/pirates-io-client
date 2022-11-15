@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Common.Paths;
+using GamePlay.Factions.Selections.Bootstrap;
 using GamePlay.Level.Environment.Bootstrap;
 using GamePlay.Services.Common.Scope;
 using GamePlay.Services.LevelCameras.Runtime;
@@ -36,6 +37,7 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField] [EditableObject] private VfxPoolAsset _vfxPool;
         [SerializeField] [EditableObject] private ProjectileReplicatorAsset _projectileReplicator;
         [SerializeField] [EditableObject] private PlayerPositionProviderAsset _playerPositionProvider;
+        [SerializeField] [EditableObject] private FactionSelectionAsset _factionSelection;
 
         protected override LocalServiceAsset[] AssignServices()
         {
@@ -51,7 +53,8 @@ namespace GamePlay.Level.Config.Runtime
                 _remotePlayerBuilder,
                 _vfxPool,
                 _projectileReplicator,
-                _playerPositionProvider
+                _playerPositionProvider,
+                _factionSelection
             };
 
             return list.ToArray();

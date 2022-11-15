@@ -1,5 +1,5 @@
-﻿using GamePlay.Common.SceneObjects.Runtime;
-using GamePlay.Services.PlayerSpawn.SpawnPoints;
+﻿using GamePlay.Cities.Global.Registry.Runtime;
+using GamePlay.Common.SceneObjects.Runtime;
 using Local.Services.DependenciesResolve;
 using UnityEngine;
 using VContainer;
@@ -10,12 +10,12 @@ namespace GamePlay.Level.Environment.Bootstrap
     public class EnvironmentBootstrapper : MonoBehaviour, ILevelBootstrapper, IDependencyRegister
     {
         [SerializeField] private SceneObjectsHandler _sceneObjects;
-        [SerializeField] private PlayerSpawnPoints _playerSpawnPoints;
+        [SerializeField] private CitiesRegistry _citiesRegistry;
 
         public void Register(IContainerBuilder builder)
         {
             builder.RegisterComponent(_sceneObjects).As<ISceneObjectsHandler>();
-            builder.RegisterComponent(_playerSpawnPoints).As<ISpawnPoints>();
+            builder.RegisterComponent(_citiesRegistry).As<ICitiesRegistry>();
         }
     }
 }

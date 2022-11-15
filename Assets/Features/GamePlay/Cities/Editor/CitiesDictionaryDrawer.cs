@@ -7,6 +7,6 @@ namespace GamePlay.Cities.Editor
     [CustomPropertyDrawer(typeof(CitiesDictionary))]
     public class CitiesDictionaryDrawer : ReadonlyDictionaryPropertyDrawer
     {
-        protected override bool IsCollapsed => true;
+        protected override bool IsCollapsed => false;
     }
 }

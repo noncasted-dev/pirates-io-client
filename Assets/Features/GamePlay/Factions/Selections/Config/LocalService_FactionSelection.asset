@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d7ac6b93094122bd4abdcace7dd206, type: 3}
+  m_Name: LocalService_FactionSelection
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 629852268857938460, guid: 92ee2c3a10b87cb498f981f9cc578889, type: 3}
+  _uiScene:
+    m_AssetGUID: 177a7a573abdc794c9842fbd3800f081
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

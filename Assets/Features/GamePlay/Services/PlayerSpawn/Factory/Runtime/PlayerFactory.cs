@@ -5,7 +5,6 @@ using GamePlay.Player.Entity.Setup.Root;
 using GamePlay.Services.Common.Scope;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Logs;
-using GamePlay.Services.PlayerSpawn.SpawnPoints;
 using Global.Services.AssetsFlow.Runtime.Abstract;
 using Global.Services.Network.Instantiators.Runtime;
 using Global.Services.Profiles.Storage;
@@ -22,7 +21,6 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             IAssetInstantiatorFactory instantiatorFactory,
             INetworkInstantiator networkInstantiator,
             LevelScope scope,
-            ISpawnPoints spawnPoints,
             IPlayerTransformPresenter transformPresenter,
             IProfileStorageProvider profileStorageProvider,
             PlayerFactoryLogger logger)
@@ -31,7 +29,6 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             _profileStorageProvider = profileStorageProvider;
             _networkInstantiator = networkInstantiator;
             _logger = logger;
-            _spawnPoints = spawnPoints;
             _instantiator = instantiatorFactory.Create<GameObject>(_prefab);
             _scope = scope;
         }
@@ -44,18 +41,15 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
         private INetworkInstantiator _networkInstantiator;
         private IProfileStorageProvider _profileStorageProvider;
         private LevelScope _scope;
-        private ISpawnPoints _spawnPoints;
         private IPlayerTransformPresenter _transformPresenter;
 
-        public async UniTask<IPlayerRoot> Create()
+        public async UniTask<IPlayerRoot> Create(Vector2 position)
         {
-            var spawnPoint = _spawnPoints.GetSpawnPoint();
-
             var payload = new PlayerPayload(_profileStorageProvider.UserName);
 
             var networkObject = await _networkInstantiator.Instantiate<PlayerNetworkRoot, PlayerPayload>(
                 _networkPrefab,
-                spawnPoint,
+                position,
                 payload);
 
             var playerObject = await _instantiator.InstantiateAsync(Vector2.zero);
@@ -69,7 +63,7 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
 
             _transformPresenter.AssignPlayer(networkTransform);
 
-            _logger.OnInstantiated(spawnPoint);
+            _logger.OnInstantiated(position);
 
             var bootstrapper = playerObject.GetComponent<IPlayerBootstrapper>();
 

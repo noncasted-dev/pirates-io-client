@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47668bfc41bb4872b5fcb3dcd80318bd, type: 3}
   m_Name: LogSettings_Projectiles
   m_EditorClassIdentifier: 
-  _isEnabled: 1
+  _isEnabled: 0
   _logs:
     _keys: 000000000100000002000000030000000400000005000000
     _values: 010000010101

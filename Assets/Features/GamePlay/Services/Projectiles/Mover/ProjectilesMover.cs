@@ -113,17 +113,12 @@ namespace GamePlay.Services.Projectiles.Mover
                 return;
             }
 
-            Debug.Log($"On overlap: creator: {projectile.Actions.CreatorId}");
-
             for (var i = 0; i < result; i++)
             {
                 var target = _buffer[i];
 
                 if (target.gameObject.layer != _hitBoxLayer)
-                {
-                    Debug.Log($"Layers not touched: config: {_hitBoxLayer}, target: {target.gameObject.layer}");
                     continue;
-                }
 
                 if (target.TryGetComponent(out IDamageReceiver damageReceiver) == false)
                 {

@@ -5048,6 +5048,7 @@ MonoBehaviour:
     _layerMask:
       serializedVersion: 2
       m_Bits: 0
+  _isLocal: 0
   _collider: {fileID: 488861096520624764}
   _trail: {fileID: 8176420882470966280}
 --- !u!61 &488861096520624764

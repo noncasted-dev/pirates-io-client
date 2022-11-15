@@ -1,6 +1,6 @@
 ﻿namespace Global.Services.Common.Abstract
 {
-    public interface IGlobalServiceAwakeListener
+    public interface IGlobalAwakeListener
     {
         void OnAwake();
     }

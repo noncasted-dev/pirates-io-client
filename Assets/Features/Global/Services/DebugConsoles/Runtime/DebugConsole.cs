@@ -7,7 +7,7 @@ using VContainer;
 namespace Global.Services.DebugConsoles.Runtime
 {
     [DisallowMultipleComponent]
-    public class DebugConsole : MonoBehaviour, IGlobalServiceAwakeListener
+    public class DebugConsole : MonoBehaviour, IGlobalAwakeListener
     {
         [Inject]
         private void Construct(IInputView inputView)

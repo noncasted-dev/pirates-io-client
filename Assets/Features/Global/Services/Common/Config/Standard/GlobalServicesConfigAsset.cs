@@ -15,6 +15,7 @@ using Global.Services.InputViews.Runtime;
 using Global.Services.LoadingScreens.Runtime;
 using Global.Services.Loggers.Runtime;
 using Global.Services.Network.Bootstrap;
+using Global.Services.PersistentInventories.Runtime;
 using Global.Services.Profiles.Storage;
 using Global.Services.ResourcesCleaners.Runtime;
 using Global.Services.ScenesFlow.Runtime;
@@ -44,6 +45,7 @@ namespace Global.Services.Common.Config.Standard
         [SerializeField] [EditableObject] private DebugConsoleAsset _debugConsole;
         [SerializeField] [EditableObject] private NetworkAsset _network;
         [SerializeField] [EditableObject] private ProfileAsset _profile;
+        [SerializeField] [EditableObject] private PersistentInventoryAsset _persistentInventory;
 
         public override GlobalServiceAsset[] GetAssets()
         {
@@ -65,7 +67,8 @@ namespace Global.Services.Common.Config.Standard
                 _sceneObject,
                 _debugConsole,
                 _network,
-                _profile
+                _profile,
+                _persistentInventory
             };
         }
     }

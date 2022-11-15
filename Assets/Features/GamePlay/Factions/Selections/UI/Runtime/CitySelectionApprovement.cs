@@ -30,7 +30,7 @@ namespace GamePlay.Factions.Selections.UI.Runtime
         public async UniTask<ApprovementResult> Approve(CityDefinition city)
         {
             gameObject.SetActive(true);
-            _cityName.text = $"Respawn in {city.Name}?";
+            _cityName.text = $"Respawn in {city.Name.AsString()}?";
             
             _completion = new UniTaskCompletionSource<ApprovementResult>();
 

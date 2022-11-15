@@ -18,9 +18,8 @@ namespace GamePlay.Factions.Selections.UI.Runtime
 
         private void OnEnable()
         {
-            Debug.Log("Enable");
             _button.onClick.AddListener(OnClicked);
-            _cityName.text = _definition.Name;
+            _cityName.text = _definition.Name.AsString();
         }
         
         private void OnDisable()
@@ -30,7 +29,6 @@ namespace GamePlay.Factions.Selections.UI.Runtime
 
         private void OnClicked()
         {
-            Debug.Log("Clicked");
             Selected?.Invoke(_definition);
         }
     }

@@ -44,7 +44,6 @@ namespace GamePlay.Factions.Selections.UI.Runtime
             {
                 _selectionCompletion = new UniTaskCompletionSource<CityDefinition>();
                 
-                Debug.Log("Await");
                 var city = await _selectionCompletion.Task;
                 result = await _approvement.Approve(city);
 
@@ -57,8 +56,6 @@ namespace GamePlay.Factions.Selections.UI.Runtime
 
         private void OnSelectedClicked(CityDefinition city)
         {
-            Debug.Log("On click received");
-
             _selectionCompletion.TrySetResult(city);
         }
     }

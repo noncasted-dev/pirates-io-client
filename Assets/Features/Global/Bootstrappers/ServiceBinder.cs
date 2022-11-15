@@ -14,8 +14,8 @@ namespace Global.Bootstrappers
             _modulesTransformer = new ModulesTransformer(scene);
         }
 
-        private readonly List<IGlobalServiceAwakeListener> _awakes = new();
-        private readonly List<IGlobalServiceBootstrapListener> _bootstraps = new();
+        private readonly List<IGlobalAwakeListener> _awakes = new();
+        private readonly List<IGlobalBootstrapListener> _bootstraps = new();
         private readonly List<Action<IContainerBuilder>> _builders = new();
         private readonly ModulesTransformer _modulesTransformer;
 
@@ -26,10 +26,10 @@ namespace Global.Bootstrappers
 
         public void ListenCallbacks(object service)
         {
-            if (service is IGlobalServiceAwakeListener awake)
+            if (service is IGlobalAwakeListener awake)
                 _awakes.Add(awake);
 
-            if (service is IGlobalServiceBootstrapListener bootstrap)
+            if (service is IGlobalBootstrapListener bootstrap)
                 _bootstraps.Add(bootstrap);
         }
 

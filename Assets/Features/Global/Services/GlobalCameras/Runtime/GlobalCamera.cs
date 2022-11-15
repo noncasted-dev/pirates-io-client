@@ -6,7 +6,7 @@ using VContainer;
 namespace Global.Services.GlobalCameras.Runtime
 {
     [DisallowMultipleComponent]
-    public class GlobalCamera : MonoBehaviour, IGlobalCamera, IGlobalServiceAwakeListener
+    public class GlobalCamera : MonoBehaviour, IGlobalCamera, IGlobalAwakeListener
     {
         [Inject]
         private void Construct(GlobalCameraLogger logger)

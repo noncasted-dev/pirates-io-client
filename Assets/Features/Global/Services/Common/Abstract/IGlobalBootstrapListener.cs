@@ -1,6 +1,6 @@
 ﻿namespace Global.Services.Common.Abstract
 {
-    public interface IGlobalServiceBootstrapListener
+    public interface IGlobalBootstrapListener
     {
         void OnBootstrapped();
     }

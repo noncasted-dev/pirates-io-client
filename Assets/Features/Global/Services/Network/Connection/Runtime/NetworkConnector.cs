@@ -11,7 +11,7 @@ namespace Global.Services.Network.Connection.Runtime
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(RagonEntityManager))]
-    public class NetworkConnector : MonoBehaviour, INetworkConnector, IGlobalServiceAwakeListener
+    public class NetworkConnector : MonoBehaviour, INetworkConnector, IGlobalAwakeListener
     {
         [Inject]
         private void Construct(

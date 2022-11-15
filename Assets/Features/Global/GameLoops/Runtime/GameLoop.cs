@@ -19,7 +19,7 @@ using VContainer;
 
 namespace Global.GameLoops.Runtime
 {
-    public class GameLoop : MonoBehaviour, IMenuLoader, ILevelLoader, IGlobalServiceAwakeListener
+    public class GameLoop : MonoBehaviour, IMenuLoader, ILevelLoader, IGlobalAwakeListener
     {
         [Inject]
         private void Construct(

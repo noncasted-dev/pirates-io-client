@@ -8,9 +8,9 @@ namespace GamePlay.Cities.Instance.Root.Runtime
     public class CityDefinition : ScriptableObject
     {
         [SerializeField] private FactionType _faction;
-        [SerializeField] private string _name;
+        [SerializeField] private CityType _name;
 
         public FactionType Faction => _faction;
-        public string Name => _name;
+        public CityType Name => _name;
     }
 }

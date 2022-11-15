@@ -8,7 +8,7 @@ using VContainer;
 
 namespace Global.Services.Network.Instantiators.Runtime
 {
-    public class NetworkInstantiator : MonoBehaviour, INetworkInstantiator, IGlobalServiceAwakeListener
+    public class NetworkInstantiator : MonoBehaviour, INetworkInstantiator, IGlobalAwakeListener
     {
         [Inject]
         private void Construct(NetworkInstantiatorLogger logger)

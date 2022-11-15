@@ -8,7 +8,7 @@ using VContainer;
 
 namespace Global.Services.InputViews.Runtime
 {
-    public class InputView : MonoBehaviour, IInputView, IInputViewRebindCallbacks, IGlobalServiceAwakeListener
+    public class InputView : MonoBehaviour, IInputView, IInputViewRebindCallbacks, IGlobalAwakeListener
     {
         [Inject]
         private void Construct(

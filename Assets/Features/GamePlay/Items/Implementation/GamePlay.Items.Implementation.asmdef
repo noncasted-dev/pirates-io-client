@@ -1,0 +1,4 @@
+﻿{
+  "name": "GamePlay.Items.Implementation",
+  "references":[ "GUID:5f85ab5dc178ff54c81b21f197b82d14", "GUID:e2b1c00d8d9b440888bd9f6a58105dd3" ]
+}

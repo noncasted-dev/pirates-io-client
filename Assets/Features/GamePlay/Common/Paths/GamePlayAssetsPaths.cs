@@ -10,6 +10,7 @@
         public const string NetworkPrefix = "SessionNetworkService_";
         public const string ConfigPrefix = "LocalConfig_";
         public const string CityPrefix = "City_";
+        public const string ItemPrefix = "Item_";
 
         private const string _services = Root + "Services/";
         private const string _network = _services + "Network/";
@@ -31,5 +32,6 @@
 
         public const string CityDefinition = _cities + "Definition";
         public const string FactionSelection = _factions + "Selection";
+        public const string Items = Root + "Items/";
     }
 }

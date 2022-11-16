@@ -18,20 +18,20 @@ namespace GamePlay.Services.Common.InventoryGrids
         [SerializeField] private TMP_Text _count;
 
         private int _id;
-        private Item _item;
+        private IItem _item;
 
         public int Id => _id;
 
         public event Action<GridCell> Selected;
 
-        public Item Item => _item;
+        public IItem Item => _item;
 
         public void Setup(int id)
         {
             _id = id;
         }
 
-        public void AssignItem(Item item)
+        public void AssignItem(IItem item)
         {
             gameObject.SetActive(true);
 

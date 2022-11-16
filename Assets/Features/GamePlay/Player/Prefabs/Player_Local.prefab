@@ -276,6 +276,7 @@ Transform:
   - {fileID: 2593417437702719267}
   - {fileID: 7353524804781764757}
   - {fileID: 6571644223227924923}
+  - {fileID: 2102571924463915387}
   m_Father: {fileID: 4011287660678557439}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -375,6 +376,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3132101437040923110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2102571924463915387}
+  - component: {fileID: 6875045903302872073}
+  - component: {fileID: 8240006148239672226}
+  m_Layer: 9
+  m_Name: ObjectsCollector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2102571924463915387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3132101437040923110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8305499244226354648}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6875045903302872073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3132101437040923110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88934c11a47542079b9598dff2dbe112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &8240006148239672226
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3132101437040923110}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.35
 --- !u!1 &3238119024743254864
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,6 +572,7 @@ MonoBehaviour:
   _shootPoint: {fileID: 5706463279442236699}
   _spriteTransform: {fileID: 958269550526828864}
   _areaInteractor: {fileID: -4100299532222470880}
+  _objectsCollector: {fileID: 6875045903302872073}
 --- !u!114 &1619435411979782750
 MonoBehaviour:
   m_ObjectHideFlags: 0

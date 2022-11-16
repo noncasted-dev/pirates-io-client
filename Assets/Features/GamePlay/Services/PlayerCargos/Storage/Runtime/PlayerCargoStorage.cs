@@ -10,9 +10,9 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 {
     public class PlayerCargoStorage : MonoBehaviour, IPlayerCargoStorage
     {
-        private readonly Dictionary<ItemType, Item> _items = new();
+        private readonly Dictionary<ItemType, IItem> _items = new();
 
-        public void Add(Item item)
+        public void Add(IItem item)
         {
             var type = item.BaseData.Type;
 
@@ -47,9 +47,9 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             _items.Remove(type);
         }
 
-        public Item[] ToArray()
+        public IItem[] ToArray()
         {
-            var items = new Item[_items.Count];
+            var items = new IItem[_items.Count];
 
             var counter = 0;
 

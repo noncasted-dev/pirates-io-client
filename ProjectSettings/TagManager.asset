@@ -14,13 +14,13 @@ TagManager:
   - Player_Collision
   - Level_Collision
   - Player_Hitbox
-  - 
+  - Player_ObjectsCollector
   - Player_Projectile
   - 
   - 
   - 
   - PlayerCannonShootArea
-  - 
+  - CollectableObject
   - AreaTrigger
   - 
   - 

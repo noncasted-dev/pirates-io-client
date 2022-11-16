@@ -20,7 +20,7 @@ namespace GamePlay.Services.PlayerCargos.UI.City
             _body.SetActive(false);
         }
 
-        public void Open(Item[] items)
+        public void Open(IItem[] items)
         {
             _body.SetActive(true);
             _grid.Fill(items);

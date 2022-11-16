@@ -10,7 +10,7 @@ namespace GamePlay.Services.PlayerCargos.UI.City
     {
         bool IsActive { get; }
 
-        void Open(Item[] items);
+        void Open(IItem[] items);
         void Close();
     }
 }

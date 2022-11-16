@@ -11,9 +11,9 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
     {
         bool IsActive { get; }
 
-        event Action<Item, Action<Item[]>> Dropped;
+        event Action<IItem, Action<IItem[]>> Dropped;
 
-        void Open(Item[] items);
+        void Open(IItem[] items);
         void Close();
     }
 }

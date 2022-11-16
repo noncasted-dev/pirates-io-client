@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 86812301156573221}
   - component: {fileID: 1042700453099515292}
   - component: {fileID: 8797464620297199986}
-  m_Layer: 0
+  - component: {fileID: 740134216020023281}
+  m_Layer: 15
   m_Name: DroppedItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,3 +133,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 
   _count: 0
+--- !u!58 &740134216020023281
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86812301156573220}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

@@ -2,6 +2,7 @@
 
 using System;
 using GamePlay.Items.Abstract;
+using GamePlay.Services.DroppedObjects.Presenter.Runtime;
 using GamePlay.Services.PlayerCargos.UI.City;
 using GamePlay.Services.PlayerCargos.UI.Travel;
 using Global.Services.InputViews.Runtime;
@@ -21,8 +22,10 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         private void Construct(
             IPlayerTravelCargoUI travelUI,
             IPlayerCityCargoUI cityUI,
-            IInputView inputView)
+            IInputView inputView,
+            IDroppedObjectsPresenter droppedObjectsPresenter)
         {
+            _droppedObjectsPresenter = droppedObjectsPresenter;
             _inputView = inputView;
             _cityUI = cityUI;
             _travelUI = travelUI;
@@ -32,6 +35,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         private IPlayerTravelCargoUI _travelUI;
         private IPlayerCityCargoUI _cityUI;
         private IInputView _inputView;
+        private IDroppedObjectsPresenter _droppedObjectsPresenter;
 
         private void Awake()
         {
@@ -69,8 +73,10 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
                 _cityUI.Close();
         }
 
-        private void OnDropped(Item item, Action<Item[]> redrawCallback)
+        private void OnDropped(IItem item, Action<IItem[]> redrawCallback)
         {
+            _droppedObjectsPresenter.DropFromPlayer(item);
+
             _storage.Delete(item.BaseData.Type);
 
             redrawCallback?.Invoke(_storage.ToArray());

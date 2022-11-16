@@ -1,16 +1,12 @@
-﻿#region
-
-using GamePlay.Items.Abstract;
+﻿using GamePlay.Items.Abstract;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.Common.InventoryGrids
 {
     public class GridSelection : MonoBehaviour
     {
         private GridCell _selectedCell;
-        private Item _selectedItem;
+        private IItem _selectedItem;
 
         public bool IsSelected(GridCell cell)
         {

@@ -1,17 +1,13 @@
-﻿#region
-
-using System;
+﻿using System;
 using Common.ObjectsPools.Runtime.Abstract;
+using Cysharp.Threading.Tasks;
 using GamePlay.Items.Abstract;
 using NaughtyAttributes;
 using UnityEngine;
 
-#endregion
-
 namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
 {
     [DisallowMultipleComponent]
-    [RequireComponent(typeof(Animator))]
     public class DroppedItem :
         MonoBehaviour,
         IPoolObject<DroppedItem>,
@@ -22,13 +18,16 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
         [SerializeField] [ReadOnly] private string _name;
         [SerializeField] [ReadOnly] private int _count;
 
+        [SerializeField] private float _collectImmunityTime = 5f;
+
         private Action<DroppedItem> _returnToPool;
         private Action<IDroppedItem> _collectedCallback;
 
         private int _id;
         private IItem _item;
 
-        private Animator _animator;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private Collider2D _collider;
 
         public GameObject GameObject => gameObject;
         public int Id => _id;
@@ -52,16 +51,20 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
         public void SetupPoolObject(Action<DroppedItem> returnToPool)
         {
             _returnToPool = returnToPool;
-            _animator = GetComponent<Animator>();
+
+            _collider.enabled = false;
         }
 
         public void OnTaken()
         {
             _animator.SetTrigger(Play);
+
+            _collider.enabled = false;
         }
 
         public void OnReturned()
         {
+            _collider.enabled = false;
         }
 
         public void Collect()
@@ -72,6 +75,14 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
         public void Destroy()
         {
             _returnToPool?.Invoke(this);
+        }
+
+        private async UniTaskVoid ActivateCollider()
+        {
+            var delay = (int)(_collectImmunityTime * 1000f);
+            await UniTask.Delay(delay, false, PlayerLoopTiming.Update, this.GetCancellationTokenOnDestroy());
+
+            _collider.enabled = true;
         }
     }
 }

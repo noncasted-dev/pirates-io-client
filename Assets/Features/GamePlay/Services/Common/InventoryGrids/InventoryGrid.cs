@@ -23,7 +23,7 @@ namespace GamePlay.Services.Common.InventoryGrids
 
         private readonly Dictionary<int, GridCell> _cells = new();
 
-        public event Action<Item> Selected;
+        public event Action<IItem> Selected;
         public event Action Deselected;
 
         private void Awake()
@@ -48,7 +48,7 @@ namespace GamePlay.Services.Common.InventoryGrids
                 cell.Value.Selected -= OnSelected;
         }
 
-        public void Fill(Item[] items)
+        public void Fill(IItem[] items)
         {
             AddCellsOnDemand(items.Length);
 

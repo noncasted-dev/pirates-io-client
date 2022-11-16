@@ -69,7 +69,10 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
 
         public void DropFromPlayer(IItem item)
         {
-            _dropSender.OnItemDropped(item, _playerPositionProvider.Position);
+            var dropPosition = _playerPositionProvider.Position;
+            dropPosition.y -= _config.DropFromPlayerYOffset;
+
+            _dropSender.OnItemDropped(item, dropPosition);
         }
 
         public void Drop(IItem item, Vector2 position)

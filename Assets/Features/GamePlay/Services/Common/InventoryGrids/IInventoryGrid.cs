@@ -9,9 +9,9 @@ namespace GamePlay.Services.Common.InventoryGrids
 {
     public interface IInventoryGrid
     {
-        event Action<Item> Selected;
+        event Action<IItem> Selected;
         event Action Deselected;
 
-        void Fill(Item[] items);
+        void Fill(IItem[] items);
     }
 }

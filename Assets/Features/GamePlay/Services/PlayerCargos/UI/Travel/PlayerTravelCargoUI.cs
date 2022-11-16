@@ -16,10 +16,10 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
         [SerializeField] private InventoryGrid _grid;
         [SerializeField] private Button _dropButton;
 
-        private Item _selected;
+        private IItem _selected;
 
         public bool IsActive => _body.activeSelf;
-        public event Action<Item, Action<Item[]>> Dropped;
+        public event Action<IItem, Action<IItem[]>> Dropped;
 
         private void Awake()
         {
@@ -42,7 +42,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
             _dropButton.onClick.RemoveListener(OnDropClicked);
         }
 
-        public void Open(Item[] items)
+        public void Open(IItem[] items)
         {
             _body.SetActive(true);
             _grid.Fill(items);
@@ -54,7 +54,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
             _body.SetActive(false);
         }
 
-        private void OnItemSelected(Item item)
+        private void OnItemSelected(IItem item)
         {
             _selected = item;
             _dropButton.gameObject.SetActive(true);
@@ -77,7 +77,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
             Dropped?.Invoke(_selected, Redraw);
         }
 
-        private void Redraw(Item[] items)
+        private void Redraw(IItem[] items)
         {
             _grid.Fill(items);
         }

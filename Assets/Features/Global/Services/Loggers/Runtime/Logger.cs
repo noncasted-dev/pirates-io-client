@@ -1,5 +1,9 @@
-﻿using System.Text;
+﻿#region
+
+using System.Text;
 using UnityEngine;
+
+#endregion
 
 namespace Global.Services.Loggers.Runtime
 {

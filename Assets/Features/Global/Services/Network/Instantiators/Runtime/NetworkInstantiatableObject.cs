@@ -1,4 +1,8 @@
-﻿using Ragon.Client;
+﻿#region
+
+using Ragon.Client;
+
+#endregion
 
 namespace Global.Services.Network.Instantiators.Runtime
 {

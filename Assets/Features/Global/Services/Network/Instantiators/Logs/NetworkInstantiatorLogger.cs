@@ -1,5 +1,9 @@
+#region
+
 using UnityEngine;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
+
+#endregion
 
 namespace Global.Services.Network.Instantiators.Logs
 {

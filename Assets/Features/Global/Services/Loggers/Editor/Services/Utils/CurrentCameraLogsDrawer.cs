@@ -1,6 +1,10 @@
-﻿using Common.ReadOnlyDictionaries.Editor;
+﻿#region
+
+using Common.ReadOnlyDictionaries.Editor;
 using Global.Services.CurrentCameras.Logs;
 using UnityEditor;
+
+#endregion
 
 namespace Global.Services.Loggers.Editor.Services.Utils
 {

@@ -1,6 +1,10 @@
+#region
+
 using Common.ReadOnlyDictionaries.Editor;
 using Global.Services.Profiles.Logs;
 using UnityEditor;
+
+#endregion
 
 namespace Global.Services.Loggers.Editor.Services
 {

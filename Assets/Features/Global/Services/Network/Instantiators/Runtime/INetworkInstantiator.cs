@@ -1,5 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+
+#endregion
 
 namespace Global.Services.Network.Instantiators.Runtime
 {

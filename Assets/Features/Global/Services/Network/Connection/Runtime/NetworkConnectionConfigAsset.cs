@@ -1,5 +1,9 @@
-﻿using Global.Common;
+﻿#region
+
+using Global.Common;
 using UnityEngine;
+
+#endregion
 
 namespace Global.Services.Network.Connection.Runtime
 {

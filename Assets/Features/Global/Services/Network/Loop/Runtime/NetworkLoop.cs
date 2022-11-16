@@ -1,5 +1,9 @@
-﻿using Ragon.Client;
+﻿#region
+
+using Ragon.Client;
 using UnityEngine;
+
+#endregion
 
 namespace Global.Services.Network.Loop.Runtime
 {

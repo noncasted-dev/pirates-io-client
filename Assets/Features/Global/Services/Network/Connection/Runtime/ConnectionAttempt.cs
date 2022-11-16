@@ -1,6 +1,10 @@
-﻿using System;
+﻿#region
+
+using System;
 using Cysharp.Threading.Tasks;
 using Ragon.Client;
+
+#endregion
 
 namespace Global.Services.Network.Connection.Runtime
 {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region
+
+using System;
 using Cysharp.Threading.Tasks;
 using Global.Services.Common.Abstract;
 using Global.Services.Network.Common;
@@ -6,6 +8,8 @@ using Global.Services.Network.Connection.Logs;
 using Ragon.Client;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace Global.Services.Network.Connection.Runtime
 {

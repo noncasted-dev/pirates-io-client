@@ -1,10 +1,6 @@
-﻿#region
-
-using Common.ReadOnlyDictionaries.Editor;
+﻿using Common.ReadOnlyDictionaries.Editor;
 using GamePlay.Cities.Global.Registry.Runtime;
 using UnityEditor;
-
-#endregion
 
 namespace GamePlay.Cities.Editor
 {

@@ -1,6 +1,4 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Root;
@@ -15,8 +13,6 @@ using Ragon.Client;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
 {

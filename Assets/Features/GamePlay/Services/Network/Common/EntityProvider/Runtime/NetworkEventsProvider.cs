@@ -1,10 +1,6 @@
-﻿#region
-
-using System;
+﻿using System;
 using Ragon.Client;
 using Ragon.Common;
-
-#endregion
 
 namespace GamePlay.Services.Network.Common.EntityProvider.Runtime
 {

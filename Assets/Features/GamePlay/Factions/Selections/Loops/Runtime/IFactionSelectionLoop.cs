@@ -1,9 +1,5 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Instance.Root.Runtime;
-
-#endregion
 
 namespace GamePlay.Factions.Selections.Loops.Runtime
 {

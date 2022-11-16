@@ -1,10 +1,6 @@
-﻿#region
-
-using Common.ReadOnlyDictionaries.Editor;
+﻿using Common.ReadOnlyDictionaries.Editor;
 using Global.Services.ItemFactories.Runtime;
 using UnityEditor;
-
-#endregion
 
 namespace Global.Services.ItemFactories.Editor
 {

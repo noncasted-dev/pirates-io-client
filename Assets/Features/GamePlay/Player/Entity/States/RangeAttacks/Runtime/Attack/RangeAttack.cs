@@ -61,8 +61,6 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
 
         public bool IsAvailable => _hasInput && _actionsStateProvider.CanShoot;
 
-        public StateDefinition Definition { get; }
-
         public void OnInput()
         {
             _hasInput = true;
@@ -100,6 +98,8 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         {
             Process().Forget();
         }
+
+        public StateDefinition Definition { get; }
 
         public void Break()
         {

@@ -8,11 +8,11 @@ namespace GamePlay.Player.Entity.Views.ShootPoint
     {
         private const float _distance = 2f;
 
-        private readonly RaycastHit2D[] _buffer = new RaycastHit2D[1];
-
         [SerializeField] private Transform _center;
         [SerializeField] [Min(0f)] private float _offset;
         [SerializeField] private LayerMask _shootAreaMask;
+
+        private readonly RaycastHit2D[] _buffer = new RaycastHit2D[1];
 
         public Vector2 GetShootPoint(float angle)
         {

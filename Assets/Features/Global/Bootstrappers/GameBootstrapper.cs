@@ -1,6 +1,4 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using Global.GameLoops.Runtime;
 using Global.Services.Common.Config.Abstract;
 using Global.Services.Common.Scope;
@@ -9,8 +7,6 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
-
-#endregion
 
 namespace Global.Bootstrappers
 {
@@ -56,7 +52,7 @@ namespace Global.Bootstrappers
 
             binder.InvokeFlowCallbacks();
 
-            IObjectResolverExtensions.Resolve<GameLoop>(_scope.Container).Begin();
+            _scope.Container.Resolve<GameLoop>().Begin();
         }
     }
 }

@@ -29,21 +29,12 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
         [SerializeField] private Material _defaultMaterial;
         [SerializeField] private Material _flash;
 
-        private SpriteViewLogger _logger;
-
         [SerializeField] [EditableObject] private SpriteViewLogSettings _logSettings;
-
-        private SpriteRenderer _sprite;
         [SerializeField] private List<SpriteRenderer> _subSprites;
 
-        public Material Material
-        {
-            get
-            {
-                _logger.OnMaterialUsed(_sprite.material);
-                return _sprite.material;
-            }
-        }
+        private SpriteViewLogger _logger;
+
+        private SpriteRenderer _sprite;
 
         public void OnAwake()
         {
@@ -98,6 +89,15 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
                     subSprite.flipX = _sprite.flipX;
 
             _logger.OnFlippedAlong(direction);
+        }
+
+        public Material Material
+        {
+            get
+            {
+                _logger.OnMaterialUsed(_sprite.material);
+                return _sprite.material;
+            }
         }
 
         public void SetMaterial(Material material)

@@ -1,13 +1,9 @@
-﻿#region
-
-using System;
+﻿using System;
 using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Cities.Instance.Root.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
-#endregion
 
 namespace GamePlay.Factions.Selections.UI.Runtime
 {

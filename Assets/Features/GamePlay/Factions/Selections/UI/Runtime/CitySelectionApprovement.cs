@@ -1,12 +1,8 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Instance.Root.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
-#endregion
 
 namespace GamePlay.Factions.Selections.UI.Runtime
 {

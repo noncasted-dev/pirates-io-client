@@ -18,8 +18,6 @@ namespace Global.Services.GlobalCameras.Runtime
         private AudioListener _listener;
         private GlobalCameraLogger _logger;
 
-        public Camera Camera => _camera;
-
         private void Update()
         {
             if (Camera.allCamerasCount > 1)
@@ -27,6 +25,14 @@ namespace Global.Services.GlobalCameras.Runtime
             else
                 EnableListener();
         }
+
+        public void OnAwake()
+        {
+            _listener = GetComponent<AudioListener>();
+            _camera = GetComponent<Camera>();
+        }
+
+        public Camera Camera => _camera;
 
         public void Enable()
         {
@@ -54,12 +60,6 @@ namespace Global.Services.GlobalCameras.Runtime
             _listener.enabled = false;
 
             _logger.OnListenerDisabled();
-        }
-
-        public void OnAwake()
-        {
-            _listener = GetComponent<AudioListener>();
-            _camera = GetComponent<Camera>();
         }
     }
 }

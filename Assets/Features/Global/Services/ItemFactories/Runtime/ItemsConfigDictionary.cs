@@ -1,10 +1,6 @@
-﻿#region
-
-using System;
+﻿using System;
 using Common.ReadOnlyDictionaries.Runtime;
 using GamePlay.Items.Abstract;
-
-#endregion
 
 namespace Global.Services.ItemFactories.Runtime
 {

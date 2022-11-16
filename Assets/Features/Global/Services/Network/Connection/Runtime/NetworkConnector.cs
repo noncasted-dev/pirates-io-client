@@ -22,11 +22,11 @@ namespace Global.Services.Network.Connection.Runtime
             _config = config;
         }
 
+        [SerializeField] private RagonEntityManager _entityManager;
+
         private readonly NetworkEvents _events = new();
 
         private NetworkConnectionConfigAsset _config;
-
-        [SerializeField] private RagonEntityManager _entityManager;
         private NetworkConnectorLogger _logger;
 
         public void OnAwake()

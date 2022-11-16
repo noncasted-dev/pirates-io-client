@@ -1,10 +1,6 @@
-﻿#region
-
-using System;
+﻿using System;
 using Common.ReadOnlyDictionaries.Runtime;
 using UnityEngine;
-
-#endregion
 
 namespace Global.Services.Loggers.Runtime
 {

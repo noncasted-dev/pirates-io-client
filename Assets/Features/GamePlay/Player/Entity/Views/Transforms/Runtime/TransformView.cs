@@ -8,8 +8,8 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 {
     public class TransformView : MonoBehaviour, IAwakeCallback
     {
-        private TransformLogger _logger;
         [SerializeField] private TransformLogSettings _logSettings;
+        private TransformLogger _logger;
 
         private Transform _transform;
 

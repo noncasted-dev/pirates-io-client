@@ -1,6 +1,4 @@
-﻿#region
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Common.Paths;
 using GamePlay.Factions.Selections.Bootstrap;
@@ -23,8 +21,6 @@ using Local.ComposedSceneConfig;
 using Local.Services.Abstract;
 using UnityEngine;
 using VContainer.Unity;
-
-#endregion
 
 namespace GamePlay.Level.Config.Runtime
 {

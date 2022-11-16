@@ -133,8 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9715d4bf0a0b425098f16c92c34c30ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offset: 0.1
   _center: {fileID: 3595927152570180981}
+  _offset: 0.1
   _shootAreaMask:
     serializedVersion: 2
     m_Bits: 16384
@@ -436,7 +436,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.35
+  m_Radius: 1.5
 --- !u!1 &3238119024743254864
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,16 +563,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bcd743b4ea491dbf51b32d60e2978a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 7459740484505219447}
-  _transform: {fileID: 710161118739580181}
   _rotationPoint: {fileID: 827347894530889517}
   _rigidBody: {fileID: 8859833963108558562}
   _weaponsRoot: {fileID: 6003940262465297875}
   _aim: {fileID: 5143733716976567319}
   _shootPoint: {fileID: 5706463279442236699}
-  _spriteTransform: {fileID: 958269550526828864}
   _areaInteractor: {fileID: -4100299532222470880}
   _objectsCollector: {fileID: 6875045903302872073}
+  _sprite: {fileID: 7459740484505219447}
+  _spriteTransform: {fileID: 958269550526828864}
+  _transform: {fileID: 710161118739580181}
 --- !u!114 &1619435411979782750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,11 +965,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b3d5d2f09c4a358e47f0c5fe556d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _logSettings: {fileID: 11400000, guid: 266d970930a23454e9674edf9476a8c6, type: 2}
+  _defaultMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   _flash: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  _logSettings: {fileID: 11400000, guid: 266d970930a23454e9674edf9476a8c6, type: 2}
   _subSprites:
   - {fileID: 7780379814991452964}
-  _defaultMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
 --- !u!114 &958269550526828864
 MonoBehaviour:
   m_ObjectHideFlags: 0

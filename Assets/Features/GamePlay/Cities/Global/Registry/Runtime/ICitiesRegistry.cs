@@ -1,8 +1,4 @@
-﻿#region
-
-using GamePlay.Cities.Instance.Root.Runtime;
-
-#endregion
+﻿using GamePlay.Cities.Instance.Root.Runtime;
 
 namespace GamePlay.Cities.Global.Registry.Runtime
 {

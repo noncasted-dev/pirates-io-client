@@ -30,6 +30,8 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
             _updater = updater;
         }
 
+        [SerializeField] private RigidBodyLogSettings _logSettings;
+
         private readonly Queue<PhysicsInteraction> _interactions = new();
 
         private readonly Queue<PhysicsMove> _moves = new();
@@ -37,14 +39,10 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
         private Vector2 _currentPosition;
         private RigidBodyLogger _logger;
-
-        [SerializeField] private RigidBodyLogSettings _logSettings;
         private INetworkTransform _networkTransform;
 
         private Rigidbody2D _rigidbody;
         private IUpdater _updater;
-
-        public Vector2 Position => _rigidbody.position;
 
         public void OnAwake()
         {
@@ -78,6 +76,8 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
             _interactions.Clear();
         }
 
+        public Vector2 Position => _rigidbody.position;
+
         public void SetPosition(Vector2 position)
         {
             _teleports.Enqueue(position);
@@ -106,15 +106,15 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
             _updater.Remove((IUpdatable)this);
         }
 
-        private Vector2 ProcessMove(Vector2 direction, float distance)
-        {
-            return _currentPosition + direction * distance;
-        }
-
         public void OnUpdate(float delta)
         {
             _currentPosition = _rigidbody.position;
             _networkTransform.SetPosition(_currentPosition);
+        }
+
+        private Vector2 ProcessMove(Vector2 direction, float distance)
+        {
+            return _currentPosition + direction * distance;
         }
     }
 }

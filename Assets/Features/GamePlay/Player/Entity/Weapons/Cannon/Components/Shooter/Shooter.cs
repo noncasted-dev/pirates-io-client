@@ -1,6 +1,4 @@
-﻿#region
-
-using System.Threading;
+﻿using System.Threading;
 using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Player.Entity.Network.Local.Replicators.Canons.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
@@ -10,8 +8,6 @@ using GamePlay.Services.Projectiles.Implementation.Linear.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.Updaters.Runtime.Abstract;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 {

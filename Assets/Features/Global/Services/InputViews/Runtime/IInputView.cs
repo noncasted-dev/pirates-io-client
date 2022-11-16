@@ -1,9 +1,5 @@
-﻿#region
-
-using System;
+﻿using System;
 using UnityEngine;
-
-#endregion
 
 namespace Global.Services.InputViews.Runtime
 {

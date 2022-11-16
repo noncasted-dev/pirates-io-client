@@ -13,6 +13,31 @@ namespace Common.EditableScriptableObjects.Editor
     [CustomPropertyDrawer(typeof(EditableObjectAttribute), true)]
     public class EditableObjectAttributeDrawer : PropertyDrawer
     {
+        /// <summary>
+        ///     The spacing on the inside of the background rect.
+        /// </summary>
+        private const float _innerSpacing = 6.0f;
+
+        /// <summary>
+        ///     The spacing on the outside of the background rect.
+        /// </summary>
+        private const float _outerSpacing = 4.0f;
+
+        /// <summary>
+        ///     The style the background uses.
+        /// </summary>
+        private const BackgroundStyles _backgroundStyle = BackgroundStyles.HelpBox;
+
+        /// <summary>
+        ///     The colour that is used to darken the background.
+        /// </summary>
+        private static readonly Color DARKEN_COLOUR = new(0.0f, 0.0f, 0.0f, 0.2f);
+
+        /// <summary>
+        ///     The colour that is used to lighten the background.
+        /// </summary>
+        private static readonly Color LIGHTEN_COLOUR = new(1.0f, 1.0f, 1.0f, 0.2f);
+
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             var totalHeight = 0.0f;
@@ -146,31 +171,6 @@ namespace Common.EditableScriptableObjects.Editor
             Darken,
             Lighten
         }
-
-        /// <summary>
-        ///     The spacing on the inside of the background rect.
-        /// </summary>
-        private const float _innerSpacing = 6.0f;
-
-        /// <summary>
-        ///     The spacing on the outside of the background rect.
-        /// </summary>
-        private const float _outerSpacing = 4.0f;
-
-        /// <summary>
-        ///     The style the background uses.
-        /// </summary>
-        private const BackgroundStyles _backgroundStyle = BackgroundStyles.HelpBox;
-
-        /// <summary>
-        ///     The colour that is used to darken the background.
-        /// </summary>
-        private static readonly Color DARKEN_COLOUR = new(0.0f, 0.0f, 0.0f, 0.2f);
-
-        /// <summary>
-        ///     The colour that is used to lighten the background.
-        /// </summary>
-        private static readonly Color LIGHTEN_COLOUR = new(1.0f, 1.0f, 1.0f, 0.2f);
     }
 }
 #endif

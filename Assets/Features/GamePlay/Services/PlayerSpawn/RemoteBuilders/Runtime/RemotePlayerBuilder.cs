@@ -35,14 +35,14 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         }
 
         private static RemotePlayerBuilder _instance;
-        private IObjectProvider<AnimatedVfx> _hitExplosionPool;
         [SerializeField] private AssetReference _hitExplosionReference;
-
-        private IAssetInstantiatorFactory _instantiatorFactory;
-        private ILogger _logger;
 
         [SerializeField] private RemoteViewsPool _pool;
         [SerializeField] private AssetReference _prefab;
+        private IObjectProvider<AnimatedVfx> _hitExplosionPool;
+
+        private IAssetInstantiatorFactory _instantiatorFactory;
+        private ILogger _logger;
         private IProjectileReplicator _replicator;
         private IUpdater _updater;
         private IVfxPoolProvider _vfxPoolProvider;

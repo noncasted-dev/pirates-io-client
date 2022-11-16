@@ -40,16 +40,17 @@ namespace Global.GameLoops.Runtime
             _currentCamera = currentCamera;
         }
 
+        [SerializeField] private LevelAsset _level;
+
+        [SerializeField] private MenuAsset _menu;
+
         private ICurrentCamera _currentCamera;
         private ICurrentSceneHandler _currentSceneHandler;
         private IGlobalCamera _globalCamera;
-        [SerializeField] private LevelAsset _level;
 
         private ISceneLoader _loader;
         private ILoadingScreen _loadingScreen;
         private GameLoopLogger _logger;
-
-        [SerializeField] private MenuAsset _menu;
 
         private IDisposable _playFromMenuEvent;
 

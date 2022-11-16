@@ -1,10 +1,6 @@
-﻿#region
-
-using GamePlay.Items.Abstract;
+﻿using GamePlay.Items.Abstract;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.ItemFactories.Runtime
 {

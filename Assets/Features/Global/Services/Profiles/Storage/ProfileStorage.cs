@@ -14,11 +14,9 @@ namespace Global.Services.Profiles.Storage
             _logger = logger;
         }
 
-        private ProfileLogger _logger;
-
         [SerializeField] [ReadOnly] private string _userName = string.Empty;
 
-        public string UserName => _userName;
+        private ProfileLogger _logger;
 
         public void SetUserName(string userName)
         {
@@ -26,5 +24,7 @@ namespace Global.Services.Profiles.Storage
 
             _logger.OnUserNameSet(userName);
         }
+
+        public string UserName => _userName;
     }
 }

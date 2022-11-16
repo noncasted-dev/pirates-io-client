@@ -1,11 +1,7 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using GamePlay.Items.Abstract;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 {
@@ -13,7 +9,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
     {
         private readonly Dictionary<ItemType, IItem> _items = new();
 
-        public event Action Changed;
+        public IReadOnlyDictionary<ItemType, IItem> Items => _items;
 
         public void Add(IItem item)
         {
@@ -68,5 +64,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
             return items;
         }
+
+        public event Action Changed;
     }
 }

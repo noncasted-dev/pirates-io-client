@@ -1,12 +1,8 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using GamePlay.Items.Abstract;
 using UnityEngine;
 using UnityEngine.UI;
-
-#endregion
 
 namespace GamePlay.Services.Common.InventoryGrids
 {

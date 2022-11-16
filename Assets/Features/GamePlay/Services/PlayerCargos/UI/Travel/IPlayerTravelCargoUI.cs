@@ -1,9 +1,5 @@
-﻿#region
-
-using System;
+﻿using System;
 using GamePlay.Items.Abstract;
-
-#endregion
 
 namespace GamePlay.Services.PlayerCargos.UI.Travel
 {
@@ -11,7 +7,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
     {
         bool IsActive { get; }
 
-        event Action<IItem, Action<IItem[]>> Dropped;
+        event Action<IItem, int, Action<IItem[]>> Dropped;
 
         Action<IItem[]> Open(IItem[] items);
         void Close();

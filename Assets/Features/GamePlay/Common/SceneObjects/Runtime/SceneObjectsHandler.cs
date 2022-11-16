@@ -12,9 +12,9 @@ namespace GamePlay.Common.SceneObjects.Runtime
             _logger = logger;
         }
 
-        private SceneObjectLogger _logger;
-
         [SerializeField] private SceneObject[] _objects;
+
+        private SceneObjectLogger _logger;
 
         public void InvokeAwake()
         {

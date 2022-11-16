@@ -1,10 +1,6 @@
-﻿#region
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
-#endregion
 
 namespace Common.ReadOnlyDictionaries.Editor
 {

@@ -1,9 +1,5 @@
-﻿#region
-
-using GamePlay.Cities.Instance.Root.Runtime;
+﻿using GamePlay.Cities.Instance.Root.Runtime;
 using GamePlay.Items.Abstract;
-
-#endregion
 
 namespace Global.Services.PersistentInventories.Runtime
 {

@@ -42,8 +42,6 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
 
         public bool HasInput => _input != Vector2.zero;
 
-        public StateDefinition Definition { get; }
-
         public void OnInput(Vector2 input)
         {
             _input = input;
@@ -82,6 +80,8 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
 
             Begin();
         }
+
+        public StateDefinition Definition { get; }
 
         public void Break()
         {

@@ -28,8 +28,6 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
         private readonly RespawnLogger _logger;
         private readonly IStateMachine _stateMachine;
 
-        public StateDefinition Definition { get; }
-
         public void Enter()
         {
             _stateMachine.Enter(this);
@@ -39,6 +37,8 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
             _logger.OnEntered();
             _stateMachine.Exit();
         }
+
+        public StateDefinition Definition { get; }
 
         public void Break()
         {

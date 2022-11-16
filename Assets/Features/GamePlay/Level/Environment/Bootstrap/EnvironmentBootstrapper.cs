@@ -1,13 +1,9 @@
-﻿#region
-
-using GamePlay.Cities.Global.Registry.Runtime;
+﻿using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Common.SceneObjects.Runtime;
 using Local.Services.DependenciesResolve;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-
-#endregion
 
 namespace GamePlay.Level.Environment.Bootstrap
 {

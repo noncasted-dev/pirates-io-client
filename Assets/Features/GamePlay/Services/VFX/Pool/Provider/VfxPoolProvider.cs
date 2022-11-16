@@ -1,9 +1,5 @@
-﻿#region
-
-using Common.ObjectsPools.Runtime.Abstract;
+﻿using Common.ObjectsPools.Runtime.Abstract;
 using UnityEngine.AddressableAssets;
-
-#endregion
 
 namespace GamePlay.Services.VFX.Pool.Provider
 {

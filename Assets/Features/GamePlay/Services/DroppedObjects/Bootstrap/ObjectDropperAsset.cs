@@ -1,6 +1,4 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using Common.ObjectsPools.Runtime.Abstract;
 using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
@@ -14,8 +12,6 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Services.DroppedObjects.Bootstrap
 {
@@ -33,10 +29,10 @@ namespace GamePlay.Services.DroppedObjects.Bootstrap
             ICallbacksRegister callbacksRegister,
             ISceneLoader sceneLoader)
         {
-            var pool = Object.Instantiate(_poolPrefab);
+            var pool = Instantiate(_poolPrefab);
             pool.name = "Pool_Drop";
 
-            var dropper = Object.Instantiate(_dropperPrefab);
+            var dropper = Instantiate(_dropperPrefab);
             dropper.name = "ObjectDropper";
 
             var network = dropper.GetComponent<ObjectDropNetworker>();

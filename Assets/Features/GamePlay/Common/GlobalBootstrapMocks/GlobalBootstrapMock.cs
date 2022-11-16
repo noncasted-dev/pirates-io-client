@@ -1,6 +1,4 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Level.Config.Runtime;
 using Global.Bootstrappers;
 using Global.GameLoops.Runtime;
@@ -14,8 +12,6 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
-
-#endregion
 
 namespace GamePlay.Common.GlobalBootstrapMocks
 {
@@ -65,12 +61,12 @@ namespace GamePlay.Common.GlobalBootstrapMocks
 
             var container = _scope.Container;
 
-            IObjectResolverExtensions.Resolve<GameLoop>(container);
+            container.Resolve<GameLoop>();
 
             binder.InvokeFlowCallbacks();
 
-            var connector = IObjectResolverExtensions.Resolve<INetworkConnector>(container);
-            var joiner = IObjectResolverExtensions.Resolve<INetworkSessionJoiner>(container);
+            var connector = container.Resolve<INetworkConnector>();
+            var joiner = container.Resolve<INetworkSessionJoiner>();
 
             var userName = $"Player_{Random.Range(0, 301)}";
             await connector.Connect(userName);
@@ -79,7 +75,7 @@ namespace GamePlay.Common.GlobalBootstrapMocks
 
         private async UniTask BootstrapLocal()
         {
-            var result = await _level.Load(_scope, IObjectResolverExtensions.Resolve<ISceneLoader>(_scope.Container));
+            var result = await _level.Load(_scope, _scope.Container.Resolve<ISceneLoader>());
 
             result.OnLoaded();
         }

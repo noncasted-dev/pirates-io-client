@@ -5,8 +5,8 @@ namespace GamePlay.Common.Areas.Common.Runtime
 {
     public class AreaRoot : SceneObject
     {
-        private IArea _area;
         [SerializeField] private AreaTrigger _trigger;
+        private IArea _area;
 
         protected override void OnAwake()
         {

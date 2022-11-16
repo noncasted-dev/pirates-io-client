@@ -1,11 +1,7 @@
-﻿#region
-
-using Common.ObjectsPools.Logs;
+﻿using Common.ObjectsPools.Logs;
 using Common.ObjectsPools.Runtime.Abstract;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-
-#endregion
 
 namespace Common.ObjectsPools.Runtime
 {

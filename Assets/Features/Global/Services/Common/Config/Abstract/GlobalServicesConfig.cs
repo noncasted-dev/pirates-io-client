@@ -1,9 +1,5 @@
-﻿#region
-
-using Global.Services.Common.Abstract;
+﻿using Global.Services.Common.Abstract;
 using UnityEngine;
-
-#endregion
 
 namespace Global.Services.Common.Config.Abstract
 {

@@ -1,6 +1,4 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.PlayerCargos.UI.City;
@@ -11,8 +9,6 @@ using Local.Services.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Services.PlayerCargos.Bootstrap
 {

@@ -25,12 +25,12 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
             _rotation = rotation;
         }
 
+        [SerializeField] private Transform _left;
+        [SerializeField] private Transform _right;
+
         private CancellationTokenSource _cancellation;
         private IRangeAttackConfig _config;
         private IInputView _input;
-
-        [SerializeField] private Transform _left;
-        [SerializeField] private Transform _right;
 
         private IRotation _rotation;
         private IUpdater _updater;

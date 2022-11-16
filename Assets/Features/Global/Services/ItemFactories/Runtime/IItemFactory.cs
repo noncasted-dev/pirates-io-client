@@ -1,8 +1,4 @@
-﻿#region
-
-using GamePlay.Items.Abstract;
-
-#endregion
+﻿using GamePlay.Items.Abstract;
 
 namespace Global.Services.ItemFactories.Runtime
 {

@@ -1,13 +1,9 @@
-﻿#region
-
-using System;
+﻿using System;
 using GamePlay.Items.Abstract;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
-#endregion
 
 namespace GamePlay.Services.Common.InventoryGrids
 {
@@ -23,7 +19,16 @@ namespace GamePlay.Services.Common.InventoryGrids
         public int Id => _id;
 
         public IItem Item => _item;
-        
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            Selected?.Invoke(this);
+        }
+
         public event Action<GridCell> Selected;
 
         public void Setup(int id)
@@ -45,17 +50,6 @@ namespace GamePlay.Services.Common.InventoryGrids
         {
             _item = null;
             gameObject.SetActive(false);
-        }
-
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            Debug.Log("Up");
-            Selected?.Invoke(this);
-        }
-        
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            Debug.Log("Down");
         }
     }
 }

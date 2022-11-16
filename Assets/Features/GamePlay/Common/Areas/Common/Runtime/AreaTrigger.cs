@@ -6,9 +6,6 @@ namespace GamePlay.Common.Areas.Common.Runtime
     [DisallowMultipleComponent]
     public class AreaTrigger : MonoBehaviour
     {
-        public event Action<IAreaInteractor> Entered;
-        public event Action<IAreaInteractor> Exited;
-
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (IsInteractor(other, out var interactor) == false)
@@ -24,6 +21,9 @@ namespace GamePlay.Common.Areas.Common.Runtime
 
             Exited?.Invoke(interactor);
         }
+
+        public event Action<IAreaInteractor> Entered;
+        public event Action<IAreaInteractor> Exited;
 
         private bool IsInteractor(Component other, out IAreaInteractor interactor)
         {

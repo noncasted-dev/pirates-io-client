@@ -1,10 +1,6 @@
-﻿#region
-
-using System;
+﻿using System;
 using Common.ReadOnlyDictionaries.Runtime;
 using GamePlay.Factions.Common;
-
-#endregion
 
 namespace GamePlay.Cities.Global.Registry.Runtime
 {

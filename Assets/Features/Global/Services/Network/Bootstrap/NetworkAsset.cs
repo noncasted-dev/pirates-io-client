@@ -49,17 +49,17 @@ namespace Global.Services.Network.Bootstrap
             builder.Register<NetworkInstantiatorLogger>(Lifetime.Scoped)
                 .WithParameter(_instantiatorLogSettings);
 
-            builder.RegisterComponent<NetworkInstantiator>(instantiator)
+            builder.RegisterComponent(instantiator)
                 .As<INetworkInstantiator>();
 
             builder.RegisterComponent(connector)
                 .WithParameter(_connectionConfig)
                 .AsImplementedInterfaces();
 
-            builder.RegisterComponent<NetworkSessionJoiner>(joiner)
+            builder.RegisterComponent(joiner)
                 .As<INetworkSessionJoiner>();
 
-            builder.RegisterComponent<NetworkSessionLeaver>(leaver)
+            builder.RegisterComponent(leaver)
                 .As<INetworkSessionLeaver>();
 
             var networkRegistry = new NetworkEventsRegistry();

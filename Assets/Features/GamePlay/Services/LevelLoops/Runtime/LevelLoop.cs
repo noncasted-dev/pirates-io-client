@@ -1,6 +1,4 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Factions.Selections.Loops.Runtime;
@@ -13,8 +11,6 @@ using Global.Services.CurrentCameras.Runtime;
 using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Services.LevelLoops.Runtime
 {

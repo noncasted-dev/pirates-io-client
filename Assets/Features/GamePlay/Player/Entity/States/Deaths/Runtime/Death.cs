@@ -16,12 +16,12 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
 
         private readonly IStateMachine _stateMachine;
 
-        public StateDefinition Definition { get; }
-
         public void Enter()
         {
             _stateMachine.Enter(this);
         }
+
+        public StateDefinition Definition { get; }
 
         public void Break()
         {

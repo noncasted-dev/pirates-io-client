@@ -1,6 +1,4 @@
-﻿#region
-
-using GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime;
+﻿using GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim;
@@ -14,8 +12,6 @@ using GamePlay.Player.Entity.Views.WeaponsRoots.Runtime;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Views.Bootstraps
 {

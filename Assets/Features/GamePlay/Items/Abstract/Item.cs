@@ -1,5 +1,6 @@
 ﻿#region
 
+using System;
 using UnityEngine;
 
 #endregion
@@ -18,6 +19,8 @@ namespace GamePlay.Items.Abstract
 
         private int _count;
 
+        public event Action<int> CountChanged;
+
         public BaseItemData BaseData { get; }
         public int Count => _count;
 
@@ -30,6 +33,8 @@ namespace GamePlay.Items.Abstract
             }
 
             _count += amount;
+
+            CountChanged?.Invoke(_count);
         }
 
         public void Reduce(int amount)
@@ -47,6 +52,8 @@ namespace GamePlay.Items.Abstract
                 Debug.LogError($"Item {BaseData.Name} count should be greater than zero.");
                 _count = 0;
             }
+
+            CountChanged?.Invoke(_count);
         }
     }
 }

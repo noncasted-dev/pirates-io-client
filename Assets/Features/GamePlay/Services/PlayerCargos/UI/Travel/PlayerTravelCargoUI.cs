@@ -1,12 +1,7 @@
-﻿#region
-
-using System;
+﻿using System;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.Common.InventoryGrids;
 using UnityEngine;
-using UnityEngine.UI;
-
-#endregion
 
 namespace GamePlay.Services.PlayerCargos.UI.Travel
 {
@@ -14,9 +9,8 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
     {
         [SerializeField] private GameObject _body;
         [SerializeField] private InventoryGrid _grid;
-        [SerializeField] private Button _dropButton;
 
-        private IItem _selected;
+        [SerializeField] private DropMenu _drop;
 
         private void Awake()
         {
@@ -27,26 +21,28 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
         {
             _grid.Selected += OnItemSelected;
             _grid.Deselected += OnItemDeselected;
+            _drop.Dropped += OnDropped;
 
-            _dropButton.onClick.AddListener(OnDropClicked);
+            _drop.Disable();
         }
 
         private void OnDisable()
         {
             _grid.Selected -= OnItemSelected;
             _grid.Deselected -= OnItemDeselected;
+            _drop.Dropped -= OnDropped;
 
-            _dropButton.onClick.RemoveListener(OnDropClicked);
+            _drop.Disable();
         }
 
         public bool IsActive => _body.activeSelf;
-        public event Action<IItem, Action<IItem[]>> Dropped;
+        public event Action<IItem, int, Action<IItem[]>> Dropped;
 
         public Action<IItem[]> Open(IItem[] items)
         {
             _body.SetActive(true);
             _grid.Fill(items);
-            _dropButton.gameObject.SetActive(false);
+            _drop.Disable();
 
             return Redraw;
         }
@@ -58,33 +54,22 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
 
         private void OnItemSelected(IItem item)
         {
-            _selected = item;
-            _dropButton.gameObject.SetActive(true);
+            _drop.Enable(item);
         }
 
         private void OnItemDeselected()
         {
-            _selected = null;
-            _dropButton.gameObject.SetActive(false);
-        }
-
-        private void OnDropClicked()
-        {
-            if (_selected == null)
-            {
-                Debug.LogError("No item to drop selected");
-                return;
-            }
-
-            _dropButton.gameObject.SetActive(false);
-            
-            Dropped?.Invoke(_selected, Redraw);
+            _drop.Disable();
         }
 
         private void Redraw(IItem[] items)
         {
-            Debug.Log("Redraw grid");
             _grid.Fill(items);
+        }
+
+        private void OnDropped(IItem item, int count)
+        {
+            Dropped?.Invoke(item, count, Redraw);
         }
     }
 }

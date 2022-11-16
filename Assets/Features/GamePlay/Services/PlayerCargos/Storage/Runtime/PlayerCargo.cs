@@ -28,13 +28,13 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         }
 
         private IPlayerCityCargoUI _cityUI;
+
+        private Action<IItem[]> _currentDrawTarget;
         private IDroppedObjectsPresenter _droppedObjectsPresenter;
         private IInputView _inputView;
 
         private PlayerCargoStorage _storage;
         private IPlayerTravelCargoUI _travelUI;
-
-        private Action<IItem[]> _currentDrawTarget;
 
         private void Awake()
         {
@@ -47,7 +47,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             _inputView.InventoryPerformed += OnInventoryOpenPerformed;
             _storage.Changed += OnStorageChanged;
         }
-        
+
         public void OnDisabled()
         {
             _travelUI.Dropped -= OnDropped;
@@ -76,11 +76,16 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             _currentDrawTarget = null;
         }
 
-        private void OnDropped(IItem item, Action<IItem[]> redrawCallback)
+        private void OnDropped(IItem item, int count, Action<IItem[]> redrawCallback)
         {
             _droppedObjectsPresenter.DropFromPlayer(item);
 
-            _storage.Delete(item.BaseData.Type);
+            var type = item.BaseData.Type;
+
+            _storage.Reduce(type, count);
+
+            if (_storage.Items[type].Count == 0)
+                _storage.Delete(type);
 
             redrawCallback?.Invoke(_storage.ToArray());
         }
@@ -92,10 +97,9 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             else
                 _travelUI.Close();
         }
-        
+
         private void OnStorageChanged()
         {
-            Debug.Log("On changed");
             _currentDrawTarget?.Invoke(_storage.ToArray());
         }
     }

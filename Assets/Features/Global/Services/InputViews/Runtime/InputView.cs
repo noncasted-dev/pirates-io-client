@@ -1,14 +1,10 @@
-﻿#region
-
-using System;
+﻿using System;
 using Global.Services.CameraUtilities.Runtime;
 using Global.Services.Common.Abstract;
 using Global.Services.InputViews.Logs;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.InputViews.Runtime
 {

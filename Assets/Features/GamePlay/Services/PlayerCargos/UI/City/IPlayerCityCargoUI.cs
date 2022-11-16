@@ -1,9 +1,5 @@
-﻿#region
-
-using System;
+﻿using System;
 using GamePlay.Items.Abstract;
-
-#endregion
 
 namespace GamePlay.Services.PlayerCargos.UI.City
 {

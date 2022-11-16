@@ -24,7 +24,7 @@ namespace Global.Services.ScenesFlow.Runtime
 
             builder.Register<ScenesFlowLogger>(Lifetime.Scoped).WithParameter("settings", _logSettings);
             builder.RegisterComponent(loader).AsImplementedInterfaces();
-            builder.RegisterComponent<ScenesUnloader>(unloader).AsImplementedInterfaces();
+            builder.RegisterComponent(unloader).AsImplementedInterfaces();
 
             serviceBinder.AddToModules(loader);
             serviceBinder.ListenCallbacks(loader);

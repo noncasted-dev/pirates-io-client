@@ -30,8 +30,6 @@ namespace GamePlay.Player.Entity.States.Idles.Runtime
 
         private readonly IStateMachine _stateMachine;
 
-        public StateDefinition Definition { get; }
-
         public void Enter()
         {
             _stateMachine.Enter(this);
@@ -41,6 +39,8 @@ namespace GamePlay.Player.Entity.States.Idles.Runtime
 
             _logger.OnEntered();
         }
+
+        public StateDefinition Definition { get; }
 
         public void Break()
         {

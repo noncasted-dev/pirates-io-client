@@ -1,6 +1,4 @@
-﻿#region
-
-using GamePlay.Player.Entity.Network.Local.Replicators.Canons.Runtime;
+﻿using GamePlay.Player.Entity.Network.Local.Replicators.Canons.Runtime;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Network.Views.Transforms.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
@@ -8,8 +6,6 @@ using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Network.Local.Bootstrap
 {

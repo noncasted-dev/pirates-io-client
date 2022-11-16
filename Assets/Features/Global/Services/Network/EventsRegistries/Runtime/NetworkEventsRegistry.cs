@@ -1,11 +1,7 @@
-﻿#region
-
-using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
+﻿using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
 using GamePlay.Services.DroppedObjects.Network.Runtime;
 using GamePlay.Services.Projectiles.Replicator.Runtime;
 using Ragon.Client;
-
-#endregion
 
 namespace Global.Services.Network.EventsRegistries.Runtime
 {

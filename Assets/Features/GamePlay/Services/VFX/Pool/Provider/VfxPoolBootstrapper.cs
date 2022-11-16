@@ -1,14 +1,10 @@
-﻿#region
-
-using Common.ObjectsPools.Runtime;
+﻿using Common.ObjectsPools.Runtime;
 using Cysharp.Threading.Tasks;
 using Local.Services.Abstract.Callbacks;
 using Local.Services.DependenciesResolve;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Services.VFX.Pool.Provider
 {
@@ -24,11 +20,6 @@ namespace GamePlay.Services.VFX.Pool.Provider
 
         public ObjectsPoolsHandler Handler => _handler;
 
-        public void OnBootstrapped()
-        {
-            _handler.InstantiateStartupInstances();
-        }
-
         public void Resolve(IObjectResolver resolver)
         {
             _handler.Setup(resolver, _targetScene);
@@ -37,6 +28,11 @@ namespace GamePlay.Services.VFX.Pool.Provider
         public async UniTask OnAwakeAsync()
         {
             await _handler.Prepare();
+        }
+
+        public void OnBootstrapped()
+        {
+            _handler.InstantiateStartupInstances();
         }
 
         public void OnSceneLoaded(Scene targetScene)

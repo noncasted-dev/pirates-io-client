@@ -25,8 +25,6 @@ namespace Global.Services.Updaters.Runtime
 
         private float _speed = 1f;
 
-        public float Speed => _speed;
-
         private void Update()
         {
             var delta = Time.deltaTime * _speed;
@@ -138,6 +136,8 @@ namespace Global.Services.Updaters.Runtime
 
             _logger.OnPreFixedUpdatableRemoved(_preFixedUpdatables.Count);
         }
+
+        public float Speed => _speed;
 
         public void Add(IUpdateSpeedModifiable modifiable)
         {

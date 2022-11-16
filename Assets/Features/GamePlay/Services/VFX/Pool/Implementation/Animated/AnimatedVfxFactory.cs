@@ -1,12 +1,8 @@
-﻿#region
-
-using Common.ObjectsPools.Runtime.Abstract;
+﻿using Common.ObjectsPools.Runtime.Abstract;
 using Cysharp.Threading.Tasks;
 using Global.Services.AssetsFlow.Runtime.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-
-#endregion
 
 namespace GamePlay.Services.VFX.Pool.Implementation.Animated
 {

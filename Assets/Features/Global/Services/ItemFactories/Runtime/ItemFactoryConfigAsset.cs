@@ -1,11 +1,7 @@
-﻿#region
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using GamePlay.Items.Abstract;
 using Global.Common;
 using UnityEngine;
-
-#endregion
 
 namespace Global.Services.ItemFactories.Runtime
 {

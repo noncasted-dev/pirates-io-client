@@ -1,8 +1,4 @@
-﻿#region
-
-using Common.ObjectsPools.Runtime.Abstract;
-
-#endregion
+﻿using Common.ObjectsPools.Runtime.Abstract;
 
 namespace GamePlay.Services.VFX.Pool.Provider
 {

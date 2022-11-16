@@ -1,10 +1,6 @@
-﻿#region
-
-using GamePlay.Common.Paths;
+﻿using GamePlay.Common.Paths;
 using GamePlay.Factions.Common;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Cities.Instance.Root.Runtime
 {

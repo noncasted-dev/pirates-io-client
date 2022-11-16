@@ -19,12 +19,12 @@ namespace GamePlay.Player.Entity.Views.Animators.Runtime
             _logger = new AnimatorLogger(logger, _logSettings);
         }
 
-        private Animator _animator;
-        private AnimatorLogger _logger;
-
         [SerializeField] [EditableObject] private AnimatorLogSettings _logSettings;
 
         [SerializeField] private List<SubAnimator> _subAnimators;
+
+        private Animator _animator;
+        private AnimatorLogger _logger;
 
         public async UniTask PlayAsync(
             AnimationTrigger trigger,

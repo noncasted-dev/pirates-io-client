@@ -1,9 +1,5 @@
-﻿#region
-
-using GamePlay.Items.Abstract;
+﻿using GamePlay.Items.Abstract;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.DroppedObjects.Network.Runtime
 {

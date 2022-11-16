@@ -7,9 +7,9 @@ namespace GamePlay.Player.Entity.Network.Views.Transforms.Runtime
     [DisallowMultipleComponent]
     public class NetworkTransform : RagonBehaviour, INetworkTransform
     {
-        private readonly RagonVector3 _position = new(Vector3.zero, RagonAxis.XY);
         [SerializeField] private float _interpolationBreakDistance = 1f;
         [SerializeField] private float _interpolationSpeed = 1f;
+        private readonly RagonVector3 _position = new(Vector3.zero, RagonAxis.XY);
 
         private Vector2 _lastReplicated;
         private Vector2 _localPosition;

@@ -1,6 +1,4 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using GamePlay.Factions.Selections.Loops.Runtime;
 using GamePlay.Factions.Selections.UI.Runtime;
@@ -9,8 +7,6 @@ using Global.Services.ScenesFlow.Runtime.Abstract;
 using Local.Services.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-
-#endregion
 
 namespace GamePlay.Factions.Selections.Bootstrap
 {
@@ -26,7 +22,7 @@ namespace GamePlay.Factions.Selections.Bootstrap
             ICallbacksRegister callbacksRegister,
             ISceneLoader sceneLoader)
         {
-            var loop = Object.Instantiate(_prefab);
+            var loop = Instantiate(_prefab);
             loop.name = "FactionSelection";
 
             serviceBinder.RegisterComponent(loop).As<IFactionSelectionLoop>();

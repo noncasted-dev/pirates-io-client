@@ -14,9 +14,9 @@ namespace GamePlay.Level.Environment.Tools
         [SerializeField] private Tilemap _grassTop;
         [SerializeField] private Tilemap _ground;
 
-        private bool _isGenerating;
-
         [SerializeField] private GroundColorPalette _palette;
+
+        private bool _isGenerating;
 
 #if UNITY_EDITOR
         private void OnEnable()

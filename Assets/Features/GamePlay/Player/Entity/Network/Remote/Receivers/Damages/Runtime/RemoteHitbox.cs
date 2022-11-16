@@ -25,12 +25,12 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
         }
 
         [SerializeField] private DamageConfigAsset _config;
+
+        [SerializeField] private PlayerSpriteView _sprite;
         private IPlayerEventSender _eventSender;
         private IObjectProvider<AnimatedVfx> _explosion;
 
         private PlayerNetworkRoot _root;
-
-        [SerializeField] private PlayerSpriteView _sprite;
 
         public bool IsLocal => _root.IsLocal;
         public string Id => _root.Entity.Owner.Id;

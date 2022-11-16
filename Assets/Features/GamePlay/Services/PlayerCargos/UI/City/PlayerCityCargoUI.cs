@@ -1,11 +1,7 @@
-﻿#region
-
-using System;
+﻿using System;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.Common.InventoryGrids;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.PlayerCargos.UI.City
 {
@@ -33,7 +29,7 @@ namespace GamePlay.Services.PlayerCargos.UI.City
         {
             _body.SetActive(false);
         }
-        
+
         private void Redraw(IItem[] items)
         {
             _grid.Fill(items);

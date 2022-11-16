@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿#region
+
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Root;
@@ -8,6 +10,8 @@ using GamePlay.Player.Entity.Weapons.Common.Bootstrap.Runtime;
 using GamePlay.Player.Entity.Weapons.Handler.Logs;
 using Global.Services.AssetsFlow.Runtime.Abstract;
 using UnityEngine.AddressableAssets;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
 {

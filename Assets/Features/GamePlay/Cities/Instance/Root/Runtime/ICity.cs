@@ -1,4 +1,8 @@
-﻿using GamePlay.Cities.Instance.Spawning.Runtime;
+﻿#region
+
+using GamePlay.Cities.Instance.Spawning.Runtime;
+
+#endregion
 
 namespace GamePlay.Cities.Instance.Root.Runtime
 {

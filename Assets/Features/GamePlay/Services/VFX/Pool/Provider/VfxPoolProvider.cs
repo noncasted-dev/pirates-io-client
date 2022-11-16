@@ -1,5 +1,9 @@
-﻿using Common.ObjectsPools.Runtime.Abstract;
+﻿#region
+
+using Common.ObjectsPools.Runtime.Abstract;
 using UnityEngine.AddressableAssets;
+
+#endregion
 
 namespace GamePlay.Services.VFX.Pool.Provider
 {
@@ -12,7 +16,7 @@ namespace GamePlay.Services.VFX.Pool.Provider
 
         private readonly IPoolProvider _provider;
 
-        public IObjectProvider<T> GetPool<T>(AssetReference reference) where T : class
+        public IObjectProvider<T> GetPool<T>(AssetReference reference)
         {
             return _provider.GetPool<T>(reference);
         }

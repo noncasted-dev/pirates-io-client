@@ -1,6 +1,10 @@
-﻿using GamePlay.Player.Entity.Setup.Path;
+﻿#region
+
+using GamePlay.Player.Entity.Setup.Path;
 using NaughtyAttributes;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
 {

@@ -1,5 +1,9 @@
-﻿using System;
+﻿#region
+
+using System;
 using UnityEngine;
+
+#endregion
 
 namespace Global.Services.InputViews.Runtime
 {
@@ -11,6 +15,7 @@ namespace Global.Services.InputViews.Runtime
         event Action RangeAttackPerformed;
         event Action RangeAttackCanceled;
         event Action RangeAttackBreakPerformed;
+        event Action InventoryPerformed;
 
         event Action DebugConsolePreformed;
 

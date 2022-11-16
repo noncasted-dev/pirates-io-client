@@ -1,4 +1,8 @@
-﻿using VContainer.Unity;
+﻿#region
+
+using VContainer.Unity;
+
+#endregion
 
 namespace GamePlay.Services.Common.Scope
 {

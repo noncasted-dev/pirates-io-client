@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e42adbe724448caf1e62af404360ab, type: 3}
+  m_Name: LocalService_ObjectsDropper
+  m_EditorClassIdentifier: 
+  _config: {fileID: 11400000, guid: 47c56f082e773ec4c8cba8c98fd18569, type: 2}
+  _poolScene:
+    m_AssetGUID: a6c31ce3030a84a4c9aaf33faebb2876
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _poolPrefab: {fileID: 7289899516980456253, guid: b9787d399a89e4140a68f8a4da2ffafd, type: 3}
+  _dropperPrefab: {fileID: 1268125202344620158, guid: ce6b03f1e2a391d4cb6bf9470ae0fa8d, type: 3}

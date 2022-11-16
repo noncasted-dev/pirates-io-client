@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿#region
+
+using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Items.Abstract
 {
@@ -8,7 +12,7 @@ namespace GamePlay.Items.Abstract
         [SerializeField] private string _name;
         [SerializeField] private bool _isInfinite;
         [SerializeField] private Sprite _icon;
-        
+
         protected abstract ItemType Type { get; }
 
         public IItem Create(int count)
@@ -17,7 +21,7 @@ namespace GamePlay.Items.Abstract
 
             return BuildItem(data, count);
         }
-        
+
         protected abstract IItem BuildItem(BaseItemData data, int count);
     }
 }

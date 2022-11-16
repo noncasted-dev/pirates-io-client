@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿#region
+
+using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Cities.Instance.Spawning.Runtime
 {

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿#region
+
+using System.Collections.Generic;
 using Common.EditableScriptableObjects.Attributes;
 using Common.ObjectsPools.Runtime.Abstract;
 using Cysharp.Threading.Tasks;
@@ -6,6 +8,8 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using VContainer;
+
+#endregion
 
 namespace Common.ObjectsPools.Runtime
 {
@@ -45,7 +49,7 @@ namespace Common.ObjectsPools.Runtime
                 objectHandler.Value.InstantiateStartupInstances();
         }
 
-        public IObjectProvider<T> GetPool<T>(AssetReference reference) where T : class
+        public IObjectProvider<T> GetPool<T>(AssetReference reference)
         {
             if (_pools.ContainsKey(reference.RuntimeKey) == false)
             {

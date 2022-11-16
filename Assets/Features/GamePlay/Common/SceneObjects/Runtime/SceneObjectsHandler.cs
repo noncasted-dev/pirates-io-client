@@ -1,6 +1,10 @@
-﻿using GamePlay.Common.SceneObjects.Logs;
+﻿#region
+
+using GamePlay.Common.SceneObjects.Logs;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace GamePlay.Common.SceneObjects.Runtime
 {

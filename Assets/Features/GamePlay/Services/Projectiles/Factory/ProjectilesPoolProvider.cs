@@ -1,5 +1,9 @@
-﻿using Common.ObjectsPools.Runtime.Abstract;
+﻿#region
+
+using Common.ObjectsPools.Runtime.Abstract;
 using UnityEngine.AddressableAssets;
+
+#endregion
 
 namespace GamePlay.Services.Projectiles.Factory
 {
@@ -13,7 +17,7 @@ namespace GamePlay.Services.Projectiles.Factory
 
         private readonly IPoolProvider _poolProvider;
 
-        public IObjectProvider<T> GetPool<T>(AssetReference reference) where T : class
+        public IObjectProvider<T> GetPool<T>(AssetReference reference)
         {
             return _poolProvider.GetPool<T>(reference);
         }

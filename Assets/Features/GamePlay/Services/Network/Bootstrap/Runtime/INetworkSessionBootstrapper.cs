@@ -1,4 +1,8 @@
-﻿using Local.Services.Abstract;
+﻿#region
+
+using Local.Services.Abstract;
+
+#endregion
 
 namespace GamePlay.Services.Network.Bootstrap.Runtime
 {

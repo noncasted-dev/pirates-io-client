@@ -1,4 +1,6 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Setup.Path;
 using GamePlay.Player.Entity.States.Floating.Runtime;
 using GamePlay.Player.Entity.States.Idles.Runtime;
@@ -7,6 +9,8 @@ using GamePlay.Player.Entity.States.RangeAttacks.Runtime;
 using GamePlay.Player.Entity.States.Respawns.Runtime;
 using GamePlay.Player.Entity.States.Runs.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Setup.Editor
 {

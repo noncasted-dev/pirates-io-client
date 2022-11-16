@@ -1,4 +1,6 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using GamePlay.Level.Config.Runtime;
 using Global.Bootstrappers;
 using Global.GameLoops.Runtime;
@@ -12,6 +14,8 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
+
+#endregion
 
 namespace GamePlay.Common.GlobalBootstrapMocks
 {

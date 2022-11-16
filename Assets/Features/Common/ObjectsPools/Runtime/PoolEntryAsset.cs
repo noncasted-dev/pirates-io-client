@@ -1,7 +1,11 @@
-﻿using Common.ObjectsPools.Runtime.Abstract;
+﻿#region
+
+using Common.ObjectsPools.Runtime.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
+
+#endregion
 
 namespace Common.ObjectsPools.Runtime
 {

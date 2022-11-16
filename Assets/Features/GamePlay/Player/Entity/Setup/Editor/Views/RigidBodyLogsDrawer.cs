@@ -1,6 +1,10 @@
-﻿using Common.ReadOnlyDictionaries.Editor;
+﻿#region
+
+using Common.ReadOnlyDictionaries.Editor;
 using GamePlay.Player.Entity.Views.RigidBodies.Logs;
 using UnityEditor;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Setup.Editor.Views
 {

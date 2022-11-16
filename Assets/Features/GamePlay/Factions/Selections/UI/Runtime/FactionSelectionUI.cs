@@ -1,7 +1,11 @@
-﻿using System;
+﻿#region
+
+using System;
 using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Instance.Root.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Factions.Selections.UI.Runtime
 {
@@ -19,7 +23,7 @@ namespace GamePlay.Factions.Selections.UI.Runtime
             foreach (var entry in _entries)
                 entry.Selected += OnSelectedClicked;
         }
-        
+
         private void OnDisable()
         {
             foreach (var entry in _entries)
@@ -43,7 +47,7 @@ namespace GamePlay.Factions.Selections.UI.Runtime
             while (result == ApprovementResult.Canceled)
             {
                 _selectionCompletion = new UniTaskCompletionSource<CityDefinition>();
-                
+
                 var city = await _selectionCompletion.Task;
                 result = await _approvement.Approve(city);
 

@@ -1,7 +1,11 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Weapons.Common.Root;
 using UnityEngine;
 using VContainer.Unity;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Common.Bootstrap.Runtime
 {

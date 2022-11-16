@@ -1,5 +1,9 @@
-﻿using Global.Services.Loggers.Runtime;
+﻿#region
+
+using Global.Services.Loggers.Runtime;
 using VContainer;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 {

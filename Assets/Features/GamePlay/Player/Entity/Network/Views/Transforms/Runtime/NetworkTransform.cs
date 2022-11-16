@@ -1,6 +1,10 @@
-﻿using Global.Services.Network.Instantiators.Runtime;
+﻿#region
+
+using Global.Services.Network.Instantiators.Runtime;
 using Ragon.Client;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Network.Views.Transforms.Runtime
 {
@@ -21,10 +25,10 @@ namespace GamePlay.Player.Entity.Network.Views.Transforms.Runtime
         private void Awake()
         {
             _transform = transform;
-            
+
             _rigidbody = GetComponent<Rigidbody2D>();
         }
-        
+
         public void SetPosition(Vector2 position)
         {
             _localPosition = position;
@@ -49,15 +53,15 @@ namespace GamePlay.Player.Entity.Network.Views.Transforms.Runtime
         {
             var target = _position.Value;
             var current = _transform.position;
-            
+
             var distance = Vector3.Distance(target, current);
-            
+
             if (distance > _interpolationBreakDistance)
             {
                 _transform.position = target;
                 return;
             }
-            
+
             _transform.position =
                 Vector3.Lerp(_transform.position, target, Time.deltaTime * _interpolationSpeed);
         }

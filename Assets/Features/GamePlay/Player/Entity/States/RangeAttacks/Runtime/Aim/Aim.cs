@@ -1,10 +1,14 @@
-﻿using System.Threading;
+﻿#region
+
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
 using Global.Services.InputViews.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
 {

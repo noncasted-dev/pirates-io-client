@@ -3,7 +3,6 @@
     public enum ItemType
     {
         Money,
-        CannonBall,
-        
+        CannonBall
     }
 }

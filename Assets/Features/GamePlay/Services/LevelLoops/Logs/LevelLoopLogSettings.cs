@@ -1,6 +1,10 @@
-﻿using GamePlay.Common.Paths;
+﻿#region
+
+using GamePlay.Common.Paths;
 using Global.Services.Loggers.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Services.LevelLoops.Logs
 {

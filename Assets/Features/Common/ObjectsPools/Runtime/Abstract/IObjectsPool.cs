@@ -1,4 +1,8 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
+
+#endregion
 
 namespace Common.ObjectsPools.Runtime.Abstract
 {

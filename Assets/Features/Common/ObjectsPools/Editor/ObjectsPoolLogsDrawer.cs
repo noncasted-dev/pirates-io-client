@@ -1,6 +1,10 @@
-﻿using Common.ObjectsPools.Logs;
+﻿#region
+
+using Common.ObjectsPools.Logs;
 using Common.ReadOnlyDictionaries.Editor;
 using UnityEditor;
+
+#endregion
 
 namespace Common.ObjectsPools.Editor
 {

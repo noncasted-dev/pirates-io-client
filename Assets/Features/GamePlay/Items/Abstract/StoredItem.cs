@@ -7,7 +7,7 @@
             Type = type;
             Amount = amount;
         }
-        
+
         public readonly ItemType Type;
         public readonly int Amount;
     }

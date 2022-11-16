@@ -1,6 +1,10 @@
-﻿using Common.ReadOnlyDictionaries.Editor;
+﻿#region
+
+using Common.ReadOnlyDictionaries.Editor;
 using GamePlay.Player.Entity.States.RangeAttacks.Logs;
 using UnityEditor;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Setup.Editor.States
 {

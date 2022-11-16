@@ -1,6 +1,10 @@
-﻿using GamePlay.Services.Network.Service.Abstract;
+﻿#region
+
+using GamePlay.Services.Network.Common.Abstract;
 using Local.Services.Abstract;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Services.Network.Bootstrap.Runtime
 {

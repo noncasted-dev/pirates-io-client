@@ -1,7 +1,11 @@
-﻿using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+﻿#region
+
+using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Views.Sprites.Runtime
 {

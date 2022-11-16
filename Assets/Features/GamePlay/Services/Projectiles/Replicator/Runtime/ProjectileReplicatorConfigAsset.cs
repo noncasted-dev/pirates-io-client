@@ -1,8 +1,12 @@
-﻿using System.Collections.Generic;
+﻿#region
+
+using System.Collections.Generic;
 using GamePlay.Common.Paths;
 using GamePlay.Services.Projectiles.Entity;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+
+#endregion
 
 namespace GamePlay.Services.Projectiles.Replicator.Runtime
 {

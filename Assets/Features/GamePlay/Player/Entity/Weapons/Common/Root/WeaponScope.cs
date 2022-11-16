@@ -1,4 +1,8 @@
-﻿using VContainer.Unity;
+﻿#region
+
+using VContainer.Unity;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Common.Root
 {

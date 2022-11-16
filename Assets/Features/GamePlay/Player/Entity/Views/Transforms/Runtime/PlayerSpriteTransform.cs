@@ -1,7 +1,11 @@
-﻿using Global.Services.Updaters.Runtime.Abstract;
+﻿#region
+
+using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
 using VContainer;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 {

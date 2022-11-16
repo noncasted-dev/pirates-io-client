@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿#region
+
+using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Items.Abstract
 {
@@ -17,13 +21,11 @@ namespace GamePlay.Items.Abstract
             Icon = icon;
             IsInfinite = isInfinite;
         }
-        
+
         public string Name { get; }
         public int Weight { get; }
         public ItemType Type { get; }
         public Sprite Icon { get; }
         public bool IsInfinite { get; }
-        
-        
     }
 }

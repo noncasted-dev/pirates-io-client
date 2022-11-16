@@ -1,5 +1,9 @@
-﻿using GamePlay.Common.Paths;
+﻿#region
+
+using GamePlay.Common.Paths;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Services.TransitionScreens.Runtime
 {

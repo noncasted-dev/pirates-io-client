@@ -1,5 +1,9 @@
-﻿using GamePlay.Common.Areas.Common.Runtime;
+﻿#region
+
+using GamePlay.Common.Areas.Common.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Common.Areas.Implementation.Cities
 {

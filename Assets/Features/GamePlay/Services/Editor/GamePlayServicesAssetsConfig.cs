@@ -1,4 +1,6 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Common.Paths;
 using GamePlay.Level.Environment.Bootstrap;
 using GamePlay.Services.LevelCameras.Runtime;
@@ -8,6 +10,8 @@ using GamePlay.Services.Projectiles.Bootstrap;
 using GamePlay.Services.TransitionScreens.Runtime;
 using GamePlay.Services.VFX.Pool.Provider;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Services.Editor
 {

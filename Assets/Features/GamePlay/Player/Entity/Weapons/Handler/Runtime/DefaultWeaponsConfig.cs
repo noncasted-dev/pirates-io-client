@@ -1,6 +1,10 @@
-﻿using GamePlay.Player.Entity.Setup.Path;
+﻿#region
+
+using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
 {

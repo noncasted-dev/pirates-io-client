@@ -1,6 +1,10 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using VContainer;
+
+#endregion
 
 namespace Common.ObjectsPools.Runtime.Abstract
 {

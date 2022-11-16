@@ -1,4 +1,6 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
 using GamePlay.Player.Entity.Components.DamageProcessors.Runtime;
@@ -16,6 +18,8 @@ using GamePlay.Player.Entity.States.Respawns.Runtime;
 using GamePlay.Player.Entity.States.Runs.Runtime;
 using GamePlay.Player.Entity.Weapons.Handler.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Components.Config
 {

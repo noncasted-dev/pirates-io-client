@@ -1,12 +1,16 @@
-﻿using GamePlay.Cities.Instance.Root.Runtime;
+﻿#region
+
+using GamePlay.Cities.Instance.Root.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Cities.Global.Registry.Runtime
 {
     public class CitiesRegistry : MonoBehaviour, ICitiesRegistry
     {
         [SerializeField] private CitiesDictionary _cities;
-        
+
         public ICity GetCity(CityDefinition definition)
         {
             var faction = definition.Faction;

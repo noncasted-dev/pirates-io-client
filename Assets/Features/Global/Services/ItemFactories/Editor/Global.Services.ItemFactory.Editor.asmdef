@@ -1,0 +1,19 @@
+{
+    "name": "Global.Services.ItemFactory.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c52521c4ca4441fd9ba4be063fec6a1e",
+        "GUID:d945054fb520ae0408f2ec087ffa5163"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

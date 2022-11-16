@@ -1,9 +1,13 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Components.StateMachines.Logs;
 using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Components.StateMachines.Runtime
 {

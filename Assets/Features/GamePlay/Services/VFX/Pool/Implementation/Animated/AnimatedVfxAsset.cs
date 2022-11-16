@@ -1,9 +1,13 @@
-﻿using Common.ObjectsPools.Runtime;
+﻿#region
+
+using Common.ObjectsPools.Runtime;
 using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Common.Paths;
 using Global.Services.AssetsFlow.Runtime.Abstract;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace GamePlay.Services.VFX.Pool.Implementation.Animated
 {

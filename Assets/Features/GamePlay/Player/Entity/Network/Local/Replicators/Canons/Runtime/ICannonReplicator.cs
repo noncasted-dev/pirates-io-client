@@ -1,5 +1,9 @@
-﻿using GamePlay.Services.Projectiles.Entity;
+﻿#region
+
+using GamePlay.Services.Projectiles.Entity;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Network.Local.Replicators.Canons.Runtime
 {

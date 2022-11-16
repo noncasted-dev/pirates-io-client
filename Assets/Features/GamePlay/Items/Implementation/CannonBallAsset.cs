@@ -1,6 +1,10 @@
-﻿using GamePlay.Common.Paths;
+﻿#region
+
+using GamePlay.Common.Paths;
 using GamePlay.Items.Abstract;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Items.Implementation
 {

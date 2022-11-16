@@ -1,7 +1,11 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Cities.Instance.Spawning.Runtime;
 using GamePlay.Factions.Common;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Cities.Instance.Root.Runtime
 {

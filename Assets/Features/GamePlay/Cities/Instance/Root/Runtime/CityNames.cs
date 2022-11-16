@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GamePlay.Cities.Instance.Root.Runtime
+﻿namespace GamePlay.Cities.Instance.Root.Runtime
 {
     public static class CityNames
     {

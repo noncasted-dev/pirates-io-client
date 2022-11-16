@@ -6,6 +6,6 @@
         int Count { get; }
 
         void Add(int amount);
-        void Remove(int amount);
+        void Reduce(int amount);
     }
 }

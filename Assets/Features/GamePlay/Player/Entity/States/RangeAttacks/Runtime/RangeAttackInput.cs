@@ -1,7 +1,11 @@
-﻿using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+﻿#region
+
+using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.States.RangeAttacks.Logs;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack;
 using Global.Services.InputViews.Runtime;
+
+#endregion
 
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime
 {

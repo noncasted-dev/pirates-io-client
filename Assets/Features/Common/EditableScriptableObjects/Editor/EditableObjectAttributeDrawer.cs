@@ -1,8 +1,12 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Common.EditableScriptableObjects.Attributes;
 using UnityEditor;
 using UnityEngine;
+
+#endregion
 
 #if UNITY_EDITOR
 namespace Common.EditableScriptableObjects.Editor

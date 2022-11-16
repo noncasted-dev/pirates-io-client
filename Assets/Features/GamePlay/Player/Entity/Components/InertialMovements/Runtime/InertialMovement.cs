@@ -1,7 +1,11 @@
-﻿using GamePlay.Player.Entity.Components.InertialMovements.Logs;
+﻿#region
+
+using GamePlay.Player.Entity.Components.InertialMovements.Logs;
 using GamePlay.Player.Entity.Views.RigidBodies.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
 {

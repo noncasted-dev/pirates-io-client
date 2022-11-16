@@ -1,5 +1,9 @@
-﻿using System;
+﻿#region
+
+using System;
 using Common.ReadOnlyDictionaries.Runtime;
+
+#endregion
 
 namespace Common.ObjectsPools.Logs
 {

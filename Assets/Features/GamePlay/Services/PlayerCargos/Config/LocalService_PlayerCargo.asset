@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ac7846c99f4a7ebf124bee3380cb30, type: 3}
+  m_Name: LocalService_PlayerCargo
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 4479899924403370617, guid: 9dff908906b496b4ea051bee5fcfee67, type: 3}
+  _travelScene:
+    m_AssetGUID: 9c9407a9293a81e4d95e17cc66b6f560
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _cityScene:
+    m_AssetGUID: 1d6a86b4dca3ef34399e4a1b1836ecfe
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

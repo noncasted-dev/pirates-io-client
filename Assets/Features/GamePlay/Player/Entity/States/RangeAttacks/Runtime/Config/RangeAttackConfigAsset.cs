@@ -1,5 +1,9 @@
-﻿using GamePlay.Player.Entity.Setup.Path;
+﻿#region
+
+using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config
 {

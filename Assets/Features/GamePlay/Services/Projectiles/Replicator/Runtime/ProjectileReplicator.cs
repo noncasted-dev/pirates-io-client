@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿#region
+
+using System.Collections.Generic;
 using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
@@ -10,6 +12,8 @@ using GamePlay.Services.VFX.Pool.Provider;
 using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace GamePlay.Services.Projectiles.Replicator.Runtime
 {

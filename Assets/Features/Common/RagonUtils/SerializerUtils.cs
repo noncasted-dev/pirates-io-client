@@ -1,5 +1,9 @@
-﻿using Ragon.Common;
+﻿#region
+
+using Ragon.Common;
 using UnityEngine;
+
+#endregion
 
 namespace Common.RagonUtils
 {

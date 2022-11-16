@@ -1,9 +1,13 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Global.Services.Common.Abstract;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using VContainer;
+
+#endregion
 
 namespace Global.Bootstrappers
 {

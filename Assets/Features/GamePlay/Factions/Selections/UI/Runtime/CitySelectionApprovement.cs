@@ -1,8 +1,12 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Instance.Root.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
+#endregion
 
 namespace GamePlay.Factions.Selections.UI.Runtime
 {
@@ -12,7 +16,7 @@ namespace GamePlay.Factions.Selections.UI.Runtime
         [SerializeField] private Button _apply;
         [SerializeField] private Button _cancel;
         [SerializeField] private TMP_Text _cityName;
-        
+
         private UniTaskCompletionSource<ApprovementResult> _completion;
 
         private void OnEnable()
@@ -20,7 +24,7 @@ namespace GamePlay.Factions.Selections.UI.Runtime
             _apply.onClick.AddListener(OnApplyClicked);
             _cancel.onClick.AddListener(OnCancelClicked);
         }
-        
+
         private void OnDisable()
         {
             _apply.onClick.RemoveListener(OnApplyClicked);
@@ -31,11 +35,11 @@ namespace GamePlay.Factions.Selections.UI.Runtime
         {
             gameObject.SetActive(true);
             _cityName.text = $"Respawn in {city.Name.AsString()}?";
-            
+
             _completion = new UniTaskCompletionSource<ApprovementResult>();
 
             var result = await _completion.Task;
-            
+
             gameObject.SetActive(false);
 
             return result;

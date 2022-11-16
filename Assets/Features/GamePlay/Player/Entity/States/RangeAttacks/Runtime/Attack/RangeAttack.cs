@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region
+
+using System;
 using Common.Structs;
 using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
@@ -12,6 +14,8 @@ using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Player.Entity.Weapons.Handler.Runtime;
+
+#endregion
 
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
 {
@@ -63,7 +67,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         public void OnInput()
         {
             _hasInput = true;
-            
+
             if (_actionsStateProvider.CanShoot == false)
                 return;
 
@@ -123,7 +127,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             _logger.OnEntered();
 
             var aim = await _aim.AimAsync();
-            
+
             if (_actionsStateProvider.CanShoot == false)
             {
                 _hasInput = false;

@@ -1,16 +1,22 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Root;
 using GamePlay.Services.Common.Scope;
+using GamePlay.Services.Network.PlayerDataProvider.Runtime;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Logs;
 using Global.Services.AssetsFlow.Runtime.Abstract;
 using Global.Services.Network.Instantiators.Runtime;
 using Global.Services.Profiles.Storage;
+using Ragon.Client;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
+
+#endregion
 
 namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
 {
@@ -23,8 +29,10 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             LevelScope scope,
             IPlayerTransformPresenter transformPresenter,
             IProfileStorageProvider profileStorageProvider,
+            INetworkPlayerDataPresenter networkPlayerDataPresenter,
             PlayerFactoryLogger logger)
         {
+            _networkPlayerDataPresenter = networkPlayerDataPresenter;
             _transformPresenter = transformPresenter;
             _profileStorageProvider = profileStorageProvider;
             _networkInstantiator = networkInstantiator;
@@ -42,6 +50,7 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
         private IProfileStorageProvider _profileStorageProvider;
         private LevelScope _scope;
         private IPlayerTransformPresenter _transformPresenter;
+        private INetworkPlayerDataPresenter _networkPlayerDataPresenter;
 
         public async UniTask<IPlayerRoot> Create(Vector2 position)
         {
@@ -51,6 +60,10 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
                 _networkPrefab,
                 position,
                 payload);
+
+            var entity = networkObject.GetComponent<RagonEntity>();
+
+            _networkPlayerDataPresenter.SetEntityId(entity.Id);
 
             var playerObject = await _instantiator.InstantiateAsync(Vector2.zero);
             playerObject.name = "Player";

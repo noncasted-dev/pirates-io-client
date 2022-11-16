@@ -1,5 +1,9 @@
-﻿using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
+﻿#region
+
+using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
 {

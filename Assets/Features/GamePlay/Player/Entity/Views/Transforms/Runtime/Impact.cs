@@ -1,5 +1,9 @@
-﻿using Global.Services.Updaters.Runtime.Abstract;
+﻿#region
+
+using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 {

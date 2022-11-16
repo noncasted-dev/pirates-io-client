@@ -1,4 +1,6 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Common.SceneObjects.Global;
 using Global.Common;
 using Global.Services.ApplicationProxies.Runtime;
@@ -18,6 +20,8 @@ using Global.Services.ResourcesCleaners.Runtime;
 using Global.Services.ScenesFlow.Runtime;
 using Global.Services.Updaters.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace Global.Services.Loggers.Editor
 {

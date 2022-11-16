@@ -1,6 +1,10 @@
-﻿using System;
+﻿#region
+
+using System;
 using Common.ReadOnlyDictionaries.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Views.Pivots.Runtime
 {

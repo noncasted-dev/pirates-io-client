@@ -1,5 +1,9 @@
-﻿using GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime;
+﻿#region
+
+using GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime;
 using Ragon.Client;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Network.Remote.BuildInvoker
 {

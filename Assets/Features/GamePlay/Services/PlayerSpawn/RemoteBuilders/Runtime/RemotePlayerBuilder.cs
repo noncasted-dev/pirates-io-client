@@ -1,4 +1,6 @@
-﻿using Common.ObjectsPools.Runtime.Abstract;
+﻿#region
+
+using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Player.Entity.Network.Remote.Bootstrap;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Services.Projectiles.Replicator.Runtime;
@@ -11,6 +13,8 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
+
+#endregion
 
 namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
 {

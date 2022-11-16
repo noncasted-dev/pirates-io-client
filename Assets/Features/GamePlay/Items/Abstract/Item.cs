@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿#region
+
+using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Items.Abstract
 {
@@ -28,7 +32,7 @@ namespace GamePlay.Items.Abstract
             _count += amount;
         }
 
-        public void Remove(int amount)
+        public void Reduce(int amount)
         {
             if (amount < 0)
             {

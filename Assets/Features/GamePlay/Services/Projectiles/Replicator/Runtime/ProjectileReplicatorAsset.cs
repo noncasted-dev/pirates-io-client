@@ -1,9 +1,13 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Local.Services.Abstract;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace GamePlay.Services.Projectiles.Replicator.Runtime
 {

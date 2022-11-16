@@ -1,4 +1,6 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using Global.GameLoops.Runtime;
 using Global.Services.Common.Config.Abstract;
 using Global.Services.Common.Scope;
@@ -7,6 +9,8 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
+
+#endregion
 
 namespace Global.Bootstrappers
 {

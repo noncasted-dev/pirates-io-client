@@ -1,6 +1,10 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Level.Environment.Chunks.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Level.Environment.Chunks.Editor
 {

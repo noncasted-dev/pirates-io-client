@@ -1,10 +1,14 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.Setup.Path;
 using GamePlay.Player.Entity.Weapons.Handler.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Setup.Editor
 {

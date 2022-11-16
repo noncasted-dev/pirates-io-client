@@ -1,8 +1,12 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Instance.Root.Runtime;
 using GamePlay.Factions.Selections.UI.Runtime;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace GamePlay.Factions.Selections.Loops.Runtime
 {
@@ -13,15 +17,15 @@ namespace GamePlay.Factions.Selections.Loops.Runtime
         {
             _ui = ui;
         }
-        
+
         private IFactionSelectionUI _ui;
-        
+
         public async UniTask<CityDefinition> SelectAsync()
         {
             _ui.Open();
-            
+
             var city = await _ui.SelectAsync();
-            
+
             _ui.Close();
 
             return city;

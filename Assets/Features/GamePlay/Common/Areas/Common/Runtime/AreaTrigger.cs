@@ -1,19 +1,23 @@
-﻿using System;
+﻿#region
+
+using System;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Common.Areas.Common.Runtime
 {
     [DisallowMultipleComponent]
     public class AreaTrigger : MonoBehaviour
     {
-        public event Action<IAreaInteractor> Entered; 
-        public event Action<IAreaInteractor> Exited; 
+        public event Action<IAreaInteractor> Entered;
+        public event Action<IAreaInteractor> Exited;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (IsInteractor(other, out var interactor) == false)
                 return;
-            
+
             Entered?.Invoke(interactor);
         }
 
@@ -21,11 +25,10 @@ namespace GamePlay.Common.Areas.Common.Runtime
         {
             if (IsInteractor(other, out var interactor) == false)
                 return;
-            
+
             Exited?.Invoke(interactor);
         }
 
-        
         private bool IsInteractor(Component other, out IAreaInteractor interactor)
         {
             if (other.TryGetComponent(out interactor) == false)

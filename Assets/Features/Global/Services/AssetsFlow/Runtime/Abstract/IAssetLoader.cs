@@ -1,5 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using UnityEngine.AddressableAssets;
+
+#endregion
 
 namespace Global.Services.AssetsFlow.Runtime.Abstract
 {

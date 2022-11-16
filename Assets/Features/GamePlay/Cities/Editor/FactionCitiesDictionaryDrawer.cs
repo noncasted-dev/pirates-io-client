@@ -1,5 +1,9 @@
-﻿using GamePlay.Cities.Global.Registry.Runtime;
+﻿#region
+
+using GamePlay.Cities.Global.Registry.Runtime;
 using UnityEditor;
+
+#endregion
 
 namespace GamePlay.Cities.Editor
 {

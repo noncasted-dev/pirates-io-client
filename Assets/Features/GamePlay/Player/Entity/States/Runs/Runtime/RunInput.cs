@@ -1,7 +1,11 @@
-﻿using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+﻿#region
+
+using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.States.Runs.Logs;
 using Global.Services.InputViews.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.States.Runs.Runtime
 {

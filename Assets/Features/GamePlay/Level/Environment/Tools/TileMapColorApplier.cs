@@ -1,6 +1,10 @@
-﻿using NaughtyAttributes;
+﻿#region
+
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+
+#endregion
 
 namespace GamePlay.Level.Environment.Tools
 {

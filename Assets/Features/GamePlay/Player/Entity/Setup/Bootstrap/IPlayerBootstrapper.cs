@@ -1,5 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using VContainer.Unity;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Setup.Bootstrap
 {

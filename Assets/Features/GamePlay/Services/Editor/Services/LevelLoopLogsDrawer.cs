@@ -1,6 +1,10 @@
-﻿using Common.ReadOnlyDictionaries.Editor;
+﻿#region
+
+using Common.ReadOnlyDictionaries.Editor;
 using GamePlay.Services.LevelLoops.Logs;
 using UnityEditor;
+
+#endregion
 
 namespace GamePlay.Services.Editor.Services
 {

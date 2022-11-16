@@ -1,4 +1,6 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Factions.Selections.Loops.Runtime;
@@ -11,6 +13,8 @@ using Global.Services.CurrentCameras.Runtime;
 using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace GamePlay.Services.LevelLoops.Runtime
 {
@@ -65,7 +69,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
             var selectedCity = await _factionSelection.SelectAsync();
             var cityInstance = _citiesRegistry.GetCity(selectedCity);
             var spawnPosition = cityInstance.SpawnPoints.GetRandom();
-            
+
             _logger.OnPlayerSpawn();
 
             _player = await _playerFactory.Create(spawnPosition);

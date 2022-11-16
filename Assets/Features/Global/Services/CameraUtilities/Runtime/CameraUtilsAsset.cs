@@ -1,10 +1,14 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using Global.Common;
 using Global.Services.CameraUtilities.Logs;
 using Global.Services.Common.Abstract;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+
+#endregion
 
 namespace Global.Services.CameraUtilities.Runtime
 {

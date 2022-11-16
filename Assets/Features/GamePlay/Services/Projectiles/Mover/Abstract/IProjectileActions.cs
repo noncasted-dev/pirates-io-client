@@ -1,4 +1,8 @@
-﻿using GamePlay.Common.Damages;
+﻿#region
+
+using GamePlay.Common.Damages;
+
+#endregion
 
 namespace GamePlay.Services.Projectiles.Mover.Abstract
 {

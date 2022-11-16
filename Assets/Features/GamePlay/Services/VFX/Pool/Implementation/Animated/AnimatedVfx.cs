@@ -1,6 +1,10 @@
-﻿using System;
+﻿#region
+
+using System;
 using Common.ObjectsPools.Runtime.Abstract;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Services.VFX.Pool.Implementation.Animated
 {

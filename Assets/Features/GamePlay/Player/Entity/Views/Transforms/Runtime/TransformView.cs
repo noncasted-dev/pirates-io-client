@@ -1,8 +1,12 @@
-﻿using Common.Structs;
+﻿#region
+
+using Common.Structs;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.Transforms.Logs;
 using UnityEngine;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 {

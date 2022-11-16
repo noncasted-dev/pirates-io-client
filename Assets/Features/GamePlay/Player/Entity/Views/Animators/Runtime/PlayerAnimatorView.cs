@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿#region
+
+using System.Collections.Generic;
 using System.Threading;
 using Common.EditableScriptableObjects.Attributes;
 using Cysharp.Threading.Tasks;
@@ -7,6 +9,8 @@ using GamePlay.Player.Entity.Views.Animators.Logs;
 using UnityEngine;
 using VContainer;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Views.Animators.Runtime
 {

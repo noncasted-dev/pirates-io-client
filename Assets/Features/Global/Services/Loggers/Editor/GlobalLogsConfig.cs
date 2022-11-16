@@ -1,4 +1,6 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Common.SceneObjects.Logs;
 using Global.Common;
 using Global.GameLoops.Logs;
@@ -20,6 +22,8 @@ using Global.Services.ResourcesCleaners.Logs;
 using Global.Services.ScenesFlow.Logs;
 using Global.Services.Updaters.Logs;
 using UnityEngine;
+
+#endregion
 
 namespace Global.Services.Loggers.Editor
 {

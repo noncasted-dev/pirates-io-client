@@ -1,5 +1,9 @@
-﻿using Global.Services.FilesFlow.Runtime.Abstract;
+﻿#region
+
+using Global.Services.FilesFlow.Runtime.Abstract;
 using UnityEngine;
+
+#endregion
 
 namespace Global.Services.FilesFlow.Runtime
 {

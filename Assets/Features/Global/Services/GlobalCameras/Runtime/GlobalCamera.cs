@@ -1,7 +1,11 @@
-﻿using Global.Services.Common.Abstract;
+﻿#region
+
+using Global.Services.Common.Abstract;
 using Global.Services.GlobalCameras.Logs;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace Global.Services.GlobalCameras.Runtime
 {

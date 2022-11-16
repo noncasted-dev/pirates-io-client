@@ -1,4 +1,8 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
+
+#endregion
 
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
 {

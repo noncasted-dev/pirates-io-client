@@ -1,10 +1,14 @@
-﻿using System;
+﻿#region
+
+using System;
 using Global.Services.CameraUtilities.Runtime;
 using Global.Services.Common.Abstract;
 using Global.Services.InputViews.Logs;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using VContainer;
+
+#endregion
 
 namespace Global.Services.InputViews.Runtime
 {
@@ -50,6 +54,7 @@ namespace Global.Services.InputViews.Runtime
         public event Action RangeAttackPerformed;
         public event Action RangeAttackCanceled;
         public event Action RangeAttackBreakPerformed;
+        public event Action InventoryPerformed;
         public event Action DebugConsolePreformed;
 
         public float GetAngleFrom(Vector2 from)
@@ -107,6 +112,8 @@ namespace Global.Services.InputViews.Runtime
             _gamePlay.RangeAttack.canceled += OnRangeAttackCanceled;
             _gamePlay.RangeAttackBreak.performed += OnRangeAttackBreakPerformed;
 
+            _gamePlay.Inventory.performed += OnInventoryPerformed;
+
             _debug.Console.performed += OnDebugConsolePreformed;
         }
 
@@ -118,6 +125,8 @@ namespace Global.Services.InputViews.Runtime
             _gamePlay.RangeAttack.performed -= OnRangeAttackPerformed;
             _gamePlay.RangeAttack.canceled -= OnRangeAttackCanceled;
             _gamePlay.RangeAttackBreak.performed -= OnRangeAttackBreakPerformed;
+
+            _gamePlay.Inventory.performed -= OnInventoryPerformed;
 
             _debug.Console.performed -= OnDebugConsolePreformed;
         }
@@ -162,6 +171,11 @@ namespace Global.Services.InputViews.Runtime
         private void OnDebugConsolePreformed(InputAction.CallbackContext context)
         {
             DebugConsolePreformed?.Invoke();
+        }
+
+        private void OnInventoryPerformed(InputAction.CallbackContext context)
+        {
+            InventoryPerformed?.Invoke();
         }
     }
 }

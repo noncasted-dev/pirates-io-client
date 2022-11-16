@@ -1,4 +1,6 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.InertialMovements.Logs;
 using GamePlay.Player.Entity.Components.Rotations.Logs;
 using GamePlay.Player.Entity.Components.StateMachines.Logs;
@@ -15,6 +17,8 @@ using GamePlay.Player.Entity.Views.Sprites.Logs;
 using GamePlay.Player.Entity.Views.Transforms.Logs;
 using GamePlay.Player.Entity.Weapons.Handler.Logs;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Setup.Editor
 {

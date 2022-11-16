@@ -1,4 +1,6 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow;
 using GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter;
 using GamePlay.Player.Entity.Weapons.Cannon.Views.Sprites.Runtime;
@@ -6,6 +8,8 @@ using GamePlay.Player.Entity.Weapons.Cannon.Views.Transforms;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Root
 {

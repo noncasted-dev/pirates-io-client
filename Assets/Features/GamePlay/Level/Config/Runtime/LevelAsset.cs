@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿#region
+
+using System.Collections.Generic;
 using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Common.Paths;
 using GamePlay.Factions.Selections.Bootstrap;
@@ -7,6 +9,9 @@ using GamePlay.Services.Common.Scope;
 using GamePlay.Services.LevelCameras.Runtime;
 using GamePlay.Services.LevelLoops.Runtime;
 using GamePlay.Services.Network.Bootstrap.Runtime;
+using GamePlay.Services.Network.PlayerDataProvider.Runtime;
+using GamePlay.Services.ObjectDroppers.Bootstrap;
+using GamePlay.Services.PlayerCargos.Bootstrap;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime;
@@ -18,6 +23,8 @@ using Local.ComposedSceneConfig;
 using Local.Services.Abstract;
 using UnityEngine;
 using VContainer.Unity;
+
+#endregion
 
 namespace GamePlay.Level.Config.Runtime
 {
@@ -38,6 +45,9 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField] [EditableObject] private ProjectileReplicatorAsset _projectileReplicator;
         [SerializeField] [EditableObject] private PlayerPositionProviderAsset _playerPositionProvider;
         [SerializeField] [EditableObject] private FactionSelectionAsset _factionSelection;
+        [SerializeField] [EditableObject] private NetworkPlayerDataAsset _networkPlayerData;
+        [SerializeField] [EditableObject] private ObjectDropperAsset _objectDropper;
+        [SerializeField] [EditableObject] private PlayerCargoAsset _playerCargo;
 
         protected override LocalServiceAsset[] AssignServices()
         {
@@ -54,7 +64,10 @@ namespace GamePlay.Level.Config.Runtime
                 _vfxPool,
                 _projectileReplicator,
                 _playerPositionProvider,
-                _factionSelection
+                _factionSelection,
+                _networkPlayerData,
+                _objectDropper,
+                _playerCargo
             };
 
             return list.ToArray();

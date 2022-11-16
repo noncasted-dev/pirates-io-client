@@ -1,6 +1,10 @@
-﻿using System;
+﻿#region
+
+using System;
 using Common.Structs;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Network.Remote.Receivers.Sprites.Runtime
 {

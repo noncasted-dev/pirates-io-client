@@ -1,4 +1,6 @@
-﻿using Common.ObjectsPools.Runtime.Abstract;
+﻿#region
+
+using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
 using GamePlay.Common.Damages;
 using GamePlay.Player.Entity.Network.Root.Runtime;
@@ -6,6 +8,8 @@ using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using Ragon.Client;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
 {

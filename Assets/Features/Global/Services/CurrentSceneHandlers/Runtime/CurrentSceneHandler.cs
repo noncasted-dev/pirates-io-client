@@ -1,4 +1,6 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using Global.Services.CurrentSceneHandlers.Logs;
 using Global.Services.ResourcesCleaners.Runtime;
 using Global.Services.ScenesFlow.Runtime.Abstract;
@@ -6,6 +8,8 @@ using Local.ComposedSceneConfig;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using VContainer;
+
+#endregion
 
 namespace Global.Services.CurrentSceneHandlers.Runtime
 {

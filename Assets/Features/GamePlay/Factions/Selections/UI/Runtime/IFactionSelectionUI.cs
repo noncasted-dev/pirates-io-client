@@ -1,5 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Instance.Root.Runtime;
+
+#endregion
 
 namespace GamePlay.Factions.Selections.UI.Runtime
 {

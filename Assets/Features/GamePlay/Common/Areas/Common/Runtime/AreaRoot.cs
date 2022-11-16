@@ -1,5 +1,9 @@
-﻿using GamePlay.Common.SceneObjects.Runtime;
+﻿#region
+
+using GamePlay.Common.SceneObjects.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Common.Areas.Common.Runtime
 {
@@ -19,7 +23,7 @@ namespace GamePlay.Common.Areas.Common.Runtime
             _trigger.Entered += OnEntered;
             _trigger.Exited += OnExited;
         }
-        
+
         protected override void OnDisabled()
         {
             _trigger.Entered -= OnEntered;

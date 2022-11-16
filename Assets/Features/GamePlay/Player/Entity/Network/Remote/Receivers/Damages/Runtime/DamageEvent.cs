@@ -1,8 +1,12 @@
-﻿using Common.RagonUtils;
+﻿#region
+
+using Common.RagonUtils;
 using GamePlay.Common.Damages;
 using Ragon.Client;
 using Ragon.Common;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
 {

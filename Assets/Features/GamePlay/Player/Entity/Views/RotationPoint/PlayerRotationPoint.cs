@@ -1,5 +1,9 @@
-﻿using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+﻿#region
+
+using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Views.RotationPoint
 {

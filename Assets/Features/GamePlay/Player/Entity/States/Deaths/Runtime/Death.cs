@@ -1,6 +1,10 @@
-﻿using GamePlay.Player.Entity.Components.StateMachines.Runtime;
+﻿#region
+
+using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
+
+#endregion
 
 namespace GamePlay.Player.Entity.States.Deaths.Runtime
 {

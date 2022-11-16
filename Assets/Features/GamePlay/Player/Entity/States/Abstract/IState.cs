@@ -1,4 +1,8 @@
-﻿using GamePlay.Player.Entity.States.Common;
+﻿#region
+
+using GamePlay.Player.Entity.States.Common;
+
+#endregion
 
 namespace GamePlay.Player.Entity.States.Abstract
 {

@@ -1,5 +1,9 @@
-﻿using UnityEngine;
+﻿#region
+
+using UnityEngine;
 using UnityEngine.UI;
+
+#endregion
 
 namespace Common.Artwork.UI.UI_pack.Scripts
 {

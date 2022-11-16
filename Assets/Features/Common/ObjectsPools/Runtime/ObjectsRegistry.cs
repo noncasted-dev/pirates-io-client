@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿#region
+
+using System.Collections.Generic;
 using Common.ObjectsPools.Runtime.Abstract;
 using UnityEngine;
+
+#endregion
 
 namespace Common.ObjectsPools.Runtime
 {

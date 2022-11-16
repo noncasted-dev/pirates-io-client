@@ -1,7 +1,11 @@
-﻿using GamePlay.Common.Areas.Common.Runtime;
+﻿#region
+
+using GamePlay.Common.Areas.Common.Runtime;
 using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime
 {
@@ -15,15 +19,15 @@ namespace GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime
         }
 
         private IActionsStatePresenter _actionsStatePresenter;
-        
+
         public void OnCityEntered()
         {
-            _actionsStatePresenter.DisableShooting();            
+            _actionsStatePresenter.DisableShooting();
         }
 
         public void OnAreaExited()
         {
-            _actionsStatePresenter.EnableShooting();            
+            _actionsStatePresenter.EnableShooting();
         }
     }
 }

@@ -1,8 +1,12 @@
-﻿using Global.Services.Common.Abstract;
+﻿#region
+
+using Global.Services.Common.Abstract;
 using Global.Services.InputViews.Runtime;
 using IngameDebugConsole;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace Global.Services.DebugConsoles.Runtime
 {

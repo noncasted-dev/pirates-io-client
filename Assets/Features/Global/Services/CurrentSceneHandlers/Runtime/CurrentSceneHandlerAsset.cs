@@ -1,4 +1,6 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using Global.Common;
 using Global.Services.Common.Abstract;
 using Global.Services.CurrentSceneHandlers.Logs;
@@ -6,6 +8,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
+
+#endregion
 
 namespace Global.Services.CurrentSceneHandlers.Runtime
 {

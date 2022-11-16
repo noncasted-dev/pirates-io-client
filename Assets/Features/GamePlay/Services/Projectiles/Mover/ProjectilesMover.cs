@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿#region
+
+using System.Collections.Generic;
 using GamePlay.Common.Damages;
 using GamePlay.Services.Projectiles.Logs;
 using GamePlay.Services.Projectiles.Mover.Abstract;
@@ -7,6 +9,8 @@ using Local.Services.Abstract.Callbacks;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Services.Projectiles.Mover
 {

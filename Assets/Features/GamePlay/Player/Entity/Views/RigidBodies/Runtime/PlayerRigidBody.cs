@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using GamePlay.Player.Entity.Network.Views.Transforms.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
@@ -7,6 +9,8 @@ using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
 using VContainer;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 {
@@ -43,7 +47,7 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
         private Rigidbody2D _rigidbody;
         private IUpdater _updater;
-        
+
         public Vector2 Position => _rigidbody.position;
 
         public void OnAwake()
@@ -74,7 +78,7 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
                 }
 
             _rigidbody.MovePosition(_currentPosition);
-            
+
             _interactions.Clear();
         }
 

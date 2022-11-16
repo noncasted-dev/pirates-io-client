@@ -1,4 +1,6 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Common.SceneObjects.Global;
 using Global.Common;
 using Global.Services.ApplicationProxies.Runtime;
@@ -12,6 +14,7 @@ using Global.Services.DebugConsoles.Runtime;
 using Global.Services.FilesFlow.Runtime;
 using Global.Services.GlobalCameras.Runtime;
 using Global.Services.InputViews.Runtime;
+using Global.Services.ItemFactories.Runtime;
 using Global.Services.LoadingScreens.Runtime;
 using Global.Services.Loggers.Runtime;
 using Global.Services.Network.Bootstrap;
@@ -21,6 +24,8 @@ using Global.Services.ResourcesCleaners.Runtime;
 using Global.Services.ScenesFlow.Runtime;
 using Global.Services.Updaters.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace Global.Services.Common.Config.Standard
 {
@@ -46,6 +51,7 @@ namespace Global.Services.Common.Config.Standard
         [SerializeField] [EditableObject] private NetworkAsset _network;
         [SerializeField] [EditableObject] private ProfileAsset _profile;
         [SerializeField] [EditableObject] private PersistentInventoryAsset _persistentInventory;
+        [SerializeField] [EditableObject] private ItemFactoryAsset _itemFactory;
 
         public override GlobalServiceAsset[] GetAssets()
         {
@@ -68,7 +74,8 @@ namespace Global.Services.Common.Config.Standard
                 _debugConsole,
                 _network,
                 _profile,
-                _persistentInventory
+                _persistentInventory,
+                _itemFactory
             };
         }
     }

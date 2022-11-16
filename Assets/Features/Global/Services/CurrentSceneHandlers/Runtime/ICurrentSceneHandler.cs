@@ -1,5 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using Local.ComposedSceneConfig;
+
+#endregion
 
 namespace Global.Services.CurrentSceneHandlers.Runtime
 {

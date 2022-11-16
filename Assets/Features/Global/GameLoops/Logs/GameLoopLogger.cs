@@ -1,4 +1,8 @@
-﻿using Global.Services.Loggers.Runtime;
+﻿#region
+
+using Global.Services.Loggers.Runtime;
+
+#endregion
 
 namespace Global.GameLoops.Logs
 {

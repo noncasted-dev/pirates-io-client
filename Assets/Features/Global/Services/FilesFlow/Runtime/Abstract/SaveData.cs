@@ -1,4 +1,8 @@
-﻿using System;
+﻿#region
+
+using System;
+
+#endregion
 
 namespace Global.Services.FilesFlow.Runtime.Abstract
 {

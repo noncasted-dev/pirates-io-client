@@ -1,9 +1,13 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Common.Paths;
 using GamePlay.Services.LevelCameras.Logs;
 using GamePlay.Services.Projectiles.Logs;
 using GamePlay.Services.TransitionScreens.Logs;
 using UnityEngine;
+
+#endregion
 
 namespace GamePlay.Services.Editor
 {

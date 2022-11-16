@@ -1,5 +1,9 @@
-﻿using GamePlay.Services.Projectiles.Entity;
+﻿#region
+
+using GamePlay.Services.Projectiles.Entity;
 using UnityEngine.AddressableAssets;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 {

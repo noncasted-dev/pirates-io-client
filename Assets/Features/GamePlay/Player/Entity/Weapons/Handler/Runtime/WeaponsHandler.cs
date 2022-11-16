@@ -1,6 +1,10 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Weapons.Cannon.Root;
+
+#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
 {

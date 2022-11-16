@@ -1,9 +1,13 @@
-﻿using GamePlay.Player.Entity.Components.StateMachines.Runtime;
+﻿#region
+
+using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.States.Floating.Logs;
 using GamePlay.Player.Entity.States.Idles.Runtime;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack;
 using GamePlay.Player.Entity.States.Runs.Runtime;
+
+#endregion
 
 namespace GamePlay.Player.Entity.States.Floating.Runtime
 {

@@ -1,10 +1,14 @@
-﻿using GamePlay.Services.LevelCameras.Logs;
+﻿#region
+
+using GamePlay.Services.LevelCameras.Logs;
 using Global.Services.CurrentCameras.Runtime;
 using Global.Services.InputViews.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
 using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace GamePlay.Services.LevelCameras.Runtime
 {

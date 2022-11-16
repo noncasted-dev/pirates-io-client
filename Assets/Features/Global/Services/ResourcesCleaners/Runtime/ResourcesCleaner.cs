@@ -1,8 +1,12 @@
-﻿using System;
+﻿#region
+
+using System;
 using Cysharp.Threading.Tasks;
 using Global.Services.ResourcesCleaners.Logs;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace Global.Services.ResourcesCleaners.Runtime
 {

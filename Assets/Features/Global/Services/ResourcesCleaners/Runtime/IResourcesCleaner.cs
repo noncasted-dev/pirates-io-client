@@ -1,4 +1,8 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
+
+#endregion
 
 namespace Global.Services.ResourcesCleaners.Runtime
 {

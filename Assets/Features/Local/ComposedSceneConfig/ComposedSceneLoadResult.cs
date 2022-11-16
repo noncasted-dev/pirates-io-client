@@ -1,8 +1,12 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using Global.Services.ScenesFlow.Handling.Result;
 using Local.Services.Abstract.Callbacks;
 using VContainer.Unity;
+
+#endregion
 
 namespace Local.ComposedSceneConfig
 {

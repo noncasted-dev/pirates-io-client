@@ -1,6 +1,10 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using Global.Services.ScenesFlow.Handling.Result;
 using VContainer.Unity;
+
+#endregion
 
 namespace Global.Services.ScenesFlow.Runtime.Abstract
 {

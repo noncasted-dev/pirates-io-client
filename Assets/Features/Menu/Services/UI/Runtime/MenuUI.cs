@@ -1,7 +1,11 @@
-﻿using TMPro;
+﻿#region
+
+using TMPro;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
+
+#endregion
 
 namespace Menu.Services.UI.Runtime
 {

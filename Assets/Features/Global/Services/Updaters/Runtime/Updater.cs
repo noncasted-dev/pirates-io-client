@@ -1,7 +1,11 @@
-﻿using Global.Services.Updaters.Logs;
+﻿#region
+
+using Global.Services.Updaters.Logs;
 using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace Global.Services.Updaters.Runtime
 {

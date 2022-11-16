@@ -1,6 +1,10 @@
+#region
+
 using Global.Common;
 using Global.Services.Loggers.Runtime;
 using UnityEngine;
+
+#endregion
 
 namespace Global.Services.Profiles.Logs
 {

@@ -1,4 +1,8 @@
-﻿using VContainer;
+﻿#region
+
+using VContainer;
+
+#endregion
 
 namespace Local.Services.DependenciesResolve
 {

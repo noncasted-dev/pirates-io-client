@@ -1,6 +1,10 @@
-﻿using Global.Common;
+﻿#region
+
+using Global.Common;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+
+#endregion
 
 namespace Local.ComposedSceneConfig
 {

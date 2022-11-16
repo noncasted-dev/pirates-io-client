@@ -1,8 +1,12 @@
-﻿using Global.Common;
+﻿#region
+
+using Global.Common;
 using Global.Services.Common.Abstract;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+
+#endregion
 
 namespace Global.Services.PersistentInventories.Runtime
 {

@@ -1,5 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿#region
+
+using Cysharp.Threading.Tasks;
 using Ragon.Client;
+
+#endregion
 
 namespace Global.Services.Network.Session.Leave.Runtime
 {

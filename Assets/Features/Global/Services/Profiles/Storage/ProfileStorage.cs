@@ -1,7 +1,11 @@
-﻿using Global.Services.Profiles.Logs;
+﻿#region
+
+using Global.Services.Profiles.Logs;
 using NaughtyAttributes;
 using UnityEngine;
 using VContainer;
+
+#endregion
 
 namespace Global.Services.Profiles.Storage
 {

@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿#region
+
+using System.Collections.Generic;
 using GamePlay.Cities.Instance.Root.Runtime;
 using GamePlay.Items.Abstract;
 using UnityEngine;
+
+#endregion
 
 namespace Global.Services.PersistentInventories.Runtime
 {

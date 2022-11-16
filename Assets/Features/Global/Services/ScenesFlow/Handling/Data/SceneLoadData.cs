@@ -1,6 +1,10 @@
-﻿using Global.Services.ScenesFlow.Handling.Result;
+﻿#region
+
+using Global.Services.ScenesFlow.Handling.Result;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.ResourceProviders;
+
+#endregion
 
 namespace Global.Services.ScenesFlow.Handling.Data
 {

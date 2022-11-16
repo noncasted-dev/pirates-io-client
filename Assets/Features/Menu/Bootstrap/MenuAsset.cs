@@ -1,4 +1,6 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿#region
+
+using Common.EditableScriptableObjects.Attributes;
 using Local.ComposedSceneConfig;
 using Local.Services.Abstract;
 using Menu.Common;
@@ -7,6 +9,8 @@ using Menu.Services.MenuLoop.Runtime;
 using Menu.Services.UI.Runtime;
 using UnityEngine;
 using VContainer.Unity;
+
+#endregion
 
 namespace Menu.Bootstrap
 {

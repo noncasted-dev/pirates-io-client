@@ -1,4 +1,8 @@
 ﻿{
   "name": "GamePlay.Player.Components.ActionsState.Runtime",
-  "references":[ "GUID:8f9012bdd1b116c48ab480004500c8f3", "GUID:65c3fcbb851ff9441a22dd049195dc8f", "GUID:b0214a6008ed146ff8f122a6a9c2f6cc" ]
+  "references": [
+    "GUID:8f9012bdd1b116c48ab480004500c8f3",
+    "GUID:65c3fcbb851ff9441a22dd049195dc8f",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+  ]
 }

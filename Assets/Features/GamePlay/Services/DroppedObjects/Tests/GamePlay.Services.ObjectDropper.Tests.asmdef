@@ -1,0 +1,8 @@
+﻿{
+  "name": "GamePlay.Services.ObjectDropper.Tests",
+  "references": [
+    "GUID:e2b1c00d8d9b440888bd9f6a58105dd3",
+    "GUID:776d03a35f1b52c4a9aed9f56d7b4229",
+    "GUID:f99e81adb521496aaf534590bbf61710"
+  ]
+}

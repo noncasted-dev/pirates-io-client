@@ -1,4 +1,6 @@
 {
-	"name": "GamePlay.Common.Areas.Common.Runtime",
-	"references":[ "GUID:17574602f5ff95941bc7eb946c3b4637" ]
+  "name": "GamePlay.Common.Areas.Common.Runtime",
+  "references": [
+    "GUID:17574602f5ff95941bc7eb946c3b4637"
+  ]
 }

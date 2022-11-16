@@ -70,6 +70,8 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
             _animator.SetTrigger(Play);
 
             _collider.enabled = false;
+            
+            ActivateCollider().Forget();
         }
 
         public void OnReturned()

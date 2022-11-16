@@ -133,6 +133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 
   _count: 0
+  _collectImmunityTime: 5
+  _animator: {fileID: 86812301156573219}
+  _collider: {fileID: 740134216020023281}
 --- !u!58 &740134216020023281
 CircleCollider2D:
   m_ObjectHideFlags: 0

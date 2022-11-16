@@ -1,5 +1,6 @@
 ﻿#region
 
+using System;
 using System.Collections.Generic;
 using GamePlay.Items.Abstract;
 using UnityEngine;
@@ -12,6 +13,8 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
     {
         private readonly Dictionary<ItemType, IItem> _items = new();
 
+        public event Action Changed;
+
         public void Add(IItem item)
         {
             var type = item.BaseData.Type;
@@ -19,10 +22,12 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             if (_items.ContainsKey(type) == true)
             {
                 _items[type].Add(item.Count);
+                Changed?.Invoke();
                 return;
             }
 
             _items[type] = item;
+            Changed?.Invoke();
         }
 
         public void Reduce(ItemType type, int amount)
@@ -34,6 +39,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             }
 
             _items[type].Reduce(amount);
+            Changed?.Invoke();
         }
 
         public void Delete(ItemType type)
@@ -45,6 +51,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             }
 
             _items.Remove(type);
+            Changed?.Invoke();
         }
 
         public IItem[] ToArray()

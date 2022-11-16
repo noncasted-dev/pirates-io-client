@@ -34,6 +34,8 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         private PlayerCargoStorage _storage;
         private IPlayerTravelCargoUI _travelUI;
 
+        private Action<IItem[]> _currentDrawTarget;
+
         private void Awake()
         {
             _storage = GetComponent<PlayerCargoStorage>();
@@ -43,22 +45,24 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         {
             _travelUI.Dropped += OnDropped;
             _inputView.InventoryPerformed += OnInventoryOpenPerformed;
+            _storage.Changed += OnStorageChanged;
         }
-
+        
         public void OnDisabled()
         {
             _travelUI.Dropped -= OnDropped;
             _inputView.InventoryPerformed -= OnInventoryOpenPerformed;
+            _storage.Changed -= OnStorageChanged;
         }
 
         public void OpenCityUI()
         {
-            _travelUI.Open(_storage.ToArray());
+            _currentDrawTarget = _travelUI.Open(_storage.ToArray());
         }
 
         public void OpenTravelUI()
         {
-            _cityUI.Open(_storage.ToArray());
+            _currentDrawTarget = _cityUI.Open(_storage.ToArray());
         }
 
         public void CloseUI()
@@ -68,6 +72,8 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
             if (_cityUI.IsActive == true)
                 _cityUI.Close();
+
+            _currentDrawTarget = null;
         }
 
         private void OnDropped(IItem item, Action<IItem[]> redrawCallback)
@@ -82,9 +88,15 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         private void OnInventoryOpenPerformed()
         {
             if (_travelUI.IsActive == false)
-                _travelUI.Open(_storage.ToArray());
+                _currentDrawTarget = _travelUI.Open(_storage.ToArray());
             else
                 _travelUI.Close();
+        }
+        
+        private void OnStorageChanged()
+        {
+            Debug.Log("On changed");
+            _currentDrawTarget?.Invoke(_storage.ToArray());
         }
     }
 }

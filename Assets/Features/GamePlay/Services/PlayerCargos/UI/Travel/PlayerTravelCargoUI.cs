@@ -42,11 +42,13 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
         public bool IsActive => _body.activeSelf;
         public event Action<IItem, Action<IItem[]>> Dropped;
 
-        public void Open(IItem[] items)
+        public Action<IItem[]> Open(IItem[] items)
         {
             _body.SetActive(true);
             _grid.Fill(items);
             _dropButton.gameObject.SetActive(false);
+
+            return Redraw;
         }
 
         public void Close()
@@ -74,11 +76,14 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
                 return;
             }
 
+            _dropButton.gameObject.SetActive(false);
+            
             Dropped?.Invoke(_selected, Redraw);
         }
 
         private void Redraw(IItem[] items)
         {
+            Debug.Log("Redraw grid");
             _grid.Fill(items);
         }
     }

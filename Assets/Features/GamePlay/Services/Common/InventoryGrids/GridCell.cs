@@ -12,7 +12,7 @@ using UnityEngine.UI;
 namespace GamePlay.Services.Common.InventoryGrids
 {
     [DisallowMultipleComponent]
-    public class GridCell : MonoBehaviour, IPointerUpHandler
+    public class GridCell : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         [SerializeField] private Image _icon;
         [SerializeField] private TMP_Text _count;
@@ -23,12 +23,7 @@ namespace GamePlay.Services.Common.InventoryGrids
         public int Id => _id;
 
         public IItem Item => _item;
-
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            Selected?.Invoke(this);
-        }
-
+        
         public event Action<GridCell> Selected;
 
         public void Setup(int id)
@@ -50,6 +45,17 @@ namespace GamePlay.Services.Common.InventoryGrids
         {
             _item = null;
             gameObject.SetActive(false);
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            Debug.Log("Up");
+            Selected?.Invoke(this);
+        }
+        
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            Debug.Log("Down");
         }
     }
 }

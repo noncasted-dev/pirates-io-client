@@ -1,5 +1,6 @@
 ﻿#region
 
+using System;
 using GamePlay.Items.Abstract;
 
 #endregion
@@ -10,7 +11,7 @@ namespace GamePlay.Services.PlayerCargos.UI.City
     {
         bool IsActive { get; }
 
-        void Open(IItem[] items);
+        Action<IItem[]> Open(IItem[] items);
         void Close();
     }
 }

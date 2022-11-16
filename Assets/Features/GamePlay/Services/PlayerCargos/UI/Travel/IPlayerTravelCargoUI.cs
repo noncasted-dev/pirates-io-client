@@ -13,7 +13,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
 
         event Action<IItem, Action<IItem[]>> Dropped;
 
-        void Open(IItem[] items);
+        Action<IItem[]> Open(IItem[] items);
         void Close();
     }
 }

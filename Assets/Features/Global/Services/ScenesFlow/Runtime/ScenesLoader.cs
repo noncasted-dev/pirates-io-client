@@ -1,6 +1,4 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Handling.Result;
 using Global.Services.ScenesFlow.Logs;
@@ -9,8 +7,6 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.ScenesFlow.Runtime
 {

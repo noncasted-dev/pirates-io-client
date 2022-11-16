@@ -20,9 +20,9 @@ namespace GamePlay.Services.PlayerCargos.Bootstrap
         menuName = GamePlayAssetsPaths.PlayerCargo + "Service")]
     public class PlayerCargoAsset : LocalServiceAsset
     {
+        [SerializeField] private AssetReference _cityScene;
         [SerializeField] private PlayerCargo _prefab;
         [SerializeField] private AssetReference _travelScene;
-        [SerializeField] private AssetReference _cityScene;
 
         public override async UniTask Create(
             IServiceBinder serviceBinder,

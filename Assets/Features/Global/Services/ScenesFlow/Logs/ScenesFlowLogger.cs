@@ -1,9 +1,5 @@
-﻿#region
-
-using Global.Services.Loggers.Runtime;
+﻿using Global.Services.Loggers.Runtime;
 using UnityEngine.SceneManagement;
-
-#endregion
 
 namespace Global.Services.ScenesFlow.Logs
 {

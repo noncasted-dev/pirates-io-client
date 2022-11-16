@@ -1,6 +1,4 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow;
 using GamePlay.Player.Entity.States.None.Runtime;
 using GamePlay.Player.Entity.States.Respawns.Runtime;
@@ -8,8 +6,6 @@ using GamePlay.Player.Entity.Views.RotationPoint;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Setup.Root
 {

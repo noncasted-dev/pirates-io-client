@@ -1,9 +1,5 @@
-﻿#region
-
-using Ragon.Client;
+﻿using Ragon.Client;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.Network.Common.Abstract
 {

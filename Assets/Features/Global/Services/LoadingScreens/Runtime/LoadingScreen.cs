@@ -1,10 +1,6 @@
-﻿#region
-
-using Global.Services.LoadingScreens.Logs;
+﻿using Global.Services.LoadingScreens.Logs;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.LoadingScreens.Runtime
 {

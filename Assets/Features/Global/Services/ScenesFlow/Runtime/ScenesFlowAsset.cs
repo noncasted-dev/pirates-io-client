@@ -1,14 +1,10 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using Global.Common;
 using Global.Services.Common.Abstract;
 using Global.Services.ScenesFlow.Logs;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-
-#endregion
 
 namespace Global.Services.ScenesFlow.Runtime
 {
@@ -28,7 +24,7 @@ namespace Global.Services.ScenesFlow.Runtime
 
             builder.Register<ScenesFlowLogger>(Lifetime.Scoped).WithParameter("settings", _logSettings);
             builder.RegisterComponent(loader).AsImplementedInterfaces();
-            builder.RegisterComponent(unloader).AsImplementedInterfaces();
+            builder.RegisterComponent<ScenesUnloader>(unloader).AsImplementedInterfaces();
 
             serviceBinder.AddToModules(loader);
             serviceBinder.ListenCallbacks(loader);

@@ -1,6 +1,4 @@
-﻿#region
-
-using System;
+﻿using System;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.Network.Common.EntityProvider.Runtime;
 using GamePlay.Services.Network.PlayerDataProvider.Runtime;
@@ -8,8 +6,6 @@ using Ragon.Client;
 using Ragon.Common;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Services.DroppedObjects.Network.Runtime
 {
@@ -32,9 +28,10 @@ namespace GamePlay.Services.DroppedObjects.Network.Runtime
             _listener.AddListener<ItemCollectedEvent>(OnItemCollectReceived);
         }
 
-        private INetworkSessionEventSender _sender;
         private INetworkSessionEventListener _listener;
         private INetworkPlayerDataProvider _playerDataProvider;
+
+        private INetworkSessionEventSender _sender;
 
         public event Action<ItemDropEvent> ItemDropped;
         public event Action<int> ItemCollected;

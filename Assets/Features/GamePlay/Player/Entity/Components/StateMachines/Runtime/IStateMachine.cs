@@ -1,10 +1,6 @@
-﻿#region
-
-using System;
+﻿using System;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Components.StateMachines.Runtime
 {

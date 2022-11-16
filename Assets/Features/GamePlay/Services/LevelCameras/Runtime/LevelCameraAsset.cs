@@ -1,6 +1,4 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using GamePlay.Services.LevelCameras.Logs;
@@ -8,17 +6,15 @@ using Global.Services.ScenesFlow.Runtime.Abstract;
 using Local.Services.Abstract;
 using UnityEngine;
 
-#endregion
-
 namespace GamePlay.Services.LevelCameras.Runtime
 {
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "LevelCamera",
         menuName = GamePlayAssetsPaths.LevelCamera + "Service")]
     public class LevelCameraAsset : LocalServiceAsset
     {
-        [SerializeField] private LevelCamera _prefab;
-        [SerializeField] [EditableObject] private LevelCameraLogSettings _logSettings;
         [SerializeField] [EditableObject] private LevelCameraConfigAsset _config;
+        [SerializeField] [EditableObject] private LevelCameraLogSettings _logSettings;
+        [SerializeField] private LevelCamera _prefab;
 
         public override async UniTask Create(
             IServiceBinder serviceBinder,

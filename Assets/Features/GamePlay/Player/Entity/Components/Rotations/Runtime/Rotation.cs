@@ -1,14 +1,10 @@
-﻿#region
-
-using GamePlay.Player.Entity.Components.Rotations.Logs;
+﻿using GamePlay.Player.Entity.Components.Rotations.Logs;
 using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.RotationPoint;
 using Global.Services.InputViews.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Components.Rotations.Runtime
 {
@@ -33,13 +29,6 @@ namespace GamePlay.Player.Entity.Components.Rotations.Runtime
 
         private float _angle;
 
-        public void OnPreUpdate(float delta = 0f)
-        {
-            _angle = _input.GetAngleFrom(_point.Position);
-
-            _logger.OnRotationSet(_angle);
-        }
-
         public float Angle
         {
             get
@@ -51,6 +40,13 @@ namespace GamePlay.Player.Entity.Components.Rotations.Runtime
         }
 
         public Quaternion Quaternion => Quaternion.Euler(0f, 0f, _angle);
+
+        public void OnPreUpdate(float delta = 0f)
+        {
+            _angle = _input.GetAngleFrom(_point.Position);
+
+            _logger.OnRotationSet(_angle);
+        }
 
         public void OnEnabled()
         {

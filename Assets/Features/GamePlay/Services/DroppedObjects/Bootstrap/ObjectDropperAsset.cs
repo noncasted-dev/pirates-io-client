@@ -33,10 +33,10 @@ namespace GamePlay.Services.DroppedObjects.Bootstrap
             ICallbacksRegister callbacksRegister,
             ISceneLoader sceneLoader)
         {
-            var pool = Instantiate(_poolPrefab);
+            var pool = Object.Instantiate(_poolPrefab);
             pool.name = "Pool_Drop";
 
-            var dropper = Instantiate(_dropperPrefab);
+            var dropper = Object.Instantiate(_dropperPrefab);
             dropper.name = "ObjectDropper";
 
             var network = dropper.GetComponent<ObjectDropNetworker>();

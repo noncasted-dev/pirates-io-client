@@ -1,11 +1,7 @@
-﻿#region
-
-using Global.Services.Common.Abstract;
+﻿using Global.Services.Common.Abstract;
 using Global.Services.GlobalCameras.Logs;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.GlobalCameras.Runtime
 {
@@ -22,6 +18,8 @@ namespace Global.Services.GlobalCameras.Runtime
         private AudioListener _listener;
         private GlobalCameraLogger _logger;
 
+        public Camera Camera => _camera;
+
         private void Update()
         {
             if (Camera.allCamerasCount > 1)
@@ -29,8 +27,6 @@ namespace Global.Services.GlobalCameras.Runtime
             else
                 EnableListener();
         }
-
-        public Camera Camera => _camera;
 
         public void Enable()
         {

@@ -1,8 +1,4 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
-
-#endregion
+﻿using Cysharp.Threading.Tasks;
 
 namespace GamePlay.Player.Entity.Setup.Flow.Callbacks
 {

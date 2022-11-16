@@ -20,23 +20,16 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
 
         [SerializeField] private float _collectImmunityTime = 5f;
 
-        private Action<DroppedItem> _returnToPool;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private Collider2D _collider;
         private Action<IDroppedItem> _collectedCallback;
 
         private int _id;
         private IItem _item;
 
-        [SerializeField] private Animator _animator;
-        [SerializeField] private Collider2D _collider;
-
-        public GameObject GameObject => gameObject;
+        private Action<DroppedItem> _returnToPool;
         public int Id => _id;
         public IItem Item => _item;
-
-        public void SetPosition(Vector2 position)
-        {
-            transform.position = position;
-        }
 
         public void Construct(int id, Action<IDroppedItem> collectedCallback, IItem item)
         {
@@ -46,6 +39,23 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
 
             _name = item.BaseData.Name;
             _count = item.Count;
+        }
+
+        public void Collect()
+        {
+            _collectedCallback?.Invoke(this);
+        }
+
+        public void Destroy()
+        {
+            _returnToPool?.Invoke(this);
+        }
+
+        public GameObject GameObject => gameObject;
+
+        public void SetPosition(Vector2 position)
+        {
+            transform.position = position;
         }
 
         public void SetupPoolObject(Action<DroppedItem> returnToPool)
@@ -65,16 +75,6 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
         public void OnReturned()
         {
             _collider.enabled = false;
-        }
-
-        public void Collect()
-        {
-            _collectedCallback?.Invoke(this);
-        }
-
-        public void Destroy()
-        {
-            _returnToPool?.Invoke(this);
         }
 
         private async UniTaskVoid ActivateCollider()

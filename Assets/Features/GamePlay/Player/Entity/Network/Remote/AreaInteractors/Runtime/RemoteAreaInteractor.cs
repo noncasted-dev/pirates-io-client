@@ -1,17 +1,13 @@
-﻿#region
-
-using GamePlay.Common.Areas.Common.Runtime;
+﻿using GamePlay.Common.Areas.Common.Runtime;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Network.Remote.AreaInteractors.Runtime
 {
     [DisallowMultipleComponent]
     public class RemoteAreaInteractor : MonoBehaviour, IAreaInteractor
     {
-        [SerializeField] private Collider2D _hitbox;
         [SerializeField] private Collider2D _collision;
+        [SerializeField] private Collider2D _hitbox;
 
         public void OnCityEntered()
         {

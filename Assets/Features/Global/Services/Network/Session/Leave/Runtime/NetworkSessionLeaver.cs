@@ -1,13 +1,9 @@
-﻿#region
-
-using System;
+﻿using System;
 using Cysharp.Threading.Tasks;
 using Global.Services.Network.Session.Leave.Logs;
 using Ragon.Client;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.Network.Session.Leave.Runtime
 {

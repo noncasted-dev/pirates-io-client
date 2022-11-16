@@ -1,12 +1,8 @@
-﻿#region
-
-using Global.Services.Common.Abstract;
+﻿using Global.Services.Common.Abstract;
 using Global.Services.InputViews.Runtime;
 using IngameDebugConsole;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.DebugConsoles.Runtime
 {
@@ -19,8 +15,9 @@ namespace Global.Services.DebugConsoles.Runtime
             _inputView = inputView;
         }
 
-        [SerializeField] private DebugLogManager _console;
         [SerializeField] private GameObject _body;
+
+        [SerializeField] private DebugLogManager _console;
 
         private IInputView _inputView;
 

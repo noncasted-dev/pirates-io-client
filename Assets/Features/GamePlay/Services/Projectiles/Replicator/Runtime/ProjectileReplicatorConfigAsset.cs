@@ -1,12 +1,8 @@
-﻿#region
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using GamePlay.Common.Paths;
 using GamePlay.Services.Projectiles.Entity;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-
-#endregion
 
 namespace GamePlay.Services.Projectiles.Replicator.Runtime
 {
@@ -14,9 +10,9 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
         menuName = GamePlayAssetsPaths.ProjectilesReplicator + "Config")]
     public class ProjectileReplicatorConfigAsset : ScriptableObject
     {
-        [SerializeField] [Min(0f)] private float _replicateDistance = 40f;
-        [SerializeField] private ProjectileTypeDictionary _projectiles;
         [SerializeField] private AssetReference _fire;
+        [SerializeField] private ProjectileTypeDictionary _projectiles;
+        [SerializeField] [Min(0f)] private float _replicateDistance = 40f;
 
         public float ReplicateDistance => _replicateDistance;
         public AssetReference Fire => _fire;

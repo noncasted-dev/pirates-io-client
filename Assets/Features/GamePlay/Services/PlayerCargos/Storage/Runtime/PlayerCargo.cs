@@ -1,6 +1,4 @@
-﻿#region
-
-using System;
+﻿using System;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.DroppedObjects.Presenter.Runtime;
 using GamePlay.Services.PlayerCargos.UI.City;
@@ -9,8 +7,6 @@ using Global.Services.InputViews.Runtime;
 using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 {
@@ -31,11 +27,12 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             _travelUI = travelUI;
         }
 
+        private IPlayerCityCargoUI _cityUI;
+        private IDroppedObjectsPresenter _droppedObjectsPresenter;
+        private IInputView _inputView;
+
         private PlayerCargoStorage _storage;
         private IPlayerTravelCargoUI _travelUI;
-        private IPlayerCityCargoUI _cityUI;
-        private IInputView _inputView;
-        private IDroppedObjectsPresenter _droppedObjectsPresenter;
 
         private void Awake()
         {

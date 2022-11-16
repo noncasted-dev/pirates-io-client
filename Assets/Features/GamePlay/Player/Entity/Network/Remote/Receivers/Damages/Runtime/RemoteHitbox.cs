@@ -1,6 +1,4 @@
-﻿#region
-
-using Common.ObjectsPools.Runtime.Abstract;
+﻿using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
 using GamePlay.Common.Damages;
 using GamePlay.Player.Entity.Network.Root.Runtime;
@@ -8,8 +6,6 @@ using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using Ragon.Client;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
 {
@@ -28,12 +24,13 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
             eventListener.AddListener<DamageEvent>(OnDamageReceived);
         }
 
-        [SerializeField] private PlayerSpriteView _sprite;
         [SerializeField] private DamageConfigAsset _config;
         private IPlayerEventSender _eventSender;
         private IObjectProvider<AnimatedVfx> _explosion;
 
         private PlayerNetworkRoot _root;
+
+        [SerializeField] private PlayerSpriteView _sprite;
 
         public bool IsLocal => _root.IsLocal;
         public string Id => _root.Entity.Owner.Id;

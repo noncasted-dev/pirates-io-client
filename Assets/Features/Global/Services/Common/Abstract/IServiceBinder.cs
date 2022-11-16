@@ -1,8 +1,4 @@
-﻿#region
-
-using UnityEngine;
-
-#endregion
+﻿using UnityEngine;
 
 namespace Global.Services.Common.Abstract
 {

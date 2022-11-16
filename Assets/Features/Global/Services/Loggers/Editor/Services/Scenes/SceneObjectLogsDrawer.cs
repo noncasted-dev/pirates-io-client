@@ -1,10 +1,6 @@
-﻿#region
-
-using Common.ReadOnlyDictionaries.Editor;
+﻿using Common.ReadOnlyDictionaries.Editor;
 using GamePlay.Common.SceneObjects.Logs;
 using UnityEditor;
-
-#endregion
 
 namespace Global.Services.Loggers.Editor.Services.Scenes
 {

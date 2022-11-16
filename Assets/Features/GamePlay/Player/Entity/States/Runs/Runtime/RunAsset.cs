@@ -1,6 +1,4 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Path;
@@ -8,17 +6,15 @@ using GamePlay.Player.Entity.States.Runs.Logs;
 using UnityEngine;
 using VContainer;
 
-#endregion
-
 namespace GamePlay.Player.Entity.States.Runs.Runtime
 {
     [CreateAssetMenu(fileName = PlayerAssetsPaths.StatePrefix + "Run",
         menuName = PlayerAssetsPaths.Run + "State")]
     public class RunAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private RunLogSettings _logSettings;
         [SerializeField] [EditableObject] private RunConfigAsset _config;
         [SerializeField] [EditableObject] private RunDefinition _definition;
+        [SerializeField] [EditableObject] private RunLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

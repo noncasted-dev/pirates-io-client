@@ -1,10 +1,6 @@
-﻿#region
-
-using GamePlay.Common.Paths;
+﻿using GamePlay.Common.Paths;
 using Global.Services.Loggers.Runtime;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.PlayerSpawn.Factory.Logs
 {

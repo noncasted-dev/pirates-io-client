@@ -1,10 +1,6 @@
-﻿#region
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Global.Services.ScenesFlow.Handling.Result;
-
-#endregion
 
 namespace Global.Services.ScenesFlow.Runtime.Abstract
 {

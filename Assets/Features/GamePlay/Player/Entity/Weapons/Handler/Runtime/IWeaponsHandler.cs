@@ -1,8 +1,4 @@
-﻿#region
-
-using GamePlay.Player.Entity.Weapons.Cannon.Root;
-
-#endregion
+﻿using GamePlay.Player.Entity.Weapons.Cannon.Root;
 
 namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
 {

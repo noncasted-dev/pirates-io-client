@@ -1,8 +1,4 @@
-#region
-
 using Global.Services.Loggers.Runtime;
-
-#endregion
 
 namespace Global.Services.Profiles.Logs
 {

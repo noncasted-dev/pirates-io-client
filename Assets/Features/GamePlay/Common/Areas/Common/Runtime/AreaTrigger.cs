@@ -1,9 +1,5 @@
-﻿#region
-
-using System;
+﻿using System;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Common.Areas.Common.Runtime
 {

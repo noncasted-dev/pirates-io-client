@@ -1,8 +1,4 @@
-﻿#region
-
-using GamePlay.Player.Entity.Views.Transforms.Runtime;
-
-#endregion
+﻿using GamePlay.Player.Entity.Views.Transforms.Runtime;
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Views.Transforms
 {

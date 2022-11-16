@@ -1,9 +1,5 @@
-﻿#region
-
-using GamePlay.Player.Entity.Weapons.Common.Root;
+﻿using GamePlay.Player.Entity.Weapons.Common.Root;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Root
 {

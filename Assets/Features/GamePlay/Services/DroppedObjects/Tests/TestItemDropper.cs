@@ -1,11 +1,7 @@
-﻿#region
-
-using GamePlay.Items.Abstract;
+﻿using GamePlay.Items.Abstract;
 using GamePlay.Services.DroppedObjects.Presenter.Runtime;
 using NaughtyAttributes;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.DroppedObjects.Tests
 {

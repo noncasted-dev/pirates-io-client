@@ -1,9 +1,5 @@
-﻿#region
-
-using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+﻿using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Setup.Bootstrap
 {

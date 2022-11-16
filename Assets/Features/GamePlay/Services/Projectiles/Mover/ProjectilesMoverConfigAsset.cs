@@ -1,9 +1,5 @@
-﻿#region
-
-using GamePlay.Common.Paths;
+﻿using GamePlay.Common.Paths;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.Projectiles.Mover
 {
@@ -11,9 +7,9 @@ namespace GamePlay.Services.Projectiles.Mover
         menuName = GamePlayAssetsPaths.Projectiles + "Config")]
     public class ProjectilesMoverConfigAsset : ScriptableObject
     {
-        [SerializeField] private string _hitBoxLayer;
         [SerializeField] private LayerMask _allInteractionsMask;
         [SerializeField] [Min(0)] private int _bufferSize;
+        [SerializeField] private string _hitBoxLayer;
 
         public string HitBoxLayer => _hitBoxLayer;
         public LayerMask AllInteractionsMask => _allInteractionsMask;

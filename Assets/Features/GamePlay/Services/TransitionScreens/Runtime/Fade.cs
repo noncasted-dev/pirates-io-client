@@ -1,14 +1,10 @@
-﻿#region
-
-using System.Threading;
+﻿using System.Threading;
 using Common.Structs;
 using Cysharp.Threading.Tasks;
 using GamePlay.Services.TransitionScreens.Logs;
 using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
 using UnityEngine.UI;
-
-#endregion
 
 namespace GamePlay.Services.TransitionScreens.Runtime
 {

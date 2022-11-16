@@ -31,23 +31,23 @@ namespace GamePlay.Level.Config.Runtime
     [CreateAssetMenu(fileName = "Level", menuName = GamePlayAssetsPaths.Root + "Scene")]
     public class LevelAsset : ComposedSceneAsset
     {
-        [SerializeField] private LevelScope _scopePrefab;
-
-        [SerializeField] [EditableObject] private PlayerFactoryAsset _playerFactory;
+        [SerializeField] [EditableObject] private LevelEnvironmentAsset _environment;
+        [SerializeField] [EditableObject] private FactionSelectionAsset _factionSelection;
         [SerializeField] [EditableObject] private LevelCameraAsset _levelCamera;
         [SerializeField] [EditableObject] private LevelLoopAsset _levelLoop;
-        [SerializeField] [EditableObject] private LevelEnvironmentAsset _environment;
-        [SerializeField] [EditableObject] private ProjectilesAsset _projectiles;
-        [SerializeField] [EditableObject] private TransitionScreenAsset _transitionScreen;
-        [SerializeField] [EditableObject] private NetworkSessionAsset _networkSession;
-        [SerializeField] [EditableObject] private RemotePlayerBuilderAsset _remotePlayerBuilder;
-        [SerializeField] [EditableObject] private VfxPoolAsset _vfxPool;
-        [SerializeField] [EditableObject] private ProjectileReplicatorAsset _projectileReplicator;
-        [SerializeField] [EditableObject] private PlayerPositionProviderAsset _playerPositionProvider;
-        [SerializeField] [EditableObject] private FactionSelectionAsset _factionSelection;
         [SerializeField] [EditableObject] private NetworkPlayerDataAsset _networkPlayerData;
+        [SerializeField] [EditableObject] private NetworkSessionAsset _networkSession;
         [SerializeField] [EditableObject] private ObjectDropperAsset _objectDropper;
         [SerializeField] [EditableObject] private PlayerCargoAsset _playerCargo;
+
+        [SerializeField] [EditableObject] private PlayerFactoryAsset _playerFactory;
+        [SerializeField] [EditableObject] private PlayerPositionProviderAsset _playerPositionProvider;
+        [SerializeField] [EditableObject] private ProjectileReplicatorAsset _projectileReplicator;
+        [SerializeField] [EditableObject] private ProjectilesAsset _projectiles;
+        [SerializeField] [EditableObject] private RemotePlayerBuilderAsset _remotePlayerBuilder;
+        [SerializeField] private LevelScope _scopePrefab;
+        [SerializeField] [EditableObject] private TransitionScreenAsset _transitionScreen;
+        [SerializeField] [EditableObject] private VfxPoolAsset _vfxPool;
 
         protected override LocalServiceAsset[] AssignServices()
         {

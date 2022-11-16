@@ -1,6 +1,4 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Path;
@@ -8,16 +6,14 @@ using GamePlay.Player.Entity.Weapons.Handler.Logs;
 using UnityEngine;
 using VContainer;
 
-#endregion
-
 namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
 {
     [CreateAssetMenu(fileName = PlayerAssetsPaths.ComponentPrefix + "WeaponsHandler",
         menuName = PlayerAssetsPaths.WeaponsHandler + "Component")]
     public class WeaponsHandlerAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private WeaponsHandlerLogSettings _logSettings;
         [SerializeField] [EditableObject] private DefaultWeaponsConfig _config;
+        [SerializeField] [EditableObject] private WeaponsHandlerLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

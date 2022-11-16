@@ -1,9 +1,5 @@
-﻿#region
-
-using Common.Structs;
+﻿using Common.Structs;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Views.ShootPoint
 {
@@ -11,12 +7,12 @@ namespace GamePlay.Player.Entity.Views.ShootPoint
     public class CannonShootPoint : MonoBehaviour, IShootPoint
     {
         private const float _distance = 2f;
-        [SerializeField] [Min(0f)] private float _offset;
-
-        [SerializeField] private Transform _center;
-        [SerializeField] private LayerMask _shootAreaMask;
 
         private readonly RaycastHit2D[] _buffer = new RaycastHit2D[1];
+
+        [SerializeField] private Transform _center;
+        [SerializeField] [Min(0f)] private float _offset;
+        [SerializeField] private LayerMask _shootAreaMask;
 
         public Vector2 GetShootPoint(float angle)
         {

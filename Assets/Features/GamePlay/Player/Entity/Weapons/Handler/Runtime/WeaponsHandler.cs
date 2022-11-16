@@ -1,10 +1,6 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Weapons.Cannon.Root;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
 {
@@ -23,13 +19,13 @@ namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
 
         private ICanon _canon;
 
+        public ICanon Canon => _canon;
+
         public async UniTask OnAsyncAwake()
         {
             var rangeTask = UniTask.Create(async () => { _canon = await _factory.CreateBow(_config.Canon); });
 
             await rangeTask;
         }
-
-        public ICanon Canon => _canon;
     }
 }

@@ -1,12 +1,8 @@
-﻿#region
-
-using GamePlay.Player.Entity.Components.Healths.Runtime;
+﻿using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
 using GamePlay.Player.Entity.States.Respawns.Logs;
-
-#endregion
 
 namespace GamePlay.Player.Entity.States.Respawns.Runtime
 {
@@ -32,6 +28,8 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
         private readonly RespawnLogger _logger;
         private readonly IStateMachine _stateMachine;
 
+        public StateDefinition Definition { get; }
+
         public void Enter()
         {
             _stateMachine.Enter(this);
@@ -41,8 +39,6 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
             _logger.OnEntered();
             _stateMachine.Exit();
         }
-
-        public StateDefinition Definition { get; }
 
         public void Break()
         {

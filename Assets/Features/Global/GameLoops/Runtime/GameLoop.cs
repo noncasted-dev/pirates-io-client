@@ -1,6 +1,4 @@
-﻿#region
-
-using System;
+﻿using System;
 using Cysharp.Threading.Tasks;
 using GamePlay.Level.Config.Runtime;
 using Global.GameLoops.Flow;
@@ -18,8 +16,6 @@ using Menu.Services.MenuLoop.Runtime;
 using UniRx;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.GameLoops.Runtime
 {
@@ -44,16 +40,16 @@ namespace Global.GameLoops.Runtime
             _currentCamera = currentCamera;
         }
 
-        [SerializeField] private MenuAsset _menu;
-        [SerializeField] private LevelAsset _level;
-
         private ICurrentCamera _currentCamera;
         private ICurrentSceneHandler _currentSceneHandler;
         private IGlobalCamera _globalCamera;
+        [SerializeField] private LevelAsset _level;
 
         private ISceneLoader _loader;
         private ILoadingScreen _loadingScreen;
         private GameLoopLogger _logger;
+
+        [SerializeField] private MenuAsset _menu;
 
         private IDisposable _playFromMenuEvent;
 

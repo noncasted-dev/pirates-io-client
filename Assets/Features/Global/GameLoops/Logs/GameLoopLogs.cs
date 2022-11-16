@@ -1,9 +1,5 @@
-﻿#region
-
-using System;
+﻿using System;
 using Common.ReadOnlyDictionaries.Runtime;
-
-#endregion
 
 namespace Global.GameLoops.Logs
 {

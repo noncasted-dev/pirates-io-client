@@ -1,9 +1,5 @@
-﻿#region
-
-using GamePlay.Player.Entity.States.Common;
+﻿using GamePlay.Player.Entity.States.Common;
 using Global.Services.Loggers.Runtime;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Components.StateMachines.Logs
 {

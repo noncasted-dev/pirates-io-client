@@ -1,6 +1,4 @@
-﻿#region
-
-using Common.ObjectsPools.Runtime.Abstract;
+﻿using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.DroppedObjects.Implementation.Items.Runtime;
 using GamePlay.Services.DroppedObjects.Network.Runtime;
@@ -10,8 +8,6 @@ using Global.Services.ItemFactories.Runtime;
 using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
 {
@@ -40,32 +36,15 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
         }
 
         private readonly DroppedObjectsStorage _storage = new();
-
-        private IPlayerPositionProvider _playerPositionProvider;
-        private INetworkObjectDropSender _dropSender;
-        private INetworkObjectDropReceiver _dropReceiver;
-
-        private IObjectProvider<IDroppedItem> _itemProvider;
-        private IDropPoolProvider _poolProvider;
         private ObjectDropperConfigAsset _config;
+        private INetworkObjectDropReceiver _dropReceiver;
+        private INetworkObjectDropSender _dropSender;
         private IItemFactory _itemFactory;
 
-        public void OnEnabled()
-        {
-            _dropReceiver.ItemDropped += OnNetworkItemDropReceived;
-            _dropReceiver.ItemCollected += OnNetworkItemCollectReceived;
-        }
+        private IObjectProvider<IDroppedItem> _itemProvider;
 
-        public void OnDisabled()
-        {
-            _dropReceiver.ItemDropped -= OnNetworkItemDropReceived;
-            _dropReceiver.ItemCollected -= OnNetworkItemCollectReceived;
-        }
-
-        public void OnLoaded()
-        {
-            _itemProvider = _poolProvider.GetPool<IDroppedItem>(_config.DroppedItemPrefab);
-        }
+        private IPlayerPositionProvider _playerPositionProvider;
+        private IDropPoolProvider _poolProvider;
 
         public void DropFromPlayer(IItem item)
         {
@@ -78,6 +57,23 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
         public void Drop(IItem item, Vector2 position)
         {
             _dropSender.OnItemDropped(item, position);
+        }
+
+        public void OnLoaded()
+        {
+            _itemProvider = _poolProvider.GetPool<IDroppedItem>(_config.DroppedItemPrefab);
+        }
+
+        public void OnEnabled()
+        {
+            _dropReceiver.ItemDropped += OnNetworkItemDropReceived;
+            _dropReceiver.ItemCollected += OnNetworkItemCollectReceived;
+        }
+
+        public void OnDisabled()
+        {
+            _dropReceiver.ItemDropped -= OnNetworkItemDropReceived;
+            _dropReceiver.ItemCollected -= OnNetworkItemCollectReceived;
         }
 
         private void OnNetworkItemDropReceived(ItemDropEvent data)

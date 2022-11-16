@@ -1,6 +1,4 @@
-﻿#region
-
-using Common.ObjectsPools.Runtime;
+﻿using Common.ObjectsPools.Runtime;
 using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Common.Paths;
 using GamePlay.Services.Projectiles.Mover.Abstract;
@@ -9,8 +7,6 @@ using Global.Services.AssetsFlow.Runtime.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 {

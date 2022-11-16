@@ -1,13 +1,9 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Setup.Path;
 using GamePlay.Player.Entity.States.Idles.Logs;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Player.Entity.States.Idles.Runtime
 {
@@ -15,8 +11,8 @@ namespace GamePlay.Player.Entity.States.Idles.Runtime
         menuName = PlayerAssetsPaths.Idle + "State")]
     public class IdleAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private IdleLogSettings _logSettings;
         [SerializeField] [EditableObject] private IdleDefinition _definition;
+        [SerializeField] [EditableObject] private IdleLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

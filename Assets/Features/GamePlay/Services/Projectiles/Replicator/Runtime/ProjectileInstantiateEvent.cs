@@ -1,11 +1,7 @@
-﻿#region
-
-using GamePlay.Services.Projectiles.Entity;
+﻿using GamePlay.Services.Projectiles.Entity;
 using Ragon.Client;
 using Ragon.Common;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.Projectiles.Replicator.Runtime
 {

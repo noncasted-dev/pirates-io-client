@@ -1,10 +1,6 @@
-﻿#region
-
-using GamePlay.Player.Entity.Setup.Path;
+﻿using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 {
@@ -12,16 +8,16 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         menuName = PlayerAssetsPaths.BowShooter + "Config")]
     public class ShooterConfigAsset : ScriptableObject
     {
-        [SerializeField] [Min(0f)] private int _shotsAmount;
-        [SerializeField] [Min(0f)] private float _shotsDelay;
-        [SerializeField] [Min(0f)] private float _shotRandomDelay;
         [SerializeField] [Min(0f)] private int _damage;
-        [SerializeField] [Min(0f)] private float _pushForce;
-        [SerializeField] [Min(0f)] private float _speed;
         [SerializeField] [Min(0f)] private float _distance;
-        [SerializeField] [Min(0f)] private float _randomDistance;
 
         [SerializeField] private AssetReference _projectile;
+        [SerializeField] [Min(0f)] private float _pushForce;
+        [SerializeField] [Min(0f)] private float _randomDistance;
+        [SerializeField] [Min(0f)] private float _shotRandomDelay;
+        [SerializeField] [Min(0f)] private int _shotsAmount;
+        [SerializeField] [Min(0f)] private float _shotsDelay;
+        [SerializeField] [Min(0f)] private float _speed;
         [SerializeField] private AssetReference _vfx;
 
         public int ShotsAmount => _shotsAmount;

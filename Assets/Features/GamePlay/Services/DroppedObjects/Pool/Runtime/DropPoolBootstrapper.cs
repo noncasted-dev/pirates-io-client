@@ -1,14 +1,10 @@
-﻿#region
-
-using Common.ObjectsPools.Runtime;
+﻿using Common.ObjectsPools.Runtime;
 using Cysharp.Threading.Tasks;
 using Local.Services.Abstract.Callbacks;
 using Local.Services.DependenciesResolve;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Services.DroppedObjects.Pool.Runtime
 {

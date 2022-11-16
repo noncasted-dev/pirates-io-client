@@ -1,10 +1,6 @@
-﻿#region
-
-using Common.ReadOnlyDictionaries.Editor;
+﻿using Common.ReadOnlyDictionaries.Editor;
 using GamePlay.Services.TransitionScreens.Logs;
 using UnityEditor;
-
-#endregion
 
 namespace GamePlay.Services.Editor.Services
 {

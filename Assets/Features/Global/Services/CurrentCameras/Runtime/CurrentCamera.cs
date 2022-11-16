@@ -1,10 +1,6 @@
-﻿#region
-
-using Global.Services.CurrentCameras.Logs;
+﻿using Global.Services.CurrentCameras.Logs;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.CurrentCameras.Runtime
 {

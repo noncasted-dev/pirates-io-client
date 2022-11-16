@@ -1,10 +1,6 @@
-﻿#region
-
-using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+﻿using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using Global.Services.InputViews.Runtime;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
 {

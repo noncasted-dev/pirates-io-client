@@ -1,9 +1,5 @@
-﻿#region
-
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 using UnityEngine;
-
-#endregion
 
 namespace Global.Services.FilesFlow.Runtime
 {

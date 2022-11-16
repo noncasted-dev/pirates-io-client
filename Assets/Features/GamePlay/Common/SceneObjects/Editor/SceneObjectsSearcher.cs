@@ -1,11 +1,7 @@
-﻿#region
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using GamePlay.Common.SceneObjects.Runtime;
 using UnityEditor;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Common.SceneObjects.Editor
 {

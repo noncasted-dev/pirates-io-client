@@ -1,12 +1,8 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Player.Entity.States.Deaths.Runtime
 {

@@ -1,10 +1,6 @@
-﻿#region
-
-using Common.ReadOnlyDictionaries.Editor;
+﻿using Common.ReadOnlyDictionaries.Editor;
 using GamePlay.Services.PlayerSpawn.Factory.Logs;
 using UnityEditor;
-
-#endregion
 
 namespace GamePlay.Services.Editor.Services
 {

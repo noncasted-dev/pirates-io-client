@@ -4,8 +4,6 @@
     {
         private bool _canShoot = true;
 
-        public bool CanShoot => _canShoot;
-
         public void EnableShooting()
         {
             _canShoot = true;
@@ -15,5 +13,7 @@
         {
             _canShoot = false;
         }
+
+        public bool CanShoot => _canShoot;
     }
 }

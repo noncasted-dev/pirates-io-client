@@ -1,8 +1,4 @@
-﻿#region
-
-using UnityEngine.UI;
-
-#endregion
+﻿using UnityEngine.UI;
 
 namespace Common.Structs
 {

@@ -1,8 +1,4 @@
-﻿#region
-
-using UnityEngine.AddressableAssets;
-
-#endregion
+﻿using UnityEngine.AddressableAssets;
 
 namespace Global.Services.AssetsFlow.Runtime.Abstract
 {

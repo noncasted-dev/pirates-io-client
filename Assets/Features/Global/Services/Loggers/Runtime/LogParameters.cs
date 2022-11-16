@@ -1,19 +1,15 @@
-﻿#region
-
-using System;
+﻿using System;
 using UnityEngine;
-
-#endregion
 
 namespace Global.Services.Loggers.Runtime
 {
     [Serializable]
     public class LogParameters
     {
-        [field: SerializeField] private LogColor Color;
         [field: SerializeField] private string _header;
         [field: SerializeField] private bool _isHeaderColoredColored;
         [field: SerializeField] private bool _isMessageColored;
+        [field: SerializeField] private LogColor Color;
 
         public string Header => _header;
         public bool IsHeaderColored => _isHeaderColoredColored;

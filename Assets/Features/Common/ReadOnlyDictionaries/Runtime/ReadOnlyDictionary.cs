@@ -1,11 +1,7 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
-#endregion
 
 namespace Common.ReadOnlyDictionaries.Runtime
 {

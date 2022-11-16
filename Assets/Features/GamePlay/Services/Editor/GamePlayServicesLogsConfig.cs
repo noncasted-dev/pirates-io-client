@@ -1,13 +1,9 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Common.Paths;
 using GamePlay.Services.LevelCameras.Logs;
 using GamePlay.Services.Projectiles.Logs;
 using GamePlay.Services.TransitionScreens.Logs;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.Editor
 {
@@ -15,8 +11,8 @@ namespace GamePlay.Services.Editor
         menuName = GamePlayAssetsPaths.Config + "Logs")]
     public class GamePlayServicesLogsConfig : ScriptableObject
     {
-        [SerializeField] [EditableObject] private ProjectilesLogSettings _projectiles;
         [SerializeField] [EditableObject] private LevelCameraLogSettings _levelCamera;
+        [SerializeField] [EditableObject] private ProjectilesLogSettings _projectiles;
         [SerializeField] [EditableObject] private TransitionScreenLogSettings _transitionScreen;
     }
 }

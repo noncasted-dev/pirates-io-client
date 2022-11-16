@@ -1,10 +1,6 @@
-﻿#region
-
-using GamePlay.Player.Entity.Setup.Path;
+﻿using GamePlay.Player.Entity.Setup.Path;
 using Global.Services.Loggers.Runtime;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.States.Idles.Logs
 {

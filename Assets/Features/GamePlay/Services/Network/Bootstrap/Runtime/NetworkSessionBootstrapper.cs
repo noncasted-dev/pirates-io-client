@@ -1,13 +1,9 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Services.Network.Common.EntityProvider.Runtime;
 using Local.Services.Abstract;
 using Local.Services.Abstract.Callbacks;
 using Ragon.Client;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.Network.Bootstrap.Runtime
 {

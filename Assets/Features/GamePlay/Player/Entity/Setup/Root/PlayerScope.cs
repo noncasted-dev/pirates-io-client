@@ -1,9 +1,5 @@
-﻿#region
-
-using UnityEngine;
+﻿using UnityEngine;
 using VContainer.Unity;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Setup.Root
 {

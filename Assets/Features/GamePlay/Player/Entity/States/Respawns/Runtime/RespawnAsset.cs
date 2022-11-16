@@ -1,13 +1,9 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Setup.Path;
 using GamePlay.Player.Entity.States.Respawns.Logs;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Player.Entity.States.Respawns.Runtime
 {
@@ -15,9 +11,9 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
         menuName = PlayerAssetsPaths.Respawn + "State")]
     public class RespawnAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private RespawnLogSettings _logSettings;
-        [SerializeField] [EditableObject] private RespawnDefinition _definition;
         [SerializeField] [EditableObject] private RespawnConfigAsset _config;
+        [SerializeField] [EditableObject] private RespawnDefinition _definition;
+        [SerializeField] [EditableObject] private RespawnLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

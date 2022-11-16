@@ -1,14 +1,10 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using Global.Common;
 using Global.Services.Common.Abstract;
 using Global.Services.InputViews.Logs;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-
-#endregion
 
 namespace Global.Services.InputViews.Runtime
 {

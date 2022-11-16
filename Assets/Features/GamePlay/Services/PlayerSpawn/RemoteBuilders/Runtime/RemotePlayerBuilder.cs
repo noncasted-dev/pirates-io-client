@@ -1,6 +1,4 @@
-﻿#region
-
-using Common.ObjectsPools.Runtime.Abstract;
+﻿using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Player.Entity.Network.Remote.Bootstrap;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Services.Projectiles.Replicator.Runtime;
@@ -13,8 +11,6 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
-
-#endregion
 
 namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
 {
@@ -39,14 +35,14 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         }
 
         private static RemotePlayerBuilder _instance;
-
-        [SerializeField] private RemoteViewsPool _pool;
-        [SerializeField] private AssetReference _prefab;
-        [SerializeField] private AssetReference _hitExplosionReference;
         private IObjectProvider<AnimatedVfx> _hitExplosionPool;
+        [SerializeField] private AssetReference _hitExplosionReference;
 
         private IAssetInstantiatorFactory _instantiatorFactory;
         private ILogger _logger;
+
+        [SerializeField] private RemoteViewsPool _pool;
+        [SerializeField] private AssetReference _prefab;
         private IProjectileReplicator _replicator;
         private IUpdater _updater;
         private IVfxPoolProvider _vfxPoolProvider;

@@ -1,13 +1,9 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Local.Services.Abstract;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Services.Projectiles.Replicator.Runtime
 {
@@ -15,8 +11,8 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
         menuName = GamePlayAssetsPaths.ProjectilesReplicator + "Service")]
     public class ProjectileReplicatorAsset : LocalServiceAsset
     {
-        [SerializeField] private ProjectileReplicator _prefab;
         [SerializeField] private ProjectileReplicatorConfigAsset _config;
+        [SerializeField] private ProjectileReplicator _prefab;
 
         public override async UniTask Create(
             IServiceBinder serviceBinder,

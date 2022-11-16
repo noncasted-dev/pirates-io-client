@@ -1,9 +1,5 @@
-﻿#region
-
-using Common.Structs;
+﻿using Common.Structs;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 {

@@ -1,8 +1,4 @@
-﻿#region
-
-using UnityEngine;
-
-#endregion
+﻿using UnityEngine;
 
 namespace GamePlay.Player.Entity.Views.ShootPoint
 {

@@ -1,13 +1,9 @@
-﻿#region
-
-using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
+﻿using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
 using GamePlay.Player.Entity.States.Idles.Logs;
-
-#endregion
 
 namespace GamePlay.Player.Entity.States.Idles.Runtime
 {
@@ -34,6 +30,8 @@ namespace GamePlay.Player.Entity.States.Idles.Runtime
 
         private readonly IStateMachine _stateMachine;
 
+        public StateDefinition Definition { get; }
+
         public void Enter()
         {
             _stateMachine.Enter(this);
@@ -43,8 +41,6 @@ namespace GamePlay.Player.Entity.States.Idles.Runtime
 
             _logger.OnEntered();
         }
-
-        public StateDefinition Definition { get; }
 
         public void Break()
         {

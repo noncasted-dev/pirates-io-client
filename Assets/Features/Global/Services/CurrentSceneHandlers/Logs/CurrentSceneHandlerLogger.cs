@@ -1,8 +1,4 @@
-﻿#region
-
-using Global.Services.Loggers.Runtime;
-
-#endregion
+﻿using Global.Services.Loggers.Runtime;
 
 namespace Global.Services.CurrentSceneHandlers.Logs
 {

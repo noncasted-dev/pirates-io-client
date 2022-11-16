@@ -1,12 +1,8 @@
-﻿#region
-
-using Common.RagonUtils;
+﻿using Common.RagonUtils;
 using GamePlay.Items.Abstract;
 using Ragon.Client;
 using Ragon.Common;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.DroppedObjects.Network.Runtime
 {
@@ -24,10 +20,11 @@ namespace GamePlay.Services.DroppedObjects.Network.Runtime
             _id = id;
         }
 
-        private Vector2 _position;
-        private ItemType _type;
         private int _count;
         private int _id;
+
+        private Vector2 _position;
+        private ItemType _type;
 
         public Vector2 Position => _position;
         public ItemType Type => _type;

@@ -1,9 +1,5 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
-
-#endregion
 
 namespace Common.ObjectsPools.Runtime.Abstract
 {

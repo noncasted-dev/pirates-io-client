@@ -1,10 +1,6 @@
-﻿#region
-
-using GamePlay.Common.Damages;
+﻿using GamePlay.Common.Damages;
 using Ragon.Client;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
 {

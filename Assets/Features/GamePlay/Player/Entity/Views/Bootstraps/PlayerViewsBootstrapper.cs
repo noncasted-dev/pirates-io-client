@@ -21,16 +21,16 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
 {
     public class PlayerViewsBootstrapper : MonoBehaviour, IPlayerContainerBuilder
     {
-        [SerializeField] private PlayerSpriteView _sprite;
-        [SerializeField] private PlayerBodyTransform _transform;
         [SerializeField] private PlayerRotationPoint _rotationPoint;
         [SerializeField] private PlayerRigidBody _rigidBody;
         [SerializeField] private WeaponsRoot _weaponsRoot;
         [SerializeField] private AimView _aim;
         [SerializeField] private CannonShootPoint _shootPoint;
-        [SerializeField] private PlayerSpriteTransform _spriteTransform;
         [SerializeField] private LocalAreaInteractor _areaInteractor;
         [SerializeField] private PlayerObjectsCollector _objectsCollector;
+        [SerializeField] private PlayerSpriteView _sprite;
+        [SerializeField] private PlayerSpriteTransform _spriteTransform;
+        [SerializeField] private PlayerBodyTransform _transform;
 
         public void OnBuild(IContainerBuilder builder)
         {

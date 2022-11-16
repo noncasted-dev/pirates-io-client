@@ -1,6 +1,4 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using Common.ObjectsPools.Runtime.Abstract;
 using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
@@ -16,18 +14,16 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using VContainer;
 
-#endregion
-
 namespace GamePlay.Services.Projectiles.Bootstrap
 {
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "Projectiles",
         menuName = GamePlayAssetsPaths.Projectiles + "Service")]
     public class ProjectilesAsset : LocalServiceAsset
     {
+        [SerializeField] [EditableObject] private ProjectilesLogSettings _logSettings;
+        [SerializeField] [EditableObject] private ProjectilesMoverConfigAsset _moverConfig;
         [SerializeField] private AssetReference _poolScene;
         [SerializeField] private ProjectilesBootstrapper _prefab;
-        [SerializeField] [EditableObject] private ProjectilesMoverConfigAsset _moverConfig;
-        [SerializeField] [EditableObject] private ProjectilesLogSettings _logSettings;
 
         public override async UniTask Create(
             IServiceBinder serviceBinder,

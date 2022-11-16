@@ -1,10 +1,6 @@
-﻿#region
-
-using System;
+﻿using System;
 using Cysharp.Threading.Tasks;
 using Ragon.Client;
-
-#endregion
 
 namespace Global.Services.Network.Connection.Runtime
 {
@@ -48,35 +44,6 @@ namespace Global.Services.Network.Connection.Runtime
             _authorizationCompletion.TrySetResult(NetworkConnectResultType.Success);
         }
 
-        public async UniTask<NetworkConnectResultType> Connect(string userName)
-        {
-            RagonNetwork.AddListener(this);
-
-            RagonNetwork.Connect(_ip, _port);
-
-            var result = await _connectionCompletion.Task;
-
-            if (result == NetworkConnectResultType.Fail)
-            {
-                RagonNetwork.RemoveListener(this);
-
-                return result;
-            }
-
-            _isConnected = true;
-
-            RagonNetwork.Session.AuthorizeWithKey("defaultkey", userName, Array.Empty<byte>());
-
-            result = await _authorizationCompletion.Task;
-            await UniTask.Yield();
-
-            RagonNetwork.RemoveListener(this);
-
-            return result;
-        }
-
-        #region Unused
-
         public void OnJoined()
         {
         }
@@ -105,6 +72,31 @@ namespace Global.Services.Network.Connection.Runtime
         {
         }
 
-        #endregion
+        public async UniTask<NetworkConnectResultType> Connect(string userName)
+        {
+            RagonNetwork.AddListener(this);
+
+            RagonNetwork.Connect(_ip, _port);
+
+            var result = await _connectionCompletion.Task;
+
+            if (result == NetworkConnectResultType.Fail)
+            {
+                RagonNetwork.RemoveListener(this);
+
+                return result;
+            }
+
+            _isConnected = true;
+
+            RagonNetwork.Session.AuthorizeWithKey("defaultkey", userName, Array.Empty<byte>());
+
+            result = await _authorizationCompletion.Task;
+            await UniTask.Yield();
+
+            RagonNetwork.RemoveListener(this);
+
+            return result;
+        }
     }
 }

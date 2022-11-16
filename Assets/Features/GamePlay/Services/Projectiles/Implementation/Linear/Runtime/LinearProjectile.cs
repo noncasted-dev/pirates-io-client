@@ -1,6 +1,4 @@
-﻿#region
-
-using System;
+﻿using System;
 using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
 using GamePlay.Services.Projectiles.Entity;
@@ -9,8 +7,6 @@ using GamePlay.Services.Projectiles.Mover.Abstract;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using NaughtyAttributes;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 {

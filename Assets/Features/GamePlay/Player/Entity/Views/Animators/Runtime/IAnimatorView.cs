@@ -1,9 +1,5 @@
-﻿#region
-
-using System.Threading;
+﻿using System.Threading;
 using Cysharp.Threading.Tasks;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Views.Animators.Runtime
 {

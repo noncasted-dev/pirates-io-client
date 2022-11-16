@@ -1,8 +1,4 @@
-﻿#region
-
-using VContainer.Unity;
-
-#endregion
+﻿using VContainer.Unity;
 
 namespace Menu.Services.Common.Scope
 {

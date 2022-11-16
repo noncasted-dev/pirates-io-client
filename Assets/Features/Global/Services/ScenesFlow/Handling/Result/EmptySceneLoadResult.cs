@@ -1,8 +1,4 @@
-﻿#region
-
-using UnityEngine.ResourceManagement.ResourceProviders;
-
-#endregion
+﻿using UnityEngine.ResourceManagement.ResourceProviders;
 
 namespace Global.Services.ScenesFlow.Handling.Result
 {

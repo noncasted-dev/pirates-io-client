@@ -1,9 +1,5 @@
-﻿#region
-
-using GamePlay.Common.Paths;
+﻿using GamePlay.Common.Paths;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.LevelCameras.Runtime
 {
@@ -12,8 +8,8 @@ namespace GamePlay.Services.LevelCameras.Runtime
     public class LevelCameraConfigAsset : ScriptableObject
     {
         [SerializeField] [Min(0f)] private float _followSpeed;
-        [SerializeField] [Min(0f)] private float _minOverSightDistance;
         [SerializeField] [Min(0f)] private float _maxOverSightDistance;
+        [SerializeField] [Min(0f)] private float _minOverSightDistance;
         [SerializeField] [Min(0f)] private float _xAxisMagnitudeMultiplier;
 
         public float FollowSpeed => _followSpeed;

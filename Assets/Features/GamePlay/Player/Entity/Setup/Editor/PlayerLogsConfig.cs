@@ -1,6 +1,4 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.InertialMovements.Logs;
 using GamePlay.Player.Entity.Components.Rotations.Logs;
 using GamePlay.Player.Entity.Components.StateMachines.Logs;
@@ -18,34 +16,31 @@ using GamePlay.Player.Entity.Views.Transforms.Logs;
 using GamePlay.Player.Entity.Weapons.Handler.Logs;
 using UnityEngine;
 
-#endregion
-
 namespace GamePlay.Player.Entity.Setup.Editor
 {
     [CreateAssetMenu(fileName = PlayerAssetsPaths.ConfigPrefix + "Logs",
         menuName = PlayerAssetsPaths.Config + "Logs")]
     public class PlayerLogsConfig : ScriptableObject
     {
-        [Header("States")] [SerializeField] [EditableObject]
-        private StateMachineLogSettings _stateMachine;
-
-        [SerializeField] [EditableObject] private RespawnLogSettings _respawn;
-        [SerializeField] [EditableObject] private IdleLogSettings _idle;
-        [SerializeField] [EditableObject] private RunLogSettings _run;
-        [SerializeField] [EditableObject] private RangeAttackLogSettings _rangeAttack;
-        [SerializeField] [EditableObject] private NoneLogSettings _none;
-        [SerializeField] [EditableObject] private FloatingStateLogSettings _floatingState;
-
         [Space(100)] [Header("Views")] [SerializeField] [EditableObject]
         private AnimatorLogSettings _animator;
+        [SerializeField] [EditableObject] private FloatingStateLogSettings _floatingState;
+        [SerializeField] [EditableObject] private IdleLogSettings _idle;
+        [SerializeField] [EditableObject] private InertialMovementLogSettings _inertialMovement;
+        [SerializeField] [EditableObject] private NoneLogSettings _none;
+        [SerializeField] [EditableObject] private RangeAttackLogSettings _rangeAttack;
 
-        [SerializeField] [EditableObject] private SpriteViewLogSettings _spriteView;
-        [SerializeField] [EditableObject] private TransformLogSettings _transform;
+        [SerializeField] [EditableObject] private RespawnLogSettings _respawn;
         [SerializeField] [EditableObject] private RigidBodyLogSettings _rigidBody;
 
         [Space(100)] [Header("Components")] [SerializeField] [EditableObject]
         private RotationLogSettings _rotation;
-        [SerializeField] [EditableObject] private InertialMovementLogSettings _inertialMovement;
+        [SerializeField] [EditableObject] private RunLogSettings _run;
+
+        [SerializeField] [EditableObject] private SpriteViewLogSettings _spriteView;
+        [Header("States")] [SerializeField] [EditableObject]
+        private StateMachineLogSettings _stateMachine;
+        [SerializeField] [EditableObject] private TransformLogSettings _transform;
 
         [SerializeField] [EditableObject] private WeaponsHandlerLogSettings _weaponsHandler;
     }

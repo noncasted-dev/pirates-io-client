@@ -1,9 +1,5 @@
-﻿#region
-
-using UnityEngine;
+﻿using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.Common.Abstract
 {

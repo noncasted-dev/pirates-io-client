@@ -1,6 +1,4 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using GamePlay.Player.Entity.Network.Views.Transforms.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
@@ -9,8 +7,6 @@ using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
 using VContainer;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 {
@@ -34,8 +30,6 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
             _updater = updater;
         }
 
-        [SerializeField] private RigidBodyLogSettings _logSettings;
-
         private readonly Queue<PhysicsInteraction> _interactions = new();
 
         private readonly Queue<PhysicsMove> _moves = new();
@@ -43,6 +37,8 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
         private Vector2 _currentPosition;
         private RigidBodyLogger _logger;
+
+        [SerializeField] private RigidBodyLogSettings _logSettings;
         private INetworkTransform _networkTransform;
 
         private Rigidbody2D _rigidbody;

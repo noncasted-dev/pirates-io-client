@@ -1,10 +1,6 @@
-﻿#region
-
-using Ragon.Client;
+﻿using Ragon.Client;
 using Ragon.Common;
 using UnityEngine;
-
-#endregion
 
 namespace Global.Services.Network.Instantiators.Runtime
 {

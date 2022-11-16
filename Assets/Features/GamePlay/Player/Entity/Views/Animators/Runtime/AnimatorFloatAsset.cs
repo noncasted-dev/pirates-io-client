@@ -1,9 +1,5 @@
-﻿#region
-
-using GamePlay.Player.Entity.Setup.Path;
+﻿using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Views.Animators.Runtime
 {
@@ -11,8 +7,8 @@ namespace GamePlay.Player.Entity.Views.Animators.Runtime
         menuName = PlayerAssetsPaths.Animator + "Float")]
     public class AnimatorFloatAsset : ScriptableObject
     {
-        [SerializeField] private string _triggerName;
         [SerializeField] private bool _mirrorToSubAnimators;
+        [SerializeField] private string _triggerName;
 
         public AnimatorFloat CreateFloat()
         {

@@ -1,6 +1,4 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using Global.Common;
 using Global.Services.Common.Abstract;
 using Global.Services.Network.Connection.Logs;
@@ -16,8 +14,6 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-#endregion
-
 namespace Global.Services.Network.Bootstrap
 {
     [CreateAssetMenu(fileName = GlobalAssetsPaths.ServicePrefix + "NetworkBootstrap",
@@ -26,11 +22,11 @@ namespace Global.Services.Network.Bootstrap
     {
         [SerializeField] [EditableObject] private NetworkConnectionConfigAsset _connectionConfig;
         [SerializeField] [EditableObject] private NetworkConnectorLogSettings _connectorLogSettings;
-        [SerializeField] [EditableObject] private NetworkSessionJoinLogSettings _sessionJoinLogSettings;
-        [SerializeField] [EditableObject] private NetworkSessionLeaveLogSettings _sessionLeaveLogSettings;
         [SerializeField] [EditableObject] private NetworkInstantiatorLogSettings _instantiatorLogSettings;
 
         [SerializeField] private NetworkConnector _prefab;
+        [SerializeField] [EditableObject] private NetworkSessionJoinLogSettings _sessionJoinLogSettings;
+        [SerializeField] [EditableObject] private NetworkSessionLeaveLogSettings _sessionLeaveLogSettings;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
         {
@@ -53,17 +49,17 @@ namespace Global.Services.Network.Bootstrap
             builder.Register<NetworkInstantiatorLogger>(Lifetime.Scoped)
                 .WithParameter(_instantiatorLogSettings);
 
-            builder.RegisterComponent(instantiator)
+            builder.RegisterComponent<NetworkInstantiator>(instantiator)
                 .As<INetworkInstantiator>();
 
             builder.RegisterComponent(connector)
                 .WithParameter(_connectionConfig)
                 .AsImplementedInterfaces();
 
-            builder.RegisterComponent(joiner)
+            builder.RegisterComponent<NetworkSessionJoiner>(joiner)
                 .As<INetworkSessionJoiner>();
 
-            builder.RegisterComponent(leaver)
+            builder.RegisterComponent<NetworkSessionLeaver>(leaver)
                 .As<INetworkSessionLeaver>();
 
             var networkRegistry = new NetworkEventsRegistry();

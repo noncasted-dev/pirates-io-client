@@ -1,10 +1,6 @@
-﻿#region
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using GamePlay.Services.DroppedObjects.Implementation.Items.Runtime;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
 {

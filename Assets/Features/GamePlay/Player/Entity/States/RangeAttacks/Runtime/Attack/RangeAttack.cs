@@ -1,6 +1,4 @@
-﻿#region
-
-using System;
+﻿using System;
 using Common.Structs;
 using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
@@ -14,8 +12,6 @@ using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Player.Entity.Weapons.Handler.Runtime;
-
-#endregion
 
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
 {
@@ -46,6 +42,8 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             _logger = logger;
         }
 
+        private readonly IActionsStateProvider _actionsStateProvider;
+
         private readonly IAimView _aim;
         private readonly IRangeAttackConfig _config;
 
@@ -54,7 +52,6 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         private readonly RangeAttackLogger _logger;
         private readonly ISpriteRotation _spriteRotation;
         private readonly ISpriteTransform _spriteTransform;
-        private readonly IActionsStateProvider _actionsStateProvider;
 
         private readonly IStateMachine _stateMachine;
         private readonly IWeaponsHandler _weapons;
@@ -63,6 +60,8 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         private bool _isStarted;
 
         public bool IsAvailable => _hasInput && _actionsStateProvider.CanShoot;
+
+        public StateDefinition Definition { get; }
 
         public void OnInput()
         {
@@ -101,8 +100,6 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         {
             Process().Forget();
         }
-
-        public StateDefinition Definition { get; }
 
         public void Break()
         {

@@ -1,8 +1,4 @@
-﻿#region
-
-using GamePlay.Player.Entity.Components.Healths.Logs;
-
-#endregion
+﻿using GamePlay.Player.Entity.Components.Healths.Logs;
 
 namespace GamePlay.Player.Entity.Components.Healths.Runtime
 {

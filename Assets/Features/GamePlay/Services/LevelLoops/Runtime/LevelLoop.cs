@@ -42,15 +42,16 @@ namespace GamePlay.Services.LevelLoops.Runtime
             _levelCamera = levelCamera;
         }
 
+        private ICitiesRegistry _citiesRegistry;
+
         private ICurrentCamera _currentCamera;
+        private IFactionSelectionLoop _factionSelection;
         private ILevelCamera _levelCamera;
         private LevelLoopLogger _logger;
         private IPlayerRoot _player;
         private IPlayerFactory _playerFactory;
         private ISceneObjectsHandler _sceneObjects;
         private ITransitionScreen _transitionScreen;
-        private IFactionSelectionLoop _factionSelection;
-        private ICitiesRegistry _citiesRegistry;
 
         public void OnLoaded()
         {

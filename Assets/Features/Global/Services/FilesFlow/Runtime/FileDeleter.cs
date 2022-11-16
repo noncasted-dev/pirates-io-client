@@ -1,13 +1,9 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.IO;
 using Global.Services.FilesFlow.Logs;
 using Global.Services.FilesFlow.Runtime.Abstract;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.FilesFlow.Runtime
 {

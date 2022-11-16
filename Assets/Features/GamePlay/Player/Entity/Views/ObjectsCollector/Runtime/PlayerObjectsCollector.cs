@@ -18,8 +18,9 @@ namespace GamePlay.Player.Entity.Views.ObjectsCollector.Runtime
             _droppedObjectsPresenter = droppedObjectsPresenter;
         }
 
-        private IDroppedObjectsPresenter _droppedObjectsPresenter;
         private IPlayerCargoStorage _cargo;
+
+        private IDroppedObjectsPresenter _droppedObjectsPresenter;
 
         private void OnTriggerEnter2D(Collider2D other)
         {

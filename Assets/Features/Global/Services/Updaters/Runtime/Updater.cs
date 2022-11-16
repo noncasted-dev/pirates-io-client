@@ -1,11 +1,7 @@
-﻿#region
-
-using Global.Services.Updaters.Logs;
+﻿using Global.Services.Updaters.Logs;
 using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.Updaters.Runtime
 {
@@ -28,6 +24,8 @@ namespace Global.Services.Updaters.Runtime
         private UpdaterLogger _logger;
 
         private float _speed = 1f;
+
+        public float Speed => _speed;
 
         private void Update()
         {
@@ -140,8 +138,6 @@ namespace Global.Services.Updaters.Runtime
 
             _logger.OnPreFixedUpdatableRemoved(_preFixedUpdatables.Count);
         }
-
-        public float Speed => _speed;
 
         public void Add(IUpdateSpeedModifiable modifiable)
         {

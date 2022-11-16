@@ -1,9 +1,5 @@
-﻿#region
-
-using Global.Services.Network.Instantiators.Runtime;
+﻿using Global.Services.Network.Instantiators.Runtime;
 using Ragon.Common;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Network.Root.Runtime
 {

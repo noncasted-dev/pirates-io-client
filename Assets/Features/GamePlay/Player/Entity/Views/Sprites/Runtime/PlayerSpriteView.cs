@@ -1,6 +1,4 @@
-﻿#region
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Common.EditableScriptableObjects.Attributes;
 using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
@@ -8,8 +6,6 @@ using GamePlay.Player.Entity.Views.Sprites.Logs;
 using UnityEngine;
 using VContainer;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Views.Sprites.Runtime
 {
@@ -30,14 +26,24 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
             _logger = new SpriteViewLogger(logger, _logSettings);
         }
 
-        [SerializeField] [EditableObject] private SpriteViewLogSettings _logSettings;
-        [SerializeField] private Material _flash;
-        [SerializeField] private List<SpriteRenderer> _subSprites;
         [SerializeField] private Material _defaultMaterial;
+        [SerializeField] private Material _flash;
 
         private SpriteViewLogger _logger;
 
+        [SerializeField] [EditableObject] private SpriteViewLogSettings _logSettings;
+
         private SpriteRenderer _sprite;
+        [SerializeField] private List<SpriteRenderer> _subSprites;
+
+        public Material Material
+        {
+            get
+            {
+                _logger.OnMaterialUsed(_sprite.material);
+                return _sprite.material;
+            }
+        }
 
         public void OnAwake()
         {
@@ -92,15 +98,6 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
                     subSprite.flipX = _sprite.flipX;
 
             _logger.OnFlippedAlong(direction);
-        }
-
-        public Material Material
-        {
-            get
-            {
-                _logger.OnMaterialUsed(_sprite.material);
-                return _sprite.material;
-            }
         }
 
         public void SetMaterial(Material material)

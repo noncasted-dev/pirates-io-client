@@ -1,21 +1,17 @@
-﻿#region
-
-using TMPro;
+﻿using TMPro;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
-
-#endregion
 
 namespace Menu.Services.UI.Runtime
 {
     [DisallowMultipleComponent]
     public class MenuUI : MonoBehaviour, IMenuUI
     {
-        [SerializeField] private GameObject _loginBody;
-        [SerializeField] private GameObject _loadingBody;
-        [SerializeField] private TMP_InputField _nameInput;
         [SerializeField] private TMP_Text _connectionErrorText;
+        [SerializeField] private GameObject _loadingBody;
+        [SerializeField] private GameObject _loginBody;
+        [SerializeField] private TMP_InputField _nameInput;
         [SerializeField] private Button _playButton;
 
         private void OnEnable()

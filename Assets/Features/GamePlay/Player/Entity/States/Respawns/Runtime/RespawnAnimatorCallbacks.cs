@@ -1,10 +1,6 @@
-﻿#region
-
-using System;
+﻿using System;
 using GamePlay.Player.Entity.Views.Animators.Runtime;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.States.Respawns.Runtime
 {

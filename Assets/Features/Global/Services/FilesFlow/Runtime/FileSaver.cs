@@ -1,6 +1,4 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -8,8 +6,6 @@ using Global.Services.FilesFlow.Logs;
 using Global.Services.FilesFlow.Runtime.Abstract;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.FilesFlow.Runtime
 {

@@ -1,14 +1,10 @@
-﻿#region
-
-using Common.Structs;
+﻿using Common.Structs;
 using Cysharp.Threading.Tasks;
 using GamePlay.Services.TransitionScreens.Logs;
 using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Services.TransitionScreens.Runtime
 {
@@ -26,8 +22,9 @@ namespace GamePlay.Services.TransitionScreens.Runtime
             _updater = updater;
         }
 
-        [SerializeField] private GameObject _canvas;
         [SerializeField] private Image _background;
+
+        [SerializeField] private GameObject _canvas;
         private TransitionScreenConfigAsset _config;
 
         private Fade _current;

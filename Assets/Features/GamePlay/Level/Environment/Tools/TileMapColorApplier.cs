@@ -1,10 +1,6 @@
-﻿#region
-
-using NaughtyAttributes;
+﻿using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
-#endregion
 
 namespace GamePlay.Level.Environment.Tools
 {
@@ -12,15 +8,15 @@ namespace GamePlay.Level.Environment.Tools
     [ExecuteAlways]
     public class TileMapColorApplier : MonoBehaviour
     {
-        [SerializeField] private Tilemap _ground;
-        [SerializeField] private Tilemap _grassTop;
         [SerializeField] private Tilemap _grassDown;
 
         [SerializeField] private RuleTile _grassTile;
-
-        [SerializeField] private GroundColorPalette _palette;
+        [SerializeField] private Tilemap _grassTop;
+        [SerializeField] private Tilemap _ground;
 
         private bool _isGenerating;
+
+        [SerializeField] private GroundColorPalette _palette;
 
 #if UNITY_EDITOR
         private void OnEnable()

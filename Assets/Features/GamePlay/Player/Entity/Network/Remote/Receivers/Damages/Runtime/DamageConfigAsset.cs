@@ -1,10 +1,6 @@
-﻿#region
-
-using GamePlay.Player.Entity.Setup.Path;
+﻿using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
 {
@@ -12,8 +8,8 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
         menuName = PlayerAssetsPaths.Damage + "Config")]
     public class DamageConfigAsset : ScriptableObject
     {
-        [SerializeField] private float _flashTime;
         [SerializeField] private AssetReference _explosion;
+        [SerializeField] private float _flashTime;
 
         public float FlashTime => _flashTime;
         public AssetReference Explosion => _explosion;

@@ -1,19 +1,15 @@
-﻿#region
-
-using Common.Structs;
+﻿using Common.Structs;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.Transforms.Logs;
 using UnityEngine;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
 
-#endregion
-
 namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 {
     public class TransformView : MonoBehaviour, IAwakeCallback
     {
-        [SerializeField] private TransformLogSettings _logSettings;
         private TransformLogger _logger;
+        [SerializeField] private TransformLogSettings _logSettings;
 
         private Transform _transform;
 

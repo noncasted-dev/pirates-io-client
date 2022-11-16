@@ -1,13 +1,9 @@
-﻿#region
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Local.Services.Abstract;
 using Local.Services.Abstract.Callbacks;
 using Local.Services.DependenciesResolve;
 using VContainer;
-
-#endregion
 
 namespace Local.ComposedSceneConfig
 {

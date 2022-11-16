@@ -1,6 +1,4 @@
-﻿#region
-
-using Common.ObjectsPools.Runtime.Abstract;
+﻿using Common.ObjectsPools.Runtime.Abstract;
 using Cysharp.Threading.Tasks;
 using GamePlay.Services.Projectiles.Mover.Abstract;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
@@ -8,8 +6,6 @@ using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.AssetsFlow.Runtime.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-
-#endregion
 
 namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 {

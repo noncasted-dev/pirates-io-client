@@ -1,8 +1,4 @@
-﻿#region
-
-using Global.Services.Loggers.Runtime;
-
-#endregion
+﻿using Global.Services.Loggers.Runtime;
 
 namespace GamePlay.Player.Entity.Weapons.Handler.Logs
 {

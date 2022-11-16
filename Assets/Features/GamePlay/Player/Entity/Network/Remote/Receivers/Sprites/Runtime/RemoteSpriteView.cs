@@ -1,19 +1,14 @@
-﻿#region
-
-using System;
+﻿using System;
 using Common.Structs;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Network.Remote.Receivers.Sprites.Runtime
 {
     [DisallowMultipleComponent]
     public class RemoteSpriteView : MonoBehaviour
     {
-        [SerializeField] private SpriteRenderer[] _spriteRenderers;
-
         private Vector2 _previousPosition;
+        [SerializeField] private SpriteRenderer[] _spriteRenderers;
 
         private void FixedUpdate()
         {

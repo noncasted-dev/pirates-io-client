@@ -1,14 +1,10 @@
-﻿#region
-
-using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
+﻿using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
 using GamePlay.Player.Entity.States.Runs.Logs;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.States.Runs.Runtime
 {
@@ -45,6 +41,8 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
         private bool _isStarted;
 
         public bool HasInput => _input != Vector2.zero;
+
+        public StateDefinition Definition { get; }
 
         public void OnInput(Vector2 input)
         {
@@ -84,8 +82,6 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
 
             Begin();
         }
-
-        public StateDefinition Definition { get; }
 
         public void Break()
         {

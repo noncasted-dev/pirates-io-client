@@ -1,17 +1,12 @@
-﻿#region
-
-using GamePlay.Common.SceneObjects.Runtime;
+﻿using GamePlay.Common.SceneObjects.Runtime;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Common.Areas.Common.Runtime
 {
     public class AreaRoot : SceneObject
     {
-        [SerializeField] private AreaTrigger _trigger;
-
         private IArea _area;
+        [SerializeField] private AreaTrigger _trigger;
 
         protected override void OnAwake()
         {

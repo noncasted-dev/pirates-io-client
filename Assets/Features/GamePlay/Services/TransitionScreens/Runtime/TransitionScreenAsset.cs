@@ -1,14 +1,10 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using GamePlay.Services.TransitionScreens.Logs;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Local.Services.Abstract;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.TransitionScreens.Runtime
 {
@@ -17,9 +13,9 @@ namespace GamePlay.Services.TransitionScreens.Runtime
         order = 1)]
     public class TransitionScreenAsset : LocalServiceAsset
     {
-        [SerializeField] private TransitionScreen _prefab;
-        [SerializeField] [EditableObject] private TransitionScreenLogSettings _logSettings;
         [SerializeField] [EditableObject] private TransitionScreenConfigAsset _config;
+        [SerializeField] [EditableObject] private TransitionScreenLogSettings _logSettings;
+        [SerializeField] private TransitionScreen _prefab;
 
         public override async UniTask Create(IServiceBinder serviceBinder, ICallbacksRegister callbacksRegister,
             ISceneLoader sceneLoader)

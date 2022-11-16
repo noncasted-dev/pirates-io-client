@@ -1,13 +1,9 @@
-﻿#region
-
-using Common.Structs;
+﻿using Common.Structs;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Services.Projectiles.Replicator.Runtime;
 using Ragon.Client;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Network.Remote.Receivers.Cannons.Runtime
 {

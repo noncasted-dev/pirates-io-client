@@ -1,6 +1,4 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Runtime.Abstract;
@@ -9,8 +7,6 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
 {

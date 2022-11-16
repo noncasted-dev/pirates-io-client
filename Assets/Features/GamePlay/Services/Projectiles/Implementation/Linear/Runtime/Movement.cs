@@ -1,11 +1,7 @@
-﻿#region
-
-using System;
+﻿using System;
 using GamePlay.Services.Projectiles.Mover;
 using GamePlay.Services.Projectiles.Mover.Abstract;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 {

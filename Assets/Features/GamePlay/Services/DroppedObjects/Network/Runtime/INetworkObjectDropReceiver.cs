@@ -1,8 +1,4 @@
-﻿#region
-
-using System;
-
-#endregion
+﻿using System;
 
 namespace GamePlay.Services.DroppedObjects.Network.Runtime
 {

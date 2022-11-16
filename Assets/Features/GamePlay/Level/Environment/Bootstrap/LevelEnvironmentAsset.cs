@@ -1,14 +1,10 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Local.Services.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-
-#endregion
 
 namespace GamePlay.Level.Environment.Bootstrap
 {

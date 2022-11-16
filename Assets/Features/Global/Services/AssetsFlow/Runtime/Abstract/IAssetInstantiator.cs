@@ -1,9 +1,5 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
-
-#endregion
 
 namespace Global.Services.AssetsFlow.Runtime.Abstract
 {

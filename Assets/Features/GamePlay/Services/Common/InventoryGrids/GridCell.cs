@@ -22,9 +22,14 @@ namespace GamePlay.Services.Common.InventoryGrids
 
         public int Id => _id;
 
-        public event Action<GridCell> Selected;
-
         public IItem Item => _item;
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            Selected?.Invoke(this);
+        }
+
+        public event Action<GridCell> Selected;
 
         public void Setup(int id)
         {
@@ -45,11 +50,6 @@ namespace GamePlay.Services.Common.InventoryGrids
         {
             _item = null;
             gameObject.SetActive(false);
-        }
-
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            Selected?.Invoke(this);
         }
     }
 }

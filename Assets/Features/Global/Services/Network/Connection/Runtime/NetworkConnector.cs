@@ -1,6 +1,4 @@
-﻿#region
-
-using System;
+﻿using System;
 using Cysharp.Threading.Tasks;
 using Global.Services.Common.Abstract;
 using Global.Services.Network.Common;
@@ -8,8 +6,6 @@ using Global.Services.Network.Connection.Logs;
 using Ragon.Client;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.Network.Connection.Runtime
 {
@@ -26,11 +22,11 @@ namespace Global.Services.Network.Connection.Runtime
             _config = config;
         }
 
-        [SerializeField] private RagonEntityManager _entityManager;
-
         private readonly NetworkEvents _events = new();
 
         private NetworkConnectionConfigAsset _config;
+
+        [SerializeField] private RagonEntityManager _entityManager;
         private NetworkConnectorLogger _logger;
 
         public void OnAwake()

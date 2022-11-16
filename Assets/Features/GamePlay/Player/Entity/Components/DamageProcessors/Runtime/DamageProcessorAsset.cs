@@ -1,14 +1,10 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
 {

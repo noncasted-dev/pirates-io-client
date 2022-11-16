@@ -1,6 +1,4 @@
-﻿#region
-
-using System;
+﻿using System;
 using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Player.Entity.Network.Remote.Receivers.Cannons.Runtime;
 using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
@@ -14,8 +12,6 @@ using Global.Services.Updaters.Runtime.Abstract;
 using Ragon.Client;
 using UnityEngine;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
 {

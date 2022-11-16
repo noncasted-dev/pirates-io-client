@@ -56,7 +56,7 @@ namespace Global.Bootstrappers
 
             binder.InvokeFlowCallbacks();
 
-            _scope.Container.Resolve<GameLoop>().Begin();
+            IObjectResolverExtensions.Resolve<GameLoop>(_scope.Container).Begin();
         }
     }
 }

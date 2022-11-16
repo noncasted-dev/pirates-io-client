@@ -1,10 +1,6 @@
-﻿#region
-
-using Common.ReadOnlyDictionaries.Editor;
+﻿using Common.ReadOnlyDictionaries.Editor;
 using GamePlay.Player.Entity.States.None.Logs;
 using UnityEditor;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Setup.Editor.States
 {

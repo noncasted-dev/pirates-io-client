@@ -47,10 +47,10 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
         private IAssetInstantiator<GameObject> _instantiator;
         private PlayerFactoryLogger _logger;
         private INetworkInstantiator _networkInstantiator;
+        private INetworkPlayerDataPresenter _networkPlayerDataPresenter;
         private IProfileStorageProvider _profileStorageProvider;
         private LevelScope _scope;
         private IPlayerTransformPresenter _transformPresenter;
-        private INetworkPlayerDataPresenter _networkPlayerDataPresenter;
 
         public async UniTask<IPlayerRoot> Create(Vector2 position)
         {

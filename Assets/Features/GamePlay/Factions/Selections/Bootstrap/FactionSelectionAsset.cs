@@ -26,7 +26,7 @@ namespace GamePlay.Factions.Selections.Bootstrap
             ICallbacksRegister callbacksRegister,
             ISceneLoader sceneLoader)
         {
-            var loop = Instantiate(_prefab);
+            var loop = Object.Instantiate(_prefab);
             loop.name = "FactionSelection";
 
             serviceBinder.RegisterComponent(loop).As<IFactionSelectionLoop>();

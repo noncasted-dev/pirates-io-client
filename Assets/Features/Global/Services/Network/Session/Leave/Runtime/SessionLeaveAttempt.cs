@@ -1,9 +1,5 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using Ragon.Client;
-
-#endregion
 
 namespace Global.Services.Network.Session.Leave.Runtime
 {
@@ -26,22 +22,6 @@ namespace Global.Services.Network.Session.Leave.Runtime
 
             _completion.TrySetResult(NetworkSessionLeaveResultType.Fail);
         }
-
-        public async UniTask<NetworkSessionLeaveResultType> Leave()
-        {
-            RagonNetwork.AddListener(this);
-
-            RagonNetwork.Session.Leave();
-
-            var result = await _completion.Task;
-            await UniTask.Yield();
-
-            RagonNetwork.RemoveListener(this);
-
-            return result;
-        }
-
-        #region Unused
 
         public void OnAuthorized(string playerId, string playerName)
         {
@@ -75,6 +55,18 @@ namespace Global.Services.Network.Session.Leave.Runtime
         {
         }
 
-        #endregion
+        public async UniTask<NetworkSessionLeaveResultType> Leave()
+        {
+            RagonNetwork.AddListener(this);
+
+            RagonNetwork.Session.Leave();
+
+            var result = await _completion.Task;
+            await UniTask.Yield();
+
+            RagonNetwork.RemoveListener(this);
+
+            return result;
+        }
     }
 }

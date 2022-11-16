@@ -1,10 +1,6 @@
-﻿#region
-
-using GamePlay.Player.Entity.Setup.Path;
+﻿using GamePlay.Player.Entity.Setup.Path;
 using GamePlay.Player.Entity.Views.Animators.Runtime;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.States.Idles.Runtime
 {

@@ -1,6 +1,4 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Path;
@@ -10,8 +8,6 @@ using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
 using UnityEngine;
 using VContainer;
 
-#endregion
-
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime
 {
     [CreateAssetMenu(fileName = PlayerAssetsPaths.StatePrefix + "RangeAttack",
@@ -19,8 +15,8 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime
     public class RangeAttackAsset : PlayerComponentAsset
     {
         [SerializeField] [EditableObject] private RangeAttackConfigAsset _config;
-        [SerializeField] [EditableObject] private RangeAttackLogSettings _logSettings;
         [SerializeField] [EditableObject] private RangeAttackDefinition _definition;
+        [SerializeField] [EditableObject] private RangeAttackLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

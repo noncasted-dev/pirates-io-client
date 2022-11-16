@@ -1,9 +1,5 @@
-﻿#region
-
-using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+﻿using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Views.RotationPoint
 {
@@ -11,12 +7,12 @@ namespace GamePlay.Player.Entity.Views.RotationPoint
     {
         private Transform _transform;
 
+        public Vector2 Position => _transform.position;
+        public Transform Transform => _transform;
+
         public void OnAwake()
         {
             _transform = transform;
         }
-
-        public Vector2 Position => _transform.position;
-        public Transform Transform => _transform;
     }
 }

@@ -1,6 +1,4 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Common.EditableScriptableObjects.Attributes;
 using Cysharp.Threading.Tasks;
@@ -11,8 +9,6 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
 using VContainer.Unity;
-
-#endregion
 
 namespace Local.ComposedSceneConfig
 {

@@ -1,11 +1,7 @@
-﻿#region
-
-using Global.Services.AssetsFlow.Logs;
+﻿using Global.Services.AssetsFlow.Logs;
 using Global.Services.AssetsFlow.Runtime;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-
-#endregion
 
 namespace Global.Services.AssetsFlow.Tests
 {
@@ -20,12 +16,13 @@ namespace Global.Services.AssetsFlow.Tests
             _factory.Construct(_loader, _unloader, flowLogger);
         }
 
+        [SerializeField] private AssetInstantiatorFactory _factory;
+        [SerializeField] private AssetLoader _loader;
+
         [SerializeField] private AssetsFlowLogSettings _logSettings;
         [SerializeField] private AssetReference _reference;
-        [SerializeField] private AssetLoader _loader;
-        [SerializeField] private AssetUnloader _unloader;
         [SerializeField] private AssetsReferencesStorage _storage;
-        [SerializeField] private AssetInstantiatorFactory _factory;
+        [SerializeField] private AssetUnloader _unloader;
 
         public AssetsFlowLogSettings LogSettings => _logSettings;
         public AssetReference Reference => _reference;

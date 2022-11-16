@@ -1,13 +1,9 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Local.Services.Abstract;
 using Menu.Common;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Menu.Services.MenuLoop.Runtime
 {

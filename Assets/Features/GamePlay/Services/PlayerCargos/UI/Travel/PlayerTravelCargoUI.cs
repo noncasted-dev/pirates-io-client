@@ -18,9 +18,6 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
 
         private IItem _selected;
 
-        public bool IsActive => _body.activeSelf;
-        public event Action<IItem, Action<IItem[]>> Dropped;
-
         private void Awake()
         {
             _body.SetActive(false);
@@ -41,6 +38,9 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
 
             _dropButton.onClick.RemoveListener(OnDropClicked);
         }
+
+        public bool IsActive => _body.activeSelf;
+        public event Action<IItem, Action<IItem[]>> Dropped;
 
         public void Open(IItem[] items)
         {

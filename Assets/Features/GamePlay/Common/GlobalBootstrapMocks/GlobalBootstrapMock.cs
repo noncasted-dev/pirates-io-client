@@ -65,12 +65,12 @@ namespace GamePlay.Common.GlobalBootstrapMocks
 
             var container = _scope.Container;
 
-            container.Resolve<GameLoop>();
+            IObjectResolverExtensions.Resolve<GameLoop>(container);
 
             binder.InvokeFlowCallbacks();
 
-            var connector = container.Resolve<INetworkConnector>();
-            var joiner = container.Resolve<INetworkSessionJoiner>();
+            var connector = IObjectResolverExtensions.Resolve<INetworkConnector>(container);
+            var joiner = IObjectResolverExtensions.Resolve<INetworkSessionJoiner>(container);
 
             var userName = $"Player_{Random.Range(0, 301)}";
             await connector.Connect(userName);
@@ -79,7 +79,7 @@ namespace GamePlay.Common.GlobalBootstrapMocks
 
         private async UniTask BootstrapLocal()
         {
-            var result = await _level.Load(_scope, _scope.Container.Resolve<ISceneLoader>());
+            var result = await _level.Load(_scope, IObjectResolverExtensions.Resolve<ISceneLoader>(_scope.Container));
 
             result.OnLoaded();
         }

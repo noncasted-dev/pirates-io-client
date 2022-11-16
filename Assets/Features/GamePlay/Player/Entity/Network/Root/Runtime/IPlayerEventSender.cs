@@ -1,9 +1,5 @@
-﻿#region
-
-using Ragon.Client;
+﻿using Ragon.Client;
 using Ragon.Common;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Network.Root.Runtime
 {

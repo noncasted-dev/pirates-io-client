@@ -1,6 +1,4 @@
-﻿#region
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading;
 using Common.EditableScriptableObjects.Attributes;
 using Cysharp.Threading.Tasks;
@@ -9,8 +7,6 @@ using GamePlay.Player.Entity.Views.Animators.Logs;
 using UnityEngine;
 using VContainer;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Views.Animators.Runtime
 {
@@ -23,12 +19,12 @@ namespace GamePlay.Player.Entity.Views.Animators.Runtime
             _logger = new AnimatorLogger(logger, _logSettings);
         }
 
+        private Animator _animator;
+        private AnimatorLogger _logger;
+
         [SerializeField] [EditableObject] private AnimatorLogSettings _logSettings;
 
         [SerializeField] private List<SubAnimator> _subAnimators;
-
-        private Animator _animator;
-        private AnimatorLogger _logger;
 
         public async UniTask PlayAsync(
             AnimationTrigger trigger,

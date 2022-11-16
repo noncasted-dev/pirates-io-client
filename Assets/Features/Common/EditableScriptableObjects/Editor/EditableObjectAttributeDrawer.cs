@@ -1,12 +1,8 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Common.EditableScriptableObjects.Attributes;
 using UnityEditor;
 using UnityEngine;
-
-#endregion
 
 #if UNITY_EDITOR
 namespace Common.EditableScriptableObjects.Editor
@@ -63,8 +59,6 @@ namespace Common.EditableScriptableObjects.Editor
 
             var targetObject = new SerializedObject(property.objectReferenceValue);
 
-            #region Format Field Rects
-
             var propertyRects = new List<Rect>();
             var marchingRect = new Rect(fieldRect);
 
@@ -89,11 +83,7 @@ namespace Common.EditableScriptableObjects.Editor
 
             bodyRect.yMax = marchingRect.yMax;
 
-            #endregion
-
             DrawBackground(bodyRect);
-
-            #region Draw Fields
 
             EditorGUI.indentLevel++;
 
@@ -120,8 +110,6 @@ namespace Common.EditableScriptableObjects.Editor
             targetObject.ApplyModifiedProperties();
 
             EditorGUI.indentLevel--;
-
-            #endregion
         }
 
         /// <summary>
@@ -150,8 +138,6 @@ namespace Common.EditableScriptableObjects.Editor
             }
         }
         // Use the following area to change the style of the expandable ScriptableObject drawers;
-
-        #region Style Setup
 
         private enum BackgroundStyles
         {
@@ -185,8 +171,6 @@ namespace Common.EditableScriptableObjects.Editor
         ///     The colour that is used to lighten the background.
         /// </summary>
         private static readonly Color LIGHTEN_COLOUR = new(1.0f, 1.0f, 1.0f, 0.2f);
-
-        #endregion
     }
 }
 #endif

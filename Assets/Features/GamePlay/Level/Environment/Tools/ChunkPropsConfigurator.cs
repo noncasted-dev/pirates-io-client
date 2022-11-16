@@ -1,10 +1,6 @@
-﻿#region
-
-using NaughtyAttributes;
+﻿using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Rendering;
-
-#endregion
 
 namespace GamePlay.Level.Environment.Tools
 {

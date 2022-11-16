@@ -1,10 +1,6 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow;
 using VContainer.Unity;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Common.Root
 {

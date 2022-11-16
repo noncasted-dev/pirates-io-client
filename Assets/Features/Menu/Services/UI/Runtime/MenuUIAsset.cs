@@ -1,14 +1,10 @@
-﻿#region
-
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Local.Services.Abstract;
 using Menu.Common;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-
-#endregion
 
 namespace Menu.Services.UI.Runtime
 {

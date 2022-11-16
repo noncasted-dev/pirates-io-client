@@ -1,11 +1,7 @@
-﻿#region
-
-using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
+﻿using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Components.Rotations.Runtime
 {

@@ -1,13 +1,9 @@
-﻿#region
-
-using Common.EditableScriptableObjects.Attributes;
+﻿using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Common.SceneObjects.Logs;
 using Global.Common;
 using Global.Services.Common.Abstract;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Common.SceneObjects.Global
 {

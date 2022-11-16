@@ -1,11 +1,7 @@
-﻿#region
-
-using Global.Services.Profiles.Logs;
+﻿using Global.Services.Profiles.Logs;
 using NaughtyAttributes;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.Profiles.Storage
 {
@@ -18,8 +14,11 @@ namespace Global.Services.Profiles.Storage
             _logger = logger;
         }
 
-        [SerializeField] [ReadOnly] private string _userName = string.Empty;
         private ProfileLogger _logger;
+
+        [SerializeField] [ReadOnly] private string _userName = string.Empty;
+
+        public string UserName => _userName;
 
         public void SetUserName(string userName)
         {
@@ -27,7 +26,5 @@ namespace Global.Services.Profiles.Storage
 
             _logger.OnUserNameSet(userName);
         }
-
-        public string UserName => _userName;
     }
 }

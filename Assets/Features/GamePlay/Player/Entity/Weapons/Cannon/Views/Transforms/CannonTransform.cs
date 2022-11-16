@@ -1,11 +1,7 @@
-﻿#region
-
-using GamePlay.Player.Entity.Views.Transforms.Runtime;
+﻿using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using UnityEngine;
 using VContainer;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Views.Transforms
 {

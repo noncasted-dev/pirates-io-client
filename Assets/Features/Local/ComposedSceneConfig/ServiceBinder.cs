@@ -1,12 +1,8 @@
-﻿#region
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Local.Services.Abstract;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-
-#endregion
 
 namespace Local.ComposedSceneConfig
 {

@@ -1,8 +1,4 @@
-﻿#region
-
-using System;
-
-#endregion
+﻿using System;
 
 namespace GamePlay.Player.Entity.Views.Animators.Runtime
 {

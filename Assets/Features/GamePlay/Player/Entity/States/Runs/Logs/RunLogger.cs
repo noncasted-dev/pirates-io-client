@@ -1,9 +1,5 @@
-﻿#region
-
-using UnityEngine;
+﻿using UnityEngine;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
-
-#endregion
 
 namespace GamePlay.Player.Entity.States.Runs.Logs
 {

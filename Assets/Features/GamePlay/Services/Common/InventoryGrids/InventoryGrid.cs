@@ -23,9 +23,6 @@ namespace GamePlay.Services.Common.InventoryGrids
 
         private readonly Dictionary<int, GridCell> _cells = new();
 
-        public event Action<IItem> Selected;
-        public event Action Deselected;
-
         private void Awake()
         {
             for (var i = 0; i < _startupCells.Length; i++)
@@ -47,6 +44,9 @@ namespace GamePlay.Services.Common.InventoryGrids
             foreach (var cell in _cells)
                 cell.Value.Selected -= OnSelected;
         }
+
+        public event Action<IItem> Selected;
+        public event Action Deselected;
 
         public void Fill(IItem[] items)
         {

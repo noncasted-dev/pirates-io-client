@@ -1,11 +1,7 @@
-﻿#region
-
-using GamePlay.Common.Areas.Common.Runtime;
+﻿using GamePlay.Common.Areas.Common.Runtime;
 using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime
 {

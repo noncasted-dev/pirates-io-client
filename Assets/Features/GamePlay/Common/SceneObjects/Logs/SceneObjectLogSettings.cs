@@ -1,10 +1,6 @@
-﻿#region
-
-using Global.Common;
+﻿using Global.Common;
 using Global.Services.Loggers.Runtime;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Common.SceneObjects.Logs
 {

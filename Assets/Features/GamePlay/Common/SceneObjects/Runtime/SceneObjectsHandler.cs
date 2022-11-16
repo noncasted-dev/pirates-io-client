@@ -1,10 +1,6 @@
-﻿#region
-
-using GamePlay.Common.SceneObjects.Logs;
+﻿using GamePlay.Common.SceneObjects.Logs;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace GamePlay.Common.SceneObjects.Runtime
 {
@@ -16,9 +12,9 @@ namespace GamePlay.Common.SceneObjects.Runtime
             _logger = logger;
         }
 
-        [SerializeField] private SceneObject[] _objects;
-
         private SceneObjectLogger _logger;
+
+        [SerializeField] private SceneObject[] _objects;
 
         public void InvokeAwake()
         {

@@ -1,10 +1,6 @@
-﻿#region
-
-using System;
+﻿using System;
 using Common.ReadOnlyDictionaries.Runtime;
 using UnityEngine.AddressableAssets;
-
-#endregion
 
 namespace GamePlay.Services.Projectiles.Entity
 {

@@ -1,14 +1,10 @@
-﻿#region
-
-using System.Linq;
+﻿using System.Linq;
 using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow;
 using GamePlay.Player.Entity.Setup.Root;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Setup.Bootstrap
 {

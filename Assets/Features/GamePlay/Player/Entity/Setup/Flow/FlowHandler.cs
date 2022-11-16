@@ -1,10 +1,6 @@
-﻿#region
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Setup.Flow
 {

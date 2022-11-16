@@ -13,12 +13,12 @@ namespace GamePlay.Services.PlayerCargos.UI.City
         [SerializeField] private GameObject _body;
         [SerializeField] private InventoryGrid _grid;
 
-        public bool IsActive => _body.activeSelf;
-
         private void Awake()
         {
             _body.SetActive(false);
         }
+
+        public bool IsActive => _body.activeSelf;
 
         public void Open(IItem[] items)
         {

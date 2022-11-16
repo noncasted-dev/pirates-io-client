@@ -1,12 +1,8 @@
-﻿#region
-
-using System;
+﻿using System;
 using Cysharp.Threading.Tasks;
 using Global.Services.Network.Session.Join.Logs;
 using UnityEngine;
 using VContainer;
-
-#endregion
 
 namespace Global.Services.Network.Session.Join.Runtime
 {

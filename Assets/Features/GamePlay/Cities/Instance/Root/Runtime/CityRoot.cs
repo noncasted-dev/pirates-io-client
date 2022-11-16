@@ -14,9 +14,9 @@ namespace GamePlay.Cities.Instance.Root.Runtime
     {
         [SerializeField] [EditableObject] private CityDefinition _definition;
         [SerializeField] private CitySpawnPoints _spawnPoints;
+        public FactionType Faction => _definition.Faction;
 
         public CityDefinition Definition => _definition;
-        public FactionType Faction => _definition.Faction;
         public ICitySpawnPoints SpawnPoints => _spawnPoints;
     }
 }

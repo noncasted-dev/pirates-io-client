@@ -12,9 +12,9 @@ namespace GamePlay.Services.Network.PlayerDataProvider.Runtime
         INetworkPlayerDataProvider
     {
         private const int _multiplier = 1000_000;
+        private int _generatedCounter;
 
         private int _playerEntityId;
-        private int _generatedCounter;
 
         public void SetEntityId(int id)
         {

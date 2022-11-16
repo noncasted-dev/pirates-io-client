@@ -1,9 +1,5 @@
-﻿#region
-
-using System;
+﻿using System;
 using Ragon.Client;
-
-#endregion
 
 namespace GamePlay.Services.Network.Common.Abstract
 {

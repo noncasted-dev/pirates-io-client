@@ -1,10 +1,6 @@
-﻿#region
-
-using GamePlay.Common.Paths;
+﻿using GamePlay.Common.Paths;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-
-#endregion
 
 namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
 {

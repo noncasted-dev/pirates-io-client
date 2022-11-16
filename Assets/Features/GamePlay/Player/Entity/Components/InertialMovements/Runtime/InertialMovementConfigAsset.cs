@@ -1,10 +1,6 @@
-﻿#region
-
-using GamePlay.Player.Entity.Setup.Path;
+﻿using GamePlay.Player.Entity.Setup.Path;
 using NaughtyAttributes;
 using UnityEngine;
-
-#endregion
 
 namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
 {
@@ -14,10 +10,10 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
     {
         [SerializeField] [CurveRange(0f, 0f, 1f, 1f)]
         private AnimationCurve _curve;
+        [SerializeField] [Min(0f)] private float _lerpDistanceMultiplier;
 
         [SerializeField] [Min(0f)] private float _lerpSpeed = 1f;
         [SerializeField] [Min(0f)] private float _lerpTime;
-        [SerializeField] [Min(0f)] private float _lerpDistanceMultiplier;
 
         public float LerpSpeed => _lerpSpeed;
 

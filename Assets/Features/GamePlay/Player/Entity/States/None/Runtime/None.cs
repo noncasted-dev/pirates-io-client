@@ -1,12 +1,8 @@
-﻿#region
-
-using GamePlay.Player.Entity.Components.StateMachines.Runtime;
+﻿using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
 using GamePlay.Player.Entity.States.None.Logs;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
-
-#endregion
 
 namespace GamePlay.Player.Entity.States.None.Runtime
 {

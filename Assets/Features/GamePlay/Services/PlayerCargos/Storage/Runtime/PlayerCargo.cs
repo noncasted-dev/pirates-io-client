@@ -78,7 +78,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
         private void OnDropped(IItem item, int count, Action<IItem[]> redrawCallback)
         {
-            _droppedObjectsPresenter.DropFromPlayer(item);
+            _droppedObjectsPresenter.DropFromPlayer(item.BaseData.Type, count);
 
             var type = item.BaseData.Type;
 

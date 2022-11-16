@@ -69,6 +69,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
 
         private void OnDropped(IItem item, int count)
         {
+            _grid.Deselect();
             Dropped?.Invoke(item, count, Redraw);
         }
     }

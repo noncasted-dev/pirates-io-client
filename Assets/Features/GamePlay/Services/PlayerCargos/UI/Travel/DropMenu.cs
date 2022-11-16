@@ -14,6 +14,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
         [SerializeField] private Slider _slider;
 
         private IItem _selected;
+        private bool _isChangedThisFrame;
 
         public event Action<IItem, int> Dropped;
 
@@ -24,6 +25,10 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
 
             _selected = item;
             _selected.CountChanged += OnCountChanged;
+            
+            _slider.maxValue = item.Count;
+            _slider.value = 0;
+            _input.text = "0";
 
             _input.onValueChanged.AddListener(OnInputChanged);
             _slider.onValueChanged.AddListener(OnSliderChanged);
@@ -54,8 +59,12 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
             }
 
             var count = int.Parse(_input.text);
+            
+            if (count == 0)
+                return;
 
             Dropped?.Invoke(_selected, count);
+            Disable();
         }
 
         private void OnCountChanged(int count)
@@ -67,24 +76,35 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
         {
             if (_selected == null)
                 return;
+            
+            if (_isChangedThisFrame == true)
+                return;
 
             var count = int.Parse(input);
 
-            var progress = count / (float)_selected.Count;
-
-            _slider.value = progress;
+            _slider.value = _selected.Count;
 
             if (count <= _selected.Count)
                 return;
 
+            _isChangedThisFrame = true;
             _input.text = _selected.Count.ToString();
         }
 
         private void OnSliderChanged(float value)
         {
+            if (_isChangedThisFrame == true)
+                return;
+            
             var count = (int)value;
 
+            _isChangedThisFrame = true;
             _input.text = count.ToString();
+        }
+
+        private void Update()
+        {
+            _isChangedThisFrame = false;
         }
     }
 }

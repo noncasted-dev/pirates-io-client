@@ -36,12 +36,12 @@ namespace GamePlay.Services.DroppedObjects.Network.Runtime
         public event Action<ItemDropEvent> ItemDropped;
         public event Action<int> ItemCollected;
 
-        public void OnItemDropped(IItem item, Vector2 position)
+        public void OnItemDropped(ItemType type, int count, Vector2 position)
         {
             var data = new ItemDropEvent(
-                item.BaseData.Type,
+                type,
                 position,
-                item.Count,
+                count,
                 _playerDataProvider.GenerateUniqueId());
 
             _sender.ReplicateEvent(data, RagonTarget.All, RagonReplicationMode.LocalAndServer);

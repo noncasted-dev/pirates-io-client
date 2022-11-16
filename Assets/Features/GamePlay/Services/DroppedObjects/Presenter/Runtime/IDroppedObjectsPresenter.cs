@@ -5,7 +5,7 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
 {
     public interface IDroppedObjectsPresenter
     {
-        void DropFromPlayer(IItem item);
-        void Drop(IItem item, Vector2 position);
+        void DropFromPlayer(ItemType type, int count);
+        void Drop(ItemType type, int count, Vector2 position);
     }
 }

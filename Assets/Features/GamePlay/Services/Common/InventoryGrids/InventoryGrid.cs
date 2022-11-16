@@ -94,6 +94,11 @@ namespace GamePlay.Services.Common.InventoryGrids
             Selected?.Invoke(cell.Item);
         }
 
+        public void Deselect()
+        {
+            _selection.Disable();
+        }
+
         private void CalculateVerticalSize(int itemsCount)
         {
             var cellSize = _gridLayout.cellSize.y;

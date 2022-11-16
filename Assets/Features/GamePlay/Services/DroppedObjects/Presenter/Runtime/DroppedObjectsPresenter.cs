@@ -46,17 +46,17 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
         private IPlayerPositionProvider _playerPositionProvider;
         private IDropPoolProvider _poolProvider;
 
-        public void DropFromPlayer(IItem item)
+        public void DropFromPlayer(ItemType type, int count)
         {
             var dropPosition = _playerPositionProvider.Position;
             dropPosition.y -= _config.DropFromPlayerYOffset;
 
-            _dropSender.OnItemDropped(item, dropPosition);
+            _dropSender.OnItemDropped(type, count, dropPosition);
         }
 
-        public void Drop(IItem item, Vector2 position)
+        public void Drop(ItemType type, int count, Vector2 position)
         {
-            _dropSender.OnItemDropped(item, position);
+            _dropSender.OnItemDropped(type, count, position);
         }
 
         public void OnLoaded()

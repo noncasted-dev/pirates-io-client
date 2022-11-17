@@ -1,6 +1,7 @@
 ﻿{
   "name": "GamePlay.Player.Network.Remote.AreaInteractor.Runtime",
   "references": [
-    "GUID:f09315e9cfc95e744a91762b4999b090"
+    "GUID:f09315e9cfc95e744a91762b4999b090",
+    "GUID:9a286a02eeeb6bc45a393a0ca6c650f9"
   ]
 }

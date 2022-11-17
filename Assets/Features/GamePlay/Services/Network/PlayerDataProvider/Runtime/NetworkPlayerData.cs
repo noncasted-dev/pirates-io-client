@@ -1,21 +1,16 @@
-﻿using UnityEngine;
+﻿using Ragon.Client;
+using UnityEngine;
 
 namespace GamePlay.Services.Network.PlayerDataProvider.Runtime
 {
     public class NetworkPlayerData :
         MonoBehaviour,
-        INetworkPlayerDataPresenter,
         INetworkPlayerDataProvider
     {
         private const int _multiplier = 1000_000;
         private int _generatedCounter;
 
         private int _playerEntityId;
-
-        public void SetEntityId(int id)
-        {
-            _playerEntityId = id;
-        }
 
         public int GenerateUniqueId()
         {
@@ -24,7 +19,7 @@ namespace GamePlay.Services.Network.PlayerDataProvider.Runtime
 
             _generatedCounter++;
 
-            var baseValue = _playerEntityId * _multiplier;
+            var baseValue = (int)RagonNetwork.Room.LocalPlayer.PeerId * _multiplier;
             var id = baseValue + _generatedCounter;
 
             return id;

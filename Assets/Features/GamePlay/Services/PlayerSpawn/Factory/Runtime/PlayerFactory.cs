@@ -25,10 +25,8 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             LevelScope scope,
             IPlayerTransformPresenter transformPresenter,
             IProfileStorageProvider profileStorageProvider,
-            INetworkPlayerDataPresenter networkPlayerDataPresenter,
             PlayerFactoryLogger logger)
         {
-            _networkPlayerDataPresenter = networkPlayerDataPresenter;
             _transformPresenter = transformPresenter;
             _profileStorageProvider = profileStorageProvider;
             _networkInstantiator = networkInstantiator;
@@ -43,7 +41,6 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
         private IAssetInstantiator<GameObject> _instantiator;
         private PlayerFactoryLogger _logger;
         private INetworkInstantiator _networkInstantiator;
-        private INetworkPlayerDataPresenter _networkPlayerDataPresenter;
         private IProfileStorageProvider _profileStorageProvider;
         private LevelScope _scope;
         private IPlayerTransformPresenter _transformPresenter;
@@ -56,10 +53,6 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
                 _networkPrefab,
                 position,
                 payload);
-
-            var entity = networkObject.GetComponent<RagonEntity>();
-
-            _networkPlayerDataPresenter.SetEntityId(entity.Id);
 
             var playerObject = await _instantiator.InstantiateAsync(Vector2.zero);
             playerObject.name = "Player";

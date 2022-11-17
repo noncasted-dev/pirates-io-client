@@ -1,18 +1,18 @@
 ﻿using GamePlay.Common.Areas.Common.Runtime;
 using UnityEngine;
 
-namespace GamePlay.Common.Areas.Implementation.Cities
+namespace GamePlay.Common.Areas.Implementation.Port
 {
-    public class CityArea : MonoBehaviour, IArea
+    public class PortArea : MonoBehaviour, IArea
     {
         public void OnEntered(IAreaInteractor interactor)
         {
-            interactor.OnCityEntered();
+            interactor.OnPortEntered();
         }
 
         public void OnExited(IAreaInteractor interactor)
         {
-            interactor.OnCityExited();
+            interactor.OnPortExited();
         }
     }
 }

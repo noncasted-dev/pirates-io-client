@@ -117,6 +117,10 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Services/PlayerCargos/Config/UI_PlayerCargo_City.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 1a370d35da8eb374b8bb4a2f4bcee7a6
+    m_Address: Assets/Features/GamePlay/Level/Environment/Artwork/Shaders/Water_Material.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
   m_SchemaSet:

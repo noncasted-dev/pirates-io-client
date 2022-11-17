@@ -35,6 +35,15 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
         private SpriteViewLogger _logger;
 
         private SpriteRenderer _sprite;
+        
+        public Material Material
+        {
+            get
+            {
+                _logger.OnMaterialUsed(_sprite.material);
+                return _sprite.material;
+            }
+        }
 
         public void OnAwake()
         {
@@ -89,15 +98,6 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
                     subSprite.flipX = _sprite.flipX;
 
             _logger.OnFlippedAlong(direction);
-        }
-
-        public Material Material
-        {
-            get
-            {
-                _logger.OnMaterialUsed(_sprite.material);
-                return _sprite.material;
-            }
         }
 
         public void SetMaterial(Material material)

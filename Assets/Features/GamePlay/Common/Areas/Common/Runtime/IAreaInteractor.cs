@@ -2,7 +2,12 @@
 {
     public interface IAreaInteractor
     {
+        bool IsLocal { get; }
+        
         void OnCityEntered();
-        void OnAreaExited();
+        void OnCityExited();
+
+        void OnPortEntered();
+        void OnPortExited();
     }
 }

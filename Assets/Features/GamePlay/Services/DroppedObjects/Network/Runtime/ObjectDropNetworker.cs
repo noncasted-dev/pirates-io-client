@@ -50,7 +50,7 @@ namespace GamePlay.Services.DroppedObjects.Network.Runtime
         public void OnItemCollected(int id)
         {
             var data = new ItemCollectedEvent(id);
-
+            
             _sender.ReplicateEvent(data, RagonTarget.All, RagonReplicationMode.Server);
         }
 

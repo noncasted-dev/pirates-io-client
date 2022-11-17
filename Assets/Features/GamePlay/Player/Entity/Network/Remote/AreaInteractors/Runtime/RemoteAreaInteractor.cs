@@ -1,4 +1,5 @@
 ﻿using GamePlay.Common.Areas.Common.Runtime;
+using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.Network.Remote.AreaInteractors.Runtime
@@ -8,6 +9,9 @@ namespace GamePlay.Player.Entity.Network.Remote.AreaInteractors.Runtime
     {
         [SerializeField] private Collider2D _collision;
         [SerializeField] private Collider2D _hitbox;
+        [SerializeField] private PlayerSpriteView _spriteView;
+
+        public bool IsLocal => false;
 
         public void OnCityEntered()
         {
@@ -15,10 +19,20 @@ namespace GamePlay.Player.Entity.Network.Remote.AreaInteractors.Runtime
             _collision.isTrigger = true;
         }
 
-        public void OnAreaExited()
+        public void OnCityExited()
         {
             _hitbox.enabled = true;
             _collision.isTrigger = false;
+        }
+
+        public void OnPortEntered()
+        {
+            _spriteView.Disable();
+        }
+
+        public void OnPortExited()
+        {
+            _spriteView.Enable();
         }
     }
 }

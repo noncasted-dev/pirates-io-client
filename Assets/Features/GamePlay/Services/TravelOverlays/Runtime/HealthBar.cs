@@ -3,7 +3,7 @@ using GamePlay.Player.Entity.Components.Healths.Runtime;
 using UniRx;
 using UnityEngine;
 
-namespace Features.GamePlay.Services.TravelOverlays.Runtime
+namespace GamePlay.Services.TravelOverlays.Runtime
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(RectTransform))]

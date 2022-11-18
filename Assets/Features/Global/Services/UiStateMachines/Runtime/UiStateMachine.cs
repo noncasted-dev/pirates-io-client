@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Features.Global.Services.InputViews.ConstraintsStorage;
+using Global.Services.InputViews.ConstraintsStorage;
 using Global.Services.UiStateMachines.Logs;
 using UnityEngine;
 using VContainer;

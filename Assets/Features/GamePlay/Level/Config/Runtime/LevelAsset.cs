@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Common.EditableScriptableObjects.Attributes;
-using Features.GamePlay.Services.TravelOverlays.Runtime;
 using GamePlay.Common.Paths;
 using GamePlay.Factions.Selections.Bootstrap;
 using GamePlay.Level.Environment.Bootstrap;
@@ -17,6 +16,7 @@ using GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime;
 using GamePlay.Services.Projectiles.Bootstrap;
 using GamePlay.Services.Projectiles.Replicator.Runtime;
 using GamePlay.Services.TransitionScreens.Runtime;
+using GamePlay.Services.TravelOverlays.Runtime;
 using GamePlay.Services.VFX.Pool.Provider;
 using Local.ComposedSceneConfig;
 using Local.Services.Abstract;

@@ -7,7 +7,7 @@ using Local.Services.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace Features.GamePlay.Services.TravelOverlays.Runtime
+namespace GamePlay.Services.TravelOverlays.Runtime
 {
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "TravelOverlay",
         menuName = GamePlayAssetsPaths.TravelOverlay + "Service")]

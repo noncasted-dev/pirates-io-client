@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Features.Global.Services.InputViews.ConstraintsStorage;
 using Global.Common;
 using Global.Services.InputViews.Constraints;
+using Global.Services.InputViews.ConstraintsStorage;
 using UnityEngine;
 
 namespace Global.Services.UiStateMachines.Runtime

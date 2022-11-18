@@ -2,7 +2,7 @@
 using UnityEngine;
 using VContainer;
 
-namespace Features.GamePlay.Services.TravelOverlays.Runtime
+namespace GamePlay.Services.TravelOverlays.Runtime
 {
     public class TravelOverlay : MonoBehaviour, IUiState, ITravelOverlay
     {

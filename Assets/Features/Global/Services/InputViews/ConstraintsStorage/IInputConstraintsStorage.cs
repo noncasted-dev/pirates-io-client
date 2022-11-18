@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Global.Services.InputViews.Constraints;
 
-namespace Features.Global.Services.InputViews.ConstraintsStorage
+namespace Global.Services.InputViews.ConstraintsStorage
 {
     public interface IInputConstraintsStorage
     {

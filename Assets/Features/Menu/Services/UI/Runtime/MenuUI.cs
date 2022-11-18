@@ -20,10 +20,11 @@ namespace Menu.Services.UI.Runtime
         }
         
         [SerializeField] private TMP_Text _connectionErrorText;
-        [SerializeField] private GameObject _loadingBody;
-        [SerializeField] private GameObject _loginBody;
         [SerializeField] private TMP_InputField _nameInput;
         [SerializeField] private Button _playButton;
+        
+        [SerializeField] private GameObject _loadingBody;
+        [SerializeField] private GameObject _loginBody;
 
         private UiConstraints _constraints;
         private IUiStateMachine _uiStateMachine;

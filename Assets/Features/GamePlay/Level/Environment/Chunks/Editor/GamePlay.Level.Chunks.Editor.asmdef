@@ -2,6 +2,7 @@
   "name": "GamePlay.Level.Chunks.Editor",
   "references": [
     "GUID:5811ab1f7795f3f41a73a20cc0aa3450",
-    "GUID:304598a766c781247877f81511375f98"
+    "GUID:304598a766c781247877f81511375f98",
+    "GUID:776d03a35f1b52c4a9aed9f56d7b4229"
   ]
 }

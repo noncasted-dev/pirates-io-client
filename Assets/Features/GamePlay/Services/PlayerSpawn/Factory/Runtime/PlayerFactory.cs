@@ -3,13 +3,12 @@ using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Root;
 using GamePlay.Services.Common.Scope;
-using GamePlay.Services.Network.PlayerDataProvider.Runtime;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Logs;
 using Global.Services.AssetsFlow.Runtime.Abstract;
 using Global.Services.Network.Instantiators.Runtime;
 using Global.Services.Profiles.Storage;
-using Ragon.Client;
+using UniRx;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
@@ -72,6 +71,8 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             await bootstrapper.Bootstrap(_scope);
 
             var root = playerObject.GetComponent<IPlayerRoot>();
+
+            MessageBroker.Default.Publish(new PlayerSpawnedEvent());
 
             return root;
         }

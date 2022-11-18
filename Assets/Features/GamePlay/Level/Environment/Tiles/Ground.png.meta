@@ -456,10 +456,10 @@ TextureImporter:
       name: Ground_Stroke_Single_Up
       rect:
         serializedVersion: 2
-        x: 1654
-        y: 768
-        width: 147
-        height: 138
+        x: 1640
+        y: 783
+        width: 184
+        height: 170
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -645,12 +645,12 @@ TextureImporter:
       name: Ground_Stroke_Single_Left
       rect:
         serializedVersion: 2
-        x: 1526
-        y: 631
-        width: 138
-        height: 147
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1480
+        y: 609
+        width: 170
+        height: 184
+      alignment: 9
+      pivot: {x: 0.5294118, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -666,12 +666,12 @@ TextureImporter:
       name: Ground_Stroke_Single_Right
       rect:
         serializedVersion: 2
-        x: 1792
-        y: 631
-        width: 137
-        height: 147
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1814
+        y: 609
+        width: 170
+        height: 184
+      alignment: 9
+      pivot: {x: 0.47058824, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -792,10 +792,10 @@ TextureImporter:
       name: Ground_Stroke_Single_Down
       rect:
         serializedVersion: 2
-        x: 1654
-        y: 503
-        width: 147
-        height: 138
+        x: 1640
+        y: 442
+        width: 184
+        height: 170
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -919,11 +919,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1014
-        y: 384
-        width: 138
-        height: 138
+        y: 338
+        width: 184
+        height: 184
       alignment: 9
-      pivot: {x: 0.5326087, y: 0.4673913}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -939,12 +939,12 @@ TextureImporter:
       name: Ground_Stroke_Block_Up_Right
       rect:
         serializedVersion: 2
-        x: 1279
-        y: 384
-        width: 138
-        height: 138
+        x: 1233
+        y: 338
+        width: 184
+        height: 184
       alignment: 9
-      pivot: {x: 0.4673913, y: 0.4673913}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1104,13 +1104,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ground_Stroke_Center
+      name: Ground_Outline_Center
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 256
-        width: 147
-        height: 147
+        x: 1640
+        y: 609
+        width: 184
+        height: 184
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1130,10 +1130,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1014
         y: 119
-        width: 138
-        height: 138
+        width: 184
+        height: 184
       alignment: 9
-      pivot: {x: 0.5326087, y: 0.5326087}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1149,12 +1149,12 @@ TextureImporter:
       name: Ground_Stroke_Block_Down_Right
       rect:
         serializedVersion: 2
-        x: 1279
+        x: 1233
         y: 119
-        width: 138
-        height: 139
+        width: 184
+        height: 184
       alignment: 9
-      pivot: {x: 0.4673913, y: 0.528777}
+      pivot: {x: 0.48913044, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1170,10 +1170,10 @@ TextureImporter:
       name: Ground_Stroke_Single
       rect:
         serializedVersion: 2
-        x: 1654
-        y: 119
-        width: 147
-        height: 147
+        x: 1636
+        y: 101
+        width: 183
+        height: 183
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1213,7 +1213,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 1
+        y: 0
         width: 128
         height: 128
       alignment: 9
@@ -1250,6 +1250,216 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Ground_Outline_Small_Left
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 1671
+        width: 147
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32df60880c5b2ee4da3e41f3eff80cba
+      internalID: -640314752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground_Outline_Small_Top
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 1799
+        width: 147
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c74147b89788e4dbacbad12ffcdc83
+      internalID: -287565134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground_Outline_Small_Right
+      rect:
+        serializedVersion: 2
+        x: 1796
+        y: 1671
+        width: 147
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab9807c8a666b574f830baf81248b4a4
+      internalID: -2125067542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground_Outline_Small_Down
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 1543
+        width: 147
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb84b73fdddb1804b811418179971de1
+      internalID: 1236204851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground_Outline_Small_Center
+      rect:
+        serializedVersion: 2
+        x: 1669
+        y: 1673
+        width: 147
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee1315d61a449df4dafcf0a9541a8e3f
+      internalID: 2134722923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground_Outline_Small_Corner_LeftDown
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 1449
+        width: 147
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e09c4571ca86b4ba9bf093c1d22ac4
+      internalID: 1501473297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground_Outline_Small_Corner_LeftTop
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 1705
+        width: 147
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982d689cdb4a5f24b9214b7a00ce6c9f
+      internalID: -1841935465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground_Outline_Small_Corner_RightTop
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 1705
+        width: 147
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b790415bdc4d0843b80009ab06ee46b
+      internalID: -870976846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground_Outline_Small_Corner_RightDown
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 1449
+        width: 147
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2749a11380fe3c149a017a797edf5771
+      internalID: 948808880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground_Outline_Small_Single
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 1159
+        width: 147
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fde2a6d5ea7b71438d8f73ddb110383
+      internalID: -1564242641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1271,7 +1481,6 @@ TextureImporter:
       Grass_Down_Right_1: -572614846
       Ground_32: 1315441345
       Ground_Stroke_Single_Down: -1155271067
-      Ground_0: 478090134
       Ground_Block_Left_Middle: 1102334626
       Ground_75: 1551281998
       Ground_84: 254502009
@@ -1283,6 +1492,7 @@ TextureImporter:
       Ground_49: 1275738450
       Ground_91: -1796120525
       Ground_77: 858777876
+      Ground_Outline_Small_Right: -2125067542
       Ground_42: 1299442629
       Ground_Block_Single: 1425283716
       Grass_Top_6: 301113430
@@ -1290,16 +1500,21 @@ TextureImporter:
       Grass_Top_0: -759176354
       Ground_Stroke_Block_Up_Left: -1844988063
       Ground_Block_Down_Middle: 1551281998
+      Ground_Outline_Small_Corner_LeftDown: 1501473297
       Ground_47: 538546186
       Ground_Block_Up_Single: -1832154087
       Ground_92: 1028837037
       Ground_Corner_Outside_Left_Down: -1433149892
+      Ground_Outline_Small_Left: 478090134
+      Ground_Outline_Small_Corner_RightDown: 948808880
       Grass_Down_Right_2: 59587616
       Grass_Down_Middle_2: 1433206376
       Ground_12: -209718783
       Ground_78: 1433206376
       Grass_Top_1: -417225124
       Ground_Stroke_Block_Middle_Right: 486297870
+      Ground_Outline_Small_Corner_RightTop: -870976846
+      Ground_Outline_Center: 1732160705
       Grass_Down_Left_1: 1935378940
       Grass_Down_Middle_0: 781284933
       Ground_90: -2104068992
@@ -1311,7 +1526,9 @@ TextureImporter:
       Ground_Block_Right_Single: 1643881218
       Grass_Down_Middle_3: -1724644909
       Ground_Stroke_Block_Down_Right: -863756319
+      Ground_Outline_Small_Corner_LeftTop: -1841935465
       Ground_Block_Middle: 863761915
+      Ground_Outline_Small_Single: -1564242641
       Grass_Top_Right_0: 616404994
       Ground_Stroke_Block_Up_Middle: -209718783
       Grass_Top_5: 2044383859
@@ -1329,6 +1546,7 @@ TextureImporter:
       Ground_45: -577200705
       Ground_Stroke_Single_Right: 1764727210
       Ground_Block_Left_Single: 824321566
+      Ground_Outline_Small_Center: 2134722923
       Ground_Corner_Inside_Left_Up: 538907438
       Ground_Stroke_Block_Down_Middle: 917113415
       Ground_63: -465744089
@@ -1341,13 +1559,14 @@ TextureImporter:
       Ground_SecondFloor_Left: 1687252288
       Ground_22: -2125082727
       Ground_97: -2104371627
+      Ground_Outline_Small_Down: 1236204851
+      Ground_Outline_Small_Top: -287565134
       Grass_Down_Middle_4: -1568872920
       Ground_20: 652430079
       Ground_96: -1155271067
       Ground_Corner_Inside_Right_Up: 538907438
       Ground_Corner_Inside_Right_Down: 1890941705
       Ground_86: 854851290
-      Ground_Stroke_Center: 1732160705
       Ground_Block_Right_Middle: -143534475
       Ground_61: 689679613
       Ground_Corner_Inside_Left_Down: 863761915

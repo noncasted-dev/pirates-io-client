@@ -1,5 +1,5 @@
 ﻿using Common.EditableScriptableObjects.Attributes;
-using GamePlay.Level.Environment.Chunks.Runtime;
+using GamePlay.Level.Environment.Chunks.Instance;
 using UnityEngine;
 
 namespace GamePlay.Level.Environment.Chunks.Editor

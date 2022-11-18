@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cfaaa150dc24a068d2357540505cc53, type: 3}
   m_Name: PlayerConfig_CannonShooter
   m_EditorClassIdentifier: 
-  _shotsAmount: 25
-  _shotsDelay: 0.05
-  _shotRandomDelay: 2
   _damage: 1
-  _pushForce: 1
-  _speed: 8
   _distance: 8
-  _randomDistance: 2
   _projectile:
     m_AssetGUID: 00fcb83de683a5c4ca9c8f318f95630f
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  _pushForce: 1
+  _randomDistance: 2
+  _shotRandomDelay: 1
+  _shotsAmount: 25
+  _shotsDelay: 0.05
+  _speed: 8
   _vfx:
     m_AssetGUID: 6d41553e696af024f9ce0bcb66a78abd
     m_SubObjectName: 

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b314b6012042e08fa9a3612b0a5305, type: 3}
   m_Name: GroundColorPalette_First
   m_EditorClassIdentifier: 
-  _color0: {r: 0.80392164, g: 0.6784314, b: 0.3372549, a: 1}
-  _color1: {r: 0.7725491, g: 0.6313726, b: 0.3019608, a: 1}
-  _color2: {r: 0.7176471, g: 0.56078434, b: 0.2784314, a: 1}
+  _color0: {r: 0.5882353, g: 0.6509804, b: 0.47058827, a: 1}
+  _color1: {r: 0.5764706, g: 0.6431373, b: 0.45882356, a: 1}
+  _color2: {r: 0.56078434, g: 0.61960787, b: 0.4431373, a: 1}
+  _color3: {r: 0.6, g: 0.6666667, b: 0.48627454, a: 1}

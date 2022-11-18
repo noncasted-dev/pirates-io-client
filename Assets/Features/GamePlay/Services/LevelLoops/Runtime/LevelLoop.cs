@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using Features.GamePlay.Services.TravelOverlays.Runtime;
 using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Factions.Selections.Loops.Runtime;
@@ -26,8 +27,10 @@ namespace GamePlay.Services.LevelLoops.Runtime
             ITransitionScreen transitionScreen,
             IFactionSelectionLoop factionSelection,
             ICitiesRegistry citiesRegistry,
+            ITravelOverlay travelOverlay,
             LevelLoopLogger logger)
         {
+            _travelOverlay = travelOverlay;
             _citiesRegistry = citiesRegistry;
             _factionSelection = factionSelection;
             _logger = logger;
@@ -48,13 +51,13 @@ namespace GamePlay.Services.LevelLoops.Runtime
         private IPlayerFactory _playerFactory;
         private ISceneObjectsHandler _sceneObjects;
         private ITransitionScreen _transitionScreen;
+        private ITravelOverlay _travelOverlay;
 
         public void OnLoaded()
         {
             _sceneObjects.InvokeFullStartup();
 
             _currentCamera.SetCamera(_levelCamera.Camera);
-            _transitionScreen.ToPlayerRespawn();
 
             _logger.OnLoaded();
 
@@ -64,17 +67,21 @@ namespace GamePlay.Services.LevelLoops.Runtime
         private async UniTask Begin()
         {
             var selectedCity = await _factionSelection.SelectAsync();
+            _transitionScreen.ToPlayerRespawn();
+
             var cityInstance = _citiesRegistry.GetCity(selectedCity);
             var spawnPosition = cityInstance.SpawnPoints.GetRandom();
 
             _logger.OnPlayerSpawn();
 
             _player = await _playerFactory.Create(spawnPosition);
-
+            
             _levelCamera.Teleport(_player.Transform.position);
             _levelCamera.StartFollow(_player.Transform);
             await _transitionScreen.FadeOut();
-
+            
+            _travelOverlay.Open();
+            
             _player.Respawn();
         }
     }

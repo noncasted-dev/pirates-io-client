@@ -24,8 +24,10 @@ namespace Global.Services.FilesFlow.Runtime
             var loader = deleter.GetComponent<FileLoader>();
             var saver = deleter.GetComponent<FileSaver>();
 
-            builder.Register<FilesFlowLogger>(Lifetime.Scoped).WithParameter("settings", _logSettings);
-            builder.Register<FilesDirectory>(Lifetime.Scoped).AsImplementedInterfaces();
+            builder.Register<FilesFlowLogger>(Lifetime.Scoped)
+                .WithParameter(_logSettings);
+            builder.Register<FilesDirectory>(Lifetime.Scoped)
+                .AsImplementedInterfaces();
 
             builder.RegisterComponent(deleter).AsImplementedInterfaces();
             builder.RegisterComponent(loader).AsImplementedInterfaces();

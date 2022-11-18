@@ -20,7 +20,8 @@ namespace Global.Services.CurrentCameras.Runtime
             var currentCamera = Instantiate(_prefab);
             currentCamera.name = "CurrentCamera";
 
-            builder.Register<CurrentCameraLogger>(Lifetime.Singleton).WithParameter("settings", _logSettings);
+            builder.Register<CurrentCameraLogger>(Lifetime.Singleton)
+                .WithParameter(_logSettings);
             builder.RegisterComponent(currentCamera).AsImplementedInterfaces();
 
             serviceBinder.AddToModules(currentCamera);

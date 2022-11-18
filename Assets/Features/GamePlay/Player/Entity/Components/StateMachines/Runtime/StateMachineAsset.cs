@@ -15,7 +15,8 @@ namespace GamePlay.Player.Entity.Components.StateMachines.Runtime
 
         public override void Register(IContainerBuilder builder)
         {
-            builder.Register<StateMachineLogger>(Lifetime.Scoped).WithParameter("settings", _logSettings);
+            builder.Register<StateMachineLogger>(Lifetime.Scoped)
+                .WithParameter(_logSettings);
             builder.Register<StateMachine>(Lifetime.Scoped).As<IStateMachine>();
         }
     }

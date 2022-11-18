@@ -32,6 +32,7 @@
         public const string GameLoop = _services + "GameLoop/";
         public const string ObjectsPool = _services + "ObjectsPool/";
         public const string DebugConsole = _services + "DebugConsole/";
+        public const string UiStateMachine = _services + "UiStateMachine/";
 
         public const string PersistentInventory = _services + "PersistentInventory/";
         public const string ItemFactory = _services + "ItemFactory/";

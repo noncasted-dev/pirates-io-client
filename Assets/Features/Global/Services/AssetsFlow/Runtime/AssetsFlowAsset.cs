@@ -24,7 +24,8 @@ namespace Global.Services.AssetsFlow.Runtime
             var storage = loader.GetComponent<AssetsReferencesStorage>();
             var instantiatorFabric = loader.GetComponent<AssetInstantiatorFactory>();
 
-            builder.Register<AssetsFlowLogger>(Lifetime.Scoped).WithParameter("settings", _logSettings);
+            builder.Register<AssetsFlowLogger>(Lifetime.Scoped)
+                .WithParameter(_logSettings);
 
             builder.RegisterComponent(loader).AsImplementedInterfaces();
             builder.RegisterComponent(unloader).AsImplementedInterfaces();

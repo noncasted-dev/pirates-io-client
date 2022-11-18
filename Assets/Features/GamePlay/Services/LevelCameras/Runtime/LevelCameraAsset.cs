@@ -25,11 +25,11 @@ namespace GamePlay.Services.LevelCameras.Runtime
             levelCamera.name = "LevelCamera";
 
             serviceBinder.Register<LevelCameraLogger>()
-                .WithParameter("settings", _logSettings)
+                .WithParameter(_logSettings)
                 .AsSelf();
 
             serviceBinder.Register<LevelCameraConfig>()
-                .WithParameter("asset", _config)
+                .WithParameter(_config)
                 .As<ILevelCameraConfig>();
 
             serviceBinder.RegisterComponent(levelCamera)

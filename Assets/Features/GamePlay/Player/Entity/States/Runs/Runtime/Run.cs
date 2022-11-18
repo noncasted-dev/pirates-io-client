@@ -15,7 +15,7 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             IInertialMovement inertialMovement,
             IRunConfig config,
             ISpriteRotation spriteRotation,
-            StateDefinition definition,
+            RunDefinition definition,
             RunLogger logger)
         {
             _stateMachine = stateMachine;

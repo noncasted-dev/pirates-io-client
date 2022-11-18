@@ -13,19 +13,20 @@ MonoBehaviour:
   m_Name: Level_Mock
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: 5e3b3abdefd2de34aa31e647a9ce2a7d, type: 2}
-  _scopePrefab: {fileID: 6256164544057903142, guid: 739bd40898e14fe4ebe3aa07b287a0fb, type: 3}
-  _playerFactory: {fileID: 11400000, guid: 7c56c68a1621b2c42add3f80cdbe9dfb, type: 2}
+  _environment: {fileID: 11400000, guid: f35360fdb4c4d9449aaf546acc6f3747, type: 2}
+  _factionSelection: {fileID: 11400000, guid: eb7e3448589df7d469657d4292c36f44, type: 2}
   _levelCamera: {fileID: 11400000, guid: 910ee659212786c41abfaf809b0f616b, type: 2}
   _levelLoop: {fileID: 11400000, guid: d062479df73f1744e9fcf2226501a5b7, type: 2}
-  _environment: {fileID: 11400000, guid: f35360fdb4c4d9449aaf546acc6f3747, type: 2}
-  _projectiles: {fileID: 11400000, guid: cf3ddfa96992fb145b579ec979d2b621, type: 2}
-  _transitionScreen: {fileID: 11400000, guid: 6a27838c5b181624abc4d150b8f015bb, type: 2}
-  _networkSession: {fileID: 11400000, guid: d06a41550909daf4f9367c274f4140da, type: 2}
-  _remotePlayerBuilder: {fileID: 11400000, guid: 2cf4a4f9f5aee4748b53af82e2fe64aa, type: 2}
-  _vfxPool: {fileID: 11400000, guid: 4060695fef83f5e4eb3e0fc124b74ef4, type: 2}
-  _projectileReplicator: {fileID: 11400000, guid: 42c6d220049e3d742b9eef31a92fb828, type: 2}
-  _playerPositionProvider: {fileID: 11400000, guid: 9faf1268f89221d4087f0bb8f10a679d, type: 2}
-  _factionSelection: {fileID: 11400000, guid: eb7e3448589df7d469657d4292c36f44, type: 2}
   _networkPlayerData: {fileID: 11400000, guid: e939ce05155824e4e81e51cb9eb2f1d5, type: 2}
+  _networkSession: {fileID: 11400000, guid: d06a41550909daf4f9367c274f4140da, type: 2}
   _objectDropper: {fileID: 11400000, guid: e35fbd8aa7e150e4ea41437953953118, type: 2}
   _playerCargo: {fileID: 11400000, guid: 2a7a43bcd6297694da1fe07bcc2e8087, type: 2}
+  _playerFactory: {fileID: 11400000, guid: 7c56c68a1621b2c42add3f80cdbe9dfb, type: 2}
+  _playerPositionProvider: {fileID: 11400000, guid: 9faf1268f89221d4087f0bb8f10a679d, type: 2}
+  _projectileReplicator: {fileID: 11400000, guid: 42c6d220049e3d742b9eef31a92fb828, type: 2}
+  _projectiles: {fileID: 11400000, guid: cf3ddfa96992fb145b579ec979d2b621, type: 2}
+  _remotePlayerBuilder: {fileID: 11400000, guid: 2cf4a4f9f5aee4748b53af82e2fe64aa, type: 2}
+  _transitionScreen: {fileID: 11400000, guid: 6a27838c5b181624abc4d150b8f015bb, type: 2}
+  _vfxPool: {fileID: 11400000, guid: 4060695fef83f5e4eb3e0fc124b74ef4, type: 2}
+  _travelOverlay: {fileID: 11400000, guid: dbd0285ab605a7a4da3914e08794562d, type: 2}
+  _scopePrefab: {fileID: 6256164544057903142, guid: 739bd40898e14fe4ebe3aa07b287a0fb, type: 3}

@@ -21,7 +21,7 @@ namespace Global.Services.ApplicationProxies.Runtime
             applicationProxy.name = "ApplicationProxy";
 
             builder.Register<ApplicationProxyLogger>(Lifetime.Scoped)
-                .WithParameter("settings", _logSettings);
+                .WithParameter(_logSettings);
 
             builder.RegisterComponent(applicationProxy).AsImplementedInterfaces();
 

@@ -9,6 +9,12 @@
         RangeAttackCanceled,
 
         BeforeRebind,
-        AfterRebind
+        AfterRebind,
+        
+        ConstraintAdded,
+        ConstraintReduced,
+        ConstraintRemoved,
+        ConstraintBelowZeroException,
+        InputCanceledWithConstraint
     }
 }

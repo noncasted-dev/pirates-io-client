@@ -19,17 +19,17 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
         public override void Register(IContainerBuilder builder)
         {
             builder.Register<RunLogger>(Lifetime.Scoped)
-                .WithParameter("settings", _logSettings);
+                .WithParameter(_logSettings);
 
             builder.Register<RunConfig>(Lifetime.Scoped)
-                .WithParameter("asset", _config)
+                .WithParameter(_config)
                 .As<IRunConfig>();
 
             builder.Register<RunInput>(Lifetime.Scoped)
                 .AsSelf();
 
             builder.Register<Run>(Lifetime.Scoped)
-                .WithParameter("definition", _definition)
+                .WithParameter(_definition)
                 .As<IRun>();
         }
 

@@ -148,6 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 6782102528406460756}
+  _constraints:
+    _keys: 00000000010000000200000003000000
+    _values: 01010101
 --- !u!1 &6782102529272133480
 GameObject:
   m_ObjectHideFlags: 0

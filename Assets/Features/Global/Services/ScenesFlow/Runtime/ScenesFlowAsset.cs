@@ -22,7 +22,8 @@ namespace Global.Services.ScenesFlow.Runtime
 
             var unloader = loader.GetComponent<ScenesUnloader>();
 
-            builder.Register<ScenesFlowLogger>(Lifetime.Scoped).WithParameter("settings", _logSettings);
+            builder.Register<ScenesFlowLogger>(Lifetime.Scoped)
+                .WithParameter(_logSettings);
             builder.RegisterComponent(loader).AsImplementedInterfaces();
             builder.RegisterComponent(unloader).AsImplementedInterfaces();
 

@@ -20,7 +20,8 @@ namespace Global.Services.Updaters.Runtime
             var updater = Instantiate(_prefab);
             updater.name = "Updater";
 
-            builder.Register<UpdaterLogger>(Lifetime.Scoped).WithParameter("settings", _logSettings);
+            builder.Register<UpdaterLogger>(Lifetime.Scoped)
+                .WithParameter(_logSettings);
             builder.RegisterComponent(updater).AsImplementedInterfaces();
 
             serviceBinder.AddToModules(updater);

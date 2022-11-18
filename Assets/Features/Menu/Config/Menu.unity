@@ -834,11 +834,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999b327110224defbfeac2565bf46604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loginBody: {fileID: 1971852224}
-  _loadingBody: {fileID: 664305676}
-  _nameInput: {fileID: 1528065131}
   _connectionErrorText: {fileID: 327093938}
+  _loadingBody: {fileID: 664305676}
+  _loginBody: {fileID: 1971852224}
+  _nameInput: {fileID: 1528065131}
   _playButton: {fileID: 1216430175}
+  _constraints:
+    _keys: 00000000010000000200000003000000
+    _values: 01010001
 --- !u!1 &1067215652
 GameObject:
   m_ObjectHideFlags: 0

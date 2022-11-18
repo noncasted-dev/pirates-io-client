@@ -1,0 +1,4 @@
+﻿{
+  "name": "Global.Services.UiStateMachine.Runtime",
+  "references":[ "GUID:94e5ca42c58876942a8ffdd1c63b952f", "GUID:b03721a1eeb8491da187242f7870dca2", "GUID:9dbe345fbe8e47cb8a0d24c890f0feff", "GUID:b0214a6008ed146ff8f122a6a9c2f6cc", "GUID:fb9b00a9a42c4c1459774b1ef88fcd74", "GUID:401398c75a71e5444a495125c9dd1a21", "GUID:304598a766c781247877f81511375f98", "GUID:bf30b15552e441bbbba8839ce0f328f4" ]
+}

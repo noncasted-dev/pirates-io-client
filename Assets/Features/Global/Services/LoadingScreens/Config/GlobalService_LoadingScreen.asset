@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a62d52012bd245ed9edf427f9cae0543, type: 3}
   m_Name: GlobalService_LoadingScreen
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 6782102528447005030, guid: 04ce4845fd341ad4a8b4c32af2821964, type: 3}
   _logSettings: {fileID: 11400000, guid: 8cdb02bf0c2af0148ac73b1f0467cd00, type: 2}
+  _constraints: {fileID: 11400000, guid: 5a43ebf679110494ab9633e4ab3074dc, type: 2}
+  _prefab: {fileID: 6782102528447005030, guid: 04ce4845fd341ad4a8b4c32af2821964, type: 3}

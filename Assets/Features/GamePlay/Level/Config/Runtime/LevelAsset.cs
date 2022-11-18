@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Common.EditableScriptableObjects.Attributes;
+using Features.GamePlay.Services.TravelOverlays.Runtime;
 using GamePlay.Common.Paths;
 using GamePlay.Factions.Selections.Bootstrap;
 using GamePlay.Level.Environment.Bootstrap;
@@ -41,9 +42,11 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField] [EditableObject] private ProjectileReplicatorAsset _projectileReplicator;
         [SerializeField] [EditableObject] private ProjectilesAsset _projectiles;
         [SerializeField] [EditableObject] private RemotePlayerBuilderAsset _remotePlayerBuilder;
-        [SerializeField] private LevelScope _scopePrefab;
         [SerializeField] [EditableObject] private TransitionScreenAsset _transitionScreen;
         [SerializeField] [EditableObject] private VfxPoolAsset _vfxPool;
+        [SerializeField] [EditableObject] private TravelOverlayAsset _travelOverlay;
+        
+        [SerializeField] private LevelScope _scopePrefab;
 
         protected override LocalServiceAsset[] AssignServices()
         {
@@ -63,7 +66,8 @@ namespace GamePlay.Level.Config.Runtime
                 _factionSelection,
                 _networkPlayerData,
                 _objectDropper,
-                _playerCargo
+                _playerCargo,
+                _travelOverlay
             };
 
             return list.ToArray();

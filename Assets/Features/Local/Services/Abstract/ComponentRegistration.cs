@@ -59,5 +59,12 @@ namespace Local.Services.Abstract
 
             return this;
         }
+        
+        public ComponentRegistration WithParameter<T>(T value)
+        {
+            _typeParameters.Add(typeof(T), value);
+
+            return this;
+        }
     }
 }

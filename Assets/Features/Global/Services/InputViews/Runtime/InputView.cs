@@ -1,6 +1,8 @@
 ﻿using System;
+using Features.Global.Services.InputViews.ConstraintsStorage;
 using Global.Services.CameraUtilities.Runtime;
 using Global.Services.Common.Abstract;
+using Global.Services.InputViews.Constraints;
 using Global.Services.InputViews.Logs;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,13 +15,16 @@ namespace Global.Services.InputViews.Runtime
         [Inject]
         private void Construct(
             InputViewLogger logger,
-            ICameraUtils cameraUtils)
+            ICameraUtils cameraUtils,
+            IInputConstraintsStorage constraintsStorage)
         {
+            _constraintsStorage = constraintsStorage;
             _logger = logger;
             _cameraUtils = cameraUtils;
         }
 
         private ICameraUtils _cameraUtils;
+        private IInputConstraintsStorage _constraintsStorage;
 
         private Controls _controls;
         private Controls.DebugActions _debug;
@@ -129,6 +134,14 @@ namespace Global.Services.InputViews.Runtime
 
         private void OnMovementPerformed(InputAction.CallbackContext context)
         {
+            if (_constraintsStorage[InputConstraints.MovementInput] == true)
+            {
+                MovementCanceled?.Invoke();
+                
+                _logger.OnInputCanceledWithConstraint(InputConstraints.MovementInput);
+                return;
+            }
+            
             var value = context.ReadValue<Vector2>();
 
             _logger.OnMovementPressed(value);
@@ -138,6 +151,12 @@ namespace Global.Services.InputViews.Runtime
 
         private void OnMovementCanceled(InputAction.CallbackContext context)
         {
+            if (_constraintsStorage[InputConstraints.MovementInput] == true)
+            {
+                _logger.OnInputCanceledWithConstraint(InputConstraints.MovementInput);
+                return;
+            }
+            
             _logger.OnMovementCanceled();
 
             MovementCanceled?.Invoke();
@@ -145,6 +164,14 @@ namespace Global.Services.InputViews.Runtime
 
         private void OnRangeAttackPerformed(InputAction.CallbackContext context)
         {
+            if (_constraintsStorage[InputConstraints.AttackInput] == true)
+            {
+                RangeAttackCanceled?.Invoke();
+
+                _logger.OnInputCanceledWithConstraint(InputConstraints.AttackInput);
+                return;
+            }
+            
             _logger.OnRangeAttackPerformed();
 
             RangeAttackPerformed?.Invoke();
@@ -152,6 +179,12 @@ namespace Global.Services.InputViews.Runtime
 
         private void OnRangeAttackCanceled(InputAction.CallbackContext context)
         {
+            if (_constraintsStorage[InputConstraints.AttackInput] == true)
+            {
+                _logger.OnInputCanceledWithConstraint(InputConstraints.AttackInput);
+                return;
+            }
+            
             _logger.OnRangeAttackCanceled();
 
             RangeAttackCanceled?.Invoke();
@@ -159,6 +192,12 @@ namespace Global.Services.InputViews.Runtime
 
         private void OnRangeAttackBreakPerformed(InputAction.CallbackContext context)
         {
+            if (_constraintsStorage[InputConstraints.AttackInput] == true)
+            {
+                _logger.OnInputCanceledWithConstraint(InputConstraints.AttackInput);
+                return;
+            }
+            
             _logger.OnRangeAttackCanceled();
 
             RangeAttackBreakPerformed?.Invoke();

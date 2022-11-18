@@ -16,10 +16,11 @@ namespace GamePlay.Player.Entity.States.None.Runtime
 
         public override void Register(IContainerBuilder builder)
         {
-            builder.Register<NoneLogger>(Lifetime.Scoped).WithParameter("settings", _logSettings);
+            builder.Register<NoneLogger>(Lifetime.Scoped)
+                .WithParameter(_logSettings);
 
             builder.Register<None>(Lifetime.Scoped)
-                .WithParameter("definition", _definition)
+                .WithParameter(_definition)
                 .As<INone>();
         }
     }

@@ -21,7 +21,8 @@ namespace Global.Services.ResourcesCleaners.Runtime
             loadingScreen.name = "ResourcesCleaner";
 
             builder.RegisterComponent(loadingScreen).AsImplementedInterfaces();
-            builder.Register<ResourcesCleanerLogger>(Lifetime.Scoped).WithParameter("settings", _logSettings);
+            builder.Register<ResourcesCleanerLogger>(Lifetime.Scoped)
+                .WithParameter(_logSettings);
 
             serviceBinder.AddToModules(loadingScreen);
             serviceBinder.ListenCallbacks(loadingScreen);

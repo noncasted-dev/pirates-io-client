@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839ba7c8bf844e1aa258f384bfa59800, type: 3}
   m_Name: LogSettings_ScenesFlow
   m_EditorClassIdentifier: 
-  _isEnabled: 1
+  _isEnabled: 0
   _logs:
     _keys: 0000000001000000
     _values: 0101
   _logParameters:
-    Color: 3
     _header: ScenesFlow
     _isHeaderColoredColored: 1
     _isMessageColored: 0
+    Color: 3

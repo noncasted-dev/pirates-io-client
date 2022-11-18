@@ -18,12 +18,12 @@ namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
         public override void Register(IContainerBuilder builder)
         {
             builder.Register<WeaponsHandlerLogger>(Lifetime.Scoped)
-                .WithParameter("settings", _logSettings);
+                .WithParameter(_logSettings);
 
             builder.Register<WeaponsFactory>(Lifetime.Scoped)
                 .As<IWeaponsFactory>();
             builder.Register<WeaponsHandler>(Lifetime.Scoped)
-                .WithParameter("config", _config)
+                .WithParameter(_config)
                 .As<IWeaponsHandler>()
                 .AsSelf();
         }

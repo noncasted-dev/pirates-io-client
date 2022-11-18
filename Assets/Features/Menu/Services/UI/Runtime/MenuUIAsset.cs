@@ -1,6 +1,8 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Common.EditableScriptableObjects.Attributes;
+using Cysharp.Threading.Tasks;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Runtime.Abstract;
+using Global.Services.UiStateMachines.Runtime;
 using Local.Services.Abstract;
 using Menu.Common;
 using UnityEngine;
@@ -11,8 +13,9 @@ namespace Menu.Services.UI.Runtime
     [CreateAssetMenu(fileName = MenuAssetsPaths.ServicePrefix + "UI", menuName = MenuAssetsPaths.UI)]
     public class MenuUIAsset : LocalServiceAsset
     {
+        [SerializeField] [EditableObject] private UiConstraints _constraints; 
         [SerializeField] private AssetReference _scene;
-
+        
         public override async UniTask Create(
             IServiceBinder serviceBinder,
             ICallbacksRegister callbacksRegister,
@@ -24,6 +27,7 @@ namespace Menu.Services.UI.Runtime
             var ui = result.Searched;
 
             serviceBinder.RegisterComponent(ui)
+                .WithParameter(_constraints)
                 .As<IMenuUI>();
 
             serviceBinder.AddToModules(ui);

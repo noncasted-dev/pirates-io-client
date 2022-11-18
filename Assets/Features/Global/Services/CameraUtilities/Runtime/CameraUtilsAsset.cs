@@ -20,7 +20,8 @@ namespace Global.Services.CameraUtilities.Runtime
             var utils = Instantiate(_prefab);
             utils.name = "CameraUtils";
 
-            builder.Register<CameraUtilsLogger>(Lifetime.Singleton).WithParameter("settings", _logSettings);
+            builder.Register<CameraUtilsLogger>(Lifetime.Singleton)
+                .WithParameter(_logSettings);
             builder.RegisterComponent(utils).AsImplementedInterfaces();
 
             serviceBinder.AddToModules(utils);

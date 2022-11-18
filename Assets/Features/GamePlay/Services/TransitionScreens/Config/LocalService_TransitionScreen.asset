@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e084ac6fa3e4899853cb73fb105a36a, type: 3}
   m_Name: LocalService_TransitionScreen
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 3417201686067070176, guid: 7592fd3ffe909c54dabec66ac082897c, type: 3}
-  _logSettings: {fileID: 11400000, guid: 56000cf40bfb45943af30fe9a18322af, type: 2}
   _config: {fileID: 11400000, guid: e1e27ae64dd7d644b8e58898cb437951, type: 2}
+  _logSettings: {fileID: 11400000, guid: 56000cf40bfb45943af30fe9a18322af, type: 2}
+  _constraints: {fileID: 11400000, guid: 90922319945648b4a8aa7ad9a9419ffe, type: 2}
+  _prefab: {fileID: 3417201686067070176, guid: 7592fd3ffe909c54dabec66ac082897c, type: 3}

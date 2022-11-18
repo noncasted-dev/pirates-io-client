@@ -2,6 +2,7 @@
 using Global.Common;
 using Global.Services.Common.Abstract;
 using Global.Services.LoadingScreens.Logs;
+using Global.Services.UiStateMachines.Runtime;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -13,6 +14,8 @@ namespace Global.Services.LoadingScreens.Runtime
     public class LoadingScreenAsset : GlobalServiceAsset
     {
         [SerializeField] [EditableObject] private LoadingScreenLogSettings _logSettings;
+        [SerializeField] [EditableObject] private UiConstraints _constraints; 
+        
         [SerializeField] private LoadingScreen _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
@@ -22,9 +25,11 @@ namespace Global.Services.LoadingScreens.Runtime
             loadingScreen.gameObject.SetActive(false);
 
             builder.Register<LoadingScreenLogger>(Lifetime.Scoped)
-                .WithParameter("settings", _logSettings);
+                .WithParameter(_logSettings);
 
-            builder.RegisterComponent(loadingScreen).AsImplementedInterfaces();
+            builder.RegisterComponent(loadingScreen)
+                .WithParameter(_constraints)
+                .AsImplementedInterfaces();
 
             serviceBinder.AddToModules(loadingScreen);
             serviceBinder.ListenCallbacks(loadingScreen);

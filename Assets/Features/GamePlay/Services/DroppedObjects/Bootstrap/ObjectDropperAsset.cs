@@ -43,7 +43,7 @@ namespace GamePlay.Services.DroppedObjects.Bootstrap
 
             serviceBinder.RegisterComponent(dropper)
                 .As<IDroppedObjectsPresenter>()
-                .WithParameter<ObjectDropperConfigAsset>(_config);
+                .WithParameter(_config);
 
             serviceBinder.RegisterComponent(network)
                 .As<INetworkObjectDropSender>()

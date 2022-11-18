@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d7ac6b93094122bd4abdcace7dd206, type: 3}
   m_Name: LocalService_FactionSelection
   m_EditorClassIdentifier: 
+  _constraints: {fileID: 11400000, guid: 9cb3b88d707b8f34a8a297a7d92a4912, type: 2}
   _prefab: {fileID: 629852268857938460, guid: 92ee2c3a10b87cb498f981f9cc578889, type: 3}
   _uiScene:
     m_AssetGUID: 177a7a573abdc794c9842fbd3800f081

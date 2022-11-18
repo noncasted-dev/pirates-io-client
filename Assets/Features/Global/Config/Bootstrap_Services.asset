@@ -31,3 +31,4 @@ MonoBehaviour:
   _profile: {fileID: 11400000, guid: ec3ae8df80896754b88543c0bcd8516c, type: 2}
   _persistentInventory: {fileID: 11400000, guid: f3f05c917db43574e8bb02d00e016182, type: 2}
   _itemFactory: {fileID: 11400000, guid: d0ed79ffb87ce014585428729b6c117e, type: 2}
+  _uiStateMachine: {fileID: 11400000, guid: 2690e14f4af6ab843bac352463df3ee6, type: 2}

@@ -23,7 +23,7 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
             replicator.name = "ProjectilesReplicator";
 
             serviceBinder.RegisterComponent(replicator)
-                .WithParameter<ProjectileReplicatorConfigAsset>(_config)
+                .WithParameter(_config)
                 .As<IProjectileReplicator>();
 
             serviceBinder.AddToModules(replicator);

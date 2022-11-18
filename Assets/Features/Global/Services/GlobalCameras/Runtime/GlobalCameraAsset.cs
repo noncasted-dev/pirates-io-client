@@ -22,7 +22,7 @@ namespace Global.Services.GlobalCameras.Runtime
             globalCamera.gameObject.SetActive(false);
 
             builder.Register<GlobalCameraLogger>(Lifetime.Scoped)
-                .WithParameter("settings", _logSettings);
+                .WithParameter(_logSettings);
 
             builder.RegisterComponent(globalCamera).AsImplementedInterfaces();
 

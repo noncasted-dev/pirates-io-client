@@ -15,7 +15,8 @@ namespace GamePlay.Common.SceneObjects.Global
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
         {
-            builder.Register<SceneObjectLogger>(Lifetime.Singleton).WithParameter("settings", _logSettings);
+            builder.Register<SceneObjectLogger>(Lifetime.Singleton)
+                .WithParameter(_logSettings);
         }
     }
 }

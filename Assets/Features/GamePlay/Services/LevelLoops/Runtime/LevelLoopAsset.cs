@@ -23,7 +23,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
             levelLoop.name = "LevelLoop";
 
             serviceBinder.Register<LevelLoopLogger>()
-                .WithParameter("settings", _logSettings);
+                .WithParameter(_logSettings);
 
             serviceBinder.RegisterComponent(levelLoop);
 

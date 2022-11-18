@@ -16,7 +16,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         public override void Register(IContainerBuilder builder)
         {
             builder.Register<ShooterConfig>(Lifetime.Scoped)
-                .WithParameter("asset", _config)
+                .WithParameter(_config)
                 .As<IShooterConfig>();
 
             builder.Register<Shooter>(Lifetime.Scoped)

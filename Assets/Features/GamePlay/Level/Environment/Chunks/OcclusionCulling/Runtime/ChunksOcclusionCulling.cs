@@ -56,8 +56,8 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
 
         private void Stop()
         {
-            if (_process != null)
-                StopCoroutine(_process);
+            if (_process == null)
+                return;
             
             StopCoroutine(_process);
             _process = null;

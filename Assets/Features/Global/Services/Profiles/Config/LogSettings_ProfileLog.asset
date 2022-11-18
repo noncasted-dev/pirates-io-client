@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798c8183d42b4e648682da9a1348ee43, type: 3}
   m_Name: LogSettings_ProfileLog
   m_EditorClassIdentifier: 
-  _isEnabled: 1
+  _isEnabled: 0
   _logs:
     _keys: 00000000
     _values: 01
   _logParameters:
-    Color: 7
     _header: '[Profile]'
     _isHeaderColoredColored: 1
     _isMessageColored: 0
+    Color: 7

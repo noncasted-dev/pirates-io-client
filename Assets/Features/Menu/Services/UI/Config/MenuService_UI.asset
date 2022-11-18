@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17dc7628030244559341001daf6fd667, type: 3}
   m_Name: MenuService_UI
   m_EditorClassIdentifier: 
+  _constraints: {fileID: 11400000, guid: f9bbaaf5583b29645931257588a49324, type: 2}
   _scene:
     m_AssetGUID: 211184b564775c745a16cb548230d7ac
     m_SubObjectName: 

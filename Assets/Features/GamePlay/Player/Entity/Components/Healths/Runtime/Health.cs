@@ -1,4 +1,5 @@
 ﻿using GamePlay.Player.Entity.Components.Healths.Logs;
+using UniRx;
 
 namespace GamePlay.Player.Entity.Components.Healths.Runtime
 {
@@ -11,8 +12,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
 
         private readonly HealthLogger _logger;
 
-        private readonly int _max;
-
+        private int _max;
         private int _amount;
 
         public bool IsAlive => _amount > 0;
@@ -22,6 +22,9 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             _logger.OnRespawned(health);
 
             _amount = health;
+            _max = health;
+            
+            MessageBroker.Default.Publish(new HealthChangedEvent(_amount, _max));
         }
 
         public void Heal(int add)
@@ -38,6 +41,8 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
                 _amount = _max;
 
             _logger.OnHealed(add, _amount);
+            
+            MessageBroker.Default.Publish(new HealthChangedEvent(_amount, _max));
         }
 
         public void ApplyDamage(int damage)
@@ -51,6 +56,8 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             _amount -= damage;
 
             _logger.OnDamaged(damage, _amount);
+            
+            MessageBroker.Default.Publish(new HealthChangedEvent(_amount, _max));
         }
     }
 }

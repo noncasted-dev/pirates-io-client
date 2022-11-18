@@ -24,7 +24,7 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             factory.name = "PlayerFactory";
 
             serviceBinder.Register<PlayerFactoryLogger>()
-                .WithParameter("settings", _logSettings);
+                .WithParameter(_logSettings);
 
             serviceBinder.RegisterComponent(factory)
                 .As<IPlayerFactory>();

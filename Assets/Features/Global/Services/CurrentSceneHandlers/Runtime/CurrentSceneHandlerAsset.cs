@@ -25,10 +25,10 @@ namespace Global.Services.CurrentSceneHandlers.Runtime
             var global = SceneManager.GetActiveScene();
 
             builder.Register<CurrentSceneHandlerLogger>(Lifetime.Scoped)
-                .WithParameter("settings", _logSettings);
+                .WithParameter(_logSettings);
 
             builder.RegisterComponent(sceneHandler)
-                .WithParameter("global", global)
+                .WithParameter(global)
                 .As<ICurrentSceneHandler>();
 
             serviceBinder.AddToModules(sceneHandler);

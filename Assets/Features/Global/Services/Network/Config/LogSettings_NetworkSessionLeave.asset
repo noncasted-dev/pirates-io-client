@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6115619cee5d49599b0382317128280b, type: 3}
   m_Name: LogSettings_NetworkSessionLeave
   m_EditorClassIdentifier: 
-  _isEnabled: 1
+  _isEnabled: 0
   _logs:
     _keys: 000000000100000002000000
     _values: 010101
   _logParameters:
-    Color: 7
     _header: '[Network][Leave]'
     _isHeaderColoredColored: 1
     _isMessageColored: 0
+    Color: 7

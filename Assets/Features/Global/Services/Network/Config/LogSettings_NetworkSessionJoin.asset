@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6011402d128a403aa29fa1d9c13833f8, type: 3}
   m_Name: LogSettings_NetworkSessionJoin
   m_EditorClassIdentifier: 
-  _isEnabled: 1
+  _isEnabled: 0
   _logs:
     _keys: 000000000100000002000000
     _values: 010101
   _logParameters:
-    Color: 2
     _header: '[Network][Join]'
     _isHeaderColoredColored: 1
     _isMessageColored: 0
+    Color: 2

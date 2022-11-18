@@ -21,7 +21,7 @@ namespace Global.GameLoops.Runtime
             gameLoop.name = "GameLoop";
 
             builder.Register<GameLoopLogger>(Lifetime.Scoped)
-                .WithParameter("settings", _logSettings);
+                .WithParameter(_logSettings);
 
             builder.RegisterComponent(gameLoop).AsImplementedInterfaces();
 

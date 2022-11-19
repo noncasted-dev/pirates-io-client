@@ -12,6 +12,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         [SerializeField] private Button _removeButton;
         [SerializeField] private Slider _countSlider;
         [SerializeField] private TMP_Text _sliderValue;
+        [SerializeField] private TMP_Text _cost;
 
         private TradableItem _item;
         private ItemOrigin _origin;
@@ -38,6 +39,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             _removeButton.gameObject.SetActive(true);
 
             _icon.sprite = tradable.Item.BaseData.Icon;
+            _cost.text = tradable.Cost.ToString();
 
             _item = tradable;
             _countSlider.maxValue = tradable.Item.Count;

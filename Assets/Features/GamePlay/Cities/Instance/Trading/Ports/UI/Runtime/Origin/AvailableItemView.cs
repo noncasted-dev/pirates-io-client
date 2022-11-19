@@ -1,5 +1,6 @@
 ﻿using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade;
 using GamePlay.Items.Abstract;
 using TMPro;
 using UniRx;
@@ -104,6 +105,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             var tradable = new TradableItem(_item, _price);
             
             var data = new TransferRequestedEvent(tradable, _origin);
+
+            MessageBroker.Default.Publish(new TradeRequestedEvent());
             MessageBroker.Default.Publish(data);
         }
 

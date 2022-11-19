@@ -18,11 +18,15 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
         private IDisposable _playerListener;
         private IDisposable _stockListener;
+
+        public bool IsActive => gameObject.activeSelf;
         
         private void OnEnable()
         {
             _playerListener = MessageBroker.Default.Receive<TradeAddedEvent>().Subscribe(OnTradeAdd);
             _stockListener = MessageBroker.Default.Receive<TradeRemovedEvent>().Subscribe(OnTradeRemoved);
+
+            _sliderValue.text = "0";
         }
         
         private void OnDisable()
@@ -58,7 +62,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
             _progress.value = value;
 
-            _sliderValue.text = $"{Mathf.Abs(value)}";
+            _sliderValue.text = $"{value}";
         }
 
         private void OnTradeRemoved(TradeRemovedEvent data)
@@ -86,6 +90,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             _progress.value = value;
 
             _sliderValue.text = $"{Mathf.Abs(value)}";
+            
+            if (_player.Count == 0 && _stock.Count == 0)
+                gameObject.SetActive(false);
         }
 
         private int CalculateCost(IReadOnlyDictionary<ItemType, int> trades)

@@ -1,6 +1,7 @@
 ﻿using System;
 using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using Global.Services.Profiles.Storage;
 using Global.Services.UiStateMachines.Runtime;
@@ -32,8 +33,12 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         [SerializeField] private AvailableItemsList _cargoView;
         [SerializeField] private AvailableItemsList _stockView;
         
+        [SerializeField] private TradeHandler _tradeHandler;
+        [SerializeField] private GameObject _tradeBody;
+        
         private IDisposable _enterListener;
         private IDisposable _exitListener;
+        private IDisposable _requestListener;
         
         private UiConstraints _constraints;
 
@@ -47,18 +52,22 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         private void Awake()
         {
             _body.SetActive(false);
+            
+            _tradeBody.SetActive(false);
         }
 
         private void OnEnable()
         {
             _enterListener = MessageBroker.Default.Receive<PortEnteredEvent>().Subscribe(OnEntered);
             _exitListener = MessageBroker.Default.Receive<PortExitedEvent>().Subscribe(OnExited);
+            _requestListener = MessageBroker.Default.Receive<TradeRequestedEvent>().Subscribe(OnTradeRequested);
         }
 
         private void OnDisable()
         {
             _enterListener?.Dispose();
             _exitListener?.Dispose();
+            _requestListener?.Dispose();
         }
         
         public void Recover()
@@ -85,6 +94,14 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         private void OnExited(PortExitedEvent data)
         {
             _stateMachine.Exit(this);
+        }
+
+        private void OnTradeRequested(TradeRequestedEvent data)
+        {
+            if (_tradeHandler.IsActive == true)
+                return;
+
+            _tradeBody.SetActive(true);
         }
     }
 }

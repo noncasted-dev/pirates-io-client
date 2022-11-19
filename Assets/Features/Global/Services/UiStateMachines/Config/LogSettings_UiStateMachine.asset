@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isEnabled: 1
   _logs:
-    _keys: 000000000100000002000000030000000400000005000000
-    _values: 010101010101
+    _keys: 000000000100000002000000030000000400000005000000060000000700000008000000
+    _values: 010101010101000000
   _logParameters:
     _header: UiStateMachine
     _isHeaderColoredColored: 1

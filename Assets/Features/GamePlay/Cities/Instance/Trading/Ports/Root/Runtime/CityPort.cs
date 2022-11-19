@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
-using GamePlay.Cities.Instance.Trading.Stock.Runtime;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using UniRx;
@@ -17,17 +16,16 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             _playerCargoStorage = playerCargoStorage;
         }
 
-        [SerializeField] private CityStock _stock;
+        [SerializeField] private CityStorage _storage;
         
         private IPlayerCargoStorage _playerCargoStorage;
 
         public void Enter()
         {
-            var stock = ToTradables(_stock.GetItems());
-            var cargoRaw = _playerCargoStorage.ToArray();
-            var cargo = ToTradables(_playerCargoStorage.Items);
+            var stock = ToArray(_storage.Items);
+            var cargo = ToArray(_playerCargoStorage.Items);
 
-            var data = new PortEnteredEvent(cargo, stock);
+            var data = new PortEnteredEvent(cargo, stock, _storage);
 
             MessageBroker.Default.Publish(data);
         }
@@ -39,18 +37,18 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             MessageBroker.Default.Publish(data);
         }
 
-        private TradableItem[] ToTradables(IReadOnlyDictionary<ItemType, IItem> items)
+        private IItem[] ToArray(IReadOnlyDictionary<ItemType, IItem> items)
         {
-            var tradables = new TradableItem[items.Count];
+            var array = new IItem[items.Count];
             var counter = 0;
 
             foreach (var item in items)
             {
-                tradables[counter] = new TradableItem(item.Value, 1);
+                array[counter] = item.Value;
                 counter++;
             }
 
-            return tradables;
+            return array;
         }
     }
 }

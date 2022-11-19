@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
+using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Items.Abstract;
 using UniRx;
 using UnityEngine;
@@ -20,13 +20,16 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
         private readonly Dictionary<ItemType, AvailableItemView> _cells = new();
         private readonly List<AvailableItemView> _available = new();
-        
+
         private IDisposable _removeListener;
 
         private void Awake()
         {
             foreach (var startupCell in _startupCells)
                 _available.Add(startupCell);
+            
+            foreach (var cell in _available)
+                cell.Disable();
         }
 
         private void OnEnable()
@@ -37,34 +40,61 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         private void OnDisable()
         {
             _removeListener?.Dispose();
-        }
-        
-        public void Fill(TradableItem[] items)
-        {
-            AddCellsOnDemand(items.Length);
 
             foreach (var cell in _available)
                 cell.Disable();
             
             _cells.Clear();
+        }
+
+        public void Fill(IItem[] items, IPriceProvider priceProvider)
+        {
+            AddCellsOnDemand(items.Length);
+
+            foreach (var cell in _available)
+            {
+                if (cell.IsActive == false)
+                    cell.Disable();
+            }
+
+            var unused = new List<ItemType>();
+
+            foreach (var cell in _cells)
+            {
+                if (cell.Value.IsActive == false)
+                    unused.Add(cell.Key);
+            }
+            
+            foreach (var cell in unused)
+                _cells.Remove(cell);
 
             for (var i = 0; i < items.Length; i++)
             {
                 var item = items[i];
-                var cell = _available[i];
                 
-                cell.AssignItem(item, _origin);
-                _cells.Add(item.Item.BaseData.Type, cell);
+                if (_cells.ContainsKey(item.BaseData.Type) == true)
+                    continue;
+                
+                var cell = _available[i];
+
+                cell.AssignItem(item, _origin, priceProvider);
+                _cells.Add(item.BaseData.Type, cell);
             }
 
             CalculateVerticalSize(items.Length);
         }
-        
+
+        private void Update()
+        {
+            foreach (var cell in _cells)
+                cell.Value.UpdatePrice();
+        }
+
         private void OnTransferCanceled(TransferCanceledEvent data)
         {
             if (data.Origin != _origin)
                 return;
-            
+
             var cell = _cells[data.Type];
 
             cell.OnTransferCanceled();
@@ -76,7 +106,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
             if (delta < 0)
                 return;
-            
+
             for (var i = 0; i < delta; i++)
                 _available.Add(Instantiate(_cellPrefab, _cellsRoot));
         }

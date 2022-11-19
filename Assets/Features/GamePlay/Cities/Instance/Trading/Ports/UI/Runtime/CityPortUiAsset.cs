@@ -12,7 +12,7 @@ using VContainer;
 namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 {
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "CityPort",
-        menuName = GamePlayAssetsPaths.CityPortUi + "Service")]
+        menuName = GamePlayAssetsPaths.CityPort + "Service")]
     public class CityPortUiAsset : LocalServiceAsset
     {
         [SerializeField] [EditableObject] private UiConstraints _constraints;

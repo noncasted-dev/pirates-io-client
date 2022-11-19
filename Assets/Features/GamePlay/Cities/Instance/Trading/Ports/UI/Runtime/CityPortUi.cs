@@ -30,6 +30,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         [SerializeField] private TMP_Text _nickName;
         
         [SerializeField] private AvailableItemsList _cargoView;
+        [SerializeField] private AvailableItemsList _stockView;
         
         private IDisposable _enterListener;
         private IDisposable _exitListener;
@@ -77,7 +78,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _body.SetActive(true);
             _stateMachine.EnterAsSingle(this);
             
-            _cargoView.Fill(data.Cargo);
+            _cargoView.Fill(data.Cargo, data.PriceProvider);
+            _stockView.Fill(data.Stock, data.PriceProvider);
         }
 
         private void OnExited(PortExitedEvent data)

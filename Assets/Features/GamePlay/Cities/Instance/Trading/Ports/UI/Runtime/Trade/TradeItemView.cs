@@ -1,4 +1,5 @@
 ﻿using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
+using TMPro;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +10,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
     {
         [SerializeField] private Image _icon;
         [SerializeField] private Button _removeButton;
-        
+        [SerializeField] private Slider _countSlider;
+        [SerializeField] private TMP_Text _sliderValue;
+
         private TradableItem _item;
         private ItemOrigin _origin;
         public TradableItem Item => _item;
@@ -17,21 +20,27 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         private void OnEnable()
         {
             _removeButton.onClick.AddListener(OnTransferClicked);
+            _countSlider.onValueChanged.AddListener(OnSliderValueChanged);
         }
 
         private void OnDisable()
         {
             _removeButton.onClick.RemoveListener(OnTransferClicked);
+            _countSlider.onValueChanged.RemoveListener(OnSliderValueChanged);
         }
 
-        public void AssignItem(TradableItem item, ItemOrigin origin)
+        public void AssignItem(TradableItem tradable, ItemOrigin origin)
         {
+            _countSlider.value = 0;
+            _sliderValue.text = 0.ToString();
             _origin = origin;
             gameObject.SetActive(true);
+            _removeButton.gameObject.SetActive(true);
 
-            _icon.sprite = item.Item.BaseData.Icon;
+            _icon.sprite = tradable.Item.BaseData.Icon;
 
-            _item = item;
+            _item = tradable;
+            _countSlider.maxValue = tradable.Item.Count;
         }
 
         public void Disable()
@@ -40,12 +49,23 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             gameObject.SetActive(false);
         }
 
+        private void OnSliderValueChanged(float value)
+        {
+            var cost = _item.Cost * (int)value;
+            _sliderValue.text = $"{(int)value}";
+            var tradeChange = new TradeAddedEvent(_item.Type, _origin, cost);
+            MessageBroker.Default.Publish(tradeChange);
+        }
+
         private void OnTransferClicked()
         {
             _removeButton.gameObject.SetActive(false);
 
-            var data = new TransferCanceledEvent(_item.Item, _origin);
-            MessageBroker.Default.Publish(data);
+            var cancel = new TransferCanceledEvent(_item.Item, _origin);
+            var removed = new TradeRemovedEvent(_item.Type, _origin);
+            
+            MessageBroker.Default.Publish(cancel);
+            MessageBroker.Default.Publish(removed);
         }
     }
 }

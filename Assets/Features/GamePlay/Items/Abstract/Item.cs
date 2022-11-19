@@ -37,6 +37,13 @@ namespace GamePlay.Items.Abstract
             CountChanged?.Invoke(_count);
         }
 
+        public void SetCount(int amount)
+        {
+            _count = amount;
+            
+            CountChanged?.Invoke(_count);
+        }
+
         public void Reduce(int amount)
         {
             if (amount < 0)

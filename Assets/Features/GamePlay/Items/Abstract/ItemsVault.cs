@@ -6,6 +6,8 @@ namespace GamePlay.Items.Abstract
     public class ItemsVault
     {
         private readonly Dictionary<ItemType, IItem> _items = new();
+        
+        public IReadOnlyDictionary<ItemType, IItem> Items => _items;
 
         public IReadOnlyDictionary<ItemType, IItem> Copy()
         {

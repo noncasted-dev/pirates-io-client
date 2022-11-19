@@ -9,6 +9,7 @@ namespace GamePlay.Items.Abstract
         event Action<int> CountChanged;
 
         void Add(int amount);
+        void SetCount(int amount);
         void Reduce(int amount);
 
         IItem Copy();

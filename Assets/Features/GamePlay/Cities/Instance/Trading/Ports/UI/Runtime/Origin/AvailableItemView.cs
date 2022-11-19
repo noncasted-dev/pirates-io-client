@@ -1,4 +1,6 @@
-﻿using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
+﻿using GamePlay.Cities.Instance.Storage.Runtime;
+using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
+using GamePlay.Items.Abstract;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -12,20 +14,19 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         [SerializeField] private TMP_Text _count;
         [SerializeField] private TMP_Text _cost;
         [SerializeField] private Button _transferButton;
-        
-        private TradableItem _item;
-        private ItemOrigin _origin;
-        public TradableItem Item => _item;
 
+        private IItem _item;
+        private ItemOrigin _origin;
+        private bool _isActive;
+        private int _price;
+
+        private IPriceProvider _priceProvider;
+
+        public bool IsActive => _isActive;
+        
         private void OnEnable()
         {
             _transferButton.onClick.AddListener(OnTransferClicked);
-            
-            if (_item == null)
-                return;
-
-            OnCountChanged(_item.Item.Count);
-            _item.Item.CountChanged += OnCountChanged;
         }
 
         private void OnDisable()
@@ -34,43 +35,81 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
             if (_item == null)
                 return;
+            
+            _priceProvider.Unfreeze(_item.BaseData.Type);
+            _item.CountChanged -= OnCountChanged;
 
-            _item.Item.CountChanged -= OnCountChanged;
+            _item = null;
         }
 
-        public void AssignItem(TradableItem item, ItemOrigin origin)
+        public void AssignItem(IItem item, ItemOrigin origin, IPriceProvider priceProvider)
         {
+            _priceProvider = priceProvider;
             _origin = origin;
             gameObject.SetActive(true);
+            _transferButton.gameObject.SetActive(true);
 
-            _icon.sprite = item.Item.BaseData.Icon;
-            _count.text = item.Item.Count.ToString();
-            _cost.text = item.Cost.ToString();
             _item = item;
+            
+            _icon.sprite = item.BaseData.Icon;
+            _count.text = item.Count.ToString();
+            _cost.text = _priceProvider.GetPrice(item.BaseData.Type).ToString();
+
+            _isActive = false;
+            
+            OnCountChanged(_item.Count);
+            
+            _item.CountChanged += OnCountChanged;
         }
-        
+
         public void Disable()
         {
             _item = null;
             gameObject.SetActive(false);
+
+            _isActive = false;
         }
 
         public void OnTransferCanceled()
         {
+            _priceProvider.Unfreeze(_item.BaseData.Type);
+            
+            _isActive = false;
+
             _transferButton.gameObject.SetActive(true);
+        }
+
+        public void UpdatePrice()
+        {
+            if (_item == null)
+                return;
+            
+            if (_priceProvider == null)
+                return;
+            
+            if (_isActive == true)
+                return;
+
+            _price = _priceProvider.GetPrice(_item.BaseData.Type);
+            _cost.text = _price.ToString();
         }
 
         private void OnTransferClicked()
         {
+            _priceProvider.Freeze(_item.BaseData.Type);
+            
+            _isActive = true;
             _transferButton.gameObject.SetActive(false);
 
-            var data = new TransferRequestedEvent(_item, _origin);
+            var tradable = new TradableItem(_item, _price);
+            
+            var data = new TransferRequestedEvent(tradable, _origin);
             MessageBroker.Default.Publish(data);
         }
 
         private void OnCountChanged(int count)
         {
-            _count.text = $"{count}";
+            _count.text = count.ToString();
         }
     }
 }

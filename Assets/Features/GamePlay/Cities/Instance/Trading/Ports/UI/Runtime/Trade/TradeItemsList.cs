@@ -15,7 +15,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         [SerializeField] private VerticalLayoutGroup _layout;
         [SerializeField] private RectTransform _contentRect;
         [SerializeField] private float _cellHeight = 60f;
-
+        [SerializeField] private ItemOrigin _origin;
+        
         private readonly Dictionary<ItemType, TradeItemView> _cells = new();
         private readonly List<TradeItemView> _available = new();
 
@@ -26,13 +27,13 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         {
             foreach (var startupCell in _startupCells)
                 _available.Add(startupCell);
+            
+            foreach (var cell in _available)
+                cell.Disable();
         }
 
         private void OnEnable()
         {
-            foreach (var cell in _available)
-                cell.Disable();
-            
             _cells.Clear();
             CalculateVerticalSize(_cells.Count);
 
@@ -42,12 +43,20 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
         private void OnDisable()
         {
+            foreach (var cell in _cells)
+                cell.Value.Disable();
+            
+            _cells.Clear();
+            
             _transferListener?.Dispose();
             _removeListener?.Dispose();
         }
 
         private void AddItem(TransferRequestedEvent data)
         {
+            if (data.Origin != _origin) 
+                return;
+            
             AddCellsOnDemand();
 
             foreach (var available in _available)
@@ -64,6 +73,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
         private void RemoveItem(TransferCanceledEvent data)
         {
+            if (data.Origin != _origin) 
+                return;
+            
             var cell = _cells[data.Type];
 
             _cells.Remove(data.Type);

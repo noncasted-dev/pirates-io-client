@@ -2,11 +2,14 @@
 {
     public enum UiStateMachineLogType
     {
-        EnteredSingle,
-        EnteredStack,
-        Exited,
-        ExitedStack,
+        EnterSingle,
+        EnterStack,
+        Exit,
+        ExitCurrent,
+        ExitStack,
+        ExitHead,
+        NoPreviousStates,
         Recovered,
-        ReturnedToPrevious,
+        ReturnToPrevious,
     }
 }

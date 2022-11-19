@@ -55,5 +55,10 @@ namespace GamePlay.Items.Abstract
 
             CountChanged?.Invoke(_count);
         }
+
+        public IItem Copy()
+        {
+            return new Item(BaseData, _count);
+        }
     }
 }

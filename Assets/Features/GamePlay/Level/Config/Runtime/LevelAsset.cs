@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Common.EditableScriptableObjects.Attributes;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime;
 using GamePlay.Common.Paths;
 using GamePlay.Factions.Selections.Bootstrap;
 using GamePlay.Level.Environment.Bootstrap;
@@ -45,6 +46,7 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField] [EditableObject] private TransitionScreenAsset _transitionScreen;
         [SerializeField] [EditableObject] private VfxPoolAsset _vfxPool;
         [SerializeField] [EditableObject] private TravelOverlayAsset _travelOverlay;
+        [SerializeField] [EditableObject] private CityPortUiAsset _cityPortUi;
         
         [SerializeField] private LevelScope _scopePrefab;
 
@@ -67,7 +69,8 @@ namespace GamePlay.Level.Config.Runtime
                 _networkPlayerData,
                 _objectDropper,
                 _playerCargo,
-                _travelOverlay
+                _travelOverlay,
+                _cityPortUi
             };
 
             return list.ToArray();

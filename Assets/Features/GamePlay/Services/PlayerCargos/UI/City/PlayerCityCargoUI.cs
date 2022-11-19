@@ -8,7 +8,7 @@ namespace GamePlay.Services.PlayerCargos.UI.City
     public class PlayerCityCargoUI : MonoBehaviour, IPlayerCityCargoUI
     {
         [SerializeField] private GameObject _body;
-        [SerializeField] private InventoryGrid _grid;
+        [SerializeField] private ItemsListView _grid;
 
         private void Awake()
         {

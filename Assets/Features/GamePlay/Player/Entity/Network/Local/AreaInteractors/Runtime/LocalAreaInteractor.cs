@@ -1,5 +1,6 @@
 ﻿using GamePlay.Common.Areas.Common.Runtime;
 using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
+using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -31,12 +32,10 @@ namespace GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime
 
         public void OnPortEntered()
         {
-            
         }
 
         public void OnPortExited()
         {
-            
         }
     }
 }

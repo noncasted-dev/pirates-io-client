@@ -1,0 +1,4 @@
+﻿{
+  "name": "GamePlay.Cities.Instance.Storage.Runtime",
+  "references":[ "GUID:e2b1c00d8d9b440888bd9f6a58105dd3" ]
+}

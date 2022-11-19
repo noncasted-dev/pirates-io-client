@@ -8,7 +8,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
     public class PlayerTravelCargoUI : MonoBehaviour, IPlayerTravelCargoUI
     {
         [SerializeField] private GameObject _body;
-        [SerializeField] private InventoryGrid _grid;
+        [SerializeField] private ItemsListView _grid;
 
         [SerializeField] private DropMenu _drop;
 
@@ -19,7 +19,6 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
 
         private void OnEnable()
         {
-            _grid.Selected += OnItemSelected;
             _grid.Deselected += OnItemDeselected;
             _drop.Dropped += OnDropped;
 
@@ -28,7 +27,6 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
 
         private void OnDisable()
         {
-            _grid.Selected -= OnItemSelected;
             _grid.Deselected -= OnItemDeselected;
             _drop.Dropped -= OnDropped;
 

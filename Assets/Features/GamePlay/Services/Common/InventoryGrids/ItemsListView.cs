@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace GamePlay.Services.Common.InventoryGrids
 {
-    public class InventoryGrid : MonoBehaviour, IInventoryGrid
+    public class ItemsListView : MonoBehaviour, IInventoryGrid
     {
         [SerializeField] private GridCell[] _startupCells;
         [SerializeField] private GridCell _cellPrefab;
@@ -15,7 +15,6 @@ namespace GamePlay.Services.Common.InventoryGrids
 
         [SerializeField] private GridLayoutGroup _gridLayout;
         [SerializeField] private RectTransform _contentRect;
-        [SerializeField] private int _cellsInRow = 4;
 
         private readonly Dictionary<int, GridCell> _cells = new();
 
@@ -29,20 +28,9 @@ namespace GamePlay.Services.Common.InventoryGrids
             }
         }
 
-        private void OnEnable()
-        {
-            foreach (var cell in _cells)
-                cell.Value.Selected += OnSelected;
-        }
-
-        private void OnDisable()
-        {
-            foreach (var cell in _cells)
-                cell.Value.Selected -= OnSelected;
-        }
-
-        public event Action<IItem> Selected;
         public event Action Deselected;
+
+        public event Action<IItem, GridCell> Clicked;
 
         public void Fill(IItem[] items)
         {
@@ -76,22 +64,7 @@ namespace GamePlay.Services.Common.InventoryGrids
             {
                 var cell = Instantiate(_cellPrefab, _cellsRoot);
                 cell.Setup(_cells.Count);
-                cell.Selected += OnSelected;
             }
-        }
-
-        private void OnSelected(GridCell cell)
-        {
-            if (_selection.IsSelected(cell) == true)
-            {
-                _selection.Disable();
-                Deselected?.Invoke();
-                return;
-            }
-
-            _selection.Move(cell);
-
-            Selected?.Invoke(cell.Item);
         }
 
         public void Deselect()
@@ -104,9 +77,7 @@ namespace GamePlay.Services.Common.InventoryGrids
             var cellSize = _gridLayout.cellSize.y;
             var spacing = _gridLayout.spacing.y;
 
-            var rows = itemsCount / _cellsInRow;
-
-            var ySize = (rows + 1) * (cellSize + spacing);
+            var ySize = (itemsCount + 1) * (cellSize + spacing);
 
             _contentRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, ySize);
         }

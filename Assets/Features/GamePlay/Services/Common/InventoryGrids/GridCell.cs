@@ -8,28 +8,19 @@ using UnityEngine.UI;
 namespace GamePlay.Services.Common.InventoryGrids
 {
     [DisallowMultipleComponent]
-    public class GridCell : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+    public class GridCell : MonoBehaviour
     {
         [SerializeField] private Image _icon;
         [SerializeField] private TMP_Text _count;
-
+        
         private int _id;
         private IItem _item;
 
         public int Id => _id;
 
         public IItem Item => _item;
-
-        public void OnPointerDown(PointerEventData eventData)
-        {
-        }
-
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            Selected?.Invoke(this);
-        }
-
-        public event Action<GridCell> Selected;
+        
+        public event Action<IItem, GridCell> Clicked;
 
         public void Setup(int id)
         {

@@ -29,4 +29,5 @@ MonoBehaviour:
   _transitionScreen: {fileID: 11400000, guid: 6a27838c5b181624abc4d150b8f015bb, type: 2}
   _vfxPool: {fileID: 11400000, guid: 4060695fef83f5e4eb3e0fc124b74ef4, type: 2}
   _travelOverlay: {fileID: 11400000, guid: dbd0285ab605a7a4da3914e08794562d, type: 2}
+  _cityPortUi: {fileID: 11400000, guid: 1059711aacebc3649814ab6c76f5189b, type: 2}
   _scopePrefab: {fileID: 6256164544057903142, guid: 739bd40898e14fe4ebe3aa07b287a0fb, type: 3}

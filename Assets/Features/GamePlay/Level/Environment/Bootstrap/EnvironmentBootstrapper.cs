@@ -14,6 +14,8 @@ namespace GamePlay.Level.Environment.Bootstrap
         [SerializeField] private CitiesRegistry _citiesRegistry;
         [SerializeField] private ChunksOcclusionCulling _chunksCulling;
 
+        [SerializeField] private GameObject[] _injectTargets;
+        
         public void Register(IContainerBuilder builder)
         {
             builder.RegisterComponent(_sceneObjects).As<ISceneObjectsHandler>();
@@ -24,6 +26,9 @@ namespace GamePlay.Level.Environment.Bootstrap
         public void Resolve(IObjectResolver resolver)
         {
             resolver.Resolve<ChunksOcclusionCulling>();
+
+            foreach (var target in _injectTargets)
+                resolver.InjectGameObject(target);
         }
     }
 }

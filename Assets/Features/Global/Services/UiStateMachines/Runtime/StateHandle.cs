@@ -22,10 +22,7 @@ namespace Global.Services.UiStateMachines.Runtime
 
         private readonly Stack<StateHandle> _stack = new();
 
-        private bool _isActive = true;
-
         public string Name => State.Name;
-        public bool IsActive => _isActive;
 
         public void AddToStack(StateHandle handle)
         {
@@ -34,8 +31,6 @@ namespace Global.Services.UiStateMachines.Runtime
 
         public void Recover()
         {
-            _isActive = true;
-            
             if (_stack.Count != 0)
             {
                 foreach (var stateHandle in _stack)
@@ -48,8 +43,6 @@ namespace Global.Services.UiStateMachines.Runtime
 
         public void Exit()
         {
-            _isActive = false;
-            
             if (_stack.Count != 0)
             {
                 foreach (var stateHandle in _stack)

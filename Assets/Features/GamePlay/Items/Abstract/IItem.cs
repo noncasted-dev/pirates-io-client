@@ -10,5 +10,7 @@ namespace GamePlay.Items.Abstract
 
         void Add(int amount);
         void Reduce(int amount);
+
+        IItem Copy();
     }
 }

@@ -35,6 +35,7 @@
         public const string ObjectsDropper = _services + "ObjectsDropper/";
         public const string PlayerCargo = _services + "PlayerCargo/";
         public const string TravelOverlay = _services + "TravelOverlay/";
+        public const string CityPortUi = _services + "CityPortUi/";
 
         public const string NetworkBootstrapper = _network + "Bootstrapper/";
         public const string RemotePlayerBuilder = _network + "RemotePlayerBuilder/";

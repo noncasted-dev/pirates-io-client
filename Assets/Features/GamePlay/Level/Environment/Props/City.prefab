@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 5848210435650952051}
   - component: {fileID: 5848210435650952012}
   m_Layer: 16
-  m_Name: AreaTrigger
+  m_Name: CityTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

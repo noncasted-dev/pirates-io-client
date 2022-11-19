@@ -30,8 +30,8 @@ namespace Global.Services.UiStateMachines.Runtime
             {
                 var current = _stack.Peek();
 
-                if (current.IsActive == true)
-                    current.Exit();
+                _logger.OnExitCurrent(current.Name);
+                current.Exit();
             }
 
             var handle = new StateHandle(state, OnStackExited, OnStackRecovered);
@@ -71,33 +71,31 @@ namespace Global.Services.UiStateMachines.Runtime
         {
             if (_handles.ContainsKey(state) == false)
                 return;
-            
-            if (_handles[state].IsActive == false)
-                return;
-            
+
             _handles[state].Exit();
             _handles.Remove(state);
 
-            var current = _stack.Peek();
-
             _logger.OnExited(state.Name);
 
-            if (_handles.ContainsKey(state) == false)
+            if (state != _head)
                 return;
 
-            if (_handles[state] != current)
-                return;
+            var head = _stack.Pop();
+            _logger.OnExitHead(head.Name);
 
-            var last = _stack.Pop();
+            _head = null;
 
-            if (_stack.Count != 0)
+            if (_stack.Count == 0)
             {
-                var previous = _stack.Peek();
-                previous.Recover();
-                _head = previous.State;
-
-                _logger.OnReturnedToPrevious(last.Name, previous.Name);
+                _logger.OnNoPreviousStates();
+                return;
             }
+
+            var previous = _stack.Peek();
+            previous.Recover();
+            _head = previous.State;
+
+            _logger.OnReturnedToPrevious(state.Name, previous.Name);
         }
 
         private void OnStackExited(IUiState state)
@@ -109,7 +107,6 @@ namespace Global.Services.UiStateMachines.Runtime
         private void OnStackRecovered(StateHandle handle)
         {
             _constraintsStorage.Add(handle.State.Constraints.Input);
-            _handles.Add(handle.State, handle);
             _logger.OnRecovered(handle.Name);
         }
     }

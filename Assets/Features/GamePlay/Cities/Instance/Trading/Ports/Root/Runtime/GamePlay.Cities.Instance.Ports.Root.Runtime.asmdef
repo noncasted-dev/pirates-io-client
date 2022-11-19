@@ -1,0 +1,4 @@
+﻿{
+  "name": "GamePlay.Cities.Instance.Ports.Root.Runtime",
+  "references":[ "GUID:65ae26b3caba44578ad565ad7a4975e8", "GUID:560b04d1a97f54a4e82edc0cbbb69285", "GUID:e2b1c00d8d9b440888bd9f6a58105dd3", "GUID:fd8408ca1f7e42249ebe71d7e1d975d9", "GUID:e724e4fd199f41bca71120ec33c2ecbd", "GUID:8f56d58df3a847768d8965fdf54def1f", "GUID:b0214a6008ed146ff8f122a6a9c2f6cc" ]
+}

@@ -40,8 +40,6 @@ namespace Menu.Services.UI.Runtime
         private void OnDisable()
         {
             _playButton.onClick.RemoveListener(OnPlayClicked);
-            
-            _uiStateMachine.Exit(this);
         }
 
         public void Recover()

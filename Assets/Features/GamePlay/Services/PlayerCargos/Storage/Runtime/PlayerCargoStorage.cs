@@ -11,6 +11,8 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
         public IReadOnlyDictionary<ItemType, IItem> Items => _items;
 
+        public event Action Changed;
+        
         public void Add(IItem item)
         {
             var type = item.BaseData.Type;
@@ -64,7 +66,5 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
             return items;
         }
-
-        public event Action Changed;
     }
 }

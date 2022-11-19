@@ -1,4 +1,5 @@
-﻿using GamePlay.Items.Abstract;
+﻿using System.Collections.Generic;
+using GamePlay.Items.Abstract;
 
 namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 {
@@ -8,5 +9,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         void Reduce(ItemType type, int amount);
         void Delete(ItemType type);
         IItem[] ToArray();
+        
+        public IReadOnlyDictionary<ItemType, IItem> Items { get; }
     }
 }

@@ -10840,7 +10840,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11961,6 +11961,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1294399598}
     m_Modifications:
     - target: {fileID: 2582328215692818142, guid: 28e36dcf68cee37429aec5e2201c7621, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582328215692818142, guid: 28e36dcf68cee37429aec5e2201c7621, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -12049,7 +12053,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6510992241907651699, guid: 28e36dcf68cee37429aec5e2201c7621, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6510992241907651699, guid: 28e36dcf68cee37429aec5e2201c7621, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6510992241907651699, guid: 28e36dcf68cee37429aec5e2201c7621, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6511456545515653725, guid: 28e36dcf68cee37429aec5e2201c7621, type: 3}

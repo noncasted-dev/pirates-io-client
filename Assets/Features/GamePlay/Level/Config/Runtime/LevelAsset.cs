@@ -19,6 +19,7 @@ using GamePlay.Services.Projectiles.Replicator.Runtime;
 using GamePlay.Services.TransitionScreens.Runtime;
 using GamePlay.Services.TravelOverlays.Runtime;
 using GamePlay.Services.VFX.Pool.Provider;
+using GamePlay.Services.Wallets.Runtime;
 using Local.ComposedSceneConfig;
 using Local.Services.Abstract;
 using UnityEngine;
@@ -47,6 +48,7 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField] [EditableObject] private VfxPoolAsset _vfxPool;
         [SerializeField] [EditableObject] private TravelOverlayAsset _travelOverlay;
         [SerializeField] [EditableObject] private CityPortUiAsset _cityPortUi;
+        [SerializeField] [EditableObject] private WalletAsset _wallet;
         
         [SerializeField] private LevelScope _scopePrefab;
 
@@ -70,7 +72,8 @@ namespace GamePlay.Level.Config.Runtime
                 _objectDropper,
                 _playerCargo,
                 _travelOverlay,
-                _cityPortUi
+                _cityPortUi,
+                _wallet
             };
 
             return list.ToArray();

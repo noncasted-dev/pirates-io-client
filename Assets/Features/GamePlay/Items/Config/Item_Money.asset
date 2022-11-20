@@ -15,4 +15,4 @@ MonoBehaviour:
   _weight: 0
   _name: Money
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 16264090f5e803a488d61b446cf4521e, type: 3}
+  _icon: {fileID: 21300000, guid: 4f7685cc453ef6a429b22963143a5c58, type: 3}

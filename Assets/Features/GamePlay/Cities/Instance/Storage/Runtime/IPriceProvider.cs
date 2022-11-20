@@ -6,7 +6,10 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
     {
         void Freeze(ItemType type);
         void Unfreeze(ItemType type);
+        
         int GetPrice(ItemType type);
-        int GetSellPrice(ItemType type, int count);
+        
+        int GetPlayerSellPrice(ItemType type, int count);
+        int GetStockSellPrice(ItemType type, int count);
     }
 }

@@ -73,7 +73,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
                     _player.Remove(data.Type);
                     break;
                 case ItemOrigin.Stock:
-                    _player.Remove(data.Type);
+                    _stock.Remove(data.Type);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

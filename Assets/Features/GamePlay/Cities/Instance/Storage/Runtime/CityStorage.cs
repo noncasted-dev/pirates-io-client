@@ -115,30 +115,45 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             var config = _producables[type];
             var item = _vault.Items[type];
 
-            var progress = item.Count / (float)config.MaxItems;
-
-            if (progress > 1f)
-                progress = 1f;
+            var progress = GetCountProgress(type, item.Count);
             
-            var priceEvaluation = _curves.PricePerCount.Evaluate(progress);
+            var priceEvaluation = _curves.ItemPricePerCount.Evaluate(progress);
             var cost = (int)(config.MedianCost * priceEvaluation);
             
             return cost;
         }
 
-        public int GetSellPrice(ItemType type, int count)
+        public int GetPlayerSellPrice(ItemType type, int count)
+        {
+            var price = GetPrice(type);
+            var progress = GetCountProgress(type, count);
+
+            var priceEvaluation = _curves.SellPricePerCount.Evaluate(progress);
+
+            return (int)(price * priceEvaluation);
+        }
+
+        public int GetStockSellPrice(ItemType type, int count)
+        {
+            var price = GetPrice(type);
+
+            var progress = GetCountProgress(type, count);
+
+            var priceEvaluation = _curves.StockPricePerCount.Evaluate(progress);
+
+            return (int)(price * priceEvaluation);
+        }
+
+        private float GetCountProgress(ItemType type, int count)
         {
             var config = _producables[type];
-            var item = _vault.Items[type];
 
-            var progress = (item.Count + count) / (float)config.MaxItems;
+            var progress = count / (float)config.MaxItems;
 
             if (progress > 1f)
                 progress = 1f;
 
-            var priceEvaluation = _curves.PricePerCount.Evaluate(progress);
-
-            return (int)(config.MedianCost * priceEvaluation);
+            return progress;
         }
     }
 }

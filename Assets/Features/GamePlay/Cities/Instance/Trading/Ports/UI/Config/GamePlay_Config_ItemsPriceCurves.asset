@@ -12,26 +12,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c77f0a354146fa881688e238592cc5, type: 3}
   m_Name: GamePlay_Config_ItemsPriceCurves
   m_EditorClassIdentifier: 
-  _pricePerCount:
+  _itemPricePerCount:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -0.38727596
-      outSlope: -0.38727596
+      inSlope: -0.17025921
+      outSlope: -0.17025921
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.14790288
+      outWeight: 0.2803532
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: -0.050053038
-      outSlope: -0.050053038
+      value: 0.095466614
+      inSlope: -1.698924
+      outSlope: -1.698924
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.23841059
+      inWeight: 0.061810136
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _sellPricePerCount:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.12662062
+      outSlope: 0.12662062
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.24503312
+    - serializedVersion: 3
+      time: 1
+      value: 0.10501193
+      inSlope: 0.04650089
+      outSlope: 0.04650089
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.205298
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _stockPricePerCount:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.38612354
+      outSlope: 0.38612354
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.12362031
+    - serializedVersion: 3
+      time: 0.67453897
+      value: 1.355563
+      inSlope: 1.4673091
+      outSlope: 1.4673091
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.15902972
+      outWeight: 0.26022997
+    - serializedVersion: 3
+      time: 1
+      value: 3
+      inSlope: 6.995643
+      outSlope: 6.995643
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.03752762
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

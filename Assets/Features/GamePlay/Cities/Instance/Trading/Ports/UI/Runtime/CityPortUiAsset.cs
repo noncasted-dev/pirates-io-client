@@ -32,7 +32,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
         {
-            resolver.Resolve<CityPortUi>();
+            var ui = resolver.Resolve<CityPortUi>();
+            resolver.Inject(ui.MoneyView);
         }
     }
 }

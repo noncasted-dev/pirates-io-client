@@ -36,6 +36,7 @@
         public const string PlayerCargo = _services + "PlayerCargo/";
         public const string TravelOverlay = _services + "TravelOverlay/";
         public const string CityPort = _services + "CityPortUi/";
+        public const string Wallet = _services + "Wallet/";
 
         public const string NetworkBootstrapper = _network + "Bootstrapper/";
         public const string RemotePlayerBuilder = _network + "RemotePlayerBuilder/";

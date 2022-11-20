@@ -32,9 +32,14 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         
         [SerializeField] private AvailableItemsList _cargoView;
         [SerializeField] private AvailableItemsList _stockView;
+
+        [SerializeField] private TradeItemsList _cargoTrade;
+        [SerializeField] private TradeItemsList _stockTrade;
         
         [SerializeField] private TradeHandler _tradeHandler;
         [SerializeField] private GameObject _tradeBody;
+
+        [SerializeField] private MoneyView _moneyView;
         
         private IDisposable _enterListener;
         private IDisposable _exitListener;
@@ -48,12 +53,11 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         public UiConstraints Constraints => _constraints;
         public string Name => "Port";
+        public MoneyView MoneyView => _moneyView;
 
         private void Awake()
         {
             _body.SetActive(false);
-            
-            _tradeBody.SetActive(false);
         }
 
         private void OnEnable()
@@ -61,6 +65,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _enterListener = MessageBroker.Default.Receive<PortEnteredEvent>().Subscribe(OnEntered);
             _exitListener = MessageBroker.Default.Receive<PortExitedEvent>().Subscribe(OnExited);
             _requestListener = MessageBroker.Default.Receive<TradeRequestedEvent>().Subscribe(OnTradeRequested);
+            
+            _tradeBody.SetActive(false);
         }
 
         private void OnDisable()
@@ -89,6 +95,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             
             _cargoView.Fill(data.Cargo, data.PriceProvider);
             _stockView.Fill(data.Stock, data.PriceProvider);
+            
+            _cargoTrade.Setup(data.PriceProvider);
+            _stockTrade.Setup(data.PriceProvider);
         }
 
         private void OnExited(PortExitedEvent data)

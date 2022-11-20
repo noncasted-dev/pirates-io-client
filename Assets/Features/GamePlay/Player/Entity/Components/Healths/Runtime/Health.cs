@@ -15,6 +15,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
         private int _max;
         private int _amount;
 
+        public int Amount => _amount;
         public bool IsAlive => _amount > 0;
 
         public void Respawn(int health)

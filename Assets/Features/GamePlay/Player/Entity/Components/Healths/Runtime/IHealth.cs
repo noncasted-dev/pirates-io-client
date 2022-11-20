@@ -2,6 +2,7 @@
 {
     public interface IHealth
     {
+        int Amount { get; }
         bool IsAlive { get; }
 
         void Respawn(int health);

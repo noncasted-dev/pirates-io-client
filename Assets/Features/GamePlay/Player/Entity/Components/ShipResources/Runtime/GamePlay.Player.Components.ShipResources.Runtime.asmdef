@@ -1,0 +1,4 @@
+﻿{
+  "name": "GamePlay.Player.Components.ShipResources.Runtime",
+  "references":[ "GUID:e053f075e62cf8b4ab18c4ca51216953" ]
+}

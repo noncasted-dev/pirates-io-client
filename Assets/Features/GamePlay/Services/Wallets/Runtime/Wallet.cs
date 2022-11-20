@@ -6,7 +6,7 @@ namespace GamePlay.Services.Wallets.Runtime
 {
     public class Wallet : MonoBehaviour, IWallet, IWalletPresenter
     {
-        [SerializeField] [ReadOnly] private int _money;
+        [SerializeField] [ReadOnly] private int _money = 10000;
 
         public int Money => _money;
 
@@ -25,7 +25,7 @@ namespace GamePlay.Services.Wallets.Runtime
             Changed?.Invoke(_money);
         }
 
-        public void Remove(int remove)
+        public void Reduce(int remove)
         {
             if (remove < 0)
             {

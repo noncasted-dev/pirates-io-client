@@ -1,6 +1,8 @@
 ﻿using System;
 using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -18,12 +20,13 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
         private TradableItem _item;
         private ItemOrigin _origin;
-        private int _price;
         private IPriceProvider _priceProvider;
         public TradableItem Item => _item;
 
         private void OnEnable()
         {
+            _countSlider.value = 1f;
+            
             _removeButton.onClick.AddListener(OnTransferClicked);
             _countSlider.onValueChanged.AddListener(OnSliderValueChanged);
         }
@@ -58,10 +61,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             gameObject.SetActive(false);
         }
 
-        private void UpdatePrice()
+        private int UpdatePrice()
         {
             if (_priceProvider == null)
-                return;
+                return 0;
 
             var count = (int)_countSlider.value;
 
@@ -71,23 +74,25 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
                 count = 1;
             }
 
-            _price = _origin switch
+            var price = _origin switch
             {
                 ItemOrigin.Cargo => _priceProvider.GetPlayerSellPrice(_item.Type, count),
                 ItemOrigin.Stock => _priceProvider.GetStockSellPrice(_item.Type, count),
                 _ => throw new ArgumentOutOfRangeException()
             };
 
-            _cost.text = _price.ToString();
+            _cost.text = price.Single.ToString();
+
+            return price.Total;
         }
 
         private void OnSliderValueChanged(float value)
         {
-            UpdatePrice();
+            var total = UpdatePrice();
+            var count = (int)value;
             
-            var cost = _price * (int)value;
-            _sliderValue.text = $"{(int)value}";
-            var tradeChange = new TradeAddedEvent(_item.Type, _origin, cost);
+            _sliderValue.text = $"{count}";
+            var tradeChange = new TradeAddedEvent(_item.Item, _origin, total, count);
             MessageBroker.Default.Publish(tradeChange);
         }
 
@@ -96,7 +101,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             _removeButton.gameObject.SetActive(false);
 
             var cancel = new TransferCanceledEvent(_item.Item, _origin);
-            var removed = new TradeRemovedEvent(_item.Type, _origin);
+            var removed = new TradeRemovedEvent(_item.Item, _origin);
 
             MessageBroker.Default.Publish(cancel);
             MessageBroker.Default.Publish(removed);

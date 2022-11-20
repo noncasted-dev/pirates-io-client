@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Items.Abstract;
 using UniRx;
 using UnityEngine;
@@ -52,14 +53,12 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             AddCellsOnDemand(items.Length);
 
             foreach (var cell in _available)
-                if (cell.IsActive == false)
-                    cell.Disable();
+                cell.Disable();
 
             var unused = new List<ItemType>();
 
             foreach (var cell in _cells)
-                if (cell.Value.IsActive == false)
-                    unused.Add(cell.Key);
+                unused.Add(cell.Key);
 
             foreach (var cell in unused)
                 _cells.Remove(cell);

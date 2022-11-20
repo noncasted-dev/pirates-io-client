@@ -7,7 +7,7 @@ using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
+namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views
 {
     [DisallowMultipleComponent]
     public class ShipView : MonoBehaviour

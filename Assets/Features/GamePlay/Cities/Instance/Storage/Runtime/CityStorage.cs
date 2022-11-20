@@ -80,7 +80,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
             var item = _vault.Items[type];
 
-            if (item.Count < config.MedianCost)
+            if (item.Count < config.MedianCount)
             {
                 item.Add(config.LackProductionSpeedPerSecond);
 
@@ -110,6 +110,11 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             _freezed.Remove(type);
         }
 
+        public void UnfreezeAll()
+        {
+            _freezed.Clear();
+        }
+
         public int GetPrice(ItemType type)
         {
             var config = _producables[type];
@@ -123,34 +128,31 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             return cost;
         }
 
-        public int GetPlayerSellPrice(ItemType type, int count)
+        public SellPrice GetPlayerSellPrice(ItemType type, int count)
         {
-            var price = GetPrice(type);
-            var totalPrice = 0;
-
-            for (var i = 0; i < count; i++)
-            {
-                var progress = GetCountProgress(type, count);
-                var priceEvaluation = _curves.SellPricePerCount.Evaluate(progress);
-                totalPrice += (int)(priceEvaluation * price);
-            }
-
-            return totalPrice;
+            return GetTargetSellPrice(type, count, _curves.SellPricePerCount);
         }
 
-        public int GetStockSellPrice(ItemType type, int count)
+        public SellPrice GetStockSellPrice(ItemType type, int count)
+        {
+            return GetTargetSellPrice(type, count, _curves.StockPricePerCount);
+        }
+
+        private SellPrice GetTargetSellPrice(ItemType type, int count, AnimationCurve curve)
         {
             var price = GetPrice(type);
             var totalPrice = 0;
+            var lastPrice = 0;
 
             for (var i = 0; i < count; i++)
             {
-                var progress = GetCountProgress(type, count);
-                var priceEvaluation = _curves.StockPricePerCount.Evaluate(progress);
-                totalPrice += (int)(priceEvaluation * price);
+                var progress = GetCountProgress(type, i);
+                var priceEvaluation = curve.Evaluate(progress);
+                lastPrice = (int)(priceEvaluation * price);
+                totalPrice += lastPrice;
             }
 
-            return totalPrice;
+            return new SellPrice(lastPrice, totalPrice);
         }
 
         private float GetCountProgress(ItemType type, int count)

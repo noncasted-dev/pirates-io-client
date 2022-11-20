@@ -1,6 +1,6 @@
 ﻿namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 {
-    public class PortExitedEvent
+    public readonly struct PortExitedEvent
     {
     }
 }

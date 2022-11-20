@@ -34,6 +34,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         {
             var ui = resolver.Resolve<CityPortUi>();
             resolver.Inject(ui.MoneyView);
+            resolver.Inject(ui.TradeMoney);
+            resolver.Inject(ui.TradeHandler);
         }
     }
 }

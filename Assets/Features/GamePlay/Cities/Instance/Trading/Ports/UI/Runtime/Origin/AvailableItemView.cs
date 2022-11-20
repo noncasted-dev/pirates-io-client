@@ -1,6 +1,8 @@
 ﻿using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
 using TMPro;
 using UniRx;

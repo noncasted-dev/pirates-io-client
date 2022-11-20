@@ -38,6 +38,9 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
             _items[type].Reduce(amount);
             Changed?.Invoke();
+
+            if (_items[type].Count == 0)
+                Delete(type);
         }
 
         public void Delete(ItemType type)

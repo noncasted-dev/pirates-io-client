@@ -1355,6 +1355,7 @@ GameObject:
   - component: {fileID: 301419933}
   - component: {fileID: 301419932}
   - component: {fileID: 301419931}
+  - component: {fileID: 301419934}
   m_Layer: 0
   m_Name: Apply_Button
   m_TagString: Untagged
@@ -1464,6 +1465,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301419929}
   m_CullTransparentMesh: 1
+--- !u!114 &301419934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301419929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536505fe9dbb46adb3fada0dccf04124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _available: {fileID: 21300000, guid: 29f015325f1d86940b44a8d102e2b690, type: 3}
+  _unavailable: {fileID: 21300000, guid: 2bf706d81d6dc7b4f82f911588beb86e, type: 3}
+  _button: {fileID: 301419931}
+  _image: {fileID: 301419932}
 --- !u!1 &323369577
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,6 +2835,7 @@ MonoBehaviour:
   _tradeBody: {fileID: 1164095449}
   _moneyView: {fileID: 7391326083272139099}
   _shipView: {fileID: 1136497555}
+  _tradeMoney: {fileID: 176281577586501247}
 --- !u!4 &624963264
 Transform:
   m_ObjectHideFlags: 0
@@ -5349,6 +5367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _progress: {fileID: 2078968771}
   _sliderValue: {fileID: 1534051861}
+  _applyApplyButton: {fileID: 301419934}
 --- !u!1 &1179854697
 GameObject:
   m_ObjectHideFlags: 0
@@ -10154,7 +10173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 176281577586501246}
-  - component: {fileID: 1263972027741191053}
+  - component: {fileID: 176281577586501247}
   m_Layer: 0
   m_Name: Money
   m_TagString: Untagged
@@ -10238,6 +10257,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1110, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &176281577586501247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920617128019689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3204991ffbb54255874daa12ee83553a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _countSlider: {fileID: 1756789223003091896}
+  _sliderValue: {fileID: 5873193356381159817}
+  _cost: {fileID: 2272726218124772970}
 --- !u!1 &178083177573058445
 GameObject:
   m_ObjectHideFlags: 0
@@ -10667,23 +10701,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7470140934631989320}
   m_CullTransparentMesh: 1
---- !u!114 &1263972027741191053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2920617128019689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d2040212b174ed3ac9b7323eebba88e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _icon: {fileID: 64247873786793296}
-  _removeButton: {fileID: 3991139372881682160}
-  _countSlider: {fileID: 1756789223003091896}
-  _sliderValue: {fileID: 5873193356381159817}
-  _cost: {fileID: 2272726218124772970}
 --- !u!114 &1433972591505447263
 MonoBehaviour:
   m_ObjectHideFlags: 0

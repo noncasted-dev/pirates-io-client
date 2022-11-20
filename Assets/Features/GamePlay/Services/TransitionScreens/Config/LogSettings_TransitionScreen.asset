@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e648801a41c74da0a9769d44652fc54e, type: 3}
   m_Name: LogSettings_TransitionScreen
   m_EditorClassIdentifier: 
-  _isEnabled: 1
+  _isEnabled: 0
   _logs:
     _keys: 0000000001000000020000000300000004000000050000000600000007000000
-    _values: 0101000000000001
+    _values: 0101010101010101
   _logParameters:
-    Color: 6
     _header: TransitionScreen
     _isHeaderColoredColored: 1
     _isMessageColored: 0
+    Color: 6

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Items.Abstract;
+using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using UniRx;
 using UnityEngine;
@@ -20,12 +21,12 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 
         private IPlayerCargoStorage _playerCargoStorage;
 
-        public void Enter()
+        public void Enter(IShipResources shipResources)
         {
             var stock = ToArray(_storage.Items);
             var cargo = ToArray(_playerCargoStorage.Items);
 
-            var data = new PortEnteredEvent(cargo, stock, _storage);
+            var data = new PortEnteredEvent(cargo, stock, _storage, shipResources);
 
             MessageBroker.Default.Publish(data);
         }

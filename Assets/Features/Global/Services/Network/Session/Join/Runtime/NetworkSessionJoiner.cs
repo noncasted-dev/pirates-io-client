@@ -1,6 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using Global.Services.Network.Session.Join.Logs;
+using NaughtyAttributes;
 using UnityEngine;
 using VContainer;
 

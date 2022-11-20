@@ -20,7 +20,9 @@ namespace GamePlay.Services.Wallets.Runtime
             var wallet = Instantiate(_prefab);
             wallet.name = "Wallet";
 
-            serviceBinder.RegisterComponent(wallet).As<IWallet>();
+            serviceBinder.RegisterComponent(wallet)
+                .As<IWallet>()
+                .As<IWalletPresenter>();
             serviceBinder.AddToModules(wallet);
         }
     }

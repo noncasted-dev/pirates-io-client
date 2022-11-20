@@ -58,7 +58,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             gameObject.SetActive(false);
         }
 
-        public void UpdatePrice()
+        private void UpdatePrice()
         {
             if (_priceProvider == null)
                 return;
@@ -83,6 +83,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
         private void OnSliderValueChanged(float value)
         {
+            UpdatePrice();
+            
             var cost = _price * (int)value;
             _sliderValue.text = $"{(int)value}";
             var tradeChange = new TradeAddedEvent(_item.Type, _origin, cost);

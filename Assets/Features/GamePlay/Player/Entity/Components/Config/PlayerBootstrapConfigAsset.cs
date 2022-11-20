@@ -5,6 +5,7 @@ using GamePlay.Player.Entity.Components.DamageProcessors.Runtime;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime;
+using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.Setup.Path;
 using GamePlay.Player.Entity.States.Deaths.Runtime;
@@ -40,6 +41,7 @@ namespace GamePlay.Player.Entity.Components.Config
         [SerializeField] [EditableObject] private HealthAsset _health;
         [SerializeField] [EditableObject] private DamageProcessorAsset _damageProcessor;
         [SerializeField] [EditableObject] private ActionsStateAsset _actionsState;
+        [SerializeField] [EditableObject] private ShipResourcesAsset _shipResources;
 
         public override PlayerComponentAsset[] GetAssets()
         {
@@ -58,7 +60,8 @@ namespace GamePlay.Player.Entity.Components.Config
                 _death,
                 _health,
                 _damageProcessor,
-                _actionsState
+                _actionsState,
+                _shipResources
             };
         }
     }

@@ -31,4 +31,5 @@ MonoBehaviour:
   _travelOverlay: {fileID: 11400000, guid: dbd0285ab605a7a4da3914e08794562d, type: 2}
   _cityPortUi: {fileID: 11400000, guid: 1059711aacebc3649814ab6c76f5189b, type: 2}
   _wallet: {fileID: 11400000, guid: d4a189953cc48734291966c982bb656d, type: 2}
+  _reputation: {fileID: 11400000, guid: 7cd2adcba6eceef4789f7e097a9d4472, type: 2}
   _scopePrefab: {fileID: 6256164544057903142, guid: 739bd40898e14fe4ebe3aa07b287a0fb, type: 3}

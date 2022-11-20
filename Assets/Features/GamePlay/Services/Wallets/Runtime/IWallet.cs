@@ -6,6 +6,6 @@ namespace GamePlay.Services.Wallets.Runtime
     {
         int Money { get; }
 
-        event Action<int> MoneyChanged;
+        event Action<int> Changed;
     }
 }

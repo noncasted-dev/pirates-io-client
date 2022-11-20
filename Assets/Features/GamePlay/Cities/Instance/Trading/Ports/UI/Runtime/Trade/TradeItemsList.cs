@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
 using UniRx;
 using UnityEngine;
@@ -24,6 +25,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
         private IDisposable _transferListener;
         private IDisposable _removeListener;
+        
         private IPriceProvider _priceProvider;
 
         private void Awake()

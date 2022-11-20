@@ -116,6 +116,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _stockTrade.Setup(data.PriceProvider);
             
             _shipView.Setup(data.ShipResources, _reputation);
+            _tradeHandler.Setup(data.CityStorage);
         }
 
         private void OnExited(PortExitedEvent data)

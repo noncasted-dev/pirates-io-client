@@ -17,7 +17,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         [SerializeField] private Slider _countSlider;
         [SerializeField] private TMP_Text _sliderValue;
         [SerializeField] private TMP_Text _cost;
-
+        
         private TradableItem _item;
         private ItemOrigin _origin;
         private IPriceProvider _priceProvider;
@@ -25,10 +25,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
         private void OnEnable()
         {
-            _countSlider.value = 1f;
-            
             _removeButton.onClick.AddListener(OnTransferClicked);
             _countSlider.onValueChanged.AddListener(OnSliderValueChanged);
+            
+            _countSlider.value = 1f;
         }
 
         private void OnDisable()
@@ -43,7 +43,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             _countSlider.value = 0;
             _sliderValue.text = 0.ToString();
             _origin = origin;
-            gameObject.SetActive(true);
             _removeButton.gameObject.SetActive(true);
 
             _icon.sprite = tradable.Item.BaseData.Icon;
@@ -51,6 +50,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
             _item = tradable;
             _countSlider.maxValue = tradable.Item.Count;
+            gameObject.SetActive(true);
 
             UpdatePrice();
         }
@@ -81,17 +81,20 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
                 _ => throw new ArgumentOutOfRangeException()
             };
 
-            _cost.text = price.Single.ToString();
+            _cost.text = price.Median.ToString();
+            _sliderValue.text = $"{count}";
 
             return price.Total;
         }
 
         private void OnSliderValueChanged(float value)
         {
+            if (_item == null)
+                return;
+            
             var total = UpdatePrice();
             var count = (int)value;
             
-            _sliderValue.text = $"{count}";
             var tradeChange = new TradeAddedEvent(_item.Item, _origin, total, count);
             MessageBroker.Default.Publish(tradeChange);
         }

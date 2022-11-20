@@ -1,7 +1,6 @@
 ﻿using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
-using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
 using TMPro;
@@ -25,11 +24,14 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
         private IPriceProvider _priceProvider;
 
-        public bool IsActive => _isActive;
-
         private void OnEnable()
         {
             _transferButton.onClick.AddListener(OnTransferClicked);
+            
+            if (_item == null)
+                return;
+
+            _item.CountChanged += OnCountChanged;
         }
 
         private void OnDisable()
@@ -39,34 +41,43 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             if (_item == null)
                 return;
 
-            _priceProvider.Unfreeze(_item.BaseData.Type);
             _item.CountChanged -= OnCountChanged;
-
-            _item = null;
         }
 
         public void AssignItem(IItem item, ItemOrigin origin, IPriceProvider priceProvider)
         {
             _priceProvider = priceProvider;
             _origin = origin;
+            _item = item;
+            _isActive = false;
+
             gameObject.SetActive(true);
             _transferButton.gameObject.SetActive(true);
-
-            _item = item;
 
             _icon.sprite = item.BaseData.Icon;
             _count.text = item.Count.ToString();
             _cost.text = _priceProvider.GetPrice(item.BaseData.Type).ToString();
 
-            _isActive = false;
-
             OnCountChanged(_item.Count);
+        }
 
-            _item.CountChanged += OnCountChanged;
+        public void OnTransferedItemCountChange(int count)
+        {
+            var delta = _item.Count - count;
+
+            _count.text = delta.ToString();
+
+            if (delta == 0)
+                gameObject.SetActive(false);
+            else
+                gameObject.SetActive(true);
         }
 
         public void Disable()
         {
+            if (_item != null && _isActive == true)
+                _priceProvider.Unfreeze(_item.BaseData.Type);
+            
             _item = null;
             gameObject.SetActive(false);
 
@@ -75,6 +86,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
         public void OnTransferCanceled()
         {
+            gameObject.SetActive(true);
+            _count.text = _item.Count.ToString();
             _priceProvider.Unfreeze(_item.BaseData.Type);
 
             _isActive = false;

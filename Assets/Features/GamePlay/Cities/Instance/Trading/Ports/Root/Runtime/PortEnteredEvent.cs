@@ -10,17 +10,20 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             IItem[] cargo,
             IItem[] stock,
             IPriceProvider priceProvider,
-            IShipResources shipResources)
+            IShipResources shipResources,
+            ICityStorage cityStorage)
         {
             PriceProvider = priceProvider;
             Cargo = cargo;
             Stock = stock;
             ShipResources = shipResources;
+            CityStorage = cityStorage;
         }
 
         public readonly IItem[] Cargo;
         public readonly IItem[] Stock;
         public readonly IPriceProvider PriceProvider;
         public readonly IShipResources ShipResources;
+        public readonly ICityStorage CityStorage;
     }
 }

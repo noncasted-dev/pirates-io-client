@@ -26,6 +26,8 @@ namespace GamePlay.Items.Abstract
 
         public void Add(int amount)
         {
+            Debug.Log($"Add: {BaseData.Type}, amount: {amount}");
+            
             if (amount < 0)
             {
                 Debug.LogError($"Wrong item add: {amount}");
@@ -46,6 +48,8 @@ namespace GamePlay.Items.Abstract
 
         public void Reduce(int amount)
         {
+            Debug.Log($"Reduce: {BaseData.Type}, amount: {amount}");
+            
             if (amount < 0)
             {
                 Debug.LogError($"Wrong item {BaseData.Name} remove: {amount}");

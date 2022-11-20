@@ -2,13 +2,13 @@
 {
     public struct SellPrice
     {
-        public SellPrice(int single, int total)
+        public SellPrice(int median, int total)
         {
-            Single = single;
+            Median = median;
             Total = total;
         }
         
-        public readonly int Single;
+        public readonly int Median;
         public readonly int Total;
     }
 }

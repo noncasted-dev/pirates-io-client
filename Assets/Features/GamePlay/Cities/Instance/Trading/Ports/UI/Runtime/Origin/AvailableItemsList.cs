@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
 using UniRx;
 using UnityEngine;
@@ -23,6 +24,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         private readonly List<AvailableItemView> _available = new();
 
         private IDisposable _removeListener;
+        private IDisposable _tradeAddListener;
+
 
         private void Awake()
         {
@@ -36,11 +39,13 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         private void OnEnable()
         {
             _removeListener = MessageBroker.Default.Receive<TransferCanceledEvent>().Subscribe(OnTransferCanceled);
+            _tradeAddListener = MessageBroker.Default.Receive<TradeAddedEvent>().Subscribe(OnTradeAdd);
         }
 
         private void OnDisable()
         {
             _removeListener?.Dispose();
+            _tradeAddListener?.Dispose();
 
             foreach (var cell in _available)
                 cell.Disable();
@@ -91,8 +96,17 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
                 return;
 
             var cell = _cells[data.Type];
-
+            
             cell.OnTransferCanceled();
+        }
+        
+        private void OnTradeAdd(TradeAddedEvent data)
+        {
+            if (data.Origin != _origin)
+                return;
+
+            var cell = _cells[data.Type];
+            cell.OnTransferedItemCountChange(data.Count);
         }
 
         private void AddCellsOnDemand(int total)

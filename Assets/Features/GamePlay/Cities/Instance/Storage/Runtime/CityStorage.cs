@@ -8,7 +8,7 @@ using VContainer;
 
 namespace GamePlay.Cities.Instance.Storage.Runtime
 {
-    public class CityStorage : SceneObject, IPriceProvider
+    public class CityStorage : SceneObject, IPriceProvider, ICityStorage
     {
         [Inject]
         private void Construct(IItemFactory itemFactory)
@@ -20,6 +20,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
         [SerializeField] private TradableItemDictionary _producables;
         [SerializeField] private ItemPriceCurvesConfigAsset _curves;
+        [SerializeField] private float _commission = 0.5f;
 
         private readonly ItemsVault _vault = new();
         private readonly HashSet<ItemType> _freezed = new();
@@ -35,14 +36,9 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             StartCoroutine(CalculateTradables());
         }
 
-        private void Add(IItem item)
+        public void Add(IItem item)
         {
             _vault.Add(item);
-        }
-
-        private void Reduce(IItem item, int count)
-        {
-            _vault.Reduce(item, count);
         }
 
         private IEnumerator CalculateTradables()
@@ -87,6 +83,15 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 return;
             }
 
+            if (item.Count > config.MedianCount)
+            {
+                var reduce = Mathf.Clamp(config.LackProductionSpeedPerSecond, 0, item.Count);
+                item.Reduce(reduce);
+
+                if (item.Count > config.MedianCount)
+                    return;
+            }
+
             var evaluation = _curves.ItemsInTime.Evaluate(progress);
             var additional = evaluation * config.CurveHeight;
             var amount = config.MedianCount + additional;
@@ -117,10 +122,23 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
         public int GetPrice(ItemType type)
         {
+            var count = _vault.Items[type].Count;
             var config = _producables[type];
-            var item = _vault.Items[type];
 
-            var progress = GetCountProgress(type, item.Count);
+            var progress = GetCountProgress(type, count);
+
+            var priceEvaluation = _curves.ItemPricePerCount.Evaluate(progress);
+            var cost = (int)(config.MedianCost * priceEvaluation);
+
+            return cost;
+        }
+
+        private int GetPrice(ItemType type, int count)
+        {
+            count = _vault.Items[type].Count + count;
+            var config = _producables[type];
+
+            var progress = GetCountProgress(type, count);
 
             var priceEvaluation = _curves.ItemPricePerCount.Evaluate(progress);
             var cost = (int)(config.MedianCost * priceEvaluation);
@@ -130,25 +148,49 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
         public SellPrice GetPlayerSellPrice(ItemType type, int count)
         {
-            return GetTargetSellPrice(type, count, _curves.SellPricePerCount);
+            var totalPrice = 0;
+
+            for (var i = 0; i < count; i++)
+            {
+                var price = GetPrice(type, i);
+                var progress = GetCountProgress(type, i);
+                var priceEvaluation = _curves.SellPricePerCount.Evaluate(progress);
+                totalPrice += (int)(priceEvaluation * price * (1f - _commission));
+            }
+
+            var median = totalPrice / count;
+            
+            return new SellPrice(median, totalPrice);
         }
 
         public SellPrice GetStockSellPrice(ItemType type, int count)
         {
-            return GetTargetSellPrice(type, count, _curves.StockPricePerCount);
+            var totalPrice = 0;
+
+            for (var i = 0; i < count; i++)
+            {
+                var price = GetPrice(type, -i);
+                var progress = GetCountProgress(type, i);
+                var priceEvaluation = _curves.StockPricePerCount.Evaluate(progress);
+                totalPrice += (int)(priceEvaluation * price);
+            }
+            
+            var median = totalPrice / count;
+
+            return new SellPrice(median, totalPrice);
         }
 
-        private SellPrice GetTargetSellPrice(ItemType type, int count, AnimationCurve curve)
+        private SellPrice GetTargetSellPrice(ItemType type, int count, AnimationCurve curve, float commission)
         {
-            var price = GetPrice(type);
             var totalPrice = 0;
             var lastPrice = 0;
 
             for (var i = 0; i < count; i++)
             {
+                var price = GetPrice(type, i);
                 var progress = GetCountProgress(type, i);
                 var priceEvaluation = curve.Evaluate(progress);
-                lastPrice = (int)(priceEvaluation * price);
+                lastPrice = (int)(priceEvaluation * price * (1f - commission));
                 totalPrice += lastPrice;
             }
 

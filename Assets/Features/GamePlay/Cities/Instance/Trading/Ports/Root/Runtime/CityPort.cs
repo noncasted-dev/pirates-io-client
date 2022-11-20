@@ -42,7 +42,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             var stock = ToArray(_storage.Items);
             var cargo = ToArray(_playerCargoStorage.Items);
 
-            var data = new PortEnteredEvent(cargo, stock, _storage, shipResources);
+            var data = new PortEnteredEvent(cargo, stock, _storage, shipResources, _storage);
 
             MessageBroker.Default.Publish(data);
         }

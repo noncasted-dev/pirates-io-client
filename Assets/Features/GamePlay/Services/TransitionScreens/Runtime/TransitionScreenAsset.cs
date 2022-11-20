@@ -16,7 +16,7 @@ namespace GamePlay.Services.TransitionScreens.Runtime
         [SerializeField] [EditableObject] private TransitionScreenConfigAsset _config;
         [SerializeField] [EditableObject] private TransitionScreenLogSettings _logSettings;
         [SerializeField] [EditableObject] private UiConstraints _constraints;
-        
+
         [SerializeField] private TransitionScreen _prefab;
 
         public override async UniTask Create(
@@ -29,7 +29,7 @@ namespace GamePlay.Services.TransitionScreens.Runtime
 
             serviceBinder.Register<TransitionScreenLogger>()
                 .WithParameter(_logSettings);
-            
+
             serviceBinder.RegisterComponent(transitionScreen)
                 .WithParameter(_config)
                 .WithParameter(_constraints)

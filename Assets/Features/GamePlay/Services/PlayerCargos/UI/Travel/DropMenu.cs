@@ -25,7 +25,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
 
             _selected = item;
             _selected.CountChanged += OnCountChanged;
-            
+
             _slider.maxValue = item.Count;
             _slider.value = 0;
             _input.text = "0";
@@ -59,7 +59,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
             }
 
             var count = int.Parse(_input.text);
-            
+
             if (count == 0)
                 return;
 
@@ -76,7 +76,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
         {
             if (_selected == null)
                 return;
-            
+
             if (_isChangedThisFrame == true)
                 return;
 
@@ -95,7 +95,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
         {
             if (_isChangedThisFrame == true)
                 return;
-            
+
             var count = (int)value;
 
             _isChangedThisFrame = true;

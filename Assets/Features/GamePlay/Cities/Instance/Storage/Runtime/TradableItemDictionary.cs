@@ -6,6 +6,5 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
     [Serializable]
     public class TradableItemDictionary : SerializableDictionary<ItemType, ItemPriceConfig>
     {
-        
     }
 }

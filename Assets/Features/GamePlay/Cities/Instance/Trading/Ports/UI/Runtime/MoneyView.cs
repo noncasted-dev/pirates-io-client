@@ -12,9 +12,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         {
             _wallet = wallet;
         }
-        
+
         [SerializeField] private TMP_Text _text;
-        
+
         private IWallet _wallet;
 
         private void OnEnable()
@@ -26,7 +26,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
             _wallet.MoneyChanged += UpdateMoney;
         }
-        
+
         private void OnDisable()
         {
             if (_wallet == null)
@@ -38,5 +38,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         private void UpdateMoney(int count)
         {
             _text.text = count.ToString();
-        } }
+        }
+    }
 }

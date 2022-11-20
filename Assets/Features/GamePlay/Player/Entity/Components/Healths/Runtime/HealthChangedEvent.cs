@@ -7,7 +7,7 @@
             Current = current;
             Max = max;
         }
-        
+
         public readonly int Current;
         public readonly int Max;
     }

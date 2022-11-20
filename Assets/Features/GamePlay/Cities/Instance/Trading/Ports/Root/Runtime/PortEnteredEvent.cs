@@ -14,7 +14,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             Cargo = cargo;
             Stock = stock;
         }
-        
+
         public readonly IItem[] Cargo;
         public readonly IItem[] Stock;
         public IPriceProvider PriceProvider;

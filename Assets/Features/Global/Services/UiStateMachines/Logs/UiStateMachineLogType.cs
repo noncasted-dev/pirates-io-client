@@ -10,6 +10,6 @@
         ExitHead,
         NoPreviousStates,
         Recovered,
-        ReturnToPrevious,
+        ReturnToPrevious
     }
 }

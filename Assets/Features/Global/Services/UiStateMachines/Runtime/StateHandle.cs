@@ -14,9 +14,9 @@ namespace Global.Services.UiStateMachines.Runtime
             _exitedCallback = exitedCallback;
             _recoveredCallback = recoveredCallback;
         }
-        
+
         public readonly IUiState State;
-        
+
         private readonly Action<IUiState> _exitedCallback;
         private readonly Action<StateHandle> _recoveredCallback;
 
@@ -32,11 +32,9 @@ namespace Global.Services.UiStateMachines.Runtime
         public void Recover()
         {
             if (_stack.Count != 0)
-            {
                 foreach (var stateHandle in _stack)
                     stateHandle.Recover();
-            }
-            
+
             State.Recover();
             _recoveredCallback?.Invoke(this);
         }
@@ -44,11 +42,9 @@ namespace Global.Services.UiStateMachines.Runtime
         public void Exit()
         {
             if (_stack.Count != 0)
-            {
                 foreach (var stateHandle in _stack)
                     stateHandle.Exit();
-            }
-            
+
             State.Exit();
             _exitedCallback?.Invoke(State);
         }

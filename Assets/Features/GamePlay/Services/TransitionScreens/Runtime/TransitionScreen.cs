@@ -38,10 +38,10 @@ namespace GamePlay.Services.TransitionScreens.Runtime
         private IUpdater _updater;
         private IUiStateMachine _uiStateMachine;
         private UiConstraints _constraints;
-        
+
         public UiConstraints Constraints => _constraints;
         public string Name => "TransitionScreen";
-        
+
         public void Recover()
         {
             ToPlayerRespawn();
@@ -55,7 +55,7 @@ namespace GamePlay.Services.TransitionScreens.Runtime
         public void ToPlayerRespawn()
         {
             _uiStateMachine.EnterAsSingle(this);
-            
+
             _canvas.SetActive(true);
             _background.SetAlphaOne();
 
@@ -65,7 +65,7 @@ namespace GamePlay.Services.TransitionScreens.Runtime
         public void ToPlayerDeath()
         {
             _uiStateMachine.EnterAsSingle(this);
-            
+
             _canvas.SetActive(true);
             _background.SetAlphaZero();
 
@@ -87,7 +87,7 @@ namespace GamePlay.Services.TransitionScreens.Runtime
             _current = null;
 
             _canvas.SetActive(false);
-            
+
             _uiStateMachine.Exit(this);
         }
 
@@ -102,7 +102,7 @@ namespace GamePlay.Services.TransitionScreens.Runtime
             _current = null;
 
             _canvas.SetActive(false);
-            
+
             _uiStateMachine.Exit(this);
         }
     }

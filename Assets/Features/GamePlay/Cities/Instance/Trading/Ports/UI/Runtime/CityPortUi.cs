@@ -25,26 +25,26 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _constraints = constraints;
             _stateMachine = stateMachine;
         }
-        
+
         [SerializeField] private GameObject _body;
 
         [SerializeField] private TMP_Text _nickName;
-        
+
         [SerializeField] private AvailableItemsList _cargoView;
         [SerializeField] private AvailableItemsList _stockView;
 
         [SerializeField] private TradeItemsList _cargoTrade;
         [SerializeField] private TradeItemsList _stockTrade;
-        
+
         [SerializeField] private TradeHandler _tradeHandler;
         [SerializeField] private GameObject _tradeBody;
 
         [SerializeField] private MoneyView _moneyView;
-        
+
         private IDisposable _enterListener;
         private IDisposable _exitListener;
         private IDisposable _requestListener;
-        
+
         private UiConstraints _constraints;
 
         private IUiStateMachine _stateMachine;
@@ -65,7 +65,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _enterListener = MessageBroker.Default.Receive<PortEnteredEvent>().Subscribe(OnEntered);
             _exitListener = MessageBroker.Default.Receive<PortExitedEvent>().Subscribe(OnExited);
             _requestListener = MessageBroker.Default.Receive<TradeRequestedEvent>().Subscribe(OnTradeRequested);
-            
+
             _tradeBody.SetActive(false);
         }
 
@@ -75,7 +75,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _exitListener?.Dispose();
             _requestListener?.Dispose();
         }
-        
+
         public void Recover()
         {
             _body.SetActive(true);
@@ -89,13 +89,13 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         private void OnEntered(PortEnteredEvent data)
         {
             _nickName.text = _profileStorageProvider.UserName;
-            
+
             _body.SetActive(true);
             _stateMachine.EnterAsSingle(this);
-            
+
             _cargoView.Fill(data.Cargo, data.PriceProvider);
             _stockView.Fill(data.Stock, data.PriceProvider);
-            
+
             _cargoTrade.Setup(data.PriceProvider);
             _stockTrade.Setup(data.PriceProvider);
         }

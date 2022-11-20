@@ -24,7 +24,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         private IPriceProvider _priceProvider;
 
         public bool IsActive => _isActive;
-        
+
         private void OnEnable()
         {
             _transferButton.onClick.AddListener(OnTransferClicked);
@@ -36,7 +36,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
             if (_item == null)
                 return;
-            
+
             _priceProvider.Unfreeze(_item.BaseData.Type);
             _item.CountChanged -= OnCountChanged;
 
@@ -51,15 +51,15 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             _transferButton.gameObject.SetActive(true);
 
             _item = item;
-            
+
             _icon.sprite = item.BaseData.Icon;
             _count.text = item.Count.ToString();
             _cost.text = _priceProvider.GetPrice(item.BaseData.Type).ToString();
 
             _isActive = false;
-            
+
             OnCountChanged(_item.Count);
-            
+
             _item.CountChanged += OnCountChanged;
         }
 
@@ -74,7 +74,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         public void OnTransferCanceled()
         {
             _priceProvider.Unfreeze(_item.BaseData.Type);
-            
+
             _isActive = false;
 
             _transferButton.gameObject.SetActive(true);
@@ -84,10 +84,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         {
             if (_item == null)
                 return;
-            
+
             if (_priceProvider == null)
                 return;
-            
+
             if (_isActive == true)
                 return;
 
@@ -98,12 +98,12 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         private void OnTransferClicked()
         {
             _priceProvider.Freeze(_item.BaseData.Type);
-            
+
             _isActive = true;
             _transferButton.gameObject.SetActive(false);
 
             var tradable = new TradableItem(_item, _price);
-            
+
             var data = new TransferRequestedEvent(tradable, _origin);
 
             MessageBroker.Default.Publish(new TradeRequestedEvent());

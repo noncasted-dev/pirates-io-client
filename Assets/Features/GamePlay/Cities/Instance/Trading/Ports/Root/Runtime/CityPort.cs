@@ -17,7 +17,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
         }
 
         [SerializeField] private CityStorage _storage;
-        
+
         private IPlayerCargoStorage _playerCargoStorage;
 
         public void Enter()

@@ -17,14 +17,14 @@ namespace GamePlay.Factions.Selections.UI.Runtime
             _constraints = constraints;
             _uiStateMachine = uiStateMachine;
         }
-        
+
         [SerializeField] private GameObject _body;
 
         [SerializeField] private CitySelectionApprovement _approvement;
         [SerializeField] private FactionEntry[] _entries;
 
         private UniTaskCompletionSource<CityDefinition> _selectionCompletion;
-        
+
         private UiConstraints _constraints;
         private IUiStateMachine _uiStateMachine;
 
@@ -42,7 +42,7 @@ namespace GamePlay.Factions.Selections.UI.Runtime
             foreach (var entry in _entries)
                 entry.Selected -= OnSelectedClicked;
         }
-        
+
         public void Recover()
         {
             _body.SetActive(true);

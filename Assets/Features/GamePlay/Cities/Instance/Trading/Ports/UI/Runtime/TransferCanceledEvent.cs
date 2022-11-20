@@ -9,7 +9,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             Item = type;
             Origin = origin;
         }
-        
+
         public readonly IItem Item;
         public readonly ItemOrigin Origin;
 

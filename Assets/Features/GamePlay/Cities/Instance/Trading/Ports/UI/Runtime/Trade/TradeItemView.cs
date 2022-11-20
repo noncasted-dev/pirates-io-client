@@ -42,13 +42,13 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             _origin = origin;
             gameObject.SetActive(true);
             _removeButton.gameObject.SetActive(true);
-            
+
             _icon.sprite = tradable.Item.BaseData.Icon;
             _cost.text = tradable.Cost.ToString();
 
             _item = tradable;
             _countSlider.maxValue = tradable.Item.Count;
-            
+
             UpdatePrice();
         }
 
@@ -62,7 +62,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         {
             if (_priceProvider == null)
                 return;
-            
+
             var count = (int)_countSlider.value;
 
             if (count == 0)
@@ -80,7 +80,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
             _cost.text = _price.ToString();
         }
-        
+
         private void OnSliderValueChanged(float value)
         {
             var cost = _price * (int)value;
@@ -95,7 +95,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
             var cancel = new TransferCanceledEvent(_item.Item, _origin);
             var removed = new TradeRemovedEvent(_item.Type, _origin);
-            
+
             MessageBroker.Default.Publish(cancel);
             MessageBroker.Default.Publish(removed);
         }

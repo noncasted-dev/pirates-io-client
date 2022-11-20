@@ -10,7 +10,7 @@ namespace GamePlay.Level.Environment.Tools
         private void Clear()
         {
             var tileMap = GetComponent<Tilemap>();
-            
+
             tileMap.ClearAllTiles();
         }
     }

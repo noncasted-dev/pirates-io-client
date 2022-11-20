@@ -41,7 +41,7 @@ namespace GamePlay.Level.Environment.Tools
         {
             Tilemap.tilemapTileChanged -= TilemapChanged;
         }
-        
+
         [Button("Generate")]
         private void Generate()
         {
@@ -65,7 +65,7 @@ namespace GamePlay.Level.Environment.Tools
             _sand.ResizeBounds();
 
             var queuedSand = new List<Vector3Int>();
-            
+
             foreach (var tilePosition in _sand.cellBounds.allPositionsWithin)
             {
                 if (_sand.HasTile(tilePosition) == false)
@@ -81,7 +81,7 @@ namespace GamePlay.Level.Environment.Tools
 
                 if (_ground.HasTile(upPosition) == true)
                     queuedSand.Add(upPosition);
-                
+
                 var left = new Vector3Int(tilePosition.x - 1, tilePosition.y);
                 var right = new Vector3Int(tilePosition.x + 1, tilePosition.y);
                 var up = new Vector3Int(tilePosition.x, tilePosition.y + 1);
@@ -91,19 +91,19 @@ namespace GamePlay.Level.Environment.Tools
                 {
                     _shallow.SetTile(left, _shallowTile);
                     _shallow.SetTile(new Vector3Int(left.x, left.y + 1), _shallowTile);
-                    _shallow.SetTile(new Vector3Int(left.x, left.y -1), _shallowTile);
+                    _shallow.SetTile(new Vector3Int(left.x, left.y - 1), _shallowTile);
                 }
-                
+
                 if (_ground.HasTile(right) == false)
                 {
                     _shallow.SetTile(right, _shallowTile);
                     _shallow.SetTile(new Vector3Int(right.x, right.y + 1), _shallowTile);
-                    _shallow.SetTile(new Vector3Int(right.x, right.y -1), _shallowTile);
+                    _shallow.SetTile(new Vector3Int(right.x, right.y - 1), _shallowTile);
                 }
-                
+
                 if (_ground.HasTile(up) == false)
                     _shallow.SetTile(up, _shallowTile);
-                
+
                 if (_ground.HasTile(down) == false)
                     _shallow.SetTile(down, _shallowTile);
             }
@@ -151,22 +151,22 @@ namespace GamePlay.Level.Environment.Tools
                 {
                     _shallow.SetTile(left, _shallowTile);
                     _shallow.SetTile(new Vector3Int(left.x, left.y + 1), _shallowTile);
-                    _shallow.SetTile(new Vector3Int(left.x, left.y -1), _shallowTile);
+                    _shallow.SetTile(new Vector3Int(left.x, left.y - 1), _shallowTile);
                 }
-                
+
                 if (_ground.HasTile(right) == false)
                 {
                     _shallow.SetTile(right, _shallowTile);
                     _shallow.SetTile(new Vector3Int(right.x, right.y + 1), _shallowTile);
-                    _shallow.SetTile(new Vector3Int(right.x, right.y -1), _shallowTile);
+                    _shallow.SetTile(new Vector3Int(right.x, right.y - 1), _shallowTile);
                 }
-                
+
                 if (_ground.HasTile(up) == false)
                     _shallow.SetTile(up, _shallowTile);
-                
+
                 if (_ground.HasTile(down) == false)
                     _shallow.SetTile(down, _shallowTile);
-                
+
                 _shallow.SetTile(right, _shallowTile);
                 _shallow.SetTile(up, _shallowTile);
                 _shallow.SetTile(down, _shallowTile);
@@ -207,11 +207,10 @@ namespace GamePlay.Level.Environment.Tools
 
             if (tilemap != _ground)
                 return;
-            
+
             Tilemap.tilemapTileChanged -= TilemapChanged;
 
             foreach (var tile in tiles)
-            {
                 if (_ground.HasTile(tile.position) == true)
                 {
                     var colors = _groundColors.GetColors();
@@ -227,8 +226,7 @@ namespace GamePlay.Level.Environment.Tools
                     _grassTop.SetTile(tile.position, null);
                     _grassDown.SetTile(tile.position, null);
                 }
-            }
-            
+
             Tilemap.tilemapTileChanged += TilemapChanged;
         }
 #endif

@@ -6,13 +6,13 @@ namespace GamePlay.Items.Abstract
     public class ItemsVault
     {
         private readonly Dictionary<ItemType, IItem> _items = new();
-        
+
         public IReadOnlyDictionary<ItemType, IItem> Items => _items;
 
         public IReadOnlyDictionary<ItemType, IItem> Copy()
         {
             var vaultCopy = new Dictionary<ItemType, IItem>();
-            
+
             foreach (var item in _items)
             {
                 var itemCopy = item.Value.Copy();
@@ -33,7 +33,7 @@ namespace GamePlay.Items.Abstract
         public void Add(IItem item)
         {
             var type = item.BaseData.Type;
-            
+
             if (_items.ContainsKey(type) == true)
             {
                 _items[type].Add(item.Count);
@@ -52,7 +52,7 @@ namespace GamePlay.Items.Abstract
                 Debug.LogError($"No {type} found in vault.");
                 return;
             }
-            
+
             _items[type].Reduce(amount);
         }
 

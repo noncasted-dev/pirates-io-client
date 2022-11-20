@@ -18,13 +18,13 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
         {
             _playerPosition = playerPosition;
         }
-        
+
         [SerializeField] private Chunk[] _chunks;
         [SerializeField] private float _cullingRate = 5f;
         [SerializeField] private float _cullingDistance = 100f;
 
         private WaitForSeconds _wait;
-        
+
         private IPlayerPositionProvider _playerPosition;
 
         private Coroutine _process;
@@ -34,7 +34,7 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
         {
             _wait = new WaitForSeconds(_cullingRate);
         }
-        
+
         protected override void OnEnabled()
         {
             _playerSpawnListener = MessageBroker.Default.Receive<PlayerSpawnedEvent>().Subscribe(Begin);
@@ -45,12 +45,12 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
             _playerSpawnListener?.Dispose();
             Stop();
         }
-        
+
         private void Begin(PlayerSpawnedEvent data)
         {
             if (_process != null)
                 StopCoroutine(_process);
-            
+
             _process = StartCoroutine(DisableOnDistance());
         }
 
@@ -58,7 +58,7 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
         {
             if (_process == null)
                 return;
-            
+
             StopCoroutine(_process);
             _process = null;
         }
@@ -72,15 +72,15 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
                 if (distance > _cullingDistance)
                 {
                     chunk.Culling.Disable();
-                    
+
                     continue;
-                }            
-                
+                }
+
                 chunk.Culling.Enable();
             }
 
             yield return _wait;
-            
+
             _process = StartCoroutine(DisableOnDistance());
         }
 

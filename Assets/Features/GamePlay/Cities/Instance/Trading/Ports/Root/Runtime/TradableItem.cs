@@ -11,7 +11,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 
             Type = item.BaseData.Type;
         }
-        
+
         public readonly IItem Item;
         public readonly int Cost;
         public readonly ItemType Type;

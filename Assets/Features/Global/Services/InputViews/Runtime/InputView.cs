@@ -137,11 +137,11 @@ namespace Global.Services.InputViews.Runtime
             if (_constraintsStorage[InputConstraints.MovementInput] == true)
             {
                 MovementCanceled?.Invoke();
-                
+
                 _logger.OnInputCanceledWithConstraint(InputConstraints.MovementInput);
                 return;
             }
-            
+
             var value = context.ReadValue<Vector2>();
 
             _logger.OnMovementPressed(value);
@@ -156,7 +156,7 @@ namespace Global.Services.InputViews.Runtime
                 _logger.OnInputCanceledWithConstraint(InputConstraints.MovementInput);
                 return;
             }
-            
+
             _logger.OnMovementCanceled();
 
             MovementCanceled?.Invoke();
@@ -171,7 +171,7 @@ namespace Global.Services.InputViews.Runtime
                 _logger.OnInputCanceledWithConstraint(InputConstraints.AttackInput);
                 return;
             }
-            
+
             _logger.OnRangeAttackPerformed();
 
             RangeAttackPerformed?.Invoke();
@@ -184,7 +184,7 @@ namespace Global.Services.InputViews.Runtime
                 _logger.OnInputCanceledWithConstraint(InputConstraints.AttackInput);
                 return;
             }
-            
+
             _logger.OnRangeAttackCanceled();
 
             RangeAttackCanceled?.Invoke();
@@ -197,7 +197,7 @@ namespace Global.Services.InputViews.Runtime
                 _logger.OnInputCanceledWithConstraint(InputConstraints.AttackInput);
                 return;
             }
-            
+
             _logger.OnRangeAttackCanceled();
 
             RangeAttackBreakPerformed?.Invoke();

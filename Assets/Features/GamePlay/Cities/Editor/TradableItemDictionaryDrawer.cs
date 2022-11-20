@@ -6,6 +6,5 @@ namespace GamePlay.Cities.Editor
     [CustomPropertyDrawer(typeof(TradableItemDictionary))]
     public class TradableItemDictionaryDrawer : SerializableDictionaryPropertyDrawer
     {
-        
     }
 }

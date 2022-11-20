@@ -9,19 +9,19 @@ namespace GamePlay.Services.Wallets.Runtime
         [SerializeField] [ReadOnly] private int _money;
 
         public int Money => _money;
-        
+
         public event Action<int> MoneyChanged;
 
         public void Add(int add)
         {
             if (add < 0)
             {
-                Debug.LogError($"Money interactions should be greater than zero.");
+                Debug.LogError("Money interactions should be greater than zero.");
                 return;
             }
 
             _money += add;
-            
+
             MoneyChanged?.Invoke(_money);
         }
 
@@ -29,7 +29,7 @@ namespace GamePlay.Services.Wallets.Runtime
         {
             if (remove < 0)
             {
-                Debug.LogError($"Money interactions should be greater than zero.");
+                Debug.LogError("Money interactions should be greater than zero.");
                 return;
             }
 
@@ -37,10 +37,10 @@ namespace GamePlay.Services.Wallets.Runtime
 
             if (_money < 0)
             {
-                Debug.Log($"Money dropped below zero.");
+                Debug.Log("Money dropped below zero.");
                 _money = 0;
             }
-            
+
             MoneyChanged?.Invoke(_money);
         }
     }

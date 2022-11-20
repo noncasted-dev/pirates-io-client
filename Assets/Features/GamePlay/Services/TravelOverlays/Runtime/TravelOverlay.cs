@@ -14,9 +14,9 @@ namespace GamePlay.Services.TravelOverlays.Runtime
             _stateMachine = stateMachine;
             _constraints = constraints;
         }
-        
+
         [SerializeField] private GameObject _body;
-        
+
         private UiConstraints _constraints;
         private IUiStateMachine _stateMachine;
 
@@ -34,7 +34,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime
 
             _stateMachine.EnterAsSingle(this);
         }
-        
+
         public void Recover()
         {
             _body.SetActive(true);

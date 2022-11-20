@@ -6,7 +6,6 @@ namespace Global.Services.InputViews.ConstraintsStorage
 {
     [Serializable]
     public class InputConstraintsDictionary : ReadOnlyDictionary<InputConstraints, bool>
-    {   
-        
+    {
     }
 }

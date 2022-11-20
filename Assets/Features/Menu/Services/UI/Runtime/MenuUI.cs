@@ -18,11 +18,11 @@ namespace Menu.Services.UI.Runtime
             _uiStateMachine = uiStateMachine;
             _constraints = constraints;
         }
-        
+
         [SerializeField] private TMP_Text _connectionErrorText;
         [SerializeField] private TMP_InputField _nameInput;
         [SerializeField] private Button _playButton;
-        
+
         [SerializeField] private GameObject _loadingBody;
         [SerializeField] private GameObject _loginBody;
 
@@ -31,7 +31,7 @@ namespace Menu.Services.UI.Runtime
 
         public UiConstraints Constraints => _constraints;
         public string Name => "MainMenu";
-        
+
         private void OnEnable()
         {
             _playButton.onClick.AddListener(OnPlayClicked);
@@ -57,7 +57,7 @@ namespace Menu.Services.UI.Runtime
         public void OnLogin()
         {
             _uiStateMachine.EnterAsSingle(this);
-            
+
             _loginBody.SetActive(true);
             _loadingBody.SetActive(false);
         }
@@ -82,7 +82,7 @@ namespace Menu.Services.UI.Runtime
 
             if (string.IsNullOrWhiteSpace(userName) == true)
                 return;
-            
+
             var clicked = new PlayClickedEvent(userName);
             MessageBroker.Default.Publish(clicked);
         }

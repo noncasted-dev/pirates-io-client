@@ -4,7 +4,7 @@
     {
         UiConstraints Constraints { get; }
         string Name { get; }
-        
+
         void Recover();
         void Exit();
     }

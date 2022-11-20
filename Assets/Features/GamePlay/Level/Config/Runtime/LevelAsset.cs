@@ -49,7 +49,7 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField] [EditableObject] private TravelOverlayAsset _travelOverlay;
         [SerializeField] [EditableObject] private CityPortUiAsset _cityPortUi;
         [SerializeField] [EditableObject] private WalletAsset _wallet;
-        
+
         [SerializeField] private LevelScope _scopePrefab;
 
         protected override LocalServiceAsset[] AssignServices()

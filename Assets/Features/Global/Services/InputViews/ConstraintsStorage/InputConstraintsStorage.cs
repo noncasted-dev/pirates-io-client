@@ -16,11 +16,11 @@ namespace Global.Services.InputViews.ConstraintsStorage
             foreach (var constraint in constraints)
                 _constraints.Add(constraint, 0);
         }
-        
+
         private readonly InputViewLogger _logger;
-        
+
         private readonly Dictionary<InputConstraints, int> _constraints = new();
-        
+
         public bool this[InputConstraints key] => _constraints[key] > 0;
 
         public void Add(IReadOnlyDictionary<InputConstraints, bool> constraints)
@@ -29,9 +29,9 @@ namespace Global.Services.InputViews.ConstraintsStorage
             {
                 if (value == false)
                     continue;
-                
+
                 _constraints[key]++;
-            
+
                 _logger.OnConstraintAdded(key, _constraints[key]);
             }
         }
@@ -42,13 +42,13 @@ namespace Global.Services.InputViews.ConstraintsStorage
             {
                 if (value == false)
                     continue;
-                
+
                 _constraints[key]--;
 
                 var count = _constraints[key];
-            
+
                 _logger.OnConstraintReduced(key, count);
-            
+
                 if (count == 0)
                     _logger.OnConstraintRemoved(key);
 

@@ -22,7 +22,7 @@ namespace Global.Services.UiStateMachines.Runtime
 
             builder.Register<UiStateMachineLogger>(Lifetime.Scoped)
                 .WithParameter(_logSettings);
-            
+
             builder.RegisterComponent(stateMachine)
                 .As<IUiStateMachine>();
 

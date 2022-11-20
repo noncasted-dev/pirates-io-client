@@ -75,13 +75,13 @@ namespace GamePlay.Services.LevelLoops.Runtime
             _logger.OnPlayerSpawn();
 
             _player = await _playerFactory.Create(spawnPosition);
-            
+
             _levelCamera.Teleport(_player.Transform.position);
             _levelCamera.StartFollow(_player.Transform);
             await _transitionScreen.FadeOut();
-            
+
             _travelOverlay.Open();
-            
+
             _player.Respawn();
         }
     }

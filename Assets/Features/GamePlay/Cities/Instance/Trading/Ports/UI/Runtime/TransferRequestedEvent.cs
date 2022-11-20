@@ -10,7 +10,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             Tradable = tradable;
             Origin = origin;
         }
-        
+
         public readonly TradableItem Tradable;
         public readonly ItemOrigin Origin;
 

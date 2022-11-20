@@ -15,7 +15,7 @@ namespace GamePlay.Level.Environment.Bootstrap
         [SerializeField] private ChunksOcclusionCulling _chunksCulling;
 
         [SerializeField] private GameObject[] _injectTargets;
-        
+
         public void Register(IContainerBuilder builder)
         {
             builder.RegisterComponent(_sceneObjects).As<ISceneObjectsHandler>();

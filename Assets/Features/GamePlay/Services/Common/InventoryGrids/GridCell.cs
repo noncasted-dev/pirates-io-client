@@ -2,7 +2,6 @@
 using GamePlay.Items.Abstract;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace GamePlay.Services.Common.InventoryGrids
@@ -12,14 +11,14 @@ namespace GamePlay.Services.Common.InventoryGrids
     {
         [SerializeField] private Image _icon;
         [SerializeField] private TMP_Text _count;
-        
+
         private int _id;
         private IItem _item;
 
         public int Id => _id;
 
         public IItem Item => _item;
-        
+
         public event Action<IItem, GridCell> Clicked;
 
         public void Setup(int id)

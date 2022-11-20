@@ -17,7 +17,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
     {
         [SerializeField] [EditableObject] private UiConstraints _constraints;
         [SerializeField] private AssetReference _uiScene;
-        
+
         public override async UniTask Create(
             IServiceBinder serviceBinder,
             ICallbacksRegister callbacksRegister,

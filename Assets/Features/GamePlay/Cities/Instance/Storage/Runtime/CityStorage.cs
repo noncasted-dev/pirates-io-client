@@ -25,9 +25,9 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
         private readonly HashSet<ItemType> _freezed = new();
 
         private readonly WaitForSeconds _wait = new(_waitTime);
-        
+
         private IItemFactory _itemFactory;
-        
+
         public IReadOnlyDictionary<ItemType, IItem> Items => _vault.Items;
 
         protected override void OnAwake()
@@ -58,7 +58,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 {
                     if (_freezed.Contains(key) == true)
                         continue;
-                    
+
                     ProcessItem(key, data, progress);
                 }
 
@@ -90,7 +90,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             var evaluation = _curves.ItemsInTime.Evaluate(progress);
             var additional = evaluation * config.CurveHeight;
             var amount = config.MedianCount + additional;
-            
+
             item.SetCount((int)amount);
         }
 
@@ -98,7 +98,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
         {
             if (_freezed.Contains(type) == true)
                 return;
-            
+
             _freezed.Add(type);
         }
 
@@ -116,10 +116,10 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             var item = _vault.Items[type];
 
             var progress = GetCountProgress(type, item.Count);
-            
+
             var priceEvaluation = _curves.ItemPricePerCount.Evaluate(progress);
             var cost = (int)(config.MedianCost * priceEvaluation);
-            
+
             return cost;
         }
 

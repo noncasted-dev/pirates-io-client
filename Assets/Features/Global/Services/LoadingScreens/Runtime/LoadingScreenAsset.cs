@@ -14,8 +14,8 @@ namespace Global.Services.LoadingScreens.Runtime
     public class LoadingScreenAsset : GlobalServiceAsset
     {
         [SerializeField] [EditableObject] private LoadingScreenLogSettings _logSettings;
-        [SerializeField] [EditableObject] private UiConstraints _constraints; 
-        
+        [SerializeField] [EditableObject] private UiConstraints _constraints;
+
         [SerializeField] private LoadingScreen _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)

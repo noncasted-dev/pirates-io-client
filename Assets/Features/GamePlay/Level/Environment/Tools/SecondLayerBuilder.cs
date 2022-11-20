@@ -2,7 +2,6 @@
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Random = UnityEngine.Random;
 
 namespace GamePlay.Level.Environment.Tools
 {
@@ -111,17 +110,16 @@ namespace GamePlay.Level.Environment.Tools
         {
             if (_isGenerating == true)
                 return;
-            
+
             if (_isEditing == false)
                 return;
 
             if (tilemap != _ground)
                 return;
-            
+
             Tilemap.tilemapTileChanged -= TilemapChanged;
 
             foreach (var tile in tiles)
-            {
                 if (_ground.HasTile(tile.position) == true)
                 {
                     var colors = _palette.GetColors();
@@ -137,8 +135,7 @@ namespace GamePlay.Level.Environment.Tools
                     _grassTop.SetTile(tile.position, null);
                     _grassDown.SetTile(tile.position, null);
                 }
-            }
-            
+
             Tilemap.tilemapTileChanged += TilemapChanged;
         }
 #endif

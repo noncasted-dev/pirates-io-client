@@ -9,7 +9,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         void Reduce(ItemType type, int amount);
         void Delete(ItemType type);
         IItem[] ToArray();
-        
+
         public IReadOnlyDictionary<ItemType, IItem> Items { get; }
     }
 }

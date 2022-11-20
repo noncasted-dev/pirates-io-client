@@ -62,7 +62,7 @@ namespace Global.Services.InputViews.Logs
 
             _logger.Log("After rebind", _settings.LogParameters);
         }
-        
+
         public void OnConstraintAdded(InputConstraints constraint, int count)
         {
             if (_settings.IsAvailable(InputViewLogType.ConstraintAdded) == false)
@@ -70,7 +70,7 @@ namespace Global.Services.InputViews.Logs
 
             _logger.Log($"Input constraint added: {constraint}, count: {count}", _settings.LogParameters);
         }
-        
+
         public void OnConstraintReduced(InputConstraints constraint, int count)
         {
             if (_settings.IsAvailable(InputViewLogType.ConstraintReduced) == false)
@@ -78,7 +78,7 @@ namespace Global.Services.InputViews.Logs
 
             _logger.Log($"Input constraint reduced: {constraint}, count: {count}", _settings.LogParameters);
         }
-        
+
         public void OnConstraintRemoved(InputConstraints constraint)
         {
             if (_settings.IsAvailable(InputViewLogType.ConstraintRemoved) == false)
@@ -86,7 +86,7 @@ namespace Global.Services.InputViews.Logs
 
             _logger.Log($"Input constraint removed: {constraint}", _settings.LogParameters);
         }
-        
+
         public void OnConstraintBelowZeroException(InputConstraints constraint)
         {
             if (_settings.IsAvailable(InputViewLogType.ConstraintBelowZeroException) == false)
@@ -94,7 +94,7 @@ namespace Global.Services.InputViews.Logs
 
             _logger.Error($"Input constraint {constraint} cant be below zero", _settings.LogParameters);
         }
-        
+
         public void OnInputCanceledWithConstraint(InputConstraints constraint)
         {
             if (_settings.IsAvailable(InputViewLogType.InputCanceledWithConstraint) == false)

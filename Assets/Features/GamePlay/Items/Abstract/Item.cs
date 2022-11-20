@@ -40,7 +40,7 @@ namespace GamePlay.Items.Abstract
         public void SetCount(int amount)
         {
             _count = amount;
-            
+
             CountChanged?.Invoke(_count);
         }
 

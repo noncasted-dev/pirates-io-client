@@ -12,7 +12,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
     {
         [SerializeField] private Slider _progress;
         [SerializeField] private TMP_Text _sliderValue;
-        
+
         private readonly Dictionary<ItemType, int> _player = new();
         private readonly Dictionary<ItemType, int> _stock = new();
 
@@ -20,7 +20,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         private IDisposable _stockListener;
 
         public bool IsActive => gameObject.activeSelf;
-        
+
         private void OnEnable()
         {
             _playerListener = MessageBroker.Default.Receive<TradeAddedEvent>().Subscribe(OnTradeAdd);
@@ -28,12 +28,12 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
             _sliderValue.text = "0";
         }
-        
+
         private void OnDisable()
         {
             _player.Clear();
             _stock.Clear();
-            
+
             _playerListener?.Dispose();
             _stockListener?.Dispose();
         }
@@ -90,7 +90,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             _progress.value = value;
 
             _sliderValue.text = $"{Mathf.Abs(value)}";
-            
+
             if (_player.Count == 0 && _stock.Count == 0)
                 gameObject.SetActive(false);
         }

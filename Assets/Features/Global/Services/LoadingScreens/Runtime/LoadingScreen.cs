@@ -20,7 +20,7 @@ namespace Global.Services.LoadingScreens.Runtime
         }
 
         [SerializeField] private GameObject _canvas;
-        
+
         private UiConstraints _constraints;
         private IUiStateMachine _uiStateMachine;
 
@@ -34,7 +34,7 @@ namespace Global.Services.LoadingScreens.Runtime
             _canvas.SetActive(true);
 
             _logger.OnShown();
-            
+
             _uiStateMachine.EnterAsSingle(this);
         }
 
@@ -43,10 +43,10 @@ namespace Global.Services.LoadingScreens.Runtime
             _canvas.SetActive(false);
 
             _logger.OnHidden();
-            
+
             _uiStateMachine.Exit(this);
         }
-        
+
         public void Recover()
         {
             Show();

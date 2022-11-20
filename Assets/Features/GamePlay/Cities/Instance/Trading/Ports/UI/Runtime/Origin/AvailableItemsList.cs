@@ -27,7 +27,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         {
             foreach (var startupCell in _startupCells)
                 _available.Add(startupCell);
-            
+
             foreach (var cell in _available)
                 cell.Disable();
         }
@@ -43,7 +43,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
             foreach (var cell in _available)
                 cell.Disable();
-            
+
             _cells.Clear();
         }
 
@@ -52,29 +52,25 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             AddCellsOnDemand(items.Length);
 
             foreach (var cell in _available)
-            {
                 if (cell.IsActive == false)
                     cell.Disable();
-            }
 
             var unused = new List<ItemType>();
 
             foreach (var cell in _cells)
-            {
                 if (cell.Value.IsActive == false)
                     unused.Add(cell.Key);
-            }
-            
+
             foreach (var cell in unused)
                 _cells.Remove(cell);
 
             for (var i = 0; i < items.Length; i++)
             {
                 var item = items[i];
-                
+
                 if (_cells.ContainsKey(item.BaseData.Type) == true)
                     continue;
-                
+
                 var cell = _available[i];
 
                 cell.AssignItem(item, _origin, priceProvider);

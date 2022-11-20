@@ -41,7 +41,7 @@ namespace GamePlay.Player.Entity.Setup.Bootstrap
 
             var root = scope.Container.Resolve<IPlayerRoot>();
             var config = scope.Container.Resolve<PlayerStatsConfig>();
-            
+
             flowHandler.Add(config);
 
             await root.OnBootstrapped(flowHandler, scope);

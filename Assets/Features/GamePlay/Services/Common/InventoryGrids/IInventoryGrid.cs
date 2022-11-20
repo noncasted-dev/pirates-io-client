@@ -5,7 +5,7 @@ namespace GamePlay.Services.Common.InventoryGrids
 {
     public interface IInventoryGrid
     {
-        event Action<IItem, GridCell> Clicked; 
+        event Action<IItem, GridCell> Clicked;
         void Fill(IItem[] items);
     }
 }

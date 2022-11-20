@@ -30,7 +30,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             _logger.OnRespawned(_max);
 
             _amount = _max;
-            
+
             MessageBroker.Default.Publish(new HealthChangedEvent(_amount, _max));
         }
 
@@ -48,7 +48,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
                 _amount = _max;
 
             _logger.OnHealed(add, _amount);
-            
+
             MessageBroker.Default.Publish(new HealthChangedEvent(_amount, _max));
         }
 
@@ -63,7 +63,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             _amount -= damage;
 
             _logger.OnDamaged(damage, _amount);
-            
+
             MessageBroker.Default.Publish(new HealthChangedEvent(_amount, _max));
         }
     }

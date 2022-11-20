@@ -8,8 +8,8 @@ namespace GamePlay.Level.Environment.Chunks.Editor
     {
         [SerializeField] private int _inRow = 20;
         [SerializeField] private int _chunkSize = 64;
-        [SerializeField] private Vector2 _start = new Vector2(-640, 640);
-        
+        [SerializeField] private Vector2 _start = new(-640, 640);
+
         [Button("Rename")]
         private void Rename()
         {
@@ -18,7 +18,7 @@ namespace GamePlay.Level.Environment.Chunks.Editor
 
             var x = 0;
             var y = 0;
-            
+
             foreach (var chunk in childs)
             {
                 chunk.name = $"Chunk_{x}_{y}";

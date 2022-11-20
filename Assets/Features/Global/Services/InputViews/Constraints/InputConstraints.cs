@@ -5,6 +5,6 @@
         MovementInput,
         AttackInput,
         SettingsInput,
-        ChatInput,
+        ChatInput
     }
 }

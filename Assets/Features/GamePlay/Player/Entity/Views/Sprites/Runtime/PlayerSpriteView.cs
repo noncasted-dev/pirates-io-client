@@ -35,7 +35,7 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
         private SpriteViewLogger _logger;
 
         private SpriteRenderer _sprite;
-        
+
         public Material Material
         {
             get

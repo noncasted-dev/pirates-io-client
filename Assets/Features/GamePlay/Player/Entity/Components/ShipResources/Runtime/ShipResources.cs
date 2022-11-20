@@ -8,7 +8,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         {
             _health = health;
         }
-        
+
         private readonly IHealth _health;
 
         private int _maxWeight;
@@ -16,10 +16,9 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 
         private int _maxCannons;
         private int _cannons;
-        
+
         private int _maxSpeed;
-        private int _speed;
-        
+
         private int _maxTeam;
         private int _team;
 
@@ -30,10 +29,10 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 
         public int MaxCannons => _maxCannons;
         public int Cannons => _cannons;
-        
+
         public int MaxSpeed => _maxSpeed;
-        public int Speed => _speed;
-        
+        public int Speed { get; }
+
         public int MaxTeam => _maxTeam;
         public int Team => _team;
 
@@ -61,7 +60,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         {
             _maxTeam = maxTeam;
         }
-        
+
         public void SetTeam(int team)
         {
             _team = team;

@@ -19,30 +19,30 @@ namespace GamePlay.Player.Entity.Setup.Root
         }
 
         [SerializeField] private int _baseHealth;
-        
+
         [SerializeField] private int _baseMaxSpeed;
-        
+
         [SerializeField] private int _baseMaxWeight;
-        
+
         [SerializeField] private int _baseMaxCannons;
         [SerializeField] private int _baseCannons;
-        
+
         [SerializeField] private int _baseTeam;
         [SerializeField] private int _baseMaxTeam;
-        
+
         private IShipResourcesPresenter _resources;
         private IHealth _health;
 
         public void OnAwake()
         {
             _health.SetMaxHealth(_baseHealth);
-            
+
             _resources.SetMaxWeight(_baseMaxWeight);
             _resources.SetMaxSpeed(_baseMaxSpeed);
-            
+
             _resources.SetCannons(_baseMaxCannons);
             _resources.SetMaxCannons(_baseCannons);
-            
+
             _resources.SetTeam(_baseTeam);
             _resources.SetMaxTeam(_baseMaxTeam);
         }

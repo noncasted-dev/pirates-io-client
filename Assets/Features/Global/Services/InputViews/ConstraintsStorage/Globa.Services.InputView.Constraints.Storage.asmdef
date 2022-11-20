@@ -1,4 +1,8 @@
 ﻿{
   "name": "Globa.Services.InputView.Constraints.Storage",
-  "references":[ "GUID:94e5ca42c58876942a8ffdd1c63b952f", "GUID:9dbe345fbe8e47cb8a0d24c890f0feff", "GUID:bbe6b1b7444754c4e943bc85a35f6d65" ]
+  "references": [
+    "GUID:94e5ca42c58876942a8ffdd1c63b952f",
+    "GUID:9dbe345fbe8e47cb8a0d24c890f0feff",
+    "GUID:bbe6b1b7444754c4e943bc85a35f6d65"
+  ]
 }

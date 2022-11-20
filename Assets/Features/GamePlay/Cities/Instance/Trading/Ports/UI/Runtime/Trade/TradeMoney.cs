@@ -38,9 +38,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             _sliderValue.text = 0.ToString();
             _origin = origin;
             gameObject.SetActive(true);
-            _removeButton.gameObject.SetActive(true);
-
-            _icon.sprite = tradable.Item.BaseData.Icon;
             _cost.text = tradable.Cost.ToString();
 
             _item = tradable;
@@ -90,8 +87,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
         private void OnTransferClicked()
         {
-            _removeButton.gameObject.SetActive(false);
-
             var cancel = new TransferCanceledEvent(_item.Item, _origin);
             var removed = new TradeRemovedEvent(_item.Type, _origin);
 

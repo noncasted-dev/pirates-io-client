@@ -1,6 +1,6 @@
 ﻿using GamePlay.Common.Areas.Common.Runtime;
 using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
-using UniRx;
+using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using UnityEngine;
 using VContainer;
 
@@ -11,14 +11,18 @@ namespace GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime
     {
         [Inject]
         private void Construct(
-            IActionsStatePresenter actionsStatePresenter)
+            IActionsStatePresenter actionsStatePresenter,
+            IShipResources resources)
         {
+            _resources = resources;
             _actionsStatePresenter = actionsStatePresenter;
         }
 
         private IActionsStatePresenter _actionsStatePresenter;
+        private IShipResources _resources;
 
         public bool IsLocal => true;
+        public IShipResources Resources => _resources;
 
         public void OnCityEntered()
         {

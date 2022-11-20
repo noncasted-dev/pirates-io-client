@@ -15,15 +15,21 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
         private int _max;
         private int _amount;
 
+        public int Max => _max;
         public int Amount => _amount;
         public bool IsAlive => _amount > 0;
 
-        public void Respawn(int health)
+        public void SetMaxHealth(int maxHealth)
         {
-            _logger.OnRespawned(health);
+            _max = maxHealth;
+            _amount = maxHealth;
+        }
 
-            _amount = health;
-            _max = health;
+        public void Respawn()
+        {
+            _logger.OnRespawned(_max);
+
+            _amount = _max;
             
             MessageBroker.Default.Publish(new HealthChangedEvent(_amount, _max));
         }

@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 3494044675534934861}
   - component: {fileID: 5197820324927245891}
   - component: {fileID: -4100299532222470880}
+  - component: {fileID: 160118787591633700}
   m_Layer: 6
   m_Name: Player_Local
   m_TagString: Untagged
@@ -650,6 +651,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39c1657430f4d50bd586cd93e4e830c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &160118787591633700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834022361475402687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8acfc4f70a49e78cd6322832f758eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseHealth: 1000
+  _baseMaxSpeed: 44
+  _baseMaxWeight: 600
+  _baseMaxCannons: 150
+  _baseCannons: 35
+  _baseTeam: 250
+  _baseMaxTeam: 350
 --- !u!1 &4179929927324340103
 GameObject:
   m_ObjectHideFlags: 0

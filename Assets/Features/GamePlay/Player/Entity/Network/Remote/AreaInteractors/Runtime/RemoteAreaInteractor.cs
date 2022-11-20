@@ -1,4 +1,5 @@
 ﻿using GamePlay.Common.Areas.Common.Runtime;
+using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace GamePlay.Player.Entity.Network.Remote.AreaInteractors.Runtime
         [SerializeField] private PlayerSpriteView _spriteView;
 
         public bool IsLocal => false;
+        public IShipResources Resources => new EmptyResources();
 
         public void OnCityEntered()
         {

@@ -32,7 +32,7 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
         {
             _stateMachine.Enter(this);
 
-            _health.Respawn(_config.MaxHealth);
+            _health.Respawn();
 
             _logger.OnEntered();
             _stateMachine.Exit();

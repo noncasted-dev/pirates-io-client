@@ -2,10 +2,12 @@
 {
     public interface IHealth
     {
+        int Max { get; }
         int Amount { get; }
         bool IsAlive { get; }
 
-        void Respawn(int health);
+        void SetMaxHealth(int maxHealth);
+        void Respawn();
         void Heal(int add);
         void ApplyDamage(int damage);
     }

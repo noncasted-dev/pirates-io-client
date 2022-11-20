@@ -39,7 +39,10 @@ namespace GamePlay.Player.Entity.Setup.Bootstrap
             foreach (var containerBuilder in _builders)
                 containerBuilder.Resolve(scope.Container, flowHandler);
 
-            var root = GetComponent<IPlayerRoot>();
+            var root = scope.Container.Resolve<IPlayerRoot>();
+            var config = scope.Container.Resolve<PlayerStatsConfig>();
+            
+            flowHandler.Add(config);
 
             await root.OnBootstrapped(flowHandler, scope);
         }
@@ -47,8 +50,10 @@ namespace GamePlay.Player.Entity.Setup.Bootstrap
         private void OnConfiguration(IContainerBuilder builder)
         {
             var root = GetComponent<IPlayerRoot>();
+            var config = GetComponent<PlayerStatsConfig>();
 
             builder.RegisterComponent(root);
+            builder.RegisterComponent(config);
 
             foreach (var containerBuilder in _builders)
                 containerBuilder.OnBuild(builder);

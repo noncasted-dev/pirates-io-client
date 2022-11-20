@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4074dd73cdcf41759a9942e431ca9e49, type: 3}
   m_Name: LocalService_Reputation
   m_EditorClassIdentifier: 
-  _prefab: {fileID: -1805128452210336379, guid: cf2c26e8502d7654bb785ee8ba74baa8, type: 3}
+  _prefab: {fileID: 5434468785227862206, guid: cf2c26e8502d7654bb785ee8ba74baa8, type: 3}

@@ -663,6 +663,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e8acfc4f70a49e78cd6322832f758eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: Frigate
+  _icon: {fileID: 21300000, guid: f2b736f24c18cf1409c39d6d3c678041, type: 3}
   _baseHealth: 1000
   _baseMaxSpeed: 44
   _baseMaxWeight: 600

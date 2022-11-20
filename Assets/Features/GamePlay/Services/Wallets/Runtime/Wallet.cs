@@ -10,7 +10,7 @@ namespace GamePlay.Services.Wallets.Runtime
 
         public int Money => _money;
 
-        public event Action<int> MoneyChanged;
+        public event Action<int> Changed;
 
         public void Add(int add)
         {
@@ -22,7 +22,7 @@ namespace GamePlay.Services.Wallets.Runtime
 
             _money += add;
 
-            MoneyChanged?.Invoke(_money);
+            Changed?.Invoke(_money);
         }
 
         public void Remove(int remove)
@@ -41,7 +41,7 @@ namespace GamePlay.Services.Wallets.Runtime
                 _money = 0;
             }
 
-            MoneyChanged?.Invoke(_money);
+            Changed?.Invoke(_money);
         }
     }
 }

@@ -18,6 +18,9 @@ namespace GamePlay.Player.Entity.Setup.Root
             _resources = resources;
         }
 
+        [SerializeField] private string _name = "Frigate";
+        [SerializeField] private Sprite _icon;
+        
         [SerializeField] private int _baseHealth;
 
         [SerializeField] private int _baseMaxSpeed;
@@ -37,11 +40,14 @@ namespace GamePlay.Player.Entity.Setup.Root
         {
             _health.SetMaxHealth(_baseHealth);
 
+            _resources.SetName(_name);
+            _resources.SetIcon(_icon);
+            
             _resources.SetMaxWeight(_baseMaxWeight);
             _resources.SetMaxSpeed(_baseMaxSpeed);
 
-            _resources.SetCannons(_baseMaxCannons);
-            _resources.SetMaxCannons(_baseCannons);
+            _resources.SetCannons(_baseCannons);
+            _resources.SetMaxCannons(_baseMaxCannons);
 
             _resources.SetTeam(_baseTeam);
             _resources.SetMaxTeam(_baseMaxTeam);

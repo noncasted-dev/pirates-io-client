@@ -3,6 +3,7 @@ using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
+using GamePlay.Services.Reputation.Runtime;
 using Global.Services.Profiles.Storage;
 using Global.Services.UiStateMachines.Runtime;
 using TMPro;
@@ -19,8 +20,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         private void Construct(
             IUiStateMachine stateMachine,
             IProfileStorageProvider profileStorageProvider,
+            IReputation reputation,
             UiConstraints constraints)
         {
+            _reputation = reputation;
             _profileStorageProvider = profileStorageProvider;
             _constraints = constraints;
             _stateMachine = stateMachine;
@@ -40,7 +43,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         [SerializeField] private GameObject _tradeBody;
 
         [SerializeField] private MoneyView _moneyView;
-
+        [SerializeField] private ShipView _shipView;
+        
         private IDisposable _enterListener;
         private IDisposable _exitListener;
         private IDisposable _requestListener;
@@ -50,6 +54,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         private IUiStateMachine _stateMachine;
         private IProfileStorageProvider _profileStorageProvider;
         private IPlayerCargoStorage _playerCargoStorage;
+        private IReputation _reputation;
 
         public UiConstraints Constraints => _constraints;
         public string Name => "Port";
@@ -98,6 +103,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
             _cargoTrade.Setup(data.PriceProvider);
             _stockTrade.Setup(data.PriceProvider);
+            
+            _shipView.Setup(data.ShipResources, _reputation);
         }
 
         private void OnExited(PortExitedEvent data)

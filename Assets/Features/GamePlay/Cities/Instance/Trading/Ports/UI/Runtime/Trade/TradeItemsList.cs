@@ -95,12 +95,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             CalculateVerticalSize(_cells.Count);
         }
 
-        private void Update()
-        {
-            foreach (var cell in _cells)
-                cell.Value.UpdatePrice();
-        }
-
         private void AddCellOnDemand()
         {
             if (_available.Count != 0)

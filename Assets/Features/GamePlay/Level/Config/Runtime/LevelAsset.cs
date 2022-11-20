@@ -16,6 +16,7 @@ using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime;
 using GamePlay.Services.Projectiles.Bootstrap;
 using GamePlay.Services.Projectiles.Replicator.Runtime;
+using GamePlay.Services.Reputation.Runtime;
 using GamePlay.Services.TransitionScreens.Runtime;
 using GamePlay.Services.TravelOverlays.Runtime;
 using GamePlay.Services.VFX.Pool.Provider;
@@ -49,6 +50,7 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField] [EditableObject] private TravelOverlayAsset _travelOverlay;
         [SerializeField] [EditableObject] private CityPortUiAsset _cityPortUi;
         [SerializeField] [EditableObject] private WalletAsset _wallet;
+        [SerializeField] [EditableObject] private ReputationAsset _reputation;
 
         [SerializeField] private LevelScope _scopePrefab;
 
@@ -73,7 +75,8 @@ namespace GamePlay.Level.Config.Runtime
                 _playerCargo,
                 _travelOverlay,
                 _cityPortUi,
-                _wallet
+                _wallet,
+                _reputation
             };
 
             return list.ToArray();

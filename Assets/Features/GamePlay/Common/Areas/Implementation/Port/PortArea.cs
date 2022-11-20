@@ -13,7 +13,7 @@ namespace GamePlay.Common.Areas.Implementation.Port
             Debug.Log("Entered");
 
             if (interactor.IsLocal == true)
-                _port.Enter();
+                _port.Enter(interactor.Resources);
 
             interactor.OnPortEntered();
         }

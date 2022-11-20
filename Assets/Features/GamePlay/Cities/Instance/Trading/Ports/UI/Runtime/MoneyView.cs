@@ -22,9 +22,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             if (_wallet == null)
                 return;
 
-            UpdateMoney(_wallet.Money);
+            UpdateView(_wallet.Money);
 
-            _wallet.MoneyChanged += UpdateMoney;
+            _wallet.Changed += UpdateView;
         }
 
         private void OnDisable()
@@ -32,10 +32,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             if (_wallet == null)
                 return;
 
-            _wallet.MoneyChanged -= UpdateMoney;
+            _wallet.Changed -= UpdateView;
         }
 
-        private void UpdateMoney(int count)
+        private void UpdateView(int count)
         {
             _text.text = count.ToString();
         }

@@ -1,22 +1,26 @@
 ﻿using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Items.Abstract;
+using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 
 namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 {
-    public class PortEnteredEvent
+    public readonly struct PortEnteredEvent
     {
         public PortEnteredEvent(
             IItem[] cargo,
             IItem[] stock,
-            IPriceProvider priceProvider)
+            IPriceProvider priceProvider,
+            IShipResources shipResources)
         {
             PriceProvider = priceProvider;
             Cargo = cargo;
             Stock = stock;
+            ShipResources = shipResources;
         }
 
         public readonly IItem[] Cargo;
         public readonly IItem[] Stock;
-        public IPriceProvider PriceProvider;
+        public readonly IPriceProvider PriceProvider;
+        public readonly IShipResources ShipResources;
     }
 }

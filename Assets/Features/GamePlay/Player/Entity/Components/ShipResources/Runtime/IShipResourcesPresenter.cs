@@ -1,17 +1,22 @@
-﻿namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
+﻿using UnityEngine;
+
+namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 {
     public interface IShipResourcesPresenter
     {
-        public void SetMaxWeight(int maxWeight);
-        public void SetWeight(int weight);
+        void SetName(string name);
+        void SetIcon(Sprite icon);
+        
+        void SetMaxWeight(int maxWeight);
+        void SetWeight(int weight);
 
-        public void SetMaxCannons(int maxCannons);
-        public void SetCannons(int cannons);
+        void SetMaxCannons(int maxCannons);
+        void SetCannons(int cannons);
 
-        public void SetMaxTeam(int maxTeam);
-        public void SetTeam(int team);
+        void SetMaxTeam(int maxTeam);
+        void SetTeam(int team);
 
-        public void SetMaxSpeed(int maxSpeed);
-        public void SetSpeed(int speed);
+        void SetMaxSpeed(int maxSpeed);
+        void SetSpeed(int speed);
     }
 }

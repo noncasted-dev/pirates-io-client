@@ -126,22 +126,31 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
         public int GetPlayerSellPrice(ItemType type, int count)
         {
             var price = GetPrice(type);
-            var progress = GetCountProgress(type, count);
+            var totalPrice = 0;
 
-            var priceEvaluation = _curves.SellPricePerCount.Evaluate(progress);
+            for (var i = 0; i < count; i++)
+            {
+                var progress = GetCountProgress(type, count);
+                var priceEvaluation = _curves.SellPricePerCount.Evaluate(progress);
+                totalPrice += (int)(priceEvaluation * price);
+            }
 
-            return (int)(price * priceEvaluation);
+            return totalPrice;
         }
 
         public int GetStockSellPrice(ItemType type, int count)
         {
             var price = GetPrice(type);
+            var totalPrice = 0;
 
-            var progress = GetCountProgress(type, count);
+            for (var i = 0; i < count; i++)
+            {
+                var progress = GetCountProgress(type, count);
+                var priceEvaluation = _curves.StockPricePerCount.Evaluate(progress);
+                totalPrice += (int)(priceEvaluation * price);
+            }
 
-            var priceEvaluation = _curves.StockPricePerCount.Evaluate(progress);
-
-            return (int)(price * priceEvaluation);
+            return totalPrice;
         }
 
         private float GetCountProgress(ItemType type, int count)

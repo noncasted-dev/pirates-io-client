@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
+using GamePlay.Items.Implementation;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.Reputation.Runtime;
 using GamePlay.Services.Wallets.Runtime;
@@ -45,6 +46,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         private int _cityMoney;
         private int _playerMoney;
         private int _playerTotalMoney;
+
+        private ShipItem _ship;
 
         private IDisposable _playerListener;
         private IDisposable _stockListener;
@@ -112,6 +115,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
                     _stock[data.Type].SetData(data.Count, data.TotalPrice);
                     break;
+                case ItemOrigin.Ships:
+                    _ship = data.Item as ShipItem;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -129,6 +135,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
                 case ItemOrigin.Stock:
                     _stock.Remove(data.Type);
                     break;
+                case ItemOrigin.Ships:
+                    _ship = null;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -142,6 +151,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         private void ApplyChanges()
         {
             var stock = CalculateCost(_stock);
+
+            if (_ship != null)
+                stock += _ship.Price;
+            
             var player = CalculateCost(_player);
 
             var delta = player - stock;

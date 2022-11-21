@@ -8,7 +8,7 @@ namespace GamePlay.Items.Implementation
         menuName = GamePlayAssetsPaths.Items + "CannonBall")]
     public class CannonBallAsset : ItemAsset
     {
-        protected override ItemType Type => ItemType.CannonBall;
+        public override ItemType Type => ItemType.CannonBall;
 
         protected override IItem BuildItem(BaseItemData data, int count)
         {

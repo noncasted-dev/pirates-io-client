@@ -9,7 +9,7 @@ namespace GamePlay.Items.Abstract
         [SerializeField] private bool _isInfinite;
         [SerializeField] private Sprite _icon;
 
-        protected abstract ItemType Type { get; }
+        public abstract ItemType Type { get; }
 
         public IItem Create(int count)
         {

@@ -42,8 +42,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             var stock = ToArray(_storage.Items);
             Debug.Log($"Cargo: {_playerCargoStorage.Items.Count}");
             var cargo = ToArray(_playerCargoStorage.Items);
+            var ships = ToArray(_storage.Ships);
 
-            var data = new PortEnteredEvent(cargo, stock, _storage, shipResources, _storage);
+            var data = new PortEnteredEvent(cargo, stock, ships, _storage, shipResources, _storage);
 
             MessageBroker.Default.Publish(data);
         }
@@ -79,10 +80,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             _storage.UnfreezeAll();
             
             var stock = ToArray(_storage.Items);
-
             var cargo = ToArray(_playerCargoStorage.Items);
+            var ships = ToArray(_storage.Ships);
 
-            completed.RedrawCallback?.Invoke(stock, cargo, _storage);
+            completed.RedrawCallback?.Invoke(stock, cargo, ships, _storage);
         }
     }
 }

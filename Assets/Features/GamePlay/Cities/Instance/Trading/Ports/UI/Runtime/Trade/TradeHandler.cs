@@ -38,7 +38,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
         [SerializeField] private TradeMoney _playerMoneyView;
         [SerializeField] private TradeMoney _cityMoneyView;
-        
+
         private readonly Dictionary<ItemType, TradeLot> _player = new();
         private readonly Dictionary<ItemType, TradeLot> _stock = new();
 
@@ -59,6 +59,11 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
         public event Action Completed;
 
+        public event Action<int> WeightUpdated;
+        public event Action<int> CannonsUpdated;
+        public event Action<int> TeamUpdated;
+        public event Action<int> ReputationUpdated;
+
         private void OnEnable()
         {
             _playerListener = MessageBroker.Default.Receive<TradeAddedEvent>().Subscribe(OnTradeAdd);
@@ -70,7 +75,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
             _playerMoney = 0;
             _cityMoney = 0;
-            
+
             _playerMoneyView.SetAmount(0);
             _cityMoneyView.SetAmount(0);
         }
@@ -180,7 +185,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
                 _progress.minValue = 0;
                 _progress.maxValue = 1;
                 _progress.value = 0.5f;
-            }            
+            }
             else if (value > 0)
             {
                 _progress.minValue = 0;
@@ -193,13 +198,52 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
                 _progress.maxValue = playerTotal;
                 _progress.value = value;
             }
-            
+
             _delta.text = $"{value}";
 
             if (value >= 0)
                 _applyApplyButton.OnAvailable();
             else
                 _applyApplyButton.OnUnavailable();
+
+            var weight = 0;
+            var team = 0;
+            var cannons = 0;
+
+            foreach (var (_, lot) in _stock)
+            {
+                weight += lot.Count;
+
+                switch (lot.Type)
+                {
+                    case ItemType.Cannon:
+                        cannons += lot.Count;
+                        break;
+                    case ItemType.Team:
+                        team += lot.Count;
+                        break;
+                }
+            }
+
+            foreach (var (_, lot) in _player)
+            {
+                weight += lot.Count;
+
+                switch (lot.Type)
+                {
+                    case ItemType.Cannon:
+                        cannons -= lot.Count;
+                        break;
+                    case ItemType.Team:
+                        team -= lot.Count;
+                        break;
+                }
+            }
+
+            WeightUpdated?.Invoke(weight);
+            TeamUpdated?.Invoke(team);
+            CannonsUpdated?.Invoke(cannons);
+            ReputationUpdated?.Invoke(_reputationPresenter.ConvertFromMoney(_playerTotalMoney));
         }
 
         private int CalculateCost(IReadOnlyDictionary<ItemType, TradeLot> trades)
@@ -217,8 +261,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             _walletPresenter.Reduce(_playerMoney);
             _walletPresenter.Add(_cityMoney);
 
-            _reputationPresenter.ConvertFromMoney(_playerTotalMoney);
-            
+            var reputation = _reputationPresenter.ConvertFromMoney(_playerTotalMoney);
+            _reputationPresenter.Add(reputation);
+
             foreach (var (_, lot) in _stock)
             {
                 var copy = lot.Item.Copy();
@@ -232,17 +277,17 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             {
                 var copy = lot.Item.Copy();
                 copy.SetCount(lot.Count);
-                
+
                 _cityStorage.Add(copy);
                 _cargo.Reduce(lot.Type, lot.Count);
             }
 
             _stock.Clear();
             _player.Clear();
-            
+
             _playerMoney = 0;
             _cityMoney = 0;
-            
+
             _playerMoneyView.SetAmount(0);
             _cityMoneyView.SetAmount(0);
 

@@ -69,5 +69,15 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
             return items;
         }
+        
+        public int GetWeight()
+        {
+            var weight = 0;
+
+            foreach (var (_, item) in _items)
+                weight += item.Count;
+
+            return weight;
+        }
     }
 }

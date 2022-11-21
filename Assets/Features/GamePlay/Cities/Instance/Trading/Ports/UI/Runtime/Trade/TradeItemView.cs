@@ -21,7 +21,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         private TradableItem _item;
         private ItemOrigin _origin;
         private IPriceProvider _priceProvider;
-        public TradableItem Item => _item;
 
         private void OnEnable()
         {

@@ -26,7 +26,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         private IDisposable _removeListener;
         private IDisposable _tradeAddListener;
 
-
         private void Awake()
         {
             foreach (var startupCell in _startupCells)
@@ -55,27 +54,24 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
         public void Fill(IItem[] items, IPriceProvider priceProvider)
         {
-            AddCellsOnDemand(items.Length);
-
+            Debug.Log($"In: {_origin}, count: {items.Length}");
+            
+            foreach (var cell in _cells)
+                _available.Add(cell.Value);
+            
             foreach (var cell in _available)
                 cell.Disable();
 
-            var unused = new List<ItemType>();
+            _cells.Clear();
 
-            foreach (var cell in _cells)
-                unused.Add(cell.Key);
+            AddCellsOnDemand(items.Length);
 
-            foreach (var cell in unused)
-                _cells.Remove(cell);
-
-            for (var i = 0; i < items.Length; i++)
+            foreach (var item in items)
             {
-                var item = items[i];
-
-                if (_cells.ContainsKey(item.BaseData.Type) == true)
-                    continue;
-
-                var cell = _available[i];
+                Debug.Log(item.BaseData.Type);
+                
+                var cell = _available[0];
+                _available.RemoveAt(0);
 
                 cell.AssignItem(item, _origin, priceProvider);
                 _cells.Add(item.BaseData.Type, cell);
@@ -96,10 +92,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
                 return;
 
             var cell = _cells[data.Type];
-            
+
             cell.OnTransferCanceled();
         }
-        
+
         private void OnTradeAdd(TradeAddedEvent data)
         {
             if (data.Origin != _origin)
@@ -117,7 +113,11 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
                 return;
 
             for (var i = 0; i < delta; i++)
-                _available.Add(Instantiate(_cellPrefab, _cellsRoot));
+            {
+                var cell = Instantiate(_cellPrefab, _cellsRoot);
+                _available.Add(cell);
+                cell.gameObject.SetActive(false);
+            }
         }
 
         private void CalculateVerticalSize(int itemsCount)

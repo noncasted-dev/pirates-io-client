@@ -40,6 +40,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             _isActive = true;
             
             var stock = ToArray(_storage.Items);
+            Debug.Log($"Cargo: {_playerCargoStorage.Items.Count}");
             var cargo = ToArray(_playerCargoStorage.Items);
 
             var data = new PortEnteredEvent(cargo, stock, _storage, shipResources, _storage);
@@ -78,6 +79,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             _storage.UnfreezeAll();
             
             var stock = ToArray(_storage.Items);
+            Debug.Log($"Cargo: {_playerCargoStorage.Items.Count}");
+
             var cargo = ToArray(_playerCargoStorage.Items);
 
             completed.RedrawCallback?.Invoke(stock, cargo, _storage);

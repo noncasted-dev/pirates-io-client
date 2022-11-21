@@ -12,11 +12,11 @@ namespace GamePlay.Services.Reputation.Runtime
 
         public int Value => _value;
 
-        public void ConvertFromMoney(int spend)
+        public int ConvertFromMoney(int spend)
         {
             var add = Mathf.CeilToInt(spend * _percentFromMoney);
-            
-            Add(add);
+
+            return add;
         }
 
         public void Add(int add)

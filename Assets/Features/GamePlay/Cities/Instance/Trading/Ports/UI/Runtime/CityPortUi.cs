@@ -109,6 +109,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _body.SetActive(true);
             _stateMachine.EnterAsSingle(this);
 
+            Debug.Log($"Stock: {data.Stock.Length}");
+            
             _cargoView.Fill(data.Cargo, data.PriceProvider);
             _stockView.Fill(data.Stock, data.PriceProvider);
 
@@ -143,6 +145,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void Redraw(IItem[] stock, IItem[] cargo, IPriceProvider priceProvider)
         {
+            _shipView.ResetStats();
+
             _tradeBody.SetActive(false);
 
             _cargoView.Fill(cargo, priceProvider);

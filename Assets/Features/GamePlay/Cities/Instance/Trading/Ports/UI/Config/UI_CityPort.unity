@@ -1408,7 +1408,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -5207,14 +5207,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 387c8a00099e49aa87e7794c93a9f576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: {fileID: 537827942}
   _icon: {fileID: 1873538601}
+  _name: {fileID: 537827942}
   _reputation: {fileID: 1133999605}
   _health: {fileID: 2079012757}
   _weight: {fileID: 200078731}
   _cannons: {fileID: 1554492573}
   _speed: {fileID: 1199235295}
   _team: {fileID: 1264848864}
+  _handler: {fileID: 1164095451}
 --- !u!1 &1146325845
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
         [SerializeField] private TradableItemDictionary _producables;
         [SerializeField] private ItemPriceCurvesConfigAsset _curves;
+        
         [SerializeField] private float _commission = 0.5f;
 
         private readonly ItemsVault _vault = new();

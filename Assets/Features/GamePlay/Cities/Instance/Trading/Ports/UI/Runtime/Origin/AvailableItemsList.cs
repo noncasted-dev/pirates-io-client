@@ -54,8 +54,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
         public void Fill(IItem[] items, IPriceProvider priceProvider)
         {
-            Debug.Log($"In: {_origin}, count: {items.Length}");
-            
             foreach (var cell in _cells)
                 _available.Add(cell.Value);
             
@@ -68,8 +66,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
             foreach (var item in items)
             {
-                Debug.Log(item.BaseData.Type);
-                
                 var cell = _available[0];
                 _available.RemoveAt(0);
 

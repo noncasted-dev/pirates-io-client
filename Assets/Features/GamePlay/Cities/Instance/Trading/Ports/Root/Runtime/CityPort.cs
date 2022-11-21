@@ -79,7 +79,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             _storage.UnfreezeAll();
             
             var stock = ToArray(_storage.Items);
-            Debug.Log($"Cargo: {_playerCargoStorage.Items.Count}");
 
             var cargo = ToArray(_playerCargoStorage.Items);
 

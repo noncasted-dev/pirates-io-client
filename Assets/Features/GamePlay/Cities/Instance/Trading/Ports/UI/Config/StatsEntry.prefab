@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 54.999973, y: 0}
-  m_SizeDelta: {x: -110.00006, y: 13.6}
+  m_AnchoredPosition: {x: 22.65002, y: 0}
+  m_SizeDelta: {x: -213.30005, y: 13.6}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &3300038034479318431
 CanvasRenderer:
@@ -112,7 +112,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 170.9, y: -3}
-  m_SizeDelta: {x: 423, y: 80}
+  m_SizeDelta: {x: 320, y: 80}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3300038034568242590
 CanvasRenderer:
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '5000/10000
+  m_text: '100
 
 '
   m_isRightToLeft: 0

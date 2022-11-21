@@ -10,8 +10,6 @@ namespace GamePlay.Common.Areas.Implementation.Port
 
         public void OnEntered(IAreaInteractor interactor)
         {
-            Debug.Log("Entered");
-
             if (interactor.IsLocal == true)
                 _port.Enter(interactor.Resources);
 

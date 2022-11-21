@@ -109,8 +109,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _body.SetActive(true);
             _stateMachine.EnterAsSingle(this);
 
-            Debug.Log($"Stock: {data.Stock.Length}");
-            
             _cargoView.Fill(data.Cargo, data.PriceProvider);
             _stockView.Fill(data.Stock, data.PriceProvider);
 

@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using VContainer;
 
-namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
+namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views
 {
     public class MoneyView : MonoBehaviour
     {

@@ -56,7 +56,7 @@ namespace GamePlay.Items.Abstract
 
             if (_count < 0)
             {
-                Debug.LogError($"Item {BaseData.Name} count should be greater than zero.");
+                Debug.LogError($"Item {BaseData.Name} count should be greater than zero: reduce: {amount}, result: {_count}.");
                 _count = 0;
             }
 

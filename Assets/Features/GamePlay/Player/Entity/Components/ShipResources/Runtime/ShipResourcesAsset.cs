@@ -1,4 +1,5 @@
 ﻿using GamePlay.Player.Entity.Components.Abstract;
+using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
 using VContainer;
@@ -13,7 +14,13 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         {
             builder.Register<ShipResources>(Lifetime.Scoped)
                 .As<IShipResources>()
-                .As<IShipResourcesPresenter>();
+                .As<IShipResourcesPresenter>()
+                .AsSelf();
+        }
+
+        public override void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)
+        {
+            callbackRegister.Add(resolver.Resolve<ShipResources>());
         }
     }
 }

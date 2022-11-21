@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: GlobalConfig_ItemFactory
   m_EditorClassIdentifier: 
   _items:
-    _keys: 0000000001000000
+    _keys: 00000000010000000200000003000000
     _values:
     - {fileID: 11400000, guid: 9d85683766646514ba59fa37ebbd20b1, type: 2}
     - {fileID: 11400000, guid: 4486b38ad010b7648ad889d60e160246, type: 2}
+    - {fileID: 11400000, guid: 63942aba6e5a58b4b93379d099f70558, type: 2}
+    - {fileID: 11400000, guid: 2f41c0b1cbfb3b2449b7c892ce14b40e, type: 2}

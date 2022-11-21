@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
@@ -19,14 +20,30 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 
         [SerializeField] private CityStorage _storage;
 
+        private bool _isActive;
+        private IDisposable _completionListener;
+        
         private IPlayerCargoStorage _playerCargoStorage;
+
+        private void OnEnable()
+        {
+            _completionListener = MessageBroker.Default.Receive<TradeCompletedEvent>().Subscribe(OnTradeCompleted);
+        }
+
+        private void OnDisable()
+        {
+            _completionListener?.Dispose();
+        }
 
         public void Enter(IShipResources shipResources)
         {
+            _isActive = true;
+            
             var stock = ToArray(_storage.Items);
+            Debug.Log($"Cargo: {_playerCargoStorage.Items.Count}");
             var cargo = ToArray(_playerCargoStorage.Items);
 
-            var data = new PortEnteredEvent(cargo, stock, _storage, shipResources);
+            var data = new PortEnteredEvent(cargo, stock, _storage, shipResources, _storage);
 
             MessageBroker.Default.Publish(data);
         }
@@ -36,6 +53,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             var data = new PortExitedEvent();
 
             MessageBroker.Default.Publish(data);
+
+            _isActive = false;
         }
 
         private IItem[] ToArray(IReadOnlyDictionary<ItemType, IItem> items)
@@ -50,6 +69,20 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             }
 
             return array;
+        }
+
+        private void OnTradeCompleted(TradeCompletedEvent completed)
+        {
+            if (_isActive == false)
+                return;
+            
+            _storage.UnfreezeAll();
+            
+            var stock = ToArray(_storage.Items);
+
+            var cargo = ToArray(_playerCargoStorage.Items);
+
+            completed.RedrawCallback?.Invoke(stock, cargo, _storage);
         }
     }
 }

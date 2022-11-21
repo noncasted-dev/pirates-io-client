@@ -1,17 +1,22 @@
 ﻿using System;
+using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
+using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 {
-    public class ShipResources : IShipResources, IShipResourcesPresenter
+    public class ShipResources : IShipResources, IShipResourcesPresenter, ISwitchCallbacks
     {
-        public ShipResources(IHealth health)
+        public ShipResources(IHealth health, IPlayerCargoStorage cargo)
         {
+            _cargo = cargo;
             _health = health;
         }
 
         private readonly IHealth _health;
+        private IPlayerCargoStorage _cargo;
 
         private string _name;
         private Sprite _icon;
@@ -48,6 +53,16 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         public event Action<int, int> CannonsChanged;
         public event Action<int, int> SpeedChanged;
         public event Action<int, int> TeamChanged;
+        
+        public void OnEnabled()
+        {
+            _cargo.Changed += OnCargoChanged;
+        }
+        
+        public void OnDisabled()
+        {
+            _cargo.Changed -= OnCargoChanged;
+        }
 
         public void SetName(string name)
         {
@@ -113,6 +128,24 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             _maxSpeed = speed;
             
             SpeedChanged?.Invoke(_speed, _maxSpeed);
+        }
+        
+        private void OnCargoChanged()
+        {
+            SetWeight(_cargo.GetWeight());
+
+            foreach (var (type, item) in _cargo.Items)
+            {
+                switch (type)
+                {
+                    case ItemType.Cannon:
+                        SetCannons(item.Count);
+                        break;
+                    case ItemType.Team:
+                        SetTeam(item.Count);
+                        break;
+                }
+            }
         }
     }
 }

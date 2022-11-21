@@ -9,19 +9,6 @@ namespace GamePlay.Items.Abstract
 
         public IReadOnlyDictionary<ItemType, IItem> Items => _items;
 
-        public IReadOnlyDictionary<ItemType, IItem> Copy()
-        {
-            var vaultCopy = new Dictionary<ItemType, IItem>();
-
-            foreach (var item in _items)
-            {
-                var itemCopy = item.Value.Copy();
-                vaultCopy.Add(item.Key, itemCopy);
-            }
-
-            return vaultCopy;
-        }
-
         public void Set(IReadOnlyDictionary<ItemType, IItem> from)
         {
             _items.Clear();

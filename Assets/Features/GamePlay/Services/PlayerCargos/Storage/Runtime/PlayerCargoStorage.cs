@@ -38,6 +38,9 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
             _items[type].Reduce(amount);
             Changed?.Invoke();
+
+            if (_items[type].Count == 0)
+                Delete(type);
         }
 
         public void Delete(ItemType type)
@@ -65,6 +68,16 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             }
 
             return items;
+        }
+        
+        public int GetWeight()
+        {
+            var weight = 0;
+
+            foreach (var (_, item) in _items)
+                weight += item.Count;
+
+            return weight;
         }
     }
 }

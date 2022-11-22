@@ -5051,6 +5051,8 @@ MonoBehaviour:
     _speed: 0
   _isLocal: 0
   _collider: {fileID: 488861096520624764}
+  _spriteRenderer: {fileID: 3528876849393998273}
+  _particleSystem: {fileID: 2791811756354343701}
   _trail: {fileID: 8176420882470966280}
 --- !u!61 &488861096520624764
 BoxCollider2D:

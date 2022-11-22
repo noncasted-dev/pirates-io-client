@@ -1,6 +1,6 @@
 ﻿using GamePlay.Items.Abstract;
 
-namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
+namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events
 {
     public class TransferCanceledEvent
     {

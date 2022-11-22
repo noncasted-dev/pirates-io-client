@@ -3,6 +3,6 @@
     public interface IWalletPresenter
     {
         void Add(int add);
-        void Remove(int remove);
+        void Reduce(int remove);
     }
 }

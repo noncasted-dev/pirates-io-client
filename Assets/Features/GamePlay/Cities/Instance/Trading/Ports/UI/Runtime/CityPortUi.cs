@@ -1,7 +1,11 @@
 ﻿using System;
+using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views;
+using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.Reputation.Runtime;
 using Global.Services.Profiles.Storage;
@@ -44,6 +48,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         [SerializeField] private MoneyView _moneyView;
         [SerializeField] private ShipView _shipView;
+        [SerializeField] private TradeMoney _tradeMoney;
         
         private IDisposable _enterListener;
         private IDisposable _exitListener;
@@ -59,6 +64,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         public UiConstraints Constraints => _constraints;
         public string Name => "Port";
         public MoneyView MoneyView => _moneyView;
+        public TradeMoney TradeMoney => _tradeMoney;
+        public TradeHandler TradeHandler => _tradeHandler;
 
         private void Awake()
         {
@@ -72,6 +79,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _requestListener = MessageBroker.Default.Receive<TradeRequestedEvent>().Subscribe(OnTradeRequested);
 
             _tradeBody.SetActive(false);
+
+            _tradeHandler.Completed += OnTradeCompleted;
         }
 
         private void OnDisable()
@@ -79,6 +88,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _enterListener?.Dispose();
             _exitListener?.Dispose();
             _requestListener?.Dispose();
+            
+            _tradeHandler.Completed += OnTradeCompleted;
         }
 
         public void Recover()
@@ -105,6 +116,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _stockTrade.Setup(data.PriceProvider);
             
             _shipView.Setup(data.ShipResources, _reputation);
+            _tradeHandler.Setup(data.CityStorage);
         }
 
         private void OnExited(PortExitedEvent data)
@@ -118,6 +130,25 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
                 return;
 
             _tradeBody.SetActive(true);
+        }
+
+        private void OnTradeCompleted()
+        {
+            _tradeBody.SetActive(false);
+
+            var completed = new TradeCompletedEvent(Redraw);
+
+            MessageBroker.Default.Publish(completed);
+        }
+
+        private void Redraw(IItem[] stock, IItem[] cargo, IPriceProvider priceProvider)
+        {
+            _shipView.ResetStats();
+
+            _tradeBody.SetActive(false);
+
+            _cargoView.Fill(cargo, priceProvider);
+            _stockView.Fill(stock, priceProvider);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
+using Cysharp.Threading.Tasks;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Mover;
 using GamePlay.Services.Projectiles.Mover.Abstract;
@@ -29,7 +30,10 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
         [SerializeField] [ReadOnly] private bool _isLocal;
 
         [SerializeField] private BoxCollider2D _collider;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private ParticleSystem _particleSystem;
         [SerializeField] private TrailRenderer _trail;
+        
         private Actions _actions;
         private Movement _movement;
 
@@ -56,27 +60,19 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 
             _actions = new Actions(
                 _transform,
-                _returnCallback,
                 this,
-                _mover,
-                _vfx);
+                returnToPool,
+                OnTriggered,
+                OnCollided,
+                OnDropped,
+                _mover);
 
             _movement = new Movement(
                 raycastData,
                 _transform,
                 _actions.OnDropped);
         }
-
-        public void OnTaken()
-        {
-            _trail.Clear();
-        }
-
-        public void OnReturned()
-        {
-            _trail.Clear();
-        }
-
+        
         public void Fire(
             Vector2 direction,
             ShootParams shootParams,
@@ -95,8 +91,62 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 
             _movement.Setup(angle, movementData);
             _actions.Setup(shootParams, isLocal, creatorId);
+            _collider.enabled = true;
 
             _mover.Add(this);
+
+            _spriteRenderer.enabled = true;
+        }
+
+        public void OnTaken()
+        {
+            _trail.Clear();
+        }
+
+        public void OnReturned()
+        {
+            _trail.Clear();
+        }
+
+        private void OnCollided() => OnCollidedAsync().Forget();
+        private void OnTriggered() => OnTriggeredAsync().Forget();
+        private void OnDropped() => OnDroppedAsync().Forget();
+
+        private async UniTaskVoid OnCollidedAsync()
+        {
+            _spriteRenderer.enabled = false;
+            _particleSystem.Stop();
+            _collider.enabled = false;
+            
+            var cancellation = this.GetCancellationTokenOnDestroy();
+            await UniTask.Delay(3000, false, PlayerLoopTiming.Update, cancellation);
+            
+            _returnCallback?.Invoke(this);
+        }
+
+        private async UniTaskVoid OnTriggeredAsync()
+        {
+            _spriteRenderer.enabled = false;
+            _particleSystem.Stop();
+            _collider.enabled = false;
+
+            var cancellation = this.GetCancellationTokenOnDestroy();
+            await UniTask.Delay(3000, false, PlayerLoopTiming.Update, cancellation);
+            
+            _returnCallback?.Invoke(this);
+        }
+
+        private async UniTaskVoid OnDroppedAsync()
+        {
+            _spriteRenderer.enabled = false;
+            _particleSystem.Stop();
+            _vfx.Get(transform.position);
+            _collider.enabled = false;
+
+            var cancellation = this.GetCancellationTokenOnDestroy();
+            await UniTask.Delay(3000, false, PlayerLoopTiming.Update, cancellation);
+            
+            _returnCallback?.Invoke(this);
         }
     }
 }

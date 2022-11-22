@@ -35,7 +35,7 @@ Material:
     m_Ints: []
     m_Floats:
     - PixelSnap: 0
-    - _FillAmount: 0.062
+    - _FillAmount: 0.372
     - _Float0: 0.1675248
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

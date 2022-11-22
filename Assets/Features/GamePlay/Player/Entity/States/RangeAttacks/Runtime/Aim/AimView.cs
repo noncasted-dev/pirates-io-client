@@ -30,6 +30,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
         [SerializeField] private Transform _middle;
         [SerializeField] private SpriteRenderer _leftCircle;
         [SerializeField] private SpriteRenderer _rightCircle;
+        [SerializeField] private Animator _animator;
 
         private CancellationTokenSource _cancellation;
         private IRangeAttackConfig _config;
@@ -40,6 +41,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
 
         public async UniTask<AimResult> AimAsync()
         {
+            _animator.Play("Appear",0,0f);
             _left.gameObject.SetActive(true);
             _right.gameObject.SetActive(true);
             _middle.gameObject.SetActive(true);
@@ -61,7 +63,6 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
                 _cancellation.Token);
 
             var result = await aim.Process();
-
             _left.gameObject.SetActive(false);
             _right.gameObject.SetActive(false);
             _middle.gameObject.SetActive(false);

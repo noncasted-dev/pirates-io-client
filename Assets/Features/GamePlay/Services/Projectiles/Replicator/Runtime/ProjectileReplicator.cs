@@ -67,7 +67,8 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
             var parameters = new ShootParams(data.Damage, data.Speed, data.Distance);
 
             projectile.Fire(direction, parameters, true, creatorId);
-            _vfx.Get(data.Position);
+            var vfx = _vfx.Get(data.Position);
+            vfx.transform.rotation = Quaternion.Euler(0f, 0f, data.Angle);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace GamePlay.Services.PlayerPositionProviders.Runtime
         {
             if (_player == null)
             {
-                Debug.LogError("No player assigned");
+                Debug.Log("No player assigned");
                 return Vector2.zero;
             }
 

@@ -74,8 +74,9 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 var parameters = _config.CreateParams(additionalDistance);
 
                 projectile.Fire(direction, parameters, true, _cannonReplicator.PlayerId);
-                _vfx.Get(shootPosition);
-
+                var vfx = _vfx.Get(shootPosition);
+                vfx.transform.rotation = Quaternion.Euler(0f, 0f, resultAngle);
+                
                 _shotsRegistry[i] = true;
                 _shotCounter++;
 

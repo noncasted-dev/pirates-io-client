@@ -23,3 +23,8 @@ MonoBehaviour:
   _price: 70
   _maxSpeed: 70
   _type: 8
+  _prefab:
+    m_AssetGUID: 4aa2dce30cfdde641a3ca89e71aef353
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

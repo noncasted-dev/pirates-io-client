@@ -3,6 +3,7 @@ using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
 using GamePlay.Items.Implementation;
+using GamePlay.Player.Entity.Components.Definition;
 using TMPro;
 using UniRx;
 using UnityEngine;

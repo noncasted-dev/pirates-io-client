@@ -135,11 +135,11 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _tradeBody.SetActive(true);
         }
 
-        private void OnTradeCompleted()
+        private void OnTradeCompleted(TradeResult result)
         {
             _tradeBody.SetActive(false);
 
-            var completed = new TradeCompletedEvent(Redraw);
+            var completed = new TradeCompletedEvent(Redraw, result);
 
             MessageBroker.Default.Publish(completed);
         }

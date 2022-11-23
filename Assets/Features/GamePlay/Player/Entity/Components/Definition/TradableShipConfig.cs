@@ -1,7 +1,7 @@
 ﻿using GamePlay.Common.Paths;
 using GamePlay.Items.Abstract;
-using GamePlay.Items.Implementation;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace GamePlay.Player.Entity.Components.Definition
 {
@@ -18,7 +18,10 @@ namespace GamePlay.Player.Entity.Components.Definition
 
         [SerializeField] private ItemType _type;
 
+        [SerializeField] private AssetReference _prefab;
+        
         public override ItemType Type => _type;
+        public AssetReference Prefab => _prefab;
 
         protected override IItem BuildItem(BaseItemData data, int count)
         {

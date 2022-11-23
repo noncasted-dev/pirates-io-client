@@ -2,7 +2,7 @@
 using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
-using GamePlay.Items.Implementation;
+using GamePlay.Player.Entity.Components.Definition;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -58,6 +58,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             _cannons.text = ship.MaxCannons.ToString();
             _speed.text = ship.MaxSpeed.ToString();
             _name.text = ship.BaseData.Name;
+            _cost.text = ship.Price.ToString();
         }
 
         public override void Disable()

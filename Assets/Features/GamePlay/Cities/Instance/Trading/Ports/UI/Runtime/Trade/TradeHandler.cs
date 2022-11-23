@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
+using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
 using GamePlay.Items.Implementation;
+using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.Reputation.Runtime;
 using GamePlay.Services.Wallets.Runtime;
@@ -60,7 +62,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
         public bool IsActive => gameObject.activeSelf;
 
-        public event Action Completed;
+        public event Action<TradeResult> Completed;
 
         public event Action<int> WeightUpdated;
         public event Action<int> CannonsUpdated;
@@ -81,6 +83,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
             _playerMoneyView.SetAmount(0);
             _cityMoneyView.SetAmount(0);
+
+            _ship = null;
         }
 
         private void OnDisable()
@@ -154,7 +158,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
             if (_ship != null)
                 stock += _ship.Price;
-            
+
             var player = CalculateCost(_player);
 
             var delta = player - stock;
@@ -304,7 +308,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             _playerMoneyView.SetAmount(0);
             _cityMoneyView.SetAmount(0);
 
-            Completed?.Invoke();
+            var result = new TradeResult(_ship);
+
+            Completed?.Invoke(result);
         }
     }
 }

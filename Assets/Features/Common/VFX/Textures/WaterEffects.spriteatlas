@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterEffects
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f98312ee0b1d9a544a11a88b78511a3b, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -329891925, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
+  - {fileID: 1602909158, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
+  - {fileID: 1349493356, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
+  - {fileID: 681888665, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
+  - {fileID: 111377441, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
+  - {fileID: -1627835654, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
+  - {fileID: 30620012, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
+  - {fileID: 2078147751, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
+  - {fileID: -1751349726, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
+  - {fileID: 21300000, guid: b2e150b630ba42d4fb5399956197e964, type: 3}
+  - {fileID: 21300000, guid: 776317576aac07c4da5ba71c10a85377, type: 3}
+  - {fileID: -231998948, guid: fe4989b7b58a92f4b89e91d486763fd2, type: 3}
+  - {fileID: -199071483, guid: fe4989b7b58a92f4b89e91d486763fd2, type: 3}
+  - {fileID: 1696206484, guid: fe4989b7b58a92f4b89e91d486763fd2, type: 3}
+  - {fileID: 134229607, guid: fe4989b7b58a92f4b89e91d486763fd2, type: 3}
+  - {fileID: 1483451669, guid: fe4989b7b58a92f4b89e91d486763fd2, type: 3}
+  - {fileID: 1588294804, guid: fe4989b7b58a92f4b89e91d486763fd2, type: 3}
+  - {fileID: -2014717705, guid: fe4989b7b58a92f4b89e91d486763fd2, type: 3}
+  - {fileID: 1690688342, guid: 6bf279f77f36d094cbc2c1700cd1a49e, type: 3}
+  - {fileID: 99245583, guid: 6bf279f77f36d094cbc2c1700cd1a49e, type: 3}
+  - {fileID: 1781149779, guid: 6bf279f77f36d094cbc2c1700cd1a49e, type: 3}
+  - {fileID: 21300000, guid: 1adcd279cb2a00b4fadb16c007640a71, type: 3}
+  - {fileID: 1009125136, guid: 868bb88bc1ecc4841a6ab62e2cef5766, type: 3}
+  - {fileID: -722591245, guid: 868bb88bc1ecc4841a6ab62e2cef5766, type: 3}
+  - {fileID: -836115103, guid: 868bb88bc1ecc4841a6ab62e2cef5766, type: 3}
+  - {fileID: 21300000, guid: 2634cb5c4fb1f0b4abcfab6d1d9967ff, type: 3}
+  - {fileID: 21300000, guid: 3945056e468220741b4d54ab1c74f182, type: 3}
+  - {fileID: -1857222164, guid: 899cb10f0fc6b4a40a85f46438789bbe, type: 3}
+  - {fileID: -1664500146, guid: 899cb10f0fc6b4a40a85f46438789bbe, type: 3}
+  - {fileID: 1900492213, guid: 899cb10f0fc6b4a40a85f46438789bbe, type: 3}
+  - {fileID: 1357698582, guid: 899cb10f0fc6b4a40a85f46438789bbe, type: 3}
+  - {fileID: -1536600052, guid: 899cb10f0fc6b4a40a85f46438789bbe, type: 3}
+  - {fileID: 2113707704, guid: 899cb10f0fc6b4a40a85f46438789bbe, type: 3}
+  - {fileID: -924359771, guid: 899cb10f0fc6b4a40a85f46438789bbe, type: 3}
+  - {fileID: 1081565705, guid: 899cb10f0fc6b4a40a85f46438789bbe, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - AtlassC_8
+  - AtlassC_7
+  - AtlassC_6
+  - AtlassC_5
+  - AtlassC_4
+  - AtlassC_3
+  - AtlassC_2
+  - AtlassC_1
+  - AtlassC_0
+  - reward_glow
+  - AIMZonea
+  - WaterSplash_AtlassB_6
+  - WaterSplash_AtlassB_5
+  - WaterSplash_AtlassB_4
+  - WaterSplash_AtlassB_3
+  - WaterSplash_AtlassB_2
+  - WaterSplash_AtlassB_1
+  - WaterSplash_AtlassB_0
+  - sA_2
+  - sA_0
+  - sA_1
+  - wawes
+  - Core_2
+  - Core_1
+  - Core_0
+  - Glow
+  - reward_glow2
+  - WaterSplash_AtlassA_0
+  - WaterSplash_AtlassA_1
+  - WaterSplash_AtlassA_2
+  - WaterSplash_AtlassA_3
+  - WaterSplash_AtlassA_4
+  - WaterSplash_AtlassA_5
+  - WaterSplash_AtlassA_6
+  - WaterSplash_AtlassA_7
+  m_RenderDataMap: {}
+  m_Tag: WaterEffects
+  m_IsVariant: 0

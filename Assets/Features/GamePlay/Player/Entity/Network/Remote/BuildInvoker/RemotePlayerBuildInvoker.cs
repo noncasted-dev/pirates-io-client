@@ -1,4 +1,5 @@
-﻿using GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime;
+﻿using GamePlay.Player.Entity.Network.Root.Runtime;
+using GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime;
 using Ragon.Client;
 
 namespace GamePlay.Player.Entity.Network.Remote.BuildInvoker
@@ -10,7 +11,8 @@ namespace GamePlay.Player.Entity.Network.Remote.BuildInvoker
             if (IsMine == true)
                 return;
 
-            RemotePlayerBuilder.Instance.Build(gameObject);
+            var payload = Entity.GetSpawnPayload<PlayerPayload>();
+            RemotePlayerBuilder.Instance.Build(gameObject, payload.ShipType);
         }
     }
 }

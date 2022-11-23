@@ -2,15 +2,14 @@
 {
     public enum ShipType
     {
-        Tutorial,
-        Ketch,
         Boat,
-        Frigate,
-        Large,
-        Brig,
-        Tanker,
-        Tartan,
+        Ketch,
+        Pink,
         Snow,
-        Pink
+        Brig,
+        Tartan,
+        Polacre,
+        Frigate,
+        FirstRate
     }
 }

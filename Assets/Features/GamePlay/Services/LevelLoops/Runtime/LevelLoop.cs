@@ -82,7 +82,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
             _logger.OnPlayerSpawn();
 
-            _player = await _playerFactory.Create(spawnPosition, ShipType.Frigate);
+            _player = await _playerFactory.Create(spawnPosition, ShipType.Boat);
             
             _levelCamera.Teleport(_player.Transform.position);
             _levelCamera.StartFollow(_player.Transform);
@@ -105,7 +105,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
             
             _logger.OnPlayerSpawn();
 
-            _player = await _playerFactory.Create(_playerPositionProvider.Position, ShipType.Frigate);
+            _player = await _playerFactory.Create(_playerPositionProvider.Position, ship);
             
             _levelCamera.Teleport(_player.Transform.position);
             _levelCamera.StartFollow(_player.Transform);

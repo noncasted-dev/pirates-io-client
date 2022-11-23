@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Common.EditableScriptableObjects.Attributes;
+using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Runtime.Abstract;
@@ -16,6 +17,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
     {
         [SerializeField] private AssetReference _poolScene;
         [SerializeField] private RemotePlayerBuilder _prefab;
+        [SerializeField] [EditableObject] private RemoteBuilderConfigAsset _config;
 
         public override async UniTask Create(
             IServiceBinder serviceBinder,
@@ -28,6 +30,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
             var pool = builder.GetComponent<RemoteViewsPool>();
 
             serviceBinder.RegisterComponent(builder)
+                .WithParameter(_config)
                 .AsSelf();
 
             serviceBinder.RegisterComponent(pool)

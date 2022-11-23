@@ -13,6 +13,9 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
         public Aim(
             Transform left,
             Transform right,
+            Transform middle,
+            SpriteRenderer leftCircle,
+            SpriteRenderer rightCircle,
             Transform body,
             IRotation rotation,
             IUpdater updater,
@@ -22,6 +25,9 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
         {
             _left = left;
             _right = right;
+            _middle = middle;
+            _leftCircle = leftCircle;
+            _rightCircle = rightCircle;
             _body = body;
             _rotation = rotation;
             _updater = updater;
@@ -39,6 +45,9 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
         private readonly Transform _left;
         private readonly AimParams _parameters;
         private readonly Transform _right;
+        private readonly Transform _middle;
+        private readonly SpriteRenderer _leftCircle;
+        private readonly SpriteRenderer _rightCircle;
         private readonly IRotation _rotation;
         private readonly IUpdater _updater;
 
@@ -62,7 +71,10 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
             var angle = Mathf.Lerp(_parameters.StartAngle, _parameters.EndAngle, progress);
 
             _left.localRotation = Quaternion.Euler(0f, 0f, angle);
+            _leftCircle.material.SetFloat("_FillAmount",  angle / 360f);
+
             _right.localRotation = Quaternion.Euler(0f, 0f, -angle);
+            _rightCircle.material.SetFloat("_FillAmount", angle / 360f);
 
             if (_isCanceled == true)
             {

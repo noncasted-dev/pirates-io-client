@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LocalService_PlayerFactory
   m_EditorClassIdentifier: 
   _logSettings: {fileID: 11400000, guid: a4c7fb374fcee024d8cdfb2cd08a89d9, type: 2}
-  _config: {fileID: 11400000, guid: dcc208e43cd77614c923cbfa39df760c, type: 2}
+  _configAsset: {fileID: 11400000, guid: dcc208e43cd77614c923cbfa39df760c, type: 2}
   _prefab: {fileID: 6667401331819115555, guid: b388f219e33d22146883a341f6f9dde9, type: 3}

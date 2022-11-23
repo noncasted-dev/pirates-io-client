@@ -51,9 +51,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3205208776571550568, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Size.x
+      value: 2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205208776571550568, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Size.y
+      value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205208776571550568, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.03264737
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205208776571550568, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.120000005
+      objectReference: {fileID: 0}
     - target: {fileID: 3871518644565369678, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
       propertyPath: m_Name
       value: Player_Remote_4_Brig
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236864739449218738, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Size.x
+      value: 2.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236864739449218738, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Size.y
+      value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236864739449218738, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}

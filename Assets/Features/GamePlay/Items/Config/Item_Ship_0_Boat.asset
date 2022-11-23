@@ -22,9 +22,14 @@ MonoBehaviour:
   _maxHealth: 10
   _price: 10
   _maxSpeed: 10
-  _type: 6
-  _prefab:
-    m_AssetGUID: 4aa2dce30cfdde641a3ca89e71aef353
+  _type: 4
+  _local:
+    m_AssetGUID: 5822ad4aaffcf984b838a32d87d2f756
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _remote:
+    m_AssetGUID: 5eadfe66e10c0b94a9287d367ba64e28
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

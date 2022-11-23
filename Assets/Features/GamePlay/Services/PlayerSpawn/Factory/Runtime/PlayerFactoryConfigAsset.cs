@@ -7,7 +7,7 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
 {
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ConfigPrefix + "PlayerFactory",
         menuName = GamePlayAssetsPaths.PlayerFactory + "Config")]
-    public class PlayerFactoryConfig : ScriptableObject
+    public class PlayerFactoryConfigAsset : ScriptableObject
     {
         [SerializeField] private GameObject _networkPrefab;
 
@@ -17,7 +17,7 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
         
         public AssetReference GetShip(ShipType type)
         {
-            return _ships[type].Prefab;
+            return _ships[type].Local;
         }
     }
 }

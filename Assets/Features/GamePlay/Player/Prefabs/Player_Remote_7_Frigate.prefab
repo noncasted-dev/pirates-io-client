@@ -55,9 +55,37 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d137cd0a2fe40924d80cba6522b451a6, type: 3}
+    - target: {fileID: 3205208776571550568, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Size.x
+      value: 3.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205208776571550568, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Size.y
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205208776571550568, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.03264737
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205208776571550568, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.120000005
+      objectReference: {fileID: 0}
     - target: {fileID: 3871518644565369678, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
       propertyPath: m_Name
-      value: Player_Remote_7_Frigate
+      value: Player_Remote_7_Frigate Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236864739449218738, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Size.x
+      value: 3.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236864739449218738, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Size.y
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236864739449218738, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6975670816349499795, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
       propertyPath: m_Sprite

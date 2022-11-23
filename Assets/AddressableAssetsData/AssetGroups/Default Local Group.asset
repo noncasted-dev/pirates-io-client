@@ -129,6 +129,90 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Cities/Instance/Trading/Ports/UI/Config/UI_CityPort.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 5822ad4aaffcf984b838a32d87d2f756
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Local_0_Boat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5bec205d12eef16438a157362139d659
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Local_1_Ketch.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 213cdf053f0938149be17e898de83c24
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Local_2_Pink.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 87d246463a3365b48b2bbf3fc793b529
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Local_3_Snow.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 316a6278e1ffbe44a963c13f9f2e0c5b
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Local_4_Brig.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2e98642e4d1fba14fa4a43bb2507cfd8
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Local_5_Tartan.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5144a9179e803694080dc825301940a0
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Local_6_Polacre Variant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 87ed114d1e1d1044ebfcfc44f96e56d9
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Local_7_Frigate Variant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cb99d802c2671a343ba233f12f9501d1
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Local_8_FirstRate Variant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5eadfe66e10c0b94a9287d367ba64e28
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote_0_Boat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 061608e7349228049bc832c0bd65c19e
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote_1_Ketch.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0a49cb1018ca0de4cbd905d70b5c0dcf
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote_2_Pink.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 50579adba34805b41b5ac626285abe1c
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote_3_Snow.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 164e580a1d51c0f4dae036fa3df571fc
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote_4_Brig.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d0a6b60b11897a74287ef5a46176c82c
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_5_Tartan.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d95a5b65e47dff3469a1cde979594218
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote_6_Polacre Variant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a1ec91721290a5b40b0b38ba2fc01cc7
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_7_Frigate.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9fb27f1f227c5d24aa05b64fb657fb9d
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_8_FirstRate.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7e8f71f68188d1b41b50368af13327d8
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote_5_Tartan.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a373fb40ea72592458677491f730b2ad
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote_8_FirstRate.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: debd536baa9ee3b4b88d379df66fcfb3
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote_7_Frigate.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
   m_SchemaSet:

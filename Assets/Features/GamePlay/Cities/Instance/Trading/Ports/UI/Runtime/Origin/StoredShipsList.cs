@@ -38,6 +38,12 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         {
             _removeListener = MessageBroker.Default.Receive<TransferCanceledEvent>().Subscribe(OnTransferCanceled);
             _tradeAddListener = MessageBroker.Default.Receive<TradeAddedEvent>().Subscribe(OnTradeAdd);
+            
+            foreach (var cell in _cells)
+                cell.Value.Enable();
+            
+            foreach (var cell in _available)
+                cell.Enable();
         }
 
         private void OnDisable()
@@ -45,6 +51,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             _removeListener?.Dispose();
             _tradeAddListener?.Dispose();
 
+            foreach (var cell in _cells)
+                _available.Add(cell.Value);
+            
             foreach (var cell in _available)
                 cell.Disable();
 

@@ -25,7 +25,7 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             LevelScope scope,
             IPlayerEntityPresenter entityPresenter,
             IProfileStorageProvider profileStorageProvider,
-            PlayerFactoryConfig config,
+            PlayerFactoryConfigAsset configAsset,
             PlayerFactoryLogger logger)
         {
             _instantiatorFactory = instantiatorFactory;
@@ -34,10 +34,10 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             _networkInstantiator = networkInstantiator;
             _logger = logger;
             _scope = scope;
-            _config = config;
+            _configAsset = configAsset;
         }
 
-        private PlayerFactoryConfig _config;
+        private PlayerFactoryConfigAsset _configAsset;
 
         private LevelScope _scope;
         private PlayerFactoryLogger _logger;
@@ -49,17 +49,16 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
 
         public async UniTask<IPlayerRoot> Create(Vector2 position, ShipType type)
         {
-            var payload = new PlayerPayload(_profileStorageProvider.UserName);
+            var payload = new PlayerPayload(_profileStorageProvider.UserName, type);
 
             var networkObject = await _networkInstantiator.Instantiate<PlayerNetworkRoot, PlayerPayload>(
-                _config.NetworkPrefab,
+                _configAsset.NetworkPrefab,
                 position,
                 payload);
-            
-            var instantiator = _instantiatorFactory.Create<GameObject>(_config.GetShip(type));
 
+            var prefab = _configAsset.GetShip(type);
+            var instantiator = _instantiatorFactory.Create<GameObject>(prefab);
             var playerObject = await instantiator.InstantiateAsync(Vector2.zero);
-            playerObject.name = "Player";
 
             var playerTransform = playerObject.transform;
             var networkTransform = networkObject.transform;

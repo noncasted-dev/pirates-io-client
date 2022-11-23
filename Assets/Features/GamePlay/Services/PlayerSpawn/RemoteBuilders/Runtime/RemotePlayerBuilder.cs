@@ -1,10 +1,10 @@
 ﻿using Common.ObjectsPools.Runtime.Abstract;
+using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Player.Entity.Network.Remote.Bootstrap;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Services.Projectiles.Replicator.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
-using Global.Services.AssetsFlow.Runtime.Abstract;
 using Global.Services.Updaters.Runtime.Abstract;
 using Local.Services.Abstract.Callbacks;
 using UnityEngine;
@@ -24,24 +24,25 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
             IUpdater updater,
             ILogger logger,
             IProjectileReplicator replicator,
-            IAssetInstantiatorFactory instantiatorFactory,
-            IVfxPoolProvider vfxPoolProvider)
+            IVfxPoolProvider vfxPoolProvider,
+            RemoteBuilderConfigAsset config)
         {
             _vfxPoolProvider = vfxPoolProvider;
             _updater = updater;
             _logger = logger;
             _replicator = replicator;
-            _instantiatorFactory = instantiatorFactory;
+            _config = config;
         }
 
         private static RemotePlayerBuilder _instance;
+        
         [SerializeField] private AssetReference _hitExplosionReference;
-
         [SerializeField] private RemoteViewsPool _pool;
-        [SerializeField] private AssetReference _prefab;
+
+        private RemoteBuilderConfigAsset _config;
+        
         private IObjectProvider<AnimatedVfx> _hitExplosionPool;
 
-        private IAssetInstantiatorFactory _instantiatorFactory;
         private ILogger _logger;
         private IProjectileReplicator _replicator;
         private IUpdater _updater;
@@ -59,10 +60,11 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
             _hitExplosionPool = _vfxPoolProvider.GetPool<AnimatedVfx>(_hitExplosionReference);
         }
 
-        public void Build(GameObject remotePlayer)
+        public void Build(GameObject remotePlayer, ShipType shipType)
         {
-            var viewProvider = _pool.Handler.GetPool<PlayerRemoteView>(_prefab);
-
+            var prefab = _config.GetShip(shipType);
+            
+            var viewProvider = _pool.Handler.GetPool<PlayerRemoteView>(prefab);
             var view = viewProvider.Get(Vector2.zero);
 
             var rootTransform = remotePlayer.transform;

@@ -1,9 +1,10 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Factions.Selections.Loops.Runtime;
 using GamePlay.Player.Entity.Components.Definition;
-using GamePlay.Player.Entity.Setup.Root;
+using GamePlay.Player.Entity.States.Deaths.Runtime;
 using GamePlay.Services.LevelCameras.Runtime;
 using GamePlay.Services.LevelLoops.Logs;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
@@ -12,13 +13,18 @@ using GamePlay.Services.TransitionScreens.Runtime;
 using GamePlay.Services.TravelOverlays.Runtime;
 using Global.Services.CurrentCameras.Runtime;
 using Local.Services.Abstract.Callbacks;
+using UniRx;
 using UnityEngine;
 using VContainer;
 
 namespace GamePlay.Services.LevelLoops.Runtime
 {
     [DisallowMultipleComponent]
-    public class LevelLoop : MonoBehaviour, ILocalLoadListener, ILevelLoop
+    public class LevelLoop :
+        MonoBehaviour,
+        ILocalLoadListener,
+        ILevelLoop,
+        ILocalSwitchListener
     {
         [Inject]
         private void Construct(
@@ -46,20 +52,32 @@ namespace GamePlay.Services.LevelLoops.Runtime
             _currentCamera = currentCamera;
             _levelCamera = levelCamera;
         }
+
+        private IDisposable _deathListener;
         
         private ICitiesRegistry _citiesRegistry;
-
         private ICurrentCamera _currentCamera;
-        private IFactionSelectionLoop _factionSelection;
         private ILevelCamera _levelCamera;
+        
+        private IFactionSelectionLoop _factionSelection;
+
         private LevelLoopLogger _logger;
-        private IPlayerRoot _player;
         private IPlayerFactory _playerFactory;
         private ISceneObjectsHandler _sceneObjects;
         private ITransitionScreen _transitionScreen;
         private ITravelOverlay _travelOverlay;
         private IPlayerPositionProvider _playerPositionProvider;
         private IPlayerEntityPresenter _entityPresenter;
+
+        public void OnEnabled()
+        {
+            _deathListener = MessageBroker.Default.Receive<PlayerDeathEvent>().Subscribe(OnPlayerDeath);
+        }
+
+        public void OnDisabled()
+        {
+            _deathListener?.Dispose();
+        }
 
         public void OnLoaded()
         {
@@ -82,16 +100,16 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
             _logger.OnPlayerSpawn();
 
-            _player = await _playerFactory.Create(spawnPosition, ShipType.Boat);
-            
-            _levelCamera.Teleport(_player.Transform.position);
-            _levelCamera.StartFollow(_player.Transform);
+            var player = await _playerFactory.Create(spawnPosition, ShipType.Boat);
+
+            _levelCamera.Teleport(player.Transform.position);
+            _levelCamera.StartFollow(player.Transform);
 
             await _transitionScreen.FadeOut();
 
             _travelOverlay.Open();
 
-            _player.Respawn();
+            player.Respawn();
         }
 
         public void Respawn(ShipType ship)
@@ -99,20 +117,25 @@ namespace GamePlay.Services.LevelLoops.Runtime
             ProcessRespawn(ship).Forget();
         }
 
+        private void OnPlayerDeath(PlayerDeathEvent data)
+        {
+            ProcessRespawn(ShipType.Boat).Forget();
+        }
+
         private async UniTaskVoid ProcessRespawn(ShipType ship)
         {
             _entityPresenter.DestroyPlayer();
-            
+
             _logger.OnPlayerSpawn();
 
-            _player = await _playerFactory.Create(_playerPositionProvider.Position, ship);
-            
-            _levelCamera.Teleport(_player.Transform.position);
-            _levelCamera.StartFollow(_player.Transform);
+            var player = await _playerFactory.Create(_playerPositionProvider.Position, ship);
+
+            _levelCamera.Teleport(player.Transform.position);
+            _levelCamera.StartFollow(player.Transform);
 
             await _transitionScreen.FadeOut();
 
-            _player.Respawn();
+            player.Respawn();
         }
     }
 }

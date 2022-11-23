@@ -1,0 +1,4 @@
+{
+	"name": "GamePlay.Items.Editor",
+	"references":[ "GUID:d945054fb520ae0408f2ec087ffa5163", "GUID:364bfbd2908041158cb87effef797737" ]
+}

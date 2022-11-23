@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Root;
@@ -8,9 +9,9 @@ using GamePlay.Services.PlayerSpawn.Factory.Logs;
 using Global.Services.AssetsFlow.Runtime.Abstract;
 using Global.Services.Network.Instantiators.Runtime;
 using Global.Services.Profiles.Storage;
+using Ragon.Client;
 using UniRx;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using VContainer;
 
 namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
@@ -22,47 +23,52 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             IAssetInstantiatorFactory instantiatorFactory,
             INetworkInstantiator networkInstantiator,
             LevelScope scope,
-            IPlayerTransformPresenter transformPresenter,
+            IPlayerEntityPresenter entityPresenter,
             IProfileStorageProvider profileStorageProvider,
+            PlayerFactoryConfig config,
             PlayerFactoryLogger logger)
         {
-            _transformPresenter = transformPresenter;
+            _instantiatorFactory = instantiatorFactory;
+            _entityPresenter = entityPresenter;
             _profileStorageProvider = profileStorageProvider;
             _networkInstantiator = networkInstantiator;
             _logger = logger;
-            _instantiator = instantiatorFactory.Create<GameObject>(_prefab);
             _scope = scope;
+            _config = config;
         }
 
-        [SerializeField] private AssetReference _prefab;
-        [SerializeField] private GameObject _networkPrefab;
+        private PlayerFactoryConfig _config;
 
-        private IAssetInstantiator<GameObject> _instantiator;
+        private LevelScope _scope;
         private PlayerFactoryLogger _logger;
+        
         private INetworkInstantiator _networkInstantiator;
         private IProfileStorageProvider _profileStorageProvider;
-        private LevelScope _scope;
-        private IPlayerTransformPresenter _transformPresenter;
+        private IPlayerEntityPresenter _entityPresenter;
+        private IAssetInstantiatorFactory _instantiatorFactory;
 
-        public async UniTask<IPlayerRoot> Create(Vector2 position)
+        public async UniTask<IPlayerRoot> Create(Vector2 position, ShipType type)
         {
             var payload = new PlayerPayload(_profileStorageProvider.UserName);
 
             var networkObject = await _networkInstantiator.Instantiate<PlayerNetworkRoot, PlayerPayload>(
-                _networkPrefab,
+                _config.NetworkPrefab,
                 position,
                 payload);
+            
+            var instantiator = _instantiatorFactory.Create<GameObject>(_config.GetShip(type));
 
-            var playerObject = await _instantiator.InstantiateAsync(Vector2.zero);
+            var playerObject = await instantiator.InstantiateAsync(Vector2.zero);
             playerObject.name = "Player";
 
             var playerTransform = playerObject.transform;
             var networkTransform = networkObject.transform;
+            var entity = networkTransform.GetComponent<RagonEntity>();
 
             playerTransform.parent = networkTransform;
             playerTransform.localPosition = Vector3.zero;
 
-            _transformPresenter.AssignPlayer(networkTransform);
+            _entityPresenter.AssignPlayer(entity, networkTransform);
 
             _logger.OnInstantiated(position);
 

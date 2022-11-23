@@ -25,7 +25,8 @@ namespace GamePlay.Services.LevelLoops.Runtime
             serviceBinder.Register<LevelLoopLogger>()
                 .WithParameter(_logSettings);
 
-            serviceBinder.RegisterComponent(levelLoop);
+            serviceBinder.RegisterComponent(levelLoop)
+                .As<ILevelLoop>();
 
             serviceBinder.AddToModules(levelLoop);
             callbacksRegister.ListenLoopCallbacks(levelLoop);
@@ -33,7 +34,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
         public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
         {
-            resolver.Resolve<LevelLoop>();
+            resolver.Resolve<ILevelLoop>();
         }
     }
 }

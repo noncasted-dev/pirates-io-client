@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin;
@@ -37,8 +38,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         [SerializeField] private TMP_Text _nickName;
 
-        [SerializeField] private AvailableItemsList _cargoView;
-        [SerializeField] private AvailableItemsList _stockView;
+        [SerializeField] private StoredItemsList _storedView;
+        [SerializeField] private StoredItemsList _stockView;
+        [SerializeField] private StoredShipsList _stockShips;
 
         [SerializeField] private TradeItemsList _cargoTrade;
         [SerializeField] private TradeItemsList _stockTrade;
@@ -109,8 +111,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _body.SetActive(true);
             _stateMachine.EnterAsSingle(this);
 
-            _cargoView.Fill(data.Cargo, data.PriceProvider);
+            _storedView.Fill(data.Cargo, data.PriceProvider);
             _stockView.Fill(data.Stock, data.PriceProvider);
+            _stockShips.Fill(data.Ships);
 
             _cargoTrade.Setup(data.PriceProvider);
             _stockTrade.Setup(data.PriceProvider);
@@ -132,23 +135,28 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _tradeBody.SetActive(true);
         }
 
-        private void OnTradeCompleted()
+        private void OnTradeCompleted(TradeResult result)
         {
             _tradeBody.SetActive(false);
 
-            var completed = new TradeCompletedEvent(Redraw);
+            var completed = new TradeCompletedEvent(Redraw, result);
 
             MessageBroker.Default.Publish(completed);
         }
 
-        private void Redraw(IItem[] stock, IItem[] cargo, IPriceProvider priceProvider)
+        private void Redraw(
+            IReadOnlyList<IItem> stock,
+            IReadOnlyList<IItem> cargo,
+            IReadOnlyList<IItem> ships,
+            IPriceProvider priceProvider)
         {
             _shipView.ResetStats();
 
             _tradeBody.SetActive(false);
 
-            _cargoView.Fill(cargo, priceProvider);
+            _storedView.Fill(cargo, priceProvider);
             _stockView.Fill(stock, priceProvider);
+            _stockShips.Fill(ships);
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
@@ -10,18 +9,18 @@ using UnityEngine.UI;
 
 namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 {
-    public class AvailableItemsList : MonoBehaviour
+    public class StoredShipsList : MonoBehaviour
     {
-        [SerializeField] private AvailableItemView[] _startupCells;
-        [SerializeField] private AvailableItemView _cellPrefab;
+        [SerializeField] private StoredShipView[] _startupCells;
+        [SerializeField] private StoredShipView _cellPrefab;
         [SerializeField] private Transform _cellsRoot;
         [SerializeField] private VerticalLayoutGroup _layout;
         [SerializeField] private RectTransform _contentRect;
         [SerializeField] private ItemOrigin _origin;
-        [SerializeField] private float _cellHeight = 60f;
-
-        private readonly Dictionary<ItemType, AvailableItemView> _cells = new();
-        private readonly List<AvailableItemView> _available = new();
+        [SerializeField] private int _cellHeight;
+        
+        private readonly Dictionary<ItemType, StoredShipView> _cells = new();
+        private readonly List<StoredShipView> _available = new();
 
         private IDisposable _removeListener;
         private IDisposable _tradeAddListener;
@@ -52,7 +51,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             _cells.Clear();
         }
 
-        public void Fill(IItem[] items, IPriceProvider priceProvider)
+        public void Fill(IReadOnlyList<IItem> items)
         {
             foreach (var cell in _cells)
                 _available.Add(cell.Value);
@@ -62,43 +61,36 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
             _cells.Clear();
 
-            AddCellsOnDemand(items.Length);
+            AddCellsOnDemand(items.Count);
 
             foreach (var item in items)
             {
                 var cell = _available[0];
                 _available.RemoveAt(0);
 
-                cell.AssignItem(item, _origin, priceProvider);
+                cell.AssignItem(item, _origin);
                 _cells.Add(item.BaseData.Type, cell);
             }
 
-            CalculateVerticalSize(items.Length);
+            CalculateVerticalSize(items.Count);
         }
-
-        private void Update()
-        {
-            foreach (var cell in _cells)
-                cell.Value.UpdatePrice();
-        }
-
-        private void OnTransferCanceled(TransferCanceledEvent data)
-        {
-            if (data.Origin != _origin)
-                return;
-
-            var cell = _cells[data.Type];
-
-            cell.OnTransferCanceled();
-        }
-
+        
         private void OnTradeAdd(TradeAddedEvent data)
         {
             if (data.Origin != _origin)
                 return;
 
-            var cell = _cells[data.Type];
-            cell.OnTransferedItemCountChange(data.Count);
+            foreach (var cell in _cells)
+                cell.Value.Deactivate();
+        }
+        
+        private void OnTransferCanceled(TransferCanceledEvent data)
+        {
+            if (data.Origin != _origin)
+                return;
+
+            foreach (var cell in _cells)
+                cell.Value.Enable();
         }
 
         private void AddCellsOnDemand(int total)

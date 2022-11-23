@@ -26,6 +26,8 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             _transform = transform;
         }
 
+        private const int _disableDelay = 3000;
+
         [SerializeField] [ReadOnly] private ShootParams _shootParams;
         [SerializeField] [ReadOnly] private bool _isLocal;
 
@@ -119,7 +121,7 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             _collider.enabled = false;
             
             var cancellation = this.GetCancellationTokenOnDestroy();
-            await UniTask.Delay(3000, false, PlayerLoopTiming.Update, cancellation);
+            await UniTask.Delay(_disableDelay, false, PlayerLoopTiming.Update, cancellation);
             
             _returnCallback?.Invoke(this);
         }
@@ -131,7 +133,7 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             _collider.enabled = false;
 
             var cancellation = this.GetCancellationTokenOnDestroy();
-            await UniTask.Delay(3000, false, PlayerLoopTiming.Update, cancellation);
+            await UniTask.Delay(_disableDelay, false, PlayerLoopTiming.Update, cancellation);
             
             _returnCallback?.Invoke(this);
         }
@@ -144,7 +146,7 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             _collider.enabled = false;
 
             var cancellation = this.GetCancellationTokenOnDestroy();
-            await UniTask.Delay(3000, false, PlayerLoopTiming.Update, cancellation);
+            await UniTask.Delay(_disableDelay, false, PlayerLoopTiming.Update, cancellation);
             
             _returnCallback?.Invoke(this);
         }

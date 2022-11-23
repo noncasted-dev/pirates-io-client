@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 {
-    public class AvailableItemView : MonoBehaviour
+    public class StoredItemView : MonoBehaviour
     {
         [SerializeField] private Image _icon;
         [SerializeField] private TMP_Text _count;
@@ -50,7 +50,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             _origin = origin;
             _item = item;
             _isActive = false;
-
+            
             gameObject.SetActive(true);
             _transferButton.gameObject.SetActive(true);
 

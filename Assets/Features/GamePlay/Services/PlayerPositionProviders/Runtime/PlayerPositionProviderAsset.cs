@@ -21,7 +21,7 @@ namespace GamePlay.Services.PlayerPositionProviders.Runtime
             provider.name = "PlayerPositionProvider";
 
             serviceBinder.RegisterComponent(provider)
-                .As<IPlayerTransformPresenter>()
+                .As<IPlayerEntityPresenter>()
                 .As<IPlayerPositionProvider>();
 
             serviceBinder.AddToModules(provider);

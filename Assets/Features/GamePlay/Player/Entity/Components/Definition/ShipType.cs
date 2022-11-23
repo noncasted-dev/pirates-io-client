@@ -6,6 +6,8 @@
         Ketch,
         Boat,
         Frigate,
+        Large,
+        Brig,
         Tanker,
         Tartan,
         Snow,

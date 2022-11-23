@@ -22,15 +22,19 @@ namespace GamePlay.Player.Entity.Setup.Root
             _rotationPoint = rotationPoint;
         }
 
+        private bool _wasDisabled;
+        
         private INone _none;
 
         private IRespawn _respawn;
         private IRotationPoint _rotationPoint;
+        private IFlowHandler _flowHandler;
 
         public Transform Transform => _rotationPoint.Transform;
 
         public async UniTask OnBootstrapped(IFlowHandler flowHandler, LifetimeScope parent)
         {
+            _flowHandler = flowHandler;
             flowHandler.InvokeAwake();
             await flowHandler.InvokeAsyncAwake();
             flowHandler.InvokeEnable();
@@ -42,6 +46,25 @@ namespace GamePlay.Player.Entity.Setup.Root
         public void Respawn()
         {
             _respawn.Enter();
+        }
+
+        private void OnEnable()
+        {
+            if (_wasDisabled == false)
+                return;
+            
+            _flowHandler.InvokeEnable();
+        }
+
+        private void OnDisable()
+        {
+            _wasDisabled = true;
+            _flowHandler.InvokeDisable();
+        }
+
+        private void OnDestroy()
+        {
+            _flowHandler.InvokeDestroy();
         }
     }
 }

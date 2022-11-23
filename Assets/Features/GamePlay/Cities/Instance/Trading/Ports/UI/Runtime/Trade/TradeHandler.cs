@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
+using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
+using GamePlay.Items.Implementation;
+using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.Reputation.Runtime;
 using GamePlay.Services.Wallets.Runtime;
@@ -46,6 +49,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         private int _playerMoney;
         private int _playerTotalMoney;
 
+        private ShipItem _ship;
+
         private IDisposable _playerListener;
         private IDisposable _stockListener;
 
@@ -57,7 +62,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
         public bool IsActive => gameObject.activeSelf;
 
-        public event Action Completed;
+        public event Action<TradeResult> Completed;
 
         public event Action<int> WeightUpdated;
         public event Action<int> CannonsUpdated;
@@ -78,6 +83,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
             _playerMoneyView.SetAmount(0);
             _cityMoneyView.SetAmount(0);
+
+            _ship = null;
         }
 
         private void OnDisable()
@@ -112,6 +119,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
                     _stock[data.Type].SetData(data.Count, data.TotalPrice);
                     break;
+                case ItemOrigin.Ships:
+                    _ship = data.Item as ShipItem;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -129,6 +139,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
                 case ItemOrigin.Stock:
                     _stock.Remove(data.Type);
                     break;
+                case ItemOrigin.Ships:
+                    _ship = null;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -142,6 +155,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         private void ApplyChanges()
         {
             var stock = CalculateCost(_stock);
+
+            if (_ship != null)
+                stock += _ship.Price;
+
             var player = CalculateCost(_player);
 
             var delta = player - stock;
@@ -291,7 +308,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             _playerMoneyView.SetAmount(0);
             _cityMoneyView.SetAmount(0);
 
-            Completed?.Invoke();
+            var result = new TradeResult(_ship);
+
+            Completed?.Invoke(result);
         }
     }
 }

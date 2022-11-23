@@ -2,9 +2,11 @@
 using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Factions.Selections.Loops.Runtime;
+using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Player.Entity.Setup.Root;
 using GamePlay.Services.LevelCameras.Runtime;
 using GamePlay.Services.LevelLoops.Logs;
+using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using GamePlay.Services.TransitionScreens.Runtime;
 using GamePlay.Services.TravelOverlays.Runtime;
@@ -16,7 +18,7 @@ using VContainer;
 namespace GamePlay.Services.LevelLoops.Runtime
 {
     [DisallowMultipleComponent]
-    public class LevelLoop : MonoBehaviour, ILocalLoadListener
+    public class LevelLoop : MonoBehaviour, ILocalLoadListener, ILevelLoop
     {
         [Inject]
         private void Construct(
@@ -28,8 +30,12 @@ namespace GamePlay.Services.LevelLoops.Runtime
             IFactionSelectionLoop factionSelection,
             ICitiesRegistry citiesRegistry,
             ITravelOverlay travelOverlay,
+            IPlayerPositionProvider playerPositionProvider,
+            IPlayerEntityPresenter entityPresenter,
             LevelLoopLogger logger)
         {
+            _entityPresenter = entityPresenter;
+            _playerPositionProvider = playerPositionProvider;
             _travelOverlay = travelOverlay;
             _citiesRegistry = citiesRegistry;
             _factionSelection = factionSelection;
@@ -40,7 +46,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
             _currentCamera = currentCamera;
             _levelCamera = levelCamera;
         }
-
+        
         private ICitiesRegistry _citiesRegistry;
 
         private ICurrentCamera _currentCamera;
@@ -52,6 +58,8 @@ namespace GamePlay.Services.LevelLoops.Runtime
         private ISceneObjectsHandler _sceneObjects;
         private ITransitionScreen _transitionScreen;
         private ITravelOverlay _travelOverlay;
+        private IPlayerPositionProvider _playerPositionProvider;
+        private IPlayerEntityPresenter _entityPresenter;
 
         public void OnLoaded()
         {
@@ -74,7 +82,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
             _logger.OnPlayerSpawn();
 
-            _player = await _playerFactory.Create(spawnPosition);
+            _player = await _playerFactory.Create(spawnPosition, ShipType.Frigate);
             
             _levelCamera.Teleport(_player.Transform.position);
             _levelCamera.StartFollow(_player.Transform);
@@ -82,6 +90,27 @@ namespace GamePlay.Services.LevelLoops.Runtime
             await _transitionScreen.FadeOut();
 
             _travelOverlay.Open();
+
+            _player.Respawn();
+        }
+
+        public void Respawn(ShipType ship)
+        {
+            ProcessRespawn(ship).Forget();
+        }
+
+        private async UniTaskVoid ProcessRespawn(ShipType ship)
+        {
+            _entityPresenter.DestroyPlayer();
+            
+            _logger.OnPlayerSpawn();
+
+            _player = await _playerFactory.Create(_playerPositionProvider.Position, ShipType.Frigate);
+            
+            _levelCamera.Teleport(_player.Transform.position);
+            _levelCamera.StartFollow(_player.Transform);
+
+            await _transitionScreen.FadeOut();
 
             _player.Respawn();
         }

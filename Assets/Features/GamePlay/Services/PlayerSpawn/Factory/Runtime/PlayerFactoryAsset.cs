@@ -13,6 +13,7 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
     public class PlayerFactoryAsset : LocalServiceAsset
     {
         [SerializeField] [EditableObject] private PlayerFactoryLogSettings _logSettings;
+        [SerializeField] [EditableObject] private PlayerFactoryConfig _config;
         [SerializeField] private PlayerFactory _prefab;
 
         public override async UniTask Create(
@@ -27,6 +28,7 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
                 .WithParameter(_logSettings);
 
             serviceBinder.RegisterComponent(factory)
+                .WithParameter(_config)
                 .As<IPlayerFactory>();
 
             callbacksRegister.ListenContainerCallbacks(factory);

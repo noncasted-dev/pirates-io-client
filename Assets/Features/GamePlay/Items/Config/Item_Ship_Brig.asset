@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20557cce3dd3484795305bab5584c176, type: 3}
+  m_Name: Item_Ship_Brig
+  m_EditorClassIdentifier: 
+  _weight: 1
+  _name: Brig
+  _isInfinite: 0
+  _icon: {fileID: 21300000, guid: 60c047b05b2a4414684e3767fe4a67a2, type: 3}
+  _maxTeam: 20
+  _maxWeight: 20
+  _maxCannons: 20
+  _maxHealth: 20
+  _price: 20
+  _maxSpeed: 20
+  _type: 9
+  _prefab:
+    m_AssetGUID: 4aa2dce30cfdde641a3ca89e71aef353
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

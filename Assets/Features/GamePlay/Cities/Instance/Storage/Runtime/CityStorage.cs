@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Items.Abstract;
+using GamePlay.Player.Entity.Components.Definition;
 using Global.Services.ItemFactories.Runtime;
 using UnityEngine;
 using VContainer;
@@ -18,6 +20,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
         private const float _waitTime = 0.5f;
 
+        [SerializeField] private List<TradableShipConfig> _shipConfigs;
         [SerializeField] private TradableItemDictionary _producables;
         [SerializeField] private ItemPriceCurvesConfigAsset _curves;
         
@@ -25,12 +28,14 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
         private readonly ItemsVault _vault = new();
         private readonly HashSet<ItemType> _freezed = new();
+        private readonly Dictionary<ItemType, IItem> _ships = new();
 
         private readonly WaitForSeconds _wait = new(_waitTime);
 
         private IItemFactory _itemFactory;
 
         public IReadOnlyDictionary<ItemType, IItem> Items => _vault.Items;
+        public IReadOnlyDictionary<ItemType, IItem> Ships => _ships;
 
         protected override void OnAwake()
         {
@@ -57,6 +62,15 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                         continue;
 
                     ProcessItem(key, data, progress);
+                }
+
+                foreach (var ship in _shipConfigs)
+                {
+                    if (_ships.ContainsKey(ship.Type) == true)
+                        continue;
+                    
+                    _ships.Add(ship.Type, ship.Create(2));
+                    Debug.Log("Produce ship");
                 }
 
                 progress += _waitTime;

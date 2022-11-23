@@ -8,7 +8,7 @@ namespace GamePlay.Items.Implementation
         menuName = GamePlayAssetsPaths.Items + "Money")]
     public class MoneyAsset : ItemAsset
     {
-        protected override ItemType Type => ItemType.Money;
+        public override ItemType Type => ItemType.Money;
 
         protected override IItem BuildItem(BaseItemData data, int count)
         {

@@ -1,27 +1,36 @@
-﻿using UnityEngine;
+﻿using Ragon.Client;
+using UnityEngine;
 
 namespace GamePlay.Services.PlayerPositionProviders.Runtime
 {
-    public class PlayerPositionProvider : MonoBehaviour, IPlayerTransformPresenter, IPlayerPositionProvider
+    public class PlayerPositionProvider : MonoBehaviour, IPlayerEntityPresenter, IPlayerPositionProvider
     {
-        private Transform _player;
+        private RagonEntity _entity;
+        private Transform _transform;
 
         public Vector2 Position => GetPosition();
 
-        public void AssignPlayer(Transform player)
+        
+        public void AssignPlayer(RagonEntity entity, Transform playerTransform)
         {
-            _player = player;
+            _entity = entity;
+            _transform = playerTransform;
+        }
+
+        public void DestroyPlayer()
+        {
+            RagonNetwork.Room.DestroyEntity(_entity.gameObject);
         }
 
         private Vector2 GetPosition()
         {
-            if (_player == null)
+            if (_transform == null)
             {
-                Debug.LogError("No player assigned");
+                Debug.Log("No player assigned");
                 return Vector2.zero;
             }
 
-            return _player.position;
+            return _transform.position;
         }
     }
 }

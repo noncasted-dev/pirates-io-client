@@ -22,15 +22,19 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Root
             _cannonTransform = cannonTransform;
         }
 
+        private bool _wasDisabled;
+        
         private ICannonTransform _cannonTransform;
 
         private IShooter _shooter;
         private ICannonSprite _sprite;
+        private IFlowHandler _flowHandler;
 
         public string Name => gameObject.name;
 
         public async UniTask OnBootstrapped(IFlowHandler flowHandler, LifetimeScope parent)
         {
+            _flowHandler = flowHandler;
             flowHandler.InvokeAwake();
             await flowHandler.InvokeAsyncAwake();
             flowHandler.InvokeEnable();
@@ -60,6 +64,25 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Root
         public void Shoot(float angle, float spread)
         {
             _shooter.Shoot(angle, spread);
+        }
+        
+        private void OnEnable()
+        {
+            if (_wasDisabled == false)
+                return;
+            
+            _flowHandler.InvokeEnable();
+        }
+
+        private void OnDisable()
+        {
+            _wasDisabled = true;
+            _flowHandler.InvokeDisable();
+        }
+
+        private void OnDestroy()
+        {
+            _flowHandler.InvokeDestroy();
         }
     }
 }

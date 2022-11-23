@@ -88,7 +88,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e9e8a3eec1ad307438f5aad1442f27eb, type: 3}
   - {fileID: 21300000, guid: 49b4445f110f84a4ebfaebddaca74e00, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Ship_0_outline
+  - Ship_0_Outline
   - Ship_6_outline
   - Ship_5_outline
   - AimLine

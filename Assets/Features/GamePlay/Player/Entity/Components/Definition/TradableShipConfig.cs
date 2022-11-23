@@ -18,10 +18,12 @@ namespace GamePlay.Player.Entity.Components.Definition
 
         [SerializeField] private ItemType _type;
 
-        [SerializeField] private AssetReference _prefab;
+        [SerializeField] private AssetReference _local;
+        [SerializeField] private AssetReference _remote;
         
         public override ItemType Type => _type;
-        public AssetReference Prefab => _prefab;
+        public AssetReference Local => _local;
+        public AssetReference Remote => _remote;
 
         protected override IItem BuildItem(BaseItemData data, int count)
         {

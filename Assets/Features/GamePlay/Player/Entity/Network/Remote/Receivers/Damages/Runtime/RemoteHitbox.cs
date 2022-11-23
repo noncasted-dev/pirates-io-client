@@ -27,6 +27,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
         [SerializeField] private DamageConfigAsset _config;
 
         [SerializeField] private PlayerSpriteView _sprite;
+        
         private IPlayerEventSender _eventSender;
         private IObjectProvider<AnimatedVfx> _explosion;
 

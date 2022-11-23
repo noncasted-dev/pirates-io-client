@@ -18,3 +18,4 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _prefab: {fileID: 5295712814241210341, guid: 00c50ceaf10536f4f9f24d85ebbdfa05, type: 3}
+  _config: {fileID: 11400000, guid: d7968b0a1cfb6e4499bc8b281b8e50b8, type: 2}

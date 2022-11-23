@@ -64,6 +64,7 @@ SpriteAtlas:
   - {fileID: -722591245, guid: 868bb88bc1ecc4841a6ab62e2cef5766, type: 3}
   - {fileID: -836115103, guid: 868bb88bc1ecc4841a6ab62e2cef5766, type: 3}
   - {fileID: 21300000, guid: 2634cb5c4fb1f0b4abcfab6d1d9967ff, type: 3}
+  - {fileID: 21300000, guid: 3945056e468220741b4d54ab1c74f182, type: 3}
   - {fileID: -1857222164, guid: 899cb10f0fc6b4a40a85f46438789bbe, type: 3}
   - {fileID: -1664500146, guid: 899cb10f0fc6b4a40a85f46438789bbe, type: 3}
   - {fileID: 1900492213, guid: 899cb10f0fc6b4a40a85f46438789bbe, type: 3}
@@ -99,6 +100,7 @@ SpriteAtlas:
   - Core_1
   - Core_0
   - Glow
+  - reward_glow2
   - WaterSplash_AtlassA_0
   - WaterSplash_AtlassA_1
   - WaterSplash_AtlassA_2

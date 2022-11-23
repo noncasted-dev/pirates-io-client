@@ -14,15 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _networkPrefab: {fileID: 770058313661532305, guid: 63238bad100a125489ae6b480d75b97f, type: 3}
   _ships:
-    _keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    _keys: 000000000100000002000000030000000400000005000000060000000700000008000000
     _values:
-    - {fileID: 11400000, guid: 68a8bd6fbf45be0409fbc1a65c98c80e, type: 2}
-    - {fileID: 11400000, guid: e2d879e5bf9fc084caa462f6e6183781, type: 2}
     - {fileID: 11400000, guid: beb44efa185f15642a1bc49e6579bce6, type: 2}
-    - {fileID: 11400000, guid: a1ec91721290a5b40b0b38ba2fc01cc7, type: 2}
-    - {fileID: 11400000, guid: 7f4ada204e3e5be478c3411c120b5b81, type: 2}
-    - {fileID: 11400000, guid: 284fcdfd81f081c4db0270d32f6fa768, type: 2}
-    - {fileID: 11400000, guid: 9fb27f1f227c5d24aa05b64fb657fb9d, type: 2}
-    - {fileID: 11400000, guid: d0a6b60b11897a74287ef5a46176c82c, type: 2}
-    - {fileID: 11400000, guid: 79d068148183ef64482a6bf20260bdb8, type: 2}
     - {fileID: 11400000, guid: e2d879e5bf9fc084caa462f6e6183781, type: 2}
+    - {fileID: 11400000, guid: 7f4ada204e3e5be478c3411c120b5b81, type: 2}
+    - {fileID: 11400000, guid: 79d068148183ef64482a6bf20260bdb8, type: 2}
+    - {fileID: 11400000, guid: 284fcdfd81f081c4db0270d32f6fa768, type: 2}
+    - {fileID: 11400000, guid: d0a6b60b11897a74287ef5a46176c82c, type: 2}
+    - {fileID: 11400000, guid: 68a8bd6fbf45be0409fbc1a65c98c80e, type: 2}
+    - {fileID: 11400000, guid: a1ec91721290a5b40b0b38ba2fc01cc7, type: 2}
+    - {fileID: 11400000, guid: 9fb27f1f227c5d24aa05b64fb657fb9d, type: 2}

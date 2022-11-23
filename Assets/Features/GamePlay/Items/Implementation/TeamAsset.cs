@@ -8,7 +8,7 @@ namespace GamePlay.Items.Implementation
         menuName = GamePlayAssetsPaths.Items + "Team")]
     public class TeamAsset : ItemAsset
     {
-        protected override ItemType Type => ItemType.Team;
+        public override ItemType Type => ItemType.Team;
 
         protected override IItem BuildItem(BaseItemData data, int count)
         {

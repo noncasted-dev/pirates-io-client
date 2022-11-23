@@ -31,6 +31,7 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
 
         [SerializeField] [EditableObject] private SpriteViewLogSettings _logSettings;
         [SerializeField] private List<SpriteRenderer> _subSprites;
+        [SerializeField] private GameObject _scaleFlipped;
 
         private SpriteViewLogger _logger;
 
@@ -71,11 +72,15 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
 
             foreach (var subSprite in _subSprites)
                 subSprite.flipX = false;
+            if (_scaleFlipped)
+                _scaleFlipped.transform.localScale = Vector3.one;
         }
 
         public void SetFlipX(bool isFlipped, bool flipSubSprites)
         {
             _sprite.flipX = isFlipped;
+            if (_scaleFlipped)
+                _scaleFlipped.transform.localScale = isFlipped ? new Vector3(-1,1,1) : new Vector3(1,1,1) ;
 
             if (flipSubSprites == true)
                 foreach (var subSprite in _subSprites)
@@ -92,6 +97,8 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
                 < 0f => true,
                 _ => _sprite.flipX
             };
+            if (_scaleFlipped)
+                _scaleFlipped.transform.localScale = _sprite.flipX ? new Vector3(-1,1,1) : new Vector3(1,1,1) ;
 
             if (flipSubSprites == true)
                 foreach (var subSprite in _subSprites)

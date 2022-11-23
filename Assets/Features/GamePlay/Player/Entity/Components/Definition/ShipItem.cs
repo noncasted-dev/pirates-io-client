@@ -28,17 +28,16 @@ namespace GamePlay.Player.Entity.Components.Definition
 
             Type = data.Type switch
             {
-                ItemType.Ship_Tutorial => ShipType.Tutorial,
-                ItemType.Ship_Ketch => ShipType.Ketch,
                 ItemType.Ship_Boat => ShipType.Boat,
-                ItemType.Ship_Frigate => ShipType.Frigate,
-                ItemType.Ship_Large => ShipType.Large,
-                ItemType.Ship_Brig => ShipType.Brig,
-                ItemType.Ship_Tanker => ShipType.Tanker,
-                ItemType.Ship_Tartan => ShipType.Tartan,
-                ItemType.Ship_Snow => ShipType.Snow,
+                ItemType.Ship_Ketch => ShipType.Ketch,
                 ItemType.Ship_Pink => ShipType.Pink,
-                _ => Type
+                ItemType.Ship_Snow => ShipType.Snow,
+                ItemType.Ship_Brig => ShipType.Brig,
+                ItemType.Ship_Tartan => ShipType.Tartan,
+                ItemType.Ship_Polacre => ShipType.Polacre,
+                ItemType.Ship_Frigate => ShipType.Frigate,
+                ItemType.Ship_FirstRate => ShipType.FirstRate,
+                _ => throw new ArgumentOutOfRangeException()
             };
         }
 

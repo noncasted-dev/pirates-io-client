@@ -20,6 +20,7 @@ using Global.Services.PersistentInventories.Runtime;
 using Global.Services.Profiles.Storage;
 using Global.Services.ResourcesCleaners.Runtime;
 using Global.Services.ScenesFlow.Runtime;
+using Global.Services.Sounds.Runtime;
 using Global.Services.UiStateMachines.Runtime;
 using Global.Services.Updaters.Runtime;
 using UnityEngine;
@@ -50,6 +51,7 @@ namespace Global.Services.Common.Config.Standard
         [SerializeField] [EditableObject] private PersistentInventoryAsset _persistentInventory;
         [SerializeField] [EditableObject] private ItemFactoryAsset _itemFactory;
         [SerializeField] [EditableObject] private UiStateMachineAsset _uiStateMachine;
+        [SerializeField] [EditableObject] private SoundsPlayerAsset _soundsPlayer;
 
         public override GlobalServiceAsset[] GetAssets()
         {
@@ -74,7 +76,8 @@ namespace Global.Services.Common.Config.Standard
                 _profile,
                 _persistentInventory,
                 _itemFactory,
-                _uiStateMachine
+                _uiStateMachine,
+                _soundsPlayer,
             };
         }
     }

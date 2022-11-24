@@ -18,6 +18,30 @@
         <option value="$PROJECT_DIR$/Assets/Plugins" />
         <option value="$PROJECT_DIR$/Assets/Scenes" />
         <option value="$PROJECT_DIR$/Assets/Settings" />
+        <option value="$PROJECT_DIR$/.git" />
+        <option value="$PROJECT_DIR$/.idea" />
+        <option value="$PROJECT_DIR$/Library" />
+        <option value="$PROJECT_DIR$/Logs" />
+        <option value="$PROJECT_DIR$/obj" />
+        <option value="$PROJECT_DIR$/Packages" />
+        <option value="$PROJECT_DIR$/ProjectSettings" />
+        <option value="$PROJECT_DIR$/Temp" />
+        <option value="$PROJECT_DIR$/UserSettings" />
+        <option value="$PROJECT_DIR$/.git" />
+        <option value="$PROJECT_DIR$/.idea" />
+        <option value="$PROJECT_DIR$/Library" />
+        <option value="$PROJECT_DIR$/Logs" />
+        <option value="$PROJECT_DIR$/obj" />
+        <option value="$PROJECT_DIR$/Packages" />
+        <option value="$PROJECT_DIR$/ProjectSettings" />
+        <option value="$PROJECT_DIR$/Temp" />
+        <option value="$PROJECT_DIR$/UserSettings" />
+        <option value="$PROJECT_DIR$/Assets/AddressableAssetsData" />
+        <option value="$PROJECT_DIR$/Assets/AmplifyShaderEditor" />
+        <option value="$PROJECT_DIR$/Assets/Plugins" />
+        <option value="$PROJECT_DIR$/Assets/Resources" />
+        <option value="$PROJECT_DIR$/Assets/Scenes" />
+        <option value="$PROJECT_DIR$/Assets/Settings" />
       </list>
     </option>
   </component>

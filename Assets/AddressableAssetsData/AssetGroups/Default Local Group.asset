@@ -113,10 +113,6 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Services/PlayerCargos/Config/UI_PlayerCargo_Travel.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 1d6a86b4dca3ef34399e4a1b1836ecfe
-    m_Address: Assets/Features/GamePlay/Services/PlayerCargos/Config/UI_PlayerCargo_City.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 45d5f656b109680429a1ef696a9f527f
     m_Address: Assets/Features/GamePlay/Level/Scenes/Level_Test.unity
     m_ReadOnly: 0

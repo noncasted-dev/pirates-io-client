@@ -1,7 +1,6 @@
 ﻿using System;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.DroppedObjects.Presenter.Runtime;
-using GamePlay.Services.PlayerCargos.UI.City;
 using GamePlay.Services.PlayerCargos.UI.Travel;
 using Global.Services.InputViews.Runtime;
 using Local.Services.Abstract.Callbacks;
@@ -17,17 +16,13 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         [Inject]
         private void Construct(
             IPlayerTravelCargoUI travelUI,
-            IPlayerCityCargoUI cityUI,
             IInputView inputView,
             IDroppedObjectsPresenter droppedObjectsPresenter)
         {
             _droppedObjectsPresenter = droppedObjectsPresenter;
             _inputView = inputView;
-            _cityUI = cityUI;
             _travelUI = travelUI;
         }
-
-        private IPlayerCityCargoUI _cityUI;
 
         private Action<IItem[]> _currentDrawTarget;
         private IDroppedObjectsPresenter _droppedObjectsPresenter;
@@ -55,23 +50,15 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             _storage.Changed -= OnStorageChanged;
         }
 
-        public void OpenCityUI()
-        {
-            _currentDrawTarget = _travelUI.Open(_storage.ToArray());
-        }
-
         public void OpenTravelUI()
         {
-            _currentDrawTarget = _cityUI.Open(_storage.ToArray());
+            _currentDrawTarget = _travelUI.Open(_storage.ToArray());
         }
 
         public void CloseUI()
         {
             if (_travelUI.IsActive == true)
                 _travelUI.Close();
-
-            if (_cityUI.IsActive == true)
-                _cityUI.Close();
 
             _currentDrawTarget = null;
         }

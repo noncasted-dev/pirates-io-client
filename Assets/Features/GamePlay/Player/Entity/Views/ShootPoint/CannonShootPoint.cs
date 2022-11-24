@@ -27,16 +27,11 @@ namespace GamePlay.Player.Entity.Views.ShootPoint
                 _shootAreaMask);
 
             if (hit == 0)
-            {
-                Debug.Log("No hit");
                 return transform.position;
-            }
 
             var point = _buffer[0].point;
             point += direction * _offset;
             
-            Debug.Log($"Distance: {Vector2.Distance(transform.position, point)}");
-
             return point;
         }
     }

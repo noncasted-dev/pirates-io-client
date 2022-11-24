@@ -2,7 +2,6 @@
 {
     public interface IPlayerCargo
     {
-        void OpenCityUI();
         void OpenTravelUI();
         void CloseUI();
     }

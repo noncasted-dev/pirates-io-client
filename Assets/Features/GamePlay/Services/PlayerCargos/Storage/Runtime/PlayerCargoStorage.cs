@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Features.GamePlay.Services.PlayerCargos.Storage.Events;
 using GamePlay.Items.Abstract;
+using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Services.PlayerCargos.Storage.Runtime
@@ -11,8 +13,6 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
         public IReadOnlyDictionary<ItemType, IItem> Items => _items;
 
-        public event Action Changed;
-
         public void Add(IItem item)
         {
             var type = item.BaseData.Type;
@@ -20,12 +20,12 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             if (_items.ContainsKey(type) == true)
             {
                 _items[type].Add(item.Count);
-                Changed?.Invoke();
+                OnChanged();
                 return;
             }
 
             _items[type] = item;
-            Changed?.Invoke();
+            OnChanged();
         }
 
         public void Reduce(ItemType type, int amount)
@@ -37,7 +37,6 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             }
 
             _items[type].Reduce(amount);
-            Changed?.Invoke();
 
             if (_items[type].Count == 0)
                 Delete(type);
@@ -52,7 +51,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             }
 
             _items.Remove(type);
-            Changed?.Invoke();
+            OnChanged();
         }
 
         public IItem[] ToArray()
@@ -78,6 +77,12 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
                 weight += item.Count;
 
             return weight;
+        }
+
+        private void OnChanged()
+        {
+            var data = new CargoChangedEvent(Items, GetWeight());
+            MessageBroker.Default.Publish(data);
         }
     }
 }

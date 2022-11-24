@@ -1,22 +1,21 @@
 ﻿using System;
+using Features.GamePlay.Services.PlayerCargos.Storage.Events;
 using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
-using GamePlay.Services.PlayerCargos.Storage.Runtime;
+using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 {
     public class ShipResources : IShipResources, IShipResourcesPresenter, ISwitchCallbacks
     {
-        public ShipResources(IHealth health, IPlayerCargoStorage cargo)
+        public ShipResources(IHealth health)
         {
-            _cargo = cargo;
             _health = health;
         }
 
         private readonly IHealth _health;
-        private IPlayerCargoStorage _cargo;
 
         private string _name;
         private Sprite _icon;
@@ -32,6 +31,8 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 
         private int _maxTeam;
         private int _team;
+
+        private IDisposable _cargoChangedListener;
 
         public string Name => _name;
         public Sprite Icon => _icon;
@@ -56,12 +57,12 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         
         public void OnEnabled()
         {
-            _cargo.Changed += OnCargoChanged;
+            _cargoChangedListener = MessageBroker.Default.Receive<CargoChangedEvent>().Subscribe(OnCargoChanged);
         }
         
         public void OnDisabled()
         {
-            _cargo.Changed -= OnCargoChanged;
+            _cargoChangedListener?.Dispose();
         }
 
         public void SetName(string name)
@@ -130,11 +131,11 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             SpeedChanged?.Invoke(_speed, _maxSpeed);
         }
         
-        private void OnCargoChanged()
+        private void OnCargoChanged(CargoChangedEvent data)
         {
-            SetWeight(_cargo.GetWeight());
+            SetWeight(data.Weight);
 
-            foreach (var (type, item) in _cargo.Items)
+            foreach (var (type, item) in data.Items)
             {
                 switch (type)
                 {

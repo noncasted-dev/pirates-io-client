@@ -1,5 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
+using Features.GamePlay.Services.PlayerCargos.Storage.Events;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.PlayerCargos.UI.Travel.Events;
@@ -7,6 +9,7 @@ using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.Reputation.Runtime;
 using Global.Services.InputViews.Runtime;
 using Local.Services.Abstract.Callbacks;
+using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -19,8 +22,10 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
             IInputView inputView,
             IPlayerCargoStorage storage,
             IPlayerEntityProvider entityProvider,
+            IPlayerCargo cargo,
             IReputation reputation)
         {
+            _cargo = cargo;
             _reputation = reputation;
             _entityProvider = entityProvider;
             _storage = storage;
@@ -30,36 +35,38 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
         [SerializeField] private GameObject _body;
         [SerializeField] private CargoItemsListView _grid;
         [SerializeField] private DropConfirmation _drop;
-
+        [SerializeField] private ShipView _shipView;
+        
         private IInputView _inputView;
         private IPlayerCargoStorage _storage;
         private IPlayerEntityProvider _entityProvider;
         private IReputation _reputation;
+
+        private IDisposable _cargoChangedListener;
+        private IPlayerCargo _cargo;
 
         private void Awake()
         {
             _body.SetActive(false);
         }
 
-        public bool IsActive => _body.activeSelf;
-
         public void OnEnabled()
         {
             _inputView.InventoryPerformed += OnInventoryOpenPerformed;
-            _storage.Changed += OnStorageChanged;
+            _cargoChangedListener = MessageBroker.Default.Receive<CargoChangedEvent>().Subscribe(OnCargoChanged);
         }
 
         public void OnDisabled()
         {
             _inputView.InventoryPerformed -= OnInventoryOpenPerformed;
-            _storage.Changed -= OnStorageChanged;
+            _cargoChangedListener.Dispose();
         }
 
-        private void OnStorageChanged()
+        private void OnCargoChanged(CargoChangedEvent data)
         {
-            Redraw(_storage.ToArray());
+            Redraw(data.ToArray());
         }
-
+        
         private void OnInventoryOpenPerformed()
         {
             if (_body.activeSelf == true)
@@ -70,6 +77,8 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
 
         private void Open(IItem[] items)
         {
+            _shipView.Setup(_entityProvider.Resources, _reputation);
+            
             _body.SetActive(true);
             _grid.Fill(items);
         }
@@ -85,10 +94,6 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
             _drop.Cancel();
         }
 
-        private void OnDropped(IItem item, int count)
-        {
-        }
-
         private void OnDropRequested(ItemDropRequestedEvent dropRequest)
         {
             ProcessDrop(dropRequest).Forget();
@@ -101,7 +106,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
             switch (result.Type)
             {
                 case DropConfirmationResultType.Applied:
-                    _storage.Reduce(dropRequest.Type, result.Count);
+                    _cargo.OnDropped(dropRequest.Item, result.Count);
                     break;
                 case DropConfirmationResultType.Canceled:
                     break;

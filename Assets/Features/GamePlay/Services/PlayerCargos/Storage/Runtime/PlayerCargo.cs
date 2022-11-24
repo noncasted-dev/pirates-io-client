@@ -1,8 +1,6 @@
 ﻿using System;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.DroppedObjects.Presenter.Runtime;
-using Global.Services.InputViews.Runtime;
-using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using VContainer;
 
@@ -10,7 +8,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(PlayerCargoStorage))]
-    public class PlayerCargo : MonoBehaviour
+    public class PlayerCargo : MonoBehaviour, IPlayerCargo
     {
         [Inject]
         private void Construct(
@@ -28,7 +26,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             _storage = GetComponent<PlayerCargoStorage>();
         }
 
-        private void OnDropped(IItem item, int count, Action<IItem[]> redrawCallback)
+        public void OnDropped(IItem item, int count)
         {
             _droppedObjectsPresenter.DropFromPlayer(item.BaseData.Type, count);
 
@@ -38,8 +36,6 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
             if (_storage.Items[type].Count == 0)
                 _storage.Delete(type);
-
-            redrawCallback?.Invoke(_storage.ToArray());
         }
     }
 }

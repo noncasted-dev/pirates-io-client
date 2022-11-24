@@ -33,9 +33,6 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             var type = item.BaseData.Type;
 
             _storage.Reduce(type, count);
-
-            if (_storage.Items[type].Count == 0)
-                _storage.Delete(type);
         }
     }
 }

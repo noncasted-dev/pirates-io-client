@@ -1,11 +1,11 @@
 ﻿using GamePlay.Items.Abstract;
-using GamePlay.Services.PlayerCargos.UI.Travel.Events;
+using GamePlay.Services.PlayerCargos.UI.Events;
 using TMPro;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GamePlay.Services.PlayerCargos.UI.Travel
+namespace GamePlay.Services.PlayerCargos.UI
 {
     public class CargoItemCell : MonoBehaviour
     {
@@ -66,13 +66,6 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
             gameObject.SetActive(false);
         }
 
-        public void OnTransferCanceled()
-        {
-            gameObject.SetActive(true);
-            _count.text = _item.Count.ToString();
-
-            _transferButton.gameObject.SetActive(true);
-        }
 
         private void OnTransferClicked()
         {

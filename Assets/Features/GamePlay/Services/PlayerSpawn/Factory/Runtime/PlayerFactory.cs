@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using GamePlay.Common.Areas.Common.Runtime;
 using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
@@ -67,8 +68,6 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             playerTransform.parent = networkTransform;
             playerTransform.localPosition = Vector3.zero;
 
-            _entityPresenter.AssignPlayer(entity, networkTransform);
-
             _logger.OnInstantiated(position);
 
             var bootstrapper = playerObject.GetComponent<IPlayerBootstrapper>();
@@ -76,6 +75,9 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             await bootstrapper.Bootstrap(_scope);
 
             var root = playerObject.GetComponent<IPlayerRoot>();
+            
+            var resources = playerTransform.GetComponent<IAreaInteractor>().Resources;
+            _entityPresenter.AssignPlayer(entity, networkTransform, resources);
 
             MessageBroker.Default.Publish(new PlayerSpawnedEvent());
 

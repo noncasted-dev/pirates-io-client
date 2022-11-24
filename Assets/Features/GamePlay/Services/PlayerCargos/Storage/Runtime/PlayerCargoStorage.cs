@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Features.GamePlay.Services.PlayerCargos.Storage.Events;
 using GamePlay.Items.Abstract;
+using GamePlay.Services.PlayerCargos.Storage.Events;
 using UniRx;
 using UnityEngine;
 
@@ -37,6 +37,8 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             }
 
             _items[type].Reduce(amount);
+            
+            OnChanged();
 
             if (_items[type].Count == 0)
                 Delete(type);
@@ -81,6 +83,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
         private void OnChanged()
         {
+            Debug.Log("On changed");
             var data = new CargoChangedEvent(Items, GetWeight());
             MessageBroker.Default.Publish(data);
         }

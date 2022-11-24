@@ -11,16 +11,19 @@ namespace GamePlay.Services.PlayerPositionProviders.Runtime
     {
         private RagonEntity _entity;
         private Transform _transform;
+        private IShipResources _resources;
 
         public Vector2 Position => GetPosition();
-        public IShipResources Resources { get; }
+        public IShipResources Resources => _resources;
 
         public void AssignPlayer(
             RagonEntity entity,
-            Transform playerTransform)
+            Transform playerTransform,
+            IShipResources resources)
         {
             _entity = entity;
             _transform = playerTransform;
+            _resources = resources;
         }
 
         public void DestroyPlayer()

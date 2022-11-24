@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using GamePlay.Items.Abstract;
 
-namespace Features.GamePlay.Services.PlayerCargos.Storage.Events
+namespace GamePlay.Services.PlayerCargos.Storage.Events
 {
     public readonly struct CargoChangedEvent
     {

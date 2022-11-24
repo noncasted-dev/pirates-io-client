@@ -1,11 +1,13 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using GamePlay.Items.Abstract;
+using GamePlay.Services.PlayerCargos.UI.Events;
 using TMPro;
+using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GamePlay.Services.PlayerCargos.UI.Travel
+namespace GamePlay.Services.PlayerCargos.UI
 {
     [DisallowMultipleComponent]
     public class DropConfirmation : MonoBehaviour
@@ -15,8 +17,11 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
 
         [SerializeField] private Slider _slider;
         [SerializeField] private TMP_Text _count;
-        
+        [SerializeField] private TMP_Text _name;
+        [SerializeField] private Image _icon;
+
         private UniTaskCompletionSource<DropConfirmationResultType> _completion;
+        private IItem _item;
 
         private void OnEnable()
         {
@@ -36,7 +41,11 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
 
         public async UniTask<DropConfirmationResult> Confirm(IItem item)
         {
+            _item = item;
             gameObject.SetActive(true);
+
+            _name.text = item.BaseData.Name;
+            _icon.sprite = item.BaseData.Icon;
             
             _slider.minValue = 1;
             _slider.maxValue = item.Count;
@@ -76,6 +85,9 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
         {
             var count = (int)value;
             _count.text = count.ToString();
+
+            var data = new ItemDropCountChangedEvent(_item, count);
+            MessageBroker.Default.Publish(data);
         }
     }
 }

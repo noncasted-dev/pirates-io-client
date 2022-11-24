@@ -1,4 +1,4 @@
-﻿namespace GamePlay.Services.PlayerCargos.UI.Travel
+﻿namespace GamePlay.Services.PlayerCargos.UI
 {
     public readonly struct DropConfirmationResult
     {

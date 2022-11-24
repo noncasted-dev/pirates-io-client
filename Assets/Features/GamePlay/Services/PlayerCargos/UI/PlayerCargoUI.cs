@@ -1,21 +1,21 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
-using Features.GamePlay.Services.PlayerCargos.Storage.Events;
-using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views;
 using GamePlay.Items.Abstract;
+using GamePlay.Services.PlayerCargos.Storage.Events;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
-using GamePlay.Services.PlayerCargos.UI.Travel.Events;
+using GamePlay.Services.PlayerCargos.UI.Events;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.Reputation.Runtime;
 using Global.Services.InputViews.Runtime;
+using Global.Services.UiStateMachines.Runtime;
 using Local.Services.Abstract.Callbacks;
 using UniRx;
 using UnityEngine;
 using VContainer;
 
-namespace GamePlay.Services.PlayerCargos.UI.Travel
+namespace GamePlay.Services.PlayerCargos.UI
 {
-    public class PlayerTravelCargoUI : MonoBehaviour, ILocalSwitchListener
+    public class PlayerCargoUI : MonoBehaviour, ILocalSwitchListener, IUiState
     {
         [Inject]
         private void Construct(
@@ -23,8 +23,12 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
             IPlayerCargoStorage storage,
             IPlayerEntityProvider entityProvider,
             IPlayerCargo cargo,
-            IReputation reputation)
+            IReputation reputation,
+            IUiStateMachine uiStateMachine,
+            UiConstraints constraints)
         {
+            _constraints = constraints;
+            _uiStateMachine = uiStateMachine;
             _cargo = cargo;
             _reputation = reputation;
             _entityProvider = entityProvider;
@@ -35,7 +39,9 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
         [SerializeField] private GameObject _body;
         [SerializeField] private CargoItemsListView _grid;
         [SerializeField] private DropConfirmation _drop;
-        [SerializeField] private ShipView _shipView;
+        [SerializeField] private CargoShipView _shipView;
+        
+        private UiConstraints _constraints;
         
         private IInputView _inputView;
         private IPlayerCargoStorage _storage;
@@ -43,8 +49,14 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
         private IReputation _reputation;
 
         private IDisposable _cargoChangedListener;
+        private IDisposable _dropListener;
+        
         private IPlayerCargo _cargo;
+        private IUiStateMachine _uiStateMachine;
 
+        public UiConstraints Constraints => _constraints;
+        public string Name => "Cargo";
+        
         private void Awake()
         {
             _body.SetActive(false);
@@ -53,13 +65,17 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
         public void OnEnabled()
         {
             _inputView.InventoryPerformed += OnInventoryOpenPerformed;
+            
             _cargoChangedListener = MessageBroker.Default.Receive<CargoChangedEvent>().Subscribe(OnCargoChanged);
+            _dropListener = MessageBroker.Default.Receive<ItemDropRequestedEvent>().Subscribe(OnDropRequested);
         }
 
         public void OnDisabled()
         {
             _inputView.InventoryPerformed -= OnInventoryOpenPerformed;
+            
             _cargoChangedListener.Dispose();
+            _dropListener.Dispose();
         }
 
         private void OnCargoChanged(CargoChangedEvent data)
@@ -72,24 +88,28 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
             if (_body.activeSelf == true)
                 Close();
             else
-                Open(_storage.ToArray());
+                Open();
         }
 
-        private void Open(IItem[] items)
+        private void Open()
         {
-            _shipView.Setup(_entityProvider.Resources, _reputation);
+            _uiStateMachine.EnterAsStack(this);
             
+            _shipView.Setup(_entityProvider.Resources, _reputation);
             _body.SetActive(true);
-            _grid.Fill(items);
+            _grid.Fill(_storage.ToArray());
         }
 
         private void Close()
         {
+            _uiStateMachine.Exit(this);
+            
             _body.SetActive(false);
         }
 
         private void Redraw(IItem[] items)
         {
+            _shipView.Setup(_entityProvider.Resources, _reputation);
             _grid.Fill(items);
             _drop.Cancel();
         }
@@ -113,6 +133,18 @@ namespace GamePlay.Services.PlayerCargos.UI.Travel
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+        
+        public void Recover()
+        {
+            _shipView.Setup(_entityProvider.Resources, _reputation);
+            _body.SetActive(true);
+            _grid.Fill(_storage.ToArray());
+        }
+
+        public void Exit()
+        {
+            _body.SetActive(false);
         }
     }
 }

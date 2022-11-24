@@ -12,14 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ac7846c99f4a7ebf124bee3380cb30, type: 3}
   m_Name: LocalService_PlayerCargo
   m_EditorClassIdentifier: 
+  _constraints: {fileID: 11400000, guid: 6e9e0964aed2bc24cbd73c97e6caa008, type: 2}
   _prefab: {fileID: 4479899924403370617, guid: 9dff908906b496b4ea051bee5fcfee67, type: 3}
   _travelScene:
     m_AssetGUID: 9c9407a9293a81e4d95e17cc66b6f560
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  _cityScene:
-    m_AssetGUID: 1d6a86b4dca3ef34399e4a1b1836ecfe
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

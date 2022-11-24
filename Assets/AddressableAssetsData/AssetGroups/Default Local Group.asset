@@ -205,6 +205,10 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote_7_Frigate.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 9c9407a9293a81e4d95e17cc66b6f560
+    m_Address: Assets/Features/GamePlay/Services/PlayerCargos/Config/UI_PlayerCargo_Travel.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
   m_SchemaSet:

@@ -1,6 +1,6 @@
 ﻿using GamePlay.Items.Abstract;
 
-namespace GamePlay.Services.PlayerCargos.UI.Travel.Events
+namespace GamePlay.Services.PlayerCargos.UI.Events
 {
     public class ItemDropCountChangedEvent
     {

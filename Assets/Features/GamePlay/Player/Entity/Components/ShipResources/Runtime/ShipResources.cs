@@ -1,8 +1,8 @@
 ﻿using System;
-using Features.GamePlay.Services.PlayerCargos.Storage.Events;
 using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+using GamePlay.Services.PlayerCargos.Storage.Events;
 using UniRx;
 using UnityEngine;
 

@@ -28,23 +28,24 @@ namespace GamePlay.Services.PlayerCargos.Bootstrap
 
             var storage = cargo.GetComponent<PlayerCargoStorage>();
 
-            serviceBinder.RegisterComponent(cargo).As<IPlayerCargo>();
-            serviceBinder.RegisterComponent(storage).As<IPlayerCargoStorage>();
+            serviceBinder.RegisterComponent(storage)
+                .As<IPlayerCargoStorage>();
 
             serviceBinder.AddToModules(cargo);
             callbacksRegister.ListenLoopCallbacks(cargo);
 
-            var travelSceneData = new TypedSceneLoadData<PlayerTravelCargoUI>(_travelScene);
+            var uiSceneData = new TypedSceneLoadData<PlayerTravelCargoUI>(_travelScene);
+            var uiScene = await sceneLoader.Load(uiSceneData);
+            var ui = uiScene.Searched;
 
-            var travelScene = await sceneLoader.Load(travelSceneData);
-
-            serviceBinder.RegisterComponent(travelScene.Searched)
-                .As<IPlayerTravelCargoUI>();
+            serviceBinder.RegisterComponent(ui);
+            callbacksRegister.ListenLoopCallbacks(ui);
         }
 
         public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
         {
-            resolver.Resolve<IPlayerCargo>();
+            resolver.Resolve<PlayerCargoStorage>();
+            resolver.Resolve<PlayerTravelCargoUI>();
         }
     }
 }

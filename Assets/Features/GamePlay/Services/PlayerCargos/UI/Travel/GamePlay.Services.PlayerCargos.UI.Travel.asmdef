@@ -1,18 +1,25 @@
 {
-  "name": "GamePlay.Services.PlayerCargos.UI.Travel",
-  "rootNamespace": "",
-  "references": [
-    "GUID:e2b1c00d8d9b440888bd9f6a58105dd3",
-    "GUID:151be28402a54aafac6718d1b321405c",
-    "GUID:6055be8ebefd69e48b49212b09b47b2f"
-  ],
-  "includePlatforms": [],
-  "excludePlatforms": [],
-  "allowUnsafeCode": false,
-  "overrideReferences": false,
-  "precompiledReferences": [],
-  "autoReferenced": true,
-  "defineConstraints": [],
-  "versionDefines": [],
-  "noEngineReferences": false
+    "name": "GamePlay.Services.PlayerCargos.UI.Travel",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e2b1c00d8d9b440888bd9f6a58105dd3",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:c713b254602614c43a1d94a2a13ba844",
+        "GUID:67f67dcce9d9e8a43a8e45bc1fe5534c",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:8f56d58df3a847768d8965fdf54def1f",
+        "GUID:ccd954329382b474a93d18fc27ad59eb",
+        "GUID:b7c5d0c48cee43a8937078310c5c4f2e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

@@ -36,12 +36,12 @@ namespace GamePlay.Services.LevelLoops.Runtime
             IFactionSelectionLoop factionSelection,
             ICitiesRegistry citiesRegistry,
             ITravelOverlay travelOverlay,
-            IPlayerPositionProvider playerPositionProvider,
+            IPlayerEntityProvider playerEntityProvider,
             IPlayerEntityPresenter entityPresenter,
             LevelLoopLogger logger)
         {
             _entityPresenter = entityPresenter;
-            _playerPositionProvider = playerPositionProvider;
+            _playerEntityProvider = playerEntityProvider;
             _travelOverlay = travelOverlay;
             _citiesRegistry = citiesRegistry;
             _factionSelection = factionSelection;
@@ -66,7 +66,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
         private ISceneObjectsHandler _sceneObjects;
         private ITransitionScreen _transitionScreen;
         private ITravelOverlay _travelOverlay;
-        private IPlayerPositionProvider _playerPositionProvider;
+        private IPlayerEntityProvider _playerEntityProvider;
         private IPlayerEntityPresenter _entityPresenter;
 
         public void OnEnabled()
@@ -128,7 +128,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
             _logger.OnPlayerSpawn();
 
-            var player = await _playerFactory.Create(_playerPositionProvider.Position, ship);
+            var player = await _playerFactory.Create(_playerEntityProvider.Position, ship);
 
             _levelCamera.Teleport(player.Transform.position);
             _levelCamera.StartFollow(player.Transform);

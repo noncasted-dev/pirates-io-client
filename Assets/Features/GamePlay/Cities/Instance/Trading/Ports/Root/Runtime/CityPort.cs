@@ -5,6 +5,7 @@ using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Services.LevelLoops.Runtime;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
+using Global.Services.Sounds.Runtime;
 using UniRx;
 using UnityEngine;
 
@@ -49,13 +50,16 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             var data = new PortEnteredEvent(cargo, stock, ships, _storage, shipResources, _storage);
 
             MessageBroker.Default.Publish(data);
+            
+            MessageBroker.Default.TriggerSound(SoundType.PortEnter);
         }
 
         public void Exit()
         {
             var data = new PortExitedEvent();
-
             MessageBroker.Default.Publish(data);
+            
+            MessageBroker.Default.TriggerSound(SoundType.PortEnter);
 
             _isActive = false;
         }

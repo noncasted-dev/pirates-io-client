@@ -32,3 +32,4 @@ MonoBehaviour:
   _persistentInventory: {fileID: 11400000, guid: f3f05c917db43574e8bb02d00e016182, type: 2}
   _itemFactory: {fileID: 11400000, guid: d0ed79ffb87ce014585428729b6c117e, type: 2}
   _uiStateMachine: {fileID: 11400000, guid: 2690e14f4af6ab843bac352463df3ee6, type: 2}
+  _soundsPlayer: {fileID: 11400000, guid: a5bceba39bda6f9428ef7ab537e31ba0, type: 2}

@@ -31,7 +31,7 @@ namespace GamePlay.Player.Entity.Views.ShootPoint
 
             var point = _buffer[0].point;
             point += direction * _offset;
-
+            
             return point;
         }
     }

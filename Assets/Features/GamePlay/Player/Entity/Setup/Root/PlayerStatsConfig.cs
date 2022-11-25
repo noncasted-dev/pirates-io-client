@@ -19,7 +19,7 @@ namespace GamePlay.Player.Entity.Setup.Root
         }
 
         [SerializeField] private string _name = "Frigate";
-        
+        [SerializeField] private Sprite _icon;
         [SerializeField] private int _baseHealth;
 
         [SerializeField] private int _baseMaxSpeed;
@@ -40,6 +40,7 @@ namespace GamePlay.Player.Entity.Setup.Root
             _health.SetMaxHealth(_baseHealth);
 
             _resources.SetName(_name);
+            _resources.SetIcon(_icon);
             
             _resources.SetMaxWeight(_baseMaxWeight);
             _resources.SetMaxSpeed(_baseMaxSpeed);

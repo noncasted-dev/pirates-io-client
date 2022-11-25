@@ -5,6 +5,7 @@
         MovementInput,
         AttackInput,
         SettingsInput,
-        ChatInput
+        ChatInput,
+        InventoryInput
     }
 }

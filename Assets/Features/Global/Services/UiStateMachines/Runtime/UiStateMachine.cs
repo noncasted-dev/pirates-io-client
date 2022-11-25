@@ -61,6 +61,7 @@ namespace Global.Services.UiStateMachines.Runtime
             var handle = new StateHandle(state, OnStackExited, OnStackRecovered);
 
             _handles[_head].AddToStack(handle);
+            _handles[state] = handle;
 
             _constraintsStorage.Add(state.Constraints.Input);
 
@@ -70,7 +71,10 @@ namespace Global.Services.UiStateMachines.Runtime
         public void Exit(IUiState state)
         {
             if (_handles.ContainsKey(state) == false)
+            {
+                _logger.OnNoStateInStackToExit(state.Name);
                 return;
+            }
 
             _handles[state].Exit();
             _handles.Remove(state);

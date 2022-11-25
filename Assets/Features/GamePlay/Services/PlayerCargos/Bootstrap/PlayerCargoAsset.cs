@@ -1,10 +1,11 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Common.EditableScriptableObjects.Attributes;
+using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
-using GamePlay.Services.PlayerCargos.UI.City;
-using GamePlay.Services.PlayerCargos.UI.Travel;
+using GamePlay.Services.PlayerCargos.UI;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Runtime.Abstract;
+using Global.Services.UiStateMachines.Runtime;
 using Local.Services.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -16,7 +17,8 @@ namespace GamePlay.Services.PlayerCargos.Bootstrap
         menuName = GamePlayAssetsPaths.PlayerCargo + "Service")]
     public class PlayerCargoAsset : LocalServiceAsset
     {
-        [SerializeField] private AssetReference _cityScene;
+        [SerializeField] [EditableObject] private UiConstraints _constraints;
+        
         [SerializeField] private PlayerCargo _prefab;
         [SerializeField] private AssetReference _travelScene;
 
@@ -30,30 +32,28 @@ namespace GamePlay.Services.PlayerCargos.Bootstrap
 
             var storage = cargo.GetComponent<PlayerCargoStorage>();
 
-            serviceBinder.RegisterComponent(cargo).As<IPlayerCargo>();
-            serviceBinder.RegisterComponent(storage).As<IPlayerCargoStorage>();
+            serviceBinder.RegisterComponent(storage)
+                .As<IPlayerCargoStorage>();
+            
+            serviceBinder.RegisterComponent(cargo)
+                .As<IPlayerCargo>();
 
             serviceBinder.AddToModules(cargo);
             callbacksRegister.ListenLoopCallbacks(cargo);
 
-            var travelSceneData = new TypedSceneLoadData<PlayerTravelCargoUI>(_travelScene);
-            var citySceneData = new TypedSceneLoadData<PlayerCityCargoUI>(_cityScene);
+            var uiSceneData = new TypedSceneLoadData<PlayerCargoUI>(_travelScene);
+            var uiScene = await sceneLoader.Load(uiSceneData);
+            var ui = uiScene.Searched;
 
-            var (travelScene, cityScene) =
-                await UniTask.WhenAll(
-                    sceneLoader.Load(travelSceneData),
-                    sceneLoader.Load(citySceneData));
-
-            serviceBinder.RegisterComponent(travelScene.Searched)
-                .As<IPlayerTravelCargoUI>();
-
-            serviceBinder.RegisterComponent(cityScene.Searched)
-                .As<IPlayerCityCargoUI>();
+            serviceBinder.RegisterComponent(ui)
+                .WithParameter(_constraints);
+            
+            callbacksRegister.ListenLoopCallbacks(ui);
         }
 
         public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
         {
-            resolver.Resolve<IPlayerCargo>();
+            resolver.Resolve<PlayerCargoUI>();
         }
     }
 }

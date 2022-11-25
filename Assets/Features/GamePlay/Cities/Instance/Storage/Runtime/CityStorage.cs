@@ -70,7 +70,6 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                         continue;
                     
                     _ships.Add(ship.Type, ship.Create(2));
-                    Debug.Log("Produce ship");
                 }
 
                 progress += _waitTime;

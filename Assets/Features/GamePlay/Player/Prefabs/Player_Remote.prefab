@@ -89,7 +89,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3871518644565369678}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -114,6 +114,9 @@ MonoBehaviour:
   _config: {fileID: 11400000, guid: 0edc6d7967d7af54494a23b8a360da7f, type: 2}
   _hitbox: {fileID: 2286764026560514472}
   _spriteView: {fileID: 7874238245206262083}
+  _colliders:
+  - {fileID: 3205208776571550568}
+  - {fileID: 5236864739449218738}
 --- !u!114 &5221002631977502103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,7 +473,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8173712680836603605}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

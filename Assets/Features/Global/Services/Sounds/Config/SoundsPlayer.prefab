@@ -98,25 +98,25 @@ MonoBehaviour:
       Data2: 1299442491
       Data3: 366289036
       Data4: 997880597
-    Path: 
+    Path: event:/music
   UiOpenedEvent:
     Guid:
-      Data1: -2137127258
-      Data2: 1299442491
-      Data3: 366289036
-      Data4: 997880597
-    Path: 
+      Data1: -212564602
+      Data2: 1124305201
+      Data3: -2120842880
+      Data4: -1038651579
+    Path: event:/port
   ButtonClickedEvent:
     Guid:
       Data1: -2137127258
       Data2: 1299442491
       Data3: 366289036
       Data4: 997880597
-    Path: 
+    Path: event:/music
   OverButtonEvent:
     Guid:
       Data1: -2137127258
       Data2: 1299442491
       Data3: 366289036
       Data4: 997880597
-    Path: 
+    Path: event:/music

@@ -42,7 +42,9 @@ namespace Common.ObjectsPools.Runtime
         public void InstantiateStartupInstances()
         {
             foreach (var objectHandler in _pools)
+            {
                 objectHandler.Value.InstantiateStartupInstances();
+            }
         }
 
         public IObjectProvider<T> GetPool<T>(AssetReference reference)

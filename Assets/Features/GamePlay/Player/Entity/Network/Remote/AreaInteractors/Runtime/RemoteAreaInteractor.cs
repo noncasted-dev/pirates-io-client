@@ -29,7 +29,7 @@ namespace GamePlay.Player.Entity.Network.Remote.AreaInteractors.Runtime
 
         public void OnPortEntered()
         {
-            _spriteView.Disable();
+            _spriteView.Disable(true);
         }
 
         public void OnPortExited()

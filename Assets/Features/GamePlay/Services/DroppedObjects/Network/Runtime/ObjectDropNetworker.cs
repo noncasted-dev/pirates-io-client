@@ -36,11 +36,12 @@ namespace GamePlay.Services.DroppedObjects.Network.Runtime
         public event Action<ItemDropEvent> ItemDropped;
         public event Action<int> ItemCollected;
 
-        public void OnItemDropped(ItemType type, int count, Vector2 position)
+        public void OnItemDropped(ItemType type, int count, Vector2 origin, Vector2 target)
         {
             var data = new ItemDropEvent(
                 type,
-                position,
+                origin,
+                target,
                 count,
                 _playerDataProvider.GenerateUniqueId());
 
@@ -56,11 +57,15 @@ namespace GamePlay.Services.DroppedObjects.Network.Runtime
 
         private void OnItemDropReceived(RagonPlayer player, ItemDropEvent data)
         {
+            Debug.Log($"Drop received: {data.Type}, {data.Count}, {data.Origin}, {data.Target}");
+
             ItemDropped?.Invoke(data);
         }
 
         private void OnItemCollectReceived(RagonPlayer player, ItemCollectedEvent data)
         {
+            Debug.Log($"Drop collected: {data.Id}");
+            
             ItemCollected?.Invoke(data.Id);
         }
     }

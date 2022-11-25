@@ -2,9 +2,11 @@
 using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim;
+using GamePlay.Player.Entity.Views.DebugTool;
 using GamePlay.Player.Entity.Views.ObjectsCollector.Runtime;
 using GamePlay.Player.Entity.Views.RigidBodies.Runtime;
 using GamePlay.Player.Entity.Views.RotationPoint;
+using GamePlay.Player.Entity.Views.ShipConfig.Runtime;
 using GamePlay.Player.Entity.Views.ShootPoint;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
@@ -27,6 +29,8 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
         [SerializeField] private PlayerSpriteView _sprite;
         [SerializeField] private PlayerSpriteTransform _spriteTransform;
         [SerializeField] private PlayerBodyTransform _transform;
+        [SerializeField] private PlayerShipConfig _config;
+        [SerializeField] private PlayerDebugTool _debug;
 
         public void OnBuild(IContainerBuilder builder)
         {
@@ -40,6 +44,10 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
             builder.RegisterComponent(_spriteTransform).As<ISpriteTransform>();
             builder.RegisterComponent(_areaInteractor);
             builder.RegisterComponent(_objectsCollector);
+            builder.RegisterComponent(_debug);
+            
+            builder.RegisterComponent(_config)
+                .As<IShipConfig>();
         }
 
         public void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)
@@ -52,6 +60,7 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
             callbackRegister.Add(_spriteTransform);
             resolver.Resolve<LocalAreaInteractor>();
             resolver.Resolve<PlayerObjectsCollector>();
+            resolver.Resolve<PlayerDebugTool>();
         }
     }
 }

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073cc4434b33413fbf0fa1756aa4c92c, type: 3}
   m_Name: LogSettings_InputView
   m_EditorClassIdentifier: 
-  _isEnabled: 1
+  _isEnabled: 0
   _logs:
     _keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
-    _values: 0000000000010101010101
+    _values: 0000000000000101010100
   _parameters:
     _header: InputView
     _isHeaderColoredColored: 1

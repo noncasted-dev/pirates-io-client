@@ -88,7 +88,6 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
         private void OnChanged()
         {
-            Debug.Log("On changed");
             var data = new CargoChangedEvent(Items, GetWeight());
             MessageBroker.Default.Publish(data);
         }

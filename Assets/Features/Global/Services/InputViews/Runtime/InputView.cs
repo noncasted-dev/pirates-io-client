@@ -210,6 +210,12 @@ namespace Global.Services.InputViews.Runtime
 
         private void OnInventoryPerformed(InputAction.CallbackContext context)
         {
+            if (_constraintsStorage[InputConstraints.InventoryInput] == true)
+            {
+                _logger.OnInputCanceledWithConstraint(InputConstraints.InventoryInput);
+                return;
+            }
+            
             InventoryPerformed?.Invoke();
         }
     }

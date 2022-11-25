@@ -31,10 +31,10 @@ namespace Global.Services.UiStateMachines.Runtime
                 var current = _stack.Peek();
 
                 _logger.OnExitCurrent(current.Name);
-                current.Exit();
+                current.Exit(false);
             }
 
-            var handle = new StateHandle(state, OnStackExited, OnStackRecovered);
+            var handle = new StateHandle(state, null, OnStackExited, OnStackRecovered);
             _stack.Push(handle);
             _handles.Add(state, handle);
 
@@ -47,7 +47,7 @@ namespace Global.Services.UiStateMachines.Runtime
 
         public void EnterAsStack(IUiState head, IUiState state)
         {
-            var handle = new StateHandle(state, OnStackExited, OnStackRecovered);
+            var handle = new StateHandle(state, _handles[head], OnStackExited, OnStackRecovered);
 
             _handles[head].AddToStack(handle);
 
@@ -58,7 +58,7 @@ namespace Global.Services.UiStateMachines.Runtime
 
         public void EnterAsStack(IUiState state)
         {
-            var handle = new StateHandle(state, OnStackExited, OnStackRecovered);
+            var handle = new StateHandle(state, _handles[_head], OnStackExited, OnStackRecovered);
 
             _handles[_head].AddToStack(handle);
             _handles[state] = handle;
@@ -68,7 +68,7 @@ namespace Global.Services.UiStateMachines.Runtime
             _logger.OnEnteredStack(_head.Name, state.Name);
         }
 
-        public void Exit(IUiState state)
+        public void Exit(IUiState state, bool withDispose = true)
         {
             if (_handles.ContainsKey(state) == false)
             {
@@ -76,7 +76,7 @@ namespace Global.Services.UiStateMachines.Runtime
                 return;
             }
 
-            _handles[state].Exit();
+            _handles[state].Exit(withDispose);
             _handles.Remove(state);
 
             _logger.OnExited(state.Name);

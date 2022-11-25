@@ -1,6 +1,7 @@
 ﻿using Common.ObjectsPools.Runtime.Abstract;
 using Cysharp.Threading.Tasks;
 using Global.Services.AssetsFlow.Runtime.Abstract;
+using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -11,14 +12,17 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
         public DroppedItemFactory(
             AssetReference reference,
             Transform parent,
-            IAssetInstantiatorFactory instantiatorFactory)
+            IAssetInstantiatorFactory instantiatorFactory,
+            IUpdater updater)
         {
             _reference = reference;
             _parent = parent;
             _instantiatorFactory = instantiatorFactory;
+            _updater = updater;
         }
 
         private readonly IAssetInstantiatorFactory _instantiatorFactory;
+        private readonly IUpdater _updater;
         private readonly Transform _parent;
 
         private readonly AssetReference _reference;
@@ -39,7 +43,7 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
         public DroppedItem Create(Vector2 position, float angle = 0)
         {
             var item = _instantiator.Instantiate(position, angle, _parent);
-
+            item.Construct(_updater);
             return item;
         }
     }

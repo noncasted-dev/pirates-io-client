@@ -126,6 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6284865773748442675}
   - component: {fileID: 3479203671901328714}
+  - component: {fileID: 4944528756999747353}
   m_Layer: 0
   m_Name: DeadShip
   m_TagString: Untagged
@@ -160,3 +161,21 @@ SortingGroup:
   m_SortingLayerID: 1952455
   m_SortingLayer: 2
   m_SortingOrder: 10
+--- !u!114 &4944528756999747353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6284865773748442636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7985a147bc964309a819fe863bf3a99c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroyDelay: 10
+  _disappearDelay: 1
+  _skinVariants: []
+  _disappearStartedCallback:
+    m_PersistentCalls:
+      m_Calls: []

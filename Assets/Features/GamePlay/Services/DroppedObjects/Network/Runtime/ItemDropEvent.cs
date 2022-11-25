@@ -12,10 +12,16 @@ namespace GamePlay.Services.DroppedObjects.Network.Runtime
         {
         }
 
-        public ItemDropEvent(ItemType type, Vector2 position, int count, int id)
+        public ItemDropEvent(
+            ItemType type,
+            Vector2 origin,
+            Vector2 target,
+            int count,
+            int id)
         {
+            _target = target;
             _type = type;
-            _position = position;
+            _origin = origin;
             _count = count;
             _id = id;
         }
@@ -23,17 +29,21 @@ namespace GamePlay.Services.DroppedObjects.Network.Runtime
         private int _count;
         private int _id;
 
-        private Vector2 _position;
+        private Vector2 _origin;
+        private Vector2 _target;
+
         private ItemType _type;
 
-        public Vector2 Position => _position;
+        public Vector2 Origin => _origin;
+        public Vector2 Target => _target;
         public ItemType Type => _type;
         public int Count => _count;
         public int Id => _id;
 
         public void Serialize(RagonSerializer serializer)
         {
-            serializer.WriteVector(_position);
+            serializer.WriteVector(_origin);
+            serializer.WriteVector(_target);
             serializer.WriteInt((int)_type);
             serializer.WriteInt(_count);
             serializer.WriteInt(_id);
@@ -41,7 +51,8 @@ namespace GamePlay.Services.DroppedObjects.Network.Runtime
 
         public void Deserialize(RagonSerializer serializer)
         {
-            _position = serializer.ReadVector();
+            _origin = serializer.ReadVector();
+            _target = serializer.ReadVector();
             _type = (ItemType)serializer.ReadInt();
             _count = serializer.ReadInt();
             _id = serializer.ReadInt();

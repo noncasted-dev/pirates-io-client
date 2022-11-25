@@ -1,4 +1,19 @@
 {
-	"name": "GamePlay.Items.Editor",
-	"references":[ "GUID:d945054fb520ae0408f2ec087ffa5163", "GUID:364bfbd2908041158cb87effef797737" ]
+    "name": "GamePlay.Items.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d945054fb520ae0408f2ec087ffa5163",
+        "GUID:364bfbd2908041158cb87effef797737"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

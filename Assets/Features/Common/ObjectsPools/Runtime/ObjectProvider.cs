@@ -71,7 +71,6 @@ namespace Common.ObjectsPools.Runtime
             for (var i = 0; i < _startupInstances; i++)
             {
                 var poolObject = _factory.Create(Vector2.zero);
-
                 poolObject.SetupPoolObject(Return);
                 MoveToParent(poolObject);
                 poolObject.GameObject.SetActive(false);

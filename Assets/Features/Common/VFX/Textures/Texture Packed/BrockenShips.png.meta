@@ -1,0 +1,731 @@
+fileFormatVersion: 2
+guid: 09e49c7ce1b380448a659d00eacc1cf5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BrockenShips_0
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1034
+        width: 194
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378fd930fc3f8d54a83774d858332438
+      internalID: -146725105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 941
+        width: 90
+        height: 76
+      alignment: 9
+      pivot: {x: 0.43815735, y: 0.1913669}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fd58e28e8f7e845a9c2984a7a27c15
+      internalID: 1878710857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 875
+        width: 152
+        height: 110
+      alignment: 9
+      pivot: {x: 0.6648919, y: 0.18288907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b9521128579a2646b04e438bf5f6b34
+      internalID: -1559284919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_3
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 871
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e679f4c93c59e645a9fbe65972c0133
+      internalID: -1366232241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_4
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 873
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc70763525680b94b887206aec4d94a7
+      internalID: 1713682896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 873
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d40470572f5654fa3b77458bb7edd5
+      internalID: 332361911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_6
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 871
+        width: 37
+        height: 25
+      alignment: 9
+      pivot: {x: 0.4557763, y: 0.29055664}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7701da8dab60ec4aa90e40081422ca3
+      internalID: 1801876153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_7
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 906
+        width: 39
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a56c532f238ab141b85961e3ccd59ea
+      internalID: -337445780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 886
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d9798426cf8934f9c85bb5a2559d62
+      internalID: 1257324096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_9
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 886
+        width: 54
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 913e13f1d7f4e5b4e97f3a76f23c97b8
+      internalID: 320491553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_10
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 654
+        width: 238
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c700550540a9843a3365a625664940
+      internalID: 556890481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_11
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 499
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ba38ee4176ed246bbda2d5c3c8731b
+      internalID: -835326030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_12
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 500
+        width: 113
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e40cdf5c88849a4c8c544c6565b9bc1
+      internalID: -259012994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_13
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 425
+        width: 68
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4c7ee207dc5e84984e95bd535d1dcd
+      internalID: -203006732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_14
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 458
+        width: 56
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6227791c2c087114f8c2f284bce45854
+      internalID: 283678556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_15
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 961
+        width: 389
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f41b5c9d3fa10a448c2cdfcf6978534
+      internalID: -1504323689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_16
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 764
+        width: 274
+        height: 173
+      alignment: 9
+      pivot: {x: 0.2714659, y: 0.116167895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba7636b98ce6df04d8faced1ec25e0aa
+      internalID: 1258375152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_17
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 530
+        width: 292
+        height: 192
+      alignment: 9
+      pivot: {x: 0.6914853, y: 0.11552779}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b51abe75e6e4d04e80dfe1605322226
+      internalID: -1204999644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_18
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 425
+        width: 83
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a70d89b7d74ce4bbd85372079f4472
+      internalID: 784735394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_19
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 434
+        width: 66
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b652889335cfd43449a43c0a206d6495
+      internalID: -1588826566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_20
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 796
+        width: 453
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f197f7efed80174db1d0b5d55ae2808
+      internalID: -283603787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_21
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 417
+        width: 400
+        height: 327
+      alignment: 9
+      pivot: {x: 0.22923005, y: 0.05612388}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799b850f8a9ee6544b0a8d5f1c521e2e
+      internalID: -23163594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_22
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 208
+        width: 333
+        height: 188
+      alignment: 9
+      pivot: {x: 0.6770067, y: 0.09045491}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1297b04c5c5049245a634b4fd662cde0
+      internalID: -1759977116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_23
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 117
+        width: 51
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ad809f6e1c176428920db88d7ec0b6
+      internalID: 1622457443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_24
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 32
+        width: 55
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2120b75b2751840a857406433c8250
+      internalID: 1921416525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_25
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 110
+        width: 96
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1008863982586af48801007baed2cb6e
+      internalID: 1212531775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrockenShips_26
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 18
+        width: 124
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32faa62c6eb7fe449da09a6465606ee
+      internalID: -140217728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BrockenShips_22: -1759977116
+      BrockenShips_0: -146725105
+      BrockenShips_21: -23163594
+      BrockenShips_24: 1921416525
+      BrockenShips_20: -283603787
+      BrockenShips_27: -45229360
+      BrockenShips_10: 556890481
+      BrockenShips_28: 479722041
+      BrockenShips_13: -203006732
+      BrockenShips_23: 1622457443
+      BrockenShips_14: 283678556
+      BrockenShips_18: 784735394
+      BrockenShips_15: -1504323689
+      BrockenShips_19: -1588826566
+      BrockenShips_8: 1257324096
+      BrockenShips_16: 1258375152
+      BrockenShips_5: 332361911
+      BrockenShips_9: 320491553
+      BrockenShips_25: 1212531775
+      BrockenShips_2: -1559284919
+      BrockenShips_6: 1801876153
+      BrockenShips_7: -337445780
+      BrockenShips_17: -1204999644
+      BrockenShips_3: -1366232241
+      BrockenShips_4: 1713682896
+      BrockenShips_1: 1878710857
+      BrockenShips_11: -835326030
+      BrockenShips_12: -259012994
+      BrockenShips_26: -140217728
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

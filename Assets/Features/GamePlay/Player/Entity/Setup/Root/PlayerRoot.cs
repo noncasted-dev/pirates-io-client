@@ -22,6 +22,8 @@ namespace GamePlay.Player.Entity.Setup.Root
             _rotationPoint = rotationPoint;
         }
 
+        [SerializeField] private Collider2D[] _colliders;
+
         private bool _wasDisabled;
         
         private INone _none;
@@ -45,6 +47,9 @@ namespace GamePlay.Player.Entity.Setup.Root
 
         public void Respawn()
         {
+            foreach (var switchableCollider in _colliders)
+                switchableCollider.enabled = true;
+            
             _respawn.Enter();
         }
 

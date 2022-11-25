@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c73204ff1f415baddb82c05ffe64da, type: 3}
   m_Name: PlayerConfig_RangeAttack
   m_EditorClassIdentifier: 
-  _delay: 3
-  _startAimAngle: 120
-  _endAimAngle: 0
-  _aimTime: 1
-  _aimOverTime: 5
   _aimAdditionalSpread: 15
+  _aimOverTime: 5
+  _aimTime: 1
+  _delay: 3
+  _endAimAngle: 0
   _impactDistance: 1
   _impactTime: 0.3
+  _startAimAngle: 400

@@ -50,7 +50,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         [SerializeField] private GameObject _tradeBody;
 
         [SerializeField] private MoneyView _moneyView;
-        [SerializeField] private ShipView _shipView;
+        [SerializeField] private PortShipView _shipView;
         [SerializeField] private TradeMoney _tradeMoney;
         
         private IDisposable _enterListener;

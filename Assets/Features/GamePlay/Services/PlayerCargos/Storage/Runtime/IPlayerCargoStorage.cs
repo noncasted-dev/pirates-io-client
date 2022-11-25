@@ -10,9 +10,6 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         void Reduce(ItemType type, int amount);
         void Delete(ItemType type);
         IItem[] ToArray();
-        int GetWeight();
-
-        event Action Changed; 
 
         public IReadOnlyDictionary<ItemType, IItem> Items { get; }
     }

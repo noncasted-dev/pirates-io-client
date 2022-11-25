@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Statistic">
-    <option name="fileTypes" value="class;svn-base;svn-work;Extra;gif;png;jpg;jpeg;bmp;tga;tiff;ear;war;zip;jar;iml;iws;ipr;bz2;gz;pyc;a;afphoto;ai;anim;api;ase;asmdef;asmref;asset;csproj;dotsettings;meta;prefab;sln;bin;unity;jslib;user;controller;mat;overridecontroller;psd;shadergraph;inputactions;ttf;txt;mp4;spriteatlas;lighting;" />
+    <option name="fileTypes" value="class;svn-base;svn-work;Extra;gif;png;jpg;jpeg;bmp;tga;tiff;ear;war;zip;jar;iml;iws;ipr;bz2;gz;pyc;a;afphoto;ai;anim;api;ase;asmdef;asmref;asset;csproj;dotsettings;meta;prefab;sln;bin;unity;jslib;user;controller;mat;overridecontroller;psd;shadergraph;inputactions;ttf;txt;mp4;spriteatlas;lighting;shader;" />
     <option name="excludedDirectories">
       <list>
         <option value="$PROJECT_DIR$/.git" />
@@ -18,15 +18,6 @@
         <option value="$PROJECT_DIR$/Assets/Plugins" />
         <option value="$PROJECT_DIR$/Assets/Scenes" />
         <option value="$PROJECT_DIR$/Assets/Settings" />
-        <option value="$PROJECT_DIR$/.git" />
-        <option value="$PROJECT_DIR$/.idea" />
-        <option value="$PROJECT_DIR$/Library" />
-        <option value="$PROJECT_DIR$/Logs" />
-        <option value="$PROJECT_DIR$/obj" />
-        <option value="$PROJECT_DIR$/Packages" />
-        <option value="$PROJECT_DIR$/ProjectSettings" />
-        <option value="$PROJECT_DIR$/Temp" />
-        <option value="$PROJECT_DIR$/UserSettings" />
         <option value="$PROJECT_DIR$/.git" />
         <option value="$PROJECT_DIR$/.idea" />
         <option value="$PROJECT_DIR$/Library" />

@@ -9,6 +9,7 @@
         ExitStack,
         ExitHead,
         NoPreviousStates,
+        NoStateInStackToExit,
         Recovered,
         ReturnToPrevious
     }

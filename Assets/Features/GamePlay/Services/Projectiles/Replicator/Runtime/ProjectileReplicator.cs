@@ -20,7 +20,7 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
     {
         [Inject]
         private void Construct(
-            IPlayerPositionProvider positionProvider,
+            IPlayerEntityProvider entityProvider,
             IProjectilesPoolProvider projectilesPoolProvider,
             IVfxPoolProvider vfxPoolProvider,
             ProjectileReplicatorConfigAsset config)
@@ -28,14 +28,14 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
             _vfxPoolProvider = vfxPoolProvider;
             _projectilesPoolProvider = projectilesPoolProvider;
             _config = config;
-            _positionProvider = positionProvider;
+            _entityProvider = entityProvider;
         }
 
         private readonly Dictionary<ProjectileType, IObjectProvider<LinearProjectile>> _projectiles = new();
 
         private ProjectileReplicatorConfigAsset _config;
 
-        private IPlayerPositionProvider _positionProvider;
+        private IPlayerEntityProvider _entityProvider;
         private IProjectilesPoolProvider _projectilesPoolProvider;
         private IObjectProvider<AnimatedVfx> _vfx;
         private IVfxPoolProvider _vfxPoolProvider;
@@ -55,7 +55,7 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
 
         public void Replicate(string creatorId, ProjectileInstantiateEvent data)
         {
-            var distance = Vector2.Distance(data.Position, _positionProvider.Position);
+            var distance = Vector2.Distance(data.Position, _entityProvider.Position);
 
             if (distance > _config.ReplicateDistance)
                 return;

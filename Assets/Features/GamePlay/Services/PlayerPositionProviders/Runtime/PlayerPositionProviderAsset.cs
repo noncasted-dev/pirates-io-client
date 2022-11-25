@@ -10,7 +10,7 @@ namespace GamePlay.Services.PlayerPositionProviders.Runtime
         menuName = GamePlayAssetsPaths.PlayerPositionProvider + "Service")]
     public class PlayerPositionProviderAsset : LocalServiceAsset
     {
-        [SerializeField] private PlayerPositionProvider _prefab;
+        [SerializeField] private PlayerEntityProvider _prefab;
 
         public override async UniTask Create(
             IServiceBinder serviceBinder,
@@ -22,7 +22,7 @@ namespace GamePlay.Services.PlayerPositionProviders.Runtime
 
             serviceBinder.RegisterComponent(provider)
                 .As<IPlayerEntityPresenter>()
-                .As<IPlayerPositionProvider>();
+                .As<IPlayerEntityProvider>();
 
             serviceBinder.AddToModules(provider);
         }

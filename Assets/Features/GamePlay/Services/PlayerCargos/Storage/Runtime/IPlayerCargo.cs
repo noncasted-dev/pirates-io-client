@@ -1,9 +1,9 @@
-﻿namespace GamePlay.Services.PlayerCargos.Storage.Runtime
+﻿using GamePlay.Items.Abstract;
+
+namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 {
     public interface IPlayerCargo
     {
-        void OpenCityUI();
-        void OpenTravelUI();
-        void CloseUI();
+        void OnDropped(IItem item, int count);
     }
 }

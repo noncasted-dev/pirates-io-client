@@ -22,7 +22,7 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
         private void Construct(
             INetworkObjectDropReceiver dropReceiver,
             INetworkObjectDropSender dropSender,
-            IPlayerPositionProvider playerPositionProvider,
+            IPlayerEntityProvider playerEntityProvider,
             IDropPoolProvider dropPoolProvider,
             IItemFactory itemFactory,
             ObjectDropperConfigAsset config)
@@ -32,7 +32,7 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
             _poolProvider = dropPoolProvider;
             _dropReceiver = dropReceiver;
             _dropSender = dropSender;
-            _playerPositionProvider = playerPositionProvider;
+            _playerEntityProvider = playerEntityProvider;
         }
 
         private readonly DroppedObjectsStorage _storage = new();
@@ -43,12 +43,12 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
 
         private IObjectProvider<IDroppedItem> _itemProvider;
 
-        private IPlayerPositionProvider _playerPositionProvider;
+        private IPlayerEntityProvider _playerEntityProvider;
         private IDropPoolProvider _poolProvider;
 
         public void DropFromPlayer(ItemType type, int count)
         {
-            var dropPosition = _playerPositionProvider.Position;
+            var dropPosition = _playerEntityProvider.Position;
             dropPosition.y -= _config.DropFromPlayerYOffset;
 
             _dropSender.OnItemDropped(type, count, dropPosition);

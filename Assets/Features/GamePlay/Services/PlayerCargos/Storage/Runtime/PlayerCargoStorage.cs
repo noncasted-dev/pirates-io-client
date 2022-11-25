@@ -1,6 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using GamePlay.Items.Abstract;
+using GamePlay.Services.PlayerCargos.Storage.Events;
+using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Services.PlayerCargos.Storage.Runtime
@@ -11,8 +12,6 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
         public IReadOnlyDictionary<ItemType, IItem> Items => _items;
 
-        public event Action Changed;
-
         public void Add(IItem item)
         {
             var type = item.BaseData.Type;
@@ -20,12 +19,12 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             if (_items.ContainsKey(type) == true)
             {
                 _items[type].Add(item.Count);
-                Changed?.Invoke();
+                OnChanged();
                 return;
             }
 
             _items[type] = item;
-            Changed?.Invoke();
+            OnChanged();
         }
 
         public void Reduce(ItemType type, int amount)
@@ -37,7 +36,8 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             }
 
             _items[type].Reduce(amount);
-            Changed?.Invoke();
+            
+            OnChanged();
 
             if (_items[type].Count == 0)
                 Delete(type);
@@ -52,9 +52,15 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             }
 
             _items.Remove(type);
-            Changed?.Invoke();
+            OnChanged();
         }
 
+        public void Clear()
+        {
+            _items.Clear();
+            OnChanged();
+        }
+        
         public IItem[] ToArray()
         {
             var items = new IItem[_items.Count];
@@ -78,6 +84,13 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
                 weight += item.Count;
 
             return weight;
+        }
+
+        private void OnChanged()
+        {
+            Debug.Log("On changed");
+            var data = new CargoChangedEvent(Items, GetWeight());
+            MessageBroker.Default.Publish(data);
         }
     }
 }

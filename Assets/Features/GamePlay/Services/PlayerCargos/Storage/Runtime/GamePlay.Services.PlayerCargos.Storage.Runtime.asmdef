@@ -1,12 +1,14 @@
-﻿{
-  "name": "GamePlay.Services.PlayerCargos.Storage.Runtime",
-  "references": [
-    "GUID:84cd594620dd428ab81e0f0261df3677",
-    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
-    "GUID:e2b1c00d8d9b440888bd9f6a58105dd3",
-    "GUID:69e3c14da3dc4d8480ae4ae8bb544002",
-    "GUID:67f67dcce9d9e8a43a8e45bc1fe5534c",
-    "GUID:c713b254602614c43a1d94a2a13ba844",
-    "GUID:f99e81adb521496aaf534590bbf61710"
-  ]
+{
+    "name": "GamePlay.Services.PlayerCargos.Storage.Runtime",
+    "rootNamespace": "",
+    "references": ["GUID:e2b1c00d8d9b440888bd9f6a58105dd3","GUID:b0214a6008ed146ff8f122a6a9c2f6cc","GUID:f99e81adb521496aaf534590bbf61710","GUID:c108528aa1ad4cee8451aaa4a2f35582","GUID:560b04d1a97f54a4e82edc0cbbb69285","GUID:ccd954329382b474a93d18fc27ad59eb","GUID:c4f71e0b631016a4db9b73be47757b2a"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

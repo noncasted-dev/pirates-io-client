@@ -14,9 +14,9 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
     public class ChunksOcclusionCulling : SceneObject
     {
         [Inject]
-        private void Construct(IPlayerPositionProvider playerPosition)
+        private void Construct(IPlayerEntityProvider playerEntity)
         {
-            _playerPosition = playerPosition;
+            _playerEntity = playerEntity;
         }
 
         [SerializeField] private Chunk[] _chunks;
@@ -25,7 +25,7 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
 
         private WaitForSeconds _wait;
 
-        private IPlayerPositionProvider _playerPosition;
+        private IPlayerEntityProvider _playerEntity;
 
         private Coroutine _process;
         private IDisposable _playerSpawnListener;
@@ -67,7 +67,7 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
         {
             foreach (var chunk in _chunks)
             {
-                var distance = Vector2.Distance(chunk.position, _playerPosition.Position);
+                var distance = Vector2.Distance(chunk.position, _playerEntity.Position);
 
                 if (distance > _cullingDistance)
                 {

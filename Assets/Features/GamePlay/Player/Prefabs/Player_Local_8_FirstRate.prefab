@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: _icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 11a8b267c3bfc2f47a3ab7cfb4b820b0, type: 3}
+    - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: _name
+      value: FirstRate
+      objectReference: {fileID: 0}
     - target: {fileID: 1743216952723330936, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -69,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3834022361475402687, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Name
-      value: Player_Local_8_FirstRate Variant
+      value: Player_Local_8_FirstRate
       objectReference: {fileID: 0}
     - target: {fileID: 5197820324927245891, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Size.x

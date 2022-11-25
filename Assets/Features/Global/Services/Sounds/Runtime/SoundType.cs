@@ -4,15 +4,18 @@
     {
         CityEnter,
         CityExit,
+        
         PortEnter,
         PortExit,
+        
         BattleEnter,
         BattleExit,
-        CannonBallShot,
-        ShrapnelShot,
-        KnuppelShot,
+
         UiOpen,
         OverButton,
-        ButtonClick
+        ButtonClick,
+        
+        MenuEntered,
+        MenuExited
     }
 }

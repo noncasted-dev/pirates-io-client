@@ -15549,7 +15549,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Frigate
-  _baseHealth: 1000
+  _icon: {fileID: 0}
+  _baseHealth: 30
   _baseMaxSpeed: 44
   _baseMaxWeight: 600
   _baseMaxCannons: 150

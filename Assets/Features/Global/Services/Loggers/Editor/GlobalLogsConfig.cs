@@ -27,7 +27,8 @@ namespace Global.Services.Loggers.Editor
         menuName = GlobalAssetsPaths.Config + "Logs", order = 1)]
     public class GlobalLogsConfig : ScriptableObject
     {
-        [Space(30)] [Header("System")] [SerializeField] [EditableObject]
+        [Space(30)] [Header("System")] 
+        [SerializeField] [EditableObject]
         private ApplicationProxyLogSettings _applicationProxy;
         [Space(30)] [Header("Data")] [SerializeField] [EditableObject]
         private AssetsFlowLogSettings _assetsFlow;

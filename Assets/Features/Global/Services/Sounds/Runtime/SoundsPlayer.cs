@@ -70,6 +70,7 @@ namespace Global.Services.Sounds.Runtime
         public void OnPortExited()
         {
             AmbInstance.setParameterByName("amb_condition", 0f);
+            Debug.Log("portExit");
         }
 
         public void OnBattleEntered()
@@ -95,7 +96,7 @@ namespace Global.Services.Sounds.Runtime
         public void OnShrapnelShot(Vector2 position)
         {
             ShotInstance = FMODUnity.RuntimeManager.CreateInstance(ShotEvent);
-            //FMODUnity.RuntimeManager.AttachInstanceToGameObject(ShotInstance, Transform.po);
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(ShotInstance, Transform.po);
             ShotInstance.setParameterByName("shot_type", 1f);
             ShotInstance.start();
             ShotInstance.release();
@@ -129,7 +130,7 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnUiOpened()
         {
-            FMODUnity.RuntimeManager.PlayOneShot(UiOpenedEvent); 
+           FMODUnity.RuntimeManager.PlayOneShot(UiOpenedEvent); 
         }
 
         public void OnOverButton()

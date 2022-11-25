@@ -5,7 +5,7 @@
 			<value>port</value>
 		</property>
 		<property name="outputFormat">
-			<value>5</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{0b7d431c-580b-402d-ba46-095c4974567a}</destination>

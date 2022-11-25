@@ -67,7 +67,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
                 direction.Normalize();
 
                 var position = center + direction * distance;
-                _dropper.Drop(type, item.Count, position);
+                _dropper.DropFromDeath(type, item.Count, position);
             }
             
             _storage.Clear();

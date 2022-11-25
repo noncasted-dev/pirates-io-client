@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3546747626225414259
+--- !u!1001 &3931484711290984259
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,11 +10,7 @@ PrefabInstance:
     - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: _icon
       value: 
-      objectReference: {fileID: 21300000, guid: bb7ecf0bdf6c93b48bde2a0b09645625, type: 3}
-    - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
-      propertyPath: _name
-      value: Tartan
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 2a41f3c0adc54a9419c2b6669268ff1a, type: 3}
     - target: {fileID: 1743216952723330936, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -61,39 +57,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3383068367071273088, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Size.x
-      value: 3.39
+      value: 3.91
       objectReference: {fileID: 0}
     - target: {fileID: 3383068367071273088, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Size.y
-      value: 1.22
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 3834022361475402687, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Name
-      value: Player_Local_5_Tartan
+      value: Player_Local_7_Frigate
       objectReference: {fileID: 0}
     - target: {fileID: 5197820324927245891, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Size.x
-      value: 2.88
+      value: 3.28
       objectReference: {fileID: 0}
     - target: {fileID: 5197820324927245891, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Size.y
-      value: 0.45
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 5197820324927245891, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Offset.y
-      value: -0.08
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862192677255371325, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: _deathVfx.m_AssetGUID
+      value: 2593a431152cbd640aaf178d5960433f
       objectReference: {fileID: 0}
     - target: {fileID: 6936041581366057314, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e8d7c4268bb33854ab6720b16dbb5418, type: 3}
+      objectReference: {fileID: 21300000, guid: 70feec99b8b71ac44b9bfa5d8610175e, type: 3}
     - target: {fileID: 7353524804781764757, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.64
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7353524804781764757, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.33
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7353524804781764757, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_LocalScale.z
@@ -102,10 +102,10 @@ PrefabInstance:
     - target: {fileID: 7780379814991452964, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6b0f2f3486d505745a000f458fb50d85, type: 3}
+      objectReference: {fileID: 21300000, guid: d137cd0a2fe40924d80cba6522b451a6, type: 3}
     - target: {fileID: 8240006148239672226, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Radius
-      value: 1.5
+      value: 1.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}

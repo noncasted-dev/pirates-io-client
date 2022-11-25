@@ -16,7 +16,7 @@ namespace GamePlay.Services.DroppedObjects.Tests
 
             var item = _item.Create(12);
 
-            dropper.Drop(item.BaseData.Type, item.Count, transform.position);
+            dropper.DropFromDeath(item.BaseData.Type, item.Count, transform.position);
         }
     }
 }

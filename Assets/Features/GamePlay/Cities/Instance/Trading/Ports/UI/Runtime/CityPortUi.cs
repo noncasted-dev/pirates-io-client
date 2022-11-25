@@ -77,6 +77,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void OnEnable()
         {
+            Debug.Log("Lisen");
             _enterListener = MessageBroker.Default.Receive<PortEnteredEvent>().Subscribe(OnEntered);
             _exitListener = MessageBroker.Default.Receive<PortExitedEvent>().Subscribe(OnExited);
             _requestListener = MessageBroker.Default.Receive<TradeRequestedEvent>().Subscribe(OnTradeRequested);
@@ -88,11 +89,13 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void OnDisable()
         {
+            Debug.Log("unLisen");
+
             _enterListener?.Dispose();
             _exitListener?.Dispose();
             _requestListener?.Dispose();
             
-            _tradeHandler.Completed += OnTradeCompleted;
+            _tradeHandler.Completed -= OnTradeCompleted;
         }
 
         public void Recover()
@@ -107,6 +110,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void OnEntered(PortEnteredEvent data)
         {
+            Debug.Log("Enter");
             _nickName.text = _profileStorageProvider.UserName;
 
             _body.SetActive(true);

@@ -209,6 +209,22 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Services/PlayerCargos/Config/UI_PlayerCargo_Travel.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 7155a763ab340d24a8bfa19314afc12c
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Dead/DeadShip_1-3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6a8006dec9d93554aac8276a78da7762
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Dead/DeadShip_4-5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2593a431152cbd640aaf178d5960433f
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Dead/DeadShip_6-7.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bed84626267a95e47ada294f6f7eeca4
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Dead/DeadShip_8.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
   m_SchemaSet:

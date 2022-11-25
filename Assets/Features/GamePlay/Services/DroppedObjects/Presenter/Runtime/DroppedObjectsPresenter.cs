@@ -35,7 +35,10 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
             _playerEntityProvider = playerEntityProvider;
         }
 
+        [SerializeField] private float _dropDistance;
+        
         private readonly DroppedObjectsStorage _storage = new();
+        
         private ObjectDropperConfigAsset _config;
         private INetworkObjectDropReceiver _dropReceiver;
         private INetworkObjectDropSender _dropSender;
@@ -48,15 +51,22 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
 
         public void DropFromPlayer(ItemType type, int count)
         {
-            var dropPosition = _playerEntityProvider.Position;
-            dropPosition.y -= _config.DropFromPlayerYOffset;
+            var targetPosition = _playerEntityProvider.Position;
+            targetPosition.y -= _config.DropFromPlayerYOffset;
 
-            _dropSender.OnItemDropped(type, count, dropPosition);
+            _dropSender.OnItemDropped(type, count, _playerEntityProvider.Position, targetPosition);
+            
+            Debug.Log($"Drop object: {type}, {count}, {_playerEntityProvider.Position}");
         }
 
-        public void Drop(ItemType type, int count, Vector2 position)
+        public void DropFromDeath(ItemType type, int count, Vector2 position)
         {
-            _dropSender.OnItemDropped(type, count, position);
+            var direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+            var target = position + direction * Random.Range(0f, _dropDistance);
+            
+            _dropSender.OnItemDropped(type, count, position, target);
+            
+            Debug.Log($"Drop object: {type}, {count}, {position}");
         }
 
         public void OnLoaded()
@@ -66,6 +76,7 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
 
         public void OnEnabled()
         {
+            Debug.Log($"Listen objects");
             _dropReceiver.ItemDropped += OnNetworkItemDropReceived;
             _dropReceiver.ItemCollected += OnNetworkItemCollectReceived;
         }
@@ -78,10 +89,12 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
 
         private void OnNetworkItemDropReceived(ItemDropEvent data)
         {
-            var dropped = _itemProvider.Get(data.Position);
+            Debug.Log($"Process drop: {data.Type}, {data.Id}, {data.Origin}, {data.Target}");
+            
+            var dropped = _itemProvider.Get(data.Origin);
             var item = _itemFactory.Create(data.Type, data.Count);
 
-            dropped.Construct(data.Id, OnLocalCollected, item);
+            dropped.Drop(data.Id, OnLocalCollected, item, data.Origin, data.Target);
 
             _storage.Add(data.Id, dropped);
         }

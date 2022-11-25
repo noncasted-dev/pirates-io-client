@@ -16,7 +16,7 @@ namespace Global.Services.Loggers.Runtime
             if (_isEnabled == false)
                 return false;
 
-            if (_logs[logType] == false)
+            if (_logs.ContainsKey(logType) == false|| _logs[logType] == false)
                 return false;
 
             if (ConfirmAvailability(logType) == false)

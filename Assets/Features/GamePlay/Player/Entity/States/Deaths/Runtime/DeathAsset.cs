@@ -1,5 +1,6 @@
 ﻿using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.Abstract;
+using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
 using VContainer;
@@ -16,7 +17,13 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
         {
             builder.Register<Death>(Lifetime.Scoped)
                 .WithParameter(_definition)
-                .As<IDeath>();
+                .As<IDeath>()
+                .AsSelf();
+        }
+
+        public override void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)
+        {
+            callbackRegister.Add(resolver.Resolve<Death>());
         }
     }
 }

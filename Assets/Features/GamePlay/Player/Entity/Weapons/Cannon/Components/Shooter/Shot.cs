@@ -82,7 +82,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 _shotsRegistry[i] = true;
                 _shotCounter++;
                 
-                MessageBroker.Default.TriggerSound(SoundType.CannonBallShot);
+                MessageBroker.Default.TriggerSound(PositionalSoundType.CannonBallShot, shootPosition);
 
                 _cannonReplicator.Replicate(
                     ProjectileType.Ordinary,

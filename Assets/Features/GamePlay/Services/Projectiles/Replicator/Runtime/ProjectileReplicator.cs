@@ -72,7 +72,7 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
             var vfx = _vfx.Get(data.Position);
             vfx.transform.rotation = Quaternion.Euler(0f, 0f, data.Angle);
             
-            MessageBroker.Default.TriggerSound(SoundType.CannonBallShot);
+            MessageBroker.Default.TriggerSound(PositionalSoundType.CannonBallShot, data.Position);
         }
     }
 }

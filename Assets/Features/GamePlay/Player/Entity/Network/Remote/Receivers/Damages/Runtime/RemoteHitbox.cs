@@ -4,7 +4,9 @@ using GamePlay.Common.Damages;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
+using Global.Services.Sounds.Runtime;
 using Ragon.Client;
+using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
@@ -44,6 +46,8 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
             var direction = damage.Origin - (Vector2)_root.transform.position;
             direction.Normalize();
             explosion.transform.RotateAlong(direction);
+            
+            MessageBroker.Default.TriggerSound(PositionalSoundType.EnemyDamaged, damage.Origin);
 
             if (isProjectileLocal == true)
                 _eventSender.ReplicateEvent(damageEvent);

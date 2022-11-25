@@ -62,7 +62,7 @@ namespace Global.Services.Sounds.Runtime
             
         }
 
-        public void OnCannonBallShot()
+        public void OnCannonBallShot(Vector2 position)
         {
             ShotInstance = FMODUnity.RuntimeManager.CreateInstance(ShotEvent);
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(ShotInstance, Boat.transform, gameObject.GetComponent<Rigidbody>());
@@ -72,12 +72,27 @@ namespace Global.Services.Sounds.Runtime
             Debug.Log("boom");
         }
 
-        public void OnShrapnelShot()
+        public void OnShrapnelShot(Vector2 position)
         {
             
         }
 
-        public void OnKnuppelShot()
+        public void OnKnuppelShot(Vector2 position)
+        {
+            
+        }
+
+        public void OnProjectileDropped(Vector2 position)
+        {
+            
+        }
+
+        public void OnEnemyDamaged(Vector2 position)
+        {
+            
+        }
+
+        public void OnDamageReceived()
         {
             
         }
@@ -93,6 +108,16 @@ namespace Global.Services.Sounds.Runtime
         }
 
         public void OnButtonClicked()
+        {
+            
+        }
+
+        public void OnMenuEntered()
+        {
+            
+        }
+
+        public void OnMenuExited()
         {
             
         }

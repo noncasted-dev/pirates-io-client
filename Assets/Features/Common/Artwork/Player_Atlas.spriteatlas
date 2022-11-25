@@ -88,25 +88,25 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e9e8a3eec1ad307438f5aad1442f27eb, type: 3}
   - {fileID: 21300000, guid: 49b4445f110f84a4ebfaebddaca74e00, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Ship_0_Outline
-  - Ship_6_outline
-  - Ship_5_outline
+  - Ship_0_Boat_Outline
+  - Ship_6_Polacre_Outline
+  - Ship_5_Tartan_Outline
   - AimLine
-  - Ship_4
-  - Ship_5
-  - Ship_1
-  - Ship_2_outline
-  - Ship_4_outline
-  - Ship_0
-  - Ship_6
-  - Ship_8_outline
-  - Ship_7
-  - Ship_8
-  - Ship_2
-  - Ship_7_outline
-  - Ship_3
-  - Ship_1_outline
-  - Ship_3_outline
+  - Ship_4_Brig
+  - Ship_5_Tartan
+  - Ship_1_Ketch
+  - Ship_2_Pink_Outline
+  - Ship_4_Brig_Outline
+  - Ship_0_Boat
+  - Ship_6_Polacre
+  - Ship_8_FirstRate_Outline
+  - Ship_7_Frigate
+  - Ship_8_FirstRate
+  - Ship_2_Pink
+  - Ship_7_Frigate_Outline
+  - Ship_3_Snow
+  - Ship_1_Ketch_Outline
+  - Ship_3_Snow_Outline
   m_RenderDataMap: {}
   m_Tag: Player_Atlas
   m_IsVariant: 0

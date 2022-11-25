@@ -5,6 +5,7 @@ namespace Global.Services.Sounds.Runtime
     [DisallowMultipleComponent]
     public class SoundsPlayer : MonoBehaviour
     {
+
         public void OnCityEntered()
         {
             

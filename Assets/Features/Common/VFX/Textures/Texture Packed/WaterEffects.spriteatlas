@@ -103,7 +103,6 @@ SpriteAtlas:
   - {fileID: -1559284919, guid: 09e49c7ce1b380448a659d00eacc1cf5, type: 3}
   - {fileID: 1878710857, guid: 09e49c7ce1b380448a659d00eacc1cf5, type: 3}
   - {fileID: -146725105, guid: 09e49c7ce1b380448a659d00eacc1cf5, type: 3}
-  - {fileID: -45229360, guid: 09e49c7ce1b380448a659d00eacc1cf5, type: 3}
   - {fileID: -140217728, guid: 09e49c7ce1b380448a659d00eacc1cf5, type: 3}
   - {fileID: 1212531775, guid: 09e49c7ce1b380448a659d00eacc1cf5, type: 3}
   - {fileID: 1921416525, guid: 09e49c7ce1b380448a659d00eacc1cf5, type: 3}
@@ -182,7 +181,6 @@ SpriteAtlas:
   - BrockenShips_2
   - BrockenShips_1
   - BrockenShips_0
-  - BrockenShips_27
   - BrockenShips_26
   - BrockenShips_25
   - BrockenShips_24

@@ -15366,6 +15366,8 @@ GameObject:
   - component: {fileID: 5197820324927245891}
   - component: {fileID: -4100299532222470880}
   - component: {fileID: 160118787591633700}
+  - component: {fileID: 2585353411466666207}
+  - component: {fileID: 4268868882782736720}
   m_Layer: 6
   m_Name: Player_Local
   m_TagString: Untagged
@@ -15453,6 +15455,8 @@ MonoBehaviour:
   _sprite: {fileID: 7459740484505219447}
   _spriteTransform: {fileID: 958269550526828864}
   _transform: {fileID: 710161118739580181}
+  _config: {fileID: 2585353411466666207}
+  _debug: {fileID: 4268868882782736720}
 --- !u!114 &1619435411979782750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15556,6 +15560,35 @@ MonoBehaviour:
   _baseCannons: 35
   _baseTeam: 250
   _baseMaxTeam: 350
+--- !u!114 &2585353411466666207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834022361475402687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e0fbeedba5d41ed81d22e68a1ef86a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deathVfx:
+    m_AssetGUID: f37e821448627a7409434393430e3332
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+--- !u!114 &4268868882782736720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834022361475402687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeaa0906a2c3467ba41dbb70a3359210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4179929927324340103
 GameObject:
   m_ObjectHideFlags: 0

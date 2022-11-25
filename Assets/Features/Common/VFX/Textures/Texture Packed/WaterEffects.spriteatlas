@@ -47,6 +47,12 @@ SpriteAtlas:
   - {fileID: 30620012, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
   - {fileID: 2078147751, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
   - {fileID: -1751349726, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
+  - {fileID: -1228828785, guid: 592c0156930f58c41abfceed7d549e8e, type: 3}
+  - {fileID: 870999663, guid: 592c0156930f58c41abfceed7d549e8e, type: 3}
+  - {fileID: -303872825, guid: 592c0156930f58c41abfceed7d549e8e, type: 3}
+  - {fileID: 501313353, guid: 592c0156930f58c41abfceed7d549e8e, type: 3}
+  - {fileID: 956877716, guid: 592c0156930f58c41abfceed7d549e8e, type: 3}
+  - {fileID: -1891726041, guid: 592c0156930f58c41abfceed7d549e8e, type: 3}
   - {fileID: 21300000, guid: b2e150b630ba42d4fb5399956197e964, type: 3}
   - {fileID: 21300000, guid: 776317576aac07c4da5ba71c10a85377, type: 3}
   - {fileID: -231998948, guid: fe4989b7b58a92f4b89e91d486763fd2, type: 3}
@@ -125,6 +131,12 @@ SpriteAtlas:
   - AtlassC_2
   - AtlassC_1
   - AtlassC_0
+  - Characters_2
+  - Characters_3
+  - Characters_0
+  - Characters_1
+  - Characters_4
+  - Characters_5
   - reward_glow
   - AIMZonea
   - WaterSplash_AtlassB_6

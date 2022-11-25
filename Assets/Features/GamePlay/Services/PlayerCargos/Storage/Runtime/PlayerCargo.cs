@@ -6,7 +6,6 @@ using GamePlay.Services.PlayerPositionProviders.Runtime;
 using UniRx;
 using UnityEngine;
 using VContainer;
-using Random = UnityEngine.Random;
 
 namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 {
@@ -22,8 +21,6 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             _entityProvider = entityProvider;
             _dropper = droppedObjectsPresenter;
         }
-
-        [SerializeField] private float _dropRange = 4f;
 
         private IDisposable _deathListener;
         
@@ -61,14 +58,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             var center = _entityProvider.Position;
             
             foreach (var (type, item) in _storage.Items)
-            {
-                var distance = Random.Range(0f, _dropRange);
-                var direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-                direction.Normalize();
-
-                var position = center + direction * distance;
-                _dropper.DropFromDeath(type, item.Count, position);
-            }
+                _dropper.DropFromDeath(type, item.Count, center);
             
             _storage.Clear();
         }

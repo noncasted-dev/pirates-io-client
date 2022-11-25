@@ -66,7 +66,7 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
             
             _dropSender.OnItemDropped(type, count, position, target);
             
-            Debug.Log($"Drop object: {type}, {count}, {position}");
+            Debug.Log($"Drop object: {type}, {count}, {position}, {target}");
         }
 
         public void OnLoaded()

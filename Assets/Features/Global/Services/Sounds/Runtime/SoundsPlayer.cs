@@ -49,7 +49,7 @@ namespace Global.Services.Sounds.Runtime
         public void OnCityEntered()
         {
             
-            AmbInstance.setParameterByName("amb_condition", 1f);
+            
         
           
             Debug.Log("city_enter");
@@ -58,17 +58,18 @@ namespace Global.Services.Sounds.Runtime
         public void OnCityExited()
         {
             
-            AmbInstance.setParameterByName("amb_condition", 0f);
+            
         }
 
         public void OnPortEntered()
         {
-            
+
+            AmbInstance.setParameterByName("amb_condition", 1f);
         }
 
         public void OnPortExited()
         {
-            
+            AmbInstance.setParameterByName("amb_condition", 0f);
         }
 
         public void OnBattleEntered()
@@ -128,7 +129,7 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnUiOpened()
         {
-            
+            FMODUnity.RuntimeManager.PlayOneShot(UiOpenedEvent); 
         }
 
         public void OnOverButton()

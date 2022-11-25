@@ -1,6 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Global.Registry.Runtime;
+using GamePlay.Cities.Instance.Root.Runtime;
 using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Factions.Selections.Loops.Runtime;
 using GamePlay.Player.Entity.Components.Definition;
@@ -41,7 +42,6 @@ namespace GamePlay.Services.LevelLoops.Runtime
             LevelLoopLogger logger)
         {
             _entityPresenter = entityPresenter;
-            _playerEntityProvider = playerEntityProvider;
             _travelOverlay = travelOverlay;
             _citiesRegistry = citiesRegistry;
             _factionSelection = factionSelection;
@@ -52,6 +52,8 @@ namespace GamePlay.Services.LevelLoops.Runtime
             _currentCamera = currentCamera;
             _levelCamera = levelCamera;
         }
+
+        private ICity _lastCity;
 
         private IDisposable _deathListener;
         
@@ -66,7 +68,6 @@ namespace GamePlay.Services.LevelLoops.Runtime
         private ISceneObjectsHandler _sceneObjects;
         private ITransitionScreen _transitionScreen;
         private ITravelOverlay _travelOverlay;
-        private IPlayerEntityProvider _playerEntityProvider;
         private IPlayerEntityPresenter _entityPresenter;
 
         public void OnEnabled()
@@ -97,7 +98,8 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
             var cityInstance = _citiesRegistry.GetCity(selectedCity);
             var spawnPosition = cityInstance.SpawnPoints.GetRandom();
-
+            _lastCity = cityInstance;
+            
             _logger.OnPlayerSpawn();
 
             var player = await _playerFactory.Create(spawnPosition, ShipType.Boat);
@@ -128,7 +130,8 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
             _logger.OnPlayerSpawn();
 
-            var player = await _playerFactory.Create(_playerEntityProvider.Position, ship);
+            var spawnPosition = _lastCity.SpawnPoints.GetRandom();
+            var player = await _playerFactory.Create(spawnPosition, ship);
 
             _levelCamera.Teleport(player.Transform.position);
             _levelCamera.StartFollow(player.Transform);

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Events;
 using UniRx;
@@ -56,6 +55,12 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             OnChanged();
         }
 
+        public void Clear()
+        {
+            _items.Clear();
+            OnChanged();
+        }
+        
         public IItem[] ToArray()
         {
             var items = new IItem[_items.Count];

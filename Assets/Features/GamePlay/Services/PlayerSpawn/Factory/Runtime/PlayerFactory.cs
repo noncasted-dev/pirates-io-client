@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Runtime.InteropServices;
+using Cysharp.Threading.Tasks;
 using GamePlay.Common.Areas.Common.Runtime;
 using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Player.Entity.Network.Root.Runtime;
@@ -71,7 +72,7 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             _logger.OnInstantiated(position);
 
             var bootstrapper = playerObject.GetComponent<IPlayerBootstrapper>();
-
+            
             await bootstrapper.Bootstrap(_scope);
 
             var root = playerObject.GetComponent<IPlayerRoot>();

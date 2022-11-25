@@ -225,6 +225,10 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Player/Prefabs/Dead/DeadShip_8.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: f37e821448627a7409434393430e3332
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Dead/DeadShip.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
   m_SchemaSet:

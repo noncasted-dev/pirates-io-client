@@ -10,7 +10,6 @@ namespace GamePlay.Services.PlayerCargos.UI
 {
     public class CargoItemsListView : MonoBehaviour
     {
-        [SerializeField] private CargoItemCell[] _startupCells;
         [SerializeField] private CargoItemCell _cellPrefab;
         
         [SerializeField] private Transform _cellsRoot;
@@ -25,29 +24,6 @@ namespace GamePlay.Services.PlayerCargos.UI
         private IDisposable _dropCountListener;
 
         private bool _isInitialized;
-        
-        private void Awake()
-        {
-            if (_isInitialized == true)
-                return;
-
-            _isInitialized = true;
-            
-            _available.Clear();
-            _cells.Clear();
-            _all.Clear();
-
-            foreach (var startupCell in _startupCells)
-            {
-                _available.Add(startupCell);
-                _all.Add(startupCell);
-            }
-
-            _startupCells = Array.Empty<CargoItemCell>();
-            
-            foreach (var cell in _available)
-                cell.Disable();
-        }
         
         private void OnEnable()
         {
@@ -64,8 +40,6 @@ namespace GamePlay.Services.PlayerCargos.UI
 
         public void Fill(IReadOnlyList<IItem> items)
         {
-            Awake();
-
             foreach (var cell in _all)
                 cell.Disable();
             

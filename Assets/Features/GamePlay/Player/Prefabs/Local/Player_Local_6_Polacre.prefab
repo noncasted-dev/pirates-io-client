@@ -15,10 +15,6 @@ PrefabInstance:
       propertyPath: _name
       value: Polacre
       objectReference: {fileID: 0}
-    - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
-      propertyPath: _baseHealth
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 1743216952723330936, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -63,6 +59,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2290614771776376118, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290614771776376118, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2585353411466666207, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: _deathVfx.m_AssetGUID
+      value: 2593a431152cbd640aaf178d5960433f
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135807978603376527, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3207619
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135807978603376527, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.154296
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135807978603376527, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.445601
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135807978603376527, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135807978603376527, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.14475
+      objectReference: {fileID: 0}
     - target: {fileID: 3383068367071273088, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Size.x
       value: 3.56
@@ -71,6 +99,22 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.31
       objectReference: {fileID: 0}
+    - target: {fileID: 3741757368847473633, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75334877
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741757368847473633, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0464498
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741757368847473633, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8635749
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834022361475402687, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 3834022361475402687, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Name
       value: Player_Local_6_Polacre
@@ -87,9 +131,17 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.22
       objectReference: {fileID: 0}
-    - target: {fileID: 5862192677255371325, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
-      propertyPath: _deathVfx.m_AssetGUID
-      value: 2593a431152cbd640aaf178d5960433f
+    - target: {fileID: 6094550014823188856, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.183369
+      objectReference: {fileID: 0}
+    - target: {fileID: 6094550014823188856, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.7139328
+      objectReference: {fileID: 0}
+    - target: {fileID: 6094550014823188856, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.1949153
       objectReference: {fileID: 0}
     - target: {fileID: 6936041581366057314, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Sprite

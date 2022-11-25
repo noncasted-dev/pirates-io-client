@@ -5,7 +5,7 @@
 			<value>amb</value>
 		</property>
 		<property name="outputFormat">
-			<value>5</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{e7b84cb5-80eb-4e4b-b541-5a46a1f8d923}</destination>

@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9468c5f457ace64f8d4df6d642b107f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadEvent: 0
+  LoadEvent: 1
   UnloadEvent: 0
   Banks:
   - Master.strings
@@ -109,10 +109,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806fbdfa58d54716bdf4c3c4c333b63a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shot:
+  ShotEvent:
+    Guid:
+      Data1: -1727601940
+      Data2: 1135243399
+      Data3: 1948186807
+      Data4: -1664330746
+    Path: event:/shot
+  UiOpenedEvent:
     Guid:
       Data1: 0
       Data2: 0
       Data3: 0
       Data4: 0
     Path: 
+  ButtonClickedEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  OverButtonEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  anObject: {fileID: 4537502506927708906, guid: b04683208ee893c47adef96205e38574, type: 3}

@@ -5,11 +5,9 @@ using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
 using GamePlay.Player.Entity.Views.ShipConfig.Runtime;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
-using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Implementation.Dead;
 using GamePlay.Services.VFX.Pool.Provider;
 using UniRx;
-using UnityEngine;
 
 namespace GamePlay.Player.Entity.States.Deaths.Runtime
 {
@@ -40,7 +38,6 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
 
         public void OnAwake()
         {
-            Debug.Log("On awake");
             _objectProvider = _vfxPoolProvider.GetPool<DeadShipVfx>(_config.DeathVfx);
         }
         

@@ -1,10 +1,16 @@
 ﻿using UnityEngine;
 
+
 namespace Global.Services.Sounds.Runtime
+
 {
     [DisallowMultipleComponent]
     public class SoundsPlayer : MonoBehaviour
     {
+        [SerializeField]
+        public FMODUnity.EventReference Shot;
+        public FMOD.Studio.EventInstance ShotEvent;
+        
 
         public void OnCityEntered()
         {

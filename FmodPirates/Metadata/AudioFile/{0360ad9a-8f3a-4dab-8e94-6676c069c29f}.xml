@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0360ad9a-8f3a-4dab-8e94-6676c069c29f}">
+		<property name="assetPath">
+			<value>amb/sfx_loop_waves_01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>25.939333333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{64eed2ed-234c-4897-a67b-7675ed23f8ed}</destination>
+		</relationship>
+	</object>
+</objects>

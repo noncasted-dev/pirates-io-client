@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76bbfe289a44879b7603469fb69d1d0, type: 3}
   m_Name: GlobalService_SoundsPlayer
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 4476201790910471896, guid: 6d9d2f38f32da6e42843cbe5cc90de6c, type: 3}
+  _prefab: {fileID: -3511339214736897306, guid: 6d9d2f38f32da6e42843cbe5cc90de6c, type: 3}

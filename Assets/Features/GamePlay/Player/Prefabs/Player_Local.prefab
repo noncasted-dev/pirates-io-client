@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4629004126076026155}
   - component: {fileID: 6013020921466138932}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: CircleOnWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5090,7 +5090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5930376759788343939}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Cut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5109,8 +5109,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3135807978603376527}
-  m_Father: {fileID: 1743216952723330936}
-  m_RootOrder: 1
+  m_Father: {fileID: 6647455317717596983}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1469689819519378100
 GameObject:
@@ -5711,7 +5711,7 @@ GameObject:
   - component: {fileID: 4157036070438191875}
   - component: {fileID: 1277096850128322990}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: WawesTail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10535,7 +10535,7 @@ GameObject:
   - component: {fileID: 2693237151032566594}
   - component: {fileID: 7899804994269062629}
   m_Layer: 0
-  m_Name: Circle (1)
+  m_Name: CircleCut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15386,8 +15386,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4011287660678557439}
-  - {fileID: 5930376759788343939}
-  - {fileID: 654877978498544864}
+  - {fileID: 6647455317717596983}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15549,6 +15548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Frigate
+  _icon: {fileID: 0}
   _baseHealth: 1000
   _baseMaxSpeed: 44
   _baseMaxWeight: 600
@@ -15966,6 +15966,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &7516248193504591221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6647455317717596983}
+  m_Layer: 6
+  m_Name: FX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6647455317717596983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7516248193504591221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5930376759788343939}
+  - {fileID: 654877978498544864}
+  m_Father: {fileID: 1743216952723330936}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7766639652362208732
 GameObject:
   m_ObjectHideFlags: 0
@@ -16198,8 +16231,8 @@ Transform:
   m_Children:
   - {fileID: 3741757368847473633}
   - {fileID: 6094550014823188856}
-  m_Father: {fileID: 1743216952723330936}
-  m_RootOrder: 2
+  m_Father: {fileID: 6647455317717596983}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8513527155521580923
 GameObject:

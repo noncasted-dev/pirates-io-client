@@ -59,7 +59,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             var data = new PortExitedEvent();
             MessageBroker.Default.Publish(data);
             
-            MessageBroker.Default.TriggerSound(SoundType.PortEnter);
+            MessageBroker.Default.TriggerSound(SoundType.PortExit);
 
             _isActive = false;
         }

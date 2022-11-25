@@ -63,6 +63,10 @@ namespace GamePlay.Services.PlayerCargos.UI
         public void Disable()
         {
             _item = null;
+            
+            if (gameObject == null)
+                return;
+            
             gameObject.SetActive(false);
         }
 

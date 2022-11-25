@@ -57,7 +57,7 @@ namespace GamePlay.Services.PlayerCargos.UI
         public UiConstraints Constraints => _constraints;
         public string Name => "Cargo";
         
-        private void Awake()
+        private void Start()
         {
             _body.SetActive(false);
         }

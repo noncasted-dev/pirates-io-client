@@ -62,8 +62,8 @@ MonoBehaviour:
   LoadEvent: 1
   UnloadEvent: 0
   Banks:
-  - Master.strings
   - Master
+  - Master.strings
   CollisionTag: 
   PreloadSamples: 0
 --- !u!114 &-3511339214736897306

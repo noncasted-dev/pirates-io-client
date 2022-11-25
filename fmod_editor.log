@@ -8,7 +8,7 @@
 [LOG] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001785D0B14E8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000020B0FC0FAD8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -19,6 +19,54 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
+[LOG] SoundI::release                          :  (0000020AEA1D5E38)
+[LOG] SoundI::release                          :     sfx_loop_waves_01 (0000020A3E869C18)
+[LOG] SoundI::release                          :  (0000020AEA1D8958)
+[LOG] SoundI::release                          :     1911 - Single Shot - Dry_06 (0000020A02C25228)
+[LOG] SoundI::release                          :  (0000020AEA1D5148)
+[LOG] SoundI::release                          :     sfx_amb_sea_01 (0000020A3E86D9D8)
+[LOG] SoundI::release                          :  (0000020AEA1D70E8)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_01 (0000020A3E86A298)
+[LOG] SoundI::release                          :  (0000020AEA1D5878)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_02 (0000020A3E86D358)
+[LOG] SoundI::release                          :  (0000020AEA1D4B88)
+[LOG] SoundI::release                          :     sfx_amb_port_01 (0000020A3E8698D8)
+[LOG] SoundI::release                          :  (0000020AEA1D6568)
+[LOG] SoundI::release                          :     sfx_amb_forest (0000020A3E86BC98)
+[LOG] SoundI::release                          :  (0000020AEA1D7AF8)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_03 (0000020A3E86C178)
+[LOG] SoundI::release                          :  (0000020AEA1D4CF8)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_04 (0000020A3E86D018)
+[LOG] SoundI::release                          :  (0000020AEA1D8AC8)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_05 (0000020A3E869598)
+[LOG] SoundI::release                          :  (0000020AEA1D8398)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_06 (0000020A3E86BE38)
+[LOG] SoundI::release                          :  (0000020AEA1D6B28)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_07 (0000020A3E86A0F8)
+[LOG] SoundI::release                          :  (0000020AEA1D3E98)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_08 (0000020A3E86B958)
+[LOG] SoundI::release                          :  (0000020AEA1D80B8)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_09 (0000020A3E869DB8)
+[LOG] SoundI::release                          :  (0000020AEA1D4E68)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_10 (0000020A3E86B7B8)
+[LOG] SoundI::release                          :  (0000020AEA1D8DA8)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_11 (0000020A3E86A918)
+[LOG] SoundI::release                          :  (0000020AEA1D6F78)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_12 (0000020A3E86AAB8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] ProfileClient::markForDead               : Closing client connection
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] FMOD_OS_Net_Read                         : Interrupted.[LOG] Thread::callback                         : FMOD profiler thread (send) finished.
+[LOG] ProfileClient::recvThreadLoopFunction    : Socket disconnected
+[LOG] Thread::callback                         : FMOD profiler thread (recv) finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 

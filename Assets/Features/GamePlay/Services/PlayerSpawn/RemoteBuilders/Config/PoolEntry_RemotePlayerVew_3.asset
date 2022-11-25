@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9c73204ff1f415baddb82c05ffe64da, type: 3}
-  m_Name: PlayerConfig_RangeAttack
+  m_Script: {fileID: 11500000, guid: 8c16ceebae5d400ba5549274466da76e, type: 3}
+  m_Name: PoolEntry_RemotePlayerVew_3
   m_EditorClassIdentifier: 
-  _aimAdditionalSpread: 15
-  _aimOverTime: 5
-  _aimTime: 1
-  _delay: 3
-  _endAimAngle: 0
-  _impactDistance: 1
-  _impactTime: 0.3
-  _startAimAngle: 400
+  _name: Remote_3
+  _reference:
+    m_AssetGUID: 50579adba34805b41b5ac626285abe1c
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _startupInstances: 10

@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c16ceebae5d400ba5549274466da76e, type: 3}
-  m_Name: PoolEntry_RemotePlayerVew
+  m_Name: PoolEntry_RemotePlayerVew_8
   m_EditorClassIdentifier: 
+  _name: Remote_8
   _reference:
-    m_AssetGUID: 080bfc7bf6cf1204bb1fc0fc08b4c020
+    m_AssetGUID: a373fb40ea72592458677491f730b2ad
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  _startupInstances: 50
+  _startupInstances: 10

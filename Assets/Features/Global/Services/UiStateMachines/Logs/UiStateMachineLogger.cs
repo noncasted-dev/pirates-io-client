@@ -61,6 +61,14 @@ namespace Global.Services.UiStateMachines.Logs
             _logger.Log($"Exited head: {name}", _settings.LogParameters);
         }
 
+        public void OnNoStateInStackToExit(string name)
+        {
+            if (_settings.IsAvailable(UiStateMachineLogType.NoStateInStackToExit) == false)
+                return;
+
+            _logger.Log($"No {name} state in stack to exit", _settings.LogParameters);
+        }
+        
         public void OnNoPreviousStates()
         {
             if (_settings.IsAvailable(UiStateMachineLogType.NoPreviousStates) == false)

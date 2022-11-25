@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4476201790910471898}
   - component: {fileID: 4476201790910471899}
   - component: {fileID: 3348803147054183000}
-  - component: {fileID: 6857265355009832026}
   - component: {fileID: -3511339214736897306}
   m_Layer: 0
   m_Name: SoundsPlayer
@@ -67,36 +66,6 @@ MonoBehaviour:
   - Master
   CollisionTag: 
   PreloadSamples: 0
---- !u!114 &6857265355009832026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4476201790910471897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 192758556
-      Data2: 1076713483
-      Data3: 1544111802
-      Data4: 2052486217
-    Path: event:/amb
-  Event: 
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 1
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!114 &-3511339214736897306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,30 +80,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShotEvent:
     Guid:
-      Data1: -1727601940
-      Data2: 1135243399
-      Data3: 1948186807
-      Data4: -1664330746
+      Data1: -691857096
+      Data2: 1266034361
+      Data3: -1186456135
+      Data4: 247846514
     Path: event:/shot
+  AmbEvent:
+    Guid:
+      Data1: 192758556
+      Data2: 1076713483
+      Data3: 1544111802
+      Data4: 2052486217
+    Path: event:/amb
+  MusicEvent:
+    Guid:
+      Data1: -2137127258
+      Data2: 1299442491
+      Data3: 366289036
+      Data4: 997880597
+    Path: 
   UiOpenedEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
+      Data1: -2137127258
+      Data2: 1299442491
+      Data3: 366289036
+      Data4: 997880597
     Path: 
   ButtonClickedEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
+      Data1: -2137127258
+      Data2: 1299442491
+      Data3: 366289036
+      Data4: 997880597
     Path: 
   OverButtonEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
+      Data1: -2137127258
+      Data2: 1299442491
+      Data3: 366289036
+      Data4: 997880597
     Path: 
-  anObject: {fileID: 4537502506927708906, guid: b04683208ee893c47adef96205e38574, type: 3}

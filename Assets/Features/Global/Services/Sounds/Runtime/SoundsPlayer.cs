@@ -13,6 +13,17 @@ namespace Global.Services.Sounds.Runtime
         public FMODUnity.EventReference ShotEvent;
         public FMOD.Studio.EventInstance ShotInstance;
 
+        [Space(30)]
+        [Header("Ambience")]
+        [SerializeField]
+        public FMODUnity.EventReference AmbEvent;
+        public FMOD.Studio.EventInstance AmbInstance;
+
+        [Space(30)]
+        [Header("Music")]
+        [SerializeField]
+        public FMODUnity.EventReference MusicEvent;
+        public FMOD.Studio.EventInstance MusicInstance;
 
         [Space(30)]
         [Header("UI")]
@@ -27,19 +38,27 @@ namespace Global.Services.Sounds.Runtime
         //public FMOD.Studio.EventInstance OverButtonInstance;
 
 
-        [SerializeField]
-        private GameObject Boat;
+
+         void Start()
+        {
+            AmbInstance = FMODUnity.RuntimeManager.CreateInstance(AmbEvent);
+            AmbInstance.start();
+           
+        }
 
         public void OnCityEntered()
         {
-
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("amb_condition", 1f);
+            
+            AmbInstance.setParameterByName("amb_condition", 1f);
+        
+          
             Debug.Log("city_enter");
         }
 
         public void OnCityExited()
         {
             
+            AmbInstance.setParameterByName("amb_condition", 0f);
         }
 
         public void OnPortEntered()
@@ -65,8 +84,8 @@ namespace Global.Services.Sounds.Runtime
         public void OnCannonBallShot(Vector2 position)
         {
             ShotInstance = FMODUnity.RuntimeManager.CreateInstance(ShotEvent);
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(ShotInstance, Boat.transform, gameObject.GetComponent<Rigidbody>());
-            ShotInstance.setParameterByName("surface_type", 0f);
+            //FMODUnity.RuntimeManager.AttachInstanceToGameObject(ShotInstance, Transform.po);
+            ShotInstance.setParameterByName("shot_type", 0f);
             ShotInstance.start();
             ShotInstance.release();
             Debug.Log("boom");
@@ -74,12 +93,22 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnShrapnelShot(Vector2 position)
         {
-            
+            ShotInstance = FMODUnity.RuntimeManager.CreateInstance(ShotEvent);
+            //FMODUnity.RuntimeManager.AttachInstanceToGameObject(ShotInstance, Transform.po);
+            ShotInstance.setParameterByName("shot_type", 1f);
+            ShotInstance.start();
+            ShotInstance.release();
+            Debug.Log("boom");
         }
 
         public void OnKnuppelShot(Vector2 position)
         {
-            
+                        ShotInstance = FMODUnity.RuntimeManager.CreateInstance(ShotEvent);
+            //FMODUnity.RuntimeManager.AttachInstanceToGameObject(ShotInstance, Transform.po);
+            ShotInstance.setParameterByName("shot_type", 1f);
+            ShotInstance.start();
+            ShotInstance.release();
+            Debug.Log("boom");
         }
 
         public void OnProjectileDropped(Vector2 position)

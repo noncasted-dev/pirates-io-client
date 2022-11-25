@@ -19,4 +19,4 @@ MonoBehaviour:
   _endAimAngle: 0
   _impactDistance: 1
   _impactTime: 0.3
-  _startAimAngle: 400
+  _startAimAngle: 180

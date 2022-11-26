@@ -12,6 +12,11 @@ namespace GamePlay.Level.Environment.Chunks.Instance
 
         public IEnumerable<ChunkSceneData> Scenes => _scenes;
 
+        public void Clear()
+        {
+            _scenes = new List<ChunkSceneData>();
+        }
+        
         public void Add(AssetReference scene, string path)
         {
             _scenes.Add(new ChunkSceneData(scene, path));

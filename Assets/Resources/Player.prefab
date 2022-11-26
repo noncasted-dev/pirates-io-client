@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3330a1682c6473fa6bacb9090839777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interpolationBreakDistance: 1
-  _interpolationSpeed: 15
+  _interpolationBreakDistance: 5
+  _interpolationSpeed: 10
 --- !u!114 &4419000740720352894
 MonoBehaviour:
   m_ObjectHideFlags: 0

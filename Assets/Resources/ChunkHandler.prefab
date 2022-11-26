@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6205911021649272480}
   - component: {fileID: 6205911021649272671}
+  - component: {fileID: 6555521581410766035}
   m_Layer: 0
   m_Name: ChunkHandler
   m_TagString: Untagged
@@ -49,3 +50,16 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+--- !u!114 &6555521581410766035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205911021649272481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152f93951d744dfdb8afc11f12454ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _config: {fileID: 11400000, guid: a56d4a902ac7bf44485448e46ac52927, type: 2}

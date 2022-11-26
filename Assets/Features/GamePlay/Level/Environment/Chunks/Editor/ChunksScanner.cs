@@ -31,6 +31,7 @@ namespace GamePlay.Level.Environment.Chunks.Editor
         {
             var path = _prefabPath + "ScenesList";
             var scenesList = Resources.Load<ScenesList>("ScenesList");
+            scenesList.Clear();
             Debug.Log($"Load list at: {path} == {scenesList == null}");
             var settings = AddressableAssetSettingsDefaultObject.Settings;
 
@@ -67,7 +68,7 @@ namespace GamePlay.Level.Environment.Chunks.Editor
             }
 
             var chunkHandler = Object.Instantiate(prefab, chunk.transform.position, Quaternion.identity);
-            chunkHandler.name = $"ChunkHandler_{chunk.Y}_{chunk.Y}";
+            chunkHandler.name = $"ChunkHandler_{chunk.X}_{chunk.Y}";
             Undo.RecordObject(chunkHandler, "Scene assign");
             chunkHandler.Construct(data.Reference);
             Undo.RecordObject(chunkHandler, "Scene assign");

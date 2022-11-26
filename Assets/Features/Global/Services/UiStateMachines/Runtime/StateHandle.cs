@@ -63,7 +63,6 @@ namespace Global.Services.UiStateMachines.Runtime
 
         private void RemoveFromStack(StateHandle handle)
         {
-            Debug.Log("Remove from stack");
             _stack.Remove(handle);
         }
     }

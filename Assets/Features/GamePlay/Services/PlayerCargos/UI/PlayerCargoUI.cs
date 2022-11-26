@@ -7,7 +7,6 @@ using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.PlayerCargos.UI.Events;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.Reputation.Runtime;
-using GamePlay.Services.Wallets.Runtime;
 using Global.Services.InputViews.Runtime;
 using Global.Services.UiStateMachines.Runtime;
 using Local.Services.Abstract.Callbacks;

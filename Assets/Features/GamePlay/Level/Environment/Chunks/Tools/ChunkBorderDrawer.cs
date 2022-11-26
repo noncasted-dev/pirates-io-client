@@ -7,7 +7,7 @@ namespace GamePlay.Level.Environment.Chunks.Tools
     [DisallowMultipleComponent]
     public class ChunkBorderDrawer : MonoBehaviour
     {
-        [SerializeField] [EditableObject] private ChunkConfigAsset _config;
+        [SerializeField]  private ChunkConfigAsset _config;
 
         private void OnDrawGizmos()
         {

@@ -13,8 +13,8 @@ namespace GamePlay.Player.Entity.Components.Rotations.Runtime
         menuName = PlayerAssetsPaths.Rotation + "Component")]
     public class RotationAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private RotationAnimatorFloatAsset _animatorFloatAsset;
-        [SerializeField] [EditableObject] private RotationLogSettings _logSettings;
+        [SerializeField]  private RotationAnimatorFloatAsset _animatorFloatAsset;
+        [SerializeField]  private RotationLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

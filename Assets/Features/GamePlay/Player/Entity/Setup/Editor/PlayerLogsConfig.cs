@@ -22,26 +22,26 @@ namespace GamePlay.Player.Entity.Setup.Editor
         menuName = PlayerAssetsPaths.Config + "Logs")]
     public class PlayerLogsConfig : ScriptableObject
     {
-        [Space(100)] [Header("Views")] [SerializeField] [EditableObject]
+        [Space(100)] [Header("Views")] [SerializeField] 
         private AnimatorLogSettings _animator;
-        [SerializeField] [EditableObject] private FloatingStateLogSettings _floatingState;
-        [SerializeField] [EditableObject] private IdleLogSettings _idle;
-        [SerializeField] [EditableObject] private InertialMovementLogSettings _inertialMovement;
-        [SerializeField] [EditableObject] private NoneLogSettings _none;
-        [SerializeField] [EditableObject] private RangeAttackLogSettings _rangeAttack;
+        [SerializeField]  private FloatingStateLogSettings _floatingState;
+        [SerializeField]  private IdleLogSettings _idle;
+        [SerializeField]  private InertialMovementLogSettings _inertialMovement;
+        [SerializeField]  private NoneLogSettings _none;
+        [SerializeField]  private RangeAttackLogSettings _rangeAttack;
 
-        [SerializeField] [EditableObject] private RespawnLogSettings _respawn;
-        [SerializeField] [EditableObject] private RigidBodyLogSettings _rigidBody;
+        [SerializeField]  private RespawnLogSettings _respawn;
+        [SerializeField]  private RigidBodyLogSettings _rigidBody;
 
-        [Space(100)] [Header("Components")] [SerializeField] [EditableObject]
+        [Space(100)] [Header("Components")] [SerializeField] 
         private RotationLogSettings _rotation;
-        [SerializeField] [EditableObject] private RunLogSettings _run;
+        [SerializeField]  private RunLogSettings _run;
 
-        [SerializeField] [EditableObject] private SpriteViewLogSettings _spriteView;
-        [Header("States")] [SerializeField] [EditableObject]
+        [SerializeField]  private SpriteViewLogSettings _spriteView;
+        [Header("States")] [SerializeField] 
         private StateMachineLogSettings _stateMachine;
-        [SerializeField] [EditableObject] private TransformLogSettings _transform;
+        [SerializeField]  private TransformLogSettings _transform;
 
-        [SerializeField] [EditableObject] private WeaponsHandlerLogSettings _weaponsHandler;
+        [SerializeField]  private WeaponsHandlerLogSettings _weaponsHandler;
     }
 }

@@ -11,7 +11,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         menuName = PlayerAssetsPaths.BowShooter + "Component")]
     public class ShooterAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private ShooterConfigAsset _config;
+        [SerializeField]  private ShooterConfigAsset _config;
 
         public override void Register(IContainerBuilder builder)
         {

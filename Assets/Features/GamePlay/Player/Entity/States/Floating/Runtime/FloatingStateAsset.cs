@@ -12,7 +12,7 @@ namespace GamePlay.Player.Entity.States.Floating.Runtime
         menuName = PlayerAssetsPaths.Floating + "State")]
     public class FloatingStateAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private FloatingStateLogSettings _logSettings;
+        [SerializeField]  private FloatingStateLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

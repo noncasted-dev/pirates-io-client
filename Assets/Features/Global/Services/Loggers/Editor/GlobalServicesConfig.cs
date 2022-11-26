@@ -25,22 +25,22 @@ namespace Global.Services.Loggers.Editor
         menuName = GlobalAssetsPaths.Config + "Services", order = 1)]
     public class GlobalServicesConfig : ScriptableObject
     {
-        [SerializeField] [EditableObject] private ApplicationProxyAsset _applicationProxy;
-        [SerializeField] [EditableObject] private AssetsFlowAsset _assetsFlow;
-        [SerializeField] [EditableObject] private CameraUtilsAsset _cameraUtils;
-        [SerializeField] [EditableObject] private CurrentCameraAsset _currentCamera;
-        [SerializeField] [EditableObject] private CurrentSceneHandlerAsset _currentSceneHandler;
-        [SerializeField] [EditableObject] private DebugConsoleAsset _debugConsole;
-        [SerializeField] [EditableObject] private FilesFlowAsset _filesFlow;
-        [SerializeField] [EditableObject] private GlobalCameraAsset _globalCamera;
-        [SerializeField] [EditableObject] private InputViewAsset _inputView;
-        [SerializeField] [EditableObject] private LoadingScreenAsset _loadingScreen;
-        [SerializeField] [EditableObject] private LoggerAsset _logger;
-        [SerializeField] [EditableObject] private NetworkAsset _network;
-        [SerializeField] [EditableObject] private ProfileAsset _profile;
-        [SerializeField] [EditableObject] private ResourcesCleanerAsset _resourcesCleaner;
-        [SerializeField] [EditableObject] private SceneObjectsAsset _sceneObject;
-        [SerializeField] [EditableObject] private ScenesFlowAsset _scenesFlow;
-        [SerializeField] [EditableObject] private UpdaterAsset _updater;
+        [SerializeField]  private ApplicationProxyAsset _applicationProxy;
+        [SerializeField]  private AssetsFlowAsset _assetsFlow;
+        [SerializeField]  private CameraUtilsAsset _cameraUtils;
+        [SerializeField]  private CurrentCameraAsset _currentCamera;
+        [SerializeField]  private CurrentSceneHandlerAsset _currentSceneHandler;
+        [SerializeField]  private DebugConsoleAsset _debugConsole;
+        [SerializeField]  private FilesFlowAsset _filesFlow;
+        [SerializeField]  private GlobalCameraAsset _globalCamera;
+        [SerializeField]  private InputViewAsset _inputView;
+        [SerializeField]  private LoadingScreenAsset _loadingScreen;
+        [SerializeField]  private LoggerAsset _logger;
+        [SerializeField]  private NetworkAsset _network;
+        [SerializeField]  private ProfileAsset _profile;
+        [SerializeField]  private ResourcesCleanerAsset _resourcesCleaner;
+        [SerializeField]  private SceneObjectsAsset _sceneObject;
+        [SerializeField]  private ScenesFlowAsset _scenesFlow;
+        [SerializeField]  private UpdaterAsset _updater;
     }
 }

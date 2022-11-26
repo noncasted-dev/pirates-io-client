@@ -13,8 +13,8 @@ namespace Global.Services.LoadingScreens.Runtime
         menuName = GlobalAssetsPaths.LoadingScreen + "Service", order = 1)]
     public class LoadingScreenAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private LoadingScreenLogSettings _logSettings;
-        [SerializeField] [EditableObject] private UiConstraints _constraints;
+        [SerializeField]  private LoadingScreenLogSettings _logSettings;
+        [SerializeField]  private UiConstraints _constraints;
 
         [SerializeField] private LoadingScreen _prefab;
 

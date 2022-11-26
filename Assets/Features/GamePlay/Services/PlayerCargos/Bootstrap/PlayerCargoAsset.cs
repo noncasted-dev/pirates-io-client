@@ -17,7 +17,7 @@ namespace GamePlay.Services.PlayerCargos.Bootstrap
         menuName = GamePlayAssetsPaths.PlayerCargo + "Service")]
     public class PlayerCargoAsset : LocalServiceAsset
     {
-        [SerializeField] [EditableObject] private UiConstraints _constraints;
+        [SerializeField]  private UiConstraints _constraints;
         
         [SerializeField] private PlayerCargo _prefab;
         [SerializeField] private AssetReference _travelScene;
@@ -53,7 +53,8 @@ namespace GamePlay.Services.PlayerCargos.Bootstrap
 
         public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
         {
-            resolver.Resolve<PlayerCargoUI>();
+            var ui = resolver.Resolve<PlayerCargoUI>();
+            resolver.Inject(ui.MoneyView);
         }
     }
 }

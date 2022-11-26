@@ -17,7 +17,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
     {
         [SerializeField] private AssetReference _poolScene;
         [SerializeField] private RemotePlayerBuilder _prefab;
-        [SerializeField] [EditableObject] private RemoteBuilderConfigAsset _config;
+        [SerializeField]  private RemoteBuilderConfigAsset _config;
 
         public override async UniTask Create(
             IServiceBinder serviceBinder,

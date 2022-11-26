@@ -15,12 +15,12 @@ namespace GamePlay.Services.Editor
         menuName = GamePlayAssetsPaths.Config + "ServicesAssets")]
     public class GamePlayServicesAssetsConfig : ScriptableObject
     {
-        [SerializeField] [EditableObject] private LevelCameraAsset _levelCamera;
-        [SerializeField] [EditableObject] private LevelEnvironmentAsset _levelEnvironment;
-        [SerializeField] [EditableObject] private LevelLoopAsset _levelLoop;
-        [SerializeField] [EditableObject] private PlayerFactoryAsset _playerFactory;
-        [SerializeField] [EditableObject] private ProjectilesAsset _projectiles;
-        [SerializeField] [EditableObject] private TransitionScreenAsset _transitionScreen;
-        [SerializeField] [EditableObject] private VfxPoolAsset _vfxPool;
+        [SerializeField]  private LevelCameraAsset _levelCamera;
+        [SerializeField]  private LevelEnvironmentAsset _levelEnvironment;
+        [SerializeField]  private LevelLoopAsset _levelLoop;
+        [SerializeField]  private PlayerFactoryAsset _playerFactory;
+        [SerializeField]  private ProjectilesAsset _projectiles;
+        [SerializeField]  private TransitionScreenAsset _transitionScreen;
+        [SerializeField]  private VfxPoolAsset _vfxPool;
     }
 }

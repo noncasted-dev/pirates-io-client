@@ -11,8 +11,8 @@ namespace GamePlay.Player.Entity.Setup.Editor
         menuName = PlayerAssetsPaths.Config + "StatesConfigs")]
     public class PlayerStatesConfigs : ScriptableObject
     {
-        [SerializeField] [EditableObject] private RangeAttackConfigAsset _range;
-        [SerializeField] [EditableObject] private RespawnConfigAsset _respawn;
-        [SerializeField] [EditableObject] private RunConfigAsset _run;
+        [SerializeField]  private RangeAttackConfigAsset _range;
+        [SerializeField]  private RespawnConfigAsset _respawn;
+        [SerializeField]  private RunConfigAsset _run;
     }
 }

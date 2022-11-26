@@ -12,8 +12,8 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
         menuName = PlayerAssetsPaths.InertialMovement + "Component")]
     public class InertialMovementAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private InertialMovementConfigAsset _config;
-        [SerializeField] [EditableObject] private InertialMovementLogSettings _logSettings;
+        [SerializeField]  private InertialMovementConfigAsset _config;
+        [SerializeField]  private InertialMovementLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

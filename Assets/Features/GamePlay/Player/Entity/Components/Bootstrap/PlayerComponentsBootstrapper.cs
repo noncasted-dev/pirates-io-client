@@ -10,7 +10,7 @@ namespace GamePlay.Player.Entity.Components.Bootstrap
     [DisallowMultipleComponent]
     public class PlayerComponentsBootstrapper : MonoBehaviour, IPlayerContainerBuilder
     {
-        [SerializeField] [EditableObject] private PlayerBootstrapConfig _assets;
+        [SerializeField]  private PlayerBootstrapConfig _assets;
 
         public void OnBuild(IContainerBuilder builder)
         {

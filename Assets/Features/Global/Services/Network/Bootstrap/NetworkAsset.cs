@@ -20,13 +20,13 @@ namespace Global.Services.Network.Bootstrap
         menuName = GlobalAssetsPaths.NetworkBootstrap)]
     public class NetworkAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private NetworkConnectionConfigAsset _connectionConfig;
-        [SerializeField] [EditableObject] private NetworkConnectorLogSettings _connectorLogSettings;
-        [SerializeField] [EditableObject] private NetworkInstantiatorLogSettings _instantiatorLogSettings;
+        [SerializeField]  private NetworkConnectionConfigAsset _connectionConfig;
+        [SerializeField]  private NetworkConnectorLogSettings _connectorLogSettings;
+        [SerializeField]  private NetworkInstantiatorLogSettings _instantiatorLogSettings;
 
         [SerializeField] private NetworkConnector _prefab;
-        [SerializeField] [EditableObject] private NetworkSessionJoinLogSettings _sessionJoinLogSettings;
-        [SerializeField] [EditableObject] private NetworkSessionLeaveLogSettings _sessionLeaveLogSettings;
+        [SerializeField]  private NetworkSessionJoinLogSettings _sessionJoinLogSettings;
+        [SerializeField]  private NetworkSessionLeaveLogSettings _sessionLeaveLogSettings;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
         {

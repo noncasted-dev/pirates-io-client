@@ -12,7 +12,7 @@ namespace Global.Services.Profiles.Storage
         menuName = GlobalAssetsPaths.Profile + "Service")]
     public class ProfileAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private ProfileLogSettings _logSettings;
+        [SerializeField]  private ProfileLogSettings _logSettings;
         [SerializeField] private ProfileStorage _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)

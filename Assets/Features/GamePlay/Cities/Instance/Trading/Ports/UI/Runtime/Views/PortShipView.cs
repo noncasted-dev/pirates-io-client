@@ -80,6 +80,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views
             _handler.ReputationUpdated += OnTradeReputationChanged;
 
             ResetStats();
+
         }
 
         public void ResetStats()

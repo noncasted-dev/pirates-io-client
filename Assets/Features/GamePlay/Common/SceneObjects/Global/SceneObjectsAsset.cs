@@ -11,7 +11,7 @@ namespace GamePlay.Common.SceneObjects.Global
         menuName = GlobalAssetsPaths.SceneObjects + "Service", order = 1)]
     public class SceneObjectsAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private SceneObjectLogSettings _logSettings;
+        [SerializeField]  private SceneObjectLogSettings _logSettings;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
         {

@@ -177,20 +177,20 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote_4_Brig.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: d0a6b60b11897a74287ef5a46176c82c
-    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_5_Tartan.asset
+  - m_GUID: 79d068148183ef64482a6bf20260bdb8
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_3_Snow.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: d95a5b65e47dff3469a1cde979594218
     m_Address: Assets/Features/GamePlay/Player/Prefabs/Player_Remote_6_Polacre Variant.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: a1ec91721290a5b40b0b38ba2fc01cc7
-    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_7_Frigate.asset
+  - m_GUID: e2d879e5bf9fc084caa462f6e6183781
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_1_Ketch.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 9fb27f1f227c5d24aa05b64fb657fb9d
-    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_8_FirstRate.asset
+  - m_GUID: beb44efa185f15642a1bc49e6579bce6
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_0_Boat.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 7e8f71f68188d1b41b50368af13327d8
@@ -227,6 +227,78 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: f37e821448627a7409434393430e3332
     m_Address: Assets/Features/GamePlay/Player/Prefabs/Dead/DeadShip.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 63942aba6e5a58b4b93379d099f70558
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Cannon.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4486b38ad010b7648ad889d60e160246
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_CannonBall.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9d85683766646514ba59fa37ebbd20b1
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Money.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9fb27f1f227c5d24aa05b64fb657fb9d
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_8_FirstRate.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a1ec91721290a5b40b0b38ba2fc01cc7
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_7_Frigate.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 68a8bd6fbf45be0409fbc1a65c98c80e
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_6_Polacre.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d0a6b60b11897a74287ef5a46176c82c
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_5_Tartan.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 284fcdfd81f081c4db0270d32f6fa768
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_4_Brig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7f4ada204e3e5be478c3411c120b5b81
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ship_2_Pink.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2f41c0b1cbfb3b2449b7c892ce14b40e
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Team.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fdb8f51f0c30145459c989b90dadd05d
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Trading/Ports/UI/Config/GamePlay_Config_ItemsPriceCurves.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a087104f561a9ff4ba95f431bfe6b139
+    m_Address: Assets/Features/GamePlay/Level/Environment/Props/Chunk.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1a4e267a2d53b264dbdaa4789434137d
+    m_Address: Assets/Features/GamePlay/Level/Environment/Props/City.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 92020a475d1780149b5f316d832a8277
+    m_Address: Assets/Features/GamePlay/Level/Environment/Props/CityGrid.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 976e64e5646aff549b3adb3cf577140f
+    m_Address: Assets/Features/Global/Services/ItemFactories/Config/ItemFactory.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9dff908906b496b4ea051bee5fcfee67
+    m_Address: Assets/Features/GamePlay/Services/PlayerCargos/Config/PlayerCargo.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 884a7fa52fc2755478e72d355281b2c2
+    m_Address: Assets/Features/GamePlay/Services/PlayerCargos/Config/CargoItem.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 30c6d7064193f5b4aa6c536f8c30833b
+    m_Address: Assets/Features/GamePlay/Services/PlayerCargos/Config/PlayerTravelCargoUI.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

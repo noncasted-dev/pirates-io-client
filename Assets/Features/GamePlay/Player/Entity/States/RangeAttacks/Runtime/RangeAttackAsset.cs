@@ -14,9 +14,9 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime
         menuName = PlayerAssetsPaths.RangeAttack + "State")]
     public class RangeAttackAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private RangeAttackConfigAsset _config;
-        [SerializeField] [EditableObject] private RangeAttackDefinition _definition;
-        [SerializeField] [EditableObject] private RangeAttackLogSettings _logSettings;
+        [SerializeField]  private RangeAttackConfigAsset _config;
+        [SerializeField]  private RangeAttackDefinition _definition;
+        [SerializeField]  private RangeAttackLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

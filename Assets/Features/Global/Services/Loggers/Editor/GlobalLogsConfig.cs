@@ -28,31 +28,31 @@ namespace Global.Services.Loggers.Editor
     public class GlobalLogsConfig : ScriptableObject
     {
         [Space(30)] [Header("System")] 
-        [SerializeField] [EditableObject]
+        [SerializeField] 
         private ApplicationProxyLogSettings _applicationProxy;
-        [Space(30)] [Header("Data")] [SerializeField] [EditableObject]
+        [Space(30)] [Header("Data")] [SerializeField] 
         private AssetsFlowLogSettings _assetsFlow;
-        [Header("Camera")] [SerializeField] [EditableObject]
+        [Header("Camera")] [SerializeField] 
         private CameraUtilsLogSettings _cameraUtils;
-        [SerializeField] [EditableObject] private CurrentCameraLogSettings _currentCamera;
-        [SerializeField] [EditableObject] private CurrentSceneHandlerLogSettings _currentSceneHandler;
-        [SerializeField] [EditableObject] private FilesFlowLogSettings _filesFlow;
-        [SerializeField] [EditableObject] private GameLoopLogSettings _gameLoop;
-        [SerializeField] [EditableObject] private GlobalCameraLogSettings _globalCamera;
-        [Space(30)] [Header("GamePlay")] [SerializeField] [EditableObject]
+        [SerializeField]  private CurrentCameraLogSettings _currentCamera;
+        [SerializeField]  private CurrentSceneHandlerLogSettings _currentSceneHandler;
+        [SerializeField]  private FilesFlowLogSettings _filesFlow;
+        [SerializeField]  private GameLoopLogSettings _gameLoop;
+        [SerializeField]  private GlobalCameraLogSettings _globalCamera;
+        [Space(30)] [Header("GamePlay")] [SerializeField] 
         private InputViewLogSettings _inputView;
-        [Space(30)] [Header("UI")] [SerializeField] [EditableObject]
+        [Space(30)] [Header("UI")] [SerializeField] 
         private LoadingScreenLogSettings _loadingScreen;
-        [Space(30)] [Header("Network")] [SerializeField] [EditableObject]
+        [Space(30)] [Header("Network")] [SerializeField] 
         private NetworkConnectorLogSettings _networkConnector;
-        [SerializeField] [EditableObject] private NetworkInstantiatorLogSettings _networkInstantiator;
-        [SerializeField] [EditableObject] private NetworkSessionJoinLogSettings _networkJoin;
-        [SerializeField] [EditableObject] private NetworkSessionLeaveLogSettings _networkLeave;
-        [SerializeField] [EditableObject] private ProfileLogSettings _profile;
-        [SerializeField] [EditableObject] private ResourcesCleanerLogSettings _resourcesCleaner;
-        [SerializeField] [EditableObject] private SceneObjectLogSettings _sceneObject;
-        [Space(30)] [Header("Scenes")] [SerializeField] [EditableObject]
+        [SerializeField]  private NetworkInstantiatorLogSettings _networkInstantiator;
+        [SerializeField]  private NetworkSessionJoinLogSettings _networkJoin;
+        [SerializeField]  private NetworkSessionLeaveLogSettings _networkLeave;
+        [SerializeField]  private ProfileLogSettings _profile;
+        [SerializeField]  private ResourcesCleanerLogSettings _resourcesCleaner;
+        [SerializeField]  private SceneObjectLogSettings _sceneObject;
+        [Space(30)] [Header("Scenes")] [SerializeField] 
         private ScenesFlowLogSettings _scenesFlow;
-        [SerializeField] [EditableObject] private UpdaterLogSettings _updater;
+        [SerializeField]  private UpdaterLogSettings _updater;
     }
 }

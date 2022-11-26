@@ -11,8 +11,8 @@ namespace GamePlay.Player.Entity.States.None.Runtime
         menuName = PlayerAssetsPaths.None + "State")]
     public class NoneAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private NoneLogSettings _logSettings;
-        [SerializeField] [EditableObject] private NoneDefinition _definition;
+        [SerializeField]  private NoneLogSettings _logSettings;
+        [SerializeField]  private NoneDefinition _definition;
 
         public override void Register(IContainerBuilder builder)
         {

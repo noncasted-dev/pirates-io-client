@@ -11,8 +11,8 @@ namespace GamePlay.Player.Entity.States.Idles.Runtime
         menuName = PlayerAssetsPaths.Idle + "State")]
     public class IdleAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private IdleDefinition _definition;
-        [SerializeField] [EditableObject] private IdleLogSettings _logSettings;
+        [SerializeField]  private IdleDefinition _definition;
+        [SerializeField]  private IdleLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

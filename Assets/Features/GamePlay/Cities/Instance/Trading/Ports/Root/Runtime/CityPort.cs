@@ -7,14 +7,12 @@ using GamePlay.Services.LevelLoops.Runtime;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using UniRx;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 {
     public class CityPort : MonoBehaviour
     {
-        [Inject]
-        private void Construct(
+        public void Construct(
             IPlayerCargoStorage playerCargoStorage,
             ILevelLoop levelLoop)
         {
@@ -45,7 +43,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             _isActive = true;
             
             var stock = ToArray(_storage.Items);
-            Debug.Log($"Cargo: {_playerCargoStorage.Items.Count}");
             var cargo = ToArray(_playerCargoStorage.Items);
             var ships = ToArray(_storage.Ships);
 
@@ -81,10 +78,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
         {   
             if (_isActive == false)
                 return;
-            
+
             if (completed.Result.IsContainingShip == true)
             {
-                Debug.Log("Spawn player");
                 var data = new PortExitedEvent();
                 MessageBroker.Default.Publish(data);
                 
@@ -97,7 +93,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             var stock = ToArray(_storage.Items);
             var cargo = ToArray(_playerCargoStorage.Items);
             var ships = ToArray(_storage.Ships);
-
+            
             completed.RedrawCallback?.Invoke(stock, cargo, ships, _storage);
         }
     }

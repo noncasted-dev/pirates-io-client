@@ -12,7 +12,7 @@ namespace Global.Services.AssetsFlow.Runtime
         menuName = GlobalAssetsPaths.AssetsFlow + "Service", order = 1)]
     public class AssetsFlowAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private AssetsFlowLogSettings _logSettings;
+        [SerializeField]  private AssetsFlowLogSettings _logSettings;
         [SerializeField] private AssetLoader _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)

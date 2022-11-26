@@ -11,8 +11,8 @@ namespace GamePlay.Services.Editor
         menuName = GamePlayAssetsPaths.Config + "Logs")]
     public class GamePlayServicesLogsConfig : ScriptableObject
     {
-        [SerializeField] [EditableObject] private LevelCameraLogSettings _levelCamera;
-        [SerializeField] [EditableObject] private ProjectilesLogSettings _projectiles;
-        [SerializeField] [EditableObject] private TransitionScreenLogSettings _transitionScreen;
+        [SerializeField]  private LevelCameraLogSettings _levelCamera;
+        [SerializeField]  private ProjectilesLogSettings _projectiles;
+        [SerializeField]  private TransitionScreenLogSettings _transitionScreen;
     }
 }

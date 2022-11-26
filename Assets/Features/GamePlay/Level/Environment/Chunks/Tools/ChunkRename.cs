@@ -2,7 +2,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace GamePlay.Level.Environment.Chunks.Editor
+namespace GamePlay.Level.Environment.Chunks.Tools
 {
     public class ChunkRename : MonoBehaviour
     {

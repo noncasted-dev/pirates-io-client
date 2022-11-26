@@ -2,7 +2,7 @@
   "name": "GamePlay.Services.TravelOverlays.Runtime",
   "rootNamespace": "",
   "references": [
-    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc","GUID:cdfd058b393524bddbb7e850e0d53c8e",
     "GUID:3165858da54f4f7eb965695cee94ecc6",
     "GUID:304598a766c781247877f81511375f98",
     "GUID:5f85ab5dc178ff54c81b21f197b82d14",

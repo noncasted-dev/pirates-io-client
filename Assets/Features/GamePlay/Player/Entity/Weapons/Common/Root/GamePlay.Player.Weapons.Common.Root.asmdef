@@ -1,7 +1,7 @@
 {
   "name": "GamePlay.Player.Weapons.Common.Root",
   "references": [
-    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc","GUID:cdfd058b393524bddbb7e850e0d53c8e",
     "GUID:f51ebe6a0ceec4240a699833d6309b23",
     "GUID:aaedc93bbf702d34e8e6d773e0108d7c"
   ]

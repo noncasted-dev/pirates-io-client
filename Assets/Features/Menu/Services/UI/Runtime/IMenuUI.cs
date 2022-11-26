@@ -5,5 +5,6 @@
         void OnLogin();
         void OnLoginWithError(string error);
         void OnLoading();
+        void OnSuccess();
     }
 }

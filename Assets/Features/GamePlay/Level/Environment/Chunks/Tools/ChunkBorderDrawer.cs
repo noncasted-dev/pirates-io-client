@@ -2,7 +2,7 @@
 using GamePlay.Level.Environment.Chunks.Instance;
 using UnityEngine;
 
-namespace GamePlay.Level.Environment.Chunks.Editor
+namespace GamePlay.Level.Environment.Chunks.Tools
 {
     [DisallowMultipleComponent]
     public class ChunkBorderDrawer : MonoBehaviour

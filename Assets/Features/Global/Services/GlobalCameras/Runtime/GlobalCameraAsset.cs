@@ -12,7 +12,7 @@ namespace Global.Services.GlobalCameras.Runtime
         menuName = GlobalAssetsPaths.GlobalCamera + "Service", order = 1)]
     public class GlobalCameraAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private GlobalCameraLogSettings _logSettings;
+        [SerializeField]  private GlobalCameraLogSettings _logSettings;
         [SerializeField] private GlobalCamera _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)

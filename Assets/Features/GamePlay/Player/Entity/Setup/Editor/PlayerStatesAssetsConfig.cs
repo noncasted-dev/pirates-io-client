@@ -14,11 +14,11 @@ namespace GamePlay.Player.Entity.Setup.Editor
         menuName = PlayerAssetsPaths.Config + "StatesAssets")]
     public class PlayerStatesAssetsConfig : ScriptableObject
     {
-        [SerializeField] [EditableObject] private FloatingStateAsset _floating;
-        [SerializeField] [EditableObject] private IdleAsset _idle;
-        [SerializeField] [EditableObject] private NoneAsset _none;
-        [SerializeField] [EditableObject] private RangeAttackAsset _range;
-        [SerializeField] [EditableObject] private RespawnAsset _respawn;
-        [SerializeField] [EditableObject] private RunAsset _run;
+        [SerializeField]  private FloatingStateAsset _floating;
+        [SerializeField]  private IdleAsset _idle;
+        [SerializeField]  private NoneAsset _none;
+        [SerializeField]  private RangeAttackAsset _range;
+        [SerializeField]  private RespawnAsset _respawn;
+        [SerializeField]  private RunAsset _run;
     }
 }

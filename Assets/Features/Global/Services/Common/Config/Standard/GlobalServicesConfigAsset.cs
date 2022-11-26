@@ -30,26 +30,26 @@ namespace Global.Services.Common.Config.Standard
         menuName = GlobalAssetsPaths.BootstrapConfig)]
     public class GlobalServicesConfigAsset : GlobalServicesConfig
     {
-        [SerializeField] [EditableObject] private ApplicationProxyAsset _applicationProxy;
-        [SerializeField] [EditableObject] private AssetsFlowAsset _assetsFlow;
-        [SerializeField] [EditableObject] private CameraUtilsAsset _cameraUtils;
-        [SerializeField] [EditableObject] private CurrentCameraAsset _currentCamera;
-        [SerializeField] [EditableObject] private CurrentSceneHandlerAsset _currentSceneHandler;
-        [SerializeField] [EditableObject] private FilesFlowAsset _filesFlow;
-        [SerializeField] [EditableObject] private GlobalCameraAsset _globalCamera;
-        [SerializeField] [EditableObject] private InputViewAsset _inputView;
-        [SerializeField] [EditableObject] private LoadingScreenAsset _loadingScreen;
-        [SerializeField] [EditableObject] private LoggerAsset _logger;
-        [SerializeField] [EditableObject] private ResourcesCleanerAsset _resourcesCleaner;
-        [SerializeField] [EditableObject] private ScenesFlowAsset _scenesFlow;
-        [SerializeField] [EditableObject] private UpdaterAsset _updater;
-        [SerializeField] [EditableObject] private SceneObjectsAsset _sceneObject;
-        [SerializeField] [EditableObject] private DebugConsoleAsset _debugConsole;
-        [SerializeField] [EditableObject] private NetworkAsset _network;
-        [SerializeField] [EditableObject] private ProfileAsset _profile;
-        [SerializeField] [EditableObject] private PersistentInventoryAsset _persistentInventory;
-        [SerializeField] [EditableObject] private ItemFactoryAsset _itemFactory;
-        [SerializeField] [EditableObject] private UiStateMachineAsset _uiStateMachine;
+        [SerializeField]  private ApplicationProxyAsset _applicationProxy;
+        [SerializeField]  private AssetsFlowAsset _assetsFlow;
+        [SerializeField]  private CameraUtilsAsset _cameraUtils;
+        [SerializeField]  private CurrentCameraAsset _currentCamera;
+        [SerializeField]  private CurrentSceneHandlerAsset _currentSceneHandler;
+        [SerializeField]  private FilesFlowAsset _filesFlow;
+        [SerializeField]  private GlobalCameraAsset _globalCamera;
+        [SerializeField]  private InputViewAsset _inputView;
+        [SerializeField]  private LoadingScreenAsset _loadingScreen;
+        [SerializeField]  private LoggerAsset _logger;
+        [SerializeField]  private ResourcesCleanerAsset _resourcesCleaner;
+        [SerializeField]  private ScenesFlowAsset _scenesFlow;
+        [SerializeField]  private UpdaterAsset _updater;
+        [SerializeField]  private SceneObjectsAsset _sceneObject;
+        [SerializeField]  private DebugConsoleAsset _debugConsole;
+        [SerializeField]  private NetworkAsset _network;
+        [SerializeField]  private ProfileAsset _profile;
+        [SerializeField]  private PersistentInventoryAsset _persistentInventory;
+        [SerializeField]  private ItemFactoryAsset _itemFactory;
+        [SerializeField]  private UiStateMachineAsset _uiStateMachine;
 
         public override GlobalServiceAsset[] GetAssets()
         {

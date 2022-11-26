@@ -14,7 +14,7 @@ namespace Local.ComposedSceneConfig
 {
     public abstract class ComposedSceneAsset : ScriptableObject
     {
-        [SerializeField] [EditableObject] private ComposedScenesConfig _config;
+        [SerializeField]  private ComposedScenesConfig _config;
 
         public async UniTask<ComposedSceneLoadResult> Load(LifetimeScope parent, ISceneLoader loader)
         {

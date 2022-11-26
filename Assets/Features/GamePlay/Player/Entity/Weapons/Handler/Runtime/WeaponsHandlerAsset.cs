@@ -12,8 +12,8 @@ namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
         menuName = PlayerAssetsPaths.WeaponsHandler + "Component")]
     public class WeaponsHandlerAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private DefaultWeaponsConfig _config;
-        [SerializeField] [EditableObject] private WeaponsHandlerLogSettings _logSettings;
+        [SerializeField]  private DefaultWeaponsConfig _config;
+        [SerializeField]  private WeaponsHandlerLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

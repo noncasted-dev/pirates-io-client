@@ -76,6 +76,11 @@ namespace Menu.Services.UI.Runtime
             _loadingBody.SetActive(true);
         }
 
+        public void OnSuccess()
+        {
+            _uiStateMachine.Exit(this);
+        }
+
         private void OnPlayClicked()
         {
             var userName = _nameInput.text;

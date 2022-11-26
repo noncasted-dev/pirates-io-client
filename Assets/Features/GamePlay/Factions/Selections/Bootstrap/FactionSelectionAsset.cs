@@ -16,7 +16,7 @@ namespace GamePlay.Factions.Selections.Bootstrap
         menuName = GamePlayAssetsPaths.FactionSelection + "Service")]
     public class FactionSelectionAsset : LocalServiceAsset
     {
-        [SerializeField] [EditableObject] private UiConstraints _constraints;
+        [SerializeField]  private UiConstraints _constraints;
         [SerializeField] private FactionSelectionLoop _prefab;
         [SerializeField] private AssetReference _uiScene;
 

@@ -12,9 +12,9 @@ namespace GamePlay.Player.Entity.Setup.Editor
         menuName = PlayerAssetsPaths.Config + "Components")]
     public class PlayerComponentsConfig : ScriptableObject
     {
-        [SerializeField] [EditableObject] private InertialMovementAsset _inertialMovement;
-        [SerializeField] [EditableObject] private RotationAsset _rotation;
-        [SerializeField] [EditableObject] private StateMachineAsset _stateMachine;
-        [SerializeField] [EditableObject] private WeaponsHandlerAsset _weaponsHandler;
+        [SerializeField]  private InertialMovementAsset _inertialMovement;
+        [SerializeField]  private RotationAsset _rotation;
+        [SerializeField]  private StateMachineAsset _stateMachine;
+        [SerializeField]  private WeaponsHandlerAsset _weaponsHandler;
     }
 }

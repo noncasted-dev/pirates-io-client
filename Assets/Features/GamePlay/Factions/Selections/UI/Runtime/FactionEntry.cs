@@ -10,7 +10,7 @@ namespace GamePlay.Factions.Selections.UI.Runtime
     [DisallowMultipleComponent]
     public class FactionEntry : MonoBehaviour
     {
-        [SerializeField] [EditableObject] private CityDefinition _definition;
+        [SerializeField]  private CityDefinition _definition;
         [SerializeField] private Button _button;
         [SerializeField] private TMP_Text _cityName;
 

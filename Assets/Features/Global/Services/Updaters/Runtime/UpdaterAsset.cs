@@ -12,7 +12,7 @@ namespace Global.Services.Updaters.Runtime
         menuName = GlobalAssetsPaths.Updater + "Service", order = 1)]
     public class UpdaterAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private UpdaterLogSettings _logSettings;
+        [SerializeField]  private UpdaterLogSettings _logSettings;
         [SerializeField] private Updater _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)

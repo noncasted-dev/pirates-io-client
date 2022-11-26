@@ -11,7 +11,7 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
         menuName = PlayerAssetsPaths.Death + "State")]
     public class DeathAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private DeathStateDefinition _definition;
+        [SerializeField]  private DeathStateDefinition _definition;
 
         public override void Register(IContainerBuilder builder)
         {

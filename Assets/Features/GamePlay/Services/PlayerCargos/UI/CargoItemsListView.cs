@@ -46,7 +46,7 @@ namespace GamePlay.Services.PlayerCargos.UI
             _cells.Clear();
             _available.Clear();
             _available.AddRange(_all);
-
+            
             AddCellsOnDemand(items.Count);
 
             foreach (var item in items)
@@ -77,6 +77,7 @@ namespace GamePlay.Services.PlayerCargos.UI
             for (var i = 0; i < delta; i++)
             {
                 var cell = Instantiate(_cellPrefab, _cellsRoot);
+
                 _available.Add(cell);
                 _all.Add(cell);
                 cell.gameObject.SetActive(false);

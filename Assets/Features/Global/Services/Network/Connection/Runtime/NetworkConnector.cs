@@ -38,7 +38,7 @@ namespace Global.Services.Network.Connection.Runtime
         {
             _logger.OnAttempt(_config.Ip, _config.Port);
 
-            var attempt = new ConnectionAttempt(_config.Ip, _config.Port);
+            var attempt = new ConnectionAttempt(_config.Ip, _config.Port, _config.SocketType);
 
             var result = await attempt.Connect(userName);
 

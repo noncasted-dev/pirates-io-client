@@ -11,7 +11,7 @@ namespace GamePlay.Player.Entity.Components.StateMachines.Runtime
         menuName = PlayerAssetsPaths.StateMachine + "Component")]
     public class StateMachineAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private StateMachineLogSettings _logSettings;
+        [SerializeField]  private StateMachineLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

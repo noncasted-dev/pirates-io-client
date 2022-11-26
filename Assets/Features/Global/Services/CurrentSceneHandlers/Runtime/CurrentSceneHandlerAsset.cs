@@ -14,7 +14,7 @@ namespace Global.Services.CurrentSceneHandlers.Runtime
         order = 1)]
     public class CurrentSceneHandlerAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private CurrentSceneHandlerLogSettings _logSettings;
+        [SerializeField]  private CurrentSceneHandlerLogSettings _logSettings;
         [SerializeField] private CurrentSceneHandler _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)

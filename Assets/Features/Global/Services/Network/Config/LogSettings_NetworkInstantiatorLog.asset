@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7c025174e148a9b24ab7b7a0780b1d, type: 3}
   m_Name: LogSettings_NetworkInstantiatorLog
   m_EditorClassIdentifier: 
-  _isEnabled: 0
+  _isEnabled: 1
   _logs:
     _keys: 000000000100000002000000
     _values: 010101

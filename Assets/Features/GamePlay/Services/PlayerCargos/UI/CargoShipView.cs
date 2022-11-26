@@ -2,6 +2,7 @@
 using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Services.Reputation.Runtime;
+using GamePlay.Services.Wallets.Runtime;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -21,6 +22,7 @@ namespace GamePlay.Services.PlayerCargos.UI
         [SerializeField] private TMP_Text _cannons;
         [SerializeField] private TMP_Text _speed;
         [SerializeField] private TMP_Text _team;
+        [SerializeField] private TMP_Text _money;
 
         private IDisposable _healthListener;
         private IDisposable _reputationListener;
@@ -49,7 +51,9 @@ namespace GamePlay.Services.PlayerCargos.UI
             _resources.SpeedChanged -= OnSpeedChanged;
         }
 
-        public void Setup(IShipResources shipResources, IReputation reputation)
+        public void Setup(
+            IShipResources shipResources,
+            IReputation reputation)
         {
             _playerReputation = reputation;
             _resources = shipResources;

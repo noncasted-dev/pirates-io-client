@@ -2,7 +2,7 @@
   "name": "GamePlay.Player.Network.Local.AreaInteractor.Runtime",
   "references": [
     "GUID:f09315e9cfc95e744a91762b4999b090",
-    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc","GUID:cdfd058b393524bddbb7e850e0d53c8e",
     "GUID:d645bcdb66734706b348f3d6093a7666",
     "GUID:560b04d1a97f54a4e82edc0cbbb69285",
     "GUID:3df5c599894d44fbb9865daac7c8762f"

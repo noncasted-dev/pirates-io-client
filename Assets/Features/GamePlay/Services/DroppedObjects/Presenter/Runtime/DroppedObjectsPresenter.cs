@@ -76,7 +76,6 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
 
         public void OnEnabled()
         {
-            Debug.Log($"Listen objects");
             _dropReceiver.ItemDropped += OnNetworkItemDropReceived;
             _dropReceiver.ItemCollected += OnNetworkItemCollectReceived;
         }
@@ -89,8 +88,6 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
 
         private void OnNetworkItemDropReceived(ItemDropEvent data)
         {
-            Debug.Log($"Process drop: {data.Type}, {data.Id}, {data.Origin}, {data.Target}");
-            
             var dropped = _itemProvider.Get(data.Origin);
             var item = _itemFactory.Create(data.Type, data.Count);
 

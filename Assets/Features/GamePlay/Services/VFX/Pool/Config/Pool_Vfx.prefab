@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6596638250584355506}
   - component: {fileID: 6596638250584355509}
   m_Layer: 0
-  m_Name: VfxPool
+  m_Name: Pool_Vfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

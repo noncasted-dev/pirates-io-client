@@ -76,7 +76,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void OnEnable()
         {
-            Debug.Log("Lisen");
             _enterListener = MessageBroker.Default.Receive<PortEnteredEvent>().Subscribe(OnEntered);
             _exitListener = MessageBroker.Default.Receive<PortExitedEvent>().Subscribe(OnExited);
             _requestListener = MessageBroker.Default.Receive<TradeRequestedEvent>().Subscribe(OnTradeRequested);
@@ -107,16 +106,16 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void OnEntered(PortEnteredEvent data)
         {
-            Debug.Log("Enter");
             _nickName.text = _profileStorageProvider.UserName;
-
+            
             _body.SetActive(true);
             _stateMachine.EnterAsSingle(this);
-
+            
             _storedView.Fill(data.Cargo, data.PriceProvider);
+
             _stockView.Fill(data.Stock, data.PriceProvider);
             _stockShips.Fill(data.Ships);
-
+            
             _cargoTrade.Setup(data.PriceProvider);
             _stockTrade.Setup(data.PriceProvider);
             
@@ -144,6 +143,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             var completed = new TradeCompletedEvent(Redraw, result);
 
             MessageBroker.Default.Publish(completed);
+
         }
 
         private void Redraw(

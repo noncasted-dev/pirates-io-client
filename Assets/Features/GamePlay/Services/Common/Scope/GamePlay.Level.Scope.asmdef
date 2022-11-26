@@ -2,7 +2,7 @@
   "name": "GamePlay.Level.Scope",
   "rootNamespace": "",
   "references": [
-    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc","GUID:cdfd058b393524bddbb7e850e0d53c8e"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

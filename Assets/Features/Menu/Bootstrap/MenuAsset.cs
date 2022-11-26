@@ -13,10 +13,10 @@ namespace Menu.Bootstrap
     [CreateAssetMenu(fileName = "Menu", menuName = MenuAssetsPaths.Root + "Scene")]
     public class MenuAsset : ComposedSceneAsset
     {
-        [SerializeField] [EditableObject] private MenuLoopAsset _loop;
+        [SerializeField]  private MenuLoopAsset _loop;
 
         [SerializeField] private MenuScope _scopePrefab;
-        [SerializeField] [EditableObject] private MenuUIAsset _ui;
+        [SerializeField]  private MenuUIAsset _ui;
 
         protected override LocalServiceAsset[] AssignServices()
         {

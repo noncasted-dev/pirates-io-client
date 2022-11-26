@@ -88,6 +88,7 @@ namespace Menu.Services.MenuLoop.Runtime
             {
                 case NetworkSessionJoinResultType.Success:
                 {
+                    _menuUI.OnSuccess();
                     var playFromMenu = new PlayFromMenuEvent();
                     MessageBroker.Default.Publish(playFromMenu);
                     break;

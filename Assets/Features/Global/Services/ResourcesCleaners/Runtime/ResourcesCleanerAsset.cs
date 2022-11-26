@@ -12,7 +12,7 @@ namespace Global.Services.ResourcesCleaners.Runtime
         menuName = GlobalAssetsPaths.ResourceCleaner + "Service", order = 1)]
     public class ResourcesCleanerAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private ResourcesCleanerLogSettings _logSettings;
+        [SerializeField]  private ResourcesCleanerLogSettings _logSettings;
         [SerializeField] private ResourcesCleaner _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)

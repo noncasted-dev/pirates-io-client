@@ -11,7 +11,7 @@ namespace Common.ObjectsPools.Runtime
 {
     public class ObjectsPoolsHandler : MonoBehaviour, IObjectsPoolHandler, IPoolProvider
     {
-        [SerializeField] [EditableObject] private PoolEntryAsset[] _entries;
+        [SerializeField] private PoolEntryAsset[] _entries;
 
         private readonly Dictionary<object, IObjectsPool> _pools = new();
 

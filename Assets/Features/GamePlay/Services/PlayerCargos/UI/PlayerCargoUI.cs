@@ -1,11 +1,13 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
+using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Events;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.PlayerCargos.UI.Events;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.Reputation.Runtime;
+using GamePlay.Services.Wallets.Runtime;
 using Global.Services.InputViews.Runtime;
 using Global.Services.UiStateMachines.Runtime;
 using Local.Services.Abstract.Callbacks;
@@ -40,6 +42,7 @@ namespace GamePlay.Services.PlayerCargos.UI
         [SerializeField] private CargoItemsListView _grid;
         [SerializeField] private DropConfirmation _drop;
         [SerializeField] private CargoShipView _shipView;
+        [SerializeField] private MoneyView _money;
         
         private UiConstraints _constraints;
         
@@ -56,6 +59,7 @@ namespace GamePlay.Services.PlayerCargos.UI
 
         public UiConstraints Constraints => _constraints;
         public string Name => "Cargo";
+        public MoneyView MoneyView => _money;
         
         private void Start()
         {

@@ -19,7 +19,7 @@ namespace GamePlay.Services.DroppedObjects.Bootstrap
         menuName = GamePlayAssetsPaths.ObjectsDropper + "Service")]
     public class ObjectDropperAsset : LocalServiceAsset
     {
-        [SerializeField] [EditableObject] private ObjectDropperConfigAsset _config;
+        [SerializeField]  private ObjectDropperConfigAsset _config;
         [SerializeField] private AssetReference _poolScene;
         [SerializeField] private DropPoolBootstrapper _poolPrefab;
         [SerializeField] private DroppedObjectsPresenter _dropperPrefab;

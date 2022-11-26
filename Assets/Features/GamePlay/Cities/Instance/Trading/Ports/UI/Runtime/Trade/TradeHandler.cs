@@ -4,7 +4,6 @@ using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
-using GamePlay.Items.Implementation;
 using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.Reputation.Runtime;
@@ -296,6 +295,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
                 copy.SetCount(lot.Count);
 
                 _cityStorage.Add(copy);
+
                 _cargo.Reduce(lot.Type, lot.Count);
             }
 

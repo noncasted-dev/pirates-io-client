@@ -29,7 +29,7 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
         [SerializeField] private Material _defaultMaterial;
         [SerializeField] private Material _flash;
 
-        [SerializeField] [EditableObject] private SpriteViewLogSettings _logSettings;
+        [SerializeField]  private SpriteViewLogSettings _logSettings;
         [SerializeField] private List<SpriteRenderer> _subSprites;
         [SerializeField] private GameObject _scaleFlipped;
 

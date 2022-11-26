@@ -2,7 +2,7 @@
   "name": "GamePlay.Level.Chunks.OcclusionCulling.Runtime",
   "references": [
     "GUID:ccd954329382b474a93d18fc27ad59eb",
-    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc","GUID:cdfd058b393524bddbb7e850e0d53c8e",
     "GUID:5811ab1f7795f3f41a73a20cc0aa3450",
     "GUID:776d03a35f1b52c4a9aed9f56d7b4229",
     "GUID:67f67dcce9d9e8a43a8e45bc1fe5534c",

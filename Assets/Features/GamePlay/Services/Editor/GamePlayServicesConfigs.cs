@@ -11,8 +11,8 @@ namespace GamePlay.Services.Editor
         menuName = GamePlayAssetsPaths.Config + "ServicesConfigs")]
     public class GamePlayServicesConfigs : ScriptableObject
     {
-        [SerializeField] [EditableObject] private LevelCameraConfigAsset _levelCamera;
-        [SerializeField] [EditableObject] private ProjectilesMoverConfigAsset _projectiles;
-        [SerializeField] [EditableObject] private TransitionScreenConfigAsset _transitionScreen;
+        [SerializeField]  private LevelCameraConfigAsset _levelCamera;
+        [SerializeField]  private ProjectilesMoverConfigAsset _projectiles;
+        [SerializeField]  private TransitionScreenConfigAsset _transitionScreen;
     }
 }

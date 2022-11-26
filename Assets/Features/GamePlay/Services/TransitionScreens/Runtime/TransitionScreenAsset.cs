@@ -13,9 +13,9 @@ namespace GamePlay.Services.TransitionScreens.Runtime
         menuName = GamePlayAssetsPaths.TransitionScreen + "Service")]
     public class TransitionScreenAsset : LocalServiceAsset
     {
-        [SerializeField] [EditableObject] private TransitionScreenConfigAsset _config;
-        [SerializeField] [EditableObject] private TransitionScreenLogSettings _logSettings;
-        [SerializeField] [EditableObject] private UiConstraints _constraints;
+        [SerializeField]  private TransitionScreenConfigAsset _config;
+        [SerializeField]  private TransitionScreenLogSettings _logSettings;
+        [SerializeField]  private UiConstraints _constraints;
 
         [SerializeField] private TransitionScreen _prefab;
 

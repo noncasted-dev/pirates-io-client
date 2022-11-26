@@ -11,9 +11,9 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
         menuName = PlayerAssetsPaths.Respawn + "State")]
     public class RespawnAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private RespawnConfigAsset _config;
-        [SerializeField] [EditableObject] private RespawnDefinition _definition;
-        [SerializeField] [EditableObject] private RespawnLogSettings _logSettings;
+        [SerializeField]  private RespawnConfigAsset _config;
+        [SerializeField]  private RespawnDefinition _definition;
+        [SerializeField]  private RespawnLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

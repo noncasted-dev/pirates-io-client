@@ -63,12 +63,20 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Dead
             
             var disappearDelay = (int)(_disappearDelay * 1000);
             _disappearStartedCallback?.Invoke();
+            StopParticles();
 
             await UniTask.Delay(destroyDelay, false, PlayerLoopTiming.Update, token);
             
             _returnToPool?.Invoke(this);
             
             _returnToPool?.Invoke(this);
+        }
+
+        [SerializeField] private List<ParticleSystem> _particleSystems;
+        public void StopParticles()
+        {
+            foreach (var p in _particleSystems)            
+                p.Stop();
         }
     }
 }

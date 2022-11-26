@@ -1,0 +1,16 @@
+{
+    "name": "GamePlay.Level.Environment.Chunks.Editor",
+    "rootNamespace": "",
+    "references": ["GUID:88a543f122db777419abf3cf7b10d139","GUID:5811ab1f7795f3f41a73a20cc0aa3450"],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

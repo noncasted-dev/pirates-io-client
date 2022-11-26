@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using GamePlay.Level.Environment.Chunks.Instance;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -22,7 +23,9 @@ namespace GamePlay.Level.Environment.Chunks.Tools
             foreach (var chunk in childs)
             {
                 chunk.name = $"Chunk_{x}_{y}";
-
+                var component = chunk.GetComponent<Chunk>();
+                component.OnRename(x, y);
+                
                 chunk.transform.position = _start + new Vector2(x * 64, -y * 64);
 
                 x++;

@@ -8,7 +8,7 @@ namespace GamePlay.Level.Environment.Chunks.Editor
 {
     public static class ChunksToScenesConverter
     {
-        private const string _path = "Features/GamePlay/Level/Environment/Scenes/Chunks/";
+        private const string _path = "Assets/Features/GamePlay/Level/Environment/Scenes/Chunks/";
         
         [MenuItem("Tools/ConvertChunksToScenes")]
         public static void ConvertChunksToScenes()

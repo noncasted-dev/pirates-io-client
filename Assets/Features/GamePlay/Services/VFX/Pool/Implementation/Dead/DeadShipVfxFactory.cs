@@ -28,7 +28,6 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Dead
 
         public async UniTask PreloadAsync()
         {
-            Debug.Log("Preload");
             _instantiator = _instantiatorFactory.Create<DeadShipVfx>(_reference);
             await _instantiator.PreloadAsync();
         }
@@ -42,7 +41,6 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Dead
         {
             var vfx = _instantiator.Instantiate(position, angle, _parent);
             
-            Debug.Log($"Reference: {_reference.Asset.name}");
             Assert.IsNotNull(vfx);
 
             return vfx;

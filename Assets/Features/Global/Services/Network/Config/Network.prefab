@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8770affba8374667be61b87cf0fcb7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _socketType: 0
+  _socketType: 1
 --- !u!114 &628551598985665779
 MonoBehaviour:
   m_ObjectHideFlags: 0

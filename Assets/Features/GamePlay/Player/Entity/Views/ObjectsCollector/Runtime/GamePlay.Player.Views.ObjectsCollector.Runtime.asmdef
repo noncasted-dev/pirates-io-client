@@ -1,7 +1,7 @@
 ﻿{
   "name": "GamePlay.Player.Views.ObjectsCollector.Runtime",
   "references": [
-    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc","GUID:cdfd058b393524bddbb7e850e0d53c8e",
     "GUID:f99e81adb521496aaf534590bbf61710",
     "GUID:8f56d58df3a847768d8965fdf54def1f",
     "GUID:8b4e7ea81ea34b29aa5a3c45346772e3",

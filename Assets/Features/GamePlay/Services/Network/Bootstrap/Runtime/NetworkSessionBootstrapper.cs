@@ -15,6 +15,7 @@ namespace GamePlay.Services.Network.Bootstrap.Runtime
     {
         public async UniTask OnBootstrappedAsync()
         {
+            Debug.Log("[Network]:On scene loaded");
             RagonNetwork.Room.SceneLoaded();
         }
 

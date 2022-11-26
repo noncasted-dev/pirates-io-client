@@ -8,7 +8,7 @@ namespace GamePlay.Level.Environment.Chunks.Editor
 {
     public static class ChunksToScenesConverter
     {
-        private const string _path = "Assets/Features/GamePlay/Level/Environment/Scenes/Chunks/";
+        private const string _path = "Assets/Features/GamePlay/Level/Scenes/Chunks/";
         
         [MenuItem("Tools/ConvertChunksToScenes")]
         public static void ConvertChunksToScenes()
@@ -24,7 +24,6 @@ namespace GamePlay.Level.Environment.Chunks.Editor
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Additive);
             chunk.gameObject.transform.parent = null;
             SceneManager.MoveGameObjectToScene(chunk.gameObject, scene);
-            
             var name = $"Chunk_{chunk.X}_{chunk.Y}";
             EditorSceneManager.SaveScene(scene, _path + name + ".unity");
         }

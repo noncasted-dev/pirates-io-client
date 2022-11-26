@@ -22,10 +22,11 @@ namespace GamePlay.Level.Environment.Chunks.Editor
         private static void CreateScene(Chunk chunk)
         {
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Additive);
+            chunk.gameObject.transform.parent = null;
             SceneManager.MoveGameObjectToScene(chunk.gameObject, scene);
             
             var name = $"Chunk_{chunk.X}_{chunk.Y}";
-            EditorSceneManager.SaveScene(scene, _path + name);
+            EditorSceneManager.SaveScene(scene, _path + name + ".unity");
         }
     }
 }

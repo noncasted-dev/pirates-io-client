@@ -1,6 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using Ragon.Client;
+using UnityEngine;
 
 namespace Global.Services.Network.Connection.Runtime
 {
@@ -41,7 +42,8 @@ namespace Global.Services.Network.Connection.Runtime
                     RagonNetwork.Connect(_ip, _port);
                     break;
                 case RagonSocketType.WebSocket:
-                    RagonNetwork.Connect($"wss://{_ip}", _port);
+                    Debug.Log("Connect connect wss");
+                    RagonNetwork.Connect($"ws://{_ip}", _port);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -43,7 +43,7 @@ namespace Global.Services.Network.Connection.Runtime
                     break;
                 case RagonSocketType.WebSocket:
                     Debug.Log("Connect connect wss");
-                    RagonNetwork.Connect($"ws://{_ip}", _port);
+                    RagonNetwork.Connect($"ws://{_ip}:{_port}", _port);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -2,10 +2,9 @@
 using GamePlay.Level.Environment.Chunks.Instance;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.ResourceProviders;
-using UnityEngine.SceneManagement;
 
 namespace GamePlay.Level.Environment.Chunks.Editor
 {
@@ -20,8 +19,8 @@ namespace GamePlay.Level.Environment.Chunks.Editor
         [MenuItem("Tools/ScanChunks")]
         public static void ScanChunks()
         {
-            var prefab = Resources.Load<ChunkHandler>(_prefabPath + "ChunkHandler");
-            var scenesList = Resources.Load<ScenesList>(_prefabPath + "ScenesList");
+            var prefab = Resources.Load<ChunkHandler>("ChunkHandler");
+            var scenesList = Resources.Load<ScenesList>("ScenesList");
 
              foreach (var scene in scenesList.Scenes)
                  CreateHandler(prefab, scene).Forget();
@@ -46,26 +45,22 @@ namespace GamePlay.Level.Environment.Chunks.Editor
             foreach (var entry in group.entries)
             {
                 var reference = new AssetReference(entry.guid);
-
+                
                 Undo.RecordObject(scenesList, "List fill");
-                scenesList.Add(reference);
+                scenesList.Add(reference, entry.AssetPath);
                 Undo.RecordObject(scenesList, "List fill");
             }
         }
 
-        private static async UniTaskVoid ProcessSceneScanning(ScenesList list, int x, int y)
+        private static async UniTaskVoid CreateHandler(ChunkHandler prefab, ChunkSceneData data)
         {
-        }
+            Debug.Log($"Path: {data.Path}");
 
-        private static async UniTaskVoid CreateHandler(ChunkHandler prefab, AssetReference scene)
-        {
-            var handle = Addressables.LoadSceneAsync(scene, LoadSceneMode.Additive);
-
-            var instance = await handle.Task;
+            var scene = EditorSceneManager.OpenScene(data.Path, OpenSceneMode.Additive);
 
             Chunk chunk = null;
 
-            foreach (var rootObject in instance.Scene.GetRootGameObjects())
+            foreach (var rootObject in scene.GetRootGameObjects())
             {
                 if (rootObject.TryGetComponent(out chunk) == true)
                     break;
@@ -74,7 +69,7 @@ namespace GamePlay.Level.Environment.Chunks.Editor
             var chunkHandler = Object.Instantiate(prefab, chunk.transform.position, Quaternion.identity);
             chunkHandler.name = $"ChunkHandler_{chunk.Y}_{chunk.Y}";
             Undo.RecordObject(chunkHandler, "Scene assign");
-            chunkHandler.Construct(scene);
+            chunkHandler.Construct(data.Reference);
             Undo.RecordObject(chunkHandler, "Scene assign");
         }
     }

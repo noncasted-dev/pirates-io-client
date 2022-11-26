@@ -8,13 +8,13 @@ namespace GamePlay.Level.Environment.Chunks.Instance
     [CreateAssetMenu(fileName = "ScenesList", menuName = GamePlayAssetsPaths.Config + "ScenesList")]
     public class ScenesList : ScriptableObject
     {
-        [SerializeField] private List<AssetReference> _scenes;
+        [SerializeField] private List<ChunkSceneData> _scenes;
 
-        public IReadOnlyList<AssetReference> Scenes => _scenes;
+        public IEnumerable<ChunkSceneData> Scenes => _scenes;
 
-        public void Add(AssetReference scene)
+        public void Add(AssetReference scene, string path)
         {
-            _scenes.Add(scene);
+            _scenes.Add(new ChunkSceneData(scene, path));
         }
     }
 }

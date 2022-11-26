@@ -41,8 +41,13 @@ namespace GamePlay.Services.PlayerCargos.UI
         public void Fill(IReadOnlyList<IItem> items)
         {
             foreach (var cell in _all)
+            {
+                if (cell == null)
+                    continue;
+                
                 cell.Disable();
-            
+            }
+
             _cells.Clear();
             _available.Clear();
             _available.AddRange(_all);

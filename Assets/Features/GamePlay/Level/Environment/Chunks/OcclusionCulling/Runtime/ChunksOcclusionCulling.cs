@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Level.Environment.Chunks.Instance;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
@@ -7,6 +9,9 @@ using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using NaughtyAttributes;
 using UniRx;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.ResourceProviders;
+using UnityEngine.SceneManagement;
 using VContainer;
 
 namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
@@ -19,7 +24,7 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
             _playerEntity = playerEntity;
         }
 
-        [SerializeField] private Chunk[] _chunks;
+        [SerializeField] private ChunkHandler[] _chunks;
         [SerializeField] private float _cullingRate = 5f;
         [SerializeField] private float _cullingDistance = 100f;
 
@@ -29,6 +34,8 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
 
         private Coroutine _process;
         private IDisposable _playerSpawnListener;
+
+        private readonly List<ChunkHandler> _loaded = new();
 
         private void Awake()
         {
@@ -65,18 +72,31 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
 
         private IEnumerator DisableOnDistance()
         {
+            var toUnload = new List<ChunkHandler>();
+            
+            foreach (var chunk in _loaded)
+            {
+                var distance = Vector2.Distance(chunk.Position, _playerEntity.Position);
+
+                if (distance <= _cullingDistance)
+                    continue;
+
+                if (chunk.IsLoaded == true)
+                    toUnload.Add(chunk);
+            }
+
+            foreach (var unloadTarget in toUnload)
+                UnloadScene(unloadTarget);
+
             foreach (var chunk in _chunks)
             {
-                var distance = Vector2.Distance(chunk.position, _playerEntity.Position);
+                var distance = Vector2.Distance(chunk.Position, _playerEntity.Position);
 
                 if (distance > _cullingDistance)
-                {
-                    chunk.Culling.Disable();
-
                     continue;
-                }
 
-                chunk.Culling.Enable();
+                if (chunk.IsLoaded == false)
+                    LoadScene(chunk).Forget();
             }
 
             yield return _wait;
@@ -84,10 +104,35 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
             _process = StartCoroutine(DisableOnDistance());
         }
 
+        private async UniTaskVoid LoadScene(ChunkHandler chunk)
+        {
+            chunk.MarkAsLoaded();
+            
+            var handle = Addressables.LoadSceneAsync(chunk.Scene, LoadSceneMode.Additive);
+            var result = await handle.ToUniTask();
+
+            chunk.OnLoaded(result);
+
+            _loaded.Add(chunk);
+        }
+
+        private void UnloadScene(ChunkHandler chunk)
+        {
+            Addressables.UnloadSceneAsync(chunk.Loaded);
+            _loaded.Remove(chunk);
+            chunk.OnUnloaded();
+        }
+
+        private async UniTaskVoid UnloadAll()
+        {
+            foreach (var loaded in _loaded)
+                Addressables.UnloadSceneAsync(loaded.Loaded);
+        }
+
         [Button("Scan")]
         private void Scan()
         {
-            _chunks = FindObjectsOfType<Chunk>();
+            _chunks = FindObjectsOfType<ChunkHandler>();
         }
     }
 }

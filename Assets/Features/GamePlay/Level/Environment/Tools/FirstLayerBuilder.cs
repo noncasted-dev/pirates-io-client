@@ -81,6 +81,12 @@ namespace GamePlay.Level.Environment.Tools
 
                 if (_ground.HasTile(upPosition) == true)
                     queuedSand.Add(upPosition);
+                
+                var downPosition = tilePosition;
+                downPosition.y -= 1;
+
+                if (_ground.HasTile(downPosition) == true)
+                    queuedSand.Add(downPosition);
 
                 var left = new Vector3Int(tilePosition.x - 1, tilePosition.y);
                 var right = new Vector3Int(tilePosition.x + 1, tilePosition.y);

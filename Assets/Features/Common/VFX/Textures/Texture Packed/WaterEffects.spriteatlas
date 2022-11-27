@@ -55,6 +55,11 @@ SpriteAtlas:
   - {fileID: -1891726041, guid: 592c0156930f58c41abfceed7d549e8e, type: 3}
   - {fileID: 21300000, guid: b2e150b630ba42d4fb5399956197e964, type: 3}
   - {fileID: 21300000, guid: 776317576aac07c4da5ba71c10a85377, type: 3}
+  - {fileID: 1609522834, guid: 74203377ab12bf345b6fcdb656eaed64, type: 3}
+  - {fileID: -974839836, guid: 74203377ab12bf345b6fcdb656eaed64, type: 3}
+  - {fileID: -1648242421, guid: 74203377ab12bf345b6fcdb656eaed64, type: 3}
+  - {fileID: 105273115, guid: 74203377ab12bf345b6fcdb656eaed64, type: 3}
+  - {fileID: 1307213273, guid: 74203377ab12bf345b6fcdb656eaed64, type: 3}
   - {fileID: -231998948, guid: fe4989b7b58a92f4b89e91d486763fd2, type: 3}
   - {fileID: -199071483, guid: fe4989b7b58a92f4b89e91d486763fd2, type: 3}
   - {fileID: 1696206484, guid: fe4989b7b58a92f4b89e91d486763fd2, type: 3}
@@ -139,6 +144,11 @@ SpriteAtlas:
   - Characters_5
   - reward_glow
   - AIMZonea
+  - Core2_1
+  - Core2_0
+  - Core2_3
+  - Core2_2
+  - Core2_4
   - WaterSplash_AtlassB_6
   - WaterSplash_AtlassB_5
   - WaterSplash_AtlassB_4

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24376b39bd9d47f4867670d22312d6e5, type: 3}
   m_Name: Projectile_Linear
   m_EditorClassIdentifier: 
+  _name: CannonBall
   _reference:
-    m_AssetGUID: 00fcb83de683a5c4ca9c8f318f95630f
+    m_AssetGUID: 7e6f5fcfeb137cd4f95032fb654f0e7a
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _startupInstances: 50
-  _name: CannonBall
   _waterSplash:
     m_AssetGUID: 7d98a44f42d19d440b066d5cd8581128
     m_SubObjectName: 

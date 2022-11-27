@@ -2,8 +2,10 @@
 {
     public enum FactionType
     {
-        Russia,
-        USA,
+        England,
+        France,
+        Holland,
+        Spain,
         Pirates
     }
 }

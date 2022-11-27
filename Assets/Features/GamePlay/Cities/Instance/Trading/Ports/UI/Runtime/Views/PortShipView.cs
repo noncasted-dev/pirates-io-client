@@ -38,7 +38,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views
 
         private void OnEnable()
         {
-            _healthListener = MessageBroker.Default.Receive<HealthChangedEvent>().Subscribe(OnHealthChanged);
+            _healthListener = MessageBroker.Default.Receive<HealthChangeEvent>().Subscribe(OnHealthChanged);
             _reputationListener =
                 MessageBroker.Default.Receive<ReputationChangedEvent>().Subscribe(OnReputationChanged);
         }
@@ -98,7 +98,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views
             _tradeWeight = 0;
         }
 
-        private void OnHealthChanged(HealthChangedEvent data)
+        private void OnHealthChanged(HealthChangeEvent data)
         {
             SetWeight();
         }

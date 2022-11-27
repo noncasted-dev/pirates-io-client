@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime;
 using GamePlay.Common.Paths;
 using GamePlay.Factions.Selections.Bootstrap;

@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23de5b114a184978aeaa2d89ab422340, type: 3}
   m_Name: LocalConfig_ProjectilesReplicator
   m_EditorClassIdentifier: 
-  _replicateDistance: 40
-  _projectiles:
-    _keys: 00
-    _values:
-    - m_AssetGUID: 00fcb83de683a5c4ca9c8f318f95630f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
   _fire:
     m_AssetGUID: 6d41553e696af024f9ce0bcb66a78abd
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  _projectiles:
+    _keys: 00
+    _values:
+    - m_AssetGUID: 7e6f5fcfeb137cd4f95032fb654f0e7a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  _replicateDistance: 40

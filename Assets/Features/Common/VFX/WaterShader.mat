@@ -29,7 +29,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample0:
-        m_Texture: {fileID: 2800000, guid: 46d1bfbac4245d64ca19f694b993b427, type: 3}
+        m_Texture: {fileID: 2800000, guid: e1602e12c58c6f641ada75dfc4a1aab6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample1:
@@ -43,16 +43,20 @@ Material:
     m_Ints: []
     m_Floats:
     - PixelSnap: 0
-    - _DisplaceForce: 0.2
-    - _Float0: 0.69
-    - _Float2: 0.7
-    - _Size: 0.24
-    - _SizeNoise: 0.52
-    - _SizeNoise2: 0.16
-    - _asdas: 0.21
+    - _DisplaceForce: 0.05
+    - _Float0: 0.34
+    - _Float1: 0.45
+    - _Float2: -0.18
+    - _Size: 0.25
+    - _SizeNoise: 1.1
+    - _SizeNoise2: 0.22
+    - _asdas: 0.01
+    - _powww: 1.81
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Vector0: {r: 1, g: 1, b: 0.08, a: 1}
+    - _a: {r: 0.1975792, g: 0.3072431, b: 0.3773585, a: 0.40392157}
+    - _b: {r: 0.5330188, g: 0.94305116, b: 1, a: 0.54509807}
     - _dir: {r: 1, g: 0, b: 0.3, a: 0}
-    - _dir2: {r: 1, g: 1, b: 0.05, a: 0}
+    - _dir2: {r: 1, g: 1, b: 0.3, a: 0}
   m_BuildTextureStacks: []

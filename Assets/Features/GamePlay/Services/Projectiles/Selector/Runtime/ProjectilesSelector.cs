@@ -15,6 +15,8 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
         
         private IDisposable _cargoListener;
 
+        public ProjectileType Selected => _selected;
+        
         private void Awake()
         {
             _projectiles[ProjectileType.Fishnet] = 999999;
@@ -29,8 +31,6 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
         {
             _cargoListener?.Dispose();
         }
-
-        public ProjectileType Selected { get; }
 
         public int GetAmount(ProjectileType type)
         {

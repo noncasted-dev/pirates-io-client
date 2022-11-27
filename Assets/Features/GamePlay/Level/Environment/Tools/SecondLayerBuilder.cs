@@ -45,7 +45,7 @@ namespace GamePlay.Level.Environment.Tools
             ProcessGenerate().Forget();
         }
 
-        private async UniTaskVoid ProcessGenerate()
+        public async UniTask ProcessGenerate()
         {
             _isGenerating = true;
 

@@ -38,6 +38,9 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: -1045915730, guid: dbfdfad0b41fc0b41b977bab795f5b27, type: 3}
+  - {fileID: -1925912539, guid: dbfdfad0b41fc0b41b977bab795f5b27, type: 3}
+  - {fileID: -1623388012, guid: dbfdfad0b41fc0b41b977bab795f5b27, type: 3}
   - {fileID: -329891925, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
   - {fileID: 1602909158, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
   - {fileID: 1349493356, guid: 93280245a8ea87647945c48eb352efdc, type: 3}
@@ -127,6 +130,9 @@ SpriteAtlas:
   - {fileID: -924359771, guid: 899cb10f0fc6b4a40a85f46438789bbe, type: 3}
   - {fileID: 1081565705, guid: 899cb10f0fc6b4a40a85f46438789bbe, type: 3}
   m_PackedSpriteNamesToIndex:
+  - Core3_0
+  - Core3_1
+  - Core3_2
   - AtlassC_8
   - AtlassC_7
   - AtlassC_6

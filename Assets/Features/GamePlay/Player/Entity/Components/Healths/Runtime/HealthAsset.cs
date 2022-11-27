@@ -11,7 +11,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
         menuName = PlayerAssetsPaths.Health + "Component")]
     public class HealthAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private HealthLogSettings _logSettings;
+        [SerializeField]  private HealthLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

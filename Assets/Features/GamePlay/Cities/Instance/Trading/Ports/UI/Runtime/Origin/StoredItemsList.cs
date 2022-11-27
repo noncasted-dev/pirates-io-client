@@ -55,26 +55,26 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         public void Fill(IReadOnlyList<IItem> items, IPriceProvider priceProvider)
         {
             Awake();
-            
+
             foreach (var cell in _cells)
                 _available.Add(cell.Value);
-            
+
             foreach (var cell in _available)
                 cell.Disable();
-
+            
             _cells.Clear();
-
+            
             AddCellsOnDemand(items.Count);
 
             foreach (var item in items)
             {
                 var cell = _available[0];
                 _available.RemoveAt(0);
-
+                
                 cell.AssignItem(item, _origin, priceProvider);
                 _cells.Add(item.BaseData.Type, cell);
             }
-
+            
             CalculateVerticalSize(items.Count);
         }
         

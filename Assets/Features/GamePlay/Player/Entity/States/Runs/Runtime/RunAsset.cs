@@ -12,9 +12,9 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
         menuName = PlayerAssetsPaths.Run + "State")]
     public class RunAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private RunConfigAsset _config;
-        [SerializeField] [EditableObject] private RunDefinition _definition;
-        [SerializeField] [EditableObject] private RunLogSettings _logSettings;
+        [SerializeField]  private RunConfigAsset _config;
+        [SerializeField]  private RunDefinition _definition;
+        [SerializeField]  private RunLogSettings _logSettings;
 
         public override void Register(IContainerBuilder builder)
         {

@@ -12,9 +12,9 @@ namespace GamePlay.Player.Entity.Setup.Editor
         menuName = PlayerAssetsPaths.Config + "Animations")]
     public class PlayerAnimationsConfig : ScriptableObject
     {
-        [SerializeField] [EditableObject] private IdleAnimationTriggerAsset _idle;
-        [SerializeField] [EditableObject] private RespawnAnimationTriggerAsset _respawn;
-        [SerializeField] [EditableObject] private RotationAnimatorFloatAsset _rotation;
-        [SerializeField] [EditableObject] private RunAnimationTriggerAsset _run;
+        [SerializeField]  private IdleAnimationTriggerAsset _idle;
+        [SerializeField]  private RespawnAnimationTriggerAsset _respawn;
+        [SerializeField]  private RotationAnimatorFloatAsset _rotation;
+        [SerializeField]  private RunAnimationTriggerAsset _run;
     }
 }

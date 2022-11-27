@@ -1,5 +1,4 @@
 ﻿using GamePlay.Player.Entity.Components.Definition;
-using UnityEngine;
 
 namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 {
@@ -11,7 +10,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
                 IsContainingShip = false;
             else
                 IsContainingShip = true;
-            Debug.Log($"Create result: {IsContainingShip}");
 
             Ship = shipItem;
         }

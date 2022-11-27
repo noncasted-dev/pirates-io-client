@@ -31,26 +31,26 @@ namespace GamePlay.Level.Config.Runtime
     [CreateAssetMenu(fileName = "Level", menuName = GamePlayAssetsPaths.Root + "Scene")]
     public class LevelAsset : ComposedSceneAsset
     {
-        [SerializeField] [EditableObject] private LevelEnvironmentAsset _environment;
-        [SerializeField] [EditableObject] private FactionSelectionAsset _factionSelection;
-        [SerializeField] [EditableObject] private LevelCameraAsset _levelCamera;
-        [SerializeField] [EditableObject] private LevelLoopAsset _levelLoop;
-        [SerializeField] [EditableObject] private NetworkPlayerDataAsset _networkPlayerData;
-        [SerializeField] [EditableObject] private NetworkSessionAsset _networkSession;
-        [SerializeField] [EditableObject] private ObjectDropperAsset _objectDropper;
-        [SerializeField] [EditableObject] private PlayerCargoAsset _playerCargo;
+        [SerializeField]  private LevelEnvironmentAsset _environment;
+        [SerializeField]  private FactionSelectionAsset _factionSelection;
+        [SerializeField]  private LevelCameraAsset _levelCamera;
+        [SerializeField]  private LevelLoopAsset _levelLoop;
+        [SerializeField]  private NetworkPlayerDataAsset _networkPlayerData;
+        [SerializeField]  private NetworkSessionAsset _networkSession;
+        [SerializeField]  private ObjectDropperAsset _objectDropper;
+        [SerializeField]  private PlayerCargoAsset _playerCargo;
 
-        [SerializeField] [EditableObject] private PlayerFactoryAsset _playerFactory;
-        [SerializeField] [EditableObject] private PlayerPositionProviderAsset _playerPositionProvider;
-        [SerializeField] [EditableObject] private ProjectileReplicatorAsset _projectileReplicator;
-        [SerializeField] [EditableObject] private ProjectilesAsset _projectiles;
-        [SerializeField] [EditableObject] private RemotePlayerBuilderAsset _remotePlayerBuilder;
-        [SerializeField] [EditableObject] private TransitionScreenAsset _transitionScreen;
-        [SerializeField] [EditableObject] private VfxPoolAsset _vfxPool;
-        [SerializeField] [EditableObject] private TravelOverlayAsset _travelOverlay;
-        [SerializeField] [EditableObject] private CityPortUiAsset _cityPortUi;
-        [SerializeField] [EditableObject] private WalletAsset _wallet;
-        [SerializeField] [EditableObject] private ReputationAsset _reputation;
+        [SerializeField]  private PlayerFactoryAsset _playerFactory;
+        [SerializeField]  private PlayerPositionProviderAsset _playerPositionProvider;
+        [SerializeField]  private ProjectileReplicatorAsset _projectileReplicator;
+        [SerializeField]  private ProjectilesAsset _projectiles;
+        [SerializeField]  private RemotePlayerBuilderAsset _remotePlayerBuilder;
+        [SerializeField]  private TransitionScreenAsset _transitionScreen;
+        [SerializeField]  private VfxPoolAsset _vfxPool;
+        [SerializeField]  private TravelOverlayAsset _travelOverlay;
+        [SerializeField]  private CityPortUiAsset _cityPortUi;
+        [SerializeField]  private WalletAsset _wallet;
+        [SerializeField]  private ReputationAsset _reputation;
 
         [SerializeField] private LevelScope _scopePrefab;
 

@@ -1,19 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.Components.Definition;
 using Global.Services.ItemFactories.Runtime;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Cities.Instance.Storage.Runtime
 {
     public class CityStorage : SceneObject, IPriceProvider, ICityStorage
     {
-        [Inject]
-        private void Construct(IItemFactory itemFactory)
+        public void Construct(IItemFactory itemFactory)
         {
             _itemFactory = itemFactory;
         }
@@ -142,6 +139,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             var progress = GetCountProgress(type, count);
 
             var priceEvaluation = _curves.ItemPricePerCount.Evaluate(progress);
+            
             var cost = (int)(config.MedianCost * priceEvaluation);
 
             return cost;
@@ -216,10 +214,10 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             var config = _producables[type];
 
             var progress = count / (float)config.MaxItems;
-
+            
             if (progress > 1f)
                 progress = 1f;
-
+            
             return progress;
         }
     }

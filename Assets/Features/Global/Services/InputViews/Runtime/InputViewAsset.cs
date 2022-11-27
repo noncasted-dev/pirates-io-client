@@ -13,7 +13,7 @@ namespace Global.Services.InputViews.Runtime
         menuName = GlobalAssetsPaths.InputView + "Service", order = 1)]
     public class InputViewAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private InputViewLogSettings _logSettings;
+        [SerializeField]  private InputViewLogSettings _logSettings;
         [SerializeField] private InputView _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)

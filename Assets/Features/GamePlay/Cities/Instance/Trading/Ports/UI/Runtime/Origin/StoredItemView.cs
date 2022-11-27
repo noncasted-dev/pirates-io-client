@@ -56,9 +56,12 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
             _icon.sprite = item.BaseData.Icon;
             _count.text = item.Count.ToString();
-            _cost.text = _priceProvider.GetPrice(item.BaseData.Type).ToString();
+            
+            var price = _priceProvider.GetPrice(item.BaseData.Type);
+            _cost.text = price.ToString();
 
             OnCountChanged(_item.Count);
+
         }
 
         public void OnTransferedItemCountChange(int count)

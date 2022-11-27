@@ -20,8 +20,8 @@ namespace GamePlay.Services.Projectiles.Bootstrap
         menuName = GamePlayAssetsPaths.Projectiles + "Service")]
     public class ProjectilesAsset : LocalServiceAsset
     {
-        [SerializeField] [EditableObject] private ProjectilesLogSettings _logSettings;
-        [SerializeField] [EditableObject] private ProjectilesMoverConfigAsset _moverConfig;
+        [SerializeField]  private ProjectilesLogSettings _logSettings;
+        [SerializeField]  private ProjectilesMoverConfigAsset _moverConfig;
         [SerializeField] private AssetReference _poolScene;
         [SerializeField] private ProjectilesBootstrapper _prefab;
 

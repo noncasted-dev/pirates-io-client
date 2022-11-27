@@ -1,6 +1,11 @@
 ﻿using GamePlay.Cities.Global.Registry.Runtime;
+using GamePlay.Cities.Instance.Storage.Runtime;
+using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime;
+using GamePlay.Services.LevelLoops.Runtime;
+using GamePlay.Services.PlayerCargos.Storage.Runtime;
+using Global.Services.ItemFactories.Runtime;
 using Local.Services.DependenciesResolve;
 using UnityEngine;
 using VContainer;
@@ -14,7 +19,8 @@ namespace GamePlay.Level.Environment.Bootstrap
         [SerializeField] private CitiesRegistry _citiesRegistry;
         [SerializeField] private ChunksOcclusionCulling _chunksCulling;
 
-        [SerializeField] private GameObject[] _injectTargets;
+        [SerializeField] private CityStorage[] _storages;
+        [SerializeField] private CityPort[] _ports;
 
         public void Register(IContainerBuilder builder)
         {
@@ -26,9 +32,15 @@ namespace GamePlay.Level.Environment.Bootstrap
         public void Resolve(IObjectResolver resolver)
         {
             resolver.Resolve<ChunksOcclusionCulling>();
-
-            foreach (var target in _injectTargets)
-                resolver.InjectGameObject(target);
+            var itemFactory = resolver.Resolve<IItemFactory>();
+            var cargoStorage = resolver.Resolve<IPlayerCargoStorage>();
+            var levelLoop = resolver.Resolve<ILevelLoop>();
+            
+            foreach (var target in _storages)
+                target.Construct(itemFactory);
+            
+            foreach (var target in _ports)
+                target.Construct(cargoStorage, levelLoop);
         }
     }
 }

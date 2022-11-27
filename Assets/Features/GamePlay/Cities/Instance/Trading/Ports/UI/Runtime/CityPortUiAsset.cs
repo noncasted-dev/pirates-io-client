@@ -15,7 +15,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         menuName = GamePlayAssetsPaths.CityPort + "Service")]
     public class CityPortUiAsset : LocalServiceAsset
     {
-        [SerializeField] [EditableObject] private UiConstraints _constraints;
+        [SerializeField]  private UiConstraints _constraints;
         [SerializeField] private AssetReference _uiScene;
 
         public override async UniTask Create(

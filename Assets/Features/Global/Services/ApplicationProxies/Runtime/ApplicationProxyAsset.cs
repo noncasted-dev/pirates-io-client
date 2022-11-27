@@ -12,7 +12,7 @@ namespace Global.Services.ApplicationProxies.Runtime
         menuName = GlobalAssetsPaths.ApplicationProxy + "Service", order = 1)]
     public class ApplicationProxyAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private ApplicationProxyLogSettings _logSettings;
+        [SerializeField]  private ApplicationProxyLogSettings _logSettings;
         [SerializeField] private ApplicationProxy _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)

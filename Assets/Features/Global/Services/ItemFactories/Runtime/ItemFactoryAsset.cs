@@ -11,7 +11,7 @@ namespace Global.Services.ItemFactories.Runtime
         menuName = GlobalAssetsPaths.ItemFactory + "Service")]
     public class ItemFactoryAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private ItemFactoryConfigAsset _config;
+        [SerializeField]  private ItemFactoryConfigAsset _config;
         [SerializeField] private ItemFactory _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)

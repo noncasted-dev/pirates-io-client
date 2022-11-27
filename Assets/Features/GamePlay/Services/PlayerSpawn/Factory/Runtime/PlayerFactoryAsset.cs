@@ -12,8 +12,8 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
         menuName = GamePlayAssetsPaths.PlayerFactory + "Service")]
     public class PlayerFactoryAsset : LocalServiceAsset
     {
-        [SerializeField] [EditableObject] private PlayerFactoryLogSettings _logSettings;
-        [SerializeField] [EditableObject] private PlayerFactoryConfigAsset _configAsset;
+        [SerializeField]  private PlayerFactoryLogSettings _logSettings;
+        [SerializeField]  private PlayerFactoryConfigAsset _configAsset;
         [SerializeField] private PlayerFactory _prefab;
 
         public override async UniTask Create(

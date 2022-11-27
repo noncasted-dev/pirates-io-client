@@ -64,7 +64,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         {
             foreach (var cell in _cells)
                 _available.Add(cell.Value);
-            
             foreach (var cell in _available)
                 cell.Disable();
 

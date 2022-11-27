@@ -12,7 +12,7 @@ namespace Global.Services.FilesFlow.Runtime
         menuName = GlobalAssetsPaths.FilesFlow + "Service", order = 1)]
     public class FilesFlowAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private FilesFlowLogSettings _logSettings;
+        [SerializeField]  private FilesFlowLogSettings _logSettings;
 
         [SerializeField] private FileDeleter _prefab;
 

@@ -12,8 +12,8 @@ namespace GamePlay.Services.LevelCameras.Runtime
         menuName = GamePlayAssetsPaths.LevelCamera + "Service")]
     public class LevelCameraAsset : LocalServiceAsset
     {
-        [SerializeField] [EditableObject] private LevelCameraConfigAsset _config;
-        [SerializeField] [EditableObject] private LevelCameraLogSettings _logSettings;
+        [SerializeField]  private LevelCameraConfigAsset _config;
+        [SerializeField]  private LevelCameraLogSettings _logSettings;
         [SerializeField] private LevelCamera _prefab;
 
         public override async UniTask Create(

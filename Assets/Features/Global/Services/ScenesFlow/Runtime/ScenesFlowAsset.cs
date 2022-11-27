@@ -12,7 +12,7 @@ namespace Global.Services.ScenesFlow.Runtime
         menuName = GlobalAssetsPaths.ScenesFlow + "Service", order = 1)]
     public class ScenesFlowAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private ScenesFlowLogSettings _logSettings;
+        [SerializeField]  private ScenesFlowLogSettings _logSettings;
         [SerializeField] private ScenesLoader _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)

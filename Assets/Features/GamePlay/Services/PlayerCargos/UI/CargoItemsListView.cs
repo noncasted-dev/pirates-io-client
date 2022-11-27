@@ -41,12 +41,17 @@ namespace GamePlay.Services.PlayerCargos.UI
         public void Fill(IReadOnlyList<IItem> items)
         {
             foreach (var cell in _all)
+            {
+                if (cell == null)
+                    continue;
+                
                 cell.Disable();
-            
+            }
+
             _cells.Clear();
             _available.Clear();
             _available.AddRange(_all);
-
+            
             AddCellsOnDemand(items.Count);
 
             foreach (var item in items)
@@ -77,6 +82,7 @@ namespace GamePlay.Services.PlayerCargos.UI
             for (var i = 0; i < delta; i++)
             {
                 var cell = Instantiate(_cellPrefab, _cellsRoot);
+
                 _available.Add(cell);
                 _all.Add(cell);
                 cell.gameObject.SetActive(false);

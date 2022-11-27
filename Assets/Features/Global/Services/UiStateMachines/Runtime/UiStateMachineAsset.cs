@@ -12,7 +12,7 @@ namespace Global.Services.UiStateMachines.Runtime
         menuName = GlobalAssetsPaths.UiStateMachine + "Service")]
     public class UiStateMachineAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private UiStateMachineLogSettings _logSettings;
+        [SerializeField]  private UiStateMachineLogSettings _logSettings;
         [SerializeField] private UiStateMachine _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)

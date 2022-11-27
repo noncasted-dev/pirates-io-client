@@ -49,7 +49,9 @@ namespace GamePlay.Services.PlayerCargos.UI
             _resources.SpeedChanged -= OnSpeedChanged;
         }
 
-        public void Setup(IShipResources shipResources, IReputation reputation)
+        public void Setup(
+            IShipResources shipResources,
+            IReputation reputation)
         {
             _playerReputation = reputation;
             _resources = shipResources;

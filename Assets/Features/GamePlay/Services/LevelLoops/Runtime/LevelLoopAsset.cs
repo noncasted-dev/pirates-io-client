@@ -13,7 +13,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
         menuName = GamePlayAssetsPaths.LevelLoop + "Service")]
     public class LevelLoopAsset : LocalServiceAsset
     {
-        [SerializeField] [EditableObject] private LevelLoopLogSettings _logSettings;
+        [SerializeField]  private LevelLoopLogSettings _logSettings;
         [SerializeField] private LevelLoop _prefab;
 
         public override async UniTask Create(IServiceBinder serviceBinder, ICallbacksRegister callbacksRegister,

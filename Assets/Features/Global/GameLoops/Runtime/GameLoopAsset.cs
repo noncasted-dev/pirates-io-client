@@ -12,7 +12,7 @@ namespace Global.GameLoops.Runtime
         menuName = GlobalAssetsPaths.GameLoop + "Service", order = 0)]
     public class GameLoopAsset : GlobalServiceAsset
     {
-        [SerializeField] [EditableObject] private GameLoopLogSettings _logSettings;
+        [SerializeField]  private GameLoopLogSettings _logSettings;
         [SerializeField] private GameLoop _prefab;
 
         public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)

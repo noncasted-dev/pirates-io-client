@@ -41,7 +41,7 @@ namespace GamePlay.Player.Entity.Network.Views.Transforms.Runtime
 
         public override void OnEntityTick()
         {
-            _position.Value = _localPosition;
+            _position.Value = transform.position;
         }
 
         public override void OnProxyTick()

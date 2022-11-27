@@ -12,7 +12,7 @@ namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
         menuName = PlayerAssetsPaths.Damage + "Component")]
     public class DamageProcessorAsset : PlayerComponentAsset
     {
-        [SerializeField] [EditableObject] private DamageConfigAsset _config;
+        [SerializeField]  private DamageConfigAsset _config;
 
         public override void Register(IContainerBuilder builder)
         {

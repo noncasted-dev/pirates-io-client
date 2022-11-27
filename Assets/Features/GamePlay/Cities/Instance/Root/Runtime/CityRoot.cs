@@ -8,7 +8,7 @@ namespace GamePlay.Cities.Instance.Root.Runtime
     [DisallowMultipleComponent]
     public class CityRoot : MonoBehaviour, ICity
     {
-        [SerializeField] [EditableObject] private CityDefinition _definition;
+        [SerializeField]  private CityDefinition _definition;
         [SerializeField] private CitySpawnPoints _spawnPoints;
         public FactionType Faction => _definition.Faction;
 

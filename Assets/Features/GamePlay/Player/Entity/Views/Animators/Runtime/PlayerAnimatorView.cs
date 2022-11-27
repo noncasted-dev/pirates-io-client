@@ -19,7 +19,7 @@ namespace GamePlay.Player.Entity.Views.Animators.Runtime
             _logger = new AnimatorLogger(logger, _logSettings);
         }
 
-        [SerializeField] [EditableObject] private AnimatorLogSettings _logSettings;
+        [SerializeField]  private AnimatorLogSettings _logSettings;
 
         [SerializeField] private List<SubAnimator> _subAnimators;
 

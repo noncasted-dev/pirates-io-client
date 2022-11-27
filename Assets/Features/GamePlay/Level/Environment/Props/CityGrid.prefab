@@ -1163,7 +1163,7 @@ GameObject:
   - component: {fileID: 5684869733645216927}
   - component: {fileID: 6565020090598392730}
   m_Layer: 7
-  m_Name: Ground
+  m_Name: FirstGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1623,7 +1623,7 @@ GameObject:
   - component: {fileID: 5684869734770062336}
   - component: {fileID: 5684869734770062338}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: SecondGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

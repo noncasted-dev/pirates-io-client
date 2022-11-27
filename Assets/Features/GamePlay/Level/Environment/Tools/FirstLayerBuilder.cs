@@ -43,7 +43,7 @@ namespace GamePlay.Level.Environment.Tools
         }
 
         [Button("Generate")]
-        private void Generate()
+        public void Generate()
         {
             ProcessGenerate().Forget();
         }

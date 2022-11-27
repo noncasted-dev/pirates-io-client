@@ -109,10 +109,6 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Services/ObjectDroppers/Config/Pool_DroppedObjects.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 45d5f656b109680429a1ef696a9f527f
-    m_Address: Assets/Features/GamePlay/Level/Scenes/Level_Test.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: e360c6833edfa954da5aeb440cc53439
     m_Address: Assets/Features/GamePlay/Services/TravelOverlay/Config/UI_TravelOverlay.unity
     m_ReadOnly: 0

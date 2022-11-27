@@ -109,6 +109,14 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _nickName.text = _profileStorageProvider.UserName;
             
             _body.SetActive(true);
+            
+            _storedView.gameObject.SetActive(false);
+            _stockView.gameObject.SetActive(false);
+            
+            _storedView.gameObject.SetActive(true);
+            _stockView.gameObject.SetActive(true);
+
+            
             _stateMachine.EnterAsSingle(this);
             
             _storedView.Fill(data.Cargo, data.PriceProvider);

@@ -2,6 +2,7 @@
 using Global.GameLoops.Runtime;
 using Global.Services.Common.Config.Abstract;
 using Global.Services.Common.Scope;
+using UniRx;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
@@ -27,6 +28,8 @@ namespace Global.Bootstrappers
 
         private async UniTaskVoid Bootstrap()
         {
+            MessageBroker.Default = new MessageBroker();
+            
             var scene = await Addressables.LoadSceneAsync(_servicesScene, LoadSceneMode.Additive).ToUniTask();
 
             var binder = new ServiceBinder(scene.Scene);

@@ -83,6 +83,9 @@ namespace GamePlay.Services.PlayerCargos.UI
 
         private void OnCargoChanged(CargoChangedEvent data)
         {
+            if (_body.activeSelf == false)
+                return;
+            
             Redraw(data.ToArray());
         }
         

@@ -135,10 +135,6 @@ PrefabInstance:
       value: Chunk_0_0
       objectReference: {fileID: 0}
     - target: {fileID: 789081209937633579, guid: a087104f561a9ff4ba95f431bfe6b139, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 789081209937633579, guid: a087104f561a9ff4ba95f431bfe6b139, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}

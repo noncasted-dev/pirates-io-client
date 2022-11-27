@@ -52,7 +52,7 @@ namespace UniRx
         /// <summary>
         /// MessageBroker in Global scope.
         /// </summary>
-        public static readonly IMessageBroker Default = new MessageBroker();
+        public static IMessageBroker Default = new MessageBroker();
 
         bool isDisposed = false;
         readonly Dictionary<Type, object> notifiers = new Dictionary<Type, object>();

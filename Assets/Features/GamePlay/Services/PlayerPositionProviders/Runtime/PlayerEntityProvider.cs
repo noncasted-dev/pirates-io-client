@@ -9,6 +9,8 @@ namespace GamePlay.Services.PlayerPositionProviders.Runtime
         IPlayerEntityPresenter,
         IPlayerEntityProvider
     {
+        private Vector2 _lastPosition = Vector2.zero;
+        
         private RagonEntity _entity;
         private Transform _transform;
         private IShipResources _resources;
@@ -36,10 +38,12 @@ namespace GamePlay.Services.PlayerPositionProviders.Runtime
             if (_transform == null)
             {
                 Debug.Log("No player assigned");
-                return Vector2.zero;
+                return _lastPosition;
             }
 
-            return _transform.position;
+            _lastPosition = _transform.position;
+            
+            return _lastPosition;
         }
     }
 }

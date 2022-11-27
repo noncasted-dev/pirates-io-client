@@ -57,15 +57,11 @@ namespace GamePlay.Services.DroppedObjects.Network.Runtime
 
         private void OnItemDropReceived(RagonPlayer player, ItemDropEvent data)
         {
-            Debug.Log($"Drop received: {data.Type}, {data.Count}, {data.Origin}, {data.Target}");
-
             ItemDropped?.Invoke(data);
         }
 
         private void OnItemCollectReceived(RagonPlayer player, ItemCollectedEvent data)
         {
-            Debug.Log($"Drop collected: {data.Id}");
-            
             ItemCollected?.Invoke(data.Id);
         }
     }

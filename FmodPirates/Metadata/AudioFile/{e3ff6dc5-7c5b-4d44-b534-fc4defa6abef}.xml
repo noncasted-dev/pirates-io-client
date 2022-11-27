@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e3ff6dc5-7c5b-4d44-b534-fc4defa6abef}">
+		<property name="assetPath">
+			<value>amb/sfx_amb_seagulls_05.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.5524374999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{64eed2ed-234c-4897-a67b-7675ed23f8ed}</destination>
+		</relationship>
+	</object>
+</objects>

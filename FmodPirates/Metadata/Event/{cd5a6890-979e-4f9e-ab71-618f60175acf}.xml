@@ -95,7 +95,7 @@
 			<value>6.4448541666666666</value>
 		</property>
 		<property name="volume">
-			<value>-5</value>
+			<value>-28</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -112,7 +112,7 @@
 			<value>6.4448541666666666</value>
 		</property>
 		<property name="volume">
-			<value>-13</value>
+			<value>-45</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -122,9 +122,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{be35c88a-e431-4e2e-a4b8-b58545e01d6b}">
-		<property name="volume">
-			<value>-17</value>
-		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -145,7 +142,6 @@
 		<property name="length">
 			<value>6.4448541666666666</value>
 		</property>
-		<property name="name" />
 		<relationship name="timeline">
 			<destination>{ce62071e-ba7c-4716-8b24-48025d5edf9b}</destination>
 		</relationship>

@@ -43,6 +43,7 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnCityEntered()
         {
+            AmbInstance.setParameterByName("amb_condition", 2f);
             Debug.Log("city_enter");
         }
 
@@ -57,7 +58,7 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnPortExited()
         {
-            AmbInstance.setParameterByName("amb_condition", 0f);
+            AmbInstance.setParameterByName("amb_condition", 2f);
             Debug.Log("portExit");
         }
 

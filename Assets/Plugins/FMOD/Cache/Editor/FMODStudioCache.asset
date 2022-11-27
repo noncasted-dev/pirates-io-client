@@ -266,7 +266,7 @@ MonoBehaviour:
   - {fileID: 4782442716932992266}
   StringsBanks:
   - {fileID: 3582555454610402830}
-  cacheTime: 638050269626758761
+  cacheTime: 638050709233069189
   cacheVersion: 131593
 --- !u!114 &1434802825589905288
 MonoBehaviour:
@@ -330,7 +330,7 @@ MonoBehaviour:
   Path: FmodPirates/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638050269626758761
+  lastModified: 638050709233069189
   FileSizes:
   - Name: Desktop
     Value: 1024
@@ -370,10 +370,10 @@ MonoBehaviour:
   Path: FmodPirates/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638050269626743888
+  lastModified: 638050709233044398
   FileSizes:
   - Name: Desktop
-    Value: 2523488
+    Value: 3436096
   Exists: 1
 --- !u!114 &8667904405510141480
 MonoBehaviour:

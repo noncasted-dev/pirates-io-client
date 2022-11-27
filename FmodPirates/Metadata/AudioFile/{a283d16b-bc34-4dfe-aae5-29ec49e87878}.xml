@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{b5e8cbec-1efb-4994-ac2f-9d4a0d34c208}">
+	<object class="AudioFile" id="{a283d16b-bc34-4dfe-aae5-29ec49e87878}">
 		<property name="assetPath">
-			<value>1911 - Single Shot - Dry_06.wav</value>
+			<value>amb/sfx_amb_seagulls_04.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>96</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>1.5248333333333333</value>
+			<value>4.8457499999999998</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{64eed2ed-234c-4897-a67b-7675ed23f8ed}</destination>

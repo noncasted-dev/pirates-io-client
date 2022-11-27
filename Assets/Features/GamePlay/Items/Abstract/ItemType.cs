@@ -4,6 +4,9 @@
     {
         Money,
         CannonBall,
+        CannonShrapnel,
+        CannonKnuppel,
+        CannonFishnet,
         Cannon,
         Team,
         Ship_Boat,

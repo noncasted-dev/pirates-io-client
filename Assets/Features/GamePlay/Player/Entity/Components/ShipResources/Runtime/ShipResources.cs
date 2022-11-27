@@ -80,6 +80,8 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             _maxWeight = maxWeight;
 
             WeightChanged?.Invoke(_weight, _maxWeight);
+            
+            MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
         }
 
         public void SetWeight(int weight)
@@ -87,6 +89,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             _weight = weight;
 
             WeightChanged?.Invoke(_weight, _maxWeight);
+            MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
         }
 
         public void SetMaxCannons(int maxCannons)
@@ -94,6 +97,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             _maxCannons = maxCannons;
 
             CannonsChanged?.Invoke(_cannons, _maxCannons);
+            MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
         }
 
         public void SetCannons(int cannons)
@@ -101,6 +105,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             _cannons = cannons;
 
             CannonsChanged?.Invoke(_cannons, _maxCannons);
+            MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
         }
 
         public void SetMaxTeam(int maxTeam)
@@ -108,6 +113,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             _maxTeam = maxTeam;
 
             TeamChanged?.Invoke(_team, _maxTeam);
+            MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
         }
 
         public void SetTeam(int team)
@@ -115,6 +121,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             _team = team;
             
             TeamChanged?.Invoke(_team, _maxTeam);
+            MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
         }
 
         public void SetMaxSpeed(int maxSpeed)
@@ -122,6 +129,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             _maxSpeed = maxSpeed;
             
             SpeedChanged?.Invoke(_speed, _maxSpeed);
+            MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
         }
 
         public void SetSpeed(int speed)
@@ -129,6 +137,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             _maxSpeed = speed;
             
             SpeedChanged?.Invoke(_speed, _maxSpeed);
+            MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
         }
         
         private void OnCargoChanged(CargoChangedEvent data)

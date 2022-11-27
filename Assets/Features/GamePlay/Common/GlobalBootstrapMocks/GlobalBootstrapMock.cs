@@ -7,6 +7,8 @@ using Global.Services.Common.Scope;
 using Global.Services.Network.Connection.Runtime;
 using Global.Services.Network.Session.Join.Runtime;
 using Global.Services.ScenesFlow.Runtime.Abstract;
+using NaughtyAttributes;
+using UniRx;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
@@ -25,6 +27,12 @@ namespace GamePlay.Common.GlobalBootstrapMocks
 
         [SerializeField] private GlobalServicesConfig _services;
 
+        [Button("ClearMessageBroker")]
+        private void ClearMessageBroker()
+        {
+            MessageBroker.Default = new MessageBroker();
+        }
+        
         private void Awake()
         {
             Process().Forget();

@@ -1,8 +1,8 @@
 ﻿namespace GamePlay.Player.Entity.Components.Healths.Runtime
 {
-    public readonly struct HealthChangedEvent
+    public readonly struct HealthChangeEvent
     {
-        public HealthChangedEvent(int current, int max)
+        public HealthChangeEvent(int current, int max)
         {
             Current = current;
             Max = max;

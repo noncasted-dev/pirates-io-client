@@ -15,4 +15,4 @@ MonoBehaviour:
   _weight: 1
   _name: CannonBall
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 9ec2898eec282ab448a86e9f799fb3c4, type: 3}
+  _icon: {fileID: 21300000, guid: 5444f0fdf14d004429cfdf925ddcb9ee, type: 3}

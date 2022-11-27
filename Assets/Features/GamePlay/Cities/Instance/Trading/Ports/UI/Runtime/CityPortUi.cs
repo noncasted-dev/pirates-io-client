@@ -147,11 +147,12 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         private void OnTradeCompleted(TradeResult result)
         {
             _tradeBody.SetActive(false);
+            
+            Debug.Log("Completed");
 
             var completed = new TradeCompletedEvent(Redraw, result);
 
             MessageBroker.Default.Publish(completed);
-
         }
 
         private void Redraw(
@@ -163,6 +164,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _shipView.ResetStats();
 
             _tradeBody.SetActive(false);
+            
+            Debug.Log("Redraw");
+            _shipView.ResetStats();
 
             _storedView.Fill(cargo, priceProvider);
             _stockView.Fill(stock, priceProvider);

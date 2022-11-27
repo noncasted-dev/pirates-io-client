@@ -13,9 +13,9 @@ namespace GamePlay.Level.Environment.Chunks.Editor
         private const string _prefabPath = "Assets/Features/GamePlay/Level/Environment/Chunks/Config/";
         private const string _scenesPath = "Assets/Features/GamePlay/Level/Scenes/Chunks/";
 
-        private const int _x = 16;
+        private const int _x = 28;
         private const int _y = 16;
-
+//piska
         [MenuItem("Tools/ScanChunks")]
         public static void ScanChunks()
         {

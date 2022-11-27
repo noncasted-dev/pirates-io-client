@@ -7,9 +7,9 @@ namespace GamePlay.Level.Environment.Chunks.Editor
     {
         private const string _path = "Assets/Features/GamePlay/Level/Scenes/Chunks/";
 
-        private const int _x = 16;
+        private const int _x = 28;
         private const int _y = 16;
-        
+        //piska2
         [MenuItem("Tools/LoadAllChunks")]
         public static void LoadAll()
         {

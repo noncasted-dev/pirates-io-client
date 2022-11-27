@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &900332852
+--- !u!1001 &1526946948
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -182,17 +182,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6346230831624258064, guid: a087104f561a9ff4ba95f431bfe6b139, type: 3}
-      propertyPath: _x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6346230831624258064, guid: a087104f561a9ff4ba95f431bfe6b139, type: 3}
-      propertyPath: _y
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 6453110648995010726, guid: a087104f561a9ff4ba95f431bfe6b139, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990836936502214273, guid: a087104f561a9ff4ba95f431bfe6b139, type: 3}
+      propertyPath: _cullingObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990836936502214273, guid: a087104f561a9ff4ba95f431bfe6b139, type: 3}
+      propertyPath: _cullingObjects.Array.data[1]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a087104f561a9ff4ba95f431bfe6b139, type: 3}

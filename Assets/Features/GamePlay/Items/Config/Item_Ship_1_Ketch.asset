@@ -22,7 +22,7 @@ MonoBehaviour:
   _maxHealth: 20
   _price: 20
   _maxSpeed: 20
-  _type: 5
+  _type: 8
   _local:
     m_AssetGUID: 5bec205d12eef16438a157362139d659
     m_SubObjectName: 

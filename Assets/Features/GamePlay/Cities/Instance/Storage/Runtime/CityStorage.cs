@@ -133,6 +133,8 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
         public int GetPrice(ItemType type)
         {
+            Debug.Log(type);
+            
             var count = _vault.Items[type].Count;
             var config = _producables[type];
 

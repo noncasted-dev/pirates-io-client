@@ -14,1538 +14,2690 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scenes:
   - _reference:
-      m_AssetGUID: 556f3db35509cc04aa42d893e5455a51
+      m_AssetGUID: 35675c676e80a5843ae9825c8a8e9517
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_15.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_5.unity
   - _reference:
-      m_AssetGUID: 8205aa0c78c990144b1096541f3cc1b7
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_2.unity
-  - _reference:
-      m_AssetGUID: 23e3e2a11ca8c4f48a894b80d0c0c9e2
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_1.unity
-  - _reference:
-      m_AssetGUID: 166bb70f4de9269448a665b8b1367377
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_11.unity
-  - _reference:
-      m_AssetGUID: 37a73a5029e89d546aacc2bfff86b316
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_8.unity
-  - _reference:
-      m_AssetGUID: d110f80d5122bad40b8edf27c88b9423
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_15.unity
-  - _reference:
-      m_AssetGUID: 0385790d6dd2dbf43a8098a0f11b07d0
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_13.unity
-  - _reference:
-      m_AssetGUID: 6080dfcf908272e4788026b12d816678
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_5.unity
-  - _reference:
-      m_AssetGUID: 731bb3b4b8d11e747abc0dd403eb957f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_10.unity
-  - _reference:
-      m_AssetGUID: d1e2c9a89d607d242b319835faf02683
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_8.unity
-  - _reference:
-      m_AssetGUID: a89461f06d9e41f45a79594dd3651f61
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_10.unity
-  - _reference:
-      m_AssetGUID: 1e610d0997937594d9f46d43b19a31f8
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_13.unity
-  - _reference:
-      m_AssetGUID: fc47fa986cc0cc242a69d50f581c665f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_11.unity
-  - _reference:
-      m_AssetGUID: 67368dd29310eb94ebc487b349a0b14b
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_4.unity
-  - _reference:
-      m_AssetGUID: 5bf237f38d457874db3bb2662c391663
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_4.unity
-  - _reference:
-      m_AssetGUID: cf79f936d4ee62e40b9744afc93b0ea6
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_5.unity
-  - _reference:
-      m_AssetGUID: 8bffa8d3ed17267468f26c8d482ddb0c
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_8.unity
-  - _reference:
-      m_AssetGUID: f5bfa9f43f85d89478aa0575090da018
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_9.unity
-  - _reference:
-      m_AssetGUID: f30bf840f67a7fb4da7d40c985a83895
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_9.unity
-  - _reference:
-      m_AssetGUID: 11868e59b9fdb424ca9f01b1ebfa6fa0
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_14.unity
-  - _reference:
-      m_AssetGUID: b609eead2bff0f24baa3a955bc2247fb
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_10.unity
-  - _reference:
-      m_AssetGUID: 8545493b5c80e8244a3dcfdfa7655877
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_9.unity
-  - _reference:
-      m_AssetGUID: 20bc057cc6e206344a98beae0d8b9af2
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_7.unity
-  - _reference:
-      m_AssetGUID: 885ae628438c9f3429debf42e6ec8667
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_3.unity
-  - _reference:
-      m_AssetGUID: 436383a8476644f458485c7506c723dc
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_15.unity
-  - _reference:
-      m_AssetGUID: a5dbf3f4feaf71942963bcf4fb2d224b
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_14.unity
-  - _reference:
-      m_AssetGUID: b2c5f753e4317534cabd9b25645a65a1
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_14.unity
-  - _reference:
-      m_AssetGUID: 41ff2d693fa889c469e9c84c024c8ccd
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_2.unity
-  - _reference:
-      m_AssetGUID: e34aab2c8e365be45a73d29eb4e3d81f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_1.unity
-  - _reference:
-      m_AssetGUID: 79bd0e41c1ccc954e82ef7a1ba5aa2ff
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_7.unity
-  - _reference:
-      m_AssetGUID: 9c17b6ce1cc9377428fa58bec4f95ca3
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_7.unity
-  - _reference:
-      m_AssetGUID: 5478feffb5c1ce44fb050e8f933f8c20
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_2.unity
-  - _reference:
-      m_AssetGUID: a40c34c78b40d0147a5836823bf4a9a6
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_5.unity
-  - _reference:
-      m_AssetGUID: b902a72937960684aadf5982b93fc300
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_0.unity
-  - _reference:
-      m_AssetGUID: a78307aeda53fbe4582127df94c534b3
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_1.unity
-  - _reference:
-      m_AssetGUID: ae0ac601b6250344c81b3e3affb2d978
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_3.unity
-  - _reference:
-      m_AssetGUID: 84c64c3994a9c684cb764e3718bf410f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_12.unity
-  - _reference:
-      m_AssetGUID: 332a1618934d9234e9b317d93ed8470b
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_1.unity
-  - _reference:
-      m_AssetGUID: c313e8b2780312545abedaa9c5dad81c
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_3.unity
-  - _reference:
-      m_AssetGUID: 8d6c048e549a6e44d8551d6ea51705d0
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_13.unity
-  - _reference:
-      m_AssetGUID: 0e2a29527e5bbb842a14b1aa61fa827d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_1.unity
-  - _reference:
-      m_AssetGUID: 5002e0e16095bb946871ba0e81194e2d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_8.unity
-  - _reference:
-      m_AssetGUID: f731c25e2d52da54baf69b74587af8ce
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_3.unity
-  - _reference:
-      m_AssetGUID: 71ba7672d1a97e54abb3311015b3aa7a
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_8.unity
-  - _reference:
-      m_AssetGUID: 559ae16c228c6924aab51022230dfb1d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_12.unity
-  - _reference:
-      m_AssetGUID: 51039487a233a4740b6ff827c163469b
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_3.unity
-  - _reference:
-      m_AssetGUID: 8386f91ccdfd7b04d939606fe6af72ae
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_11.unity
-  - _reference:
-      m_AssetGUID: 15258862aa65d744a9cd9063b5a7d5ba
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_4.unity
-  - _reference:
-      m_AssetGUID: 79ea91b9fb629164e8d1755c9f360d3d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_7.unity
-  - _reference:
-      m_AssetGUID: 0fb052532b6215d4098a8d1b68ba8c22
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_5.unity
-  - _reference:
-      m_AssetGUID: f0d39588fdd632548b7a9874dec9e01c
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_7.unity
-  - _reference:
-      m_AssetGUID: 29af6369940ee784dbbb7098a7a18d4a
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_3.unity
-  - _reference:
-      m_AssetGUID: 478b5440dcf142f4f9b73b4550196cac
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_3.unity
-  - _reference:
-      m_AssetGUID: 1910d9d41e80894418a851aaa2ddffe0
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_8.unity
-  - _reference:
-      m_AssetGUID: f5e8c89e98d55aa448e721e75fd0180b
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_6.unity
-  - _reference:
-      m_AssetGUID: 1e09145e1023ff64b9011cee83348aa2
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_12.unity
-  - _reference:
-      m_AssetGUID: 1bb7c88dc00a53b4a8eb09ce261ec849
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_14.unity
-  - _reference:
-      m_AssetGUID: 450653be01428704d8baa1dfad74150a
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_1.unity
-  - _reference:
-      m_AssetGUID: 55e6ae918ea56b94eb42d384a1bcb484
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_10.unity
-  - _reference:
-      m_AssetGUID: c926cb1b8cfe55645aacf083895a0f39
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_15.unity
-  - _reference:
-      m_AssetGUID: affcf698db8d2144180d34a2b4dde866
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_5.unity
-  - _reference:
-      m_AssetGUID: 9b27770a4c5749040b03f2cb1553d8db
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_5.unity
-  - _reference:
-      m_AssetGUID: 437e7fd73c6b4b54fafe144c8d842579
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_0.unity
-  - _reference:
-      m_AssetGUID: a169886ec89100043be9ecb64e9f32ab
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_12.unity
-  - _reference:
-      m_AssetGUID: eeeec034905c0e84ebb3683d5d9ea1c4
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_7.unity
-  - _reference:
-      m_AssetGUID: b321bde1c70ea9247966015c6238ffef
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_6.unity
-  - _reference:
-      m_AssetGUID: 62ac8d47c3dbb0b42b109b7af979d842
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_15.unity
-  - _reference:
-      m_AssetGUID: 863e2ba937613a74eb95ce94525c20a9
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_13.unity
-  - _reference:
-      m_AssetGUID: 6bed09fec752def4e82da07898c931a9
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_15.unity
-  - _reference:
-      m_AssetGUID: 2eef4c0d310c775419768b13fd3e1f3c
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_5.unity
-  - _reference:
-      m_AssetGUID: bf82bdcab0a3fc845b506c22a8b92185
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_0.unity
-  - _reference:
-      m_AssetGUID: ad2313353a707bf428938bd763f64e05
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_11.unity
-  - _reference:
-      m_AssetGUID: 8eb779995ec521048a45fc0d4fd94538
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_13.unity
-  - _reference:
-      m_AssetGUID: 70d8690b5a69d22478ab66ff350e3e8a
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_7.unity
-  - _reference:
-      m_AssetGUID: f295d9ba876915341a2400aad91455bd
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_7.unity
-  - _reference:
-      m_AssetGUID: be494872e4349a349913f85e70301f97
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_7.unity
-  - _reference:
-      m_AssetGUID: 7f590824ec6ba144b9b06300104193fd
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_0.unity
-  - _reference:
-      m_AssetGUID: b368158d62c695947aadf761fc4b3999
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_5.unity
-  - _reference:
-      m_AssetGUID: 658d246a478d84740b22442d015f713d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_5.unity
-  - _reference:
-      m_AssetGUID: 4e4ebbce8287c304eb9ebde6d1746ddb
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_4.unity
-  - _reference:
-      m_AssetGUID: 817ed55da8dd84e438d00985c96c7ed8
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_1.unity
-  - _reference:
-      m_AssetGUID: 62d1cbb46c907de4fa788ed6ee2d0460
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_8.unity
-  - _reference:
-      m_AssetGUID: 7713dc409647c8945964aa67752c290f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_7.unity
-  - _reference:
-      m_AssetGUID: 3349793bd982fc946b1b70a9cef2c546
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_10.unity
-  - _reference:
-      m_AssetGUID: 1c59a50d4c2d87849afb1e5cd7713f60
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_12.unity
-  - _reference:
-      m_AssetGUID: 29eac6acdc2c83f4c8f6ae1ec1919fae
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_12.unity
-  - _reference:
-      m_AssetGUID: 8d053315ebdc5ed4ebeb3603e3b50dcf
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_9.unity
-  - _reference:
-      m_AssetGUID: 30396c136446ef044a60e22dd3b74561
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_9.unity
-  - _reference:
-      m_AssetGUID: 9ff9697a530becc4ca24179924fcd217
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_5.unity
-  - _reference:
-      m_AssetGUID: d5360aa6ca19b6847b7fc71b900848b4
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_5.unity
-  - _reference:
-      m_AssetGUID: 5073533fec2804e4186edf81df2117b5
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_2.unity
-  - _reference:
-      m_AssetGUID: 2bbb0191085dacd43a91599917c78294
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_11.unity
-  - _reference:
-      m_AssetGUID: 09791be1276d1c54cb9af46168d31f4d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_0.unity
-  - _reference:
-      m_AssetGUID: 72d92430156fcad44b3d84a80d970bf4
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_3.unity
-  - _reference:
-      m_AssetGUID: bc17e0f6d94984947af4cfdca3bdcbde
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_3.unity
-  - _reference:
-      m_AssetGUID: 1c876a58bb4fc014e9a00a06e1e99def
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_14.unity
-  - _reference:
-      m_AssetGUID: 53237af5d3589ef4699708249189dc48
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_1.unity
-  - _reference:
-      m_AssetGUID: ec0e79ad351bedb45bcb2b000ab5d8cf
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_13.unity
-  - _reference:
-      m_AssetGUID: 5a68675882f44734d8d91ecb7a0f45b1
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_13.unity
-  - _reference:
-      m_AssetGUID: cfb6127f37fa7ef47a09b92fdb411e2a
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_9.unity
-  - _reference:
-      m_AssetGUID: e151cd441e16a624c9766424e0f655b0
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_2.unity
-  - _reference:
-      m_AssetGUID: f322d40932a76ec48b6117b4d7e9bca0
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_5.unity
-  - _reference:
-      m_AssetGUID: 8c71ee6b84cfd4c48b818b618c447e95
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_4.unity
-  - _reference:
-      m_AssetGUID: de017a5ae5d465841a773ec9f23c6a58
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_8.unity
-  - _reference:
-      m_AssetGUID: 096900f0042341144a52cb52d923eb9f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_8.unity
-  - _reference:
-      m_AssetGUID: daa344085ef32c84eaa9468344f1c97f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_5.unity
-  - _reference:
-      m_AssetGUID: 55f04e20fcfe7d7408a2450b6328f802
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_11.unity
-  - _reference:
-      m_AssetGUID: cf81c2193f8170d4a824b180263d23c8
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_11.unity
-  - _reference:
-      m_AssetGUID: 497100cb660f77a4b903187595e1d557
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_2.unity
-  - _reference:
-      m_AssetGUID: 50588fa2e3a8e7a4bad89e5f02d4bfd5
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_9.unity
-  - _reference:
-      m_AssetGUID: f3ef1470d43c76f4e97a2f06ed7e993f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_10.unity
-  - _reference:
-      m_AssetGUID: 2dc05ff8e7945fc4fa3469b895da054c
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_0.unity
-  - _reference:
-      m_AssetGUID: 3c02b8a46593e2546ab162383bd27f7d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_4.unity
-  - _reference:
-      m_AssetGUID: 09d84594f487e564dbdd835381e7fec5
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_14.unity
-  - _reference:
-      m_AssetGUID: b75f2cdcee1a50d46b95e3182f5ec8d6
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_0.unity
-  - _reference:
-      m_AssetGUID: de3e420e2f59317468169702869c8aa0
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_6.unity
-  - _reference:
-      m_AssetGUID: dc203349551df78479446fb75f426d3c
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_15.unity
-  - _reference:
-      m_AssetGUID: beba093a0b9c4f140b04e5da69fda469
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_3.unity
-  - _reference:
-      m_AssetGUID: fe75e1efc9867b84d9903d4db4f65a46
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_6.unity
-  - _reference:
-      m_AssetGUID: 2b0e1756a0ef2924bad88bd5c12b87bb
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_2.unity
-  - _reference:
-      m_AssetGUID: 865a231651b43fa4d872a20f81a4b337
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_3.unity
-  - _reference:
-      m_AssetGUID: 905345106323af648bc30d98ef0711d0
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_9.unity
-  - _reference:
-      m_AssetGUID: 5f85f6641bb91ff429beaf56a371e4ab
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_9.unity
-  - _reference:
-      m_AssetGUID: 26aaa31d822c5e14080b836b016ae9c1
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_13.unity
-  - _reference:
-      m_AssetGUID: adbcf50bf7b3af8428e061fdf408a9aa
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_10.unity
-  - _reference:
-      m_AssetGUID: 3f9b1ad0886c77a40881498b3b476590
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_6.unity
-  - _reference:
-      m_AssetGUID: 63761414d4383ad499761fce1fef58b1
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_13.unity
-  - _reference:
-      m_AssetGUID: 697648b289240cb4a8c026fffbba098a
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_0.unity
-  - _reference:
-      m_AssetGUID: 859e448c47ac7804c9e1978c9c1f0dd7
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_11.unity
-  - _reference:
-      m_AssetGUID: 1efbc03a59fc6804ab1cab88ea4fdb90
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_0.unity
-  - _reference:
-      m_AssetGUID: 1b76c5033ac990f47bc122021d2cc04d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_5.unity
-  - _reference:
-      m_AssetGUID: fbf4d4e139cc8ae4eb4b0f7031cd28f0
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_11.unity
-  - _reference:
-      m_AssetGUID: 1b8b64ac1505788438195bffcbb6c101
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_15.unity
-  - _reference:
-      m_AssetGUID: fcfb4ff0d9062004990531d96fe41504
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_6.unity
-  - _reference:
-      m_AssetGUID: a32208b655579ea4c9a8a89f661e448a
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_6.unity
-  - _reference:
-      m_AssetGUID: e0163bc3febce13499f6f3a57ffe2144
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_12.unity
-  - _reference:
-      m_AssetGUID: d7512a9729de35c4496e92a4d6a89bb6
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_10.unity
-  - _reference:
-      m_AssetGUID: 314786ce39b4bbc4b9b6f7511f1556a5
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_10.unity
-  - _reference:
-      m_AssetGUID: 9d366ad3d55066f4987b612b3d326c81
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_14.unity
-  - _reference:
-      m_AssetGUID: 55d934c2838371347af15b4ebf259f77
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_10.unity
-  - _reference:
-      m_AssetGUID: 34e41f9272785224e8a055ae45c4bd12
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_4.unity
-  - _reference:
-      m_AssetGUID: e9b3603c8637920439fae5abd494ff9b
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_8.unity
-  - _reference:
-      m_AssetGUID: 5bd4acd514fb188468c45205022ee44d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_3.unity
-  - _reference:
-      m_AssetGUID: bd4d4a851ba4a884998301be61445718
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_14.unity
-  - _reference:
-      m_AssetGUID: 89d8f01a556912c4698525ee56c2a133
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_13.unity
-  - _reference:
-      m_AssetGUID: ee1b6022f823a4042bfb295cd52eabbd
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_14.unity
-  - _reference:
-      m_AssetGUID: 6698a26b20999e64597ad09a28f892cf
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_14.unity
-  - _reference:
-      m_AssetGUID: 5720c05f3370f7642b5d9d80fac7b065
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_0.unity
-  - _reference:
-      m_AssetGUID: bfca780fa65d0de448c0c3cbbf638a0a
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_15.unity
-  - _reference:
-      m_AssetGUID: bade8f5df3b10464b91809e11a3e597c
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_3.unity
-  - _reference:
-      m_AssetGUID: 0d30fd42ecc00894b9c1969b0a43319d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_13.unity
-  - _reference:
-      m_AssetGUID: de96640bcab93ff44af0d7f186b91fb9
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_11.unity
-  - _reference:
-      m_AssetGUID: 32aa5b28f0c4c5f489ab51a56c208cc6
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_1.unity
-  - _reference:
-      m_AssetGUID: 3ad6d11b4e4f3c742accf93efa9d8baa
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_2.unity
-  - _reference:
-      m_AssetGUID: 8d970cae3b9766b4d92753e3dc0c32a5
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_9.unity
-  - _reference:
-      m_AssetGUID: 6792a175d06587347bb44a3f181ad7b5
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_1.unity
-  - _reference:
-      m_AssetGUID: eddeff5cc72b6ec4b9c0218d82eeedc7
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_14.unity
-  - _reference:
-      m_AssetGUID: b417d626855bc9749ba5e38c8a6582a8
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_2.unity
-  - _reference:
-      m_AssetGUID: e517c2c865a42024ebdd441129e5af8b
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_15.unity
-  - _reference:
-      m_AssetGUID: 4a5225cc8b99fcc46b064c13b99684c1
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_15.unity
-  - _reference:
-      m_AssetGUID: 825659dd7d0bc194bafd977fec3d1350
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_6.unity
-  - _reference:
-      m_AssetGUID: 0ce3b2816ceab304b921fbe347de3361
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_4.unity
-  - _reference:
-      m_AssetGUID: cc420551582440746b29df5b6da11563
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_4.unity
-  - _reference:
-      m_AssetGUID: 0915efadd83593b4b89d548842e0ecdf
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_15.unity
-  - _reference:
-      m_AssetGUID: 08f9affdb6e567045b2c3af7f7c823b2
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_11.unity
-  - _reference:
-      m_AssetGUID: ab76610c927b6c8408327460b5b81715
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_14.unity
-  - _reference:
-      m_AssetGUID: e37c5020eafc87a47a0d5806c4222915
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_4.unity
-  - _reference:
-      m_AssetGUID: 4d546da8292f832489f76fec3fbd1b42
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_14.unity
-  - _reference:
-      m_AssetGUID: a7523d15bd38b8746936ffc0d4998940
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_4.unity
-  - _reference:
-      m_AssetGUID: cd7cb33f9c9f16849bfe6c87eaa38fb8
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_9.unity
-  - _reference:
-      m_AssetGUID: 9d68f499ee5e2f044926abf13dec85a7
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_13.unity
-  - _reference:
-      m_AssetGUID: 833aa3fe8d94953448e0eaa4a8c4d6c8
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_6.unity
-  - _reference:
-      m_AssetGUID: 67800653fe8d55b4daf640e8317286a6
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_2.unity
-  - _reference:
-      m_AssetGUID: 97c96a952b59e3c43a3c7711dcb3ec6c
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_14.unity
-  - _reference:
-      m_AssetGUID: 2237a8e80f1375e4892081ac1a355ff8
+      m_AssetGUID: 055b5decd44b26a4bba26b22f6d6c15b
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_4.unity
   - _reference:
-      m_AssetGUID: 8f3a029f15b0e1f419cfd0037a93f705
+      m_AssetGUID: d41b70463f18f2541bbf23090e6cd330
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_6.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_6.unity
   - _reference:
-      m_AssetGUID: 4d0024e34c1c3f74eb64f92da3955112
+      m_AssetGUID: c838a4ac6756b5a4792a64769738e60b
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_12.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_2.unity
   - _reference:
-      m_AssetGUID: 6016e2df5184f934ba2beb1072dc543b
+      m_AssetGUID: e628832d9d6738a41b371de7bbc0c218
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_7.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_1.unity
   - _reference:
-      m_AssetGUID: 7246bb34a4a4e084a907fd1a59d410bf
+      m_AssetGUID: 08397ed7e264cba43a0397729de55a90
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_11.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_1.unity
   - _reference:
-      m_AssetGUID: ca1a2077db73a4a4eb9e01d13480eb51
+      m_AssetGUID: 640e1e70db097cf469cc5c61a52a042f
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_15.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_1.unity
   - _reference:
-      m_AssetGUID: 8290a53c916f5184bad53c9bad2e1d0a
+      m_AssetGUID: f43e1e64bac091c4ba1932f26aba0bb1
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_2.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_4.unity
   - _reference:
-      m_AssetGUID: d3ca669af3a1ad145bd870d6348476ae
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_6.unity
-  - _reference:
-      m_AssetGUID: 2977791712ebc4c4592108d41ad3758c
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_9.unity
-  - _reference:
-      m_AssetGUID: 48b38ff7bf27ee54996ad2f2606d6564
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_3.unity
-  - _reference:
-      m_AssetGUID: 4f32b19709b625445add4820b53b44cf
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_10.unity
-  - _reference:
-      m_AssetGUID: 74fb46d6f5eb46b498daa90ef45589e2
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_15.unity
-  - _reference:
-      m_AssetGUID: d62fc471e495c1a4f99570c1c3a4e12b
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_1.unity
-  - _reference:
-      m_AssetGUID: 3dffbfbbf09afa64aab5e1a8f0f492d0
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_0.unity
-  - _reference:
-      m_AssetGUID: 4b0857c464d7ddc4a85f0c521be506b4
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_2.unity
-  - _reference:
-      m_AssetGUID: a386cafd4fe50a0419dda02c57212224
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_9.unity
-  - _reference:
-      m_AssetGUID: 42f09cb2f5d325d4d9381756da17906c
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_1.unity
-  - _reference:
-      m_AssetGUID: 261048fe3b0dc9644a58dac8aee92484
+      m_AssetGUID: af943b55da019094fa99acc0de8e16b6
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_6.unity
   - _reference:
-      m_AssetGUID: 7a51194656eea19489aa1074db3dc974
+      m_AssetGUID: 3872e588b24c9dd4987cbcffe0538d0d
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_8.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_6.unity
   - _reference:
-      m_AssetGUID: 379ff5707cd79fc4ba469f8d1e83a60e
+      m_AssetGUID: 8ecacd3362904c94d8b52126104e2fe1
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_5.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_3.unity
   - _reference:
-      m_AssetGUID: 35be7fb9f474b6346b738eb21c4326c4
+      m_AssetGUID: 3a1a47d9be1710544a9019e5afb7d524
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_10.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_4.unity
   - _reference:
-      m_AssetGUID: ca58752a19bf1db4b8396d83ea535ba4
+      m_AssetGUID: 835b227336518ca4e960e8278ba76713
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_7.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_5.unity
   - _reference:
-      m_AssetGUID: ba07ffb8426d1a647812ef0af6b7650d
+      m_AssetGUID: 2ee8b5a2c8f42ee4aa554b69c796c50b
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_12.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_0.unity
   - _reference:
-      m_AssetGUID: a1d879ee155a82f4ea904b7664edfe0a
+      m_AssetGUID: c090136888113a144ad847bf1c9db1c6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_1.unity
+  - _reference:
+      m_AssetGUID: 853bc3ffd3834864da9f8948d2033d84
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_6.unity
+  - _reference:
+      m_AssetGUID: 5636135c489b26440a0c0aa77fc7bb26
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_4.unity
   - _reference:
-      m_AssetGUID: 22040ec53f83b9f4097464fd2ead093a
+      m_AssetGUID: 507ec1a5b7531eb4299f4ca285cf16ca
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_2.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_2.unity
   - _reference:
-      m_AssetGUID: 33e3b5281d506a14b90ac96a228bea43
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_2.unity
-  - _reference:
-      m_AssetGUID: be1fdfdba716bea418c26d64fbdc8d56
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_2.unity
-  - _reference:
-      m_AssetGUID: 3aed7b423abec1141ba81c836748ab1a
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_8.unity
-  - _reference:
-      m_AssetGUID: 384a35b349f813b4c80174807213e60e
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_11.unity
-  - _reference:
-      m_AssetGUID: 81e9dd1f775a3114ca6a0ce466c6e9e9
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_11.unity
-  - _reference:
-      m_AssetGUID: 832c51fc820cf954c8adc069d8431de7
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_6.unity
-  - _reference:
-      m_AssetGUID: ea5aa6f47298f08498e7a94150135c2d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_8.unity
-  - _reference:
-      m_AssetGUID: bd616dfaf94f69e499b7afa8d7dc1518
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_10.unity
-  - _reference:
-      m_AssetGUID: 32d628bf0c8c5a94cb9d092d78d2c69b
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_1.unity
-  - _reference:
-      m_AssetGUID: a457548a28b536e4da88f1acb8fedd15
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_1.unity
-  - _reference:
-      m_AssetGUID: 073b6f7e880cf3e46bb8690e34a4ff50
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_11.unity
-  - _reference:
-      m_AssetGUID: 86e381d1003221c4d978c5a858fb5fef
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_7.unity
-  - _reference:
-      m_AssetGUID: cf9795fad2adc9a409495f545d01932e
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_4.unity
-  - _reference:
-      m_AssetGUID: 532db9237ec97f4449a170befa1c8c19
+      m_AssetGUID: 7e6b1b1ee05d38742aaa23b03e95604e
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_0.unity
   - _reference:
-      m_AssetGUID: 8aeea8879f5f7f240b729155647df080
+      m_AssetGUID: 41ed079447c0f1d47954537e872a1107
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_7.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_4.unity
   - _reference:
-      m_AssetGUID: fa987f7cf6537694290d0412f76dfd64
+      m_AssetGUID: d65cef934201f2e45aaf84e2ea1554d9
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_2.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_1.unity
   - _reference:
-      m_AssetGUID: 98f0c717fbb400744911395efc02d398
+      m_AssetGUID: a6de616e88d464949805e26753a72af2
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_13.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_7.unity
   - _reference:
-      m_AssetGUID: 1266a0a5b648fcd43acdf19ebac77c16
+      m_AssetGUID: 514efdbdae1782e4cb61e34b1128e0f8
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_3.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_1.unity
   - _reference:
-      m_AssetGUID: c96f671baeb91014db4ae77ed34a5fea
+      m_AssetGUID: 13d5929752ab39e4c8241dce34b2f1dc
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_12.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_7.unity
   - _reference:
-      m_AssetGUID: 146fc6a3b0cedeb4ba0f3d5cbc5dd44a
+      m_AssetGUID: 3563413f897d91448ba381668031c17f
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_0.unity
   - _reference:
-      m_AssetGUID: f138e20b23dac7040999ff22ffa11c83
+      m_AssetGUID: 9e56f87bf7ae0a64c97c6aa77195f7d0
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_12.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_7.unity
   - _reference:
-      m_AssetGUID: 13017635c207d7a4b8bd03508c59e97f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_12.unity
-  - _reference:
-      m_AssetGUID: b1904438d56be0d46b65a8585ccef3f5
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_9.unity
-  - _reference:
-      m_AssetGUID: 61eb5df0288136c4f8c3de53a052261e
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_12.unity
-  - _reference:
-      m_AssetGUID: 9d22182fa51914544becbff857be3674
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_10.unity
-  - _reference:
-      m_AssetGUID: 18e8cb12ca1b5334fa313f356ae67fd0
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_12.unity
-  - _reference:
-      m_AssetGUID: 6063e1a0adb03ae46aa537a24523064b
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_15.unity
-  - _reference:
-      m_AssetGUID: d4a382c99c3edc948ab1f6c6e636f1b4
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_7.unity
-  - _reference:
-      m_AssetGUID: a8631c8530af78541bd0c2f50c6fd585
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_1.unity
-  - _reference:
-      m_AssetGUID: dd76130f3eded034bafd2a5b4ed3312e
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_13.unity
-  - _reference:
-      m_AssetGUID: 1e5dddc055885f54eacc302571922bac
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_13.unity
-  - _reference:
-      m_AssetGUID: 27b8ba1ff4f8373489eb98ca834ea39e
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_4.unity
-  - _reference:
-      m_AssetGUID: f38e0d3f7b2bbc04cb97585ef46fee5f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_10.unity
-  - _reference:
-      m_AssetGUID: b85baf4a607597a43bffd3650668ed3f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_0.unity
-  - _reference:
-      m_AssetGUID: 0102a7c6101793741b73e48413bae2e4
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_12.unity
-  - _reference:
-      m_AssetGUID: 9fea8f0d00859054fb0caf2f212a5883
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_9.unity
-  - _reference:
-      m_AssetGUID: 591585e06debc11408537472e991684b
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_11.unity
-  - _reference:
-      m_AssetGUID: 238e00eafc720b549a93d52d025602bf
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_12.unity
-  - _reference:
-      m_AssetGUID: 1b83fa9c529988045ac19df9031dbf29
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_6.unity
-  - _reference:
-      m_AssetGUID: c678d41d7f977824abcfd447f3ea6de3
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_3.unity
-  - _reference:
-      m_AssetGUID: e498301cef1b99d44b3927cfb2f4506f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_6.unity
-  - _reference:
-      m_AssetGUID: 832f30911aac5344ebdde5723f98ca4c
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_13.unity
-  - _reference:
-      m_AssetGUID: 4bdc365512aba0f488f0b01510836f1c
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_8.unity
-  - _reference:
-      m_AssetGUID: 0cb37441a24da2b43a5121ba998b558f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_8.unity
-  - _reference:
-      m_AssetGUID: bf899128cb7bd0b488080b1c554c2c06
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_14.unity
-  - _reference:
-      m_AssetGUID: 04a2bb594c30fc148aca0112fbd33079
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_1.unity
-  - _reference:
-      m_AssetGUID: 20388821b5f3c1640a572cacc8501ad5
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_4.unity
-  - _reference:
-      m_AssetGUID: 5477d5fb77388a5428120a7699d37d64
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_0.unity
-  - _reference:
-      m_AssetGUID: 1f64d83bd1d22634caac9ca5382f908e
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_8.unity
-  - _reference:
-      m_AssetGUID: c4c41727859222d439747e353217cbc6
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_10.unity
-  - _reference:
-      m_AssetGUID: bc1b01c2a51bd9147bdad2506f5640e3
+      m_AssetGUID: 8abfab0ff5bd6034e88b47aa596617d6
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_7.unity
   - _reference:
-      m_AssetGUID: ad158c7f5c74bdf458f95de54cf6da8a
+      m_AssetGUID: a8648d5f2889b864d994571f83d6d886
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_9.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_5.unity
   - _reference:
-      m_AssetGUID: a7ff6b6761ef7224e952bb2e4ba248ba
+      m_AssetGUID: 7783c8b44aa098e49a49b5328f014447
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_5.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_7.unity
   - _reference:
-      m_AssetGUID: 6e4262cb41d9afc4b8364ca5c309314d
+      m_AssetGUID: f3f770c5e4fa69a46a2da8ae07c21328
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_6.unity
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_5.unity
   - _reference:
-      m_AssetGUID: cb35b32dc45e4f54481f9d9d0df1620b
+      m_AssetGUID: b903b504166cc864fa3a9e345c78e497
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_7.unity
+  - _reference:
+      m_AssetGUID: 1340d98d2f0c3304190a7055721393df
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_8.unity
+  - _reference:
+      m_AssetGUID: 9a6a87d7b30262c4e9c5f762bdaea1e5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_4.unity
+  - _reference:
+      m_AssetGUID: 518adfe2f6cc510478e049ed8e069481
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_0.unity
+  - _reference:
+      m_AssetGUID: 615b8a55c0fc1fe47b4dd8610bc3174e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_7.unity
+  - _reference:
+      m_AssetGUID: 2b54fa3a420c5b644bd7a9bc279d46d0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_7.unity
+  - _reference:
+      m_AssetGUID: d198fc59e6fc8b04091c8daa2c1adf8a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_2.unity
+  - _reference:
+      m_AssetGUID: 4a214132705735a488f6e53d86e34aad
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_6.unity
+  - _reference:
+      m_AssetGUID: fac1e8617113ab7479bc6bd7e44805df
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_4.unity
+  - _reference:
+      m_AssetGUID: ca5aa5182e00180438280461fc41ab82
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_0.unity
+  - _reference:
+      m_AssetGUID: 9809935cc9a2cf34984133b5b7c33dfe
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_6.unity
+  - _reference:
+      m_AssetGUID: 1645d69db9d206c45af29e8b9ca13fe2
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_5.unity
+  - _reference:
+      m_AssetGUID: ea32684b4e69ea747b143a65a7eb4b22
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_6.unity
+  - _reference:
+      m_AssetGUID: de52e5f282625bc418c107ceb265baad
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_7.unity
+  - _reference:
+      m_AssetGUID: 4782118e660732946956532a39c4c8cd
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_3.unity
+  - _reference:
+      m_AssetGUID: 46d024a876f298d4faa133e83ba1275f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_1.unity
+  - _reference:
+      m_AssetGUID: e2ff8d0f7f8cf994ab75e8b83b628612
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_3.unity
+  - _reference:
+      m_AssetGUID: c7351f23483af314285a00b7a61ea6a2
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_8.unity
+  - _reference:
+      m_AssetGUID: 9c1148d5b18c76949b4b82787a30b1a9
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_4.unity
+  - _reference:
+      m_AssetGUID: 97f9255c60d351a4d97ec09ee040f963
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_5.unity
+  - _reference:
+      m_AssetGUID: a9b9c8de3eede9f4099636bad814c18e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_8.unity
+  - _reference:
+      m_AssetGUID: 09fecec63ad25d4499c72c9dedb91962
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_0.unity
+  - _reference:
+      m_AssetGUID: c497de4855e52594a8ad95f92615d79b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_2.unity
+  - _reference:
+      m_AssetGUID: 4a6ac3467ab2cb445b377321ca85f3d6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_0.unity
+  - _reference:
+      m_AssetGUID: 3e736d86018984d41b299e58fb50c8fe
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_4.unity
+  - _reference:
+      m_AssetGUID: 87c388851375e03459d1ee313344b8b4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_6.unity
+  - _reference:
+      m_AssetGUID: ff231c1c0bd44cf49bc98ec7a6640663
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_4.unity
+  - _reference:
+      m_AssetGUID: 0b1f49127455be34ab4b8e5f41830c30
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_5.unity
+  - _reference:
+      m_AssetGUID: 9e1b977289be5764e9b10f0a53a39310
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_3.unity
+  - _reference:
+      m_AssetGUID: 1b40071065fdf1542979e2147ec62055
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_3.unity
+  - _reference:
+      m_AssetGUID: a329ca100c198bc43aa84c80e5599a71
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_0.unity
   - _reference:
-      m_AssetGUID: c40270c5ac2aa684ea56083589946ef8
+      m_AssetGUID: ffd993e314f7c1f4aba8efaedd700a55
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_8.unity
+  - _reference:
+      m_AssetGUID: 0d9b21eae2ca2a64098405dc84475cb9
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_9.unity
+  - _reference:
+      m_AssetGUID: 102435c6d9948274586c8b57292dc23e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_3.unity
+  - _reference:
+      m_AssetGUID: f223cd3b8bd49124b90bf6a07bb8096b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_14.unity
+  - _reference:
+      m_AssetGUID: d70ad0f5db39bd248b72616cf918089c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_14.unity
+  - _reference:
+      m_AssetGUID: 2e681c4690ccf8844afd249abfe656c8
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_14.unity
+  - _reference:
+      m_AssetGUID: fb41c25055d5b4c488c50a139c661d67
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_9.unity
+  - _reference:
+      m_AssetGUID: 4f5e16acbd3d62542bb626f2923a9225
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_10.unity
+  - _reference:
+      m_AssetGUID: 3d63b1f9523a4574faab369514823a66
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_13.unity
+  - _reference:
+      m_AssetGUID: 014b42d57ad7c66439bdfda68dbc1331
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_10.unity
+  - _reference:
+      m_AssetGUID: 01da6ce4f38750a489e4b89a66b12af1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_15.unity
+  - _reference:
+      m_AssetGUID: 7a294132b40ebc844b43066b3efdbd22
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_9.unity
+  - _reference:
+      m_AssetGUID: f8336cdeabf03cd42b6fd6951d742346
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_11.unity
+  - _reference:
+      m_AssetGUID: 002bf1468d663694094872d05c94b6c4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_11.unity
+  - _reference:
+      m_AssetGUID: ab431ec485350b14b913a4d58a5aefa8
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_11.unity
+  - _reference:
+      m_AssetGUID: 138154fe497503b4c9754dfe0ad0d3b8
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_14.unity
+  - _reference:
+      m_AssetGUID: 81d4fbf41df6f7e4da3948b4f8ba59fa
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_9.unity
+  - _reference:
+      m_AssetGUID: a6c01fc815c5d0c428a1d0c8ffc797ab
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_14.unity
+  - _reference:
+      m_AssetGUID: e18608ddabf9a0d479fd2e5cc6f22e12
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_11.unity
+  - _reference:
+      m_AssetGUID: 2c57e0e3abd127f4a83f5049e3bcf9d1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_12.unity
+  - _reference:
+      m_AssetGUID: a264eaa43b1c27f4382ecd82753c6f59
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_14.unity
+  - _reference:
+      m_AssetGUID: 16ef203c91c8d674fb65a18c152bd2a6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_15.unity
+  - _reference:
+      m_AssetGUID: 69365058db5e1e848a51df8c3a2d7963
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_9.unity
+  - _reference:
+      m_AssetGUID: 583c81a4416b83840a3a314c9a6b5ccc
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_11.unity
+  - _reference:
+      m_AssetGUID: 4893790be9429ff48becbecf350c553c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_13.unity
+  - _reference:
+      m_AssetGUID: cfaccfd1cd5fd1c408d2f46392a286f5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_15.unity
+  - _reference:
+      m_AssetGUID: 83607ce98a6ed964fa0d6bc193c78e20
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_11.unity
+  - _reference:
+      m_AssetGUID: 5b01d147f5e8be140bad73af4eb05256
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_14.unity
+  - _reference:
+      m_AssetGUID: 07a1c611011c92d4db78c88a3aaf9a65
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_12.unity
+  - _reference:
+      m_AssetGUID: 6d6a6c2a4ae273e45a4f4cb394a2160b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_15.unity
+  - _reference:
+      m_AssetGUID: e568b8c99310cbe448355c9c67e790f5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_13.unity
+  - _reference:
+      m_AssetGUID: ea1c6769f38e1f84fb490125168a78b0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_10.unity
+  - _reference:
+      m_AssetGUID: 1c0dfcb3d55e785429d6db42b18edfb2
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_14.unity
+  - _reference:
+      m_AssetGUID: e93cbd86c78b88d419be6d0f4521d25f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_11.unity
+  - _reference:
+      m_AssetGUID: c4f11a845852e7b4f9c3a4670b546498
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_11.unity
+  - _reference:
+      m_AssetGUID: 7848b3466f6ed3541b6eb1604d4a1bcd
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_11.unity
+  - _reference:
+      m_AssetGUID: 994c4f72a6e5673478039496b53abdfc
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_15.unity
+  - _reference:
+      m_AssetGUID: af210aac32d3f644e888872011e2ece5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_11.unity
+  - _reference:
+      m_AssetGUID: caee2954a2ef90141928e18a4d19055f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_15.unity
+  - _reference:
+      m_AssetGUID: 73e17f09b56cbde4cbfa53e154d2410c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_10.unity
+  - _reference:
+      m_AssetGUID: 464cd038b23c5fb44b03de502c0c1afe
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_10.unity
+  - _reference:
+      m_AssetGUID: e818590d5e175d64a8cbf212b74ddd9d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_13.unity
+  - _reference:
+      m_AssetGUID: 9c604303b098f6a429790f87169b62b9
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_9.unity
+  - _reference:
+      m_AssetGUID: 8202bd905d368f547a8c196ce4a8f007
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_9.unity
+  - _reference:
+      m_AssetGUID: 6b4551d62932f774d94355fbdadf5762
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_11.unity
+  - _reference:
+      m_AssetGUID: 88ae483f242067e43b1e2e6047f30641
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_11.unity
+  - _reference:
+      m_AssetGUID: 27fcd9ab8075e1648be73880e54b1c73
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_9.unity
+  - _reference:
+      m_AssetGUID: a08dcdb5c6b23ca40a703b08277ef47e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_10.unity
+  - _reference:
+      m_AssetGUID: d05d7731e1b962047a91d782674bc489
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_15.unity
+  - _reference:
+      m_AssetGUID: 73e63ab3f93fdeb44bdb8ec5edc94669
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_9.unity
+  - _reference:
+      m_AssetGUID: 0ee72f431c9aaae468185490b0919c0e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_13.unity
+  - _reference:
+      m_AssetGUID: 06d085894c063904ba2dc3f5de2cc27c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_13.unity
+  - _reference:
+      m_AssetGUID: a8a551c53c91afa46b1fd530062f4498
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_13.unity
+  - _reference:
+      m_AssetGUID: 38af26969801b4f4aa6a087730cdfbc6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_12.unity
+  - _reference:
+      m_AssetGUID: cc85bf716bd7bdb4d9813d948544ec10
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_15.unity
+  - _reference:
+      m_AssetGUID: 837362c12f86aa14288714de7b15a0dd
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_15.unity
+  - _reference:
+      m_AssetGUID: db4f4369f5f119e46bed6c7769171ef5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_13.unity
+  - _reference:
+      m_AssetGUID: 5319f0d7b2943df4f8201b7579e22574
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_9.unity
+  - _reference:
+      m_AssetGUID: 047d71b189de5a5439b2c4e7282022f6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_11.unity
+  - _reference:
+      m_AssetGUID: 7dbde6baf0a511f48b55d2eee9ffea15
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_12.unity
+  - _reference:
+      m_AssetGUID: 5d89324fb4b09824eb79c7ead24dfca7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_13.unity
+  - _reference:
+      m_AssetGUID: 9e829832018c66940b3aeaa0c4035610
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_13.unity
+  - _reference:
+      m_AssetGUID: e2a00ee86860cdf4ea5bd8cdd7c43bec
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_11.unity
+  - _reference:
+      m_AssetGUID: d90cb31334c9c1840b14a3157e3872ab
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_11.unity
+  - _reference:
+      m_AssetGUID: 1abe12284d27cac439b0aaed0fc09b96
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_11.unity
+  - _reference:
+      m_AssetGUID: 0afdac94a70ea4e48b2796b562fde685
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_13.unity
+  - _reference:
+      m_AssetGUID: 52bbb9c56cd86a446a64d99a58256de0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_13.unity
+  - _reference:
+      m_AssetGUID: b1c793f35268a944ca04e4276b5c355d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_10.unity
+  - _reference:
+      m_AssetGUID: 4a2650d1bf4b02c41b0228215bb5eddc
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_9.unity
+  - _reference:
+      m_AssetGUID: 2eb17202f2f17214fad3da4a8e70eee7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_14.unity
+  - _reference:
+      m_AssetGUID: 59e81147fe0c9f041b0ed457bd0bcc7a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_14.unity
+  - _reference:
+      m_AssetGUID: e168ade6ad7fcb646afaf5b199b8aee0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_14.unity
+  - _reference:
+      m_AssetGUID: b65a4a25b74bb4c47a5d9ab084c71bcd
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_11.unity
+  - _reference:
+      m_AssetGUID: b7e5db74a6716b54ca6bb13f37a9c3c0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_10.unity
+  - _reference:
+      m_AssetGUID: 6846a5fbf77e957449fe926bc88cf322
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_11.unity
+  - _reference:
+      m_AssetGUID: f20eec06a247dae46871af9ff13d97c3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_12.unity
+  - _reference:
+      m_AssetGUID: 5eff02fe762be3144928a1041fdd7879
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_15.unity
+  - _reference:
+      m_AssetGUID: 71a69957d8cef864da2d55d4c147ab82
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_11.unity
+  - _reference:
+      m_AssetGUID: e1106a32b1b3c334e867f731a4feeeca
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_11.unity
+  - _reference:
+      m_AssetGUID: 027311c70cc48014489107dfdccef973
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_9.unity
+  - _reference:
+      m_AssetGUID: ae6bd42a9113a8e4ebe17cb8463f17f9
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_13.unity
+  - _reference:
+      m_AssetGUID: 4976f9084c168924fbb368d27081eb2b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_12.unity
+  - _reference:
+      m_AssetGUID: bbf10a7cb9360064fb60bff606e1ee6d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_13.unity
+  - _reference:
+      m_AssetGUID: f4ce089352db70f4da70bba1d25e612a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_12.unity
+  - _reference:
+      m_AssetGUID: 46ee3fda5a60271418a9560708517f32
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_11.unity
+  - _reference:
+      m_AssetGUID: 2a9c849aaffe959469a7aae990ac16fe
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_11.unity
+  - _reference:
+      m_AssetGUID: cb31e0edeb33de6419fcc620a4557ad8
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_9.unity
+  - _reference:
+      m_AssetGUID: 430898a128f69de44b770cd15cb1e93c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_12.unity
+  - _reference:
+      m_AssetGUID: 0d73eda798fb36241a4c59df19a14350
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_15.unity
+  - _reference:
+      m_AssetGUID: e72e68ec485a560459508d2ccb472258
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_9.unity
+  - _reference:
+      m_AssetGUID: c9e70d51da660814a94f081047565148
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_15.unity
+  - _reference:
+      m_AssetGUID: c69cd0f8d0bfcae428bf229a1be0bde5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_12.unity
+  - _reference:
+      m_AssetGUID: fd78d507989c3cf4eb53969cb44de814
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_15.unity
+  - _reference:
+      m_AssetGUID: 3d6b48067a53c554ab25f3782a384b00
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_14.unity
+  - _reference:
+      m_AssetGUID: 27726e50b0bf2904e95717aa5539aac8
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_10.unity
+  - _reference:
+      m_AssetGUID: f05ca83117297884686527070833b1a9
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_13.unity
+  - _reference:
+      m_AssetGUID: ea0e72eec6c42ee40934918b76c98e52
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_12.unity
+  - _reference:
+      m_AssetGUID: e7a86279bbe65fb40b2ba20ddb479d11
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_14.unity
+  - _reference:
+      m_AssetGUID: ee9ebb950f2ae2047a5c4bc382a86169
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_12.unity
+  - _reference:
+      m_AssetGUID: 2066a31aa6e585746b89ea7d3b0e0c9d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_12.unity
+  - _reference:
+      m_AssetGUID: 8c512414f49144d4380eaadfa1d87db7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_15.unity
+  - _reference:
+      m_AssetGUID: 16108547df4e83944be114c37dea6cbd
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_12.unity
+  - _reference:
+      m_AssetGUID: 4a5dda315c2f31342a54158b952c42b2
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_12.unity
+  - _reference:
+      m_AssetGUID: 4af7536be4b364644b846c65cf0ca263
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_10.unity
+  - _reference:
+      m_AssetGUID: 6eb8a907e657e764c929e297c2a116a2
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_14.unity
+  - _reference:
+      m_AssetGUID: a9acf16af5e87904bb467f636bb9aca7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_9.unity
+  - _reference:
+      m_AssetGUID: 832d3c54a1df1bb4788af371174bbf5b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_9.unity
+  - _reference:
+      m_AssetGUID: 8050791327c399a4d8ebffa2f77ee0e0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_15.unity
+  - _reference:
+      m_AssetGUID: 14c76958efe30cc4e877bbbd7a642af0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_9.unity
+  - _reference:
+      m_AssetGUID: 486f910ee2ccbb046b24b5c61a6e1ada
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_10.unity
+  - _reference:
+      m_AssetGUID: bb7edbd5d95d53f4eb77d6c59bb0b6b3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_15.unity
+  - _reference:
+      m_AssetGUID: f981a49dd2558c3499175a48cfb6b9a7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_12.unity
+  - _reference:
+      m_AssetGUID: e4c2ad41ae921db4fb4c0fc9b7395070
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_10.unity
+  - _reference:
+      m_AssetGUID: efd73f4ef4d2f3f4e98301e30a286c72
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_11.unity
+  - _reference:
+      m_AssetGUID: 612fbd8f637f48f4ba2a1c711ae46923
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_10.unity
+  - _reference:
+      m_AssetGUID: 854cafd91a1e0554c814cf9962b288ac
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_10.unity
+  - _reference:
+      m_AssetGUID: 563313ceecaade54d85a4a8d9baa915d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_14.unity
+  - _reference:
+      m_AssetGUID: 88b8ae83451745542a62e7685d4c3f3f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_12.unity
+  - _reference:
+      m_AssetGUID: 31f27bc9b79ae9a49a1382c5d842126e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_14.unity
+  - _reference:
+      m_AssetGUID: 9982341a24d600b44b7c997715273cc0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_13.unity
+  - _reference:
+      m_AssetGUID: 3ca9bb635e025ea4a808269b8101b434
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_13.unity
+  - _reference:
+      m_AssetGUID: 7bbec4442d29cd841947e12a1df2a800
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_10.unity
+  - _reference:
+      m_AssetGUID: e690ed7368ad13f47a47eaf332ee384e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_10.unity
+  - _reference:
+      m_AssetGUID: efb43e5cc6b81d64dbb2f5aa04bcd93b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_10.unity
+  - _reference:
+      m_AssetGUID: e473908eee0115f429a8f7b475a33369
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_14.unity
+  - _reference:
+      m_AssetGUID: c21c014efe6c7ae48bce5e70d47220a0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_12.unity
+  - _reference:
+      m_AssetGUID: 56efd63f426ffc24e8db34cb87371425
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_10.unity
+  - _reference:
+      m_AssetGUID: f1720aa2ec9f59046911b7badee5db71
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_10.unity
+  - _reference:
+      m_AssetGUID: c18b0ce74951f2a47aeb1393ea9dc3be
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_10.unity
+  - _reference:
+      m_AssetGUID: e331d6a9c6ef5224eaea8af5aaed3455
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_14.unity
+  - _reference:
+      m_AssetGUID: 6feb177586e461743afaef1c67979c10
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_13.unity
+  - _reference:
+      m_AssetGUID: 7785706a595817a409da0718d47559aa
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_9.unity
+  - _reference:
+      m_AssetGUID: 852fe25a7883b394291952b62803e4d6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_15.unity
+  - _reference:
+      m_AssetGUID: 28731579941af8c4f96364d5ebb50dc4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_9.unity
+  - _reference:
+      m_AssetGUID: 6c1daacf57db0b04f994589537c137f4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_13.unity
+  - _reference:
+      m_AssetGUID: b0ee388ec5bc2e7439c86175dd76e786
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_14.unity
+  - _reference:
+      m_AssetGUID: 491cca817c38a7845a703674ba863fb3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_14.unity
+  - _reference:
+      m_AssetGUID: 62ddd9d996919464d9b2e5d208745021
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_15.unity
+  - _reference:
+      m_AssetGUID: 0ddde55ce65f0c84ca4f32e4b88bea69
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_13.unity
+  - _reference:
+      m_AssetGUID: aedc4c033e7f4d74c860f760d02981b9
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_12.unity
+  - _reference:
+      m_AssetGUID: 5de30edb70b939b449af995902290857
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_15.unity
+  - _reference:
+      m_AssetGUID: 54b8e998246cec246acef6ea658ca362
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_13.unity
+  - _reference:
+      m_AssetGUID: f9268c670372b7749ab49d73fc802a10
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_12.unity
+  - _reference:
+      m_AssetGUID: 219e8447c31599444ac33eba8112399c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_10.unity
+  - _reference:
+      m_AssetGUID: 8d3f78b14d2308b48ab822e10fe312ef
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_11.unity
+  - _reference:
+      m_AssetGUID: 8008ed6f2c0bf5c49b9b35b216ef1d89
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_14.unity
+  - _reference:
+      m_AssetGUID: b9f424f70e8e18e4da719b96fdfb1b11
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_15.unity
+  - _reference:
+      m_AssetGUID: ae78d71e7b731d64aa35c87d5b8130ad
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_10.unity
+  - _reference:
+      m_AssetGUID: 2e0178be81c89f14a8cae5409922d91d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_12.unity
+  - _reference:
+      m_AssetGUID: f4faa278bc441164ca2fe853e108b6b6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_15.unity
+  - _reference:
+      m_AssetGUID: 468f8d4f96c274644ac35beec6242131
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_13.unity
+  - _reference:
+      m_AssetGUID: 84ff6bb8d83a7b547bb8cd997e72f830
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_9.unity
+  - _reference:
+      m_AssetGUID: 55a23da3f3b8a5347ba74a800870c4d5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_15.unity
+  - _reference:
+      m_AssetGUID: 031bacf2274499a40b07a576a9c8d07f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_11.unity
+  - _reference:
+      m_AssetGUID: f1e87867e8c35944c936299b8fd43411
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_14.unity
   - _reference:
-      m_AssetGUID: 45452d32a54a5584b9127ec2803104d8
+      m_AssetGUID: f4be4ad6f2f661c409a11f76bd75f336
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_12.unity
+  - _reference:
+      m_AssetGUID: 5ae3086799770154a8b3ca064b1247c6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_14.unity
+  - _reference:
+      m_AssetGUID: f6218ce8ff765fb40af4f5e0ba11bcc6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_15.unity
+  - _reference:
+      m_AssetGUID: 5dc15e78813f2624ebd732f9eaf0c16d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_13.unity
+  - _reference:
+      m_AssetGUID: 78a043f687a8c3641ac50199941c536c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_12.unity
+  - _reference:
+      m_AssetGUID: 7adbabfed0f6e154da1235d720317360
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_14.unity
+  - _reference:
+      m_AssetGUID: c2868b26d7df82343a25511642260b94
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_9.unity
+  - _reference:
+      m_AssetGUID: 798646f5e59851e48b8e7f8af7709007
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_9.unity
+  - _reference:
+      m_AssetGUID: 79ae056689a98c445af238ef08d76e2e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_10.unity
+  - _reference:
+      m_AssetGUID: 6ce3e3de53e80b249a5d44b45d003595
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_10.unity
+  - _reference:
+      m_AssetGUID: f94f911caa0505645bf9ec960412dec7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_10.unity
+  - _reference:
+      m_AssetGUID: d33b0616ff73fe14eb61586d43b32377
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_9.unity
+  - _reference:
+      m_AssetGUID: c0973eea70d4a3541a34d5ce4433e131
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_14.unity
+  - _reference:
+      m_AssetGUID: c2b1cbe4f1d84c14ba67bfa231174202
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_11.unity
+  - _reference:
+      m_AssetGUID: f83ff023095120742af3fcf8f99a939f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_13.unity
+  - _reference:
+      m_AssetGUID: 39ff32573d926614c89329e3b50ed99e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_15.unity
+  - _reference:
+      m_AssetGUID: 49866c6e28a296544af0e4e0f50a4397
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_13.unity
+  - _reference:
+      m_AssetGUID: 85ccbb50752b82844af824473ad1707c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_12.unity
+  - _reference:
+      m_AssetGUID: 13abcd56f96d71d4cace2a28a2fd455a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_12.unity
+  - _reference:
+      m_AssetGUID: 106ed1601cc5694468f17d37fb1bfb15
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_9.unity
+  - _reference:
+      m_AssetGUID: 87dc4ea89644c054eb96749c02fd3f74
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_13.unity
+  - _reference:
+      m_AssetGUID: 6656a57d6c51b504d9b20112b13bf540
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_14.unity
+  - _reference:
+      m_AssetGUID: 56a2e522487198042b6c4966efe48a79
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_12.unity
+  - _reference:
+      m_AssetGUID: 93a2681c3a0df33429966f450ea9267c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_11.unity
+  - _reference:
+      m_AssetGUID: 8ada95b0278fcf845a54909a6e714331
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_12.unity
+  - _reference:
+      m_AssetGUID: 32cfeef2242daa84e96389fab8a3dbcd
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_9.unity
+  - _reference:
+      m_AssetGUID: c0cfd0a009604254a9b729e5b1128a39
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_13.unity
+  - _reference:
+      m_AssetGUID: 60baa9254ca27804ab61ac583b4c1e87
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_15.unity
+  - _reference:
+      m_AssetGUID: 199f724aac98f87459a00f2353ab8eeb
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_10.unity
+  - _reference:
+      m_AssetGUID: 57697db700cab684f8d1418108c8b20f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_13.unity
+  - _reference:
+      m_AssetGUID: 35ddac9f153e291428f7e981cac1d4dd
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_12.unity
+  - _reference:
+      m_AssetGUID: db1fa5f0ebfa6a4498d87bdbca65c9ed
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_10.unity
+  - _reference:
+      m_AssetGUID: 7f2e4348a1579c34dbd11325f3c4efd9
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_15.unity
+  - _reference:
+      m_AssetGUID: 78a6f9f5d480020458e12ef09a238aec
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_15.unity
+  - _reference:
+      m_AssetGUID: a8a6c1f4c7177e640bf81b0588f1d0bb
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_12.unity
+  - _reference:
+      m_AssetGUID: 5a3e770aa0c6a22469fe1adaa2e6c395
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_15.unity
+  - _reference:
+      m_AssetGUID: 508cea65db19b3a4cbc17d42332e92f2
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_11.unity
+  - _reference:
+      m_AssetGUID: e1f3a5d66d2f4d847aa93b5ef8b1a1ce
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_14.unity
+  - _reference:
+      m_AssetGUID: 68ea1faa1e45ac9488c4259489aa7cd4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_14.unity
+  - _reference:
+      m_AssetGUID: e79de6ad31b758845a6acf27a1930e41
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_10.unity
+  - _reference:
+      m_AssetGUID: 6add4312bfcf06742862c5a089b291be
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_2.unity
+  - _reference:
+      m_AssetGUID: 3dfaa4f8a9aeef94aa3c1c1bf9475a22
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_5.unity
+  - _reference:
+      m_AssetGUID: 2061991cb5b29004db4550c0d77b06ac
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_3.unity
+  - _reference:
+      m_AssetGUID: 1136d202a71789841a754c7a4d37ca29
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_0.unity
+  - _reference:
+      m_AssetGUID: fcaf17ae66bbfa34bb63e9088cd86188
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_5.unity
+  - _reference:
+      m_AssetGUID: 4ae040a13ee90284cbee7b3e0927abbc
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_1.unity
+  - _reference:
+      m_AssetGUID: b524c87cd610b27458507d6e908a3852
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_0.unity
+  - _reference:
+      m_AssetGUID: b02964560292f004f8476ab12764c68b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_0.unity
+  - _reference:
+      m_AssetGUID: 0b91b0edb64005a4285b7764fe1efa32
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_8.unity
+  - _reference:
+      m_AssetGUID: 1b8622217137f15479a9996c954cf85c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_6.unity
+  - _reference:
+      m_AssetGUID: 19f4ad0cc72dcf3428dc898a5cc40be2
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_2.unity
+  - _reference:
+      m_AssetGUID: c941368a3b452f14da163fadf2bff2a1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_5.unity
+  - _reference:
+      m_AssetGUID: f690a2652403be94b973ad0113ef3ce4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_3.unity
+  - _reference:
+      m_AssetGUID: f479f2243628c3945ad0e765c04e2086
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_1.unity
+  - _reference:
+      m_AssetGUID: caa8e63c426c0c94fabe9fa9657afa18
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_9.unity
+  - _reference:
+      m_AssetGUID: fe2f6269ce687a748bff3f69b367d66a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_6.unity
+  - _reference:
+      m_AssetGUID: 7ed3159ef26bad54a845cef459cec65f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_4.unity
+  - _reference:
+      m_AssetGUID: 1c0b61919ae27ab47aee46b59b7c939c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_7.unity
+  - _reference:
+      m_AssetGUID: 1bfb8c3a8c7960245948d0edfd810852
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_3.unity
+  - _reference:
+      m_AssetGUID: 9a613d301561fa14bb3d2b27abdb9b1b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_2.unity
+  - _reference:
+      m_AssetGUID: 85c1b6fd73f943f42acdbddabf75724b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_8.unity
+  - _reference:
+      m_AssetGUID: d34d7ab0bb60303408524d309066c384
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_1.unity
+  - _reference:
+      m_AssetGUID: 6498b036c80cadf479e2219a89fb1f65
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_3.unity
+  - _reference:
+      m_AssetGUID: 8e1843b38509bd74c933c865a5922cfb
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_8.unity
+  - _reference:
+      m_AssetGUID: 0551266ffb7c4e741b64443b65b78e3d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_5.unity
+  - _reference:
+      m_AssetGUID: 4bd868c9ce424c24e97258e259106aab
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_2.unity
+  - _reference:
+      m_AssetGUID: 019d2b4836bfe7a4586bac54b45fbfc7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_8.unity
+  - _reference:
+      m_AssetGUID: c4005b1235b101d4d888850e133e046f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_2.unity
+  - _reference:
+      m_AssetGUID: 3d4392ff2a36b37429ddf05ec1749c31
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_8.unity
+  - _reference:
+      m_AssetGUID: 6e592a8984691d64db0fe2c38eeb9b94
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_6.unity
+  - _reference:
+      m_AssetGUID: 0f7ef34c3e983ab46bf55a413a76e710
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_9.unity
+  - _reference:
+      m_AssetGUID: 73dbc10c751d9f64eb7141a9b609805e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_2.unity
+  - _reference:
+      m_AssetGUID: f80241f239e286c47a901bf22a6c7928
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_2.unity
+  - _reference:
+      m_AssetGUID: e79882e76a41eba47b4a7de100954862
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_3.unity
+  - _reference:
+      m_AssetGUID: c5acd21e56fbfd04ab13390ee95882b5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_9.unity
+  - _reference:
+      m_AssetGUID: 7e57d25521a09da4299a1d94281c81ad
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_8.unity
+  - _reference:
+      m_AssetGUID: ed6bc5b814c934345818cd31029bcc1e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_1.unity
+  - _reference:
+      m_AssetGUID: c812401c579d9ab4792dc782508f8b32
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_8.unity
+  - _reference:
+      m_AssetGUID: 56e15ba2b20dbd847a51f7856395eac4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_1.unity
+  - _reference:
+      m_AssetGUID: c29a0636457fd2147b2a1aa48948115a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_5.unity
+  - _reference:
+      m_AssetGUID: 7c4b0eb707f1c1a44bf71655b0d1db0c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_1.unity
+  - _reference:
+      m_AssetGUID: 2b29f59940ab1bf4b927517842dec6df
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_0.unity
+  - _reference:
+      m_AssetGUID: f7d55ab0691cd0d4f97a2598ddddd158
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_6.unity
+  - _reference:
+      m_AssetGUID: 63e0e7955a5f50c44a6ba66a3be83ace
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_7.unity
+  - _reference:
+      m_AssetGUID: aeb71459a44047840a3beafb88f4f545
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_1.unity
+  - _reference:
+      m_AssetGUID: 4e96e51662c7d5547a513bb038028e3b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_8.unity
+  - _reference:
+      m_AssetGUID: bf44d5ee3ace6944980977cf61a60ebb
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_0.unity
+  - _reference:
+      m_AssetGUID: 88315a5271bc43f4fbf095c434f4cb81
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_8.unity
+  - _reference:
+      m_AssetGUID: 9874b5a8762ff7c48af2e0f6417f36fd
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_8.unity
+  - _reference:
+      m_AssetGUID: 1a97ee029fa91b446a0059d5fabce8f6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_7.unity
+  - _reference:
+      m_AssetGUID: 8852561bc4f457a48baccc3146548aa5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_8.unity
+  - _reference:
+      m_AssetGUID: a4b5b1c4de68f5040b2277e13c240632
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_2.unity
+  - _reference:
+      m_AssetGUID: 8af0265747cbcb84ebcec995f4663665
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_4.unity
+  - _reference:
+      m_AssetGUID: b5d735f9e4b45514baf51fc8beaf6934
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_2.unity
+  - _reference:
+      m_AssetGUID: 1c48c368c51e14e42bef81d29e46e3dc
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_6.unity
+  - _reference:
+      m_AssetGUID: cfa3595800596b54e971b85e003a617d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_8.unity
+  - _reference:
+      m_AssetGUID: 841bd9af8ec8a2d44a0e5e20d8e392ce
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_6.unity
+  - _reference:
+      m_AssetGUID: b0054bbd4e5c87b46aafe8ca7f686e13
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_5.unity
+  - _reference:
+      m_AssetGUID: 3123fff65a38bcb4183dbfacca0e5287
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_7.unity
+  - _reference:
+      m_AssetGUID: c20ce6dfc211b1a4896c43c66a9386ce
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_3.unity
+  - _reference:
+      m_AssetGUID: fee2263fda92d554382e7d0db6522bd6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_4.unity
+  - _reference:
+      m_AssetGUID: 16803b8ca4351244598d66b5ebd50b22
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_8.unity
+  - _reference:
+      m_AssetGUID: e37cd84504d66db4b851be3b06455a22
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_6.unity
+  - _reference:
+      m_AssetGUID: 7bf655a5c486e834bb4d07b2b45a259a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_3.unity
+  - _reference:
+      m_AssetGUID: 577db1444f76ab641ab621757a7360a6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_0.unity
+  - _reference:
+      m_AssetGUID: 5587c9ff564cef54da8d65d4575c3f91
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_6.unity
+  - _reference:
+      m_AssetGUID: d48bb142ae114c442bed194e942f11dc
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_0.unity
+  - _reference:
+      m_AssetGUID: c6896974f8eee064d81349651ec7fcea
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_7.unity
+  - _reference:
+      m_AssetGUID: a2fafc49595cdf149a7ba59c507f396c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_3.unity
+  - _reference:
+      m_AssetGUID: d9407b884cce12e4581883e53c11a04d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_6.unity
+  - _reference:
+      m_AssetGUID: ebeb0f5e9c39b414092a1b34f1fa72c1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_7.unity
+  - _reference:
+      m_AssetGUID: 67f7df54feba8b14e90415ac1b5f8512
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_5.unity
+  - _reference:
+      m_AssetGUID: 275d19f9ebfa9b643b5b5c52fc91bdbe
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_5.unity
+  - _reference:
+      m_AssetGUID: 0a9609023a5f1c94883ffca5a6360a38
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_2.unity
+  - _reference:
+      m_AssetGUID: 03d0fba0a5d838842ab16b020d86d081
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_1.unity
+  - _reference:
+      m_AssetGUID: 68626894335172e439b93e09506c7a51
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_3.unity
+  - _reference:
+      m_AssetGUID: 67851d37cfed5364caf8d67d9979f73b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_1.unity
+  - _reference:
+      m_AssetGUID: aa0e4d61d91c7024a818854604601631
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_8.unity
+  - _reference:
+      m_AssetGUID: 79d49650b9296bd4f9126faa291d0037
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_3.unity
+  - _reference:
+      m_AssetGUID: d76e0046fd81837409934ac4403254d7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_0.unity
+  - _reference:
+      m_AssetGUID: 7048f1b1f2e445a4ea35b0c1373efaf7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_8.unity
+  - _reference:
+      m_AssetGUID: 49fce6e9bf3f6f146ab882e36fbb5799
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_2.unity
+  - _reference:
+      m_AssetGUID: 3c98870c758d64f4688884db53cc0379
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_0.unity
+  - _reference:
+      m_AssetGUID: c4a8315fff3a9de45a0a14d8c283781d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_6.unity
+  - _reference:
+      m_AssetGUID: f8e32e2b4076f3d41bc76099b8227941
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_5.unity
+  - _reference:
+      m_AssetGUID: 6f80f313105edc74bbb4e2234bcd0ff2
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_1.unity
+  - _reference:
+      m_AssetGUID: 758cef39a7efdd54590f6a771bbc794c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_6.unity
+  - _reference:
+      m_AssetGUID: ee528ceb637288744a12994db0da70b4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_6.unity
+  - _reference:
+      m_AssetGUID: 86a0319ca8ac1204c8816ac30913f0ee
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_2.unity
+  - _reference:
+      m_AssetGUID: dff7c9b3b89c5cb468e9ba185935b249
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_19_4.unity
+  - _reference:
+      m_AssetGUID: a99fcd051a28ed143a43249751367324
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_5.unity
+  - _reference:
+      m_AssetGUID: b376b1f1946552a4dbc249ab4c5daf63
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_2.unity
+  - _reference:
+      m_AssetGUID: 2c448b6a5a2a90a419c0eda6199d8b85
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_2.unity
+  - _reference:
+      m_AssetGUID: 8eaf90ba4f3699a41933db715d1a0d5e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_1.unity
+  - _reference:
+      m_AssetGUID: 47bf29072dbed924f8e7de2224092031
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_5.unity
+  - _reference:
+      m_AssetGUID: 2a9901cc4d9f0404d84dc84d42192eca
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_7.unity
+  - _reference:
+      m_AssetGUID: 0fec500fabeb6904787e00b2c13e6c1f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_7.unity
+  - _reference:
+      m_AssetGUID: 749aa04b8b2e09b4ab244b256f503d96
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_0.unity
+  - _reference:
+      m_AssetGUID: cddeec236f5509c4fbb9a9eca96c1097
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_8.unity
+  - _reference:
+      m_AssetGUID: 2ed163e6433ca1a43b9cd1f79d65bb95
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_2.unity
+  - _reference:
+      m_AssetGUID: e746c132e097ef540a28c478f9cd4206
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_1.unity
+  - _reference:
+      m_AssetGUID: aedf5f9e5c2d4734fa481082fe20d4b3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_0.unity
+  - _reference:
+      m_AssetGUID: bac57fb3938217840a5b1ec27bbf9b28
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_6.unity
+  - _reference:
+      m_AssetGUID: f21523f1ea8e7e141a6e770824d31935
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_1.unity
+  - _reference:
+      m_AssetGUID: 26749c7b147a767419386d5cd81d5f1e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_3.unity
+  - _reference:
+      m_AssetGUID: c3e9ca32f92a11740a3f27b8e95fb446
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_3.unity
+  - _reference:
+      m_AssetGUID: 5f7d31bbf01bfa044accd75fa91dc80e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_5.unity
+  - _reference:
+      m_AssetGUID: e75f3f0e1fb74794fb964252b8f7478e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_5.unity
+  - _reference:
+      m_AssetGUID: 2f4271b6ea1e09d4a9766a8ace0f6938
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_7.unity
+  - _reference:
+      m_AssetGUID: 05c3871d572d55140a25056be68cfc8e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_7.unity
+  - _reference:
+      m_AssetGUID: 14e3642238e35db459e98920f2ff9427
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_5.unity
+  - _reference:
+      m_AssetGUID: 80b0348f37cc31346917f0d46ee58618
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_4.unity
+  - _reference:
+      m_AssetGUID: 59dc889c451d722459dbbc763ce59ff6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_4.unity
+  - _reference:
+      m_AssetGUID: da2c107d1c5545841b850a979fa5c01a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_18_0.unity
+  - _reference:
+      m_AssetGUID: 0bd65f64af097324eb171a71fb5aef1e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_2.unity
+  - _reference:
+      m_AssetGUID: cee27188b662c214f9e36258eedef79e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_3.unity
+  - _reference:
+      m_AssetGUID: 8b7e93033c3f0884e9b22cb182d24109
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_3.unity
+  - _reference:
+      m_AssetGUID: 1526d87e96b04ef4b8d8e2f9e3ad72bf
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_0.unity
+  - _reference:
+      m_AssetGUID: 222ca02174138d54394bdf445befc164
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_4.unity
+  - _reference:
+      m_AssetGUID: ac7e3d31d1185764fa53674ee7663a7c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_4.unity
+  - _reference:
+      m_AssetGUID: d78ef61f231c8cd429f5526727c9f6ea
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_4.unity
+  - _reference:
+      m_AssetGUID: e43faf4c5ae08e840bef15e769e0bc8f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_7.unity
+  - _reference:
+      m_AssetGUID: 8687a742f9edecb4ea7e051ae4a97978
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_17_6.unity
+  - _reference:
+      m_AssetGUID: 152e1c73086ceec4c88720f9c4e3fbfa
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_0.unity
+  - _reference:
+      m_AssetGUID: d8f8a15d01e66fa4b9c103878c056d08
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_2.unity
+  - _reference:
+      m_AssetGUID: eed4b77b399a1b840a264f949f6c8f8b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_7.unity
+  - _reference:
+      m_AssetGUID: 62c2b31fa61af8f46939b07752bf06f1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_8.unity
+  - _reference:
+      m_AssetGUID: 30151d2ce380f574e89bc5b6708cff1a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_3.unity
+  - _reference:
+      m_AssetGUID: e25abc43d9f038c4fa0f868db76c4b0a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_13_4.unity
+  - _reference:
+      m_AssetGUID: b9bca248f7b89dd4889678567c4fde3c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_7.unity
+  - _reference:
+      m_AssetGUID: b22713abeffb36d41b42ffdf7e9e222e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_0.unity
+  - _reference:
+      m_AssetGUID: 6576249de4306034792680f5952c789c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_3.unity
+  - _reference:
+      m_AssetGUID: 4d492912d14ac5241906fbcb57c72849
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_3.unity
+  - _reference:
+      m_AssetGUID: 5f923d8458be69d49897fa87f10959ea
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_8.unity
+  - _reference:
+      m_AssetGUID: 738eea6ec338b6d47a5031737112c0a3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_9_6.unity
+  - _reference:
+      m_AssetGUID: 69d3af23e53e7db49af71dd36a489cac
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_25_0.unity
+  - _reference:
+      m_AssetGUID: c3251b22fb3c565459b758f407bb548b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_8.unity
+  - _reference:
+      m_AssetGUID: e4ceb998b199b2b4ea7df14d79e16f8a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_7.unity
+  - _reference:
+      m_AssetGUID: 4c2345d35969d2548ac6b6002744773c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_3.unity
+  - _reference:
+      m_AssetGUID: 7420c9e421ecc5649bf554e25409ab54
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_27_4.unity
+  - _reference:
+      m_AssetGUID: 35030ae09bac2144d963efdf37257828
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_2.unity
+  - _reference:
+      m_AssetGUID: 81ae201829791a240acfc4599eb8cc27
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_2.unity
+  - _reference:
+      m_AssetGUID: 023558ddaef36b349a52ac0c61deacf0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_4.unity
+  - _reference:
+      m_AssetGUID: 7b0bc8a62eba74345a44370420b4e895
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_3.unity
+  - _reference:
+      m_AssetGUID: 97876e45fb60f294184d685ca948e28e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_4.unity
+  - _reference:
+      m_AssetGUID: d071205ff51b6144aa507eeb3a160c0d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_2.unity
+  - _reference:
+      m_AssetGUID: 0e471bef46bfb03419a5c8a225598aee
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_6.unity
+  - _reference:
+      m_AssetGUID: 43cd3c05733839443984e8dbb65d9e7c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_2.unity
+  - _reference:
+      m_AssetGUID: 64b66e9e7faf0d441ad6ce34cdeac6d1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_7.unity
+  - _reference:
+      m_AssetGUID: 961d56dd66ba3a64bbb290d5e85ca674
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_4.unity
+  - _reference:
+      m_AssetGUID: 7f7c3de0d4b9ebb49b49756fe659b4e9
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_1.unity
+  - _reference:
+      m_AssetGUID: 2248a0dab98c470418c9b05c94f41316
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_5.unity
+  - _reference:
+      m_AssetGUID: 1ac7bec88d67f0e45aa8017719bbad02
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_22_0.unity
+  - _reference:
+      m_AssetGUID: 014e65897c83ab844afb0f51fdfdb77e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_14_7.unity
+  - _reference:
+      m_AssetGUID: 47859b694f3c88143bae5f272a4beafe
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_1.unity
+  - _reference:
+      m_AssetGUID: f3ee41ff996506744a453c2410d623f2
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_0.unity
+  - _reference:
+      m_AssetGUID: f03a3af462c4a014a81edbee45061487
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_7.unity
+  - _reference:
+      m_AssetGUID: 27005531dd36f9348a7098610f957fe3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_1.unity
+  - _reference:
+      m_AssetGUID: fa42b53102ac068499c0ef6ef0042583
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_1.unity
+  - _reference:
+      m_AssetGUID: c8ec2a516e13d6b438cf7eee65a6e66a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_0.unity
+  - _reference:
+      m_AssetGUID: 37685a47822da284786186d776bb5822
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_1_3.unity
+  - _reference:
+      m_AssetGUID: 108b1fd90df44b8429dacd0d2a9688d6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_10_1.unity
+  - _reference:
+      m_AssetGUID: 1965f947d158f6341b0d007d2c5b74f1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_4.unity
+  - _reference:
+      m_AssetGUID: df957f39c05198b478c9b948b6107d82
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_4.unity
+  - _reference:
+      m_AssetGUID: 0732b0a691e38044fb0f5fabd02d4a68
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_1.unity
+  - _reference:
+      m_AssetGUID: 1e094b8375060c548827b9e405c24eed
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_6_1.unity
+  - _reference:
+      m_AssetGUID: 04dca514eed10df43b04d8514d2edb3a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_8.unity
+  - _reference:
+      m_AssetGUID: 94b1f248c851aba47897be8bd32e05cf
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_8.unity
+  - _reference:
+      m_AssetGUID: f821a325f4663e341aa55fc01e4765e1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_21_8.unity
+  - _reference:
+      m_AssetGUID: a37b74ba38653a8459055126a87a7b06
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_7_2.unity
+  - _reference:
+      m_AssetGUID: 5c52b00f9f3a52f46bc8f683333fd662
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_12_4.unity
+  - _reference:
+      m_AssetGUID: 5985576778ee04144bcd0f9512ce66d0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_5.unity
+  - _reference:
+      m_AssetGUID: 74ca686ef04145a4095ccb1bb6c5673a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_0_6.unity
+  - _reference:
+      m_AssetGUID: 1f06c19f86e877d4bbaf3f0b5722605c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_8.unity
+  - _reference:
+      m_AssetGUID: c5b9b13f6a1c977459083570363c79c0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_5.unity
+  - _reference:
+      m_AssetGUID: afd7cde56a4410f42a7a3bcdde075aba
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_5.unity
+  - _reference:
+      m_AssetGUID: 8a3dbb70dd445584c82ba7875745177a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_3_5.unity
+  - _reference:
+      m_AssetGUID: 35825031aa8818842b368d78bdd430aa
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_3.unity
+  - _reference:
+      m_AssetGUID: 4e5e5971f7bcc2845a02c7839494f0ba
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_2.unity
+  - _reference:
+      m_AssetGUID: 8b98bd6745d36b647a8ac15a855526d3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_2.unity
+  - _reference:
+      m_AssetGUID: 264821b2f066fe247a0d20699334cbdb
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_6.unity
+  - _reference:
+      m_AssetGUID: e87d2f7a9e048b047b99f6130d4ce99f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_7.unity
+  - _reference:
+      m_AssetGUID: 09aa36af2d89a4b4d98253720e0fe745
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_23_5.unity
+  - _reference:
+      m_AssetGUID: c3ff255df55781b44bf3661988f5dfe9
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_4_5.unity
+  - _reference:
+      m_AssetGUID: 6450a2914518fb14ab8bcd2005bdfa33
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_2_6.unity
+  - _reference:
+      m_AssetGUID: d8ce0e3d2a5aeb849ab3143d9df3a097
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_11_3.unity
+  - _reference:
+      m_AssetGUID: c995d8d5003929843b612da1698f45b0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_15_7.unity
+  - _reference:
+      m_AssetGUID: 5af9a71a7666f9041bfbf3d97bec4f87
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_8.unity
+  - _reference:
+      m_AssetGUID: 7373942dbd5e4134ba03145454b73816
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_26_4.unity
+  - _reference:
+      m_AssetGUID: 99178f8b718dc9448b14ea5a0577abe6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_20_6.unity
+  - _reference:
+      m_AssetGUID: 637416636756d81499c698fa41598b0c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_24_0.unity
+  - _reference:
+      m_AssetGUID: 6c27755a05686f8409e0ccd1b1086600
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _path: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_16_1.unity

@@ -6,6 +6,7 @@ using Global.Services.UiStateMachines.Runtime;
 using Local.Services.Abstract;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using VContainer;
 
 namespace GamePlay.Services.TravelOverlays.Runtime
 {
@@ -26,7 +27,16 @@ namespace GamePlay.Services.TravelOverlays.Runtime
 
             serviceBinder.RegisterComponent(uiScene.Searched)
                 .WithParameter(_constraints)
-                .As<ITravelOverlay>();
+                .As<ITravelOverlay>()
+                .AsSelf();
+        }
+
+        public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
+        {
+            var overlay = resolver.Resolve<TravelOverlay>();
+            var builder = overlay.GetComponent<TravelOverlayBuilder>();
+            
+            builder.Register(resolver);
         }
     }
 }

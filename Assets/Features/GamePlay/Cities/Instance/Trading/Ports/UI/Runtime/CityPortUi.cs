@@ -109,6 +109,14 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _nickName.text = _profileStorageProvider.UserName;
             
             _body.SetActive(true);
+            
+            _storedView.gameObject.SetActive(false);
+            _stockView.gameObject.SetActive(false);
+            
+            _storedView.gameObject.SetActive(true);
+            _stockView.gameObject.SetActive(true);
+
+            
             _stateMachine.EnterAsSingle(this);
             
             _storedView.Fill(data.Cargo, data.PriceProvider);
@@ -139,11 +147,12 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         private void OnTradeCompleted(TradeResult result)
         {
             _tradeBody.SetActive(false);
+            
+            Debug.Log("Completed");
 
             var completed = new TradeCompletedEvent(Redraw, result);
 
             MessageBroker.Default.Publish(completed);
-
         }
 
         private void Redraw(
@@ -155,6 +164,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _shipView.ResetStats();
 
             _tradeBody.SetActive(false);
+            
+            Debug.Log("Redraw");
+            _shipView.ResetStats();
 
             _storedView.Fill(cargo, priceProvider);
             _stockView.Fill(stock, priceProvider);

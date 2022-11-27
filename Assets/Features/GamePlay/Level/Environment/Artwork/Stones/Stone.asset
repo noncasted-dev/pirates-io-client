@@ -15,4 +15,48 @@ MonoBehaviour:
   m_DefaultSprite: {fileID: 0}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
-  m_TilingRules: []
+  m_TilingRules:
+  - m_Id: 0
+    m_Sprites:
+    - {fileID: 21300000, guid: 8917a6e7addb57643ad11c948525571f, type: 3}
+    - {fileID: 21300000, guid: 72f03386699f3a1468455b51f70927a4, type: 3}
+    - {fileID: 21300000, guid: 725d7ff03610c86419b19a73bb167aff, type: 3}
+    - {fileID: 21300000, guid: 89c4188d59a5926499b8e1c02053e3a3, type: 3}
+    - {fileID: 21300000, guid: 9bd53623801b6bd45b2d6abf8816d50a, type: 3}
+    - {fileID: 21300000, guid: fae5ce6e78cf59e40b381cae5aabbca5, type: 3}
+    - {fileID: 21300000, guid: 1a7327a460d618b4f85950da682e281c, type: 3}
+    - {fileID: 21300000, guid: 1651cd274efd8544a9c2e4dc16b804c6, type: 3}
+    - {fileID: 21300000, guid: edc694b308700034693772fb594193c2, type: 3}
+    - {fileID: 21300000, guid: b5037f228c6a9c047816021443532417, type: 3}
+    - {fileID: 21300000, guid: 61020fdde8430814d961d710894da1a5, type: 3}
+    - {fileID: 21300000, guid: ce76f51e00102934283f360292569204, type: 3}
+    - {fileID: 21300000, guid: 5241b0f40659cb047844970b623580a6, type: 3}
+    - {fileID: 21300000, guid: 66c6cfb9fbc9b534ba2a2f4f0f3c8896, type: 3}
+    - {fileID: 21300000, guid: 28990f979994e554cb678c0253c5656a, type: 3}
+    - {fileID: 21300000, guid: 5ffaa762ab04fa7409c8a0bc61906014, type: 3}
+    - {fileID: 21300000, guid: 36e521d4fbf77ab4885970750256a4d8, type: 3}
+    - {fileID: 21300000, guid: b019e2c0f37e2f54991258643d629b64, type: 3}
+    - {fileID: 21300000, guid: 9d24b2cb1545ba440a87af347929d5eb, type: 3}
+    - {fileID: 21300000, guid: 7394ec8a4e0c8824fa9bd933654f9a84, type: 3}
+    - {fileID: 21300000, guid: f88ea186488651f429268a7ae82d9011, type: 3}
+    - {fileID: 21300000, guid: 2c8f0af77dd45f14692d013189370b11, type: 3}
+    - {fileID: 21300000, guid: e643870db22e89d4b9472f046d5140af, type: 3}
+    - {fileID: 21300000, guid: 8c36e7fc167ce694f843378cad10668e, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_Output: 1
+    m_ColliderType: 1
+    m_RandomTransform: 0
+    m_Neighbors: 
+    m_NeighborPositions:
+    - {x: -1, y: 1, z: 0}
+    - {x: 0, y: 1, z: 0}
+    - {x: 1, y: 1, z: 0}
+    - {x: -1, y: 0, z: 0}
+    - {x: 1, y: 0, z: 0}
+    - {x: -1, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 1, y: -1, z: 0}
+    m_RuleTransform: 0

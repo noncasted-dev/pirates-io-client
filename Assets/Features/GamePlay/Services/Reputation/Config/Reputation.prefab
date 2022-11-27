@@ -45,3 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _value: 0
+  _percentFromMoney: 0.01
+  _englandFlag: {fileID: 21300000, guid: fe5e123d144ec204d96f95d9eb25c37b, type: 3}
+  _franceFlag: {fileID: 21300000, guid: 380b3f4f8cc06824280878252c817d76, type: 3}
+  _hollandFlag: {fileID: 21300000, guid: 4800c1e473f0e0e4f887b65b0dbea7e8, type: 3}
+  _spainFlag: {fileID: 21300000, guid: 130bde3f8e96f9f45a7882f671da2fa4, type: 3}
+  _pirateFlag: {fileID: 21300000, guid: d50be8051209e134c9e22231dce7a403, type: 3}

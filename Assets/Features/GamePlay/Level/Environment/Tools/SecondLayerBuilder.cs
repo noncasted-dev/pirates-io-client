@@ -40,12 +40,12 @@ namespace GamePlay.Level.Environment.Tools
         }
 
         [Button("Generate")]
-        private void Generate()
+        public void Generate()
         {
             ProcessGenerate().Forget();
         }
 
-        private async UniTaskVoid ProcessGenerate()
+        public async UniTask ProcessGenerate()
         {
             _isGenerating = true;
 

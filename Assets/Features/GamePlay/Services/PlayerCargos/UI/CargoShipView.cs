@@ -30,7 +30,7 @@ namespace GamePlay.Services.PlayerCargos.UI
 
         private void OnEnable()
         {
-            _healthListener = MessageBroker.Default.Receive<HealthChangedEvent>().Subscribe(OnHealthChanged);
+            _healthListener = MessageBroker.Default.Receive<HealthChangeEvent>().Subscribe(OnHealthChanged);
             _reputationListener =
                 MessageBroker.Default.Receive<ReputationChangedEvent>().Subscribe(OnReputationChanged);
         }
@@ -77,7 +77,7 @@ namespace GamePlay.Services.PlayerCargos.UI
             _speed.text = $"{_resources.Speed}/{_resources.MaxSpeed}";
         }
 
-        private void OnHealthChanged(HealthChangedEvent data)
+        private void OnHealthChanged(HealthChangeEvent data)
         {
             SetWeight();
         }

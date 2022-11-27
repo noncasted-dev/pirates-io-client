@@ -8,7 +8,7 @@
 [LOG] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000020B0FC0FAD8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000002308EE97858 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -19,58 +19,178 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
-[LOG] SoundI::release                          :  (0000020AEA1D5E38)
-[LOG] SoundI::release                          :     sfx_loop_waves_01 (0000020A3E869C18)
-[LOG] SoundI::release                          :  (0000020AEA1D8958)
-[LOG] SoundI::release                          :     1911 - Single Shot - Dry_06 (0000020A02C25228)
-[LOG] SoundI::release                          :  (0000020AEA1D5148)
-[LOG] SoundI::release                          :     sfx_amb_sea_01 (0000020A3E86D9D8)
-[LOG] SoundI::release                          :  (0000020AEA1D70E8)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_01 (0000020A3E86A298)
-[LOG] SoundI::release                          :  (0000020AEA1D5878)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_02 (0000020A3E86D358)
-[LOG] SoundI::release                          :  (0000020AEA1D4B88)
-[LOG] SoundI::release                          :     sfx_amb_port_01 (0000020A3E8698D8)
-[LOG] SoundI::release                          :  (0000020AEA1D6568)
-[LOG] SoundI::release                          :     sfx_amb_forest (0000020A3E86BC98)
-[LOG] SoundI::release                          :  (0000020AEA1D7AF8)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_03 (0000020A3E86C178)
-[LOG] SoundI::release                          :  (0000020AEA1D4CF8)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_04 (0000020A3E86D018)
-[LOG] SoundI::release                          :  (0000020AEA1D8AC8)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_05 (0000020A3E869598)
-[LOG] SoundI::release                          :  (0000020AEA1D8398)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_06 (0000020A3E86BE38)
-[LOG] SoundI::release                          :  (0000020AEA1D6B28)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_07 (0000020A3E86A0F8)
-[LOG] SoundI::release                          :  (0000020AEA1D3E98)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_08 (0000020A3E86B958)
-[LOG] SoundI::release                          :  (0000020AEA1D80B8)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_09 (0000020A3E869DB8)
-[LOG] SoundI::release                          :  (0000020AEA1D4E68)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_10 (0000020A3E86B7B8)
-[LOG] SoundI::release                          :  (0000020AEA1D8DA8)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_11 (0000020A3E86A918)
-[LOG] SoundI::release                          :  (0000020AEA1D6F78)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_12 (0000020A3E86AAB8)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 3418432
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 17664
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000E128C7EE28
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9F19433C0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9F1943380
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9F19434A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF9F1943560
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000022F8167ADA8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Organic Paper Page Turn 02', format=5, channels=2, frequency=48000, lengthbytes=40448, lengthpcm=59342, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 3418432
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 17664
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000E128C7EE28
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9F19433C0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9F1943380
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9F19434A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF9F1943560
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000022F804F5D88
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='sfx_ship_shot_03', format=5, channels=2, frequency=48000, lengthbytes=94336, lengthpcm=218863, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999999.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 3418432
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 17664
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000E128C7EE28
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9F19433C0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9F1943380
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9F19434A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF9F1943560
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000022F804F5D88
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='sfx_ship_shot_02', format=5, channels=2, frequency=48000, lengthbytes=84224, lengthpcm=190794, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999999.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 3418432
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 17664
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000E128C7EE28
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9F19433C0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9F1943380
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9F19434A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF9F1943560
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000022F804F5D88
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='sfx_ship_shot_01', format=5, channels=2, frequency=48000, lengthbytes=96128, lengthpcm=215506, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999999.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 3418432
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 17664
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000E128C7EE28
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9F19433C0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9F1943380
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9F19434A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF9F1943560
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000022F804F5D88
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='sfx_ship_shot_04', format=5, channels=2, frequency=48000, lengthbytes=101280, lengthpcm=216042, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999999.
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_14.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_14.bank'
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_15.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_15.bank'
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_16.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_16.bank'
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_17.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_17.bank'
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_18.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_18.bank'
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_19.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_19.bank'
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_20.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_20.bank'
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_21.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_21.bank'
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_22.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/Designer/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-blDaTH/hotswap_22.bank'
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] ProfileClient::recvThreadLoopFunction    : Socket disconnected
+[LOG] ProfileClient::markForDead               : Closing client connection
+[LOG] Thread::callback                         : FMOD profiler thread (recv) finished.
+[LOG] Thread::callback                         : FMOD profiler thread (send) finished.
+[LOG] LiveUpdate::clientDisconnected           : client = 0000022FC21E2368
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] SoundI::release                          :  (0000022FC14829C8)
+[LOG] SoundI::release                          :     Organic Paper Page Turn 02 (0000022F7E193A08)
+[LOG] SoundI::release                          :  (000002306948FB98)
+[LOG] SoundI::release                          :     sfx_amb_seagulls_01 (0000022FC120E128)
+[LOG] SoundI::release                          :  (000002306948CF08)
+[LOG] SoundI::release                          :     sfx_amb_seagulls_02 (0000022FC120D5C8)
+[LOG] SoundI::release                          :  (0000023069487A38)
+[LOG] SoundI::release                          :     sfx_amb_seagulls_03 (0000022FC120EC88)
+[LOG] SoundI::release                          :  (000002306948DBF8)
+[LOG] SoundI::release                          :     sfx_amb_seagulls_04 (0000022FC120D908)
+[LOG] SoundI::release                          :  (000002306948DD68)
+[LOG] SoundI::release                          :     sfx_amb_seagulls_05 (0000022FC120CC08)
+[LOG] SoundI::release                          :  (000002306948E8E8)
+[LOG] SoundI::release                          :     sfx_loop_waves_01 (0000022FC1211BA8)
+[LOG] SoundI::release                          :  (000002306948D078)
+[LOG] SoundI::release                          :     sfx_amb_sea_01 (0000022FC1211388)
+[LOG] SoundI::release                          :  (000002306948F468)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_01 (0000022FC120F168)
+[LOG] SoundI::release                          :  (000002306948FA28)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_02 (0000022FC120DDE8)
+[LOG] SoundI::release                          :  (0000023069488FC8)
+[LOG] SoundI::release                          :     sfx_amb_port_01 (0000022FC120F308)
+[LOG] SoundI::release                          :  (00000230694905A8)
+[LOG] SoundI::release                          :     sfx_amb_forest (0000022FC120C728)
+[LOG] SoundI::release                          :  (000002306948FE78)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_03 (0000022FC12111E8)
+[LOG] SoundI::release                          :  (000002306948EEA8)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_04 (0000022FC1210008)
+[LOG] SoundI::release                          :  (000002306948DED8)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_05 (0000022FC1210B68)
+[LOG] SoundI::release                          :  (000002306948E778)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_06 (0000022FC120FE68)
+[LOG] SoundI::release                          :  (00000230694878C8)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_07 (0000022FC1210348)
+[LOG] SoundI::release                          :  (0000023069488A08)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_08 (0000022FC120D0E8)
+[LOG] SoundI::release                          :  (000002306948FFE8)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_09 (0000022FC12101A8)
+[LOG] SoundI::release                          :  (000002306948D918)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_10 (0000022FC120E608)
+[LOG] SoundI::release                          :  (000002306948D1E8)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_11 (0000022FC120F7E8)
+[LOG] SoundI::release                          :  (000002306948E048)
+[LOG] SoundI::release                          :     sfx_amb_tropical_birds_12 (0000022FC1210D08)
+[LOG] SoundI::release                          :  (0000023069486EB8)
+[LOG] SoundI::release                          :     sfx_ship_shot_01 (0000022F7E190FC8)
+[LOG] SoundI::release                          :  (0000023069486D48)
+[LOG] SoundI::release                          :     sfx_ship_shot_02 (0000022F7E192B68)
+[LOG] SoundI::release                          :  (000002306948BC58)
+[LOG] SoundI::release                          :     sfx_ship_shot_03 (0000022F7E1929C8)
+[LOG] SoundI::release                          :  (00000230694885B8)
+[LOG] SoundI::release                          :     sfx_ship_shot_04 (0000022F7E1914A8)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] ProfileClient::markForDead               : Closing client connection
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] FMOD_OS_Net_Read                         : Interrupted.[LOG] Thread::callback                         : FMOD profiler thread (send) finished.
-[LOG] ProfileClient::recvThreadLoopFunction    : Socket disconnected
-[LOG] Thread::callback                         : FMOD profiler thread (recv) finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.

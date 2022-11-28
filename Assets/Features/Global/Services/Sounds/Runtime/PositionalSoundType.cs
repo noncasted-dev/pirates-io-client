@@ -9,5 +9,6 @@
         ProjectileDropped,
         EnemyDamaged,
         DamageReceived,
+        Death,
     }
 }

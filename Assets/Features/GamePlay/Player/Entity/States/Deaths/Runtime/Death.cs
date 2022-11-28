@@ -33,6 +33,8 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
         private readonly IShipConfig _config;
         private readonly IBodyTransform _transform;
 
+        private bool _isDead = false;
+
         private IObjectProvider<DeadShipVfx> _objectProvider;
 
         public StateDefinition Definition { get; }
@@ -41,9 +43,12 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
         {
             _objectProvider = _vfxPoolProvider.GetPool<DeadShipVfx>(_config.DeathVfx);
         }
-        
+
         public void Enter()
         {
+            if (_isDead == false)
+                _isDead = true;
+
             _stateMachine.Enter(this);
 
             _objectProvider.Get(_transform.Position);

@@ -4887,6 +4887,7 @@ GameObject:
   - component: {fileID: 2488354515282020963}
   - component: {fileID: 2488354515282020961}
   - component: {fileID: 3297876160841451487}
+  - component: {fileID: -6565484072791154613}
   m_Layer: 0
   m_Name: VFX_WaterSplash
   m_TagString: Untagged
@@ -4955,6 +4956,38 @@ SortingGroup:
   m_SortingLayerID: 1952455
   m_SortingLayer: 2
   m_SortingOrder: 10
+--- !u!114 &-6565484072791154613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2488354515282020967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1828732514
+      Data2: 1209531650
+      Data3: 1672670856
+      Data4: 2089033844
+    Path: event:/damage_impact
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: damage_type
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5239669011648866773
 GameObject:
   m_ObjectHideFlags: 0

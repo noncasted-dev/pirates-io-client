@@ -85,6 +85,20 @@ MonoBehaviour:
       Data3: -1186456135
       Data4: 247846514
     Path: event:/shot
+  DamageEvent:
+    Guid:
+      Data1: -1828732514
+      Data2: 1209531650
+      Data3: 1672670856
+      Data4: 2089033844
+    Path: event:/damage_impact
+  DamageReceivedEvent:
+    Guid:
+      Data1: -1735059408
+      Data2: 1177255832
+      Data3: 1771578815
+      Data4: -1544184326
+    Path: event:/damage_received
   AmbEvent:
     Guid:
       Data1: 192758556
@@ -108,15 +122,29 @@ MonoBehaviour:
     Path: event:/port
   ButtonClickedEvent:
     Guid:
-      Data1: -2137127258
-      Data2: 1299442491
-      Data3: 366289036
-      Data4: 997880597
-    Path: event:/music
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   OverButtonEvent:
     Guid:
-      Data1: -2137127258
-      Data2: 1299442491
-      Data3: 366289036
-      Data4: 997880597
-    Path: event:/music
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  MenuEnteredEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  MenuExitedEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

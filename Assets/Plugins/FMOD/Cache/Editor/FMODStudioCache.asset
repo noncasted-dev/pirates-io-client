@@ -83,6 +83,33 @@ MonoBehaviour:
   - sea
   - port
   Exists: 1
+--- !u!114 &-6421993440418424475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/damage_received
+  m_EditorClassIdentifier: 
+  Path: event:/damage_received
+  Guid:
+    Data1: -1735059408
+    Data2: 1177255832
+    Data3: 1771578815
+    Data4: -1544184326
+  Banks:
+  - {fileID: 4782442716932992266}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2342
 --- !u!114 &-5834843703400018272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +137,33 @@ MonoBehaviour:
   - Shrapnel
   - Knuppel
   Exists: 1
+--- !u!114 &-5675053066238416131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/button clicked
+  m_EditorClassIdentifier: 
+  Path: event:/UI/button clicked
+  Guid:
+    Data1: 1141901362
+    Data2: 1132531895
+    Data3: 1950572988
+    Data4: 1160020078
+  Banks:
+  - {fileID: 4782442716932992266}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5543439831981730003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +213,87 @@ MonoBehaviour:
   - Name: Desktop
     Value: 866
   Exists: 1
+--- !u!114 &-3827514181919625482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/ui opened
+  m_EditorClassIdentifier: 
+  Path: event:/UI/ui opened
+  Guid:
+    Data1: -351821601
+    Data2: 1339323152
+    Data3: 1540337599
+    Data4: 1940158260
+  Banks:
+  - {fileID: 4782442716932992266}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3064762349439620086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/damage_impact/damage_type
+  m_EditorClassIdentifier: 
+  Name: damage_type
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2818827267
+    data2: 288516485
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - ProjectileDropped
+  - EnemyDamaged
+  Exists: 1
+--- !u!114 &-2555637242263382507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/damage_impact
+  m_EditorClassIdentifier: 
+  Path: event:/damage_impact
+  Guid:
+    Data1: -1828732514
+    Data2: 1209531650
+    Data3: 1672670856
+    Data4: 2089033844
+  Banks:
+  - {fileID: 4782442716932992266}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -3064762349439620086}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1359879360399280739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,13 +396,47 @@ MonoBehaviour:
   - {fileID: -1032485652129316907}
   - {fileID: -1289041177073043000}
   - {fileID: -8555205400553051430}
+  - {fileID: -2555637242263382507}
+  - {fileID: -6421993440418424475}
+  - {fileID: 4858439983126258615}
+  - {fileID: -5675053066238416131}
+  - {fileID: 1873158810801267528}
+  - {fileID: -3827514181919625482}
+  - {fileID: 669502784843091532}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4782442716932992266}
   StringsBanks:
   - {fileID: 3582555454610402830}
-  cacheTime: 638050709233069189
+  cacheTime: 638052567617133508
   cacheVersion: 131593
+--- !u!114 &669502784843091532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/menu exit
+  m_EditorClassIdentifier: 
+  Path: event:/UI/menu exit
+  Guid:
+    Data1: -1264647438
+    Data2: 1245127829
+    Data3: 448172433
+    Data4: 1432106250
+  Banks:
+  - {fileID: 4782442716932992266}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1434802825589905288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +457,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1006496
   Exists: 1
+--- !u!114 &1873158810801267528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/over button
+  m_EditorClassIdentifier: 
+  Path: event:/UI/over button
+  Guid:
+    Data1: 1907474110
+    Data2: 1141088275
+    Data3: 91923846
+    Data4: 997490305
+  Banks:
+  - {fileID: 4782442716932992266}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1882857375920721563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,10 +526,10 @@ MonoBehaviour:
   Path: FmodPirates/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638050709233069189
+  lastModified: 638052567617133508
   FileSizes:
   - Name: Desktop
-    Value: 1024
+    Value: 1392
   Exists: 1
 --- !u!114 &4064632750878532970
 MonoBehaviour:
@@ -370,11 +566,38 @@ MonoBehaviour:
   Path: FmodPirates/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638050709233044398
+  lastModified: 638052567617103739
   FileSizes:
   - Name: Desktop
-    Value: 3436096
+    Value: 4053280
   Exists: 1
+--- !u!114 &4858439983126258615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/menu entered
+  m_EditorClassIdentifier: 
+  Path: event:/UI/menu entered
+  Guid:
+    Data1: -675802352
+    Data2: 1211035243
+    Data3: 962952891
+    Data4: 171613501
+  Banks:
+  - {fileID: 4782442716932992266}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8667904405510141480
 MonoBehaviour:
   m_ObjectHideFlags: 0

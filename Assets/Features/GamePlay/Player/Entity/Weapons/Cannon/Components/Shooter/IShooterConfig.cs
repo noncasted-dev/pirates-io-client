@@ -10,7 +10,6 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         AssetReference Shrapnel { get; }
         AssetReference Fishnet { get; }
         AssetReference Vfx { get; }
-        int ShotsAmount { get; }
         float ShotsDelay { get; }
         float ShotRandomDelay { get; }
         float RandomDistance { get; }

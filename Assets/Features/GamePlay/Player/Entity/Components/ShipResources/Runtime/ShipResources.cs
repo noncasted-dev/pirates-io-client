@@ -10,7 +10,9 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 {
     public class ShipResources : IShipResources, IShipResourcesPresenter, ISwitchCallbacks
     {
-        public ShipResources(IHealth health, ISail sail)
+        public ShipResources(
+            IHealth health,
+            ISail sail)
         {
             _sail = sail;
             _health = health;
@@ -107,6 +109,8 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 
         public void SetCannons(int cannons)
         {
+            Debug.Log($"Set cannons: {cannons}");
+            
             _cannons = cannons;
 
             CannonsChanged?.Invoke(_cannons, _maxCannons);
@@ -139,7 +143,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 
         public void SetSpeed(int speed)
         {
-            _maxSpeed = speed;
+            _speed = speed;
             
             SpeedChanged?.Invoke(_speed, _maxSpeed);
             MessageBroker.Default.Publish(new ResourcesChangedEvent(this));

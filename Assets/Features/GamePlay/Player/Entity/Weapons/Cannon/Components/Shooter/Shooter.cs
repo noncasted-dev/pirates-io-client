@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using Common.ObjectsPools.Runtime.Abstract;
+using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Player.Entity.Network.Local.Replicators.Canons.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.ShootPoint;
@@ -12,6 +13,7 @@ using GamePlay.Services.Projectiles.Selector.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.Updaters.Runtime.Abstract;
+using UnityEngine;
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 {
@@ -25,8 +27,10 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
             IShootPoint shootPoint,
             IVfxPoolProvider vfxPoolProvider,
             IProjectileSelector selector,
-            IPlayerCargo cargo)
+            IPlayerCargoStorage cargo,
+            IShipResources resources)
         {
+            _resources = resources;
             _updater = updater;
             _config = config;
             _cannonReplicator = cannonReplicator;
@@ -41,11 +45,12 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         private readonly IShooterConfig _config;
         private readonly IProjectilesPoolProvider _projectilesPoolProvider;
         private readonly IShootPoint _shootPoint;
+        private readonly IShipResources _resources;
 
         private readonly IUpdater _updater;
         private readonly IVfxPoolProvider _vfxPoolProvider;
         private readonly IProjectileSelector _selector;
-        private readonly IPlayerCargo _cargo;
+        private readonly IPlayerCargoStorage _cargo;
         private CancellationTokenSource _cancellation;
 
         private IObjectProvider<LinearProjectile> _ball;
@@ -60,7 +65,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
             _knuppel = _projectilesPoolProvider.GetPool<LinearProjectile>(_config.Knuppel);
             _shrapnel = _projectilesPoolProvider.GetPool<LinearProjectile>(_config.Shrapnel);
             _fishnet = _projectilesPoolProvider.GetPool<LinearProjectile>(_config.Fishnet);
-            
+
             _vfx = _vfxPoolProvider.GetPool<AnimatedVfx>(_config.Vfx);
         }
 
@@ -86,6 +91,16 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 _ => throw new ArgumentOutOfRangeException()
             };
 
+            var shots = Mathf.Clamp(_resources.Cannons, 0, _resources.MaxCannons);
+
+            var item = _selector.Selected.ConvertToItemType();
+
+            if (shots > _cargo.Items[item].Count)
+                shots = _cargo.Items[item].Count;
+
+            if (_selector.Selected != ProjectileType.Fishnet)
+                _cargo.Reduce(item, shots);
+
             var shot = new Shot(
                 _updater,
                 _cannonReplicator,
@@ -94,10 +109,11 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 _vfx,
                 _shootPoint,
                 _cancellation.Token,
+                _selector.Selected,
                 angle,
                 spread);
 
-            shot.Start();
+            shot.Start(shots);
         }
     }
 }

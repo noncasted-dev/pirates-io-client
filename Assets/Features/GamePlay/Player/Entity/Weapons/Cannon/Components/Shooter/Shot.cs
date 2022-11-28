@@ -22,6 +22,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
             IObjectProvider<AnimatedVfx> vfx,
             IShootPoint shootPoint,
             CancellationToken cancellation,
+            ProjectileType type,
             float angle,
             float spread)
         {
@@ -32,12 +33,14 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
             _shootPoint = shootPoint;
             _vfx = vfx;
             _cancellation = cancellation;
+            _type = type;
             _angle = angle;
             _spread = spread;
         }
 
         private readonly float _angle;
         private readonly CancellationToken _cancellation;
+        private readonly ProjectileType _type;
         private readonly ICannonReplicator _cannonReplicator;
         private readonly IShooterConfig _config;
         private readonly IProjectileReplicator _projectileReplicator;
@@ -52,7 +55,20 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         private bool[] _shotsRegistry;
 
         private float _time;
+        private int _shotsCount;
 
+        public void Start(int shotsCount)
+        {
+            _shotsCount = shotsCount;
+            _randomTimes = new float[shotsCount];
+            _shotsRegistry = new bool[shotsCount];
+
+            for (var i = 0; i < _randomTimes.Length; i++)
+                _randomTimes[i] = _config.ShotsDelay + Random.Range(0f, _config.ShotRandomDelay);
+
+            _updater.Add(this);
+        }
+        
         public void OnUpdate(float delta)
         {
             _time += delta;
@@ -81,7 +97,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 _shotCounter++;
 
                 _cannonReplicator.Replicate(
-                    ProjectileType.Ball,
+                    _type,
                     shootPosition,
                     resultAngle,
                     parameters.Speed,
@@ -89,19 +105,8 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                     parameters.Distance);
             }
 
-            if (_shotCounter == _config.ShotsAmount || _cancellation.IsCancellationRequested == true)
+            if (_shotCounter == _shotsCount || _cancellation.IsCancellationRequested == true)
                 _updater.Remove(this);
-        }
-
-        public void Start()
-        {
-            _randomTimes = new float[_config.ShotsAmount];
-            _shotsRegistry = new bool[_config.ShotsAmount];
-
-            for (var i = 0; i < _randomTimes.Length; i++)
-                _randomTimes[i] = _config.ShotsDelay + Random.Range(0f, _config.ShotRandomDelay);
-
-            _updater.Add(this);
         }
     }
 }

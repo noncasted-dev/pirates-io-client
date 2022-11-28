@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: _name
       value: Tartan
       objectReference: {fileID: 0}
+    - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: _baseMaxSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1743216952723330936, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_RootOrder
       value: 0

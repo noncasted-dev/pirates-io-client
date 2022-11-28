@@ -66,10 +66,11 @@ namespace GamePlay.Services.TravelOverlays.Runtime
             if (_type != data.Type)
                 return;
 
-            Debug.Log($"On changed: data: {data.Type} {data.Amount}");
-
-            _enabledPlate.SetActive(false);
-            _disabledPlate.SetActive(false);
+            if (data.Amount == 0)
+            {
+                _enabledPlate.SetActive(false);
+                _disabledPlate.SetActive(true);
+            }
 
             _amount.text = data.Amount.ToString();
         }

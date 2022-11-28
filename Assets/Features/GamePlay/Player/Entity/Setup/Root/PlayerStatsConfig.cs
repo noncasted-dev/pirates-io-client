@@ -1,6 +1,8 @@
-﻿using GamePlay.Player.Entity.Components.Healths.Runtime;
+﻿using GamePlay.Items.Abstract;
+using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using UnityEngine;
 using VContainer;
 
@@ -12,8 +14,10 @@ namespace GamePlay.Player.Entity.Setup.Root
         [Inject]
         private void Construct(
             IShipResourcesPresenter resources,
-            IHealth health)
+            IHealth health,
+            IPlayerCargoStorage storage)
         {
+            _storage = storage;
             _health = health;
             _resources = resources;
         }
@@ -36,9 +40,13 @@ namespace GamePlay.Player.Entity.Setup.Root
 
         private IShipResourcesPresenter _resources;
         private IHealth _health;
+        private IPlayerCargoStorage _storage;
 
         public void OnAwake()
         {
+            if (_storage.Items.ContainsKey(ItemType.Cannon) == true)
+                _resources.SetCannons(_storage.Items[ItemType.Cannon].Count);
+            
             _health.SetMaxHealth(_baseHealth, _regenerationInTick);
 
             _resources.SetName(_name);
@@ -47,7 +55,6 @@ namespace GamePlay.Player.Entity.Setup.Root
             _resources.SetMaxWeight(_baseMaxWeight);
             _resources.SetMaxSpeed(_baseMaxSpeed);
 
-            _resources.SetCannons(_baseCannons);
             _resources.SetMaxCannons(_baseMaxCannons);
 
             _resources.SetTeam(_baseTeam);

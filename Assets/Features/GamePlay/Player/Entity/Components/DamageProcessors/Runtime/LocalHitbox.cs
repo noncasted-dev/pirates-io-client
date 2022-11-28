@@ -13,7 +13,7 @@ namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
 
         public void ReceiveDamage(Damage damage, bool isProjectileLocal)
         {
-            MessageBroker.Default.TriggerSound(PositionalSoundType.DamageReceived, damage.Origin);
+            Debug.Log("On damage");
         }
     }
 }

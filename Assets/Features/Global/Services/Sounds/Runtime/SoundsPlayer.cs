@@ -33,6 +33,8 @@ namespace Global.Services.Sounds.Runtime
         public EventReference MenuEnteredEvent;
         public EventReference MenuExitedEvent;
 
+        private float _health;
+        
         private Transform _fmodInstance;
 
         private void Start()
@@ -164,6 +166,11 @@ namespace Global.Services.Sounds.Runtime
         public void OnMenuExited()
         {
             RuntimeManager.PlayOneShot(MenuExitedEvent);
+        }
+
+        public void OnHealthChanged(float health)
+        {
+            _health = health;
         }
 
         private void AttachInstance(EventInstance instance, Vector2 position)

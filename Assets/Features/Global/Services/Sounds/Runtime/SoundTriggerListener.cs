@@ -30,6 +30,7 @@ namespace Global.Services.Sounds.Runtime
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             _healthListener?.Dispose();
 =======
 >>>>>>> main
@@ -44,6 +45,9 @@ namespace Global.Services.Sounds.Runtime
 >>>>>>> 9db0c19b09f4a28ade4e600cc9f3fed38807e4ab
 =======
 >>>>>>> main
+=======
+            _healthListener?.Dispose();
+>>>>>>> 9db0c19b09f4a28ade4e600cc9f3fed38807e4ab
         }
 
         private void OnSoundTriggered(SoundEvent data)

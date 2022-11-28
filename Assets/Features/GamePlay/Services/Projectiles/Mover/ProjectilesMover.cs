@@ -2,8 +2,10 @@
 using GamePlay.Common.Damages;
 using GamePlay.Services.Projectiles.Logs;
 using GamePlay.Services.Projectiles.Mover.Abstract;
+using Global.Services.Sounds.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
 using Local.Services.Abstract.Callbacks;
+using UniRx;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
@@ -135,6 +137,9 @@ namespace GamePlay.Services.Projectiles.Mover
 
                 if (damageReceiver.IsLocal == true && projectile.Actions.IsLocal == false)
                 {
+                    Debug.Log("On damage local");
+                    MessageBroker.Default.TriggerSound(PositionalSoundType.DamageReceived, data.CurrentPosition);
+
                     projectile.Actions.Destroy();
                     return;
                 }

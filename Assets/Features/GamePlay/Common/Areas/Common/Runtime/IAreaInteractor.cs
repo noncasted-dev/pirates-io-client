@@ -12,5 +12,8 @@ namespace GamePlay.Common.Areas.Common.Runtime
 
         void OnPortEntered();
         void OnPortExited();
+
+        void OnShallowEntered();
+        void OnShallowExited();
     }
 }

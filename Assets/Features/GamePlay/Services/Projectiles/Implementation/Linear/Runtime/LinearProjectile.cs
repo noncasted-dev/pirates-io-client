@@ -31,10 +31,15 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
         [SerializeField] [ReadOnly] private ShootParams _shootParams;
         [SerializeField] [ReadOnly] private bool _isLocal;
 
+        [SerializeField] private int _damage = 1;
+        [SerializeField] private float _distance = 10f;
+        [SerializeField] private float _speed = 20f;
+        
         [SerializeField] private BoxCollider2D _collider;
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private ParticleSystem _particleSystem;
         [SerializeField] private TrailRenderer _trail;
+        [SerializeField] private ProjectileType _type;
         
         private Actions _actions;
         private Movement _movement;
@@ -67,7 +72,8 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
                 OnTriggered,
                 OnCollided,
                 OnDropped,
-                _mover);
+                _mover,
+                _type);
 
             _movement = new Movement(
                 raycastData,
@@ -81,6 +87,8 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             bool isLocal,
             string creatorId)
         {
+            shootParams = new ShootParams(_damage, _speed, _distance);
+            
             _shootParams = shootParams;
             _isLocal = isLocal;
 

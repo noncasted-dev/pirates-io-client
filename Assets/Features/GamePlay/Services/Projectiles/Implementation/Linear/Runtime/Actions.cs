@@ -17,7 +17,8 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             Action triggeredCallback,
             Action collidedCallback,
             Action droppedCallback,
-            IProjectilesMover mover)
+            IProjectilesMover mover,
+            ProjectileType type)
         {
             _returnToPool = returnToPool;
             _droppedCallback = droppedCallback;
@@ -26,9 +27,11 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             _transform = transform;
             _projectile = projectile;
             _mover = mover;
+            _type = type;
         }
 
         private readonly IProjectilesMover _mover;
+        private readonly ProjectileType _type;
         private readonly LinearProjectile _projectile;
 
         private readonly Transform _transform;
@@ -60,7 +63,8 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 
             var damage = new Damage(
                 _shootParams.Damage,
-                _transform.position);
+                _transform.position,
+                _type);
 
             damageReceiver.ReceiveDamage(damage, IsLocal);
         }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: CannonBall
   _reference:
-    m_AssetGUID: 7e6f5fcfeb137cd4f95032fb654f0e7a
+    m_AssetGUID: 00fcb83de683a5c4ca9c8f318f95630f
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

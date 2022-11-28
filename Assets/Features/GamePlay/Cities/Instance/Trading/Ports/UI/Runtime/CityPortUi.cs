@@ -127,7 +127,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _storedView.Fill(data.Cargo, data.PriceProvider);
 
             _stockView.Fill(data.Stock, data.PriceProvider);
-            _stockShips.Fill(data.Ships);
+            _stockShips.Fill(data.Ships, _reputation);
             
             _cargoTrade.Setup(data.PriceProvider);
             _stockTrade.Setup(data.PriceProvider);
@@ -155,8 +155,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         {
             _tradeBody.SetActive(false);
             
-            Debug.Log("Completed");
-
             var completed = new TradeCompletedEvent(Redraw, result);
 
             MessageBroker.Default.Publish(completed);
@@ -172,12 +170,11 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
             _tradeBody.SetActive(false);
             
-            Debug.Log("Redraw");
             _shipView.ResetStats();
 
             _storedView.Fill(cargo, priceProvider);
             _stockView.Fill(stock, priceProvider);
-            _stockShips.Fill(ships);
+            _stockShips.Fill(ships, _reputation);
         }
     }
 }

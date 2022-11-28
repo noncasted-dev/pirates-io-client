@@ -21,6 +21,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime
 
         [SerializeField] private Image _flag;
         [SerializeField] private TMP_Text _reputationAmount;
+        [SerializeField] private TMP_Text _sail;
         [SerializeField] private TMP_Text _load;
         [SerializeField] private TMP_Text _speed;
 
@@ -58,6 +59,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime
 
             OnWeightChanged(resources.Weight, resources.MaxWeight);
             OnSpeedChanged(resources.Speed);
+            OnSailChanged(resources.Sail);
         }
         
         private void UpdateData()
@@ -72,6 +74,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime
 
             OnWeightChanged(resources.Weight, resources.MaxWeight);
             OnSpeedChanged(resources.Speed);
+            OnSailChanged(resources.Sail);
         }
 
         private void OnSpeedChanged(int current)
@@ -83,6 +86,11 @@ namespace GamePlay.Services.TravelOverlays.Runtime
         {
             var load = (current / (float)max).ToString("#0%");
             _load.text = load;
+        }
+
+        private void OnSailChanged(int current)
+        {
+            _sail.text = $"{current}%";
         }
     }
 }

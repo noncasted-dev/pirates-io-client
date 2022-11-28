@@ -18,5 +18,8 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 
         void SetMaxSpeed(int maxSpeed);
         void SetSpeed(int speed);
+
+        void SetShallowIgnorance(bool isIgnored);
+        void SetShallowDamage(int damage);
     }
 }

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20557cce3dd3484795305bab5584c176, type: 3}
+  m_Name: Item_Ship_8_FirstRate
+  m_EditorClassIdentifier: 
+  _weight: 1
+  _name: FirstRate
+  _isInfinite: 0
+  _icon: {fileID: 21300000, guid: 11a8b267c3bfc2f47a3ab7cfb4b820b0, type: 3}
+  _maxTeam: 80
+  _maxWeight: 80
+  _maxCannons: 80
+  _maxHealth: 80
+  _price: 80
+  _maxSpeed: 80
+  _requiredReputation: 200
+  _type: 15
+  _local:
+    m_AssetGUID: cb99d802c2671a343ba233f12f9501d1
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _remote:
+    m_AssetGUID: a373fb40ea72592458677491f730b2ad
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

@@ -89,8 +89,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void OnDisable()
         {
-            Debug.Log("unLisen");
-
             _enterListener?.Dispose();
             _exitListener?.Dispose();
             _requestListener?.Dispose();

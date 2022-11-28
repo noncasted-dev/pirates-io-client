@@ -113,8 +113,6 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 
         public void SetCannons(int cannons)
         {
-            Debug.Log($"Set cannons: {cannons}");
-            
             _cannons = cannons;
 
             CannonsChanged?.Invoke(_cannons, _maxCannons);

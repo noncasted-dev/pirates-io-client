@@ -8,9 +8,15 @@ namespace Global.Services.Sounds.Runtime
     [DisallowMultipleComponent]
     public class SoundsPlayer : MonoBehaviour
     {
-        [Space(30)] [Header("Shot")] [SerializeField]
+        [Space(30)] [Header("Battle")] [SerializeField]
         public EventReference ShotEvent;
         public FMOD.Studio.EventInstance ShotInstance;
+
+        public EventReference DamageEvent;
+        public FMOD.Studio.EventInstance DamageInstance;
+
+        public EventReference DamageReceivedEvent;
+        public FMOD.Studio.EventInstance DamageReceivedInstance;
 
         [Space(30)] [Header("Ambience")] [SerializeField]
         public EventReference AmbEvent;
@@ -22,13 +28,10 @@ namespace Global.Services.Sounds.Runtime
 
         [Space(30)] [Header("UI")] [SerializeField]
         public EventReference UiOpenedEvent;
-        //public FMOD.Studio.EventInstance UiOpenedInstance;
-
         public EventReference ButtonClickedEvent;
-        //public FMOD.Studio.EventInstance ButtonClickedInstance;
-
         public EventReference OverButtonEvent;
-        //public FMOD.Studio.EventInstance OverButtonInstance;
+        public EventReference MenuEnteredEvent;
+        public EventReference MenuExitedEvent;
 
         private Transform _fmodInstance;
 
@@ -41,78 +44,98 @@ namespace Global.Services.Sounds.Runtime
             _fmodInstance = fmodObject.transform;
         }
 
-        public void OnCityEntered()
-        {
-            AmbInstance.setParameterByName("amb_condition", 2f);
-            Debug.Log("city_enter");
-        }
-
+        //Amb
         public void OnCityExited()
         {
+            AmbInstance.setParameterByName("amb_condition", 0f);
+            Debug.Log("open sea");
         }
-
         public void OnPortEntered()
         {
             AmbInstance.setParameterByName("amb_condition", 1f);
+            Debug.Log("port_enter");
         }
-
+        public void OnCityEntered()
+        {
+            AmbInstance.setParameterByName("amb_condition", 2f);
+            Debug.Log("city entered");
+        }
         public void OnPortExited()
         {
             AmbInstance.setParameterByName("amb_condition", 2f);
-            Debug.Log("portExit");
+            Debug.Log("port exit");
         }
 
+        //Music
         public void OnBattleEntered()
         {
+            Debug.Log("BattleEntered");
         }
 
+        
         public void OnBattleExited()
         {
+            Debug.Log("BattleExited");
         }
 
+
+        //Battle
         public void OnCannonBallShot(Vector2 position)
         {
             PlayShot(0f, position);
-            
-            Debug.Log("boom");
+            Debug.Log("boom CannonBall");
         }
 
         public void OnShrapnelShot(Vector2 position)
         {
-            PlayShot(1f, position);
-            
-            Debug.Log("boom");
+            PlayShot(1f, position);           
+            Debug.Log("boom Shrapnel");
         }
 
         public void OnKnuppelShot(Vector2 position)
         {
-            PlayShot(2f, position);
-            
-            Debug.Log("boom");
+            PlayShot(2f, position);           
+            Debug.Log("boom Knuppel");
         }
 
         private void PlayShot(float parameter, Vector2 position)
         {
             ShotInstance = RuntimeManager.CreateInstance(ShotEvent);
-            AttachInstance(ShotInstance, position);
-            
+            AttachInstance(ShotInstance, position);           
             ShotInstance.setParameterByName("shot_type", parameter);
             ShotInstance.start();
             ShotInstance.release();
         }
-
+        //Damage
         public void OnProjectileDropped(Vector2 position)
         {
+            ////PlayDamage(0f, position);
+            //DamageInstance = RuntimeManager.CreateInstance(DamageEvent);
+            //DamageInstance.setParameterByName("damage_type", 0f);
+            //RuntimeManager.PlayOneShot(DamageEvent);
         }
 
         public void OnEnemyDamaged(Vector2 position)
         {
+            PlayDamage(1f, position);
         }
 
         public void OnDamageReceived()
         {
+            RuntimeManager.PlayOneShot(DamageReceivedEvent);
+            Debug.Log("We are damaged!");
+
         }
 
+        private void PlayDamage(float parameter, Vector2 position)
+        {
+            DamageInstance = RuntimeManager.CreateInstance(DamageEvent);
+            AttachInstance(ShotInstance, position);
+            DamageInstance.setParameterByName("damage_type", parameter);
+            DamageInstance.start();
+            DamageInstance.release();
+        }
+        //UI
         public void OnUiOpened()
         {
             RuntimeManager.PlayOneShot(UiOpenedEvent);
@@ -120,18 +143,22 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnOverButton()
         {
+            RuntimeManager.PlayOneShot(OverButtonEvent);
         }
 
         public void OnButtonClicked()
         {
+            RuntimeManager.PlayOneShot(ButtonClickedEvent);
         }
 
         public void OnMenuEntered()
         {
+            RuntimeManager.PlayOneShot(MenuEnteredEvent);
         }
 
         public void OnMenuExited()
         {
+            RuntimeManager.PlayOneShot(MenuExitedEvent);
         }
 
         private void AttachInstance(EventInstance instance, Vector2 position)

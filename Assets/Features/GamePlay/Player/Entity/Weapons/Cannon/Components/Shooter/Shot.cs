@@ -70,7 +70,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 
             _updater.Add(this);
         }
-        
+
         public void OnUpdate(float delta)
         {
             _time += delta;
@@ -94,11 +94,9 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 projectile.Fire(direction, parameters, true, _cannonReplicator.PlayerId);
                 var vfx = _vfx.Get(shootPosition);
                 vfx.transform.rotation = Quaternion.Euler(0f, 0f, resultAngle);
-                
+
                 _shotsRegistry[i] = true;
                 _shotCounter++;
-                
-                MessageBroker.Default.TriggerSound(PositionalSoundType.CannonBallShot, shootPosition);
 
                 _cannonReplicator.Replicate(
                     _type,
@@ -107,6 +105,9 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                     parameters.Speed,
                     parameters.Damage,
                     parameters.Distance);
+
+                if (i == 0)
+                    MessageBroker.Default.TriggerSound(PositionalSoundType.CannonBallShot, shootPosition);
             }
 
             if (_shotCounter == _shotsCount || _cancellation.IsCancellationRequested == true)

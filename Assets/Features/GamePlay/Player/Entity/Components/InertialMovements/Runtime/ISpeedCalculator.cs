@@ -3,5 +3,7 @@
     public interface ISpeedCalculator
     {
         float GetSpeed();
+        void OnShallowEntered();
+        void OnShallowExited();
     }
 }

@@ -37,6 +37,8 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         private int _team;
 
         private IDisposable _cargoChangedListener;
+        private bool _isIgnored;
+        private int _shallowDamage;
 
         public string Name => _name;
         public Sprite Icon => _icon;
@@ -54,6 +56,8 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         public int MaxTeam => _maxTeam;
         public int Team => _team;
         public int Sail => _sail.Strength;
+        public bool IsShallowIgnored => _isIgnored;
+        public int ShallowDamage => _shallowDamage;
         public event Action<int, int> HealthChanged;
         public event Action<int, int> WeightChanged;
         public event Action<int, int> CannonsChanged;
@@ -147,6 +151,16 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             
             SpeedChanged?.Invoke(_speed, _maxSpeed);
             MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
+        }
+
+        public void SetShallowIgnorance(bool isIgnored)
+        {
+            _isIgnored = isIgnored;
+        }
+
+        public void SetShallowDamage(int damage)
+        {
+            _shallowDamage = damage;
         }
 
         private void OnSailChanged()

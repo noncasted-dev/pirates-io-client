@@ -39,7 +39,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
         {
             _amount = serializer.ReadInt();
             _origin = serializer.ReadVector();
-            _type = (ProjectileType)serializer.ReadInt();
+            _type = (ProjectileType) serializer.ReadInt();
         }
     }
 }

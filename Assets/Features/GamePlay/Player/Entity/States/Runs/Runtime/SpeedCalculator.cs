@@ -18,6 +18,8 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
         private readonly IShipResourcesPresenter _resourcesPresenter;
         private readonly ISail _sail;
 
+        private bool _isInShallow;
+
         public float GetSpeed()
         {
             var sail = _sail.Strength / 100f;
@@ -29,8 +31,21 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
 
             var speed = _resources.MaxSpeed * sail * load;
 
+            if (_isInShallow == true)
+                speed *= 0.8f;
+
             _resourcesPresenter.SetSpeed(Mathf.CeilToInt(speed));
             return speed;
+        }
+
+        public void OnShallowEntered()
+        {
+            _isInShallow = true;
+        }
+
+        public void OnShallowExited()
+        {
+            _isInShallow = false;
         }
     }
 }

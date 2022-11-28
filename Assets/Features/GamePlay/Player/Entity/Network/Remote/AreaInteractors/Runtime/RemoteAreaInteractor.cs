@@ -36,5 +36,14 @@ namespace GamePlay.Player.Entity.Network.Remote.AreaInteractors.Runtime
         {
             _spriteView.Enable();
         }
+
+        public void OnShallowEntered()
+        {
+            
+        }
+
+        public void OnShallowExited()
+        {
+        }
     }
 }

@@ -37,7 +37,10 @@ namespace GamePlay.Player.Entity.Setup.Root
 
         [SerializeField] private int _baseTeam;
         [SerializeField] private int _baseMaxTeam;
-
+        
+        [SerializeField] private int _shallowDamage = 5;
+        [SerializeField] private bool _isShallowIgnored;
+        
         private IShipResourcesPresenter _resources;
         private IHealth _health;
         private IPlayerCargoStorage _storage;
@@ -59,6 +62,9 @@ namespace GamePlay.Player.Entity.Setup.Root
 
             _resources.SetTeam(_baseTeam);
             _resources.SetMaxTeam(_baseMaxTeam);
+
+            _resources.SetShallowIgnorance(_isShallowIgnored);
+            _resources.SetShallowDamage(_shallowDamage);
         }
     }
 }

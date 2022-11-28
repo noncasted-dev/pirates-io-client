@@ -62,7 +62,7 @@ namespace Global.Services.Sounds.Runtime
         }
         public void OnPortExited()
         {
-            AmbInstance.setParameterByName("amb_condition", 2f);
+            //AmbInstance.setParameterByName("amb_condition", 2f);
             Debug.Log("port exit");
         }
 
@@ -122,7 +122,7 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnEnemyDamaged(Vector2 position)
         {
-            PlayDamage(1f, position);
+           PlayDamage(1f, position);
         }
 
         public void OnDamageReceived()

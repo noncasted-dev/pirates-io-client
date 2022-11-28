@@ -91,21 +91,21 @@ MonoBehaviour:
       Data2: 1209531650
       Data3: 1672670856
       Data4: 2089033844
-    Path: event:/damage_impact
+    Path: event:/Impacts/damage_impact
   DamageReceivedEvent:
     Guid:
       Data1: -1735059408
       Data2: 1177255832
       Data3: 1771578815
       Data4: -1544184326
-    Path: event:/damage_received
+    Path: event:/Impacts/damage_received
   AmbEvent:
     Guid:
-      Data1: 192758556
-      Data2: 1076713483
-      Data3: 1544111802
-      Data4: 2052486217
-    Path: event:/amb
+      Data1: 276542091
+      Data2: 1155248546
+      Data3: 907026067
+      Data4: 2069366796
+    Path: event:/Ambience/amb2
   MusicEvent:
     Guid:
       Data1: -2137127258

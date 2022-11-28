@@ -46,8 +46,10 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
 
         public void Enter()
         {
-            if (_isDead == false)
-                _isDead = true;
+            if (_isDead == true)
+                return;
+            
+            _isDead = true;
 
             _stateMachine.Enter(this);
 

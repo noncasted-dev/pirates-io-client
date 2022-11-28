@@ -11,6 +11,7 @@ public class FireController : MonoBehaviour
     [SerializeField] private Vector2 _EmmitRange;
     [SerializeField] [Range(0f,1f)]private float _value;
     private float _valueLast;
+    private bool effectActive;
 
     /// <summary>
     /// Принимает значение от 0 до 1, где 0 это 0 HP а 1 это aekk HP
@@ -19,11 +20,22 @@ public class FireController : MonoBehaviour
     {
         value = Mathf.Clamp01(value);
         _value = value;
+        _valueLast = value;
         if (_value > 0.5f)
-            _baseParticleSystem.Stop();
+        {
+            if (effectActive)
+            {
+                _baseParticleSystem.Stop();
+                effectActive = false;
+            }
+        }
         else
         {
-            _baseParticleSystem.Play();
+            if (effectActive == false)
+            {
+                effectActive = true;
+                _baseParticleSystem.Play();
+            }
             var module = _fireEmmiterParticleSystem.emission;
             float t = Mathf.Clamp01(((_value  * 2f) - 0.2f) / 0.8f);
             float circleArea = 2f * Mathf.PI * _fireEmmiterParticleSystem.shape.radius;

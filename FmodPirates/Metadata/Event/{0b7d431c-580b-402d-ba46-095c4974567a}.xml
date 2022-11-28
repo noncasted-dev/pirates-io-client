@@ -173,14 +173,11 @@
 		</relationship>
 	</object>
 	<object class="SoundScatterer" id="{82ae3b6b-b9e7-46f5-906c-c8fec3933874}">
-		<property name="start">
-			<value>4</value>
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
 		</property>
 		<property name="length">
 			<value>2</value>
-		</property>
-		<property name="volume">
-			<value>10</value>
 		</property>
 		<property name="polyphony">
 			<value>7</value>
@@ -192,11 +189,17 @@
 			<value>4500</value>
 		</property>
 		<property name="spawnRate">
-			<value>58</value>
+			<value>48</value>
+		</property>
+		<property name="minimumScatterDistance">
+			<value>5.80000019</value>
 		</property>
 		<property name="maximumScatterDistance">
-			<value>6.80000019</value>
+			<value>80</value>
 		</property>
+		<relationship name="triggerConditions">
+			<destination>{6187a12c-f21f-4319-a275-24a47f9cace9}</destination>
+		</relationship>
 		<relationship name="sound">
 			<destination>{a0163b71-9c6c-470d-8357-ca3f95ba15f4}</destination>
 		</relationship>
@@ -236,7 +239,7 @@
 		</relationship>
 		<relationship name="triggerConditions">
 			<destination>{9bd6b538-84fe-4f1d-84cb-c011dda0b06c}</destination>
-			<destination>{89ef2704-f588-4a73-8443-a9acc0edd490}</destination>
+			<destination>{aa7fba66-56d5-4e19-a37d-02241abbbb7c}</destination>
 		</relationship>
 	</object>
 	<object class="TransitionRegion" id="{85e604da-36b7-49f9-96a7-a958c417d245}">
@@ -370,6 +373,17 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{0fa59ec1-b7dd-4e61-b03e-64ca5e85e50a}" />
+	<object class="ParameterCondition" id="{6187a12c-f21f-4319-a275-24a47f9cace9}">
+		<property name="minimum">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{da57d6f5-d008-4026-9fdd-22b9b563229a}</destination>
+		</relationship>
+	</object>
 	<object class="MultiSound" id="{a0163b71-9c6c-470d-8357-ca3f95ba15f4}">
 		<property name="playlistMode">
 			<value>1</value>
@@ -399,7 +413,7 @@
 			<destination>{da57d6f5-d008-4026-9fdd-22b9b563229a}</destination>
 		</relationship>
 	</object>
-	<object class="ParameterCondition" id="{89ef2704-f588-4a73-8443-a9acc0edd490}">
+	<object class="ParameterCondition" id="{aa7fba66-56d5-4e19-a37d-02241abbbb7c}">
 		<property name="minimum">
 			<value>2</value>
 		</property>

@@ -8,90 +8,10 @@
 [LOG] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000208D91D9068 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001E9C08564E8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
-[LOG] SoundI::release                          :  (0000020BE51C5E58)
-[LOG] SoundI::release                          :     sfx_loop_waves_01 (00000208D9087B18)
-[LOG] SoundI::release                          :  (0000020BE51C5CE8)
-[LOG] SoundI::release                          :     sfx_amb_sea_01 (00000208D9088198)
-[LOG] SoundI::release                          :  (0000020BE51C8F38)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_01 (00000208D9084238)
-[LOG] SoundI::release                          :  (0000020BE51C69D8)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_02 (00000208D90877D8)
-[LOG] SoundI::release                          :  (0000020BE51C4478)
-[LOG] SoundI::release                          :     sfx_amb_port_01 (00000208D9083BB8)
-[LOG] SoundI::release                          :  (0000020BE51C5728)
-[LOG] SoundI::release                          :     sfx_amb_forest (00000208D9083058)
-[LOG] SoundI::release                          :  (0000020BE51C6588)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_03 (00000208D90843D8)
-[LOG] SoundI::release                          :  (0000020BE51C4A38)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_04 (00000208D9085418)
-[LOG] SoundI::release                          :  (0000020BE51C6868)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_05 (00000208D90850D8)
-[LOG] SoundI::release                          :  (0000020BE51C80D8)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_06 (00000208D9085A98)
-[LOG] SoundI::release                          :  (0000020BE51C66F8)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_07 (00000208D9084098)
-[LOG] SoundI::release                          :  (0000020BE51C62A8)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_08 (00000208D9087E58)
-[LOG] SoundI::release                          :  (0000020BE51C6138)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_09 (00000208D9086E18)
-[LOG] SoundI::release                          :  (0000020BE51C3618)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_10 (00000208D9082EB8)
-[LOG] SoundI::release                          :  (0000020BE51C7108)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_11 (00000208D9084D98)
-[LOG] SoundI::release                          :  (0000020BE51C4028)
-[LOG] SoundI::release                          :     sfx_amb_tropical_birds_12 (00000208D9088338)
-[LOG] SoundI::release                          :  (0000020BE51C5898)
-[LOG] SoundI::release                          :     sfx_amb_seagulls_01 (00000208D90872F8)
-[LOG] SoundI::release                          :  (0000020BE51C79A8)
-[LOG] SoundI::release                          :     sfx_amb_seagulls_02 (00000208D9083EF8)
-[LOG] SoundI::release                          :  (0000020BE51C4D18)
-[LOG] SoundI::release                          :     sfx_amb_seagulls_03 (00000208D90831F8)
-[LOG] SoundI::release                          : Water, Splash, Child Jump Into Pool SND32721.wav (00000208D9082358)
-[LOG] SoundI::release                          : Water, Splash, Child Jump Into Pool SND32721 1.wav (00000208D90824F8)
-[LOG] SoundI::release                          : Water, Splash, Child Jump Into Pool SND32721 2.wav (00000208D9085F78)
-[LOG] SoundI::release                          : sfx_shot_impact_01.wav (00000208D9086118)
-[LOG] SoundI::release                          : sfx_shot_impact_02.wav (00000208D9086AD8)
-[LOG] SoundI::release                          : sfx_shot_impact_03.wav (00000208D90862B8)
-[LOG] SoundI::release                          : sfx_shot_impact_04.wav (00000208D9087CB8)
-[LOG] SoundI::release                          : sfx_shot_impact_05.wav (00000208D9086458)
-[LOG] SoundI::release                          : sfx_shot_impact_06.wav (00000208D9087FF8)
-[LOG] SoundI::release                          : sfx_ship_shot_01.wav (00000208D9083878)
-[LOG] SoundI::release                          : sfx_ship_shot_02.wav (00000208D90858F8)
-[LOG] SoundI::release                          : sfx_ship_shot_03.wav (00000208D9085C38)
-[LOG] SoundI::release                          : sfx_ship_shot_04.wav (00000208D9088678)
-[LOG] SoundI::release                          : sfx_ship_shot_05.wav (00000208D9085DD8)
-[LOG] SoundI::release                          :  (0000020BE51C6B48)
-[LOG] SoundI::release                          :     sfx_amb_seagulls_04 (00000208D90848B8)
-[LOG] SoundI::release                          :  (0000020BE51C7B18)
-[LOG] SoundI::release                          :     sfx_amb_seagulls_05 (00000208D9084A58)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] ProfileClient::markForDead               : Closing client connection
-[LOG] FMOD_OS_Net_Read                         : Interrupted.[LOG] ProfileClient::recvThreadLoopFunction    : Socket disconnected
-[LOG] Thread::callback                         : FMOD profiler thread (recv) finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD profiler thread (send) finished.
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] SystemI::close                           : Closed.

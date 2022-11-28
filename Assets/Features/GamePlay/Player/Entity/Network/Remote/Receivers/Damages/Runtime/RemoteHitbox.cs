@@ -1,10 +1,12 @@
 ﻿using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
 using GamePlay.Common.Damages;
+using GamePlay.Factions.Common;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using Ragon.Client;
+using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
@@ -15,8 +17,10 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
             PlayerNetworkRoot root,
             IPlayerEventSender eventSender,
             IPlayerEventListener eventListener,
-            IObjectProvider<AnimatedVfx> explosion)
+            IObjectProvider<AnimatedVfx> explosion,
+            FactionType faction)
         {
+            _faction = faction;
             _explosion = explosion;
             _eventSender = eventSender;
             _root = root;
@@ -32,6 +36,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
         private IObjectProvider<AnimatedVfx> _explosion;
 
         private PlayerNetworkRoot _root;
+        private FactionType _faction;
 
         public bool IsLocal => _root.IsLocal;
         public string Id => _root.Entity.Owner.Id;
@@ -46,7 +51,11 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
             explosion.transform.RotateAlong(direction);
 
             if (isProjectileLocal == true)
+            {
                 _eventSender.ReplicateEvent(damageEvent);
+                
+                MessageBroker.Default.Publish(new RemoteDamagedEvent(_faction));
+            }
         }
 
         private void OnDamageReceived(RagonPlayer player, DamageEvent damage)

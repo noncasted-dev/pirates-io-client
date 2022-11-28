@@ -1,5 +1,6 @@
 ﻿using System;
 using GamePlay.Factions.Common;
+using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
 using NaughtyAttributes;
 using UniRx;
 using UnityEngine;
@@ -20,9 +21,21 @@ namespace GamePlay.Services.Reputation.Runtime
         
         private FactionType _faction;
 
+        private IDisposable _damageListener;
+
         public int Value => _value;
         public Sprite Flag => GetFlag();
         public FactionType Faction => _faction;
+
+        private void OnEnable()
+        {
+            _damageListener = MessageBroker.Default.Receive<RemoteDamagedEvent>().Subscribe(OnRemoteDamaged);
+        }
+
+        private void OnDisable()
+        {
+            _damageListener?.Dispose();
+        }
 
         public int ConvertFromMoney(int spend)
         {
@@ -61,6 +74,14 @@ namespace GamePlay.Services.Reputation.Runtime
                 FactionType.Spain => _spainFlag,
                 _ => throw new ArgumentOutOfRangeException()
             };
+        }
+
+        private void OnRemoteDamaged(RemoteDamagedEvent data)
+        {
+            if (data.Faction == _faction)
+                Reduce(5);
+            else
+                Add(5);
         }
     }
 }

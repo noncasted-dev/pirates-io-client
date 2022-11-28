@@ -8,6 +8,7 @@ using GamePlay.Player.Entity.Setup.Root;
 using GamePlay.Services.Common.Scope;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Logs;
+using GamePlay.Services.Reputation.Runtime;
 using Global.Services.AssetsFlow.Runtime.Abstract;
 using Global.Services.Network.Instantiators.Runtime;
 using Global.Services.Profiles.Storage;
@@ -28,8 +29,10 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             IPlayerEntityPresenter entityPresenter,
             IProfileStorageProvider profileStorageProvider,
             PlayerFactoryConfigAsset configAsset,
-            PlayerFactoryLogger logger)
+            PlayerFactoryLogger logger,
+            IReputation reputation)
         {
+            _reputation = reputation;
             _instantiatorFactory = instantiatorFactory;
             _entityPresenter = entityPresenter;
             _profileStorageProvider = profileStorageProvider;
@@ -48,10 +51,11 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
         private IProfileStorageProvider _profileStorageProvider;
         private IPlayerEntityPresenter _entityPresenter;
         private IAssetInstantiatorFactory _instantiatorFactory;
+        private IReputation _reputation;
 
         public async UniTask<IPlayerRoot> Create(Vector2 position, ShipType type)
         {
-            var payload = new PlayerPayload(_profileStorageProvider.UserName, type);
+            var payload = new PlayerPayload(_profileStorageProvider.UserName, type, _reputation.Faction);
 
             var networkObject = await _networkInstantiator.Instantiate<PlayerNetworkRoot, PlayerPayload>(
                 _configAsset.NetworkPrefab,

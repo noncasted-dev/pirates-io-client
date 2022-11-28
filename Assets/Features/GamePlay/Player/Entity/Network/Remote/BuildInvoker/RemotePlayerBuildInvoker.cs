@@ -12,7 +12,7 @@ namespace GamePlay.Player.Entity.Network.Remote.BuildInvoker
                 return;
 
             var payload = Entity.GetSpawnPayload<PlayerPayload>();
-            RemotePlayerBuilder.Instance.Build(gameObject, payload.ShipType);
+            RemotePlayerBuilder.Instance.Build(gameObject, payload.ShipType, payload.Faction);
         }
     }
 }

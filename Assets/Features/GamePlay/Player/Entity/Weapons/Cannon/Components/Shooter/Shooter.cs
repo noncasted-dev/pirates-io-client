@@ -95,12 +95,13 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 
             var item = _selector.Selected.ConvertToItemType();
 
-            if (shots > _cargo.Items[item].Count)
-                shots = _cargo.Items[item].Count;
-
             if (_selector.Selected != ProjectileType.Fishnet)
-                _cargo.Reduce(item, shots);
+            {
+                if (shots > _cargo.Items[item].Count)
+                    shots = _cargo.Items[item].Count;
 
+                _cargo.Reduce(item, shots);
+            }
             var shot = new Shot(
                 _updater,
                 _cannonReplicator,

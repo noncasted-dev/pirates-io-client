@@ -7,7 +7,9 @@ using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Implementation.Linear.Runtime;
 using GamePlay.Services.Projectiles.Replicator.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
+using Global.Services.Sounds.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
+using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
@@ -95,6 +97,8 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 
                 _shotsRegistry[i] = true;
                 _shotCounter++;
+                
+                MessageBroker.Default.TriggerSound(PositionalSoundType.CannonBallShot, shootPosition);
 
                 _cannonReplicator.Replicate(
                     _type,

@@ -2,6 +2,8 @@
 using GamePlay.Common.Damages;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Mover.Abstract;
+using Global.Services.Sounds.Runtime;
+using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
@@ -83,6 +85,8 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
         {
             _mover.Remove(_projectile);
             _droppedCallback?.Invoke();
+            
+            MessageBroker.Default.TriggerSound(PositionalSoundType.ProjectileDropped, _transform.position);
         }
     }
 }

@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4476201790910471897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4476201790910471898}
+  - component: {fileID: 4476201790910471899}
+  - component: {fileID: 3348803147054183000}
+  - component: {fileID: -3511339214736897306}
+  m_Layer: 0
+  m_Name: SoundsPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4476201790910471898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476201790910471897}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4476201790910471899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476201790910471897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1d8d620cc84949969c217b204a1dc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: -3511339214736897306}
+--- !u!114 &3348803147054183000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476201790910471897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9468c5f457ace64f8d4df6d642b107f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadEvent: 1
+  UnloadEvent: 0
+  Banks:
+  - Master
+  - Master.strings
+  CollisionTag: 
+  PreloadSamples: 0
+--- !u!114 &-3511339214736897306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476201790910471897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806fbdfa58d54716bdf4c3c4c333b63a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShotEvent:
+    Guid:
+      Data1: -691857096
+      Data2: 1266034361
+      Data3: -1186456135
+      Data4: 247846514
+    Path: event:/shot
+  DamageEvent:
+    Guid:
+      Data1: -1828732514
+      Data2: 1209531650
+      Data3: 1672670856
+      Data4: 2089033844
+    Path: event:/damage_impact
+  DamageReceivedEvent:
+    Guid:
+      Data1: -1735059408
+      Data2: 1177255832
+      Data3: 1771578815
+      Data4: -1544184326
+    Path: event:/damage_received
+  AmbEvent:
+    Guid:
+      Data1: 192758556
+      Data2: 1076713483
+      Data3: 1544111802
+      Data4: 2052486217
+    Path: event:/amb
+  MusicEvent:
+    Guid:
+      Data1: -2137127258
+      Data2: 1299442491
+      Data3: 366289036
+      Data4: 997880597
+    Path: event:/music
+  UiOpenedEvent:
+    Guid:
+      Data1: -212564602
+      Data2: 1124305201
+      Data3: -2120842880
+      Data4: -1038651579
+    Path: event:/port
+  ButtonClickedEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  OverButtonEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  MenuEnteredEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  MenuExitedEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

@@ -1,0 +1,20 @@
+{
+    "name": "Global.Sounds.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:401398c75a71e5444a495125c9dd1a21",
+        "GUID:fb9b00a9a42c4c1459774b1ef88fcd74",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:0c752da273b17c547ae705acf0f2adf2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

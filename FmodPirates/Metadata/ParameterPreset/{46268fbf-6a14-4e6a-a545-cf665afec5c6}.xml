@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{46268fbf-6a14-4e6a-a545-cf665afec5c6}">
+		<property name="name">
+			<value>shot_type</value>
+		</property>
+		<relationship name="folder">
+			<destination>{109c050f-66d6-4411-a5ed-d70da2814abf}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{4eb43375-d7d4-4db8-94fd-d548ae82cc66}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{4eb43375-d7d4-4db8-94fd-d548ae82cc66}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>CannonBall</value>
+			<value>Shrapnel</value>
+			<value>Knuppel</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

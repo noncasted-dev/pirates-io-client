@@ -1,4 +1,5 @@
-﻿using Global.Services.UiStateMachines.Runtime;
+﻿using Global.Services.Sounds.Runtime;
+using Global.Services.UiStateMachines.Runtime;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -35,11 +36,15 @@ namespace Menu.Services.UI.Runtime
         private void OnEnable()
         {
             _playButton.onClick.AddListener(OnPlayClicked);
+
+            MessageBroker.Default.TriggerSound(SoundType.MenuEntered);
         }
 
         private void OnDisable()
         {
             _playButton.onClick.RemoveListener(OnPlayClicked);
+            
+            MessageBroker.Default.TriggerSound(SoundType.MenuExited);
         }
 
         public void Recover()

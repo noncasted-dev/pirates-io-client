@@ -28430,7 +28430,7 @@ MonoBehaviour:
   - {fileID: 1475773211}
   - {fileID: 523673136}
   _cullingRate: 10
-  _cullingDistance: 100
+  _cullingDistance: 110
 --- !u!1 &1965480559
 GameObject:
   m_ObjectHideFlags: 0

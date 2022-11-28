@@ -38,6 +38,7 @@
         public const string CityPort = _services + "CityPortUi/";
         public const string Wallet = _services + "Wallet/";
         public const string Reputation = _services + "Reputation/";
+        public const string Map = _services + "Map/";
 
         public const string NetworkBootstrapper = _network + "Bootstrapper/";
         public const string RemotePlayerBuilder = _network + "RemotePlayerBuilder/";

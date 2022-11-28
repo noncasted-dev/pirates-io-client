@@ -215,10 +215,267 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters: []
+<<<<<<< HEAD
   MinDistance: 0
   MaxDistance: 300
   Length: 2326
 --- !u!114 &-2276293019237004551
+=======
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1236
+--- !u!114 &-1032485652129316907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/shot
+  m_EditorClassIdentifier: 
+  Path: event:/shot
+  Guid:
+    Data1: -691857096
+    Data2: 1266034361
+    Data3: -1186456135
+    Data4: 247846514
+  Banks:
+  - {fileID: 4782442716932992266}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -5834843703400018272}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 3582555454610402830}
+  - {fileID: 4782442716932992266}
+  EditorEvents:
+  - {fileID: -5543439831981730003}
+  - {fileID: -1032485652129316907}
+  - {fileID: -1289041177073043000}
+  - {fileID: -8555205400553051430}
+  - {fileID: -2555637242263382507}
+  - {fileID: -6421993440418424475}
+  - {fileID: 4858439983126258615}
+  - {fileID: -5675053066238416131}
+  - {fileID: 1873158810801267528}
+  - {fileID: -3827514181919625482}
+  - {fileID: 669502784843091532}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 4782442716932992266}
+  StringsBanks:
+  - {fileID: 3582555454610402830}
+  cacheTime: 638052715148287891
+  cacheVersion: 131593
+--- !u!114 &669502784843091532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/menu exit
+  m_EditorClassIdentifier: 
+  Path: event:/UI/menu exit
+  Guid:
+    Data1: -1264647438
+    Data2: 1245127829
+    Data3: 448172433
+    Data4: 1432106250
+  Banks:
+  - {fileID: 4782442716932992266}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1434802825589905288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FmodPirates/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638049999170051663
+  FileSizes:
+  - Name: Desktop
+    Value: 1006496
+  Exists: 1
+--- !u!114 &1873158810801267528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/over button
+  m_EditorClassIdentifier: 
+  Path: event:/UI/over button
+  Guid:
+    Data1: 1907474110
+    Data2: 1141088275
+    Data3: 91923846
+    Data4: 997490305
+  Banks:
+  - {fileID: 4782442716932992266}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1882857375920721563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/amb/music_condition
+  m_EditorClassIdentifier: 
+  Name: music_condition
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 1138535495
+    data2: 4175132125
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Value A
+  - Value B
+  - Value C
+  Exists: 1
+--- !u!114 &3582555454610402830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FmodPirates/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638052715148287891
+  FileSizes:
+  - Name: Desktop
+    Value: 1392
+  Exists: 1
+--- !u!114 &4064632750878532970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Desktop/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FmodPirates/Build/Desktop/Desktop/Master.bank
+  Name: Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 638049999169999785
+  FileSizes:
+  - Name: Desktop
+    Value: 2427744
+  Exists: 1
+--- !u!114 &4782442716932992266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FmodPirates/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638052715148287891
+  FileSizes:
+  - Name: Desktop
+    Value: 4053280
+  Exists: 1
+--- !u!114 &4858439983126258615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/menu entered
+  m_EditorClassIdentifier: 
+  Path: event:/UI/menu entered
+  Guid:
+    Data1: -675802352
+    Data2: 1211035243
+    Data3: 962952891
+    Data4: 171613501
+  Banks:
+  - {fileID: 4782442716932992266}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8667904405510141480
+>>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -6,6 +6,7 @@
         AttackInput,
         SettingsInput,
         ChatInput,
-        InventoryInput
+        InventoryInput,
+        Map
     }
 }

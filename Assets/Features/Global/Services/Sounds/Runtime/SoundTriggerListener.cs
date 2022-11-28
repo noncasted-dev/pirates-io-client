@@ -25,7 +25,10 @@ namespace Global.Services.Sounds.Runtime
         {
             _triggerListener?.Dispose();
             _positionalTriggerListener?.Dispose();
+<<<<<<< HEAD
             _healthListener?.Dispose();
+=======
+>>>>>>> main
         }
 
         private void OnSoundTriggered(SoundEvent data)

@@ -7,6 +7,7 @@ using GamePlay.Player.Entity.Views.ShipConfig.Runtime;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Dead;
 using GamePlay.Services.VFX.Pool.Provider;
+using Global.Services.Sounds.Runtime;
 using UniRx;
 
 namespace GamePlay.Player.Entity.States.Deaths.Runtime
@@ -48,6 +49,7 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
             _objectProvider.Get(_transform.Position);
 
             MessageBroker.Default.Publish(new PlayerDeathEvent());
+            MessageBroker.Default.TriggerSound(PositionalSoundType.Death, _transform.Position);
         }
 
         public void Break()

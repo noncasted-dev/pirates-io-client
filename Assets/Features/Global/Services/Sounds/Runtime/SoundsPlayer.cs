@@ -115,6 +115,11 @@ namespace Global.Services.Sounds.Runtime
             //RuntimeManager.PlayOneShot(DamageEvent);
         }
 
+        public void OnDeath(Vector2 position)
+        {
+            
+        }
+
         public void OnEnemyDamaged(Vector2 position)
         {
             PlayDamage(1f, position);

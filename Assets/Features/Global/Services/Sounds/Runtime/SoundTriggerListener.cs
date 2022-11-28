@@ -21,7 +21,7 @@ namespace Global.Services.Sounds.Runtime
         private void OnDisable()
         {
             _triggerListener?.Dispose();
-            _triggerListener?.Dispose();
+            _positionalTriggerListener?.Dispose();
         }
 
         private void OnSoundTriggered(SoundEvent data)
@@ -88,6 +88,9 @@ namespace Global.Services.Sounds.Runtime
                     break;
                 case PositionalSoundType.DamageReceived:
                     _player.OnDamageReceived();
+                    break;
+                case PositionalSoundType.Death:
+                    _player.OnDeath(data.Position);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -31,6 +31,15 @@ namespace Global.Services.InputViews.Runtime
         private Controls.GamePlayActions _gamePlay;
 
         private InputViewLogger _logger;
+        
+        public event Action<Vector2> MovementPerformed;
+        public event Action MovementCanceled;
+        public event Action RangeAttackPerformed;
+        public event Action RangeAttackCanceled;
+        public event Action RangeAttackBreakPerformed;
+        public event Action InventoryPerformed;
+        public event Action MapPerformed;
+        public event Action DebugConsolePreformed;
 
         private void OnDestroy()
         {
@@ -49,14 +58,6 @@ namespace Global.Services.InputViews.Runtime
 
             Listen();
         }
-
-        public event Action<Vector2> MovementPerformed;
-        public event Action MovementCanceled;
-        public event Action RangeAttackPerformed;
-        public event Action RangeAttackCanceled;
-        public event Action RangeAttackBreakPerformed;
-        public event Action InventoryPerformed;
-        public event Action DebugConsolePreformed;
 
         public float GetAngleFrom(Vector2 from)
         {
@@ -115,6 +116,8 @@ namespace Global.Services.InputViews.Runtime
 
             _gamePlay.Inventory.performed += OnInventoryPerformed;
 
+            _gamePlay.Map.performed += OnMapPerformed;
+
             _debug.Console.performed += OnDebugConsolePreformed;
         }
 
@@ -128,6 +131,8 @@ namespace Global.Services.InputViews.Runtime
             _gamePlay.RangeAttackBreak.performed -= OnRangeAttackBreakPerformed;
 
             _gamePlay.Inventory.performed -= OnInventoryPerformed;
+            
+            _gamePlay.Map.performed -= OnMapPerformed;
 
             _debug.Console.performed -= OnDebugConsolePreformed;
         }
@@ -217,6 +222,17 @@ namespace Global.Services.InputViews.Runtime
             }
             
             InventoryPerformed?.Invoke();
+        }
+        
+        private void OnMapPerformed(InputAction.CallbackContext context)
+        {
+            if (_constraintsStorage[InputConstraints.Map] == true)
+            {
+                _logger.OnInputCanceledWithConstraint(InputConstraints.Map);
+                return;
+            }
+            
+            MapPerformed?.Invoke();
         }
     }
 }

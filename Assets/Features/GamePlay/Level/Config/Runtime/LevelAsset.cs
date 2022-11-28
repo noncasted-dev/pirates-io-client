@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Features.GamePlay.Services.Maps.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime;
 using GamePlay.Common.Paths;
 using GamePlay.Factions.Selections.Bootstrap;
@@ -50,6 +51,7 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField]  private CityPortUiAsset _cityPortUi;
         [SerializeField]  private WalletAsset _wallet;
         [SerializeField]  private ReputationAsset _reputation;
+        [SerializeField]  private MapAsset _map;
 
         [SerializeField] private LevelScope _scopePrefab;
 
@@ -75,7 +77,8 @@ namespace GamePlay.Level.Config.Runtime
                 _travelOverlay,
                 _cityPortUi,
                 _wallet,
-                _reputation
+                _reputation,
+                _map
             };
 
             return list.ToArray();

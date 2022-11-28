@@ -309,6 +309,10 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Services/Projectiles/Implementation/Linear/Shrapnel/Shrapnel.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: d4335253dbef8124a9eb316ae8dab735
+    m_Address: Assets/Features/GamePlay/Services/Maps/Config/UI_Map.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
   m_SchemaSet:

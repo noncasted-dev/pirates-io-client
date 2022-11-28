@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
+using GamePlay.Services.Reputation.Runtime;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -60,7 +61,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             _cells.Clear();
         }
 
-        public void Fill(IReadOnlyList<IItem> items)
+        public void Fill(IReadOnlyList<IItem> items, IReputation reputation)
         {
             foreach (var cell in _cells)
                 _available.Add(cell.Value);
@@ -76,7 +77,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
                 var cell = _available[0];
                 _available.RemoveAt(0);
 
-                cell.AssignItem(item, _origin);
+                cell.AssignItem(item, _origin, reputation);
                 _cells.Add(item.BaseData.Type, cell);
             }
 

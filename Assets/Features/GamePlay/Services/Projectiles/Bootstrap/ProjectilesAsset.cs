@@ -1,11 +1,11 @@
-﻿using Common.EditableScriptableObjects.Attributes;
-using Common.ObjectsPools.Runtime.Abstract;
+﻿using Common.ObjectsPools.Runtime.Abstract;
 using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using GamePlay.Services.Projectiles.Factory;
 using GamePlay.Services.Projectiles.Logs;
 using GamePlay.Services.Projectiles.Mover;
 using GamePlay.Services.Projectiles.Mover.Abstract;
+using GamePlay.Services.Projectiles.Selector.Runtime;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Local.Services.Abstract;
@@ -32,6 +32,7 @@ namespace GamePlay.Services.Projectiles.Bootstrap
         {
             var pool = Instantiate(_prefab);
             pool.name = "Pool_Projectiles";
+            var selector = pool.GetComponent<ProjectilesSelector>();
 
             serviceBinder.Register<ProjectilesPoolProvider>()
                 .As<IProjectilesPoolProvider>()
@@ -45,6 +46,9 @@ namespace GamePlay.Services.Projectiles.Bootstrap
                 .WithParameter(_moverConfig)
                 .As<IProjectilesMover>()
                 .AsSelf();
+
+            serviceBinder.RegisterComponent(selector)
+                .As<IProjectileSelector>();
 
             var scene = await sceneLoader.Load(new EmptySceneLoadData(_poolScene));
             SceneManager.MoveGameObjectToScene(pool.gameObject, scene.Instance.Scene);

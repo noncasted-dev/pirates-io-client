@@ -99,7 +99,6 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             _stateMachine.Enter(this);
 
             _inertialMovement.Enable();
-            _inertialMovement.SetSpeed(_config.Speed);
             _spriteRotation.Start();
             _isStarted = true;
         }

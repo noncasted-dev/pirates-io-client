@@ -1,5 +1,4 @@
-﻿using Common.EditableScriptableObjects.Attributes;
-using GamePlay.Player.Entity.Components.Abstract;
+﻿using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Components.Healths.Logs;
 using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
@@ -17,7 +16,9 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
         {
             builder.Register<HealthLogger>(Lifetime.Scoped)
                 .WithParameter(_logSettings);
+            
             builder.Register<Health>(Lifetime.Scoped).As<IHealth>();
+            builder.Register<Sail>(Lifetime.Scoped).As<ISail>();
         }
     }
 }

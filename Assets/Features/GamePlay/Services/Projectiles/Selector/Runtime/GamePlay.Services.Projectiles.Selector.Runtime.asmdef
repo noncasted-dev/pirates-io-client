@@ -1,4 +1,4 @@
 ﻿{
   "name": "GamePlay.Services.Projectiles.Selector.Runtime",
-  "references":[ "GUID:e2b1c00d8d9b440888bd9f6a58105dd3", "GUID:560b04d1a97f54a4e82edc0cbbb69285", "GUID:c108528aa1ad4cee8451aaa4a2f35582" ]
+  "references":[ "GUID:e2b1c00d8d9b440888bd9f6a58105dd3", "GUID:560b04d1a97f54a4e82edc0cbbb69285", "GUID:c108528aa1ad4cee8451aaa4a2f35582", "GUID:2471a91d0a7e4b545a50b8ff168394d3", "GUID:2435b9189672c5848ae4cc81c2cf0e13" ]
 }

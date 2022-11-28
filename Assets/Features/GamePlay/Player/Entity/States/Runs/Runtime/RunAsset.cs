@@ -1,5 +1,6 @@
 ﻿using Common.EditableScriptableObjects.Attributes;
 using GamePlay.Player.Entity.Components.Abstract;
+using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Path;
 using GamePlay.Player.Entity.States.Runs.Logs;
@@ -27,6 +28,9 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
 
             builder.Register<RunInput>(Lifetime.Scoped)
                 .AsSelf();
+            
+            builder.Register<SpeedCalculator>(Lifetime.Scoped)
+                .As<ISpeedCalculator>();
 
             builder.Register<Run>(Lifetime.Scoped)
                 .WithParameter(_definition)

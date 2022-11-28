@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Item_Team
   m_EditorClassIdentifier: 
   _weight: 1
-  _name: Team
+  _name: Sailors
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 08c20c49a1bb1a24486f8f055fc15a04, type: 3}
+  _icon: {fileID: 21300000, guid: 87552fe207c5b234fb5408f6f7034a53, type: 3}

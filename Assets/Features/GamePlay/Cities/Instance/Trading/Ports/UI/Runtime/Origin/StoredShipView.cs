@@ -3,6 +3,7 @@ using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.Components.Definition;
+using GamePlay.Services.Reputation.Runtime;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -20,10 +21,14 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         [SerializeField] private TMP_Text _cannons;
         [SerializeField] private TMP_Text _speed;
         [SerializeField] private TMP_Text _name;
+
+        [SerializeField] private Image _flag;
+        [SerializeField] private TMP_Text _requiredReputation;
         [SerializeField] private Button _transferButton;
 
         private ShipItem _item;
         private ItemOrigin _origin;
+        private bool _isAvailable = false;
 
         private void OnEnable()
         {
@@ -35,19 +40,35 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             _transferButton.onClick.RemoveListener(OnTransferClicked);
         }
 
-        public void AssignItem(IItem item, ItemOrigin origin)
+        public void AssignItem(
+            IItem item,
+            ItemOrigin origin,
+            IReputation reputation)
         {
             if (item is not ShipItem ship)
             {
                 Debug.LogError($"Assigned item is not a ship: {item.BaseData.Type} from {origin}");
                 return;
             }
-            
+
             _origin = origin;
             _item = ship;
 
+            _flag.sprite = reputation.Flag;
+
+            if (ship.RequiredReputation < reputation.Value)
+                _isAvailable = true;
+            else
+                _isAvailable = false;
+
+            _requiredReputation.text = ship.RequiredReputation.ToString();
+
             gameObject.SetActive(true);
-            _transferButton.gameObject.SetActive(true);
+
+            if (_isAvailable == true)
+                _transferButton.gameObject.SetActive(true);
+            else
+                _transferButton.gameObject.SetActive(false);
 
             _icon.sprite = item.BaseData.Icon;
             _cost.text = ship.Price.ToString();
@@ -62,7 +83,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         public void Enable()
         {
             gameObject.SetActive(true);
-            _transferButton.gameObject.SetActive(true);
+            
+            if (_isAvailable == true)
+                _transferButton.gameObject.SetActive(true);
         }
 
         public void Disable()
@@ -70,7 +93,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             _item = null;
             gameObject.SetActive(false);
         }
-        
+
         public void Deactivate()
         {
             _transferButton.gameObject.SetActive(false);

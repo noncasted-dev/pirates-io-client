@@ -15,6 +15,7 @@ namespace GamePlay.Player.Entity.Components.Definition
         [SerializeField] private int _maxHealth;
         [SerializeField] private int _price;
         [SerializeField] private int _maxSpeed;
+        [SerializeField] private int _requiredReputation;
 
         [SerializeField] private ItemType _type;
 
@@ -27,7 +28,16 @@ namespace GamePlay.Player.Entity.Components.Definition
 
         protected override IItem BuildItem(BaseItemData data, int count)
         {
-            return new ShipItem(data, count, _maxTeam, _maxWeight, _maxCannons, _maxHealth,  _maxSpeed, _price);
+            return new ShipItem(
+                data,
+                count,
+                _maxTeam,
+                _maxWeight,
+                _maxCannons,
+                _maxHealth,
+                _maxSpeed,
+                _price,
+                _requiredReputation);
         }
     }
 }

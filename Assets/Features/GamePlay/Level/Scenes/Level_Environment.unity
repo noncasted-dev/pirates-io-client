@@ -21098,12 +21098,76 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_keys.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_values.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
       propertyPath: _producables.m_keys.Array.data[1]
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
       propertyPath: _producables.m_keys.Array.data[2]
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_keys.Array.data[3]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_keys.Array.data[4]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_values.Array.data[3]._maxItems
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_values.Array.data[4]._maxItems
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_values.Array.data[3]._medianCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_values.Array.data[4]._medianCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_values.Array.data[3]._curveHeight
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_values.Array.data[3]._medianCount
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_values.Array.data[4]._curveHeight
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_values.Array.data[4]._medianCount
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_values.Array.data[0]._lackProductionSpeedPerSecond
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_values.Array.data[2]._lackProductionSpeedPerSecond
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_values.Array.data[3]._lackProductionSpeedPerSecond
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095206560318908559, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}
+      propertyPath: _producables.m_values.Array.data[4]._lackProductionSpeedPerSecond
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4898a46d74488c347b92f90bcdcf23bc, type: 3}

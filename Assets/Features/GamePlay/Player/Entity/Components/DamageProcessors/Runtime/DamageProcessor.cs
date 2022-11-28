@@ -1,4 +1,5 @@
-﻿using Common.ObjectsPools.Runtime.Abstract;
+﻿using System;
+using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
@@ -6,6 +7,7 @@ using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.States.Deaths.Runtime;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
+using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
 using Ragon.Client;
@@ -16,6 +18,7 @@ namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
     {
         public DamageProcessor(
             IHealth health,
+            ISail sail,
             IDeath death,
             IPlayerEventListener listener,
             ISpriteFlash flash,
@@ -24,6 +27,7 @@ namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
             DamageConfigAsset config)
         {
             _health = health;
+            _sail = sail;
             _death = death;
             _flash = flash;
             _transform = transform;
@@ -39,6 +43,7 @@ namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
         private readonly ISpriteFlash _flash;
 
         private readonly IHealth _health;
+        private readonly ISail _sail;
         private readonly IBodyTransform _transform;
 
         private void OnDamageReceived(RagonPlayer player, DamageEvent damage)
@@ -49,6 +54,23 @@ namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
             var direction = damage.Origin - _transform.Position;
             direction.Normalize();
             explosion.transform.RotateAlong(direction);
+
+            switch (damage.Type)
+            {
+                case ProjectileType.Ball:
+                    _sail.Damage(21f);
+                    break;
+                case ProjectileType.Knuppel:
+                    _sail.Damage(10f);
+                    break;
+                case ProjectileType.Shrapnel:
+                    _sail.Damage(5f);
+                    break;
+                case ProjectileType.Fishnet:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
 
             if (_health.IsAlive == false)
                 _death.Enter();

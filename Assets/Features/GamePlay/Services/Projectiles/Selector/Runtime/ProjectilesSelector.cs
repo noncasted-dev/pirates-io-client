@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Events;
+using GamePlay.Services.Projectiles.Entity;
 using UniRx;
 using UnityEngine;
 
@@ -20,6 +21,8 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
         private void Awake()
         {
             _projectiles[ProjectileType.Fishnet] = 999999;
+            
+            Select(ProjectileType.Fishnet);
         }
 
         private void OnEnable()
@@ -40,6 +43,27 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
             return _projectiles[type];
         }
 
+        public bool CanSelect(ProjectileType type)
+        {
+            var amount = GetAmount(type);
+            
+            if (amount == 0)
+                return false;
+
+            return true;
+        }
+
+        public void Select(ProjectileType type)
+        {
+            if (CanSelect(type) == false)
+                return;
+            
+            _selected = type;
+            
+            var select = new ProjectileSelectedEvent(type);
+            MessageBroker.Default.Publish(select);
+        }
+
         public bool CanShoot()
         {
             if (_projectiles.ContainsKey(_selected) == false)
@@ -55,32 +79,23 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
         {
             CheckType(data.Items, ProjectileType.Ball);
             CheckType(data.Items, ProjectileType.Knuppel);
-            CheckType(data.Items, ProjectileType.Ball);
+            CheckType(data.Items, ProjectileType.Shrapnel);
+
+            if (CanShoot() == false)
+                Select(ProjectileType.Fishnet);
         }
 
         private void CheckType(IReadOnlyDictionary<ItemType, IItem> items, ProjectileType type)
         {
-            var item = ConvertToItemType(type);
-            
+            var item = type.ConvertToItemType();
+
             if (items.ContainsKey(item) == false)
                 return;
 
             var count = items[item].Count;
             _projectiles[type] = count;
-
-            MessageBroker.Default.Publish(new ProjectileAmountChanged(type, count));
-        }
-
-        private ItemType ConvertToItemType(ProjectileType type)
-        {
-            return type switch
-            {
-                ProjectileType.Ball => ItemType.CannonBall,
-                ProjectileType.Knuppel => ItemType.CannonKnuppel,
-                ProjectileType.Shrapnel => ItemType.CannonShrapnel,
-                ProjectileType.Fishnet => ItemType.CannonFishnet,
-                _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
-            };
+            
+            MessageBroker.Default.Publish(new ProjectileAmountChangedEvent(type, count));
         }
     }
 }

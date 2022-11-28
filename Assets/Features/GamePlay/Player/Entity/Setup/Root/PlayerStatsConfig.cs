@@ -20,7 +20,9 @@ namespace GamePlay.Player.Entity.Setup.Root
 
         [SerializeField] private string _name = "Frigate";
         [SerializeField] private Sprite _icon;
+        
         [SerializeField] private int _baseHealth;
+        [SerializeField] private int _regenerationInTick = 30;
 
         [SerializeField] private int _baseMaxSpeed;
 
@@ -37,7 +39,7 @@ namespace GamePlay.Player.Entity.Setup.Root
 
         public void OnAwake()
         {
-            _health.SetMaxHealth(_baseHealth);
+            _health.SetMaxHealth(_baseHealth, _regenerationInTick);
 
             _resources.SetName(_name);
             _resources.SetIcon(_icon);

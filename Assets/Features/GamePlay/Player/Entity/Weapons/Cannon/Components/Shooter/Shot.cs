@@ -81,7 +81,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 _shotCounter++;
 
                 _cannonReplicator.Replicate(
-                    ProjectileType.Ordinary,
+                    ProjectileType.Ball,
                     shootPosition,
                     resultAngle,
                     parameters.Speed,

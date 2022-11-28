@@ -17,7 +17,8 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         public int Speed => 0;
         public int MaxTeam => 0;
         public int Team => 0;
-        
+        public int Sail { get; }
+
         public event Action<int, int> HealthChanged;
         public event Action<int, int> WeightChanged;
         public event Action<int, int> CannonsChanged;

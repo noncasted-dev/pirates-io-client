@@ -5040,20 +5040,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49397bffa33944b8a3a4f64491bcf697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shootParams:
-    _damage: 0
-    _distance: 0
-    _layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    _pushForce: 0
-    _shotsAmount: 0
-    _speed: 0
   _isLocal: 0
+  _damage: 8
+  _distance: 10
+  _speed: 10
   _collider: {fileID: 488861096520624764}
   _spriteRenderer: {fileID: 3528876849393998273}
   _particleSystem: {fileID: 2791811756354343701}
   _trail: {fileID: 8176420882470966280}
+  _type: 0
 --- !u!61 &488861096520624764
 BoxCollider2D:
   m_ObjectHideFlags: 0

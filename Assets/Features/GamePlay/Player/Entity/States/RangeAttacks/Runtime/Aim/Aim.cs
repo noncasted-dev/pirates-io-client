@@ -4,6 +4,7 @@ using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
 using Global.Services.InputViews.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
+using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
@@ -34,6 +35,8 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
             _input = input;
             _parameters = parameters;
             _cancellation = cancellation;
+
+            _handle = new AimHandle();
         }
 
         private readonly Transform _body;
@@ -41,6 +44,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
         private readonly CancellationToken _cancellation;
         private readonly UniTaskCompletionSource<AimResult> _completion = new();
         private readonly IInputView _input;
+        private readonly AimHandle _handle;
 
         private readonly Transform _left;
         private readonly AimParams _parameters;
@@ -69,7 +73,9 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
 
             var progress = _currentTime / _parameters.Time;
             var angle = Mathf.Lerp(_parameters.StartAngle, _parameters.EndAngle, progress);
-
+            
+            _handle.OnProgress(progress);
+            
             _left.localRotation = Quaternion.Euler(0f, 0f, angle);
             _leftCircle.material.SetFloat("_FillAmount",  angle / 360f);
 
@@ -95,6 +101,9 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
         public async UniTask<AimResult> Process()
         {
             _updater.Add(this);
+            
+            MessageBroker.Default.Publish(new AimStartedEvent(_handle));
+            
             _input.RangeAttackCanceled += OnRangeAttackCanceled;
 
             var result = await _completion.Task;
@@ -106,6 +115,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
 
         private void Break()
         {
+            _handle.OnCanceled();
             _updater.Remove(this);
             _input.RangeAttackCanceled -= OnRangeAttackCanceled;
         }

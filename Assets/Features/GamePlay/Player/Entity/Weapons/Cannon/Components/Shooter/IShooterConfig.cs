@@ -5,7 +5,10 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 {
     public interface IShooterConfig
     {
-        AssetReference Projectile { get; }
+        AssetReference Ball { get; }
+        AssetReference Knuppel { get; }
+        AssetReference Shrapnel { get; }
+        AssetReference Fishnet { get; }
         AssetReference Vfx { get; }
         int ShotsAmount { get; }
         float ShotsDelay { get; }

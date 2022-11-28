@@ -10,12 +10,14 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 {
     public class ShipResources : IShipResources, IShipResourcesPresenter, ISwitchCallbacks
     {
-        public ShipResources(IHealth health)
+        public ShipResources(IHealth health, ISail sail)
         {
+            _sail = sail;
             _health = health;
         }
 
         private readonly IHealth _health;
+        private readonly ISail _sail;
 
         private string _name;
         private Sprite _icon;
@@ -49,6 +51,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 
         public int MaxTeam => _maxTeam;
         public int Team => _team;
+        public int Sail => _sail.Strength;
         public event Action<int, int> HealthChanged;
         public event Action<int, int> WeightChanged;
         public event Action<int, int> CannonsChanged;
@@ -58,11 +61,13 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         public void OnEnabled()
         {
             _cargoChangedListener = MessageBroker.Default.Receive<CargoChangedEvent>().Subscribe(OnCargoChanged);
+            _sail.Changed += OnSailChanged;
         }
         
         public void OnDisabled()
         {
             _cargoChangedListener?.Dispose();
+            _sail.Changed -= OnSailChanged;
         }
 
         public void SetName(string name)
@@ -74,7 +79,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         {
             _icon = icon;
         }
-
+        
         public void SetMaxWeight(int maxWeight)
         {
             _maxWeight = maxWeight;
@@ -137,6 +142,11 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             _maxSpeed = speed;
             
             SpeedChanged?.Invoke(_speed, _maxSpeed);
+            MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
+        }
+
+        private void OnSailChanged()
+        {
             MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
         }
         

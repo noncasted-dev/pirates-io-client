@@ -39,6 +39,16 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             StartCoroutine(CalculateTradables());
         }
 
+        public void Clear()
+        {
+            _producables.Clear();
+        }
+
+        public void AddProducable(ItemType type, ItemPriceConfig config)
+        {
+            _producables.Add(type, config);
+        }
+
         public void Add(IItem item)
         {
             _vault.Add(item);
@@ -103,7 +113,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                     return;
             }
 
-            var evaluation = _curves.ItemsInTime.Evaluate(progress);
+            var evaluation = _curves.ItemsInTime.Evaluate(Random.Range(0f, 1f));
             var additional = evaluation * config.CurveHeight;
             var amount = config.MedianCount + additional;
 

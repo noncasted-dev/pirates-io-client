@@ -7,6 +7,7 @@ using GamePlay.Services.LevelLoops.Runtime;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using Global.Services.ItemFactories.Runtime;
 using Local.Services.DependenciesResolve;
+using NaughtyAttributes;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -41,6 +42,18 @@ namespace GamePlay.Level.Environment.Bootstrap
             
             foreach (var target in _ports)
                 target.Construct(cargoStorage, levelLoop);
+        }
+
+        [Button("ScanStorages")]
+        private void ScanStorages()
+        {
+            _storages = FindObjectsOfType<CityStorage>();
+        }
+        
+        [Button("ScanPorts")]
+        private void ScanPorts()
+        {
+            _ports = FindObjectsOfType<CityPort>();
         }
     }
 }

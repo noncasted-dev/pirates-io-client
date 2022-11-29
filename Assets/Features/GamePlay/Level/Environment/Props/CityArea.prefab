@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 6356443934331233863}
   - component: {fileID: 6356443934331233862}
   m_Layer: 0
-  m_Name: SystemCity
+  m_Name: CityArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

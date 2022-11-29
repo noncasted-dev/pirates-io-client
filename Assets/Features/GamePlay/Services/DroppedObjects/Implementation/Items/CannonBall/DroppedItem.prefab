@@ -107,7 +107,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _collectImmunityTime: 5
+  _collectImmunityTime: 0.1
   _flyHeight: 1
   _flyTime: 1
   _animator: {fileID: 86812301156573219}

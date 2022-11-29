@@ -21757,11 +21757,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5684869733594540238, guid: 92020a475d1780149b5f316d832a8277, type: 3}
       propertyPath: m_ChunkCullingBounds.x
-      value: 0
+      value: 0.234375
       objectReference: {fileID: 0}
     - target: {fileID: 5684869733594540238, guid: 92020a475d1780149b5f316d832a8277, type: 3}
       propertyPath: m_ChunkCullingBounds.y
-      value: 0
+      value: 0.21875
       objectReference: {fileID: 0}
     - target: {fileID: 5684869733605065796, guid: 92020a475d1780149b5f316d832a8277, type: 3}
       propertyPath: m_StaticEditorFlags

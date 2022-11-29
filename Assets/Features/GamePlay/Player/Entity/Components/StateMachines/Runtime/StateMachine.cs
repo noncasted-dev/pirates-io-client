@@ -1,11 +1,12 @@
 ﻿using System;
 using GamePlay.Player.Entity.Components.StateMachines.Logs;
+using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
 
 namespace GamePlay.Player.Entity.Components.StateMachines.Runtime
 {
-    public class StateMachine : IStateMachine
+    public class StateMachine : IStateMachine, ISwitchCallbacks
     {
         public StateMachine(StateMachineLogger logger)
         {
@@ -46,6 +47,14 @@ namespace GamePlay.Player.Entity.Components.StateMachines.Runtime
         {
             _logger.OnExited(_current.Definition);
             Exited?.Invoke();
+        }
+
+        public void OnEnabled()
+        {
+        }
+
+        public void OnDisabled()
+        {
         }
     }
 }

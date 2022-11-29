@@ -15458,6 +15458,7 @@ MonoBehaviour:
   _config: {fileID: 2585353411466666207}
   _debug: {fileID: 4268868882782736720}
   _fireController: {fileID: 8105649864182434147}
+  _statsConfig: {fileID: 160118787591633700}
 --- !u!114 &1619435411979782750
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Services.Projectiles.Replicator.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
+using GamePlay.Services.VFX.Pool.Implementation.Dead;
 using Global.Services.Updaters.Runtime.Abstract;
 using Ragon.Client;
 using UnityEngine;
@@ -24,6 +25,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
             IUpdater updater,
             IProjectileReplicator projectileReplicator,
             IObjectProvider<AnimatedVfx> explosion,
+            IObjectProvider<DeadShipVfx> deadShip,
             PlayerNetworkRoot networkRoot,
             FactionType faction)
         {
@@ -39,7 +41,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
                 projectileReplicator,
                 _config);
 
-            var _ = new HealthReceiver(_fireController, networkRoot);
+            var _ = new HealthReceiver(_fireController, networkRoot, deadShip, transform);
 
             _hitbox.Construct(networkRoot, networkRoot, networkRoot, explosion, faction);
             

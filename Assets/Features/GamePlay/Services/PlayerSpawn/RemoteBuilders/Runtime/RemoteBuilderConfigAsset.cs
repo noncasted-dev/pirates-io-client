@@ -15,5 +15,10 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         {
             return _ships[type].Remote;
         }
+        
+        public AssetReference GetDead(ShipType type)
+        {
+            return _ships[type].Dead;
+        }
     }
 }

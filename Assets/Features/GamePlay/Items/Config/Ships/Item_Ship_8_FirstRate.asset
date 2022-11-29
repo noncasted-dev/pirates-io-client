@@ -34,3 +34,8 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  _dead:
+    m_AssetGUID: bed84626267a95e47ada294f6f7eeca4
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

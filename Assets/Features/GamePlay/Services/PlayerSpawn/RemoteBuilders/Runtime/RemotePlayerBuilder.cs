@@ -1,4 +1,5 @@
 ﻿using Common.ObjectsPools.Runtime.Abstract;
+using GamePlay.Factions.Common;
 using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Player.Entity.Network.Remote.Bootstrap;
 using GamePlay.Player.Entity.Network.Root.Runtime;
@@ -60,7 +61,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
             _hitExplosionPool = _vfxPoolProvider.GetPool<AnimatedVfx>(_hitExplosionReference);
         }
 
-        public void Build(GameObject remotePlayer, ShipType shipType)
+        public void Build(GameObject remotePlayer, ShipType shipType, FactionType faction)
         {
             var prefab = _config.GetShip(shipType);
             
@@ -75,7 +76,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
 
             var networkRoot = rootTransform.GetComponent<PlayerNetworkRoot>();
 
-            view.Construct(_logger, _updater, _replicator, _hitExplosionPool, networkRoot);
+            view.Construct(_logger, _updater, _replicator, _hitExplosionPool, networkRoot, faction);
         }
     }
 }

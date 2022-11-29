@@ -3,23 +3,24 @@ using UnityEngine;
 
 namespace GamePlay.Common.Areas.Common.Runtime
 {
-    public class AreaRoot : SceneObject
+    public class AreaRoot : MonoBehaviour
     {
         [SerializeField] private AreaTrigger _trigger;
+        
         private IArea _area;
 
-        protected override void OnAwake()
+        private void Awake()
         {
             _area = GetComponent<IArea>();
         }
 
-        protected override void OnEnabled()
+        private void OnEnable()
         {
             _trigger.Entered += OnEntered;
             _trigger.Exited += OnExited;
         }
 
-        protected override void OnDisabled()
+        private void OnDisable()
         {
             _trigger.Entered -= OnEntered;
             _trigger.Exited -= OnExited;

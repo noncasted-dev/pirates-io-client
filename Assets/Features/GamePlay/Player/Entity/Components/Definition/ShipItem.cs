@@ -14,7 +14,8 @@ namespace GamePlay.Player.Entity.Components.Definition
             int maxCannons,
             int maxHealth,
             int maxSpeed,
-            int price)
+            int price,
+            int requiredReputation)
         {
             MaxSpeed = maxSpeed;
             BaseData = data;
@@ -25,6 +26,7 @@ namespace GamePlay.Player.Entity.Components.Definition
             MaxWeight = maxWeight;
             Price = price;
             _count = count;
+            RequiredReputation = requiredReputation;
 
             Type = data.Type switch
             {
@@ -44,7 +46,6 @@ namespace GamePlay.Player.Entity.Components.Definition
         public readonly ShipType Type;
         
         private int _count;
-
         public event Action<int> CountChanged;
 
         public BaseItemData BaseData { get; }
@@ -54,6 +55,7 @@ namespace GamePlay.Player.Entity.Components.Definition
         public int MaxHealth { get; }
         public int Price { get; }
         public int MaxSpeed { get; }
+        public int RequiredReputation { get; }
 
         public int Count => _count;
 

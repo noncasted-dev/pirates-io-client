@@ -1,11 +1,12 @@
-﻿using Global.Services.Updaters.Runtime.Abstract;
+﻿using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
 using VContainer;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
 
 namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 {
-    public class PlayerSpriteTransform : TransformView, ISpriteTransform
+    public class PlayerSpriteTransform : TransformView, ISpriteTransform, ISwitchCallbacks
     {
         [Inject]
         public void Construct(ILogger logger, IUpdater updater)
@@ -27,6 +28,17 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
             _last = new Impact(_updater, this, direction, distance, time);
 
             _last.Start();
+        }
+
+        public void OnDisabled()
+        {
+            _last?.Stop();
+        }
+        
+        
+        public void OnEnabled()
+        {
+            
         }
     }
 }

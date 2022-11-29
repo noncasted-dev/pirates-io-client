@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
 using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
+using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
@@ -12,6 +13,8 @@ using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Player.Entity.Weapons.Handler.Runtime;
+using GamePlay.Services.Projectiles.Selector.Runtime;
+using UnityEngine;
 
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
 {
@@ -27,8 +30,11 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             IAimView aim,
             ISpriteTransform spriteTransform,
             IActionsStateProvider actionsStateProvider,
+            IProjectileSelector selector,
+            IShipResources resources,
             RangeAttackLogger logger)
         {
+            _resources = resources;
             _stateMachine = stateMachine;
             Definition = definition;
             _weapons = weapons;
@@ -38,11 +44,13 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             _aim = aim;
             _spriteTransform = spriteTransform;
             _actionsStateProvider = actionsStateProvider;
+            _selector = selector;
             _delay = new AttackDelay(config);
             _logger = logger;
         }
 
         private readonly IActionsStateProvider _actionsStateProvider;
+        private readonly IProjectileSelector _selector;
 
         private readonly IAimView _aim;
         private readonly IRangeAttackConfig _config;
@@ -55,11 +63,13 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
 
         private readonly IStateMachine _stateMachine;
         private readonly IWeaponsHandler _weapons;
+        
+        private readonly IShipResources _resources;
 
         private bool _hasInput;
         private bool _isStarted;
 
-        public bool IsAvailable => _hasInput && _actionsStateProvider.CanShoot;
+        public bool IsAvailable => CheckAvailable();
 
         public void OnInput()
         {
@@ -75,6 +85,12 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
                 return;
 
             if (_delay.IsAvailable() == false)
+                return;
+
+            if (_selector.CanShoot() == false)
+                return;
+            
+            if (_resources.Cannons <= 0)
                 return;
 
             Process().Forget();
@@ -149,6 +165,25 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
             }
 
             _stateMachine.Exit();
+        }
+
+        private bool CheckAvailable()
+        {
+            //_hasInput && _actionsStateProvider.CanShoot && _selector.CanShoot()
+
+            if (_hasInput == false)
+                return false;
+
+            if (_actionsStateProvider.CanShoot == false)
+                return false;
+
+            if (_selector.CanShoot() == false)
+                return false;
+
+            if (_resources.Cannons <= 0)
+                return false;
+
+            return true;
         }
     }
 }

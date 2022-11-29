@@ -4,15 +4,18 @@ using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Cities.Instance.Root.Runtime;
 using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Factions.Selections.Loops.Runtime;
+using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Player.Entity.States.Deaths.Runtime;
 using GamePlay.Services.LevelCameras.Runtime;
 using GamePlay.Services.LevelLoops.Logs;
+using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using GamePlay.Services.TransitionScreens.Runtime;
 using GamePlay.Services.TravelOverlays.Runtime;
 using Global.Services.CurrentCameras.Runtime;
+using Global.Services.ItemFactories.Runtime;
 using Local.Services.Abstract.Callbacks;
 using UniRx;
 using UnityEngine;
@@ -37,10 +40,13 @@ namespace GamePlay.Services.LevelLoops.Runtime
             IFactionSelectionLoop factionSelection,
             ICitiesRegistry citiesRegistry,
             ITravelOverlay travelOverlay,
-            IPlayerEntityProvider playerEntityProvider,
+            IItemFactory itemFactory,
+            IPlayerCargoStorage cargo,
             IPlayerEntityPresenter entityPresenter,
             LevelLoopLogger logger)
         {
+            _cargo = cargo;
+            _itemFactory = itemFactory;
             _entityPresenter = entityPresenter;
             _travelOverlay = travelOverlay;
             _citiesRegistry = citiesRegistry;
@@ -69,6 +75,8 @@ namespace GamePlay.Services.LevelLoops.Runtime
         private ITransitionScreen _transitionScreen;
         private ITravelOverlay _travelOverlay;
         private IPlayerEntityPresenter _entityPresenter;
+        private IItemFactory _itemFactory;
+        private IPlayerCargoStorage _cargo;
 
         public void OnEnabled()
         {
@@ -93,6 +101,9 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
         private async UniTask Begin()
         {
+            var cannons = _itemFactory.Create(ItemType.Cannon, 3);
+            _cargo.Add(cannons);
+            
             var selectedCity = await _factionSelection.SelectAsync();
             _transitionScreen.ToPlayerRespawn();
 
@@ -126,6 +137,9 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
         private async UniTaskVoid ProcessRespawn(ShipType ship)
         {
+            var cannons = _itemFactory.Create(ItemType.Cannon, 3);
+            _cargo.Add(cannons);
+            
             _entityPresenter.DestroyPlayer();
 
             _logger.OnPlayerSpawn();

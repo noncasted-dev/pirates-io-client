@@ -10,11 +10,13 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
         public InertialMovement(
             IRigidBody rigidBody,
             IUpdater updater,
+            ISpeedCalculator speedCalculator,
             InertialMovementConfigAsset config,
             InertialMovementLogger logger)
         {
             _rigidBody = rigidBody;
             _updater = updater;
+            _speedCalculator = speedCalculator;
             _config = config;
             _logger = logger;
 
@@ -27,13 +29,12 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
 
         private readonly IRigidBody _rigidBody;
         private readonly IUpdater _updater;
+        private readonly ISpeedCalculator _speedCalculator;
         private Vector2 _currentDirection;
 
         private bool _isEnabled;
 
         private float _lerpTime;
-
-        private float _speed;
 
         private Vector2 _startDirection;
         private Vector2 _targetDirection;
@@ -89,16 +90,16 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
         public void SetSpeed(float speed)
         {
             _logger.OnSpeedSet(speed);
-            _speed = speed;
         }
 
         public void OnPreFixedUpdate(float delta)
         {
-            _lerpTime += _speed * delta * _config.LerpSpeed;
+            var calculatedSpeed = _speedCalculator.GetSpeed();
+            _lerpTime += calculatedSpeed * delta * _config.LerpSpeed;
 
             var progress = _curve.Evaluate(_lerpTime, _startDirection, _targetDirection);
             _currentDirection = Vector2.Lerp(_startDirection, _targetDirection, progress);
-            var speed = _speed * delta;
+            var speed = calculatedSpeed * delta;
 
             _rigidBody.Move(_currentDirection, speed);
 

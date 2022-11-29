@@ -12,7 +12,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
     {
         public override void Register(IContainerBuilder builder)
         {
-            builder.Register<ShipResources>(Lifetime.Scoped)
+            builder.Register<ShipResources>(Lifetime.Singleton)
                 .As<IShipResources>()
                 .As<IShipResourcesPresenter>()
                 .AsSelf();

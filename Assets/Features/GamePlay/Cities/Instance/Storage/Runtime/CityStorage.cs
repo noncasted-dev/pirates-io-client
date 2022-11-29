@@ -20,7 +20,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
         [SerializeField] private List<TradableShipConfig> _shipConfigs;
         [SerializeField] private TradableItemDictionary _producables;
         [SerializeField] private ItemPriceCurvesConfigAsset _curves;
-        
+
         [SerializeField] private float _commission = 0.5f;
 
         private readonly ItemsVault _vault = new();
@@ -65,7 +65,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 {
                     if (_ships.ContainsKey(ship.Type) == true)
                         continue;
-                    
+
                     _ships.Add(ship.Type, ship.Create(2));
                 }
 
@@ -133,15 +133,17 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
         public int GetPrice(ItemType type)
         {
-            Debug.Log(type);
+            var count = 1;
+
+            if (_vault.Items.ContainsKey(type) == true)
+                count = _vault.Items[type].Count;
             
-            var count = _vault.Items[type].Count;
             var config = _producables[type];
 
             var progress = GetCountProgress(type, count);
 
             var priceEvaluation = _curves.ItemPricePerCount.Evaluate(progress);
-            
+
             var cost = (int)(config.MedianCost * priceEvaluation);
 
             return cost;
@@ -173,7 +175,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             }
 
             var median = totalPrice / count;
-            
+
             return new SellPrice(median, totalPrice);
         }
 
@@ -188,7 +190,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 var priceEvaluation = _curves.StockPricePerCount.Evaluate(progress);
                 totalPrice += (int)(priceEvaluation * price);
             }
-            
+
             var median = totalPrice / count;
 
             return new SellPrice(median, totalPrice);
@@ -216,10 +218,10 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             var config = _producables[type];
 
             var progress = count / (float)config.MaxItems;
-            
+
             if (progress > 1f)
                 progress = 1f;
-            
+
             return progress;
         }
     }

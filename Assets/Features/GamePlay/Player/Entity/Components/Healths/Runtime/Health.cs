@@ -1,26 +1,62 @@
 ﻿using GamePlay.Player.Entity.Components.Healths.Logs;
+using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+using Global.Services.Updaters.Runtime.Abstract;
 using UniRx;
 
 namespace GamePlay.Player.Entity.Components.Healths.Runtime
 {
-    public class Health : IHealth
+    public class Health : IHealth, ISwitchCallbacks, IUpdatable
     {
-        public Health(HealthLogger logger)
+        public Health(HealthLogger logger, IUpdater updater)
         {
             _logger = logger;
+            _updater = updater;
         }
 
+
+        private const float _tickDuration = 5f;
+
         private readonly HealthLogger _logger;
+        private readonly IUpdater _updater;
 
         private int _max;
         private int _amount;
+
+        private float _tickTime;
+        private int _regenerationInTick;
 
         public int Max => _max;
         public int Amount => _amount;
         public bool IsAlive => _amount > 0;
 
-        public void SetMaxHealth(int maxHealth)
+        public void OnEnabled()
         {
+            _updater.Add(this);
+        }
+
+        public void OnDisabled()
+        {
+            _updater.Remove(this);
+        }
+        
+        public void OnUpdate(float delta)
+        {
+            _tickTime += delta;
+            
+            if (_tickTime < _tickDuration)
+                return;
+
+            _tickTime = 0f;
+            
+            if (_amount == _max)
+                return;
+            
+            Heal(_regenerationInTick);
+        }
+        
+        public void SetMaxHealth(int maxHealth, int regenerationInTick)
+        {
+            _regenerationInTick = regenerationInTick;
             _max = maxHealth;
             _amount = maxHealth;
         }

@@ -21,6 +21,11 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 
         int MaxTeam { get; }
         int Team { get; }
+        
+        int Sail { get; }
+        
+        bool IsShallowIgnored { get; }
+        int ShallowDamage { get; }
 
         event Action<int, int> HealthChanged;
         event Action<int, int> WeightChanged;

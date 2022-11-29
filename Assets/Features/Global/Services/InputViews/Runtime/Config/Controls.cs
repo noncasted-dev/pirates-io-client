@@ -62,6 +62,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Map"",
+                    ""type"": ""Button"",
+                    ""id"": ""c8776cf0-b91d-42e3-9650-08d2f2f5124f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -163,6 +172,17 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Inventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6109987f-bd2a-4b84-a179-e478f7b744ab"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Map"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -203,6 +223,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_GamePlay_RangeAttack = m_GamePlay.FindAction("RangeAttack", throwIfNotFound: true);
         m_GamePlay_RangeAttackBreak = m_GamePlay.FindAction("RangeAttackBreak", throwIfNotFound: true);
         m_GamePlay_Inventory = m_GamePlay.FindAction("Inventory", throwIfNotFound: true);
+        m_GamePlay_Map = m_GamePlay.FindAction("Map", throwIfNotFound: true);
         // Debug
         m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
         m_Debug_Console = m_Debug.FindAction("Console", throwIfNotFound: true);
@@ -269,6 +290,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_RangeAttack;
     private readonly InputAction m_GamePlay_RangeAttackBreak;
     private readonly InputAction m_GamePlay_Inventory;
+    private readonly InputAction m_GamePlay_Map;
     public struct GamePlayActions
     {
         private @Controls m_Wrapper;
@@ -277,6 +299,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @RangeAttack => m_Wrapper.m_GamePlay_RangeAttack;
         public InputAction @RangeAttackBreak => m_Wrapper.m_GamePlay_RangeAttackBreak;
         public InputAction @Inventory => m_Wrapper.m_GamePlay_Inventory;
+        public InputAction @Map => m_Wrapper.m_GamePlay_Map;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -298,6 +321,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Inventory.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnInventory;
                 @Inventory.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnInventory;
                 @Inventory.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnInventory;
+                @Map.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMap;
+                @Map.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMap;
+                @Map.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMap;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -314,6 +340,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Inventory.started += instance.OnInventory;
                 @Inventory.performed += instance.OnInventory;
                 @Inventory.canceled += instance.OnInventory;
+                @Map.started += instance.OnMap;
+                @Map.performed += instance.OnMap;
+                @Map.canceled += instance.OnMap;
             }
         }
     }
@@ -357,6 +386,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnRangeAttack(InputAction.CallbackContext context);
         void OnRangeAttackBreak(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
+        void OnMap(InputAction.CallbackContext context);
     }
     public interface IDebugActions
     {

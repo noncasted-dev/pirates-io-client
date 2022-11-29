@@ -12,6 +12,7 @@ namespace Global.Services.InputViews.Runtime
         event Action RangeAttackCanceled;
         event Action RangeAttackBreakPerformed;
         event Action InventoryPerformed;
+        event Action MapPerformed;
 
         event Action DebugConsolePreformed;
 

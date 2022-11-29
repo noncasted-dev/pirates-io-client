@@ -33,6 +33,8 @@ namespace Global.Services.Sounds.Runtime
         public EventReference MenuEnteredEvent;
         public EventReference MenuExitedEvent;
 
+       
+
         private float _health;
         
         private Transform _fmodInstance;
@@ -124,7 +126,9 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnEnemyDamaged(Vector2 position)
         {
-           PlayDamage(1f, position);
+            //PlayDamage(1f, position);
+         
+            //RuntimeManager.PlayOneShot(DamageEvent);
         }
 
         public void OnDamageReceived()

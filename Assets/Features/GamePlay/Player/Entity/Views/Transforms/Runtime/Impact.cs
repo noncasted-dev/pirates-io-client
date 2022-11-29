@@ -34,6 +34,9 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 
         public void OnFixedUpdate(float delta)
         {
+            if (_isEnded == true)
+                return;
+            
             _currentTime += delta;
 
             var progress = _currentTime / _time;
@@ -59,6 +62,14 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
         public void Start()
         {
             _updater.Add(this);
+        }
+
+        public void Stop()
+        {
+            if (_isEnded == true)
+                return;
+            
+            _updater.Remove(this);
         }
     }
 }

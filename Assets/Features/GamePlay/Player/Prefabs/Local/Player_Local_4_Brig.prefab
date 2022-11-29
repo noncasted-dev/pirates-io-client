@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6046065100005675076, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 9.990264
+      value: 3.0303805
       objectReference: {fileID: 0}
     - target: {fileID: 6094550014823188856, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_LocalScale.x
@@ -165,6 +165,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7353524804781764757, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105649864182434147, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: _value
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8240006148239672226, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}

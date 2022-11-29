@@ -11,7 +11,16 @@ public class FireController : MonoBehaviour
     [SerializeField] private Vector2 _EmmitRange;
     [SerializeField] [Range(0f,1f)]private float _value;
     private float _valueLast;
-    private bool effectActive;
+    private bool effectActive = true;
+
+
+    private void Start()
+    {
+        _baseParticleSystem.Clear();
+        _baseParticleSystem.Stop();
+        effectActive = false;
+        SetFireForce(1f);
+    }
 
     /// <summary>
     /// Принимает значение от 0 до 1, где 0 это 0 HP а 1 это aekk HP

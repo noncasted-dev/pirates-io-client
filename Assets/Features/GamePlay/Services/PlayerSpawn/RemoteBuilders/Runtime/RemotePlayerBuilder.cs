@@ -5,6 +5,7 @@ using GamePlay.Player.Entity.Network.Remote.Bootstrap;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Services.Projectiles.Replicator.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
+using GamePlay.Services.VFX.Pool.Implementation.Dead;
 using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.Updaters.Runtime.Abstract;
 using Local.Services.Abstract.Callbacks;
@@ -65,6 +66,9 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         {
             var prefab = _config.GetShip(shipType);
             
+            var deadShipPool 
+                = _vfxPoolProvider.GetPool<DeadShipVfx>(_config.GetDead(shipType));
+            
             var viewProvider = _pool.Handler.GetPool<PlayerRemoteView>(prefab);
             var view = viewProvider.Get(Vector2.zero);
 
@@ -76,7 +80,13 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
 
             var networkRoot = rootTransform.GetComponent<PlayerNetworkRoot>();
 
-            view.Construct(_logger, _updater, _replicator, _hitExplosionPool, networkRoot, faction);
+            view.Construct(
+                _logger,
+                _updater,
+                _replicator,
+                _hitExplosionPool,
+                deadShipPool,
+                networkRoot, faction);
         }
     }
 }

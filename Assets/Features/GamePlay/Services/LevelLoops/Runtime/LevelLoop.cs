@@ -141,9 +141,12 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
         private async UniTaskVoid ProcessRespawn(ShipType ship)
         {
-            var cannons = _itemFactory.Create(ItemType.Cannon, 3);
-            _cargo.Add(cannons);
-            
+            if (ship == ShipType.Boat)
+            {
+                var cannons = _itemFactory.Create(ItemType.Cannon, 3);
+                _cargo.Add(cannons);
+            }
+
             _entityPresenter.DestroyPlayer();
 
             _logger.OnPlayerSpawn();
@@ -158,6 +161,8 @@ namespace GamePlay.Services.LevelLoops.Runtime
             await _transitionScreen.FadeOut();
 
             player.Respawn();
+            
+            _cargo.UpdateState();
         }
     }
 }

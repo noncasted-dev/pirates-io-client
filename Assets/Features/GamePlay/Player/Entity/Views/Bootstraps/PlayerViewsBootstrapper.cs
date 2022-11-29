@@ -1,6 +1,7 @@
 ﻿using GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+using GamePlay.Player.Entity.Setup.Root;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim;
 using GamePlay.Player.Entity.Views.DebugTool;
 using GamePlay.Player.Entity.Views.ObjectsCollector.Runtime;
@@ -32,6 +33,7 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
         [SerializeField] private PlayerShipConfig _config;
         [SerializeField] private PlayerDebugTool _debug;
         [SerializeField] private FireController _fireController;
+        [SerializeField] private PlayerStatsConfig _statsConfig;
         
         public void OnBuild(IContainerBuilder builder)
         {
@@ -47,6 +49,7 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
             builder.RegisterComponent(_objectsCollector);
             builder.RegisterComponent(_debug);
             builder.RegisterComponent(_fireController);
+            builder.RegisterComponent(_statsConfig);
             
             builder.RegisterComponent(_config)
                 .As<IShipConfig>();
@@ -60,9 +63,11 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
             callbackRegister.Add(_rigidBody);
             callbackRegister.Add(_weaponsRoot);
             callbackRegister.Add(_spriteTransform);
+            callbackRegister.Add(_statsConfig);
             resolver.Resolve<LocalAreaInteractor>();
             resolver.Resolve<PlayerObjectsCollector>();
             resolver.Resolve<PlayerDebugTool>();
+            resolver.Resolve<PlayerStatsConfig>();
         }
     }
 }

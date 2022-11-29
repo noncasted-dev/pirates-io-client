@@ -12263,6 +12263,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -6.95
       objectReference: {fileID: 0}
+    - target: {fileID: 2164240000510633181, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164240000510633181, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.31
+      objectReference: {fileID: 0}
     - target: {fileID: 2164240000510633187, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
       propertyPath: m_Radius
       value: 28.24
@@ -60118,6 +60126,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1130840729}
     m_Modifications:
+    - target: {fileID: 2164239999472927868, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164239999472927868, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -15.41
+      objectReference: {fileID: 0}
     - target: {fileID: 2164239999472928131, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
       propertyPath: _definition
       value: 
@@ -60129,6 +60145,14 @@ PrefabInstance:
     - target: {fileID: 2164240000774637555, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
       propertyPath: m_LocalPosition.y
       value: -6.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729756028602469284, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729756028602469284, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.42
       objectReference: {fileID: 0}
     - target: {fileID: 2729756028602469285, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
       propertyPath: _producables.m_keys.Array.size
@@ -60977,6 +61001,22 @@ PrefabInstance:
     - target: {fileID: 2729756028602469285, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
       propertyPath: _producables.m_values.Array.data[34]._lackProductionSpeedPerSecond
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729756028722982537, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
+      propertyPath: m_Radius
+      value: 4.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729756030011957668, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729756030011957671, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
+      propertyPath: m_Size.y
+      value: 6.4564247
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729756030011957671, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.018774033
       objectReference: {fileID: 0}
     - target: {fileID: 6022219910538243845, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
       propertyPath: m_LocalScale.x

@@ -79,6 +79,12 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             _fireController.SetFireForce(_amount / (float)_max);
 
             MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max));
+            
+            _eventSender.ReplicateEvent(new HealthChangeNetworkEvent()
+            {
+                Current = _amount,
+                Max = _max
+            });
         }
 
         public void Heal(int add)
@@ -122,6 +128,12 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             _fireController.SetFireForce(_amount / (float)_max);
 
             MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max));
+            
+            _eventSender.ReplicateEvent(new HealthChangeNetworkEvent()
+            {
+                Current = _amount,
+                Max = _max
+            });
         }
     }
 }

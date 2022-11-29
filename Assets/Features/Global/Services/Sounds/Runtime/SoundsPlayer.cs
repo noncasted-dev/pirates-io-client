@@ -1,5 +1,7 @@
-﻿using FMOD.Studio;
+﻿using System;
+using FMOD.Studio;
 using FMODUnity;
+using GamePlay.Services.Projectiles.Entity;
 using UnityEngine;
 
 namespace Global.Services.Sounds.Runtime
@@ -33,10 +35,8 @@ namespace Global.Services.Sounds.Runtime
         public EventReference MenuEnteredEvent;
         public EventReference MenuExitedEvent;
 
-       
-
         private float _health;
-        
+
         private Transform _fmodInstance;
 
         private void Start()
@@ -54,16 +54,19 @@ namespace Global.Services.Sounds.Runtime
             AmbInstance.setParameterByName("amb_condition", 0f);
             Debug.Log("open sea");
         }
+
         public void OnPortEntered()
         {
             AmbInstance.setParameterByName("amb_condition", 1f);
             Debug.Log("port_enter");
         }
+
         public void OnCityEntered()
         {
             AmbInstance.setParameterByName("amb_condition", 2f);
             Debug.Log("city entered");
         }
+
         public void OnPortExited()
         {
             //AmbInstance.setParameterByName("amb_condition", 2f);
@@ -76,12 +79,10 @@ namespace Global.Services.Sounds.Runtime
             Debug.Log("BattleEntered");
         }
 
-        
         public void OnBattleExited()
         {
             Debug.Log("BattleExited");
         }
-
 
         //Battle
         public void OnCannonBallShot(Vector2 position)
@@ -92,24 +93,25 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnShrapnelShot(Vector2 position)
         {
-            PlayShot(1f, position);           
+            PlayShot(1f, position);
             Debug.Log("boom Shrapnel");
         }
 
         public void OnKnuppelShot(Vector2 position)
         {
-            PlayShot(2f, position);           
+            PlayShot(2f, position);
             Debug.Log("boom Knuppel");
         }
 
         private void PlayShot(float parameter, Vector2 position)
         {
             ShotInstance = RuntimeManager.CreateInstance(ShotEvent);
-            AttachInstance(ShotInstance, position);           
+            AttachInstance(ShotInstance, position);
             ShotInstance.setParameterByName("shot_type", parameter);
             ShotInstance.start();
             ShotInstance.release();
         }
+
         //Damage
         public void OnProjectileDropped(Vector2 position)
         {
@@ -121,14 +123,35 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnDeath(Vector2 position)
         {
-            
         }
 
-        public void OnEnemyDamaged(GameObject target)
+        public void OnEnemyDamaged(GameObject target, ProjectileType type)
         {
+            switch (type)
+            {
+                case ProjectileType.Ball:
+                {
+                    break;
+                }
+                case ProjectileType.Knuppel:
+                {
+                    break;
+                }
+                case ProjectileType.Shrapnel:
+                {
+                    break;
+                }
+                case ProjectileType.Fishnet:
+                {
+                    break;
+                }
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
+
             //PlayDamage(1f, position);
 
-            FMODUnity.RuntimeManager.PlayOneShotAttached(DamageEvent, target);
+            RuntimeManager.PlayOneShotAttached(DamageEvent, target);
             //PlayDamage(1f, position);
         }
 
@@ -136,7 +159,6 @@ namespace Global.Services.Sounds.Runtime
         {
             RuntimeManager.PlayOneShot(DamageReceivedEvent);
             Debug.Log("We are damaged!");
-
         }
 
         private void PlayDamage(float parameter, Vector2 position)
@@ -147,6 +169,7 @@ namespace Global.Services.Sounds.Runtime
             DamageInstance.start();
             DamageInstance.release();
         }
+
         //UI
         public void OnUiOpened()
         {
@@ -173,7 +196,6 @@ namespace Global.Services.Sounds.Runtime
             RuntimeManager.PlayOneShot(MenuExitedEvent);
         }
 
-    
         public void OnHealthChanged(float health)
         {
             _health = health;

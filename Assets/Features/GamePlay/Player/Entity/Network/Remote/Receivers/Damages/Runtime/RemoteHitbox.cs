@@ -51,7 +51,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
             direction.Normalize();
             explosion.transform.RotateAlong(direction);
             
-            MessageBroker.Default.TriggerSound(PositionalSoundType.EnemyDamaged, damage.Origin, gameObject);
+            MessageBroker.Default.Publish(new EnemyDamagedSoundEvent(gameObject, damage.Type));
 
             if (isProjectileLocal == true)
             {

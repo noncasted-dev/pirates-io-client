@@ -12,13 +12,14 @@ namespace Global.Services.Sounds.Runtime
         private IDisposable _triggerListener;
         private IDisposable _positionalTriggerListener;
         private IDisposable _healthListener;
+        private IDisposable _damageListener;
 
         private void OnEnable()
         {
             _triggerListener = MessageBroker.Default.Receive<SoundEvent>().Subscribe(OnSoundTriggered);
-            _positionalTriggerListener = MessageBroker.Default.Receive<PositionalSoundEvent>()
-                .Subscribe(OnPositionalSoundTriggered);
+            _positionalTriggerListener = MessageBroker.Default.Receive<PositionalSoundEvent>().Subscribe(OnPositionalSoundTriggered);
             _healthListener = MessageBroker.Default.Receive<HealthChangeEvent>().Subscribe(OnHealthChanged);
+            _damageListener = MessageBroker.Default.Receive<EnemyDamagedSoundEvent>().Subscribe(OnEnemyDamaged);
         }
 
         private void OnDisable()
@@ -26,6 +27,7 @@ namespace Global.Services.Sounds.Runtime
             _triggerListener?.Dispose();
             _positionalTriggerListener?.Dispose();
             _healthListener?.Dispose();
+            _damageListener?.Dispose();
         }
 
         private void OnSoundTriggered(SoundEvent data)
@@ -88,7 +90,6 @@ namespace Global.Services.Sounds.Runtime
                     _player.OnProjectileDropped(data.Position);
                     break;
                 case PositionalSoundType.EnemyDamaged:
-                    _player.OnEnemyDamaged(data.Target);
                     break;
                 case PositionalSoundType.DamageReceived:
                     _player.OnDamageReceived();
@@ -106,6 +107,11 @@ namespace Global.Services.Sounds.Runtime
             var delta = data.Current / data.Max;
             
             _player.OnHealthChanged(delta);
+        }
+
+        private void OnEnemyDamaged(EnemyDamagedSoundEvent data)
+        {
+            _player.OnEnemyDamaged(data.Target, data.Type);
         }
     }
 }

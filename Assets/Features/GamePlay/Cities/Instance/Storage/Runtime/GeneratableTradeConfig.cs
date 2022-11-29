@@ -7,8 +7,21 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
     [Serializable]
     public class GeneratableTradeConfig
     {
+        public GeneratableTradeConfig(CityType city)
+        {
+            _city = city;
+
+            _medianCost = 100;
+            _maxItems = 300;
+            _medianCount = 100;
+            _medianCurveHeight = 60;
+            _minCurveHeight = 10;
+            _minCount = 10;
+            _productionSpeed = 1;
+        }
+        
         [SerializeField] [Min(1)] private int _medianCost;
-        [SerializeField] [Min(1)] private int _medianMaxItems;
+        [SerializeField] [Min(1)] private int _maxItems;
 
         [SerializeField] [Min(1)] private int _medianCount;
         [SerializeField] [Min(1)] private int _medianCurveHeight;
@@ -20,7 +33,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
         [SerializeField] private CityType _city;
 
         public int MedianCost => _medianCost;
-        public int MedianMaxItems => _medianMaxItems;
+        public int MaxItems => _maxItems;
         public int MedianCount => _medianCount;
         public int MedianCurveHeight => _medianCurveHeight;
         public int MinCurveHeight => _minCurveHeight;

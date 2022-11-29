@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ddc07df2-8c97-48c7-857e-d2c9168eb5bd}">
+		<property name="assetPath">
+			<value>В Бой.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>67.741927437641721</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{64eed2ed-234c-4897-a67b-7675ed23f8ed}</destination>
+		</relationship>
+	</object>
+</objects>

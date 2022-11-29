@@ -35,6 +35,12 @@ namespace Global.Services.Sounds.Runtime
         public EventReference MenuEnteredEvent;
         public EventReference MenuExitedEvent;
 
+        [Space(30)]
+        [Header("FX")]
+        [SerializeField]
+        public EventReference BurningEvent;
+        public FMOD.Studio.EventInstance BurningInstance;
+
         private float _health;
 
         private Transform _fmodInstance;
@@ -44,6 +50,9 @@ namespace Global.Services.Sounds.Runtime
             AmbInstance = RuntimeManager.CreateInstance(AmbEvent);
             AmbInstance.start();
 
+            MusicInstance = RuntimeManager.CreateInstance(MusicEvent);
+            MusicInstance.start();
+
             var fmodObject = new GameObject("FmodInstance");
             _fmodInstance = fmodObject.transform;
         }
@@ -51,18 +60,20 @@ namespace Global.Services.Sounds.Runtime
         //Amb
         public void OnCityExited()
         {
-            AmbInstance.setParameterByName("amb_condition", 0f);
+            RuntimeManager.StudioSystem.setParameterByName("amb_condition", 0f);
             Debug.Log("open sea");
         }
 
         public void OnPortEntered()
         {
+            RuntimeManager.StudioSystem.setParameterByName("music_condition", 1f);
             AmbInstance.setParameterByName("amb_condition", 1f);
             Debug.Log("port_enter");
         }
 
         public void OnCityEntered()
         {
+            RuntimeManager.StudioSystem.setParameterByName("music_condition", 0f);
             AmbInstance.setParameterByName("amb_condition", 2f);
             Debug.Log("city entered");
         }
@@ -76,11 +87,13 @@ namespace Global.Services.Sounds.Runtime
         //Music
         public void OnBattleEntered()
         {
+            RuntimeManager.StudioSystem.setParameterByName("music_condition", 2f);
             Debug.Log("BattleEntered");
         }
 
         public void OnBattleExited()
         {
+            RuntimeManager.StudioSystem.setParameterByName("music_condition", 0f);
             Debug.Log("BattleExited");
         }
 
@@ -125,21 +138,24 @@ namespace Global.Services.Sounds.Runtime
         {
         }
 
-        public void OnEnemyDamaged(GameObject target, ProjectileType type)
+        public void OnEnemyDamaged(GameObject target, ProjectileType type) //реализовать переключение типа урона
         {
             switch (type)
             {
                 case ProjectileType.Ball:
-                {
+                {                       
+                        
                     break;
                 }
                 case ProjectileType.Knuppel:
                 {
-                    break;
+                        
+                        break;
                 }
                 case ProjectileType.Shrapnel:
                 {
-                    break;
+                       
+                        break;
                 }
                 case ProjectileType.Fishnet:
                 {
@@ -147,12 +163,8 @@ namespace Global.Services.Sounds.Runtime
                 }
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
-            }
-
-            //PlayDamage(1f, position);
-
-            RuntimeManager.PlayOneShotAttached(DamageEvent, target);
-            //PlayDamage(1f, position);
+            }                            
+           RuntimeManager.PlayOneShotAttached(DamageEvent, target);          
         }
 
         public void OnDamageReceived()
@@ -161,14 +173,7 @@ namespace Global.Services.Sounds.Runtime
             Debug.Log("We are damaged!");
         }
 
-        private void PlayDamage(float parameter, Vector2 position)
-        {
-            DamageInstance = RuntimeManager.CreateInstance(DamageEvent);
-            AttachInstance(ShotInstance, position);
-            DamageInstance.setParameterByName("damage_type", parameter);
-            DamageInstance.start();
-            DamageInstance.release();
-        }
+        
 
         //UI
         public void OnUiOpened()
@@ -196,9 +201,31 @@ namespace Global.Services.Sounds.Runtime
             RuntimeManager.PlayOneShot(MenuExitedEvent);
         }
 
+        //HP
         public void OnHealthChanged(float health)
         {
             _health = health;
+            
+            if (health < 0.5)
+            {
+                MusicInstance.setParameterByName("music_intencity", 2f);
+                //Burning();
+            }
+            else
+            {
+                BurningInstance.release();
+
+            }
+
+        //void Burning(GameObject target)
+        //    {
+        //        BurningInstance = RuntimeManager.CreateInstance(BurningEvent);
+        //        AttachInstance(BurningInstance, target);
+        //        BurningInstance.setParameterByName("health", 0.5f);
+        //        BurningInstance.start();
+        //    }
+
+
         }
 
         private void AttachInstance(EventInstance instance, Vector2 position)

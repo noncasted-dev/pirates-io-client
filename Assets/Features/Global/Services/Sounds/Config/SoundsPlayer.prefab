@@ -91,21 +91,21 @@ MonoBehaviour:
       Data2: 1209531650
       Data3: 1672670856
       Data4: 2089033844
-    Path: event:/Impacts/damage_impact
+    Path: event:/damage_impact
   DamageReceivedEvent:
     Guid:
       Data1: -1735059408
       Data2: 1177255832
       Data3: 1771578815
       Data4: -1544184326
-    Path: event:/Impacts/damage_received
+    Path: event:/damage_received
   AmbEvent:
     Guid:
-      Data1: 276542091
-      Data2: 1155248546
-      Data3: 907026067
-      Data4: 2069366796
-    Path: event:/Ambience/amb2
+      Data1: 192758556
+      Data2: 1076713483
+      Data3: 1544111802
+      Data4: 2052486217
+    Path: event:/amb
   MusicEvent:
     Guid:
       Data1: -2137127258
@@ -115,36 +115,43 @@ MonoBehaviour:
     Path: event:/music
   UiOpenedEvent:
     Guid:
-      Data1: -212564602
-      Data2: 1124305201
-      Data3: -2120842880
-      Data4: -1038651579
-    Path: event:/port
+      Data1: -351821601
+      Data2: 1339323152
+      Data3: 1540337599
+      Data4: 1940158260
+    Path: event:/UI/ui opened
   ButtonClickedEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1141901362
+      Data2: 1132531895
+      Data3: 1950572988
+      Data4: 1160020078
+    Path: event:/UI/button clicked
   OverButtonEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1907474110
+      Data2: 1141088275
+      Data3: 91923846
+      Data4: 997490305
+    Path: event:/UI/over button
   MenuEnteredEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -675802352
+      Data2: 1211035243
+      Data3: 962952891
+      Data4: 171613501
+    Path: event:/UI/menu entered
   MenuExitedEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1264647438
+      Data2: 1245127829
+      Data3: 448172433
+      Data4: 1432106250
+    Path: event:/UI/menu exit
+  BurningEvent:
+    Guid:
+      Data1: 170150249
+      Data2: 1240654364
+      Data3: 639624354
+      Data4: -1042865841
+    Path: event:/burning

@@ -53,11 +53,14 @@
 			<destination>{aac8eee0-c210-4097-b981-662b1b9a72fd}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{6f9caee5-be69-47c6-b1ba-f3538b3dd5a1}</destination>
+			<destination>{3c717a64-3d5f-4a1f-9b15-eee4fcf4f26d}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{a3799436-e221-40a0-94ea-9712cd248c74}">
 		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="priority">
 			<value>1</value>
 		</property>
 		<property name="minimumDistance">
@@ -112,6 +115,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{1c68f0dc-fb9d-4c78-a924-f33765468ff3}">
+		<property name="volume">
+			<value>-12</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>

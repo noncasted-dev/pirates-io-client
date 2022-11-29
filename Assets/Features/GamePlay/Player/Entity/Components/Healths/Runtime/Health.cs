@@ -7,17 +7,18 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
 {
     public class Health : IHealth, ISwitchCallbacks, IUpdatable
     {
-        public Health(HealthLogger logger, IUpdater updater)
+        public Health(HealthLogger logger, IUpdater updater, FireController fireController)
         {
             _logger = logger;
             _updater = updater;
+            _fireController = fireController;
         }
-
 
         private const float _tickDuration = 5f;
 
         private readonly HealthLogger _logger;
         private readonly IUpdater _updater;
+        private readonly FireController _fireController;
 
         private int _max;
         private int _amount;
@@ -32,6 +33,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
         public void OnEnabled()
         {
             _updater.Add(this);
+            _fireController.SetFireForce(1f);
         }
 
         public void OnDisabled()
@@ -66,6 +68,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             _logger.OnRespawned(_max);
             
             _amount = _max;
+            _fireController.SetFireForce(_amount / (float)_max);
 
             MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max));
         }
@@ -83,6 +86,8 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             if (_amount > _max)
                 _amount = _max;
 
+            _fireController.SetFireForce(_amount / (float)_max);
+            
             _logger.OnHealed(add, _amount);
 
             MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max));
@@ -99,6 +104,8 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             _amount -= damage;
 
             _logger.OnDamaged(damage, _amount);
+            
+            _fireController.SetFireForce(_amount / (float)_max);
 
             MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max));
         }

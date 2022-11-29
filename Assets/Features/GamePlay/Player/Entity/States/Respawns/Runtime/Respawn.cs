@@ -3,6 +3,7 @@ using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
 using GamePlay.Player.Entity.States.Respawns.Logs;
+using UniRx;
 
 namespace GamePlay.Player.Entity.States.Respawns.Runtime
 {
@@ -36,6 +37,8 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
 
             _logger.OnEntered();
             _stateMachine.Exit();
+
+            MessageBroker.Default.Publish(new PlayerRespawnedEvent(_health.Amount, _health.Max));
         }
 
         public StateDefinition Definition { get; }

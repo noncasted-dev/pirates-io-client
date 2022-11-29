@@ -107,7 +107,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _collectImmunityTime: 0.1
+  _collectImmunityTime: 2
   _flyHeight: 1
   _flyTime: 1
   _animator: {fileID: 86812301156573219}
@@ -14882,7 +14882,7 @@ SpriteRenderer:
   m_SortingOrder: 5
   m_Sprite: {fileID: 501313353, guid: 592c0156930f58c41abfceed7d549e8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.5, y: 0.5}
@@ -24767,7 +24767,7 @@ SpriteRenderer:
   m_SortingOrder: 5
   m_Sprite: {fileID: -303872825, guid: 592c0156930f58c41abfceed7d549e8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.5, y: 0.5}

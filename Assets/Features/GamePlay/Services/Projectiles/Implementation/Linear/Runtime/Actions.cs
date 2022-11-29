@@ -48,6 +48,7 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 
         public bool IsLocal => _isLocal;
         public string CreatorId => _creatorId;
+        public ProjectileType Type => _type;
 
         public void Setup(ShootParams shootParams, bool isLocal, string creatorId)
         {

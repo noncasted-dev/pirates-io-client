@@ -118,6 +118,12 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             _trail.Clear();
         }
 
+        public void OnFishCollected()
+        {
+            OnTriggered();
+            _actions.OnCollided();
+        }
+
         private void OnCollided() => OnCollidedAsync().Forget();
         private void OnTriggered() => OnTriggeredAsync().Forget();
         private void OnDropped() => OnDroppedAsync().Forget();

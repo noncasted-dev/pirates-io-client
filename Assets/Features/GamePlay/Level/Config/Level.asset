@@ -33,4 +33,5 @@ MonoBehaviour:
   _wallet: {fileID: 11400000, guid: d4a189953cc48734291966c982bb656d, type: 2}
   _reputation: {fileID: 11400000, guid: 7cd2adcba6eceef4789f7e097a9d4472, type: 2}
   _map: {fileID: 11400000, guid: 21d2cefe82411db478f1993401574cf2, type: 2}
+  _fishSpawner: {fileID: 11400000, guid: eec516ef65c1998469bccac7181e6e54, type: 2}
   _scopePrefab: {fileID: 6256164544057903142, guid: 739bd40898e14fe4ebe3aa07b287a0fb, type: 3}

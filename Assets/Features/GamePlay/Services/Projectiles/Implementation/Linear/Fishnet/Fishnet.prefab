@@ -5005,7 +5005,7 @@ GameObject:
   - component: {fileID: 8025489524541167739}
   - component: {fileID: 8025489524541167738}
   - component: {fileID: 488861096520624764}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fishnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5059,7 +5059,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.05283317, y: 0.011449933}

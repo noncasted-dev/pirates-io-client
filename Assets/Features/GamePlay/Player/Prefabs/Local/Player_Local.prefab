@@ -15362,7 +15362,6 @@ GameObject:
   - component: {fileID: 1619435411979782750}
   - component: {fileID: 8859833963108558562}
   - component: {fileID: 710161118739580181}
-  - component: {fileID: 3494044675534934861}
   - component: {fileID: 5197820324927245891}
   - component: {fileID: -4100299532222470880}
   - component: {fileID: 160118787591633700}
@@ -15502,17 +15501,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _logSettings: {fileID: 11400000, guid: 881828713d0600647bd49975fced4cbc, type: 2}
---- !u!210 &3494044675534934861
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3834022361475402687}
-  m_Enabled: 1
-  m_SortingLayerID: 1952455
-  m_SortingLayer: 2
-  m_SortingOrder: 10
 --- !u!70 &5197820324927245891
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -15961,6 +15949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4011287660678557439}
   - component: {fileID: 4573125717726713662}
+  - component: {fileID: 1287005397989643622}
   m_Layer: 0
   m_Name: Object
   m_TagString: Untagged
@@ -16004,6 +15993,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!210 &1287005397989643622
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386881185778272735}
+  m_Enabled: 1
+  m_SortingLayerID: 1952455
+  m_SortingLayer: 2
+  m_SortingOrder: 10
 --- !u!1 &7516248193504591221
 GameObject:
   m_ObjectHideFlags: 0
@@ -16013,6 +16013,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6647455317717596983}
+  - component: {fileID: 1530030246937905909}
   m_Layer: 6
   m_Name: FX
   m_TagString: Untagged
@@ -16038,6 +16039,17 @@ Transform:
   m_Father: {fileID: 1743216952723330936}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1530030246937905909
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7516248193504591221}
+  m_Enabled: 1
+  m_SortingLayerID: -1801089971
+  m_SortingLayer: 1
+  m_SortingOrder: 3
 --- !u!1 &7766639652362208732
 GameObject:
   m_ObjectHideFlags: 0
@@ -16484,10 +16496,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1743216952723330936}
     m_Modifications:
-    - target: {fileID: 1995104052425561820, guid: bc7e7d208137f1e4b9e8ce7ce41a7ddf, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2526038815060045169, guid: bc7e7d208137f1e4b9e8ce7ce41a7ddf, type: 3}
       propertyPath: m_Name
       value: DecorFishOnWater
@@ -16535,10 +16543,6 @@ PrefabInstance:
     - target: {fileID: 2646420142697332321, guid: bc7e7d208137f1e4b9e8ce7ce41a7ddf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3121668942987937679, guid: bc7e7d208137f1e4b9e8ce7ce41a7ddf, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc7e7d208137f1e4b9e8ce7ce41a7ddf, type: 3}

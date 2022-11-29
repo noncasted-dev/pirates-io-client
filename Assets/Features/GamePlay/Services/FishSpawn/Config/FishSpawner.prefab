@@ -50,5 +50,5 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _spawnRate: 10
-  _spawnDistance: 10
+  _spawnDistance: 5
   _dropCount: 10

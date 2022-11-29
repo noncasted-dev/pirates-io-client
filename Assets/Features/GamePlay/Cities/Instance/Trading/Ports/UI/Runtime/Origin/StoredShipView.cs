@@ -22,8 +22,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         [SerializeField] private TMP_Text _speed;
         [SerializeField] private TMP_Text _name;
 
-        [SerializeField] private Image _flag;
-        [SerializeField] private TMP_Text _requiredReputation;
         [SerializeField] private Button _transferButton;
 
         private ShipItem _item;
@@ -54,14 +52,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             _origin = origin;
             _item = ship;
 
-            _flag.sprite = reputation.Flag;
-
-            if (ship.RequiredReputation < reputation.Value)
-                _isAvailable = true;
-            else
-                _isAvailable = false;
-
-            _requiredReputation.text = ship.RequiredReputation.ToString();
+            _isAvailable = true;
 
             gameObject.SetActive(true);
 
@@ -83,7 +74,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         public void Enable()
         {
             gameObject.SetActive(true);
-            
+
             if (_isAvailable == true)
                 _transferButton.gameObject.SetActive(true);
         }

@@ -1,5 +1,4 @@
-﻿using Common.EditableScriptableObjects.Attributes;
-using GamePlay.Cities.Instance.Spawning.Runtime;
+﻿using GamePlay.Cities.Instance.Spawning.Runtime;
 using GamePlay.Factions.Common;
 using UnityEngine;
 

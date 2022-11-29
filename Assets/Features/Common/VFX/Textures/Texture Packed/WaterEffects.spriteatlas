@@ -58,6 +58,11 @@ SpriteAtlas:
   - {fileID: -1891726041, guid: 592c0156930f58c41abfceed7d549e8e, type: 3}
   - {fileID: 21300000, guid: b2e150b630ba42d4fb5399956197e964, type: 3}
   - {fileID: 21300000, guid: 776317576aac07c4da5ba71c10a85377, type: 3}
+  - {fileID: -942585114, guid: c5ceb067fbd89b74483e1478d870aff4, type: 3}
+  - {fileID: -2073490771, guid: c5ceb067fbd89b74483e1478d870aff4, type: 3}
+  - {fileID: -585642322, guid: c5ceb067fbd89b74483e1478d870aff4, type: 3}
+  - {fileID: 657178942, guid: c5ceb067fbd89b74483e1478d870aff4, type: 3}
+  - {fileID: 2026872283, guid: c5ceb067fbd89b74483e1478d870aff4, type: 3}
   - {fileID: 1609522834, guid: 74203377ab12bf345b6fcdb656eaed64, type: 3}
   - {fileID: -974839836, guid: 74203377ab12bf345b6fcdb656eaed64, type: 3}
   - {fileID: -1648242421, guid: 74203377ab12bf345b6fcdb656eaed64, type: 3}
@@ -89,6 +94,7 @@ SpriteAtlas:
   - {fileID: -1686282629, guid: 085c930900198c142ac782f4a81d27f9, type: 3}
   - {fileID: -1419468691, guid: 085c930900198c142ac782f4a81d27f9, type: 3}
   - {fileID: 21300000, guid: 1adcd279cb2a00b4fadb16c007640a71, type: 3}
+  - {fileID: 21300000, guid: e27acdb9c1076d2439b793d1e8fb3e34, type: 3}
   - {fileID: 1009125136, guid: 868bb88bc1ecc4841a6ab62e2cef5766, type: 3}
   - {fileID: -722591245, guid: 868bb88bc1ecc4841a6ab62e2cef5766, type: 3}
   - {fileID: -836115103, guid: 868bb88bc1ecc4841a6ab62e2cef5766, type: 3}
@@ -150,6 +156,11 @@ SpriteAtlas:
   - Characters_5
   - reward_glow
   - AIMZonea
+  - FishNet_3
+  - FishNet_2
+  - FishNet_1
+  - FishNet_0
+  - FishNet_4
   - Core2_1
   - Core2_0
   - Core2_3
@@ -181,6 +192,7 @@ SpriteAtlas:
   - FireSheet_13
   - FireSheet_14
   - wawes
+  - FishNetItem
   - Core_2
   - Core_1
   - Core_0

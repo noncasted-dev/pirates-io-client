@@ -15555,12 +15555,15 @@ MonoBehaviour:
   _name: Frigate
   _icon: {fileID: 0}
   _baseHealth: 1000
+  _regenerationInTick: 30
   _baseMaxSpeed: 44
   _baseMaxWeight: 600
   _baseMaxCannons: 150
   _baseCannons: 35
   _baseTeam: 250
   _baseMaxTeam: 350
+  _shallowDamage: 5
+  _isShallowIgnored: 0
 --- !u!114 &2585353411466666207
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -85,6 +85,11 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
             return weight;
         }
+        
+        public void UpdateState()
+        {
+            OnChanged();   
+        }
 
         private void OnChanged()
         {

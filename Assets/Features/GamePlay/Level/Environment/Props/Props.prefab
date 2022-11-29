@@ -112,13 +112,13 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1801089971
   m_SortingLayer: 1
-  m_SortingOrder: 8
+  m_SortingOrder: 15
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.10546875, y: 1.328125, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 0
+  m_Mode: 1
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
 --- !u!114 &7311574416355901946
@@ -191,8 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d73b3ab1f6246ef9a8dd75dbdec265e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stonesPercent: 0.1
-  _propsAmount: 1
+  _stonesPercent: 0.05
+  _propsAmount: 0.2
   _trees: {fileID: 11400000, guid: 676259474e8142a40b193cf9682a5f51, type: 2}
   _stones: {fileID: 11400000, guid: db4a5d75ca2ce0443a6a907c1a4e5001, type: 2}
   _groundTileMap: {fileID: 0}

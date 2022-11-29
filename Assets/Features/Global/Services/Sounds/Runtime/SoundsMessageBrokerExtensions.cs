@@ -11,9 +11,13 @@ namespace Global.Services.Sounds.Runtime
             messageBroker.Publish(data);
         }
         
-        public static void TriggerSound(this IMessageBroker messageBroker, PositionalSoundType sound, Vector2 position)
+        public static void TriggerSound(
+            this IMessageBroker messageBroker,
+            PositionalSoundType sound,
+            Vector2 position,
+            GameObject target = null)
         {
-            var data = new PositionalSoundEvent(sound, position);
+            var data = new PositionalSoundEvent(sound, position, target);
             messageBroker.Publish(data);
         }
     }

@@ -88,7 +88,7 @@ namespace Global.Services.Sounds.Runtime
                     _player.OnProjectileDropped(data.Position);
                     break;
                 case PositionalSoundType.EnemyDamaged:
-                    _player.OnEnemyDamaged(data.Position);
+                    _player.OnEnemyDamaged(data.Target);
                     break;
                 case PositionalSoundType.DamageReceived:
                     _player.OnDamageReceived();

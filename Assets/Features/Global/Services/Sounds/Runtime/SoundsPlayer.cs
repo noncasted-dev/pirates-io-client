@@ -124,11 +124,15 @@ namespace Global.Services.Sounds.Runtime
             
         }
 
-        public void OnEnemyDamaged(Vector2 position)
+        public void OnEnemyDamaged(GameObject target)
         {
+<<<<<<< Updated upstream
             //PlayDamage(1f, position);
          
             //RuntimeManager.PlayOneShot(DamageEvent);
+=======
+           //PlayDamage(1f, position);
+>>>>>>> Stashed changes
         }
 
         public void OnDamageReceived()

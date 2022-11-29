@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5000750212321331326, guid: 8ffead359f25d2e45b9ef88d7c589035, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000750212321331327, guid: 8ffead359f25d2e45b9ef88d7c589035, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d81d2b7f76bc8a045b96786bc90b3f6e, type: 3}
     - target: {fileID: 5000750213119032818, guid: 8ffead359f25d2e45b9ef88d7c589035, type: 3}
       propertyPath: m_Name
       value: MapCity_France_Town

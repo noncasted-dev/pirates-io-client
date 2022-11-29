@@ -127,9 +127,9 @@ namespace Global.Services.Sounds.Runtime
         public void OnEnemyDamaged(GameObject target)
         {
             //PlayDamage(1f, position);
-         
-            //RuntimeManager.PlayOneShot(DamageEvent);
-           //PlayDamage(1f, position);
+
+            FMODUnity.RuntimeManager.PlayOneShotAttached(DamageEvent, target);
+            //PlayDamage(1f, position);
         }
 
         public void OnDamageReceived()
@@ -173,6 +173,7 @@ namespace Global.Services.Sounds.Runtime
             RuntimeManager.PlayOneShot(MenuExitedEvent);
         }
 
+    
         public void OnHealthChanged(float health)
         {
             _health = health;

@@ -102,6 +102,11 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 
                 _cargo.Reduce(item, shots);
             }
+            else
+            {
+                shots = 1;
+            }
+            
             var shot = new Shot(
                 _updater,
                 _cannonReplicator,

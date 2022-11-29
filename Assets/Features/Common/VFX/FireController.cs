@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using OpenCover.Framework.Model;
 using UnityEngine;
 
 public class FireController : MonoBehaviour
@@ -9,16 +5,17 @@ public class FireController : MonoBehaviour
     [SerializeField] private ParticleSystem _baseParticleSystem;
     [SerializeField] private ParticleSystem _fireEmmiterParticleSystem;
     [SerializeField] private Vector2 _EmmitRange;
-    [SerializeField] [Range(0f,1f)]private float _value;
-    private float _valueLast;
-    private bool effectActive = true;
-
+    
+    [SerializeField] [Range(0f,1f)] private float _value;
+    
+    private float _lastValue;
+    private bool _isActive = true;
 
     private void Start()
     {
         _baseParticleSystem.Clear();
         _baseParticleSystem.Stop();
-        effectActive = false;
+        _isActive = false;
         SetFireForce(1f);
     }
 
@@ -29,34 +26,37 @@ public class FireController : MonoBehaviour
     {
         value = Mathf.Clamp01(value);
         _value = value;
-        _valueLast = value;
+        _lastValue = value;
+        
         if (_value > 0.5f)
         {
-            if (effectActive)
+            if (_isActive)
             {
                 _baseParticleSystem.Stop();
-                effectActive = false;
+                _isActive = false;
             }
         }
         else
         {
-            if (effectActive == false)
+            if (_isActive == false)
             {
-                effectActive = true;
+                _isActive = true;
                 _baseParticleSystem.Play();
             }
+            
             var module = _fireEmmiterParticleSystem.emission;
-            float t = Mathf.Clamp01(((_value  * 2f) - 0.2f) / 0.8f);
-            float circleArea = 2f * Mathf.PI * _fireEmmiterParticleSystem.shape.radius;
+            var t = Mathf.Clamp01(((_value  * 2f) - 0.2f) / 0.8f);
+            var circleArea = 2f * Mathf.PI * _fireEmmiterParticleSystem.shape.radius;
+            
             module.rateOverTime = Mathf.Lerp(_EmmitRange.x, _EmmitRange.y, t) * circleArea;
         }
     }
 
     private void OnValidate()
     {
-        if (_value != _valueLast)
+        if (Mathf.Approximately(_value, _lastValue) == false)
         {
-            _valueLast = _value;
+            _lastValue = _value;
             SetFireForce(_value);
         }
     }

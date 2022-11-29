@@ -31,7 +31,8 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
         [SerializeField] private PlayerBodyTransform _transform;
         [SerializeField] private PlayerShipConfig _config;
         [SerializeField] private PlayerDebugTool _debug;
-
+        [SerializeField] private FireController _fireController;
+        
         public void OnBuild(IContainerBuilder builder)
         {
             builder.RegisterComponent(_sprite).AsImplementedInterfaces();
@@ -45,6 +46,7 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
             builder.RegisterComponent(_areaInteractor);
             builder.RegisterComponent(_objectsCollector);
             builder.RegisterComponent(_debug);
+            builder.RegisterComponent(_fireController);
             
             builder.RegisterComponent(_config)
                 .As<IShipConfig>();

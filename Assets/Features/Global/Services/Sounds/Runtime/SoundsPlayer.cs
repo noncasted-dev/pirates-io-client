@@ -35,11 +35,15 @@ namespace Global.Services.Sounds.Runtime
         public EventReference MenuEnteredEvent;
         public EventReference MenuExitedEvent;
 
-        [Space(30)]
-        [Header("FX")]
-        [SerializeField]
+        [Space(30)] [Header("FX")] [SerializeField]
         public EventReference BurningEvent;
-        public FMOD.Studio.EventInstance BurningInstance;
+        public EventInstance BurningInstance;
+
+        [SerializeField] private float _fightExitSpeed = 1f;
+        [SerializeField] private float _fightSecondsPerHit = 1f;
+
+        private float _fightTime;
+        private bool _isInFight;
 
         private float _health;
 
@@ -55,6 +59,17 @@ namespace Global.Services.Sounds.Runtime
 
             var fmodObject = new GameObject("FmodInstance");
             _fmodInstance = fmodObject.transform;
+        }
+
+        private void Update()
+        {
+            _fightTime -= _fightExitSpeed * Time.deltaTime;
+
+            if (_fightTime < 0f && _isInFight == true)
+            {
+                _isInFight = false;
+                OnBattleExited();
+            }
         }
 
         //Amb
@@ -143,19 +158,16 @@ namespace Global.Services.Sounds.Runtime
             switch (type)
             {
                 case ProjectileType.Ball:
-                {                       
-                        
+                {
                     break;
                 }
                 case ProjectileType.Knuppel:
                 {
-                        
-                        break;
+                    break;
                 }
                 case ProjectileType.Shrapnel:
                 {
-                       
-                        break;
+                    break;
                 }
                 case ProjectileType.Fishnet:
                 {
@@ -163,17 +175,23 @@ namespace Global.Services.Sounds.Runtime
                 }
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
-            }                            
-           RuntimeManager.PlayOneShotAttached(DamageEvent, target);          
+            }
+
+            RuntimeManager.PlayOneShotAttached(DamageEvent, target);
         }
 
         public void OnDamageReceived()
         {
             RuntimeManager.PlayOneShot(DamageReceivedEvent);
+
+            _fightTime = _fightSecondsPerHit;
+
+            if (_isInFight == false)
+                OnBattleEntered();
+
+            _isInFight = true;
             Debug.Log("We are damaged!");
         }
-
-        
 
         //UI
         public void OnUiOpened()
@@ -202,10 +220,10 @@ namespace Global.Services.Sounds.Runtime
         }
 
         //HP
-        public void OnHealthChanged(float health)
+        public void OnHealthChanged(float health, GameObject target)
         {
             _health = health;
-            
+
             if (health < 0.5)
             {
                 MusicInstance.setParameterByName("music_intencity", 2f);
@@ -214,18 +232,15 @@ namespace Global.Services.Sounds.Runtime
             else
             {
                 BurningInstance.release();
-
             }
 
-        //void Burning(GameObject target)
-        //    {
-        //        BurningInstance = RuntimeManager.CreateInstance(BurningEvent);
-        //        AttachInstance(BurningInstance, target);
-        //        BurningInstance.setParameterByName("health", 0.5f);
-        //        BurningInstance.start();
-        //    }
-
-
+            //void Burning(GameObject target)
+            //    {
+            //        BurningInstance = RuntimeManager.CreateInstance(BurningEvent);
+            //        AttachInstance(BurningInstance, target);
+            //        BurningInstance.setParameterByName("health", 0.5f);
+            //        BurningInstance.start();
+            //    }
         }
 
         private void AttachInstance(EventInstance instance, Vector2 position)

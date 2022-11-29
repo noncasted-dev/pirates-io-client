@@ -1,5 +1,6 @@
 ﻿using GamePlay.Player.Entity.Components.Healths.Logs;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
 using UniRx;
 
@@ -7,10 +8,11 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
 {
     public class Health : IHealth, ISwitchCallbacks, IUpdatable
     {
-        public Health(HealthLogger logger, IUpdater updater)
+        public Health(HealthLogger logger, IUpdater updater, IBodyTransform transform)
         {
             _logger = logger;
             _updater = updater;
+            _transform = transform;
         }
 
 
@@ -18,6 +20,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
 
         private readonly HealthLogger _logger;
         private readonly IUpdater _updater;
+        private readonly IBodyTransform _transform;
 
         private int _max;
         private int _amount;
@@ -67,7 +70,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             
             _amount = _max;
 
-            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max));
+            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max, _transform));
         }
 
         public void Heal(int add)

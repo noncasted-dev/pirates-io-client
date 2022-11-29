@@ -106,7 +106,7 @@ namespace Global.Services.Sounds.Runtime
         {
             var delta = data.Current / data.Max;
             
-            _player.OnHealthChanged(delta);
+            _player.OnHealthChanged(delta, data.Target);
         }
 
         private void OnEnemyDamaged(EnemyDamagedSoundEvent data)

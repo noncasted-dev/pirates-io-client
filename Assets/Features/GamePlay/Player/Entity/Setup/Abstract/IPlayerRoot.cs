@@ -3,7 +3,7 @@ using GamePlay.Player.Entity.Setup.Flow;
 using UnityEngine;
 using VContainer.Unity;
 
-namespace GamePlay.Player.Entity.Setup.Root
+namespace GamePlay.Player.Entity.Setup.Abstract
 {
     public interface IPlayerRoot
     {

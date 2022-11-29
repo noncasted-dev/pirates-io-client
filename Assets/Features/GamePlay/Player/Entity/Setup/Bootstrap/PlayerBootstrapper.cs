@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Cysharp.Threading.Tasks;
+using GamePlay.Player.Entity.Setup.Abstract;
 using GamePlay.Player.Entity.Setup.Flow;
 using GamePlay.Player.Entity.Setup.Root;
 using UnityEngine;
@@ -40,9 +41,6 @@ namespace GamePlay.Player.Entity.Setup.Bootstrap
                 containerBuilder.Resolve(scope.Container, flowHandler);
 
             var root = scope.Container.Resolve<IPlayerRoot>();
-            var config = scope.Container.Resolve<PlayerStatsConfig>();
-
-            flowHandler.Add(config);
 
             await root.OnBootstrapped(flowHandler, scope);
         }
@@ -50,10 +48,8 @@ namespace GamePlay.Player.Entity.Setup.Bootstrap
         private void OnConfiguration(IContainerBuilder builder)
         {
             var root = GetComponent<IPlayerRoot>();
-            var config = GetComponent<PlayerStatsConfig>();
 
             builder.RegisterComponent(root);
-            builder.RegisterComponent(config);
 
             foreach (var containerBuilder in _builders)
                 containerBuilder.OnBuild(builder);

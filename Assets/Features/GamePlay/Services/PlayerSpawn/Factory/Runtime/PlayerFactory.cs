@@ -2,6 +2,7 @@
 using GamePlay.Common.Areas.Common.Runtime;
 using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Player.Entity.Network.Root.Runtime;
+using GamePlay.Player.Entity.Setup.Abstract;
 using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Root;
 using GamePlay.Services.Common.Scope;

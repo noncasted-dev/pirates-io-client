@@ -1,4 +1,5 @@
-﻿using GamePlay.Factions.Common;
+﻿using GamePlay.Cities.Instance.Root.Runtime;
+using GamePlay.Factions.Common;
 
 namespace GamePlay.Services.Reputation.Runtime
 {

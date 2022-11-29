@@ -1,4 +1,6 @@
 ﻿using System;
+using GamePlay.Cities.Instance.Root.Runtime;
+using GamePlay.Common.Areas.Implementation.Cities;
 using GamePlay.Factions.Common;
 using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
 using NaughtyAttributes;
@@ -20,21 +22,26 @@ namespace GamePlay.Services.Reputation.Runtime
         [SerializeField] private Sprite _pirateFlag;
         
         private FactionType _faction;
+        private CityDefinition _lastCity;
 
         private IDisposable _damageListener;
+        private IDisposable _cityEnterListener;
 
         public int Value => _value;
         public Sprite Flag => GetFlag();
         public FactionType Faction => _faction;
+        public CityDefinition LastCity => _lastCity;
 
         private void OnEnable()
         {
             _damageListener = MessageBroker.Default.Receive<RemoteDamagedEvent>().Subscribe(OnRemoteDamaged);
+            _cityEnterListener = MessageBroker.Default.Receive<CityEnteredEvent>().Subscribe(OnCityEntered);
         }
 
         private void OnDisable()
         {
             _damageListener?.Dispose();
+            _cityEnterListener?.Dispose();
         }
 
         public int ConvertFromMoney(int spend)
@@ -82,6 +89,11 @@ namespace GamePlay.Services.Reputation.Runtime
                 Reduce(5);
             else
                 Add(5);
+        }
+
+        private void OnCityEntered(CityEnteredEvent data)
+        {
+            _lastCity = data.City;
         }
     }
 }

@@ -5,6 +5,7 @@ using Global.Services.InputViews.Constraints;
 using Global.Services.InputViews.ConstraintsStorage;
 using Global.Services.InputViews.Logs;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using VContainer;
 
@@ -169,6 +170,9 @@ namespace Global.Services.InputViews.Runtime
 
         private void OnRangeAttackPerformed(InputAction.CallbackContext context)
         {
+            if (EventSystem.current.IsPointerOverGameObject() == true)
+                return;
+            
             if (_constraintsStorage[InputConstraints.AttackInput] == true)
             {
                 RangeAttackCanceled?.Invoke();

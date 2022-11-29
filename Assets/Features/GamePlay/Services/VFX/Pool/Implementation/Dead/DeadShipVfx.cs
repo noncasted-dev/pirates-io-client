@@ -68,8 +68,6 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Dead
             await UniTask.Delay(destroyDelay, false, PlayerLoopTiming.Update, token);
             
             _returnToPool?.Invoke(this);
-            
-            _returnToPool?.Invoke(this);
         }
 
         [SerializeField] private List<ParticleSystem> _particleSystems;

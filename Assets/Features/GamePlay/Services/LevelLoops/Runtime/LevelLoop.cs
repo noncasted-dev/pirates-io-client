@@ -12,6 +12,7 @@ using GamePlay.Services.LevelLoops.Logs;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
+using GamePlay.Services.Reputation.Runtime;
 using GamePlay.Services.TransitionScreens.Runtime;
 using GamePlay.Services.TravelOverlays.Runtime;
 using Global.Services.CurrentCameras.Runtime;
@@ -43,8 +44,10 @@ namespace GamePlay.Services.LevelLoops.Runtime
             IItemFactory itemFactory,
             IPlayerCargoStorage cargo,
             IPlayerEntityPresenter entityPresenter,
+            IReputation reputation,
             LevelLoopLogger logger)
         {
+            _reputation = reputation;
             _cargo = cargo;
             _itemFactory = itemFactory;
             _entityPresenter = entityPresenter;
@@ -77,6 +80,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
         private IPlayerEntityPresenter _entityPresenter;
         private IItemFactory _itemFactory;
         private IPlayerCargoStorage _cargo;
+        private IReputation _reputation;
 
         public void OnEnabled()
         {
@@ -144,7 +148,8 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
             _logger.OnPlayerSpawn();
 
-            var spawnPosition = _lastCity.SpawnPoints.GetRandom();
+            var cityInstance = _citiesRegistry.GetCity(_reputation.LastCity);
+            var spawnPosition = cityInstance.SpawnPoints.GetRandom();
             var player = await _playerFactory.Create(spawnPosition, ship);
 
             _levelCamera.Teleport(player.Transform.position);

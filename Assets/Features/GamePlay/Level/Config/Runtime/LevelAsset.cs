@@ -6,6 +6,7 @@ using GamePlay.Factions.Selections.Bootstrap;
 using GamePlay.Level.Environment.Bootstrap;
 using GamePlay.Services.Common.Scope;
 using GamePlay.Services.DroppedObjects.Bootstrap;
+using GamePlay.Services.FishSpawn.Runtime;
 using GamePlay.Services.LevelCameras.Runtime;
 using GamePlay.Services.LevelLoops.Runtime;
 using GamePlay.Services.Network.Bootstrap.Runtime;
@@ -52,6 +53,7 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField]  private WalletAsset _wallet;
         [SerializeField]  private ReputationAsset _reputation;
         [SerializeField]  private MapAsset _map;
+        [SerializeField]  private FishSpawnerAsset _fishSpawner;
 
         [SerializeField] private LevelScope _scopePrefab;
 
@@ -78,7 +80,8 @@ namespace GamePlay.Level.Config.Runtime
                 _cityPortUi,
                 _wallet,
                 _reputation,
-                _map
+                _map,
+                _fishSpawner
             };
 
             return list.ToArray();

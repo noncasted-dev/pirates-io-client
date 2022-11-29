@@ -39,6 +39,11 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             StartCoroutine(CalculateTradables());
         }
 
+        public void Construct(TradableItemDictionary tradables)
+        {
+            _producables = tradables;
+        }
+
         public void Add(IItem item)
         {
             _vault.Add(item);

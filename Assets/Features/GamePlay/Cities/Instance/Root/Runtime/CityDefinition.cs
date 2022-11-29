@@ -12,5 +12,11 @@ namespace GamePlay.Cities.Instance.Root.Runtime
 
         public FactionType Faction => _faction;
         public CityType Name => _name;
+
+        public void Construct(FactionType faction, CityType city)
+        {
+            _faction = faction;
+            _name = city;
+        }
     }
 }

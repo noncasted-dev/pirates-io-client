@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2755146742688556679
+--- !u!1001 &4454862219971836851
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5000750213119032818, guid: 8ffead359f25d2e45b9ef88d7c589035, type: 3}
       propertyPath: m_Name
-      value: MapCity_France
+      value: MapCity_France_Town
       objectReference: {fileID: 0}
     - target: {fileID: 5000750213119032819, guid: 8ffead359f25d2e45b9ef88d7c589035, type: 3}
       propertyPath: m_Pivot.x
@@ -65,23 +65,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5000750213119032819, guid: 8ffead359f25d2e45b9ef88d7c589035, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5000750213119032819, guid: 8ffead359f25d2e45b9ef88d7c589035, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5000750213119032819, guid: 8ffead359f25d2e45b9ef88d7c589035, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5000750213119032819, guid: 8ffead359f25d2e45b9ef88d7c589035, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5889.0005
+      value: 255
       objectReference: {fileID: 0}
     - target: {fileID: 5000750213119032819, guid: 8ffead359f25d2e45b9ef88d7c589035, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2756.9998
+      value: -315
       objectReference: {fileID: 0}
     - target: {fileID: 5000750213119032819, guid: 8ffead359f25d2e45b9ef88d7c589035, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

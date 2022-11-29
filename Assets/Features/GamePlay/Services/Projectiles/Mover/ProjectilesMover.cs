@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using GamePlay.Common.Damages;
+using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Logs;
 using GamePlay.Services.Projectiles.Mover.Abstract;
 using Global.Services.Updaters.Runtime.Abstract;
@@ -60,7 +61,9 @@ namespace GamePlay.Services.Projectiles.Mover
             jobHandle.Complete();
 
             for (var i = 0; i < job.Projectiles.Length; i++)
+            {
                 CheckCollision(_projectiles[i], job.Projectiles[i]);
+            }
 
             array.Dispose();
         }
@@ -98,6 +101,13 @@ namespace GamePlay.Services.Projectiles.Mover
             var movement = projectile.Movement;
 
             var size = new Vector2(data.PassedDistance, raycastData.ColliderHeight);
+
+            if (projectile.Actions.Type == ProjectileType.Fishnet)
+            {
+                movement.SetPosition(data.CurrentPosition);
+                movement.OnDistancePassed(data.PassedDistance);
+                return;
+            }
 
             var result = Physics2D.OverlapBoxNonAlloc(
                 data.MiddlePoint,

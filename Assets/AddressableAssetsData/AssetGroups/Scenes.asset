@@ -849,10 +849,6 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_15.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: ae78d71e7b731d64aa35c87d5b8130ad
-    m_Address: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_8_10.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 2e0178be81c89f14a8cae5409922d91d
     m_Address: Assets/Features/GamePlay/Level/Scenes/Chunks/Chunk_5_12.unity
     m_ReadOnly: 0

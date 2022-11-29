@@ -55,6 +55,7 @@ namespace GamePlay.Player.Entity.Components.StateMachines.Runtime
 
         public void OnDisabled()
         {
+            _current?.Break();
         }
     }
 }

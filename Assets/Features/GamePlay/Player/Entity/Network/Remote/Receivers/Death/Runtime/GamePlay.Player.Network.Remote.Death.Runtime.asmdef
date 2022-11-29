@@ -2,7 +2,10 @@
   "name": "GamePlay.Player.Network.Remote.Death.Runtime",
   "rootNamespace": "",
   "references": [
-    "GUID:861b1281dab914af69d87c4345d0b1a2"
+    "GUID:861b1281dab914af69d87c4345d0b1a2",
+    "GUID:7d90ecb2215e474cb229ee7be34cd974",
+    "GUID:57d592813d0da5d4c862e153f707ff80",
+    "GUID:e053f075e62cf8b4ab18c4ca51216953"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

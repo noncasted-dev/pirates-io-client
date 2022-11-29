@@ -3,6 +3,7 @@ using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Factions.Common;
 using GamePlay.Player.Entity.Network.Remote.Receivers.Cannons.Runtime;
 using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
+using GamePlay.Player.Entity.Network.Remote.Receivers.Death.Runtime;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
@@ -38,6 +39,8 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
                 projectileReplicator,
                 _config);
 
+            var _ = new HealthReceiver(_fireController, networkRoot);
+
             _hitbox.Construct(networkRoot, networkRoot, networkRoot, explosion, faction);
             
             foreach (var switchableCollider in _colliders)
@@ -48,6 +51,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
         [SerializeField] private RangeAttackConfigAsset _config;
         [SerializeField] private RemoteHitbox _hitbox;
         [SerializeField] private PlayerSpriteView _spriteView;
+        [SerializeField] private FireController _fireController;
 
         [SerializeField] private Collider2D[] _colliders;
         

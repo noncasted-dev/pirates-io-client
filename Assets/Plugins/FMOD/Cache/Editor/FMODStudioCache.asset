@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8690742923963213599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/health
+  m_EditorClassIdentifier: 
+  Name: health
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1415771518
+    data2: 2875976930
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-8555205400553051430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20,13 +44,15 @@ MonoBehaviour:
     Data4: 997880597
   Banks:
   - {fileID: 4782442716932992266}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1398948220786169839}
+  - {fileID: -8690742923963213599}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 142991
 --- !u!114 &-7808339027711229621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +109,33 @@ MonoBehaviour:
   - sea
   - port
   Exists: 1
+--- !u!114 &-6860794619960863127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/death
+  m_EditorClassIdentifier: 
+  Path: event:/death
+  Guid:
+    Data1: -1086162439
+    Data2: 1214226631
+    Data3: -1757988965
+    Data4: -1265986423
+  Banks:
+  - {fileID: 4782442716932992266}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6421993440418424475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +216,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 375
 --- !u!114 &-5543439831981730003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,8 +292,8 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &-3064762349439620086
+  Length: 1236
+--- !u!114 &-3186484969642719905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,21 +303,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/damage_impact/damage_type
+  m_Name: parameter:/music_condition
   m_EditorClassIdentifier: 
-  Name: damage_type
-  StudioPath: 
+  Name: music_condition
+  StudioPath: parameter:/music_condition
   Min: 0
-  Max: 1
+  Max: 2
   Default: 0
   ID:
-    data1: 2818827267
-    data2: 288516485
+    data1: 1138535495
+    data2: 4175132125
   Type: 2
-  IsGlobal: 0
+  IsGlobal: 1
   Labels:
-  - ProjectileDropped
-  - EnemyDamaged
+  - exploration
+  - port
+  - battle
   Exists: 1
 --- !u!114 &-2555637242263382507
 MonoBehaviour:
@@ -290,9 +344,9 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -3064762349439620086}
-  MinDistance: 1
-  MaxDistance: 20
+  - {fileID: 4997460882212360030}
+  MinDistance: 0
+  MaxDistance: 300
   Length: 0
 --- !u!114 &-1359879360399280739
 MonoBehaviour:
@@ -321,7 +375,7 @@ MonoBehaviour:
   - Value B
   - Value C
   Exists: 1
---- !u!114 &-1289041177073043000
+--- !u!114 &-1149814077012860417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -331,23 +385,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/port
+  m_Name: event:/burning
   m_EditorClassIdentifier: 
-  Path: event:/port
+  Path: event:/burning
   Guid:
-    Data1: -212564602
-    Data2: 1124305201
-    Data3: -2120842880
-    Data4: -1038651579
+    Data1: 170150249
+    Data2: 1240654364
+    Data3: 639624354
+    Data4: -1042865841
   Banks:
   - {fileID: 4782442716932992266}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7814319769966439865}
   MinDistance: 1
   MaxDistance: 20
-  Length: 1236
+  Length: 16173
 --- !u!114 &-1032485652129316907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,8 +429,35 @@ MonoBehaviour:
   Parameters:
   - {fileID: -5834843703400018272}
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 500
   Length: 0
+--- !u!114 &-490414095761157964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/projectile_impact
+  m_EditorClassIdentifier: 
+  Path: event:/projectile_impact
+  Guid:
+    Data1: -15054684
+    Data2: 1216459248
+    Data3: 534685828
+    Data4: -1081489204
+  Banks:
+  - {fileID: 4782442716932992266}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 300
+  Length: 2177
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,7 +476,6 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -5543439831981730003}
   - {fileID: -1032485652129316907}
-  - {fileID: -1289041177073043000}
   - {fileID: -8555205400553051430}
   - {fileID: -2555637242263382507}
   - {fileID: -6421993440418424475}
@@ -403,12 +484,16 @@ MonoBehaviour:
   - {fileID: 1873158810801267528}
   - {fileID: -3827514181919625482}
   - {fileID: 669502784843091532}
-  EditorParameters: []
+  - {fileID: -1149814077012860417}
+  - {fileID: -490414095761157964}
+  - {fileID: -6860794619960863127}
+  EditorParameters:
+  - {fileID: -3186484969642719905}
   MasterBanks:
   - {fileID: 4782442716932992266}
   StringsBanks:
   - {fileID: 3582555454610402830}
-  cacheTime: 638053636181150473
+  cacheTime: 638053906737411014
   cacheVersion: 131593
 --- !u!114 &669502784843091532
 MonoBehaviour:
@@ -437,6 +522,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1398948220786169839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/music_condition
+  m_EditorClassIdentifier: 
+  Name: music_condition
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 1138535495
+    data2: 4175132125
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - exploration
+  - port
+  - battle
+  Exists: 1
 --- !u!114 &1434802825589905288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,7 +595,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 251
 --- !u!114 &1882857375920721563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,11 +617,11 @@ MonoBehaviour:
     data1: 1138535495
     data2: 4175132125
   Type: 2
-  IsGlobal: 0
+  IsGlobal: 1
   Labels:
-  - Value A
-  - Value B
-  - Value C
+  - exploration
+  - port
+  - battle
   Exists: 1
 --- !u!114 &3582555454610402830
 MonoBehaviour:
@@ -526,10 +638,10 @@ MonoBehaviour:
   Path: FmodPirates/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638053636181150473
+  lastModified: 638053906737411014
   FileSizes:
   - Name: Desktop
-    Value: 1392
+    Value: 1874
   Exists: 1
 --- !u!114 &4064632750878532970
 MonoBehaviour:
@@ -566,10 +678,10 @@ MonoBehaviour:
   Path: FmodPirates/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638053636181140401
+  lastModified: 638053906737411014
   FileSizes:
   - Name: Desktop
-    Value: 4053280
+    Value: 7681056
   Exists: 1
 --- !u!114 &4858439983126258615
 MonoBehaviour:
@@ -598,6 +710,57 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &4997460882212360030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/damage_impact/shot_type
+  m_EditorClassIdentifier: 
+  Name: shot_type
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2566664498
+    data2: 1329660264
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - CannonBall
+  - Shrapnel
+  - Knuppel
+  Exists: 1
+--- !u!114 &7814319769966439865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/burning/health
+  m_EditorClassIdentifier: 
+  Name: health
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 1415771518
+    data2: 2875976930
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &8667904405510141480
 MonoBehaviour:
   m_ObjectHideFlags: 0

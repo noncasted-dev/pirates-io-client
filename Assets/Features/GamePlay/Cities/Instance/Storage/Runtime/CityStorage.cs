@@ -166,6 +166,9 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
             var cost = (int)(config.MedianCost * priceEvaluation);
 
+            if (cost < 1)
+                return 1;
+
             return cost;
         }
 
@@ -179,6 +182,9 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             var priceEvaluation = _curves.ItemPricePerCount.Evaluate(progress);
             var cost = (int)(config.MedianCost * priceEvaluation);
 
+            if (cost < 1)
+                return 1;
+            
             return cost;
         }
 
@@ -191,7 +197,12 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 var price = GetPrice(type, i);
                 var progress = GetCountProgress(type, i);
                 var priceEvaluation = _curves.SellPricePerCount.Evaluate(progress);
-                totalPrice += (int)(priceEvaluation * price * (1f - _commission));
+                var resultPrice = priceEvaluation * price * (1f - _commission);
+
+                if (resultPrice < 1)
+                    resultPrice = 1;
+                
+                totalPrice += (int)resultPrice;
             }
 
             var median = totalPrice / count;
@@ -206,9 +217,19 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             for (var i = 0; i < count; i++)
             {
                 var price = GetPrice(type, -i);
+
+                if (price < 1)
+                    price = 1;
+                
                 var progress = GetCountProgress(type, i);
                 var priceEvaluation = _curves.StockPricePerCount.Evaluate(progress);
-                totalPrice += (int)(priceEvaluation * price);
+
+                var resultPrice = priceEvaluation * price;
+                
+                if (resultPrice < 1)
+                    resultPrice = 1;
+                
+                totalPrice += (int)resultPrice;
             }
 
             var median = totalPrice / count;
@@ -224,9 +245,17 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             for (var i = 0; i < count; i++)
             {
                 var price = GetPrice(type, i);
+                
+                if (price < 1)
+                    price = 1;
+                
                 var progress = GetCountProgress(type, i);
                 var priceEvaluation = curve.Evaluate(progress);
-                lastPrice = (int)(priceEvaluation * price * (1f - commission));
+                lastPrice = Mathf.CeilToInt(priceEvaluation * price * (1f - commission));
+                
+                if (lastPrice < 1)
+                    lastPrice = 1;
+                
                 totalPrice += lastPrice;
             }
 

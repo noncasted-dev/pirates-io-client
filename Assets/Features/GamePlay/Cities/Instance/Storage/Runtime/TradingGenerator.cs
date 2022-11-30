@@ -142,6 +142,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             storage.AddProducable(itemType, mainConfig);
 #if UNITY_EDITOR
             Undo.RecordObject(storage, "Assign tradable");
+            EditorUtility.SetDirty(storage);
 #endif
 
             var mostCounter = 0;
@@ -164,11 +165,15 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 if (definition.MostProduced.Count == 3)
                     continue;
 
+#if UNITY_EDITOR
+                Undo.RecordObject(definition, "Assigned");
+#endif
                 definition.AddMost(itemType);
                 mostCounter++;
                 
 #if UNITY_EDITOR
                 Undo.RecordObject(definition, "Assigned");
+                EditorUtility.SetDirty(definition);
 #endif
                 
                 if (mostCounter == 2)
@@ -184,11 +189,15 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 if (definition.LeastProduced.Count == 3 || definition.MostProduced.Contains(itemType) == true)
                     continue;
 
+#if UNITY_EDITOR
+                Undo.RecordObject(definition, "Assigned");
+#endif
                 definition.AddLeast(itemType);
                 leastCounter++;
                 
 #if UNITY_EDITOR
                 Undo.RecordObject(definition, "Assigned");
+                EditorUtility.SetDirty(definition);
 #endif
                 
                 if (leastCounter == 3)

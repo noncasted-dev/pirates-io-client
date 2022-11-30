@@ -36,7 +36,6 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Dead
 
         public void OnTaken()
         {
-            Debug.Log("On taken");
             _projectileCollider.enabled = true;
             _collectCollider.enabled = false;
             _fish.SetActive(true);
@@ -50,8 +49,6 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Dead
 
         public void OnReturned()
         {
-            Debug.Log("OnReturned");
-
             _fishSystem.Stop();
         }
 

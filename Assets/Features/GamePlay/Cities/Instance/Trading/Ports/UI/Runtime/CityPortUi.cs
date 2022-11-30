@@ -108,7 +108,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void OnEntered(PortEnteredEvent data)
         {
-            Debug.Log("Enter");
             _nickName.text = _profileStorageProvider.UserName;
             
             _body.SetActive(true);

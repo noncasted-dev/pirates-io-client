@@ -45,7 +45,7 @@ namespace Global.Services.Sounds.Runtime
         private float _fightTime;
         private bool _isInFight;
 
-        private float _health;
+        private float _health = 1f;
 
         private Transform _fmodInstance;
 
@@ -57,12 +57,17 @@ namespace Global.Services.Sounds.Runtime
             MusicInstance = RuntimeManager.CreateInstance(MusicEvent);
             MusicInstance.start();
 
+            BurningInstance = RuntimeManager.CreateInstance(BurningEvent);
+            BurningInstance.start();
+
             var fmodObject = new GameObject("FmodInstance");
             _fmodInstance = fmodObject.transform;
         }
 
         private void Update()
         {
+
+            BurningInstance.setParameterByName("health", _health);
             _fightTime -= _fightExitSpeed * Time.deltaTime;
 
             if (_fightTime < 0f && _isInFight == true)
@@ -95,7 +100,7 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnPortExited()
         {
-            //AmbInstance.setParameterByName("amb_condition", 2f);
+            AmbInstance.setParameterByName("amb_condition", 2f);
             Debug.Log("port exit");
         }
 
@@ -239,17 +244,9 @@ namespace Global.Services.Sounds.Runtime
             if (health < 0.5)
             {
                 MusicInstance.setParameterByName("music_intencity", 2f);
-                Burning();
+               
             }
             
-
-            void Burning()
-            {
-                BurningInstance = RuntimeManager.CreateInstance(BurningEvent);
-                AttachInstance(BurningInstance, target.transform.position);
-                BurningInstance.setParameterByName("health", health);
-                BurningInstance.start();
-            }
         }
 
         private void AttachInstance(EventInstance instance, Vector2 position)

@@ -136,7 +136,9 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
         private void OnPlayerDeath(PlayerDeathEvent data)
         {
-            ProcessRespawn(ShipType.Boat).Forget();
+            _entityPresenter.DestroyPlayer();
+
+            Begin().Forget();
         }
 
         private async UniTaskVoid ProcessRespawn(ShipType ship)

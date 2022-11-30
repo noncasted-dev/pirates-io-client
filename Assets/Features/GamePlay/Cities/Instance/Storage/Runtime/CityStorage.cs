@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using GamePlay.Cities.Instance.Root.Runtime;
 using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.Components.Definition;
@@ -15,7 +17,8 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             _itemFactory = itemFactory;
         }
 
-        private const float _waitTime = 0.5f;
+        private const float _waitTime = 3f;
+        private const int _producablesConfigCount = 3;
 
         [SerializeField] private List<TradableShipConfig> _shipConfigs;
         [SerializeField] private TradableItemDictionary _producables;
@@ -27,6 +30,9 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
         private readonly HashSet<ItemType> _freezed = new();
         private readonly Dictionary<ItemType, IItem> _ships = new();
 
+        private readonly List<ItemType> _mostProduced = new();
+        private readonly List<ItemType> _lessProduces = new();
+
         private readonly WaitForSeconds _wait = new(_waitTime);
 
         private IItemFactory _itemFactory;
@@ -36,6 +42,15 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
         protected override void OnAwake()
         {
+            foreach (var (key, data) in _producables)
+            {
+                if (_freezed.Contains(key) == true)
+                    continue;
+
+                var item = _itemFactory.Create(key, data.MedianCount);
+                _vault.Add(item);
+            }
+            
             StartCoroutine(CalculateTradables());
         }
 
@@ -49,6 +64,51 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             _producables.Add(type, config);
         }
 
+        public void OnGenerated(CityDefinition definition)
+        {
+            definition.Clear();
+
+            var tmp = _producables.OrderByDescending(
+                    t => t.Value.MedianCount);
+
+            var tmpList = new List<ItemType>();
+
+            foreach (var (key, _) in tmp)
+                tmpList.Add(key);
+            
+            tmpList.Remove(ItemType.Ship_Boat);
+            tmpList.Remove(ItemType.Ship_Brig);
+            tmpList.Remove(ItemType.Ship_Frigate);
+            tmpList.Remove(ItemType.Ship_Ketch);
+            tmpList.Remove(ItemType.Ship_Pink);
+            tmpList.Remove(ItemType.Ship_Polacre);
+            tmpList.Remove(ItemType.Ship_Snow);
+            tmpList.Remove(ItemType.Ship_Tartan);
+            tmpList.Remove(ItemType.Ship_FirstRate);
+            tmpList.Remove(ItemType.Cannon);
+            tmpList.Remove(ItemType.CannonBall);
+            tmpList.Remove(ItemType.CannonFishnet);
+            tmpList.Remove(ItemType.CannonKnuppel);
+            tmpList.Remove(ItemType.CannonShrapnel);
+            tmpList.Remove(ItemType.Team);
+            tmpList.Remove(ItemType.Musket);
+            tmpList.Remove(ItemType.Saber);
+            tmpList.Remove(ItemType.Fish);
+            
+            var most = new List<ItemType>();
+            var less = new List<ItemType>();
+            
+            for (var i = 0; i < _producablesConfigCount; i++)
+                most.Add(tmpList[i]);
+
+            tmpList.Reverse();
+
+            for (var i = 0; i < _producablesConfigCount; i++)
+                less.Add(tmpList[i]);
+
+            definition.OnGenerated(most, less);
+        }
+
         public void Add(IItem item)
         {
             _vault.Add(item);
@@ -60,15 +120,12 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
             while (gameObject.activeSelf == true)
             {
-                if (progress > ItemPriceCurvesConfigAsset.CurveTime)
-                    progress = 0f;
-
                 foreach (var (key, data) in _producables)
                 {
                     if (_freezed.Contains(key) == true)
                         continue;
 
-                    ProcessItem(key, data, progress);
+                    ProcessItem(key, data);
                 }
 
                 foreach (var ship in _shipConfigs)
@@ -79,13 +136,11 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                     _ships.Add(ship.Type, ship.Create(2));
                 }
 
-                progress += _waitTime;
-
                 yield return _wait;
             }
         }
 
-        private void ProcessItem(ItemType type, ItemPriceConfig config, float progress)
+        private void ProcessItem(ItemType type, ItemPriceConfig config)
         {
             if (_vault.Items.ContainsKey(type) == false)
             {
@@ -147,7 +202,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
             if (_vault.Items.ContainsKey(type) == true)
                 count = _vault.Items[type].Count;
-            
+
             var config = _producables[type];
 
             var progress = GetCountProgress(type, count);

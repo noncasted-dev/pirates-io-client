@@ -36,6 +36,10 @@ namespace Global.Services.UiStateMachines.Runtime
 
             var handle = new StateHandle(state, null, OnStackExited, OnStackRecovered);
             _stack.Push(handle);
+
+            if (_handles.ContainsKey(state) == true)
+                _handles.Remove(state);
+            
             _handles.Add(state, handle);
 
             _head = state;

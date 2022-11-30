@@ -71,6 +71,42 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectFirstProjectile"",
+                    ""type"": ""Button"",
+                    ""id"": ""b69ce820-0b10-4802-b169-dc7ec0bd3678"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectSecondProjectile"",
+                    ""type"": ""Button"",
+                    ""id"": ""2e27f3fe-d012-453b-8a4d-9afb1c517143"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectThirdProjectile"",
+                    ""type"": ""Button"",
+                    ""id"": ""974ad441-4676-4d80-9972-7e2b73ace1a1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectForthProjectile"",
+                    ""type"": ""Button"",
+                    ""id"": ""7ca70651-7844-4876-8594-a5c59bb89ac1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -183,6 +219,50 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Map"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7ec46c2-e9df-4476-b6af-e81d87fffac9"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectFirstProjectile"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4a90f797-7eaf-4f10-a20f-348921215a3a"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectSecondProjectile"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""380fbfce-e952-448d-9db8-531f33af32e3"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectThirdProjectile"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""caebab6e-c7f1-45f5-a8af-1fbdccc7d9d5"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectForthProjectile"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -224,6 +304,10 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_GamePlay_RangeAttackBreak = m_GamePlay.FindAction("RangeAttackBreak", throwIfNotFound: true);
         m_GamePlay_Inventory = m_GamePlay.FindAction("Inventory", throwIfNotFound: true);
         m_GamePlay_Map = m_GamePlay.FindAction("Map", throwIfNotFound: true);
+        m_GamePlay_SelectFirstProjectile = m_GamePlay.FindAction("SelectFirstProjectile", throwIfNotFound: true);
+        m_GamePlay_SelectSecondProjectile = m_GamePlay.FindAction("SelectSecondProjectile", throwIfNotFound: true);
+        m_GamePlay_SelectThirdProjectile = m_GamePlay.FindAction("SelectThirdProjectile", throwIfNotFound: true);
+        m_GamePlay_SelectForthProjectile = m_GamePlay.FindAction("SelectForthProjectile", throwIfNotFound: true);
         // Debug
         m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
         m_Debug_Console = m_Debug.FindAction("Console", throwIfNotFound: true);
@@ -291,6 +375,10 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_RangeAttackBreak;
     private readonly InputAction m_GamePlay_Inventory;
     private readonly InputAction m_GamePlay_Map;
+    private readonly InputAction m_GamePlay_SelectFirstProjectile;
+    private readonly InputAction m_GamePlay_SelectSecondProjectile;
+    private readonly InputAction m_GamePlay_SelectThirdProjectile;
+    private readonly InputAction m_GamePlay_SelectForthProjectile;
     public struct GamePlayActions
     {
         private @Controls m_Wrapper;
@@ -300,6 +388,10 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @RangeAttackBreak => m_Wrapper.m_GamePlay_RangeAttackBreak;
         public InputAction @Inventory => m_Wrapper.m_GamePlay_Inventory;
         public InputAction @Map => m_Wrapper.m_GamePlay_Map;
+        public InputAction @SelectFirstProjectile => m_Wrapper.m_GamePlay_SelectFirstProjectile;
+        public InputAction @SelectSecondProjectile => m_Wrapper.m_GamePlay_SelectSecondProjectile;
+        public InputAction @SelectThirdProjectile => m_Wrapper.m_GamePlay_SelectThirdProjectile;
+        public InputAction @SelectForthProjectile => m_Wrapper.m_GamePlay_SelectForthProjectile;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -324,6 +416,18 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Map.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMap;
                 @Map.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMap;
                 @Map.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMap;
+                @SelectFirstProjectile.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSelectFirstProjectile;
+                @SelectFirstProjectile.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSelectFirstProjectile;
+                @SelectFirstProjectile.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSelectFirstProjectile;
+                @SelectSecondProjectile.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSelectSecondProjectile;
+                @SelectSecondProjectile.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSelectSecondProjectile;
+                @SelectSecondProjectile.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSelectSecondProjectile;
+                @SelectThirdProjectile.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSelectThirdProjectile;
+                @SelectThirdProjectile.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSelectThirdProjectile;
+                @SelectThirdProjectile.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSelectThirdProjectile;
+                @SelectForthProjectile.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSelectForthProjectile;
+                @SelectForthProjectile.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSelectForthProjectile;
+                @SelectForthProjectile.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSelectForthProjectile;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -343,6 +447,18 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Map.started += instance.OnMap;
                 @Map.performed += instance.OnMap;
                 @Map.canceled += instance.OnMap;
+                @SelectFirstProjectile.started += instance.OnSelectFirstProjectile;
+                @SelectFirstProjectile.performed += instance.OnSelectFirstProjectile;
+                @SelectFirstProjectile.canceled += instance.OnSelectFirstProjectile;
+                @SelectSecondProjectile.started += instance.OnSelectSecondProjectile;
+                @SelectSecondProjectile.performed += instance.OnSelectSecondProjectile;
+                @SelectSecondProjectile.canceled += instance.OnSelectSecondProjectile;
+                @SelectThirdProjectile.started += instance.OnSelectThirdProjectile;
+                @SelectThirdProjectile.performed += instance.OnSelectThirdProjectile;
+                @SelectThirdProjectile.canceled += instance.OnSelectThirdProjectile;
+                @SelectForthProjectile.started += instance.OnSelectForthProjectile;
+                @SelectForthProjectile.performed += instance.OnSelectForthProjectile;
+                @SelectForthProjectile.canceled += instance.OnSelectForthProjectile;
             }
         }
     }
@@ -387,6 +503,10 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnRangeAttackBreak(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnMap(InputAction.CallbackContext context);
+        void OnSelectFirstProjectile(InputAction.CallbackContext context);
+        void OnSelectSecondProjectile(InputAction.CallbackContext context);
+        void OnSelectThirdProjectile(InputAction.CallbackContext context);
+        void OnSelectForthProjectile(InputAction.CallbackContext context);
     }
     public interface IDebugActions
     {

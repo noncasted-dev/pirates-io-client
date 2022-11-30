@@ -120,7 +120,7 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
 
         public void OnFishCollected()
         {
-            OnTriggered();
+            OnDropped();
             _actions.OnCollided();
         }
 

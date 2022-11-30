@@ -1,4 +1,5 @@
 ﻿using Global.Services.InputViews.Runtime;
+using Global.Services.ItemFactories.Runtime;
 using Global.Services.UiStateMachines.Runtime;
 using Local.Services.Abstract.Callbacks;
 using UnityEngine;
@@ -12,8 +13,10 @@ namespace Features.GamePlay.Services.Maps.Runtime
         private void Construct(
             IUiStateMachine uiStateMachine,
             IInputView inputView,
+            IItemFactory factory,
             UiConstraints constraints)
         {
+            _factory = factory;
             _inputView = inputView;
             _constraints = constraints;
             _uiStateMachine = uiStateMachine;
@@ -21,10 +24,12 @@ namespace Features.GamePlay.Services.Maps.Runtime
 
         [SerializeField] private GameObject _body;
         [SerializeField] private MapPlayerMover _mover;
+        [SerializeField] private MapEntry[] _entries;
         
         private IUiStateMachine _uiStateMachine;
         private UiConstraints _constraints;
         private IInputView _inputView;
+        private IItemFactory _factory;
 
         public UiConstraints Constraints => _constraints;
         public string Name => "Map";
@@ -37,6 +42,9 @@ namespace Features.GamePlay.Services.Maps.Runtime
 
         public void OnEnabled()
         {
+            foreach (var entry in _entries)
+                entry.Construct(_factory);
+            
             _inputView.MapPerformed += Switch;
         }
 

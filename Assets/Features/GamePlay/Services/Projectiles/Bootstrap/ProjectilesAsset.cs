@@ -47,6 +47,8 @@ namespace GamePlay.Services.Projectiles.Bootstrap
                 .As<IProjectilesMover>()
                 .AsSelf();
 
+            serviceBinder.Register<ProjectilesSelectorInput>();
+
             serviceBinder.RegisterComponent(selector)
                 .As<IProjectileSelector>();
 
@@ -61,6 +63,9 @@ namespace GamePlay.Services.Projectiles.Bootstrap
 
         public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
         {
+            var input = resolver.Resolve<ProjectilesSelectorInput>();
+            callbacksRegister.ListenLoopCallbacks(input);
+
             var mover = resolver.Resolve<ProjectilesMover>();
             callbacksRegister.ListenLoopCallbacks(mover);
         }

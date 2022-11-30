@@ -13,6 +13,10 @@ namespace Global.Services.InputViews.Runtime
         event Action RangeAttackBreakPerformed;
         event Action InventoryPerformed;
         event Action MapPerformed;
+        event Action SelectFirstProjectilePerformed;
+        event Action SelectSecondProjectilePerformed;
+        event Action SelectThirdProjectilePerformed;
+        event Action SelectForthProjectilePerformed;
 
         event Action DebugConsolePreformed;
 

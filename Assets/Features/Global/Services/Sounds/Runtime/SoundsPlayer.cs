@@ -1,5 +1,7 @@
-﻿using FMOD.Studio;
+﻿using System;
+using FMOD.Studio;
 using FMODUnity;
+using GamePlay.Services.Projectiles.Entity;
 using UnityEngine;
 
 namespace Global.Services.Sounds.Runtime
@@ -33,6 +35,18 @@ namespace Global.Services.Sounds.Runtime
         public EventReference MenuEnteredEvent;
         public EventReference MenuExitedEvent;
 
+        [Space(30)] [Header("FX")] [SerializeField]
+        public EventReference BurningEvent;
+        public EventInstance BurningInstance;
+
+        [SerializeField] private float _fightExitSpeed = 1f;
+        [SerializeField] private float _fightSecondsPerHit = 1f;
+
+        private float _fightTime;
+        private bool _isInFight;
+
+        private float _health;
+
         private Transform _fmodInstance;
 
         private void Start()
@@ -40,44 +54,63 @@ namespace Global.Services.Sounds.Runtime
             AmbInstance = RuntimeManager.CreateInstance(AmbEvent);
             AmbInstance.start();
 
+            MusicInstance = RuntimeManager.CreateInstance(MusicEvent);
+            MusicInstance.start();
+
             var fmodObject = new GameObject("FmodInstance");
             _fmodInstance = fmodObject.transform;
+        }
+
+        private void Update()
+        {
+            _fightTime -= _fightExitSpeed * Time.deltaTime;
+
+            if (_fightTime < 0f && _isInFight == true)
+            {
+                _isInFight = false;
+                OnBattleExited();
+            }
         }
 
         //Amb
         public void OnCityExited()
         {
-            AmbInstance.setParameterByName("amb_condition", 0f);
+            RuntimeManager.StudioSystem.setParameterByName("amb_condition", 0f);
             Debug.Log("open sea");
         }
+
         public void OnPortEntered()
         {
+            RuntimeManager.StudioSystem.setParameterByName("music_condition", 1f);
             AmbInstance.setParameterByName("amb_condition", 1f);
             Debug.Log("port_enter");
         }
+
         public void OnCityEntered()
         {
+            RuntimeManager.StudioSystem.setParameterByName("music_condition", 0f);
             AmbInstance.setParameterByName("amb_condition", 2f);
             Debug.Log("city entered");
         }
+
         public void OnPortExited()
         {
-            AmbInstance.setParameterByName("amb_condition", 2f);
+            //AmbInstance.setParameterByName("amb_condition", 2f);
             Debug.Log("port exit");
         }
 
         //Music
         public void OnBattleEntered()
         {
+            RuntimeManager.StudioSystem.setParameterByName("music_condition", 2f);
             Debug.Log("BattleEntered");
         }
 
-        
         public void OnBattleExited()
         {
+            RuntimeManager.StudioSystem.setParameterByName("music_condition", 0f);
             Debug.Log("BattleExited");
         }
-
 
         //Battle
         public void OnCannonBallShot(Vector2 position)
@@ -88,24 +121,25 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnShrapnelShot(Vector2 position)
         {
-            PlayShot(1f, position);           
+            PlayShot(1f, position);
             Debug.Log("boom Shrapnel");
         }
 
         public void OnKnuppelShot(Vector2 position)
         {
-            PlayShot(2f, position);           
+            PlayShot(2f, position);
             Debug.Log("boom Knuppel");
         }
 
         private void PlayShot(float parameter, Vector2 position)
         {
             ShotInstance = RuntimeManager.CreateInstance(ShotEvent);
-            AttachInstance(ShotInstance, position);           
+            AttachInstance(ShotInstance, position);
             ShotInstance.setParameterByName("shot_type", parameter);
             ShotInstance.start();
             ShotInstance.release();
         }
+
         //Damage
         public void OnProjectileDropped(Vector2 position)
         {
@@ -117,29 +151,48 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnDeath(Vector2 position)
         {
-            
         }
 
-        public void OnEnemyDamaged(Vector2 position)
+        public void OnEnemyDamaged(GameObject target, ProjectileType type) //реализовать переключение типа урона
         {
-            PlayDamage(1f, position);
+            switch (type)
+            {
+                case ProjectileType.Ball:
+                {
+                    break;
+                }
+                case ProjectileType.Knuppel:
+                {
+                    break;
+                }
+                case ProjectileType.Shrapnel:
+                {
+                    break;
+                }
+                case ProjectileType.Fishnet:
+                {
+                    break;
+                }
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
+
+            RuntimeManager.PlayOneShotAttached(DamageEvent, target);
         }
 
         public void OnDamageReceived()
         {
             RuntimeManager.PlayOneShot(DamageReceivedEvent);
+
+            _fightTime = _fightSecondsPerHit;
+
+            if (_isInFight == false)
+                OnBattleEntered();
+
+            _isInFight = true;
             Debug.Log("We are damaged!");
-
         }
 
-        private void PlayDamage(float parameter, Vector2 position)
-        {
-            DamageInstance = RuntimeManager.CreateInstance(DamageEvent);
-            AttachInstance(ShotInstance, position);
-            DamageInstance.setParameterByName("damage_type", parameter);
-            DamageInstance.start();
-            DamageInstance.release();
-        }
         //UI
         public void OnUiOpened()
         {
@@ -164,6 +217,30 @@ namespace Global.Services.Sounds.Runtime
         public void OnMenuExited()
         {
             RuntimeManager.PlayOneShot(MenuExitedEvent);
+        }
+
+        //HP
+        public void OnHealthChanged(float health, GameObject target)
+        {
+            _health = health;
+
+            if (health < 0.5)
+            {
+                MusicInstance.setParameterByName("music_intencity", 2f);
+                //Burning();
+            }
+            else
+            {
+                BurningInstance.release();
+            }
+
+            //void Burning(GameObject target)
+            //    {
+            //        BurningInstance = RuntimeManager.CreateInstance(BurningEvent);
+            //        AttachInstance(BurningInstance, target);
+            //        BurningInstance.setParameterByName("health", 0.5f);
+            //        BurningInstance.start();
+            //    }
         }
 
         private void AttachInstance(EventInstance instance, Vector2 position)

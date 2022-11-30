@@ -4971,23 +4971,21 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1828732514
-      Data2: 1209531650
-      Data3: 1672670856
-      Data4: 2089033844
-    Path: event:/damage_impact
+      Data1: -15054684
+      Data2: 1216459248
+      Data3: 534685828
+      Data4: -1081489204
+    Path: event:/projectile_impact
   Event: 
   PlayEvent: 11
   StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params:
-  - Name: damage_type
-    Value: 0
+  Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 300
 --- !u!1 &5239669011648866773
 GameObject:
   m_ObjectHideFlags: 0

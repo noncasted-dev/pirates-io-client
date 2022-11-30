@@ -1,4 +1,5 @@
 ﻿using System;
+using GamePlay.Player.Entity.Components.Healths.Runtime;
 using UniRx;
 using UnityEngine;
 
@@ -10,18 +11,23 @@ namespace Global.Services.Sounds.Runtime
 
         private IDisposable _triggerListener;
         private IDisposable _positionalTriggerListener;
+        private IDisposable _healthListener;
+        private IDisposable _damageListener;
 
         private void OnEnable()
         {
             _triggerListener = MessageBroker.Default.Receive<SoundEvent>().Subscribe(OnSoundTriggered);
-            _positionalTriggerListener = MessageBroker.Default.Receive<PositionalSoundEvent>()
-                .Subscribe(OnPositionalSoundTriggered);
+            _positionalTriggerListener = MessageBroker.Default.Receive<PositionalSoundEvent>().Subscribe(OnPositionalSoundTriggered);
+            _healthListener = MessageBroker.Default.Receive<HealthChangeEvent>().Subscribe(OnHealthChanged);
+            _damageListener = MessageBroker.Default.Receive<EnemyDamagedSoundEvent>().Subscribe(OnEnemyDamaged);
         }
 
         private void OnDisable()
         {
             _triggerListener?.Dispose();
             _positionalTriggerListener?.Dispose();
+            _healthListener?.Dispose();
+            _damageListener?.Dispose();
         }
 
         private void OnSoundTriggered(SoundEvent data)
@@ -84,7 +90,6 @@ namespace Global.Services.Sounds.Runtime
                     _player.OnProjectileDropped(data.Position);
                     break;
                 case PositionalSoundType.EnemyDamaged:
-                    _player.OnEnemyDamaged(data.Position);
                     break;
                 case PositionalSoundType.DamageReceived:
                     _player.OnDamageReceived();
@@ -95,6 +100,18 @@ namespace Global.Services.Sounds.Runtime
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        private void OnHealthChanged(HealthChangeEvent data)
+        {
+            var delta = data.Current / data.Max;
+            
+            _player.OnHealthChanged(delta, data.Target);
+        }
+
+        private void OnEnemyDamaged(EnemyDamagedSoundEvent data)
+        {
+            _player.OnEnemyDamaged(data.Target, data.Type);
         }
     }
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{36627ca2-1e0c-4d26-8f2d-56e983d8eee5}">
+		<property name="name">
+			<value>Damage PC</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{1e2f9e0c-ebd4-4af9-9906-4b9f6a2a5a19}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{e4318dcb-4ca9-47cc-be68-8d04154473f1}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5759e031-4278-4c1f-b05c-94127ed097dc}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{1e2f9e0c-ebd4-4af9-9906-4b9f6a2a5a19}">
+		<relationship name="effects">
+			<destination>{23eaa841-51ca-4eba-8373-0f28d4b30b3f}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{e4318dcb-4ca9-47cc-be68-8d04154473f1}" />
+	<object class="MixerBusFader" id="{23eaa841-51ca-4eba-8373-0f28d4b30b3f}" />
+</objects>

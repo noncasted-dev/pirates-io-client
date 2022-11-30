@@ -90,6 +90,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
         public void OnDisabled()
         {
             _deathListener?.Dispose();
+            _shipChangeListener?.Dispose();
         }
 
         public void OnLoaded()
@@ -106,7 +107,13 @@ namespace GamePlay.Services.LevelLoops.Runtime
         private async UniTask Begin()
         {
             var cannons = _itemFactory.Create(ItemType.Cannon, 3);
+            var ball = _itemFactory.Create(ItemType.CannonBall, 90);
+            var shrapnel = _itemFactory.Create(ItemType.CannonShrapnel, 30);
+            var knuppel = _itemFactory.Create(ItemType.CannonShrapnel, 30);
             _cargo.Add(cannons);
+            _cargo.Add(ball);
+            _cargo.Add(shrapnel);
+            _cargo.Add(knuppel);
             
             var selectedCity = await _factionSelection.SelectAsync();
             _transitionScreen.ToPlayerRespawn();

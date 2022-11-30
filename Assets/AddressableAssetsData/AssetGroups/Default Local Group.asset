@@ -693,6 +693,14 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Services/PlayerSpawn/RemoteBuilders/Config/PoolEntry_RemotePlayerVew_8.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: a5bceba39bda6f9428ef7ab537e31ba0
+    m_Address: Assets/Features/Global/Services/Sounds/Config/GlobalService_SoundsPlayer.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6d9d2f38f32da6e42843cbe5cc90de6c
+    m_Address: Assets/Features/Global/Services/Sounds/Config/SoundsPlayer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
   m_SchemaSet:

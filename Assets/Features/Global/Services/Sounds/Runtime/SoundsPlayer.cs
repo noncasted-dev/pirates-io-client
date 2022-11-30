@@ -133,11 +133,22 @@ namespace Global.Services.Sounds.Runtime
 
         private void PlayShot(float parameter, Vector2 position)
         {
+            Debug.Log(1);
             ShotInstance = RuntimeManager.CreateInstance(ShotEvent);
+            Debug.Log(2);
+
             AttachInstance(ShotInstance, position);
+            Debug.Log(3);
+
             ShotInstance.setParameterByName("shot_type", parameter);
+            Debug.Log(4);
+
             ShotInstance.start();
+            Debug.Log(5);
+
             ShotInstance.release();
+            Debug.Log(6);
+
         }
 
         //Damage

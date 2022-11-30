@@ -714,6 +714,7 @@
     <type fullname="GamePlay.Player.Entity.States.Idles.Logs.IdleLogs" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="Player.States.Idle.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="GamePlay.Player.Entity.States.Idles.Runtime.IdleAnimationTriggerAsset" preserve="all" />
     <type fullname="GamePlay.Player.Entity.States.Idles.Runtime.IdleAsset" preserve="all" />
     <type fullname="GamePlay.Player.Entity.States.Idles.Runtime.IdleDefinition" preserve="all" />
   </assembly>
@@ -732,6 +733,7 @@
     <type fullname="GamePlay.Player.Entity.States.Respawns.Logs.RespawnLogs" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="Player.States.Respawn.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="GamePlay.Player.Entity.States.Respawns.Runtime.RespawnAnimationTriggerAsset" preserve="all" />
     <type fullname="GamePlay.Player.Entity.States.Respawns.Runtime.RespawnAsset" preserve="all" />
     <type fullname="GamePlay.Player.Entity.States.Respawns.Runtime.RespawnConfigAsset" preserve="all" />
     <type fullname="GamePlay.Player.Entity.States.Respawns.Runtime.RespawnDefinition" preserve="all" />
@@ -741,6 +743,7 @@
     <type fullname="GamePlay.Player.Entity.States.Runs.Logs.RunLogs" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="Player.States.Run.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="GamePlay.Player.Entity.States.Runs.Runtime.RunAnimationTriggerAsset" preserve="all" />
     <type fullname="GamePlay.Player.Entity.States.Runs.Runtime.RunAsset" preserve="all" />
     <type fullname="GamePlay.Player.Entity.States.Runs.Runtime.RunConfigAsset" preserve="all" />
     <type fullname="GamePlay.Player.Entity.States.Runs.Runtime.RunDefinition" preserve="all" />
@@ -899,21 +902,21 @@
     <type fullname="UnityEngine.UI.Slider" preserve="all" />
     <type fullname="UnityEngine.UI.Text" preserve="all" />
     <type fullname="UnityEngine.UI.VerticalLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger/Entry" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger/TriggerEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.AnimationTriggers" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.Button/ButtonClickedEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.ColorBlock" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.FontData" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.InputField/EndEditEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.InputField/OnChangeEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.InputField/SubmitEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.MaskableGraphic/CullStateChangedEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.Navigation" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.ScrollRect/ScrollRectEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.Scrollbar/ScrollEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.Slider/SliderEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.SpriteState" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.EventSystems.EventTrigger/Entry" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.EventSystems.EventTrigger/TriggerEvent" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.UI.FontData" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.UI.InputField/EndEditEvent" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.UI.InputField/OnChangeEvent" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.UI.InputField/SubmitEvent" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.Canvas" preserve="all" />

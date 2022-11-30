@@ -40,6 +40,10 @@ namespace Global.Services.InputViews.Runtime
         public event Action RangeAttackBreakPerformed;
         public event Action InventoryPerformed;
         public event Action MapPerformed;
+        public event Action SelectFirstProjectilePerformed;
+        public event Action SelectSecondProjectilePerformed;
+        public event Action SelectThirdProjectilePerformed;
+        public event Action SelectForthProjectilePerformed;
         public event Action DebugConsolePreformed;
 
         private void OnDestroy()
@@ -120,6 +124,11 @@ namespace Global.Services.InputViews.Runtime
             _gamePlay.Map.performed += OnMapPerformed;
 
             _debug.Console.performed += OnDebugConsolePreformed;
+            
+            _gamePlay.SelectFirstProjectile.performed += OnSelectFirstProjectilePerformed;
+            _gamePlay.SelectSecondProjectile.performed += OnSelectSecondProjectilePerformed;
+            _gamePlay.SelectThirdProjectile.performed += OnSelectThirdProjectilePerformed;
+            _gamePlay.SelectForthProjectile.performed += OnSelectForthProjectilePerformed;
         }
 
         private void UnListen()
@@ -134,6 +143,11 @@ namespace Global.Services.InputViews.Runtime
             _gamePlay.Inventory.performed -= OnInventoryPerformed;
             
             _gamePlay.Map.performed -= OnMapPerformed;
+
+            _gamePlay.SelectFirstProjectile.performed -= OnSelectFirstProjectilePerformed;
+            _gamePlay.SelectSecondProjectile.performed -= OnSelectSecondProjectilePerformed;
+            _gamePlay.SelectThirdProjectile.performed -= OnSelectThirdProjectilePerformed;
+            _gamePlay.SelectForthProjectile.performed -= OnSelectForthProjectilePerformed;
 
             _debug.Console.performed -= OnDebugConsolePreformed;
         }
@@ -237,6 +251,26 @@ namespace Global.Services.InputViews.Runtime
             }
             
             MapPerformed?.Invoke();
+        }
+
+        private void OnSelectFirstProjectilePerformed(InputAction.CallbackContext context)
+        {
+            SelectFirstProjectilePerformed?.Invoke();
+        }
+        
+        private void OnSelectSecondProjectilePerformed(InputAction.CallbackContext context)
+        {
+            SelectSecondProjectilePerformed?.Invoke();
+        }
+        
+        private void OnSelectThirdProjectilePerformed(InputAction.CallbackContext context)
+        {
+            SelectThirdProjectilePerformed?.Invoke();
+        }
+        
+        private void OnSelectForthProjectilePerformed(InputAction.CallbackContext context)
+        {
+            SelectForthProjectilePerformed?.Invoke();
         }
     }
 }

@@ -28,23 +28,6 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 storage.Clear();
         }
 
-        [Button("Fill")]
-        private void FillTrades()
-        {
-            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
-            var cities = FindObjectsOfType<CityStorage>();
-
-            foreach (var storage in cities)
-            {
-                storage.Clear();
-
-                foreach (var (key, value) in _ignoredTrades)
-                    storage.AddProducable(key, value);
-            }
-            
-            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
-        }
-
         private bool IsIgnored(ItemType item)
         {
             if (item.ToString().Contains("Cannon") == true)
@@ -71,6 +54,8 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
         [Button("Generate trading")]
         private void GenerateTrading()
         {
+            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+
             var cities = FindObjectsOfType<CityStorage>();
 
             foreach (var storage in cities)
@@ -89,6 +74,19 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 others.Remove(city);
                 GenerateTrade(item, config, city, others);
             }
+
+            foreach (var storage in cities)
+            {
+                var definition = GetDefinition(storage);
+
+                Undo.RecordObject(definition, "Assigned");
+
+                storage.OnGenerated(definition);
+
+                Undo.RecordObject(definition, "Assigned");
+            }
+            
+            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
         }
 
         private void GenerateTrade(
@@ -109,7 +107,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 config.MedianCurveHeight,
                 config.MedianCount,
                 config.MaxItems,
-                config.ProductionSpeed);
+                config.ProductionSpeed, itemType);
 
             Undo.RecordObject(city, "Assign tradable");
 
@@ -128,7 +126,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
                 var price = new ItemPriceConfig(
                     config.MedianCost, assignCurveHeight, assignCount,
-                    config.MaxItems, config.ProductionSpeed);
+                    config.MaxItems, config.ProductionSpeed, itemType);
 
                 Undo.RecordObject(others[i], "Assign tradable");
 
@@ -159,6 +157,13 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             var parent = storage.transform.parent;
             var root = parent.GetComponentInChildren<CityRoot>();
             return root.Definition.Name;
+        }
+
+        private CityDefinition GetDefinition(CityStorage storage)
+        {
+            var parent = storage.transform.parent;
+            var root = parent.GetComponentInChildren<CityRoot>();
+            return root.Definition;
         }
     }
 }

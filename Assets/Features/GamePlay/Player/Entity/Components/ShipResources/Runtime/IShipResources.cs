@@ -16,7 +16,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         int MaxCannons { get; }
         int Cannons { get; }
 
-        int MaxSpeed { get; }
+        float MaxSpeed { get; }
         int Speed { get; }
 
         int MaxTeam { get; }

@@ -16,13 +16,13 @@ MonoBehaviour:
   _name: Tartan
   _isInfinite: 0
   _icon: {fileID: 21300000, guid: bb7ecf0bdf6c93b48bde2a0b09645625, type: 3}
-  _maxTeam: 50
-  _maxWeight: 50
-  _maxCannons: 50
-  _maxHealth: 50
-  _price: 50
-  _maxSpeed: 50
-  _requiredReputation: 200
+  _maxTeam: 180
+  _maxWeight: 1200
+  _maxCannons: 45
+  _maxHealth: 3200
+  _price: 3200
+  _maxSpeed: 20
+  _requiredReputation: 0
   _type: 12
   _local:
     m_AssetGUID: 2e98642e4d1fba14fa4a43bb2507cfd8

@@ -35,7 +35,8 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
                 speed *= 0.8f;
 
             _resourcesPresenter.SetSpeed(Mathf.CeilToInt(speed));
-            return speed;
+            
+            return speed / 7;
         }
 
         public void OnShallowEntered()

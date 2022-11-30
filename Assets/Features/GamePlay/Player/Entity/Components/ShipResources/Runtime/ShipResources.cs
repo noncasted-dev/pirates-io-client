@@ -30,7 +30,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         private int _maxCannons;
         private int _cannons;
 
-        private int _maxSpeed;
+        private float _maxSpeed;
         private int _speed;
 
         private int _maxTeam;
@@ -50,7 +50,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         public int MaxCannons => _maxCannons;
         public int Cannons => _cannons;
 
-        public int MaxSpeed => _maxSpeed;
+        public float MaxSpeed => _maxSpeed;
         public int Speed => _speed;
 
         public int MaxTeam => _maxTeam;
@@ -135,11 +135,11 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
         }
 
-        public void SetMaxSpeed(int maxSpeed)
+        public void SetMaxSpeed(float maxSpeed)
         {
             _maxSpeed = maxSpeed;
             
-            SpeedChanged?.Invoke(_speed, _maxSpeed);
+            SpeedChanged?.Invoke(_speed, (int)_maxSpeed);
             MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
         }
 
@@ -147,7 +147,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         {
             _speed = speed;
             
-            SpeedChanged?.Invoke(_speed, _maxSpeed);
+            SpeedChanged?.Invoke(_speed, (int)_maxSpeed);
             MessageBroker.Default.Publish(new ResourcesChangedEvent(this));
         }
 

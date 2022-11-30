@@ -16,12 +16,36 @@ PrefabInstance:
       value: Snow
       objectReference: {fileID: 0}
     - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: _baseTeam
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: _baseHealth
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: _baseCannons
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: _baseMaxTeam
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: _baseMaxSpeed
-      value: 5
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: _baseMaxCannons
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: _isShallowIgnored
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: _regenerationInTick
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1743216952723330936, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_RootOrder

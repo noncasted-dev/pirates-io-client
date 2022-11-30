@@ -12,12 +12,12 @@ namespace GamePlay.Cities.Instance.Root.Runtime
         [SerializeField] private FactionType _faction;
         [SerializeField] private CityType _name;
         [SerializeField] private List<ItemType> _mostProduced;
-        [SerializeField] private List<ItemType> _lessProduced;
+        [SerializeField] private List<ItemType> _leastProduced;
         
         public FactionType Faction => _faction;
         public CityType Name => _name;
         public IReadOnlyList<ItemType> MostProduced => _mostProduced;
-        public IReadOnlyList<ItemType> LessProduced => _lessProduced;
+        public IReadOnlyList<ItemType> LeastProduced => _leastProduced;
 
         public void Construct(FactionType faction, CityType city)
         {
@@ -28,13 +28,17 @@ namespace GamePlay.Cities.Instance.Root.Runtime
         public void Clear()
         {
             _mostProduced.Clear();
-            _lessProduced.Clear();
+            _leastProduced.Clear();
         }
 
-        public void OnGenerated(List<ItemType> most, List<ItemType> less)
+        public void AddMost(ItemType type)
         {
-            _mostProduced = most;
-            _lessProduced = less;
+            _mostProduced.Add(type);
+        }
+        
+        public void AddLeast(ItemType type)
+        {
+            _leastProduced.Add(type);
         }
     }
 }

@@ -1415,7 +1415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rescale: {x: 0.12, y: 0.12}
-  _offset: {x: -2850, y: -180}
+  _offset: {x: -3050, y: -54}
   _playerView: {fileID: 1484603900}
   _content: {fileID: 701751420}
   _scroll: {fileID: 640465376}

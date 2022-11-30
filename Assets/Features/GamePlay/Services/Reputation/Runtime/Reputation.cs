@@ -85,10 +85,6 @@ namespace GamePlay.Services.Reputation.Runtime
 
         private void OnRemoteDamaged(RemoteDamagedEvent data)
         {
-            if (data.Faction == _faction)
-                Reduce(5);
-            else
-                Add(5);
         }
 
         private void OnCityEntered(CityEnteredEvent data)

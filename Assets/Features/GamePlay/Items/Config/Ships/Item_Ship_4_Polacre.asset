@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20557cce3dd3484795305bab5584c176, type: 3}
-  m_Name: Item_Ship_6_Polacre
+  m_Name: Item_Ship_4_Polacre
   m_EditorClassIdentifier: 
   _weight: 1
   _name: Polacre
   _isInfinite: 0
   _icon: {fileID: 21300000, guid: 5cf17bad8a76e2e40983fcd677f64dd4, type: 3}
-  _maxTeam: 60
-  _maxWeight: 60
-  _maxCannons: 60
-  _maxHealth: 60
-  _price: 60
-  _maxSpeed: 60
-  _requiredReputation: 200
+  _maxTeam: 100
+  _maxWeight: 850
+  _maxCannons: 32
+  _maxHealth: 2300
+  _price: 2500
+  _maxSpeed: 22
+  _requiredReputation: 0
   _type: 13
   _local:
     m_AssetGUID: 5144a9179e803694080dc825301940a0
@@ -35,7 +35,7 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _dead:
-    m_AssetGUID: 2593a431152cbd640aaf178d5960433f
+    m_AssetGUID: 6a8006dec9d93554aac8276a78da7762
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

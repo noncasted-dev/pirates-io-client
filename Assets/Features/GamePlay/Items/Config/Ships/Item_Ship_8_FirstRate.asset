@@ -16,13 +16,13 @@ MonoBehaviour:
   _name: FirstRate
   _isInfinite: 0
   _icon: {fileID: 21300000, guid: 11a8b267c3bfc2f47a3ab7cfb4b820b0, type: 3}
-  _maxTeam: 80
-  _maxWeight: 80
-  _maxCannons: 80
-  _maxHealth: 80
-  _price: 80
-  _maxSpeed: 80
-  _requiredReputation: 200
+  _maxTeam: 800
+  _maxWeight: 5000
+  _maxCannons: 130
+  _maxHealth: 10000
+  _price: 12000
+  _maxSpeed: 15
+  _requiredReputation: 0
   _type: 15
   _local:
     m_AssetGUID: cb99d802c2671a343ba233f12f9501d1

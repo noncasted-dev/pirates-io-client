@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: UiConstraints_Menu
   m_EditorClassIdentifier: 
   _input:
-    _keys: 00000000010000000200000003000000
-    _values: 01010101
+    _keys: 000000000100000002000000030000000400000005000000
+    _values: 010101010101

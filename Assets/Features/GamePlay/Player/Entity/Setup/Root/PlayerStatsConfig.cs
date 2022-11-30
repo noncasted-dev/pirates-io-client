@@ -28,7 +28,7 @@ namespace GamePlay.Player.Entity.Setup.Root
         [SerializeField] private int _baseHealth;
         [SerializeField] private int _regenerationInTick = 30;
 
-        [SerializeField] private int _baseMaxSpeed;
+        [SerializeField] private float _baseMaxSpeed;
 
         [SerializeField] private int _baseMaxWeight;
 

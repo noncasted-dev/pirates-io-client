@@ -155,3 +155,5 @@ MonoBehaviour:
       Data3: 639624354
       Data4: -1042865841
     Path: event:/burning
+  _fightExitSpeed: 1
+  _fightSecondsPerHit: 1

@@ -5468,7 +5468,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2522019097231088974}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -15600,6 +15600,7 @@ MonoBehaviour:
   _baseMaxTeam: 350
   _shallowDamage: 5
   _isShallowIgnored: 0
+  _cameraSize: 0
 --- !u!114 &2585353411466666207
 MonoBehaviour:
   m_ObjectHideFlags: 0

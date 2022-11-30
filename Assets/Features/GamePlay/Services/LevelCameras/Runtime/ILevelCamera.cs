@@ -9,5 +9,6 @@ namespace GamePlay.Services.LevelCameras.Runtime
         void StartFollow(Transform target);
         void StopFollow();
         void Teleport(Vector2 target);
+        void SetSize(float size);
     }
 }

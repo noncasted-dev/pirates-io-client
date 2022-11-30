@@ -75,6 +75,11 @@ namespace GamePlay.Services.LevelCameras.Runtime
 
             _logger.OnTeleport(position);
         }
+ 
+        public void SetSize(float size)
+        {
+            _camera.orthographicSize = size;
+        }
 
         public void OnAwake()
         {

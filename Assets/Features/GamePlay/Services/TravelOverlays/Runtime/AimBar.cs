@@ -21,7 +21,8 @@ namespace GamePlay.Services.TravelOverlays.Runtime
         [SerializeField] private RectTransform _fill;
         [SerializeField] private RectTransform _background;
 
-        private IAimHandle _handle;
+        private float _time;
+        private float _max;
         private bool _isStarted = false;
 
         private IDisposable _aimListener;
@@ -35,7 +36,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime
 
         private void OnEnable()
         {
-            _aimListener = MessageBroker.Default.Receive<AimStartedEvent>().Subscribe(OnAim);
+            _aimListener = MessageBroker.Default.Receive<AimDelayEvent>().Subscribe(OnAim);
         }
 
         private void OnDisable()
@@ -48,7 +49,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime
             _updater.Remove(this);
         }
 
-        private void OnAim(AimStartedEvent data)
+        private void OnAim(AimDelayEvent data)
         {
             _bar.SetActive(true);
             var rect = _background.rect;
@@ -58,7 +59,8 @@ namespace GamePlay.Services.TravelOverlays.Runtime
             _fill.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width);
             _fill.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
 
-            _handle = data.Handle;
+            _time = data.Delay;
+            _max = data.Delay;
 
             if (_isStarted == true)
                 _updater.Remove(this);
@@ -69,18 +71,23 @@ namespace GamePlay.Services.TravelOverlays.Runtime
 
         public void OnUpdate(float delta)
         {
-            if (_handle.IsCanceled == true)
+            if (_time < 0)
             {
                 _isStarted = false;
                 _updater.Remove(this);
                 _bar.SetActive(false);
+                _time = 0;
                 return;
             }
+            
+            _time -= delta;
 
+            var progress = _time / _max;
+            
             var rect = _background.rect;
             var width = rect.width;
             var height = rect.height;
-            var length = Mathf.Lerp(width, 0f, _handle.Progress);
+            var length = Mathf.Lerp(0, width, progress);
 
             if (length < _minLength)
                 length = _minLength;

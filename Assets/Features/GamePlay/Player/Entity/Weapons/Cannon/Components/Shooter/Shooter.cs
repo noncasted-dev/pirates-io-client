@@ -93,6 +93,9 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 
             var shots = Mathf.Clamp(_resources.Cannons, 0, _resources.MaxCannons);
 
+            if (shots < 1)
+                shots = 1;
+
             var item = _selector.Selected.ConvertToItemType();
 
             if (_selector.Selected != ProjectileType.Fishnet)
@@ -100,13 +103,17 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 if (shots > _cargo.Items[item].Count)
                     shots = _cargo.Items[item].Count;
 
-                _cargo.Reduce(item, shots);
+                var reduceCount = (int)(shots / 10f);
+                if (reduceCount < 1)
+                    reduceCount = 1;
+                
+                _cargo.Reduce(item, reduceCount);
             }
             else
             {
                 shots = 1;
             }
-            
+
             var shot = new Shot(
                 _updater,
                 _cannonReplicator,

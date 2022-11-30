@@ -6,7 +6,7 @@ namespace GamePlay.Services.Wallets.Runtime
 {
     public class Wallet : MonoBehaviour, IWallet, IWalletPresenter
     {
-        [SerializeField] [ReadOnly] private int _money = 10000;
+        [SerializeField] [ReadOnly] private int _money = 1000000;
 
         public int Money => _money;
 

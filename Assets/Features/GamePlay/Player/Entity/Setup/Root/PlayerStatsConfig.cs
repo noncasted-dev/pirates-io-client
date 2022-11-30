@@ -2,6 +2,7 @@
 using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+using GamePlay.Services.LevelCameras.Runtime;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using UnityEngine;
 using VContainer;
@@ -15,8 +16,10 @@ namespace GamePlay.Player.Entity.Setup.Root
         private void Construct(
             IShipResourcesPresenter resources,
             IHealth health,
-            IPlayerCargoStorage storage)
+            IPlayerCargoStorage storage,
+            ILevelCamera levelCamera)
         {
+            _levelCamera = levelCamera;
             _storage = storage;
             _health = health;
             _resources = resources;
@@ -40,10 +43,12 @@ namespace GamePlay.Player.Entity.Setup.Root
         
         [SerializeField] private int _shallowDamage = 5;
         [SerializeField] private bool _isShallowIgnored;
+        [SerializeField] private float _cameraSize;
         
         private IShipResourcesPresenter _resources;
         private IHealth _health;
         private IPlayerCargoStorage _storage;
+        private ILevelCamera _levelCamera;
 
         public void OnAwake()
         {
@@ -65,6 +70,8 @@ namespace GamePlay.Player.Entity.Setup.Root
 
             _resources.SetShallowIgnorance(_isShallowIgnored);
             _resources.SetShallowDamage(_shallowDamage);
+
+            _levelCamera.SetSize(_cameraSize);
         }
     }
 }

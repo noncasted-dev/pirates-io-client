@@ -102,8 +102,6 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
         {
             _updater.Add(this);
             
-            MessageBroker.Default.Publish(new AimStartedEvent(_handle));
-            
             _input.RangeAttackCanceled += OnRangeAttackCanceled;
 
             var result = await _completion.Task;

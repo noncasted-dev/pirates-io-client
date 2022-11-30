@@ -162,6 +162,7 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnDeath(Vector2 position)
         {
+            BurningInstance.release();
         }
 
         public void OnEnemyDamaged(GameObject target, ProjectileType type) //реализовать переключение типа урона
@@ -238,20 +239,17 @@ namespace Global.Services.Sounds.Runtime
             if (health < 0.5)
             {
                 MusicInstance.setParameterByName("music_intencity", 2f);
-                //Burning();
+                Burning();
             }
-            else
-            {
-                BurningInstance.release();
-            }
+            
 
-            //void Burning(GameObject target)
-            //    {
-            //        BurningInstance = RuntimeManager.CreateInstance(BurningEvent);
-            //        AttachInstance(BurningInstance, target);
-            //        BurningInstance.setParameterByName("health", 0.5f);
-            //        BurningInstance.start();
-            //    }
+            void Burning()
+            {
+                BurningInstance = RuntimeManager.CreateInstance(BurningEvent);
+                AttachInstance(BurningInstance, target.transform.position);
+                BurningInstance.setParameterByName("health", health);
+                BurningInstance.start();
+            }
         }
 
         private void AttachInstance(EventInstance instance, Vector2 position)

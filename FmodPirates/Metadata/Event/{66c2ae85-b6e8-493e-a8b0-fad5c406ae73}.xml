@@ -94,10 +94,13 @@
 			<value>10</value>
 		</property>
 		<property name="volume">
-			<value>-8</value>
+			<value>-9.5</value>
 		</property>
 		<property name="polyphony">
 			<value>5</value>
+		</property>
+		<property name="minimumScatterDistance">
+			<value>6</value>
 		</property>
 		<property name="maximumScatterDistance">
 			<value>80</value>

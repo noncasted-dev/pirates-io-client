@@ -35,13 +35,12 @@ namespace GamePlay.Level.Environment.Bootstrap
             resolver.Resolve<ChunksOcclusionCulling>();
             var itemFactory = resolver.Resolve<IItemFactory>();
             var cargoStorage = resolver.Resolve<IPlayerCargoStorage>();
-            var levelLoop = resolver.Resolve<ILevelLoop>();
             
             foreach (var target in _storages)
                 target.Construct(itemFactory);
             
             foreach (var target in _ports)
-                target.Construct(cargoStorage, levelLoop);
+                target.Construct(cargoStorage);
         }
 
         [Button("ScanStorages")]

@@ -97,7 +97,15 @@ namespace GamePlay.Services.PlayerCargos.UI
                 Open();
         }
 
-        private void Open()
+        public void Switch()
+        {
+            if (_body.activeSelf == false)
+                Open();
+            else
+                Close();
+        }
+
+        public void Open()
         {
             _uiStateMachine.EnterAsStack(this);
             
@@ -106,7 +114,7 @@ namespace GamePlay.Services.PlayerCargos.UI
             _grid.Fill(_storage.ToArray());
         }
 
-        private void Close()
+        public void Close()
         {
             _uiStateMachine.Exit(this);
             

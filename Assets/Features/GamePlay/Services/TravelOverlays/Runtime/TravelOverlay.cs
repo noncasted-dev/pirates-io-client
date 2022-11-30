@@ -1,5 +1,6 @@
 ﻿using Global.Services.UiStateMachines.Runtime;
 using UnityEngine;
+using UnityEngine.UI;
 using VContainer;
 
 namespace GamePlay.Services.TravelOverlays.Runtime
@@ -16,7 +17,9 @@ namespace GamePlay.Services.TravelOverlays.Runtime
         }
 
         [SerializeField] private GameObject _body;
-
+        [SerializeField] private GameObject _menuBody;
+        [SerializeField] private Button _menuButton;
+        
         private UiConstraints _constraints;
         private IUiStateMachine _stateMachine;
 
@@ -28,9 +31,20 @@ namespace GamePlay.Services.TravelOverlays.Runtime
             _body.SetActive(false);
         }
 
+        private void OnEnable()
+        {
+            _menuButton.onClick.AddListener(OnMenuClicked);
+        }
+        
+        private void OnDisable()
+        {
+            _menuButton.onClick.RemoveListener(OnMenuClicked);
+        }
+
         public void Open()
         {
             _body.SetActive(true);
+            _menuBody.SetActive(false);
 
             _stateMachine.EnterAsSingle(this);
         }
@@ -43,6 +57,15 @@ namespace GamePlay.Services.TravelOverlays.Runtime
         public void Exit()
         {
             _body.SetActive(false);
+            _menuBody.SetActive(false);
+        }
+
+        private void OnMenuClicked()
+        {
+            if (_menuBody.activeSelf == true)
+                _menuBody.SetActive(false);
+            else
+                _menuBody.SetActive(true);
         }
     }
 }

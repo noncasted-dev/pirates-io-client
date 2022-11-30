@@ -9,6 +9,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime
         [SerializeField] private HealthBar _health;
         [SerializeField] private OverlayShipView _shipView;
         [SerializeField] private AimBar _aimBar;
+        [SerializeField] private OverlayMenu _menu;
         [SerializeField] private ProjectileItemView[] _projectiles;
         
         public void Register(IObjectResolver resolver)
@@ -16,6 +17,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime
             resolver.Inject(_health);
             resolver.Inject(_shipView);
             resolver.Inject(_aimBar);
+            resolver.Inject(_menu);
 
             foreach (var projectile in _projectiles)
                 resolver.Inject(projectile);

@@ -17,6 +17,7 @@ namespace Global.Services.Sounds.Runtime
             soundsPlayer.name = "SoundsPlayer";
 
             serviceBinder.AddToModules(soundsPlayer);
+            serviceBinder.ListenCallbacks(soundsPlayer);
         }
     }
 }

@@ -1,14 +1,16 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using FMOD.Studio;
 using FMODUnity;
 using GamePlay.Services.Projectiles.Entity;
+using Global.Services.Common.Abstract;
 using UnityEngine;
 
 namespace Global.Services.Sounds.Runtime
 
 {
     [DisallowMultipleComponent]
-    public class SoundsPlayer : MonoBehaviour
+    public class SoundsPlayer : MonoBehaviour, IGlobalBootstrapListener
     {
         [Space(30)] [Header("Battle")] [SerializeField]
         public EventReference ShotEvent;
@@ -49,8 +51,16 @@ namespace Global.Services.Sounds.Runtime
 
         private Transform _fmodInstance;
 
-        private void Start()
+        public void OnBootstrapped()
         {
+            Setup().Forget();
+        }
+
+        private async UniTaskVoid Setup()
+        {
+            for (var i = 0; i < 10; i++)
+                await UniTask.Delay(500);
+            
             AmbInstance = RuntimeManager.CreateInstance(AmbEvent);
             AmbInstance.start();
 
@@ -59,15 +69,12 @@ namespace Global.Services.Sounds.Runtime
 
             BurningInstance = RuntimeManager.CreateInstance(BurningEvent);
             BurningInstance.start();
-
-            var fmodObject = new GameObject("FmodInstance");
-            _fmodInstance = fmodObject.transform;
         }
 
         private void Update()
         {
-
             BurningInstance.setParameterByName("health", _health);
+            
             _fightTime -= _fightExitSpeed * Time.deltaTime;
 
             if (_fightTime < 0f && _isInFight == true)

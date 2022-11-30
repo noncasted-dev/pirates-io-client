@@ -254,6 +254,7 @@ namespace Global.Services.Sounds.Runtime
 
         private void AttachInstance(EventInstance instance, Vector2 position)
         {
+            Debug.Log($"instance: {_fmodInstance == null}");
             _fmodInstance.position = position;
             RuntimeManager.AttachInstanceToGameObject(instance, _fmodInstance);
         }

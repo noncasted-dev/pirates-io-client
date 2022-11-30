@@ -52,7 +52,7 @@ MonoBehaviour:
   - {fileID: -8690742923963213599}
   MinDistance: 1
   MaxDistance: 20
-  Length: 142991
+  Length: 207405
 --- !u!114 &-7808339027711229621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 4782442716932992266}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters:
   - {fileID: 1882857375920721563}
@@ -308,7 +308,7 @@ MonoBehaviour:
   Name: music_condition
   StudioPath: parameter:/music_condition
   Min: 0
-  Max: 2
+  Max: 3
   Default: 0
   ID:
     data1: 1138535495
@@ -319,6 +319,7 @@ MonoBehaviour:
   - exploration
   - port
   - battle
+  - menu
   Exists: 1
 --- !u!114 &-2555637242263382507
 MonoBehaviour:
@@ -395,7 +396,7 @@ MonoBehaviour:
     Data4: -1042865841
   Banks:
   - {fileID: 4782442716932992266}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
@@ -493,7 +494,7 @@ MonoBehaviour:
   - {fileID: 4782442716932992266}
   StringsBanks:
   - {fileID: 3582555454610402830}
-  cacheTime: 638054431849914916
+  cacheTime: 638054480101434898
   cacheVersion: 131593
 --- !u!114 &669502784843091532
 MonoBehaviour:
@@ -537,7 +538,7 @@ MonoBehaviour:
   Name: music_condition
   StudioPath: 
   Min: 0
-  Max: 2
+  Max: 3
   Default: 0
   ID:
     data1: 1138535495
@@ -548,6 +549,7 @@ MonoBehaviour:
   - exploration
   - port
   - battle
+  - menu
   Exists: 1
 --- !u!114 &1434802825589905288
 MonoBehaviour:
@@ -611,7 +613,7 @@ MonoBehaviour:
   Name: music_condition
   StudioPath: 
   Min: 0
-  Max: 2
+  Max: 3
   Default: 0
   ID:
     data1: 1138535495
@@ -622,6 +624,7 @@ MonoBehaviour:
   - exploration
   - port
   - battle
+  - menu
   Exists: 1
 --- !u!114 &3582555454610402830
 MonoBehaviour:
@@ -638,7 +641,7 @@ MonoBehaviour:
   Path: FmodPirates/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638053911936367600
+  lastModified: 638054480101434898
   FileSizes:
   - Name: Desktop
     Value: 1874
@@ -678,10 +681,10 @@ MonoBehaviour:
   Path: FmodPirates/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638054431849914916
+  lastModified: 638054480101395224
   FileSizes:
   - Name: Desktop
-    Value: 7681792
+    Value: 8134016
   Exists: 1
 --- !u!114 &4858439983126258615
 MonoBehaviour:

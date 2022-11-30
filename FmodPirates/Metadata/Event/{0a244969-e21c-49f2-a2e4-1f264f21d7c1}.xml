@@ -63,7 +63,11 @@
 			<destination>{6f9caee5-be69-47c6-b1ba-f3538b3dd5a1}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{ce300d3b-8f4d-4296-acf1-33d89071ecc6}" />
+	<object class="EventAutomatableProperties" id="{ce300d3b-8f4d-4296-acf1-33d89071ecc6}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{084e56fa-d074-4c9d-972d-b1dc682b7b59}" />
 	<object class="GroupTrack" id="{682ed4d5-6caa-4975-980e-ab327bf21863}">
 		<relationship name="automationTracks">
@@ -340,10 +344,10 @@
 	<object class="MixerBusFader" id="{fc2e8e1a-5456-488a-9adc-206a20407b5a}" />
 	<object class="AutomationPoint" id="{57046838-4e1a-4428-93b0-079c030f45e9}">
 		<property name="position">
-			<value>0.50423728813559321</value>
+			<value>0.80000000000000004</value>
 		</property>
 		<property name="value">
-			<value>-20</value>
+			<value>-80</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{0d5e8a11-6e68-4148-92e6-c3a50ac5aeae}">
@@ -351,7 +355,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-1</value>
+			<value>-0.5</value>
 		</property>
 		<property name="curveShape">
 			<value>0.456860244</value>

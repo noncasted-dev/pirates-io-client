@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: 5e3b3abdefd2de34aa31e647a9ce2a7d, type: 2}
   _loop: {fileID: 11400000, guid: 0399daf7b514c3e4b81835662d64dba4, type: 2}
-  _ui: {fileID: 11400000, guid: 07fd34c9d670f4d48a882ff1abf30c42, type: 2}
   _scopePrefab: {fileID: 6290114344072683581, guid: 3d0290f455340da40bc13d09a334a5b7, type: 3}
+  _ui: {fileID: 11400000, guid: 07fd34c9d670f4d48a882ff1abf30c42, type: 2}

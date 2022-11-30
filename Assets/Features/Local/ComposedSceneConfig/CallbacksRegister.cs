@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using Local.Services.Abstract;
 using Local.Services.Abstract.Callbacks;
 using Local.Services.DependenciesResolve;
+using UnityEngine;
 using VContainer;
 
 namespace Local.ComposedSceneConfig
@@ -90,6 +91,8 @@ namespace Local.ComposedSceneConfig
 
         public void InvokeLoadedCallbacks()
         {
+            Debug.Log(13);
+
             foreach (var load in _loads)
                 load.OnLoaded();
         }

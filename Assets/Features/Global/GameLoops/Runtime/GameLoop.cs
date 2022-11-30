@@ -102,12 +102,20 @@ namespace Global.GameLoops.Runtime
             var unload = _currentSceneHandler.Unload();
             var result = await asset.Load(_scope, _loader);
 
+            Debug.Log(11);
+
             await unload;
             await _currentSceneHandler.FinalizeUnloading();
 
+            Debug.Log(12);
+
+            
             _currentSceneHandler.OnLoaded(result);
             _globalCamera.Disable();
             _loadingScreen.Hide();
+            
+            Debug.Log(13);
+
 
             result.OnLoaded();
         }

@@ -4,9 +4,9 @@ using System.Linq;
 using GamePlay.Cities.Instance.Root.Runtime;
 using GamePlay.Items.Abstract;
 using NaughtyAttributes;
-using UnityEditor.SceneManagement;
 
 #if UNITY_EDITOR
+using UnityEditor.SceneManagement;
 using UnityEditor;
 #endif
 using UnityEngine;

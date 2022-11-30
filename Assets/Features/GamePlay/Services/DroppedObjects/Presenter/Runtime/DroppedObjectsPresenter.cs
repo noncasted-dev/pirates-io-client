@@ -71,7 +71,11 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
 
         public void OnLoaded()
         {
+            Debug.Log(15);
+
             _itemProvider = _poolProvider.GetPool<IDroppedItem>(_config.DroppedItemPrefab);
+            Debug.Log(16);
+
         }
 
         public void OnEnabled()

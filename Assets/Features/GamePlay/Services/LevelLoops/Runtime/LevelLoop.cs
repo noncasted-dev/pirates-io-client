@@ -95,11 +95,21 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
         public void OnLoaded()
         {
+            Debug.Log(17);
+
             _sceneObjects.InvokeFullStartup();
 
+            Debug.Log(18);
+
+            
             _currentCamera.SetCamera(_levelCamera.Camera);
 
+            Debug.Log(19);
+
+            
             _logger.OnLoaded();
+
+            Debug.Log(20);
 
             Begin().Forget();
         }
@@ -108,12 +118,18 @@ namespace GamePlay.Services.LevelLoops.Runtime
         {
             var cannons = _itemFactory.Create(ItemType.Cannon, 3);
             var ball = _itemFactory.Create(ItemType.CannonBall, 90);
-            var shrapnel = _itemFactory.Create(ItemType.CannonShrapnel, 30);
+            var shrapnel = _itemFactory.Create(ItemType.CannonKnuppel, 30);
             var knuppel = _itemFactory.Create(ItemType.CannonShrapnel, 30);
+            Debug.Log(21);
+
+            
             _cargo.Add(cannons);
             _cargo.Add(ball);
             _cargo.Add(shrapnel);
             _cargo.Add(knuppel);
+            
+            Debug.Log(22);
+
             
             var selectedCity = await _factionSelection.SelectAsync();
             _transitionScreen.ToPlayerRespawn();
@@ -122,17 +138,26 @@ namespace GamePlay.Services.LevelLoops.Runtime
             var spawnPosition = cityInstance.SpawnPoints.GetRandom();
             
             _logger.OnPlayerSpawn();
+            
+            Debug.Log(23);
+
 
             var player = await _playerFactory.Create(spawnPosition, ShipType.Boat);
 
             _levelCamera.Teleport(player.Transform.position);
             _levelCamera.StartFollow(player.Transform);
+            
+            Debug.Log(24);
+
 
             await _transitionScreen.FadeOut();
 
             _travelOverlay.Open();
 
             player.Respawn();
+            
+            Debug.Log(25);
+
         }
 
         public void Respawn(ShipType ship)

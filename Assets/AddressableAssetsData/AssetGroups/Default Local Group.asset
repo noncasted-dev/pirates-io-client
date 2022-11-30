@@ -313,6 +313,386 @@ MonoBehaviour:
     m_Address: Assets/Features/GamePlay/Services/VFX/Pool/Implementation/Fish/Fish.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: c7a66f68d20d53f4a901e6c0ba9683bd
+    m_Address: Assets/Features/GamePlay/Items/Config/Projectiles/Item_Fishnet.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d5d40dc877ce2a145ac433f2b88f4adc
+    m_Address: Assets/Features/GamePlay/Items/Config/Projectiles/Item_Knuppel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6786da9b5f9be7a46bc9346019829329
+    m_Address: Assets/Features/GamePlay/Items/Config/Projectiles/Item_Shrapnel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f433aa4a4cf8f6f42a3f6bed1c3018cc
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Barrels.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7f570cfaa1cd6af4891aa4f216717c06
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Boards.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 854590466326064459c02f69622a818f
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Books.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1647c675b0561ac489aa35a6d9223b5a
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Bricks.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 12bc69f5881cd04428ceb8e2a1a8d091
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Cannabis.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 826b15877da11944a90e2c439cafae03
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Cheese.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 58421216f11cd894a9c2adf0636cbdba
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Cigars.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 589dd8c4ad773de42bf844b575fd7536
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Coffee.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a9b929be5c8a3564a882da373047ff86
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Corn.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b1374ed6e24d6ee488678105f9737af5
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Cotton.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fdb40c3c76bbe8b4799b467cd7a33ada
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Fish.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a10cfb85e6487ef449f9da81da83e134
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Flour.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 299ddfad42580cd4580c573a1d09c479
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Fruit.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 672f8fa7eb80677439ebbfbdc61bf487
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Grapes.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4ac9c337360c3b446aca50724a9bf213
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Iron.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5a2537be9751dd64b87fdc60ea8ea279
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Leather.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 26ddd1aa90cb01e449b8ce74e7062631
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Meat.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b340819b86a315949b5cb16f65b0e52d
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Carpets.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7305ac90b2d454a41ac480cab8b6d4b6
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Musket.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e7563b10e3b785044b63ff82a10af97c
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Rum.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cb0e7fbf524d0464eaa6250c9462c30f
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Ropes.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 95e6d795b9339114a84fd05dcce59560
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_RedWood.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fd3984325fe44b242b86561e9c9fd9d4
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Nails.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0460a98fa0736f54d9b7847579aa7641
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Saber.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 92a656373b19a4f48a8f8b499439dbe5
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_SailCloth.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e9461ba6060016d41acd8bb1df77172c
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Salt.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4764ec8cbb2c8d04a9538e7e9464df80
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Spices.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6b23eb7291f84c944926baeb4fd74f66
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Stone.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5f3458c828685f74d87c8a810fd713b2
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Tableware.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b56c08bb7fcf8a34daa40d881483670d
+    m_Address: Assets/Features/GamePlay/Items/Config/Item_Wine.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0008c37ea74be9d459a54b36f7a86ff6
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Holland_Isabella.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 207dd95cb09e75b49b348c91e5e038f0
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Holland_Savannah.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3061cb17d42a83947a7324934898d67b
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Holland_Gilhara.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 801a636574556534bb9184879a84f66e
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Spain_Cancun.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a066739bcd44e0646a881087940f62b5
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Pirate_Tortuga.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 31a32bcae08731c45860df944ed3280d
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_England_Antigua.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 51f4e5e063e46bc46bd007e79c9beb87
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_England_SanJuan.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 22e5ca11d667da04a9ce72f8a1a48a7e
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Holland_Pensacola.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 62e005c2287f0e84bb0f8d65d2740ade
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Spain_PuertoBello.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 93927d539458eac41ab2ce8ba9fe6f1b
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_England_Barcelona.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 64b5c061e67ab3f4e827aebbdb5b6a07
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_France_Tampico.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 84e9d06982d981b4cbdbe0b9bbe5fd6c
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_France_Biloxi.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 159d4abe22b9b57498dc0074c0daea84
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Pirate_Trinidad.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 86399c0aa4a8a934bbcbf98fe6f6a25e
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_England_Georgetown.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 96df2b43e0a508b4095a5fc654bf7a9c
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Spain_SanThoma.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c679468640b66dc4e96a973afe55dd77
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Holland_Andros.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 77f390e79f3de7547ad9cfa6d7c092e1
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Holland_Carlos.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e7d4470724140584485cb42c0a643e0b
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Holland_GrandBahama.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 68244f849b638be4499f41397b864ab5
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_England_RioHacha.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 592811818d165cd4ba3dcd921a460270
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_France_RioGrande.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6a7c8bc48fb6a0a44b85f7159dd2d3af
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Pirate_Havanna.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6b5ac7cd0845e8a4da61d619ddd4838d
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_France_Magdelaine.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9b0a621845252864f8e3bd0e4821762b
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_France_VillaRica.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bb87a469ff45c10469f58c8ed970da88
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_England_Barbados.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9c0ce537908a86e41916406895f5389e
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Spain_Belize.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ae0a2e4fc8ed9e84fbecbca708e268cf
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_France_Sisal.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bec32890bb142844fb7e56d9a0bc48c1
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Spain_PuertoCabezas.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: de115540175dc4d41a6d2d9809f10945
+    m_Address: Assets/Features/GamePlay/Cities/Instance/Definitions/City_Spain_SantaMaria.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0d64feffcfd4746468ac42a370304235
+    m_Address: Assets/Features/GamePlay/Services/VFX/Pool/Config/CanonExplosion/AnimatedVfx_CanonExplosion.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f0a37dda6e2908c409aead1eb625eb2c
+    m_Address: Assets/Features/GamePlay/Services/VFX/Pool/Config/HitExplosion/AnimatedVfx_HitExplosion.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 93551d88ca9f83b4087a403d08d336bf
+    m_Address: Assets/Features/GamePlay/Services/VFX/Pool/Config/WaterSplash/AnimatedVfx_WaterSplash.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 95876f79347cbb84f814d4e00b03607f
+    m_Address: Assets/Features/GamePlay/Player/Entity/Components/Rotations/Config/AnimatorFloat_Rotation.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d2f3053bf323c6842980867aa9b28738
+    m_Address: Assets/Features/GamePlay/Player/Entity/States/Idles/Config/AnimatorTrigger_Idle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c6a1df7adf7368d458f01633d33d8aa2
+    m_Address: Assets/Features/GamePlay/Player/Entity/States/Respawns/Config/AnimatorTrigger_Respawn.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 99fe0e7146e682642a5274db4a4e0ba4
+    m_Address: Assets/Features/GamePlay/Player/Entity/States/Runs/Config/AnimatorTrigger_Run.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5e3b3abdefd2de34aa31e647a9ce2a7d
+    m_Address: Assets/Features/Local/Common/ComposedSceneConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aa05ddcad59ddaa4eaaacd2afdcd73cc
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Dead/DeadShipVfx_0.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b7e664b337e906b40a68acbb28bba463
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Dead/DeadShipVfx_1-3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4374483368baa5241be6b5c585f6ce45
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Dead/DeadShipVfx_4-5.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 380c800d6f5ef5a48b28e3350e8f2be3
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Dead/DeadShipVfx_6-7.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1d2128bafbe6cf44cb7ed00ce22dbb4d
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Dead/DeadShipVfx_8.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9abef4671e6b62945a24e83f58e88bf0
+    m_Address: Assets/Features/GamePlay/Services/VFX/Pool/Implementation/Fish/FishVfx_PoolEntry.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 601b7bd1668c42d42bbb90fff8514607
+    m_Address: Assets/Features/Global/Services/ItemFactories/Config/GlobalConfig_ItemFactory.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8442ad5626ccb9f48beae22b00a6ae0f
+    m_Address: Assets/Features/Global/Services/Network/Config/GlobalConfig_NetworkConnection.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 111121c1c56dac24db537115fdb4e6e6
+    m_Address: Assets/Features/Global/Services/AssetsFlow/Config/GlobalService_AssetsFlow.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f8225ff56a4a96a4e80b0602b4cd3656
+    m_Address: Assets/Features/Global/Services/ApplicationProxies/Config/GlobalService_ApplicationProxy.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 68abf8d3e8faf6c4aae3fcd6cdffc314
+    m_Address: Assets/Features/Global/Services/CameraUtilities/Config/GlobalService_CameraUtils.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9fec9cd81ac4efa4fa81942c6b10c867
+    m_Address: Assets/Features/Global/Services/CurrentCameras/Config/GlobalService_CurrentCamera.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 59f0f3c41ac20364ba23a15c6eeeb5d1
+    m_Address: Assets/Features/Global/Services/InputViews/Config/GlobalService_InputView.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5d5d34fb2bc5e654ab9562f3bb1cd75f
+    m_Address: Assets/Features/Global/Services/CurrentSceneHandlers/Config/GlobalService_CurrentSceneHandler.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e3ab40223d3185148955ce7add75ce44
+    m_Address: Assets/Features/Global/Services/DebugConsoles/Config/GlobalService_DebugConsole.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 641d0b111b07192419420888e3882ed9
+    m_Address: Assets/Features/Global/Services/FilesFlow/Config/GlobalService_FilesFlow.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 24bc63408099b334f8050f4463f479ab
+    m_Address: Assets/Features/Global/GameLoops/Config/GlobalService_GameLoop.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2abed4240467e0645976533d0004a5f7
+    m_Address: Assets/Features/GamePlay/Services/PlayerSpawn/RemoteBuilders/Config/PoolEntry_RemotePlayerVew_0.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8a8e5c7d382909848af99927081bc839
+    m_Address: Assets/Features/GamePlay/Services/PlayerSpawn/RemoteBuilders/Config/PoolEntry_RemotePlayerVew_1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5c8bb2178105c58458fc490750806cbb
+    m_Address: Assets/Features/GamePlay/Services/PlayerSpawn/RemoteBuilders/Config/PoolEntry_RemotePlayerVew_2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b7282a1a83013994d9c5f8e7d00cdf95
+    m_Address: Assets/Features/GamePlay/Services/PlayerSpawn/RemoteBuilders/Config/PoolEntry_RemotePlayerVew_3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 118723956825b2d4e83d8b6caafc23ab
+    m_Address: Assets/Features/GamePlay/Services/PlayerSpawn/RemoteBuilders/Config/PoolEntry_RemotePlayerVew_4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 17d79b1d89aa45f49827248c93dd8bc7
+    m_Address: Assets/Features/GamePlay/Services/PlayerSpawn/RemoteBuilders/Config/PoolEntry_RemotePlayerVew_5.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a253f3755c46ed142afcb118bca141dd
+    m_Address: Assets/Features/GamePlay/Services/PlayerSpawn/RemoteBuilders/Config/PoolEntry_RemotePlayerVew_6.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 83a0c67ea31a48146861f18ba5e9e7f6
+    m_Address: Assets/Features/GamePlay/Services/PlayerSpawn/RemoteBuilders/Config/PoolEntry_RemotePlayerVew_7.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5bc9af23533b3894188d4243b167e500
+    m_Address: Assets/Features/GamePlay/Services/PlayerSpawn/RemoteBuilders/Config/PoolEntry_RemotePlayerVew_8.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
   m_SchemaSet:

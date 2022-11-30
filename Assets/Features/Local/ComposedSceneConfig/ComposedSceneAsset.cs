@@ -18,6 +18,7 @@ namespace Local.ComposedSceneConfig
 
         public async UniTask<ComposedSceneLoadResult> Load(LifetimeScope parent, ISceneLoader loader)
         {
+            Debug.Log(1);
             var scenes = AssignScenes();
             var services = AssignServices();
 
@@ -44,6 +45,9 @@ namespace Local.ComposedSceneConfig
                 servicesTasks.Add(task);
             }
 
+            Debug.Log(2);
+
+            
             await UniTask.WhenAll(scenesTasks);
             await UniTask.WhenAll(servicesTasks);
 
@@ -58,21 +62,37 @@ namespace Local.ComposedSceneConfig
                     await UniTask.Create(async () => scope.Build());
                 }
             }
+            
+            Debug.Log(3);
+
 
             void Register(IContainerBuilder builder)
             {
                 serviceBinder.RegisterAllQueued(builder);
                 callbacksRegister.InvokeRegisterCallbacks(builder);
             }
+            
+            Debug.Log(4);
+
 
             foreach (var service in services)
                 service.OnResolve(scope.Container, callbacksRegister);
 
             callbacksRegister.Resolve(scope.Container);
+            Debug.Log(5);
+
             callbacksRegister.InvokeAwakeCallbacks();
+            Debug.Log(6);
+
             callbacksRegister.InvokeEnableCallback();
+            Debug.Log(7);
+
             await callbacksRegister.InvokeAsyncAwakeCallbacks();
+            Debug.Log(8);
+
             callbacksRegister.InvokeBootstrappedCallbacks();
+            Debug.Log(9);
+
             await callbacksRegister.InvokeAsyncBootstrappedCallbacks();
 
             return new ComposedSceneLoadResult(

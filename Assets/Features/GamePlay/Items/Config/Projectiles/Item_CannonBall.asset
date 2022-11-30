@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1509e2ec6264c87ad83d1224ccf392e, type: 3}
   m_Name: Item_CannonBall
   m_EditorClassIdentifier: 
-  _weight: 1
+  _weight: 0
   _name: CannonBall
   _isInfinite: 0
   _icon: {fileID: 21300000, guid: 5444f0fdf14d004429cfdf925ddcb9ee, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd5135bfc4f49c68639e7d9ee6c86da, type: 3}
   m_Name: Item_Knuppel
   m_EditorClassIdentifier: 
-  _weight: 1
+  _weight: 0
   _name: Knuppel
   _isInfinite: 0
   _icon: {fileID: 21300000, guid: 7a305b37e7094f7449848e24f9326609, type: 3}

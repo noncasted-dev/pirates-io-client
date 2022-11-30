@@ -81,7 +81,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             var weight = 0;
 
             foreach (var (_, item) in _items)
-                weight += item.Count;
+                weight += item.Count * item.BaseData.Weight;
 
             return weight;
         }

@@ -64,51 +64,6 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             _producables.Add(type, config);
         }
 
-        public void OnGenerated(CityDefinition definition)
-        {
-            definition.Clear();
-
-            var tmp = _producables.OrderByDescending(
-                    t => t.Value.MedianCount);
-
-            var tmpList = new List<ItemType>();
-
-            foreach (var (key, _) in tmp)
-                tmpList.Add(key);
-            
-            tmpList.Remove(ItemType.Ship_Boat);
-            tmpList.Remove(ItemType.Ship_Brig);
-            tmpList.Remove(ItemType.Ship_Frigate);
-            tmpList.Remove(ItemType.Ship_Ketch);
-            tmpList.Remove(ItemType.Ship_Pink);
-            tmpList.Remove(ItemType.Ship_Polacre);
-            tmpList.Remove(ItemType.Ship_Snow);
-            tmpList.Remove(ItemType.Ship_Tartan);
-            tmpList.Remove(ItemType.Ship_FirstRate);
-            tmpList.Remove(ItemType.Cannon);
-            tmpList.Remove(ItemType.CannonBall);
-            tmpList.Remove(ItemType.CannonFishnet);
-            tmpList.Remove(ItemType.CannonKnuppel);
-            tmpList.Remove(ItemType.CannonShrapnel);
-            tmpList.Remove(ItemType.Team);
-            tmpList.Remove(ItemType.Musket);
-            tmpList.Remove(ItemType.Saber);
-            tmpList.Remove(ItemType.Fish);
-            
-            var most = new List<ItemType>();
-            var less = new List<ItemType>();
-            
-            for (var i = 0; i < _producablesConfigCount; i++)
-                most.Add(tmpList[i]);
-
-            tmpList.Reverse();
-
-            for (var i = 0; i < _producablesConfigCount; i++)
-                less.Add(tmpList[i]);
-
-            definition.OnGenerated(most, less);
-        }
-
         public void Add(IItem item)
         {
             _vault.Add(item);
@@ -211,6 +166,9 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
             var cost = (int)(config.MedianCost * priceEvaluation);
 
+            if (cost < 1)
+                return 1;
+
             return cost;
         }
 
@@ -224,6 +182,9 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             var priceEvaluation = _curves.ItemPricePerCount.Evaluate(progress);
             var cost = (int)(config.MedianCost * priceEvaluation);
 
+            if (cost < 1)
+                return 1;
+            
             return cost;
         }
 
@@ -236,7 +197,12 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 var price = GetPrice(type, i);
                 var progress = GetCountProgress(type, i);
                 var priceEvaluation = _curves.SellPricePerCount.Evaluate(progress);
-                totalPrice += (int)(priceEvaluation * price * (1f - _commission));
+                var resultPrice = priceEvaluation * price * (1f - _commission);
+
+                if (resultPrice < 1)
+                    resultPrice = 1;
+                
+                totalPrice += (int)resultPrice;
             }
 
             var median = totalPrice / count;
@@ -251,9 +217,19 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             for (var i = 0; i < count; i++)
             {
                 var price = GetPrice(type, -i);
+
+                if (price < 1)
+                    price = 1;
+                
                 var progress = GetCountProgress(type, i);
                 var priceEvaluation = _curves.StockPricePerCount.Evaluate(progress);
-                totalPrice += (int)(priceEvaluation * price);
+
+                var resultPrice = priceEvaluation * price;
+                
+                if (resultPrice < 1)
+                    resultPrice = 1;
+                
+                totalPrice += (int)resultPrice;
             }
 
             var median = totalPrice / count;
@@ -269,9 +245,17 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             for (var i = 0; i < count; i++)
             {
                 var price = GetPrice(type, i);
+                
+                if (price < 1)
+                    price = 1;
+                
                 var progress = GetCountProgress(type, i);
                 var priceEvaluation = curve.Evaluate(progress);
-                lastPrice = (int)(priceEvaluation * price * (1f - commission));
+                lastPrice = Mathf.CeilToInt(priceEvaluation * price * (1f - commission));
+                
+                if (lastPrice < 1)
+                    lastPrice = 1;
+                
                 totalPrice += lastPrice;
             }
 

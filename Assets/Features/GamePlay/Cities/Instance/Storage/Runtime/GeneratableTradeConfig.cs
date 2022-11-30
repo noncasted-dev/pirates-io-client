@@ -20,11 +20,11 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             _productionSpeed = 1;
         }
         
-        [SerializeField] [Min(1)] private int _medianCost;
-        [SerializeField] [Min(1)] private int _maxItems;
-
         [SerializeField] [Min(1)] private int _medianCount;
+        [SerializeField] [Min(1)] private int _medianCost;
         [SerializeField] [Min(1)] private int _medianCurveHeight;
+        
+        [SerializeField] [Min(1)] private int _maxItems;
         
         [SerializeField] [Min(1)] private int _minCurveHeight;
         [SerializeField] [Min(1)] private int _minCount;

@@ -2,6 +2,7 @@
 using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Cities.Instance.Root.Runtime;
+using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Factions.Selections.Loops.Runtime;
 using GamePlay.Items.Abstract;
@@ -28,7 +29,6 @@ namespace GamePlay.Services.LevelLoops.Runtime
     public class LevelLoop :
         MonoBehaviour,
         ILocalLoadListener,
-        ILevelLoop,
         ILocalSwitchListener
     {
         [Inject]
@@ -62,9 +62,8 @@ namespace GamePlay.Services.LevelLoops.Runtime
             _levelCamera = levelCamera;
         }
 
-        private ICity _lastCity;
-
         private IDisposable _deathListener;
+        private IDisposable _shipChangeListener;
         
         private ICitiesRegistry _citiesRegistry;
         private ICurrentCamera _currentCamera;
@@ -85,11 +84,13 @@ namespace GamePlay.Services.LevelLoops.Runtime
         public void OnEnabled()
         {
             _deathListener = MessageBroker.Default.Receive<PlayerDeathEvent>().Subscribe(OnPlayerDeath);
+            _shipChangeListener = MessageBroker.Default.Receive<ShipChangeEvent>().Subscribe(OnShipChanged);
         }
 
         public void OnDisabled()
         {
             _deathListener?.Dispose();
+            _shipChangeListener?.Dispose();
         }
 
         public void OnLoaded()
@@ -106,14 +107,19 @@ namespace GamePlay.Services.LevelLoops.Runtime
         private async UniTask Begin()
         {
             var cannons = _itemFactory.Create(ItemType.Cannon, 3);
+            var ball = _itemFactory.Create(ItemType.CannonBall, 90);
+            var shrapnel = _itemFactory.Create(ItemType.CannonShrapnel, 30);
+            var knuppel = _itemFactory.Create(ItemType.CannonShrapnel, 30);
             _cargo.Add(cannons);
+            _cargo.Add(ball);
+            _cargo.Add(shrapnel);
+            _cargo.Add(knuppel);
             
             var selectedCity = await _factionSelection.SelectAsync();
             _transitionScreen.ToPlayerRespawn();
 
             var cityInstance = _citiesRegistry.GetCity(selectedCity);
             var spawnPosition = cityInstance.SpawnPoints.GetRandom();
-            _lastCity = cityInstance;
             
             _logger.OnPlayerSpawn();
 
@@ -139,6 +145,11 @@ namespace GamePlay.Services.LevelLoops.Runtime
             _entityPresenter.DestroyPlayer();
 
             Begin().Forget();
+        }
+        
+        private void OnShipChanged(ShipChangeEvent data)
+        {
+            ProcessRespawn(data.Ship).Forget();
         }
 
         private async UniTaskVoid ProcessRespawn(ShipType ship)

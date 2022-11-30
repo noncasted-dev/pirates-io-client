@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
-using GamePlay.Services.LevelLoops.Runtime;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using Global.Services.Sounds.Runtime;
 using UniRx;
@@ -14,10 +13,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
     public class CityPort : MonoBehaviour
     {
         public void Construct(
-            IPlayerCargoStorage playerCargoStorage,
-            ILevelLoop levelLoop)
+            IPlayerCargoStorage playerCargoStorage)
         {
-            _levelLoop = levelLoop;
             _playerCargoStorage = playerCargoStorage;
         }
 
@@ -27,7 +24,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
         private IDisposable _completionListener;
         
         private IPlayerCargoStorage _playerCargoStorage;
-        private ILevelLoop _levelLoop;
 
         private void OnEnable()
         {
@@ -85,10 +81,11 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 
             if (completed.Result.IsContainingShip == true)
             {
-                var data = new PortExitedEvent();
-                MessageBroker.Default.Publish(data);
+                var exited = new PortExitedEvent();
+                var change = new ShipChangeEvent(completed.Result.Ship.Type);
                 
-                _levelLoop.Respawn(completed.Result.Ship.Type);
+                MessageBroker.Default.Publish(exited);
+                MessageBroker.Default.Publish(change);
                 return;
             }
             

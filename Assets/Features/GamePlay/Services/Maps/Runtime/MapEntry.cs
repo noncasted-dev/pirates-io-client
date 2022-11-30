@@ -20,8 +20,8 @@ namespace Features.GamePlay.Services.Maps.Runtime
             for (var i = 0; i < _definition.MostProduced.Count; i++)
                 _most[i].sprite = factory.Create(_definition.MostProduced[i], 1).BaseData.Icon;
             
-            for (var i = 0; i < _definition.LessProduced.Count; i++)
-                _less[i].sprite = factory.Create(_definition.LessProduced[i], 1).BaseData.Icon;
+            for (var i = 0; i < _definition.LeastProduced.Count; i++)
+                _less[i].sprite = factory.Create(_definition.LeastProduced[i], 1).BaseData.Icon;
         }
     }
 }

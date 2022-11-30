@@ -54,13 +54,17 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
         [Button("Generate trading")]
         private void GenerateTrading()
         {
+#if UNITY_EDITOR
             EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+#endif
+            var cities = FindObjectsOfType<CityStorage>().ToList();
 
-            var cities = FindObjectsOfType<CityStorage>();
-
+            cities = cities.OrderBy(t => (int)GetDefinition(t).Name).ToList();
+            
             foreach (var storage in cities)
             {
                 storage.Clear();
+                GetDefinition(storage).Clear();
 
                 foreach (var (key, value) in _ignoredTrades)
                     storage.AddProducable(key, value);
@@ -68,38 +72,61 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
             foreach (var (item, config) in _trades)
             {
-                var city = FindCity(config.City, cities);
-                var others = new List<CityStorage>();
-                others.AddRange(cities);
-                others.Remove(city);
-                GenerateTrade(item, config, city, others);
+                var storage = FindStorage(config.City, cities);
+                var definition = GetDefinition(storage);
+                definition.AddMost(item);
             }
 
             foreach (var storage in cities)
             {
-                var definition = GetDefinition(storage);
-
-                Undo.RecordObject(definition, "Assigned");
-
-                storage.OnGenerated(definition);
-
-                Undo.RecordObject(definition, "Assigned");
+                var city = GetCity(storage);
+                
+                foreach (var (item, config) in _trades)
+                {
+                    if (city != config.City)
+                        continue;
+                    
+                    var others = new List<CityStorage>();
+                    others.AddRange(cities);
+                    others.Remove(storage);
+                    GenerateTrade(item, config, storage, others);
+                }
             }
             
+            // foreach (var (item, config) in _trades)
+            // {
+            //     var city = FindStorage(config.City, cities);
+            //     var others = new List<CityStorage>();
+            //     others.AddRange(cities);
+            //     others.Remove(city);
+            //     GenerateTrade(item, config, city, others);
+            // }
+
+#if UNITY_EDITOR
             EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+#endif
         }
 
         private void GenerateTrade(
             ItemType itemType,
             GeneratableTradeConfig config,
-            CityStorage city,
-            IReadOnlyList<CityStorage> others)
+            CityStorage storage,
+            List<CityStorage> othersSource)
         {
-            others = others
-                .OrderByDescending(t => Vector3.Distance(
-                    t.transform.position,
-                    city.transform.position)).ToList();
+            var others = new List<CityStorage>();
+            others.AddRange(othersSource);
 
+            others = others
+                .OrderByDescending(t => CompareDistance(storage, t)).ToList();
+
+            var result = "";
+            foreach (var other in others)
+            {
+                result += $"{GetDefinition(other).Name} ";
+            }
+            
+            Debug.Log($"Origin: {result}");
+            
             var count = others.Count;
 
             var mainConfig = new ItemPriceConfig(
@@ -108,12 +135,75 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 config.MedianCount,
                 config.MaxItems,
                 config.ProductionSpeed, itemType);
+            
+#if UNITY_EDITOR
+            Undo.RecordObject(storage, "Assign tradable");
+#endif
+            storage.AddProducable(itemType, mainConfig);
+#if UNITY_EDITOR
+            Undo.RecordObject(storage, "Assign tradable");
+            EditorUtility.SetDirty(storage);
+#endif
 
-            Undo.RecordObject(city, "Assign tradable");
+            var mostCounter = 0;
+            
+            var reversed = others
+                .OrderBy(t => CompareDistance(storage, t)).ToList();
+            
+            result = "";
+            foreach (var other in reversed)
+            {
+                result += $"{GetDefinition(other).Name} ";
+            }
+            
+            Debug.Log($"Reversed: {result}");
 
-            city.AddProducable(itemType, mainConfig);
+            foreach (var other in reversed)
+            {
+                var definition = GetDefinition(other);
 
-            Undo.RecordObject(city, "Assign tradable");
+                if (definition.MostProduced.Count == 3)
+                    continue;
+
+#if UNITY_EDITOR
+                Undo.RecordObject(definition, "Assigned");
+#endif
+                definition.AddMost(itemType);
+                mostCounter++;
+                
+#if UNITY_EDITOR
+                Undo.RecordObject(definition, "Assigned");
+                EditorUtility.SetDirty(definition);
+#endif
+                
+                if (mostCounter == 2)
+                    break;
+            }
+            
+            var leastCounter = 0;
+
+            foreach (var other in others)
+            {
+                var definition = GetDefinition(other);
+
+                if (definition.LeastProduced.Count == 3 || definition.MostProduced.Contains(itemType) == true)
+                    continue;
+
+#if UNITY_EDITOR
+                Undo.RecordObject(definition, "Assigned");
+#endif
+                definition.AddLeast(itemType);
+                leastCounter++;
+                
+#if UNITY_EDITOR
+                Undo.RecordObject(definition, "Assigned");
+                EditorUtility.SetDirty(definition);
+#endif
+                
+                if (leastCounter == 3)
+                    break;
+            }
+
             for (var i = 0; i < count; i++)
             {
                 var progress = i / (float)count;
@@ -128,16 +218,19 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                     config.MedianCost, assignCurveHeight, assignCount,
                     config.MaxItems, config.ProductionSpeed, itemType);
 
+#if UNITY_EDITOR
                 Undo.RecordObject(others[i], "Assign tradable");
-
+#endif
                 others[i].AddProducable(itemType, price);
 
+#if UNITY_EDITOR
                 EditorUtility.SetDirty(others[i]);
                 Undo.RecordObject(others[i], "Assign tradable");
+#endif
             }
         }
 
-        private CityStorage FindCity(CityType target, CityStorage[] all)
+        private CityStorage FindStorage(CityType target, List<CityStorage> all)
         {
             foreach (var cityStorage in all)
             {
@@ -164,6 +257,15 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             var parent = storage.transform.parent;
             var root = parent.GetComponentInChildren<CityRoot>();
             return root.Definition;
+        }
+
+        private float CompareDistance(CityStorage a, CityStorage b)
+        {
+            var aPosition = a.transform.position;
+            var bPosition = b.transform.position;
+            var distance = Vector2.Distance(aPosition, bPosition);
+            Debug.Log($"{GetDefinition(a).Name} to {GetDefinition(b).Name} = {distance}");
+            return distance;
         }
     }
 }

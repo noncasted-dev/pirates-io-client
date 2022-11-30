@@ -16,12 +16,12 @@ MonoBehaviour:
   _name: Ketch
   _isInfinite: 0
   _icon: {fileID: 21300000, guid: 3ffd3ed4f6fe27a47a5a8194a41f75a8, type: 3}
-  _maxTeam: 20
-  _maxWeight: 20
-  _maxCannons: 20
-  _maxHealth: 20
-  _price: 20
-  _maxSpeed: 20
+  _maxTeam: 30
+  _maxWeight: 250
+  _maxCannons: 6
+  _maxHealth: 300
+  _price: 100
+  _maxSpeed: 28
   _requiredReputation: 10
   _type: 8
   _local:

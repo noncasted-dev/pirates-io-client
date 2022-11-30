@@ -16,7 +16,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         void SetMaxTeam(int maxTeam);
         void SetTeam(int team);
 
-        void SetMaxSpeed(int maxSpeed);
+        void SetMaxSpeed(float maxSpeed);
         void SetSpeed(int speed);
 
         void SetShallowIgnorance(bool isIgnored);

@@ -1,6 +1,7 @@
 ﻿using GamePlay.Player.Entity.Components.Healths.Logs;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
 using Ragon.Common;
 using UniRx;
@@ -13,9 +14,11 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             HealthLogger logger,
             IUpdater updater,
             FireController fireController,
-            IPlayerEventSender eventSender)
+            IPlayerEventSender eventSender,
+            IBodyTransform transform)
         {
             _eventSender = eventSender;
+            _transform = transform;
             _logger = logger;
             _updater = updater;
             _fireController = fireController;
@@ -33,6 +36,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
         private float _tickTime;
         private int _regenerationInTick;
         private IPlayerEventSender _eventSender;
+        private readonly IBodyTransform _transform;
 
         public int Max => _max;
         public int Amount => _amount;
@@ -78,7 +82,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             _amount = _max;
             _fireController.SetFireForce(_amount / (float)_max);
 
-            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max));
+            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
             
             _eventSender.ReplicateEvent(new HealthChangeNetworkEvent()
             {
@@ -110,7 +114,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
                 Max = _max
             });
 
-            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max));
+            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
         }
 
         public void ApplyDamage(int damage)
@@ -127,7 +131,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             
             _fireController.SetFireForce(_amount / (float)_max);
 
-            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max));
+            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
             
             _eventSender.ReplicateEvent(new HealthChangeNetworkEvent()
             {

@@ -19,12 +19,18 @@
 			<value>3</value>
 		</property>
 		<property name="enumerationLabels">
-			<value>Value A</value>
-			<value>Value B</value>
-			<value>Value C</value>
+			<value>exploration</value>
+			<value>port</value>
+			<value>battle</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
 		</property>
 	</object>
 </objects>

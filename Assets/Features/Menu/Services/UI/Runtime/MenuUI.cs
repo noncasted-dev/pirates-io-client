@@ -27,6 +27,8 @@ namespace Menu.Services.UI.Runtime
         [SerializeField] private GameObject _loadingBody;
         [SerializeField] private GameObject _loginBody;
 
+        [SerializeField] private ServerSelection _serverSelection;
+        
         private UiConstraints _constraints;
         private IUiStateMachine _uiStateMachine;
 
@@ -93,7 +95,7 @@ namespace Menu.Services.UI.Runtime
             if (string.IsNullOrWhiteSpace(userName) == true)
                 return;
 
-            var clicked = new PlayClickedEvent(userName);
+            var clicked = new PlayClickedEvent(userName, _serverSelection.Selected);
             MessageBroker.Default.Publish(clicked);
         }
     }

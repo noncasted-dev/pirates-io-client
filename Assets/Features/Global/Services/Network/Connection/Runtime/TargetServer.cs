@@ -3,6 +3,7 @@
     public enum TargetServer
     {
         Europe,
-        USA
+        USA_NewYork,
+        USA_SanFrancisco
     }
 }

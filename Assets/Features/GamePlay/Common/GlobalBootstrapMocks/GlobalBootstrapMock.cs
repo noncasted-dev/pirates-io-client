@@ -77,7 +77,7 @@ namespace GamePlay.Common.GlobalBootstrapMocks
             var joiner = container.Resolve<INetworkSessionJoiner>();
 
             var userName = $"Player_{Random.Range(0, 301)}";
-            await connector.Connect(userName);
+            await connector.Connect(userName, TargetServer.Europe);
             await joiner.JoinRandom();
         }
 

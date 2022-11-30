@@ -7,11 +7,9 @@ namespace Global.Services.Network.Connection.Runtime
 {
     public class ConnectionAttempt : IRagonListener
     {
-        public ConnectionAttempt(string ip, ushort port, RagonSocketType socketType)
+        public ConnectionAttempt(string ip)
         {
             _ip = ip;
-            _port = port;
-            _socketType = socketType;
         }
 
         private readonly UniTaskCompletionSource<NetworkConnectResultType> _authorizationCompletion = new();
@@ -19,8 +17,6 @@ namespace Global.Services.Network.Connection.Runtime
         private readonly UniTaskCompletionSource<NetworkConnectResultType> _connectionCompletion = new();
 
         private readonly string _ip;
-        private readonly ushort _port;
-        private readonly RagonSocketType _socketType;
 
         private string _failMessage = string.Empty;
         private bool _isConnected = false;
@@ -36,18 +32,8 @@ namespace Global.Services.Network.Connection.Runtime
         {
             RagonNetwork.AddListener(this);
 
-            switch (_socketType)
-            {
-                case RagonSocketType.UDP:
-                    RagonNetwork.Connect(_ip, _port);
-                    break;
-                case RagonSocketType.WebSocket:
-                    Debug.Log("Connect connect wss");
-                    RagonNetwork.Connect($"wss://{_ip}", _port);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            Debug.Log("Connect connect wss");
+            RagonNetwork.Connect($"wss://{_ip}", 0);
 
             var result = await _connectionCompletion.Task;
 

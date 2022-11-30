@@ -51,14 +51,14 @@ namespace Menu.Services.MenuLoop.Runtime
 
         private void OnPlayClicked(PlayClickedEvent data)
         {
-            TryConnect(data.Name).Forget();
+            TryConnect(data.Name, data.Server).Forget();
         }
 
-        private async UniTaskVoid TryConnect(string userName)
+        private async UniTaskVoid TryConnect(string userName, TargetServer target)
         {
             _menuUI.OnLoading();
 
-            var result = await _connector.Connect(userName);
+            var result = await _connector.Connect(userName, target);
 
             switch (result)
             {

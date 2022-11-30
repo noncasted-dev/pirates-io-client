@@ -1,5 +1,4 @@
-﻿using System;
-using Global.Services.Network.Connection.Runtime;
+﻿using Global.Services.Network.Connection.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,13 +8,16 @@ namespace Menu.Services.UI.Runtime
     public class ServerSelection : MonoBehaviour
     {
         [SerializeField] private Button _euButton;
-        [SerializeField] private Button _usaButton;
+        [SerializeField] private Button _sanFranciscoButton;
+        [SerializeField] private Button _newYorkButton;
 
         [SerializeField] private GameObject _euNotSelected;
-        [SerializeField] private GameObject _usaNotSelected;
+        [SerializeField] private GameObject _sanFranciscoNotSelected;
+        [SerializeField] private GameObject _newYorkNotSelected;
         
         [SerializeField] private GameObject _euSelected;
-        [SerializeField] private GameObject _usaSelected;
+        [SerializeField] private GameObject _sanFranciscoSelected;
+        [SerializeField] private GameObject _newYorkSelected;
         
         private TargetServer _selected;
 
@@ -23,47 +25,62 @@ namespace Menu.Services.UI.Runtime
 
         private void Awake()
         {
-            _selected = TargetServer.Europe;
-
-            _euSelected.SetActive(true);
-            _euNotSelected.SetActive(false);
-
-            _usaSelected.SetActive(false);
-            _usaNotSelected.SetActive(true);
+            OnEuropeClicked();
         }
 
         private void OnEnable()
         {
             _euButton.onClick.AddListener(OnEuropeClicked);
-            _usaButton.onClick.AddListener(OnUsaClicked);
+            _sanFranciscoButton.onClick.AddListener(OnSanFranciscoClicked);
+            _newYorkButton.onClick.AddListener(OnNewYorkClicked);
         }
         
         private void OnDisable()
         {
             _euButton.onClick.RemoveListener(OnEuropeClicked);
-            _usaButton.onClick.RemoveListener(OnUsaClicked);
+            _sanFranciscoButton.onClick.RemoveListener(OnSanFranciscoClicked);
+            _newYorkButton.onClick.RemoveListener(OnNewYorkClicked);
         }
 
         private void OnEuropeClicked()
         {
             _selected = TargetServer.Europe;
+            
+            DisableAll();
 
-            _euSelected.SetActive(true);
             _euNotSelected.SetActive(false);
-
-            _usaSelected.SetActive(false);
-            _usaNotSelected.SetActive(true);
+            _euSelected.SetActive(true);
         }
 
-        private void OnUsaClicked()
+        private void OnSanFranciscoClicked()
         {
-            _selected = TargetServer.USA;
+            _selected = TargetServer.USA_SanFrancisco;
             
-            _euSelected.SetActive(false);
-            _euNotSelected.SetActive(true);
+            DisableAll();
 
-            _usaSelected.SetActive(true);
-            _usaNotSelected.SetActive(false);
+            _sanFranciscoNotSelected.SetActive(false);
+            _sanFranciscoSelected.SetActive(true);
+        }
+
+        private void OnNewYorkClicked()
+        {
+            _selected = TargetServer.USA_NewYork;
+            
+            DisableAll();
+
+            _newYorkNotSelected.SetActive(false);
+            _newYorkSelected.SetActive(true);
+        }
+
+        private void DisableAll()
+        {
+            _euSelected.SetActive(false);
+            _sanFranciscoSelected.SetActive(false);
+            _newYorkSelected.SetActive(false);
+            
+            _euNotSelected.SetActive(true);
+            _sanFranciscoNotSelected.SetActive(true);
+            _newYorkNotSelected.SetActive(true);
         }
     }
 }

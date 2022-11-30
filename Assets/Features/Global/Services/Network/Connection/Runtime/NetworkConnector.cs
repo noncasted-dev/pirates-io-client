@@ -34,11 +34,12 @@ namespace Global.Services.Network.Connection.Runtime
             RagonNetwork.SetManager(_entityManager);
         }
 
-        public async UniTask<NetworkConnectResultType> Connect(string userName)
+        public async UniTask<NetworkConnectResultType> Connect(string userName, TargetServer target)
         {
-            _logger.OnAttempt(_config.Ip, _config.Port);
+            var ip = _config.GetRoute(target);
+            _logger.OnAttempt(ip, 0);
 
-            var attempt = new ConnectionAttempt(_config.Ip, _config.Port, _config.SocketType);
+            var attempt = new ConnectionAttempt(ip);
 
             var result = await attempt.Connect(userName);
 

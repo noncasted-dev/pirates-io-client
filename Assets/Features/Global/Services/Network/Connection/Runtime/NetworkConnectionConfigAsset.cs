@@ -1,4 +1,5 @@
-﻿using Global.Common;
+﻿using System;
+using Global.Common;
 using Ragon.Client;
 using UnityEngine;
 
@@ -8,12 +9,19 @@ namespace Global.Services.Network.Connection.Runtime
         menuName = GlobalAssetsPaths.NetworkConnection + "Config")]
     public class NetworkConnectionConfigAsset : ScriptableObject
     {
-        [SerializeField] private string _ip;
-        [SerializeField] private ushort _port;
-        [SerializeField] private RagonSocketType _socketType;
-        
-        public string Ip => _ip;
-        public ushort Port => _port;
-        public RagonSocketType SocketType => _socketType;
+        [SerializeField] private string _eu;
+        [SerializeField] private string _ny;
+        [SerializeField] private string _sf;
+
+        public string GetRoute(TargetServer server)
+        {
+            return server switch
+            {
+                TargetServer.Europe => _eu,
+                TargetServer.USA_NewYork => _ny,
+                TargetServer.USA_SanFrancisco => _sf,
+                _ => throw new ArgumentOutOfRangeException(nameof(server), server, null)
+            };
+        }
     }
 }

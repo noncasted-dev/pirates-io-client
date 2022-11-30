@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6668ee3f3fc41d7997786935be3270a, type: 3}
   m_Name: GlobalConfig_NetworkConnection
   m_EditorClassIdentifier: 
-  _ip: server0.pirateworld.me
-  _port: 4444
-  _socketType: 1
+  _eu: server-ue-0.pirateworld.me
+  _ny: server-usa-ny.pirateworld.me
+  _sf: server-usa-sf.pirateworld.me

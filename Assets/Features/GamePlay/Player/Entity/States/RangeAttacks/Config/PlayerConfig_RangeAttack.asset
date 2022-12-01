@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aimAdditionalSpread: 15
   _aimOverTime: 5
-  _aimTime: 1
+  _aimTime: 2
   _delay: 3
   _endAimAngle: 0
   _impactDistance: 1

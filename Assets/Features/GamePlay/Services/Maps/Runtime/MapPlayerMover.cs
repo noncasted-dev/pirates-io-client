@@ -17,8 +17,13 @@ namespace Features.GamePlay.Services.Maps.Runtime
             _player = player;
         }
 
-        [SerializeField] private Vector2 _rescale = new(0.1f, 0.1f);
-        [SerializeField] private Vector2 _offset = new(0.1f, 0.1f);
+        [SerializeField] private Transform _levelLeftBottom;
+        [SerializeField] private Transform _levelLeftTop;
+        [SerializeField] private Transform _levelRightBottom;
+
+        [SerializeField] private RectTransform _mapLeftBottom;
+        [SerializeField] private RectTransform _mapLeftTop;
+        [SerializeField] private RectTransform _mapRightBottom;
 
         [SerializeField] private RectTransform _playerView;
         [SerializeField] private RectTransform _content;
@@ -43,11 +48,34 @@ namespace Features.GamePlay.Services.Maps.Runtime
             _updater.Remove(this);
         }
 
-        public void OnUpdate(float delta)
+        public void OnUpdate(float timeDelta)
         {
-            var worldPosition = _player.Position;
-            var mapPosition = worldPosition / _rescale;
-            _playerView.anchoredPosition = _offset + mapPosition;
+            var levelWidth = Vector2.Distance(
+                    _levelLeftBottom.transform.position,
+                    _levelRightBottom.transform.position);
+            
+            var levelHeight = Vector2.Distance(
+                _levelLeftBottom.transform.position,
+                _levelLeftTop.transform.position);
+
+            var levelPlayer = _player.Position;
+            levelPlayer += new Vector2(
+                Mathf.Abs(_levelLeftBottom.transform.position.x),
+                Mathf.Abs(_levelLeftBottom.transform.position.y));
+
+            var delta = levelPlayer / new Vector2(levelWidth, levelHeight);
+            
+            var mapWidth = Vector2.Distance(
+                _mapLeftBottom.anchoredPosition,
+                _mapRightBottom.anchoredPosition);
+            
+            var mapHeight = Vector2.Distance(
+                _mapLeftBottom.anchoredPosition,
+                _mapLeftTop.anchoredPosition);
+
+            var position = _mapLeftBottom.anchoredPosition + new Vector2(mapWidth, mapHeight) * delta;
+            
+            _playerView.anchoredPosition = position;
         }
     }
 }

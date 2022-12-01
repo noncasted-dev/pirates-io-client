@@ -10,6 +10,7 @@ namespace Common.VFX
     {
         [SerializeField] private SpriteRenderer _icon;
         [SerializeField] private TMP_Text _tmp;
+        [SerializeField] private GameObject _body;
         
         private IDisposable _itemListener;
 
@@ -30,14 +31,14 @@ namespace Common.VFX
 
         public void StartAnimation(Sprite icon, int add_count)
         {
+            _body.SetActive(true);
             _icon.sprite = icon;
             _tmp.text = "+" + add_count;
-            gameObject.SetActive(true);
         }
 
         public void Deactivate()
         {
-            gameObject.SetActive(false);
+            _body.SetActive(false);
         }
     }
 }

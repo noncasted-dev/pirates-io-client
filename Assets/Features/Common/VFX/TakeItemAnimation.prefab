@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 6048845445857774715}
   _tmp: {fileID: 8013256945870607754}
+  _body: {fileID: 1021098950076961674}
 --- !u!1 &1021098950076961674
 GameObject:
   m_ObjectHideFlags: 0

@@ -139,7 +139,6 @@ namespace GamePlay.Services.LevelLoops.Runtime
             var shrapnel = _itemFactory.Create(ItemType.CannonKnuppel, 30);
             var knuppel = _itemFactory.Create(ItemType.CannonShrapnel, 30);
             Debug.Log(21);
-
             
             _cargo.Add(cannons);
             _cargo.Add(ball);
@@ -147,7 +146,6 @@ namespace GamePlay.Services.LevelLoops.Runtime
             _cargo.Add(knuppel);
             
             Debug.Log(22);
-
             
             var selectedCity = await _factionSelection.SelectAsync();
             _transitionScreen.ToPlayerRespawn();
@@ -175,7 +173,6 @@ namespace GamePlay.Services.LevelLoops.Runtime
             player.Respawn();
             
             Debug.Log(25);
-
         }
         
         private async UniTaskVoid ProcessRespawn(ShipType ship, CityType city)
@@ -193,7 +190,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
             _levelCamera.StartFollow(player.Transform);
 
             await _transitionScreen.FadeOut();
-
+        
             _travelOverlay.Open();
             
             player.Respawn();

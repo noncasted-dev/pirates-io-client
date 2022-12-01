@@ -43,10 +43,10 @@ namespace GamePlay.Services.TravelOverlays.Runtime
 
         public void Open()
         {
+            _stateMachine.EnterAsSingle(this);
+            
             _body.SetActive(true);
             _menuBody.SetActive(false);
-
-            _stateMachine.EnterAsSingle(this);
         }
 
         public void Recover()

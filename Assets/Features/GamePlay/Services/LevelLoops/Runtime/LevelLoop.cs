@@ -206,6 +206,14 @@ namespace GamePlay.Services.LevelLoops.Runtime
         private void OnPlayerDeath(PlayerDeathEvent data)
         {
             _entityPresenter.DestroyPlayer();
+            
+            var save = _fileLoader.LoadOrCreate<ShipSave>();
+            
+            save.ShipType = ShipType.Boat;
+            save.Items.Clear();
+            save.Count.Clear();
+            
+            _fileSaver.Save(save);
 
             Begin().Forget();
         }

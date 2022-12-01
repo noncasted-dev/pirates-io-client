@@ -114,6 +114,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void OnEntered(PortEnteredEvent data)
         {
+            _stateMachine.EnterAsSingle(this);
+
             _nickName.text = _profileStorageProvider.UserName;
             
             _body.SetActive(true);
@@ -124,8 +126,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _storedView.gameObject.SetActive(true);
             _stockView.gameObject.SetActive(true);
             _tradeBody.SetActive(false);
-
-            _stateMachine.EnterAsSingle(this);
             
             _storedView.Fill(data.Cargo, data.PriceProvider);
 

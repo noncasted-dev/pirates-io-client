@@ -24,6 +24,7 @@ public class FireController : MonoBehaviour
     /// </summary>
     public void SetFireForce(float value)
     {
+        Debug.Log($"Set fire: {value}");
         value = Mathf.Clamp01(value);
         _value = value;
         _lastValue = value;

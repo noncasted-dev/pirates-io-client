@@ -19,7 +19,7 @@ MonoBehaviour:
   _maxTeam: 10
   _maxWeight: 120
   _maxCannons: 3
-  _maxHealth: 50
+  _maxHealth: 150
   _price: 10
   _maxSpeed: 30
   _requiredReputation: 0

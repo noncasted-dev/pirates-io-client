@@ -5059,7 +5059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isLocal: 0
-  _damage: 2
+  _damage: 20
   _distance: 8
   _speed: 10
   _collider: {fileID: 488861096520624764}

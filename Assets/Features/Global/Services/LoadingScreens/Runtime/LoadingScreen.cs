@@ -31,11 +31,11 @@ namespace Global.Services.LoadingScreens.Runtime
 
         public void Show()
         {
+            _uiStateMachine.EnterAsSingle(this);
+
             _canvas.SetActive(true);
 
             _logger.OnShown();
-
-            _uiStateMachine.EnterAsSingle(this);
         }
 
         public void Hide()

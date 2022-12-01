@@ -2767,7 +2767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000079115336}
+  m_AnchoredPosition: {x: 0, y: 0.0005934408}
   m_SizeDelta: {x: 0, y: 895.7}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &534065474
@@ -3789,6 +3789,7 @@ GameObject:
   - component: {fileID: 680854755}
   - component: {fileID: 680854754}
   - component: {fileID: 680854753}
+  - component: {fileID: 680854757}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -3880,6 +3881,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &680854757
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680854752}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1bc1c6a58f9326043baeac36c38ebe08, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &727021920
 GameObject:
   m_ObjectHideFlags: 0
@@ -6316,7 +6337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00008389148}
+  m_AnchoredPosition: {x: 0, y: -0.000022888184}
   m_SizeDelta: {x: 0, y: 1597}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1136497553
@@ -6661,6 +6682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1164095450}
   - component: {fileID: 1164095451}
+  - component: {fileID: 1164095452}
   m_Layer: 0
   m_Name: Trade
   m_TagString: Untagged
@@ -6711,6 +6733,26 @@ MonoBehaviour:
   _applyApplyButton: {fileID: 301419934}
   _playerMoneyView: {fileID: 176281577586501247}
   _cityMoneyView: {fileID: 659575018}
+--- !u!95 &1164095452
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164095449}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 29bdaac9ae16c9847b9dbe139bb9af63, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1179854697
 GameObject:
   m_ObjectHideFlags: 0
@@ -10354,7 +10396,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1411053383}
   m_HandleRect: {fileID: 1411053382}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:

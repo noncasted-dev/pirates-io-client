@@ -52,7 +52,7 @@ MonoBehaviour:
   - {fileID: -8690742923963213599}
   MinDistance: 1
   MaxDistance: 20
-  Length: 207405
+  Length: 325525
 --- !u!114 &-7808339027711229621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   Name: music_condition
   StudioPath: parameter:/music_condition
   Min: 0
-  Max: 3
+  Max: 1
   Default: 0
   ID:
     data1: 1138535495
@@ -317,9 +317,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels:
   - exploration
-  - port
   - battle
-  - menu
   Exists: 1
 --- !u!114 &-2555637242263382507
 MonoBehaviour:
@@ -494,7 +492,7 @@ MonoBehaviour:
   - {fileID: 4782442716932992266}
   StringsBanks:
   - {fileID: 3582555454610402830}
-  cacheTime: 638054481509645516
+  cacheTime: 638055254003141731
   cacheVersion: 131593
 --- !u!114 &669502784843091532
 MonoBehaviour:
@@ -538,7 +536,7 @@ MonoBehaviour:
   Name: music_condition
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 1
   Default: 0
   ID:
     data1: 1138535495
@@ -547,9 +545,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels:
   - exploration
-  - port
   - battle
-  - menu
   Exists: 1
 --- !u!114 &1434802825589905288
 MonoBehaviour:
@@ -613,7 +609,7 @@ MonoBehaviour:
   Name: music_condition
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 1
   Default: 0
   ID:
     data1: 1138535495
@@ -622,9 +618,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels:
   - exploration
-  - port
   - battle
-  - menu
   Exists: 1
 --- !u!114 &3582555454610402830
 MonoBehaviour:
@@ -681,10 +675,10 @@ MonoBehaviour:
   Path: FmodPirates/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638054481509645516
+  lastModified: 638055254003141731
   FileSizes:
   - Name: Desktop
-    Value: 8134016
+    Value: 8245920
   Exists: 1
 --- !u!114 &4858439983126258615
 MonoBehaviour:

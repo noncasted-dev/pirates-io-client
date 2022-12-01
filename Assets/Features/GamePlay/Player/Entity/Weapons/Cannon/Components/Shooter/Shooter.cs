@@ -17,7 +17,7 @@ using UnityEngine;
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 {
-    public class Shooter : IShooter, IAwakeCallback
+    public class Shooter : IShooter, IAwakeCallback, IDestroyCallback
     {
         public Shooter(
             IUpdater updater,
@@ -59,6 +59,8 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         private IObjectProvider<LinearProjectile> _fishnet;
         private IObjectProvider<AnimatedVfx> _vfx;
 
+        private Shot _current;
+
         public void OnAwake()
         {
             _ball = _projectilesPoolProvider.GetPool<LinearProjectile>(_config.Ball);
@@ -68,12 +70,20 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 
             _vfx = _vfxPoolProvider.GetPool<AnimatedVfx>(_config.Vfx);
         }
+        
+        public void OnDestroyed()
+        {
+            Cancel();
+        }
 
         public void Cancel()
         {
             _cancellation?.Cancel();
             _cancellation?.Dispose();
             _cancellation = null;
+            
+            _current?.Cancel();
+            _current = null;
         }
 
         public void Shoot(float angle, float spread)
@@ -114,7 +124,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 shots = 1;
             }
 
-            var shot = new Shot(
+            _current = new Shot(
                 _updater,
                 _cannonReplicator,
                 _config,
@@ -126,7 +136,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 angle,
                 spread);
 
-            shot.Start(shots);
+            _current.Start(shots);
         }
     }
 }

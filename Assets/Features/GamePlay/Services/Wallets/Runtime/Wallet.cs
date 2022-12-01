@@ -26,7 +26,12 @@ namespace GamePlay.Services.Wallets.Runtime
 
         public void Set(int money)
         {
+            Debug.Log($"Set money: {money}");
             _money = money;
+            
+            var save = _fileLoader.LoadOrCreate<ShipSave>();
+            save.Money = _money;
+            _fileSaver.Save(save);
         }
 
         public void Add(int add)

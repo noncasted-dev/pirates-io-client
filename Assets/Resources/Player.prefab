@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationBreakDistance: 5
-  _interpolationSpeed: 10
+  _interpolationSpeed: 5
 --- !u!114 &4419000740720352894
 MonoBehaviour:
   m_ObjectHideFlags: 0

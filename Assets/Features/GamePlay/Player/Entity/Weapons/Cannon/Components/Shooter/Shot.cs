@@ -58,7 +58,8 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 
         private float _time;
         private int _shotsCount;
-
+        private bool _isCanceled = false;
+        
         public void Start(int shotsCount)
         {
             _shotsCount = shotsCount;
@@ -71,8 +72,19 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
             _updater.Add(this);
         }
 
+        public void Cancel()
+        {
+            _isCanceled = true;
+        }
+
         public void OnUpdate(float delta)
         {
+            if (_isCanceled == true)
+            {
+                _updater.Remove(this);
+                return;
+            }
+            
             _time += delta;
 
             var halfSpread = _spread / 2f;

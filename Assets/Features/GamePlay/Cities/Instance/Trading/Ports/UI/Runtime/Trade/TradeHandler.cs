@@ -243,7 +243,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
             foreach (var (_, lot) in _player)
             {
-                weight += lot.Count;
+                weight += lot.Count * lot.Item.BaseData.Weight;
 
                 switch (lot.Type)
                 {

@@ -21,6 +21,27 @@ namespace GamePlay.Cities.Global.Registry.Runtime
 
             return city;
         }
+        
+        public ICity GetCity(CityType type)
+        {
+            CityDefinition definition = null;
+            
+            foreach (var tmp in _all)
+            {
+                if (tmp.Name != type)
+                    continue;
+
+                definition = tmp;
+                break;
+            }
+            
+            var faction = definition.Faction;
+            Debug.Log(definition.Name + " " + faction);
+            var cities = _factionCities[faction];
+            var city = cities[definition];
+
+            return city;
+        }
 
         [Button("Scan")]
         private void Scan()

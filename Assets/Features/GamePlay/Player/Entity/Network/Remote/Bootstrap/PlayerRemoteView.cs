@@ -19,7 +19,7 @@ using ILogger = Global.Services.Loggers.Runtime.ILogger;
 
 namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
 {
-    public class PlayerRemoteView : RagonBehaviour, IPoolObject<PlayerRemoteView>
+    public class PlayerRemoteView : MonoBehaviour, IPoolObject<PlayerRemoteView>
     {
         public void Construct(
             ILogger logger,
@@ -48,6 +48,9 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
             
             foreach (var switchableCollider in _colliders)
                 switchableCollider.enabled = true;
+            
+            networkRoot.SetDestroyCallback(OnDestroyedEntity);
+            _nickName.text = networkRoot.Entity.GetSpawnPayload<PlayerPayload>().UserName;
         }
 
         [SerializeField] private PlayerSpriteTransform _spriteTransform;
@@ -62,12 +65,6 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
         private Action<PlayerRemoteView> _returnToPool;
 
         public GameObject GameObject => gameObject;
-
-        public override void OnCreatedEntity()
-        {
-            var payload = Entity.GetSpawnPayload<PlayerPayload>();
-            _nickName.text = payload.UserName;
-        }
 
         public void SetPosition(Vector2 position)
         {
@@ -87,7 +84,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
         {
         }
 
-        public override void OnDestroyedEntity()
+        private void OnDestroyedEntity()
         {
             _returnToPool?.Invoke(this);
         }

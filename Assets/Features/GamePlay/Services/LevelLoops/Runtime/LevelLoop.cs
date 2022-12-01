@@ -14,9 +14,11 @@ using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using GamePlay.Services.Reputation.Runtime;
+using GamePlay.Services.Saves.Definitions;
 using GamePlay.Services.TransitionScreens.Runtime;
 using GamePlay.Services.TravelOverlays.Runtime;
 using Global.Services.CurrentCameras.Runtime;
+using Global.Services.FilesFlow.Runtime.Abstract;
 using Global.Services.ItemFactories.Runtime;
 using Local.Services.Abstract.Callbacks;
 using UniRx;
@@ -45,8 +47,12 @@ namespace GamePlay.Services.LevelLoops.Runtime
             IPlayerCargoStorage cargo,
             IPlayerEntityPresenter entityPresenter,
             IReputation reputation,
+            IFileLoader fileLoader,
+            IFileSaver fileSaver,
             LevelLoopLogger logger)
         {
+            _fileSaver = fileSaver;
+            _fileLoader = fileLoader;
             _reputation = reputation;
             _cargo = cargo;
             _itemFactory = itemFactory;
@@ -80,6 +86,8 @@ namespace GamePlay.Services.LevelLoops.Runtime
         private IItemFactory _itemFactory;
         private IPlayerCargoStorage _cargo;
         private IReputation _reputation;
+        private IFileLoader _fileLoader;
+        private IFileSaver _fileSaver;
 
         public void OnEnabled()
         {
@@ -111,7 +119,17 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
             Debug.Log(20);
 
-            Begin().Forget();
+            if (_fileLoader.Load(out ShipSave save) == false)
+            {
+                Begin().Forget();
+            }
+            else
+            {
+                for (var i = 0; i < save.Items.Count; i++)
+                    _cargo.Add(_itemFactory.Create(save.Items[i], save.Count[i]));
+
+                ProcessRespawn(save.ShipType, save.LastCity).Forget();
+            }
         }
 
         private async UniTask Begin()
@@ -159,6 +177,29 @@ namespace GamePlay.Services.LevelLoops.Runtime
             Debug.Log(25);
 
         }
+        
+        private async UniTaskVoid ProcessRespawn(ShipType ship, CityType city)
+        {
+            _logger.OnPlayerSpawn();
+
+            _transitionScreen.ToPlayerRespawn();
+
+            var cityInstance = _citiesRegistry.GetCity(city);
+            var spawnPosition = cityInstance.SpawnPoints.GetRandom();
+            
+            var player = await _playerFactory.Create(spawnPosition, ship);
+
+            _levelCamera.Teleport(player.Transform.position);
+            _levelCamera.StartFollow(player.Transform);
+
+            await _transitionScreen.FadeOut();
+
+            _travelOverlay.Open();
+            
+            player.Respawn();
+            
+            _cargo.UpdateState();
+        }
 
         public void Respawn(ShipType ship)
         {
@@ -174,6 +215,10 @@ namespace GamePlay.Services.LevelLoops.Runtime
         
         private void OnShipChanged(ShipChangeEvent data)
         {
+            var save = _fileLoader.LoadOrCreate<ShipSave>();
+            save.ShipType = data.Ship;
+            _fileSaver.Save(save);
+            
             ProcessRespawn(data.Ship).Forget();
         }
 

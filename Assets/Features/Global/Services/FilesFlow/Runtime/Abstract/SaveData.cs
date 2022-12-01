@@ -15,7 +15,7 @@ namespace Global.Services.FilesFlow.Runtime.Abstract
 
         public SaveData SetName(string _name)
         {
-            _saveName = _name + "." + GetType().Name;
+            _saveName = _name;
 
             return this;
         }

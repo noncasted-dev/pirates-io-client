@@ -44,12 +44,13 @@ namespace Global.Services.FilesFlow.Runtime
         [DllImport("__Internal")]
         private static extern void SyncFiles();
 
-        private void WriteInFile<T>(T _data) where T : SaveData
+        private void WriteInFile<T>(T data) where T : SaveData
         {
-            var path = _directoryProvider.GetDirectory() + _data.SaveName;
+            
+            var path = _directoryProvider.GetDirectory() + data.SaveName;
 
             using var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None);
-            _binaryFormatter.Serialize(stream, _data);
+            _binaryFormatter.Serialize(stream, data);
             stream.Close();
         }
 

@@ -1,14 +1,26 @@
 ﻿using System.Collections.Generic;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Events;
+using GamePlay.Services.Saves.Definitions;
+using Global.Services.FilesFlow.Runtime.Abstract;
 using UniRx;
 using UnityEngine;
+using VContainer;
 
 namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 {
     public class PlayerCargoStorage : MonoBehaviour, IPlayerCargoStorage
     {
+        [Inject]
+        private void Construct(IFileLoader fileLoader, IFileSaver fileSaver)
+        {
+            _fileSaver = fileSaver;
+            _fileLoader = fileLoader;
+        }
+    
         private readonly Dictionary<ItemType, IItem> _items = new();
+        private IFileLoader _fileLoader;
+        private IFileSaver _fileSaver;
 
         public IReadOnlyDictionary<ItemType, IItem> Items => _items;
 
@@ -99,6 +111,19 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         {
             var data = new CargoChangedEvent(Items, GetWeight());
             MessageBroker.Default.Publish(data);
+
+            var save = _fileLoader.LoadOrCreate<ShipSave>();
+            
+            save.Items.Clear();
+            save.Count.Clear();
+
+            foreach (var (type, item) in _items)
+            {
+                save.Items.Add(type);
+                save.Count.Add(item.Count);
+            }
+
+            _fileSaver.Save(save);
         }
     }
 }

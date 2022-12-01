@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Cannabis
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 6e45b68769e542241ac4a8f072cf7962, type: 3}
+  _icon: {fileID: 21300000, guid: e13776b9708be98468fd5777d0152405, type: 3}
   _type: 20

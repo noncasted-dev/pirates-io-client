@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Salt
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 97df26b1aa54dd44bb1a58854b9dce14, type: 3}
+  _icon: {fileID: 21300000, guid: 715759eb799116e449255816c8a47ab6, type: 3}
   _type: 41

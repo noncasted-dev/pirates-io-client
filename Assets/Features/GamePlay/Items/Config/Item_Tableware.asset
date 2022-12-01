@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Tableware
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 087ac619c60f3634882bedce4948e488, type: 3}
+  _icon: {fileID: 21300000, guid: aaa448206a312a746b044227555ba2f4, type: 3}
   _type: 44

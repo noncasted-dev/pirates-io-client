@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Corn
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 53bcd612240d0d0498e51078b9f467be, type: 3}
+  _icon: {fileID: 21300000, guid: 042257f52330d7e438f892735f86df97, type: 3}
   _type: 25

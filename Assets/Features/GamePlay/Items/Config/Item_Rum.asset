@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Rum
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: e4e583cebd7a68a4483120731dba6fe0, type: 3}
+  _icon: {fileID: 21300000, guid: ef6c087c22a1f784d8c33ca84eecf4a6, type: 3}
   _type: 38

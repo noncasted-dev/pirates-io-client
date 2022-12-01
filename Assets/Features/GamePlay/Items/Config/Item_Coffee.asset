@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Coffee
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: d4b06ae11d181424c9b69007415d3076, type: 3}
+  _icon: {fileID: 21300000, guid: 224e1184818da5c42a4463a3e45233e0, type: 3}
   _type: 24

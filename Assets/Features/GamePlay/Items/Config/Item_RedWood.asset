@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: RedWood
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 825dc720b7ff0444fa65d7cd2ab9cf14, type: 3}
+  _icon: {fileID: 21300000, guid: 7b85aeb60dc0bdb469f3e08273fc7ea5, type: 3}
   _type: 36

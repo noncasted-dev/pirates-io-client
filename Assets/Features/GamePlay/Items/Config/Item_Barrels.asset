@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Barrels
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 49a13856670bc3848964a9bee8befe61, type: 3}
+  _icon: {fileID: 21300000, guid: 031b0071e23f97e4d86ab3b179bbaaf7, type: 3}
   _type: 16

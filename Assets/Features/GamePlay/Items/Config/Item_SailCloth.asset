@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: SailCloth
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 780edb1c96d78bc4ea7c582047264b76, type: 3}
+  _icon: {fileID: 21300000, guid: df24d26b62c3a05408f0314664541e34, type: 3}
   _type: 40

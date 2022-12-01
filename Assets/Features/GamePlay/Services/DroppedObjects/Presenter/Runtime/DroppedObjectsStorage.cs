@@ -17,7 +17,7 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
         {
             if (_droppedItems.ContainsKey(id) == false)
             {
-                Debug.LogError($"No item with id: {id} spawned");
+                Debug.Log($"No item with id: {id} spawned");
                 return;
             }
 

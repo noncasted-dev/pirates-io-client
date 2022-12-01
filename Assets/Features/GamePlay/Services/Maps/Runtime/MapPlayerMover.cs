@@ -59,11 +59,9 @@ namespace Features.GamePlay.Services.Maps.Runtime
                 _levelLeftTop.transform.position);
 
             var levelPlayer = _player.Position;
-            levelPlayer += new Vector2(
-                Mathf.Abs(_levelLeftBottom.transform.position.x),
-                Mathf.Abs(_levelLeftBottom.transform.position.y));
-
-            var delta = levelPlayer / new Vector2(levelWidth, levelHeight);
+      
+            var xProgress = (levelPlayer.x + Mathf.Abs(_levelLeftBottom.transform.position.x)) / levelWidth;
+            var yProgress = (levelPlayer.y + Mathf.Abs(_levelLeftBottom.transform.position.y)) / levelHeight;
             
             var mapWidth = Vector2.Distance(
                 _mapLeftBottom.anchoredPosition,
@@ -73,7 +71,9 @@ namespace Features.GamePlay.Services.Maps.Runtime
                 _mapLeftBottom.anchoredPosition,
                 _mapLeftTop.anchoredPosition);
 
-            var position = _mapLeftBottom.anchoredPosition + new Vector2(mapWidth, mapHeight) * delta;
+            var progress = new Vector2(xProgress, yProgress);
+            var position = _mapLeftBottom.anchoredPosition + new Vector2(mapWidth, mapHeight) * progress;
+            Debug.Log($"progress: {progress}, lw: {levelWidth}, lh: {levelHeight}, mw: {mapWidth}, mh: {mapHeight}, {position}");
             
             _playerView.anchoredPosition = position;
         }

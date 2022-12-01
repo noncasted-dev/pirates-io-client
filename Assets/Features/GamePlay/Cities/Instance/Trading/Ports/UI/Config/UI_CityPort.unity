@@ -2767,7 +2767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000079115336}
+  m_AnchoredPosition: {x: 0, y: 0.0005378017}
   m_SizeDelta: {x: 0, y: 895.7}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &534065474
@@ -4171,7 +4171,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 10
   m_Viewport: {fileID: 1057632282}
   m_HorizontalScrollbar: {fileID: 1057632283}
   m_VerticalScrollbar: {fileID: 1854708346}
@@ -5157,7 +5157,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 10
   m_Viewport: {fileID: 811619569}
   m_HorizontalScrollbar: {fileID: 507098527}
   m_VerticalScrollbar: {fileID: 1462047072}
@@ -6316,7 +6316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00008389148}
+  m_AnchoredPosition: {x: 0, y: -0.00008392334}
   m_SizeDelta: {x: 0, y: 1597}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1136497553
@@ -6642,7 +6642,7 @@ MonoBehaviour:
   _layout: {fileID: 767989574}
   _contentRect: {fileID: 1134751774}
   _origin: 1
-  _cellHeight: 250
+  _cellHeight: 200
 --- !u!222 &1149535765
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9265,7 +9265,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 10
   m_Viewport: {fileID: 534065475}
   m_HorizontalScrollbar: {fileID: 1148273218}
   m_VerticalScrollbar: {fileID: 170837150}
@@ -9873,7 +9873,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 10
   m_Viewport: {fileID: 1321833450}
   m_HorizontalScrollbar: {fileID: 1057632283}
   m_VerticalScrollbar: {fileID: 640754897}
@@ -10226,7 +10226,7 @@ MonoBehaviour:
   _layout: {fileID: 162017474}
   _contentRect: {fileID: 473148867}
   _origin: 0
-  _cellHeight: 60
+  _cellHeight: 200
 --- !u!114 &1852874543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10246,7 +10246,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 10
   m_Viewport: {fileID: 560249810}
   m_HorizontalScrollbar: {fileID: 1281043127}
   m_VerticalScrollbar: {fileID: 2143611472}

@@ -4979,6 +4979,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Remote_8_FirstRate
       objectReference: {fileID: 0}
+    - target: {fileID: 5221002631977502103, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: _scale.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221002631977502103, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
+      propertyPath: _scale.Array.data[0]
+      value: 
+      objectReference: {fileID: 1115179500681535975}
     - target: {fileID: 5236864739449218738, guid: 080bfc7bf6cf1204bb1fc0fc08b4c020, type: 3}
       propertyPath: m_Size.x
       value: 4.29

@@ -17,11 +17,11 @@ MonoBehaviour:
   _isInfinite: 0
   _icon: {fileID: 21300000, guid: 2a41f3c0adc54a9419c2b6669268ff1a, type: 3}
   _maxTeam: 550
-  _maxWeight: 3800
+  _maxWeight: 1500
   _maxCannons: 100
-  _maxHealth: 6000
+  _maxHealth: 2000
   _price: 6000
-  _maxSpeed: 17
+  _maxSpeed: 24
   _requiredReputation: 0
   _type: 14
   _local:

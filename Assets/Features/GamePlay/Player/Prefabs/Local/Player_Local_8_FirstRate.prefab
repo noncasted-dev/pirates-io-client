@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: _baseHealth
-      value: 10000
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: _cameraSize
@@ -37,11 +37,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: _baseMaxSpeed
-      value: 15
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: _baseMaxWeight
-      value: 5000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 160118787591633700, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: _shallowDamage

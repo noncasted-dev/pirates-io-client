@@ -21,7 +21,7 @@ MonoBehaviour:
   _maxCannons: 3
   _maxHealth: 150
   _price: 10
-  _maxSpeed: 30
+  _maxSpeed: 35
   _requiredReputation: 0
   _type: 7
   _local:

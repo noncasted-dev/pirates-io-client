@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Wine
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 5c6b8bfec6d68d241bdef9ae96d12cba, type: 3}
+  _icon: {fileID: 21300000, guid: 2fd950f93dad9634e8400f0ab1098a2c, type: 3}
   _type: 45

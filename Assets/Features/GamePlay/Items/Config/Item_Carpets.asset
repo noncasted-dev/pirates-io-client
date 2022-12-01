@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Carpets
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: dddd5ad049809e04c91576160acc28f9, type: 3}
+  _icon: {fileID: 21300000, guid: 83a97c9bd21fd88428b0a58266cc80b5, type: 3}
   _type: 21

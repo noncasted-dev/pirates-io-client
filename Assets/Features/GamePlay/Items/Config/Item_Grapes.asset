@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Grapes
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: a0f7d0ff6d37c38448c0227f20995015, type: 3}
+  _icon: {fileID: 21300000, guid: efe8d9953a3c7d941b79403271469b0a, type: 3}
   _type: 30

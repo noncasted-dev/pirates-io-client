@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Flour
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: c6a5fbe34ca017a468efe71dee252bd8, type: 3}
+  _icon: {fileID: 21300000, guid: b71615a177607b84a9114f0264829698, type: 3}
   _type: 28

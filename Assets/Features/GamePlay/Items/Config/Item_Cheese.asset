@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Cheese
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: e5e078a1577c6e94db8917e108f2f614, type: 3}
+  _icon: {fileID: 21300000, guid: 73e079e0ffd7ff74199b07049f3b99bf, type: 3}
   _type: 22

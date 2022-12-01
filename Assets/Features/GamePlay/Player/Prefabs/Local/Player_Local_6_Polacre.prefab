@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.22
       objectReference: {fileID: 0}
+    - target: {fileID: 5810592821345933584, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.45
+      objectReference: {fileID: 0}
     - target: {fileID: 6046065100005675076, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.65

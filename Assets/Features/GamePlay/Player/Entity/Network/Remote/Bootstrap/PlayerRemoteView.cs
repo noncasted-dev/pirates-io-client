@@ -13,6 +13,7 @@ using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Implementation.Dead;
 using Global.Services.Updaters.Runtime.Abstract;
 using Ragon.Client;
+using TMPro;
 using UnityEngine;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
 
@@ -54,12 +55,19 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
         [SerializeField] private RemoteHitbox _hitbox;
         [SerializeField] private PlayerSpriteView _spriteView;
         [SerializeField] private FireController _fireController;
+        [SerializeField] private TMP_Text _nickName;
 
         [SerializeField] private Collider2D[] _colliders;
         
         private Action<PlayerRemoteView> _returnToPool;
 
         public GameObject GameObject => gameObject;
+
+        public override void OnCreatedEntity()
+        {
+            var payload = Entity.GetSpawnPayload<PlayerPayload>();
+            _nickName.text = payload.UserName;
+        }
 
         public void SetPosition(Vector2 position)
         {

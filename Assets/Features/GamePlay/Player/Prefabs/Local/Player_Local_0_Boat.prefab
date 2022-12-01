@@ -147,6 +147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Local_0_Boat
       objectReference: {fileID: 0}
+    - target: {fileID: 4153805439187967870, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4629004126076026155, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 2
@@ -167,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.06
       objectReference: {fileID: 0}
+    - target: {fileID: 5810592821345933584, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6046065100005675076, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.24
@@ -186,6 +194,10 @@ PrefabInstance:
     - target: {fileID: 6094550014823188856, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.6380638
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393469503722903934, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6936041581366057314, guid: 4aa2dce30cfdde641a3ca89e71aef353, type: 3}
       propertyPath: m_Sprite

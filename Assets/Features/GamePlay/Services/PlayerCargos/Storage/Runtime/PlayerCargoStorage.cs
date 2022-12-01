@@ -20,6 +20,8 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             {
                 _items[type].Add(item.Count);
                 OnChanged();
+                MessageBroker.Default.Publish(new CargoAddEvent(item));
+
                 return;
             }
 

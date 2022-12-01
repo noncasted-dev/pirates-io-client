@@ -1,22 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using GamePlay.Services.PlayerCargos.Storage.Events;
 using TMPro;
+using UniRx;
 using UnityEngine;
 
-public class TakeItemAnimation : MonoBehaviour
+namespace Common.VFX
 {
-    [SerializeField] private SpriteRenderer _icon;
-   [SerializeField] private TMP_Text _tmp;
+    public class TakeItemAnimation : MonoBehaviour
+    {
+        [SerializeField] private SpriteRenderer _icon;
+        [SerializeField] private TMP_Text _tmp;
+        
+        private IDisposable _itemListener;
 
-   public void StartAnimation(Sprite icon, int add_count)
-   {
-       _icon.sprite = icon;
-       _tmp.text = "+" + add_count;
-       gameObject.SetActive(true);
-   }
+        private void OnEnable()
+        {
+            _itemListener = MessageBroker.Default.Receive<CargoAddEvent>().Subscribe(OnItemReceived);
+        }
 
-   public void Deactivate()
-   {
-       gameObject.SetActive(false);
-   }
+        private void OnDisable()
+        {
+            _itemListener?.Dispose();
+        }
+
+        private void OnItemReceived(CargoAddEvent data)
+        {
+            StartAnimation(data.Item.BaseData.Icon, data.Item.Count);    
+        }
+
+        public void StartAnimation(Sprite icon, int add_count)
+        {
+            _icon.sprite = icon;
+            _tmp.text = "+" + add_count;
+            gameObject.SetActive(true);
+        }
+
+        public void Deactivate()
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }

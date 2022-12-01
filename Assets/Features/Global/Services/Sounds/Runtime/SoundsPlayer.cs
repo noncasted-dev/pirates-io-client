@@ -53,15 +53,19 @@ namespace Global.Services.Sounds.Runtime
 
         public void OnBootstrapped()
         {
-            Setup().Forget();       
+            Setup().Forget();
         }
 
         private async UniTaskVoid Setup()
         {
+            await UniTask.Delay(100);
+
+            while ((Input.GetMouseButton(0) == false && Input.GetMouseButton(1) == false)
+                   || RuntimeManager.HaveAllBanksLoaded == false || RuntimeManager.HaveMasterBanksLoaded == false)
+                await UniTask.Yield();
+
             Debug.Log("Setup sounds");
-            
-            await UniTask.Delay(300);
-            
+
             AmbInstance = RuntimeManager.CreateInstance(AmbEvent);
             AmbInstance.start();
 
@@ -71,10 +75,9 @@ namespace Global.Services.Sounds.Runtime
             BurningInstance = RuntimeManager.CreateInstance(BurningEvent);
             BurningInstance.start();
         }
-        
+
         private void Update()
         {
-
             BurningInstance.setParameterByName("health", _health);
             _fightTime -= _fightExitSpeed * Time.deltaTime;
 
@@ -161,7 +164,6 @@ namespace Global.Services.Sounds.Runtime
 
             ShotInstance.release();
             Debug.Log(6);
-
         }
 
         //Damage
@@ -252,9 +254,7 @@ namespace Global.Services.Sounds.Runtime
             if (health < 0.5)
             {
                 MusicInstance.setParameterByName("music_intencity", 2f);
-               
             }
-            
         }
 
         private void AttachInstance(EventInstance instance, Vector2 position)
@@ -266,7 +266,7 @@ namespace Global.Services.Sounds.Runtime
                 var fmodObject = new GameObject("FmodInstance");
                 _fmodInstance = fmodObject.transform;
             }
-            
+
             _fmodInstance.position = position;
             RuntimeManager.AttachInstanceToGameObject(instance, _fmodInstance);
         }

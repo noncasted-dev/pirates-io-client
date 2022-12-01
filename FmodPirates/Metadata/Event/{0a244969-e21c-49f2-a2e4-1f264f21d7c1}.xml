@@ -334,6 +334,9 @@
 		</relationship>
 	</object>
 	<object class="ThreeEQEffect" id="{9e83c5b5-4414-4dc4-a6fa-e92358dda08b}">
+		<property name="lowGain">
+			<value>-3</value>
+		</property>
 		<property name="midGain">
 			<value>-6</value>
 		</property>
@@ -344,7 +347,7 @@
 	<object class="MixerBusFader" id="{fc2e8e1a-5456-488a-9adc-206a20407b5a}" />
 	<object class="AutomationPoint" id="{57046838-4e1a-4428-93b0-079c030f45e9}">
 		<property name="position">
-			<value>0.80000000000000004</value>
+			<value>0.75</value>
 		</property>
 		<property name="value">
 			<value>-80</value>

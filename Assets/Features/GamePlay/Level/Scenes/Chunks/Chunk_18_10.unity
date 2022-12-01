@@ -21598,6 +21598,14 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[1055].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 5684869733284953611, guid: 92020a475d1780149b5f316d832a8277, type: 3}
+      propertyPath: m_ChunkCullingBounds.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684869733284953611, guid: 92020a475d1780149b5f316d832a8277, type: 3}
+      propertyPath: m_ChunkCullingBounds.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5684869734739212898, guid: 92020a475d1780149b5f316d832a8277, type: 3}
       propertyPath: m_Name
       value: CityGrid

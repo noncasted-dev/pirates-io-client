@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Cigars
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 957db2f09be39a2438a69fb27b4a5150, type: 3}
+  _icon: {fileID: 21300000, guid: 5afe86adb20c95447901e04cc293d584, type: 3}
   _type: 23

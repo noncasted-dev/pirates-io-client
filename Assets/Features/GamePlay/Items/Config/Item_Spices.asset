@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Spices
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 2b7410877c003404b8c9d263fba003b3, type: 3}
+  _icon: {fileID: 21300000, guid: e3fc12ab18ae01f4f958b8abafcaf675, type: 3}
   _type: 42

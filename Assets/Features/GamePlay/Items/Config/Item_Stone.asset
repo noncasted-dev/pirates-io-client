@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Stone
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 6b84fea7b21818946bdf2efe65f33db1, type: 3}
+  _icon: {fileID: 21300000, guid: 5927f793d334b344ebe488f985a01a35, type: 3}
   _type: 43

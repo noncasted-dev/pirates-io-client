@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Boards
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 4c903187789503545b3b80cdba2f282f, type: 3}
+  _icon: {fileID: 21300000, guid: 50e7d0e814d41e646b86d1c697154894, type: 3}
   _type: 17

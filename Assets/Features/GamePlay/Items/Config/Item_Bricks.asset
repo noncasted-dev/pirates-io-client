@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Bricks
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 8c017b2da6aa8ce43a9e5e588ce2466e, type: 3}
+  _icon: {fileID: 21300000, guid: 2cc322a16254d3546b77c1ac8cb42cc6, type: 3}
   _type: 19

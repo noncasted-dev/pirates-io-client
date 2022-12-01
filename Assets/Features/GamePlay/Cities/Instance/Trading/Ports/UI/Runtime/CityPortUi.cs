@@ -15,6 +15,7 @@ using Global.Services.UiStateMachines.Runtime;
 using TMPro;
 using UniRx;
 using UnityEngine;
+using UnityEngine.UI;
 using VContainer;
 
 namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
@@ -52,6 +53,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         [SerializeField] private MoneyView _moneyView;
         [SerializeField] private PortShipView _shipView;
         [SerializeField] private TradeMoney _tradeMoney;
+
+        [SerializeField] private Button _closeButton;
         
         private IDisposable _enterListener;
         private IDisposable _exitListener;
@@ -77,12 +80,13 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void OnEnable()
         {
-            Debug.Log("Lisen");
             _enterListener = MessageBroker.Default.Receive<PortEnteredEvent>().Subscribe(OnEntered);
             _exitListener = MessageBroker.Default.Receive<PortExitedEvent>().Subscribe(OnExited);
             _requestListener = MessageBroker.Default.Receive<TradeRequestedEvent>().Subscribe(OnTradeRequested);
 
             _tradeBody.SetActive(false);
+
+            _closeButton.onClick.AddListener(OnCloseClicked);
 
             _tradeHandler.Completed += OnTradeCompleted;
         }
@@ -92,6 +96,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _enterListener?.Dispose();
             _exitListener?.Dispose();
             _requestListener?.Dispose();
+            
+            _closeButton.onClick.RemoveListener(OnCloseClicked);
             
             _tradeHandler.Completed -= OnTradeCompleted;
         }
@@ -117,8 +123,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             
             _storedView.gameObject.SetActive(true);
             _stockView.gameObject.SetActive(true);
+            _tradeBody.SetActive(false);
 
-            
             _stateMachine.EnterAsSingle(this);
             
             _storedView.Fill(data.Cargo, data.PriceProvider);
@@ -172,6 +178,11 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _storedView.Fill(cargo, priceProvider);
             _stockView.Fill(stock, priceProvider);
             _stockShips.Fill(ships, _reputation);
+        }
+
+        private void OnCloseClicked()
+        {
+            MessageBroker.Default.Publish(new PortClosedEvent());
         }
     }
 }

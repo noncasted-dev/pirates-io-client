@@ -10,6 +10,8 @@
     <type fullname="Common.UiTools.ScrollBarSizeSetter" preserve="all" />
   </assembly>
   <assembly fullname="Common.VFX, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Common.VFX.TakeItemAnimation" preserve="all" />
+    <type fullname="Common.VFX.TakeItemAnimatorCallback" preserve="all" />
     <type fullname="Common.VFX.Textures.RandomDropedSprite" preserve="all" />
     <type fullname="Common.VFX.Textures.WawesLookRotrator" preserve="all" />
     <type fullname="FireController" preserve="all" />
@@ -803,6 +805,7 @@
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
   </assembly>
   <assembly fullname="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="TMPro.TextMeshPro" preserve="all" />
     <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
     <type fullname="TMPro.TMP_FontAsset" preserve="all" />
     <type fullname="TMPro.TMP_InputField" preserve="all" />

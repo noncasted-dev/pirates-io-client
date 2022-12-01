@@ -15,6 +15,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         [SerializeField] private Image _icon;
         [SerializeField] private TMP_Text _count;
         [SerializeField] private TMP_Text _cost;
+        [SerializeField] private TMP_Text _name;
         [SerializeField] private Button _transferButton;
 
         private IItem _item;
@@ -56,6 +57,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
             _icon.sprite = item.BaseData.Icon;
             _count.text = item.Count.ToString();
+            _name.text = item.BaseData.Name;
             
             var price = _priceProvider.GetPrice(item.BaseData.Type);
             _cost.text = price.ToString();

@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Nails
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 904ba28065b8632488fb375603a3cc4d, type: 3}
+  _icon: {fileID: 21300000, guid: 7ab49cc1a8e3c36498d611c43fbe8c8a, type: 3}
   _type: 35

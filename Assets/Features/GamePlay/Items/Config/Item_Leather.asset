@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Leather
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 2e40b8d963ecdf349afd3a447308c88f, type: 3}
+  _icon: {fileID: 21300000, guid: 0530fa3bdbfe08245b40a619c1977c84, type: 3}
   _type: 32

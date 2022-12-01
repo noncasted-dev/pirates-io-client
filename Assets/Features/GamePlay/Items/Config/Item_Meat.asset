@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Meat
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 2daacee7f865c1e40900cdb76b162797, type: 3}
+  _icon: {fileID: 21300000, guid: 644b71111c1107546968f50f8921de13, type: 3}
   _type: 33

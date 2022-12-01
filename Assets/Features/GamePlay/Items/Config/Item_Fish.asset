@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Fish
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 313947822d0c06a419422eca62a7dfb9, type: 3}
+  _icon: {fileID: 21300000, guid: 3e431e58692d53d45b59d45928ed09d2, type: 3}
   _type: 27

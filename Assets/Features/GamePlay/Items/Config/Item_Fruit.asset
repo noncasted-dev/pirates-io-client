@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Fruit
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: e68f6ccfd4a45724d89328b561db5830, type: 3}
+  _icon: {fileID: 21300000, guid: a9023078577ff454db5245b25d3fa261, type: 3}
   _type: 29

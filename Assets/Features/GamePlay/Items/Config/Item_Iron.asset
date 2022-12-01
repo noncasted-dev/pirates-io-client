@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Iron
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 685f225266dabdf448bb9e02cbd2c763, type: 3}
+  _icon: {fileID: 21300000, guid: dcc5e7fa447c1c94d80358239895ec3a, type: 3}
   _type: 31

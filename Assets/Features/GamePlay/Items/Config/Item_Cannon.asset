@@ -15,4 +15,4 @@ MonoBehaviour:
   _weight: 1
   _name: Cannon
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 44d940fdd89e835468194d6b5cb24939, type: 3}
+  _icon: {fileID: 21300000, guid: 7bdb3447d93ea22468bcd4d323cf236c, type: 3}

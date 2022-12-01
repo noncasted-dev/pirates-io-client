@@ -363,6 +363,7 @@ MonoBehaviour:
   _icon: {fileID: 1831990041074144130}
   _count: {fileID: 966981995737381884}
   _cost: {fileID: 1701380224218774190}
+  _name: {fileID: 4915740298358562218}
   _transferButton: {fileID: 1236778202488355284}
 --- !u!1 &2023581959527804198
 GameObject:

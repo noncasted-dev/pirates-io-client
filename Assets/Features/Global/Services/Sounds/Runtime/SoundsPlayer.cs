@@ -1,14 +1,16 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using FMOD.Studio;
 using FMODUnity;
 using GamePlay.Services.Projectiles.Entity;
+using Global.Services.Common.Abstract;
 using UnityEngine;
 
 namespace Global.Services.Sounds.Runtime
 
 {
     [DisallowMultipleComponent]
-    public class SoundsPlayer : MonoBehaviour
+    public class SoundsPlayer : MonoBehaviour, IGlobalBootstrapListener
     {
         [Space(30)] [Header("Battle")] [SerializeField]
         public EventReference ShotEvent;
@@ -49,8 +51,21 @@ namespace Global.Services.Sounds.Runtime
 
         private Transform _fmodInstance;
 
-        private void Start()
+        public void OnBootstrapped()
         {
+            Setup().Forget();
+        }
+
+        private async UniTaskVoid Setup()
+        {
+            await UniTask.Delay(100);
+
+            while ((Input.GetMouseButton(0) == false && Input.GetMouseButton(1) == false)
+                   || RuntimeManager.HaveAllBanksLoaded == false || RuntimeManager.HaveMasterBanksLoaded == false)
+                await UniTask.Yield();
+
+            Debug.Log("Setup sounds");
+
             AmbInstance = RuntimeManager.CreateInstance(AmbEvent);
             AmbInstance.start();
 
@@ -59,14 +74,10 @@ namespace Global.Services.Sounds.Runtime
 
             BurningInstance = RuntimeManager.CreateInstance(BurningEvent);
             BurningInstance.start();
-
-            var fmodObject = new GameObject("FmodInstance");
-            _fmodInstance = fmodObject.transform;
         }
 
         private void Update()
         {
-
             BurningInstance.setParameterByName("health", _health);
             _fightTime -= _fightExitSpeed * Time.deltaTime;
 
@@ -153,7 +164,6 @@ namespace Global.Services.Sounds.Runtime
 
             ShotInstance.release();
             Debug.Log(6);
-
         }
 
         //Damage
@@ -244,9 +254,7 @@ namespace Global.Services.Sounds.Runtime
             if (health < 0.5)
             {
                 MusicInstance.setParameterByName("music_intencity", 2f);
-               
             }
-            
         }
 
         private void AttachInstance(EventInstance instance, Vector2 position)
@@ -258,7 +266,7 @@ namespace Global.Services.Sounds.Runtime
                 var fmodObject = new GameObject("FmodInstance");
                 _fmodInstance = fmodObject.transform;
             }
-            
+
             _fmodInstance.position = position;
             RuntimeManager.AttachInstanceToGameObject(instance, _fmodInstance);
         }

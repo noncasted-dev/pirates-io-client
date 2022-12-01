@@ -22,21 +22,27 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 
         private bool _isActive;
         private IDisposable _completionListener;
+        private IDisposable _closeListener;
         
         private IPlayerCargoStorage _playerCargoStorage;
 
         private void OnEnable()
         {
             _completionListener = MessageBroker.Default.Receive<TradeCompletedEvent>().Subscribe(OnTradeCompleted);
+            _closeListener = MessageBroker.Default.Receive<PortClosedEvent>().Subscribe(OnClosed);
         }
 
         private void OnDisable()
         {
             _completionListener?.Dispose();
+            _closeListener?.Dispose();
         }
 
         public void Enter(IShipResources shipResources)
         {
+            if (_isActive == true) 
+                return;
+            
             _isActive = true;
             
             var stock = ToArray(_storage.Items);
@@ -52,6 +58,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 
         public void Exit()
         {
+            if (_isActive == false)
+                return;
+            
             var data = new PortExitedEvent();
             MessageBroker.Default.Publish(data);
             
@@ -96,6 +105,14 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             var ships = ToArray(_storage.Ships);
             
             completed.RedrawCallback?.Invoke(stock, cargo, ships, _storage);
+        }
+
+        private void OnClosed(PortClosedEvent data)
+        {
+            if (_isActive == false)
+                return;
+            
+            Exit();
         }
     }
 }

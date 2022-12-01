@@ -36,7 +36,7 @@ MonoBehaviour:
     m_EditorAssetChanged: 0
   _pushForce: 1
   _randomDistance: 2
-  _shotRandomDelay: 0.3
+  _shotRandomDelay: 0.5
   _shotsAmount: 10
   _shotsDelay: 0.05
   _speed: 8

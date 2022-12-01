@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Ropes
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 1dc6453cd01ec5740a5d68946b46d352, type: 3}
+  _icon: {fileID: 21300000, guid: f23d07c77eda20d458a20ce2e9dab87a, type: 3}
   _type: 37

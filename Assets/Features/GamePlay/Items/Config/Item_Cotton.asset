@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Cotton
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 0e2fa16bb6d5ae04b862630755d6d495, type: 3}
+  _icon: {fileID: 21300000, guid: 0cd2b8b6c1667d444aaf63ecfd5bfd0b, type: 3}
   _type: 26

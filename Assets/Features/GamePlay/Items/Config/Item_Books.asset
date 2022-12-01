@@ -15,5 +15,5 @@ MonoBehaviour:
   _weight: 1
   _name: Books
   _isInfinite: 0
-  _icon: {fileID: 21300000, guid: 1a2a5768b33918c4da6c4c42ee942451, type: 3}
+  _icon: {fileID: 21300000, guid: 14ce1f544e5218b4ba50530b2e94d3a7, type: 3}
   _type: 18

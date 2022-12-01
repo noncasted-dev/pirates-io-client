@@ -14,6 +14,7 @@ using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Player.Entity.Weapons.Handler.Runtime;
 using GamePlay.Services.Projectiles.Selector.Runtime;
+using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
@@ -156,6 +157,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
                     _spriteTransform.Impact(direction, impactParams.Distance, impactParams.Time);
 
                     _weapons.Canon.Shoot(aim.Angle, aim.Spread);
+                    MessageBroker.Default.Publish(new AimDelayEvent(_config.Delay));
                     break;
                 case AimResultType.Broke:
                     _hasInput = false;

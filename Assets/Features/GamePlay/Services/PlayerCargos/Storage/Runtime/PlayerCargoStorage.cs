@@ -20,11 +20,15 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             {
                 _items[type].Add(item.Count);
                 OnChanged();
+                MessageBroker.Default.Publish(new CargoAddEvent(item));
+
                 return;
             }
 
             _items[type] = item;
             OnChanged();
+            
+            MessageBroker.Default.Publish(new CargoAddEvent(item));
         }
 
         public void Reduce(ItemType type, int amount)

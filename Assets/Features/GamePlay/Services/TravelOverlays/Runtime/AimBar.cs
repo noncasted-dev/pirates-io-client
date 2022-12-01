@@ -57,7 +57,6 @@ namespace GamePlay.Services.TravelOverlays.Runtime
             var height = rect.width;
             
             _fill.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width);
-            _fill.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
 
             _time = data.Delay;
             _max = data.Delay;
@@ -86,14 +85,12 @@ namespace GamePlay.Services.TravelOverlays.Runtime
             
             var rect = _background.rect;
             var width = rect.width;
-            var height = rect.height;
             var length = Mathf.Lerp(0, width, progress);
 
             if (length < _minLength)
                 length = _minLength;
             
             _fill.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, length);
-            _fill.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
         }
     }
 }

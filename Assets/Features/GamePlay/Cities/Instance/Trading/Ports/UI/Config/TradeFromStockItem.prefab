@@ -2014,6 +2014,7 @@ MonoBehaviour:
   _countSlider: {fileID: 7996020703040858544}
   _sliderValue: {fileID: 2816731319046151041}
   _cost: {fileID: 7574091947790654562}
+  _name: {fileID: 8864244434035607674}
 --- !u!1 &8923708910856901944
 GameObject:
   m_ObjectHideFlags: 0

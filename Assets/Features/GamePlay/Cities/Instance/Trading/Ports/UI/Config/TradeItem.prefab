@@ -822,6 +822,7 @@ MonoBehaviour:
   _countSlider: {fileID: 6194677594527236514}
   _sliderValue: {fileID: 9008044223411858983}
   _cost: {fileID: 5161191651428113126}
+  _name: {fileID: 8032601577128461168}
 --- !u!1 &5398858535098976376
 GameObject:
   m_ObjectHideFlags: 0

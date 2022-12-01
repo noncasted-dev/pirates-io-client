@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _faction: 1
   _name: 21
-  _mostProduced: 250000002600000029000000
+  _mostProduced: 250000002400000026000000
   _leastProduced: 180000001a0000001c000000

@@ -250,7 +250,7 @@ namespace Global.Services.Sounds.Runtime
         public void OnHealthChanged(float health, GameObject target)
         {
             _health = health;
-            Debug.Log(health);
+            Debug.Log($"Health: {health}");
 
             if (health < 0.5)
             {

@@ -17,6 +17,7 @@ using GamePlay.Services.Reputation.Runtime;
 using GamePlay.Services.Saves.Definitions;
 using GamePlay.Services.TransitionScreens.Runtime;
 using GamePlay.Services.TravelOverlays.Runtime;
+using GamePlay.Services.Wallets.Runtime;
 using Global.Services.CurrentCameras.Runtime;
 using Global.Services.FilesFlow.Runtime.Abstract;
 using Global.Services.ItemFactories.Runtime;
@@ -49,8 +50,10 @@ namespace GamePlay.Services.LevelLoops.Runtime
             IReputation reputation,
             IFileLoader fileLoader,
             IFileSaver fileSaver,
+            IWalletPresenter walletPresenter,
             LevelLoopLogger logger)
         {
+            _walletPresenter = walletPresenter;
             _fileSaver = fileSaver;
             _fileLoader = fileLoader;
             _reputation = reputation;
@@ -88,6 +91,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
         private IReputation _reputation;
         private IFileLoader _fileLoader;
         private IFileSaver _fileSaver;
+        private IWalletPresenter _walletPresenter;
 
         public void OnEnabled()
         {
@@ -127,6 +131,8 @@ namespace GamePlay.Services.LevelLoops.Runtime
             {
                 for (var i = 0; i < save.Items.Count; i++)
                     _cargo.Add(_itemFactory.Create(save.Items[i], save.Count[i]));
+                
+                _walletPresenter.Set(save.Money);
 
                 ProcessRespawn(save.ShipType, save.LastCity).Forget();
             }

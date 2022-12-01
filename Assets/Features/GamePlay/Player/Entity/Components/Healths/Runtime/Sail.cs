@@ -38,13 +38,15 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             _updater.Remove(this);
         }
         
-        
         public void Damage(float damage)
         {
             if (damage < 0)
                 damage = 0;
 
             _amount -= damage;
+
+            if (_amount < 20f)
+                _amount = 20f;
 
             Changed?.Invoke();
         }
@@ -73,6 +75,9 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
 
             if (_amount > _max)
                 _amount = _max;
+            
+            if (_amount < 20f)
+                _amount = 20f;
 
             Changed?.Invoke();
         }

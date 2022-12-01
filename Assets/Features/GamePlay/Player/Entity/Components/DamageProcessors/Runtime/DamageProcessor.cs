@@ -71,13 +71,13 @@ namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
             switch (damage.Type)
             {
                 case ProjectileType.Ball:
-                    _sail.Damage(0.2f);
+                    _sail.Damage(0.02f);
                     break;
                 case ProjectileType.Knuppel:
                     _sail.Damage(1f);
                     break;
                 case ProjectileType.Shrapnel:
-                    _sail.Damage(0.1f);
+                    _sail.Damage(0.01f);
                     break;
                 case ProjectileType.Fishnet:
                     break;

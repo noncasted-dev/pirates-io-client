@@ -22,5 +22,6 @@ namespace GamePlay.Services.Saves.Definitions
         public ShipType ShipType;
         public List<ItemType> Items = new();
         public List<int> Count = new();
+        public int Money;
     }
 }

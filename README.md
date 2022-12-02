@@ -10,3 +10,5 @@ Multiplayer game about trading and sea.
 4. UniRx
 5. FMOD
 6. NaughtyAttributes
+7. Addressables
+8. InputSystem

@@ -11370,6 +11370,14 @@ PrefabInstance:
       value: -1.27
       objectReference: {fileID: 0}
     - target: {fileID: 2729756028602469285, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
+      propertyPath: _debug
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729756028602469285, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
+      propertyPath: _isDebug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729756028602469285, guid: 3101ca76d49e3f6408998aceaa2dd55f, type: 3}
       propertyPath: _producables.m_keys.Array.size
       value: 35
       objectReference: {fileID: 0}
@@ -63710,7 +63718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2110505546
 MonoBehaviour:
   m_ObjectHideFlags: 0

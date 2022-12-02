@@ -38,7 +38,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         private void OnDisable()
         {
             _transferButton.onClick.RemoveListener(OnTransferClicked);
-
+            
             if (_item == null)
                 return;
 
@@ -55,6 +55,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             gameObject.SetActive(true);
             _transferButton.gameObject.SetActive(true);
 
+            if (item.BaseData.Type == ItemType.Cotton)
+                Debug.Log($"Cotton: {item.Count}");
+            
             _icon.sprite = item.BaseData.Icon;
             _count.text = item.Count.ToString();
             _name.text = item.BaseData.Name;
@@ -68,6 +71,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
         public void OnTransferedItemCountChange(int count)
         {
+            if (_item == null)
+                return;
+            
             var delta = _item.Count - count;
 
             _count.text = delta.ToString();
@@ -83,14 +89,17 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             if (_item != null && _isActive == true)
                 _priceProvider.Unfreeze(_item.BaseData.Type);
             
-            _item = null;
             gameObject.SetActive(false);
+            _item = null;
 
             _isActive = false;
         }
 
         public void OnTransferCanceled()
         {
+            if (_item == null)
+                return;
+            
             gameObject.SetActive(true);
             _count.text = _item.Count.ToString();
             _priceProvider.Unfreeze(_item.BaseData.Type);
@@ -117,6 +126,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
         private void OnTransferClicked()
         {
+            if (_item == null)
+                return;
+            
             _priceProvider.Freeze(_item.BaseData.Type);
 
             _isActive = true;

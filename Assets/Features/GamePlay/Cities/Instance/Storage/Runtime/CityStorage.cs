@@ -17,15 +17,14 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             _itemFactory = itemFactory;
         }
 
-        private const float _waitTime = 3f;
+        private const float _waitTime = 1f;
         private const int _producablesConfigCount = 3;
 
         [SerializeField] private List<TradableShipConfig> _shipConfigs;
         [SerializeField] private TradableItemDictionary _producables;
         [SerializeField] private ItemPriceCurvesConfigAsset _curves;
-
-        [SerializeField] private float _commission = 0.5f;
-
+        [SerializeField] private ItemType _debug;
+        [SerializeField] private bool _isDebug;
         private readonly ItemsVault _vault = new();
         private readonly HashSet<ItemType> _freezed = new();
         private readonly Dictionary<ItemType, IItem> _ships = new();
@@ -109,13 +108,27 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 
             if (item.Count < config.MedianCount)
             {
+                if (_isDebug == true)
+                {
+                    if (_debug == type)
+                    {
+                    }
+                }
+                
                 item.Add(config.LackProductionSpeedPerSecond);
 
                 return;
             }
 
-            if (item.Count > config.MedianCount)
+            if (item.Count > config.MedianCount + config.MedianCount * (float)config.CurveHeight)
             {
+                if (_isDebug == true)
+                {
+                    if (_debug == type)
+                    {
+                    }
+                }
+                
                 var reduce = Mathf.Clamp(config.LackProductionSpeedPerSecond, 0, item.Count);
                 item.Reduce(reduce);
 
@@ -126,6 +139,13 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             var evaluation = _curves.ItemsInTime.Evaluate(Random.Range(0f, 1f));
             var additional = evaluation * config.CurveHeight;
             var amount = config.MedianCount + additional;
+            
+            if (_isDebug == true)
+            {
+                if (_debug == type)
+                {
+                }
+            }
 
             item.SetCount((int)amount);
         }
@@ -197,7 +217,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 var price = GetPrice(type, i);
                 var progress = GetCountProgress(type, i);
                 var priceEvaluation = _curves.SellPricePerCount.Evaluate(progress);
-                var resultPrice = priceEvaluation * price * (1f - _commission);
+                var resultPrice = priceEvaluation * price * (1f - 0.05f);
 
                 if (resultPrice < 1)
                     resultPrice = 1;

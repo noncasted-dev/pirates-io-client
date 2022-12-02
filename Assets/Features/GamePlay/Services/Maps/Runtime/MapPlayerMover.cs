@@ -73,7 +73,6 @@ namespace Features.GamePlay.Services.Maps.Runtime
 
             var progress = new Vector2(xProgress, yProgress);
             var position = _mapLeftBottom.anchoredPosition + new Vector2(mapWidth, mapHeight) * progress;
-            Debug.Log($"progress: {progress}, lw: {levelWidth}, lh: {levelHeight}, mw: {mapWidth}, mh: {mapHeight}, {position}");
             
             _playerView.anchoredPosition = position;
         }

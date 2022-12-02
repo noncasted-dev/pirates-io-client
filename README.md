@@ -12,3 +12,4 @@ Multiplayer game about trading and sea.
 6. NaughtyAttributes
 7. Addressables
 8. InputSystem
+9. AmplifyShader

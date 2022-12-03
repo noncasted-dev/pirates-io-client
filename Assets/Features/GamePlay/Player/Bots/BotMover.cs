@@ -20,10 +20,20 @@ namespace GamePlay.Player.Bots
             _citiesRegistry = FindObjectOfType<CitiesRegistry>();
         }
 
+        private int _frames;
+
         private void Update()
         {
-            _ai.destination = _target;
+            _frames++;
+            
+            if (_frames < 100)
+                return;
+
+            _frames = 0;
+            
             _ai.SearchPath();
+
+            _ai.destination = _target;
             
             if (_hasTarget == false)
                 SetTarget();

@@ -43,8 +43,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             if (_isActive == true) 
                 return;
             
-            Debug.Log($"Entered: {transform.parent.name}");
-            
             _isActive = true;
             
             var stock = ToArray(_storage.Items);

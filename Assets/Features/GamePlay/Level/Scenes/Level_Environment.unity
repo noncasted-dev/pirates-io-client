@@ -63918,6 +63918,7 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _services: {fileID: 11400000, guid: 9f1bf9a9ecd36f24798ae8c6321b5fc2, type: 2}
+  _server: 0
 --- !u!4 &2110505548
 Transform:
   m_ObjectHideFlags: 0

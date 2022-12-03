@@ -54,9 +54,6 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             
             gameObject.SetActive(true);
             _transferButton.gameObject.SetActive(true);
-
-            if (item.BaseData.Type == ItemType.Cotton)
-                Debug.Log($"Cotton: {item.Count}");
             
             _icon.sprite = item.BaseData.Icon;
             _count.text = item.Count.ToString();

@@ -41,7 +41,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Root
             flowHandler.InvokeStart();
             
             var bot = GetComponentInParent<IBotCannon>();
-            Debug.Log(transform.parent.name);
+            
             if (bot == null)
                 Debug.Log("No bot");
             else

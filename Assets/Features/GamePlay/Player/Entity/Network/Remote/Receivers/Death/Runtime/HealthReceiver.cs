@@ -29,7 +29,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Death.Runtime
         private void OnHealthReceived(RagonPlayer player, HealthChangeNetworkEvent data)
         {
             var delta = data.Current / (float)data.Max;
-            Debug.Log($"Health received: {data.Current} / {data.Max}");
+            Debug.Log($"<color=red>Health received: {data.Current} / {data.Max}</color>");
             _controller.SetFireForce(delta);
 
             if (data.Current <= 0)

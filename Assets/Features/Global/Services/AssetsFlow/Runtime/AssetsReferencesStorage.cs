@@ -20,7 +20,6 @@ namespace Global.Services.AssetsFlow.Runtime
 
         public bool Contains(string key)
         {
-            Debug.Log($"Check in storage: {key}");
             return _references.ContainsKey(key);
         }
 
@@ -28,7 +27,6 @@ namespace Global.Services.AssetsFlow.Runtime
         {
             _logger.OnStorageAdd(result.AssetName);
             
-            Debug.Log($"Add to storage: {result.Key}");
             _references.Add(result.Key, result);
         }
 

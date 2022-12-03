@@ -80,7 +80,6 @@ namespace GamePlay.Player.Bots
             var spawnPoints = _citiesRegistry.GetCity(city).SpawnPoints;
             _target = spawnPoints.GetRandom();
             _ai.destination = _target;
-            Debug.Log("SetTarget");
 
             _hasTarget = true;
 
@@ -90,7 +89,6 @@ namespace GamePlay.Player.Bots
 
         private void OnCalculated()
         {
-            Debug.Log("Calculated");
             _calculated = true;
         }
     }

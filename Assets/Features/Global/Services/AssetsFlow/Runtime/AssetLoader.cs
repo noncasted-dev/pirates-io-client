@@ -24,12 +24,8 @@ namespace Global.Services.AssetsFlow.Runtime
 
         public async UniTask<AssetLoadResult<T>> Load<T>(AssetReference reference)
         {
-            Debug.Log(reference.AssetGUID);
-            
             if (_storage.Contains(reference.AssetGUID) == true)
                 return _storage.GetResult<T>(reference.AssetGUID);
-
-            Debug.Log("Not in storage");
             
             var handle = reference.LoadAssetAsync<T>();
             var task = handle.ToUniTask();
@@ -43,8 +39,6 @@ namespace Global.Services.AssetsFlow.Runtime
             _logger.OnLoad(result.AssetName);
 
             _storage.Add(result);
-            
-            Debug.Log("Return");
 
             return result;
         }

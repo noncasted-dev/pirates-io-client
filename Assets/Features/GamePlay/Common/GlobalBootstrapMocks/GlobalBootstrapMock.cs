@@ -24,8 +24,9 @@ namespace GamePlay.Common.GlobalBootstrapMocks
         [SerializeField] private GameLoopAsset _gameLoop;
         [SerializeField] private LevelAsset _level;
         [SerializeField] private AssetReference _servicesScene;
-
+            
         [SerializeField] private GlobalServicesConfig _services;
+        [SerializeField] private TargetServer _server;
 
         [Button("ClearMessageBroker")]
         private void ClearMessageBroker()
@@ -77,7 +78,7 @@ namespace GamePlay.Common.GlobalBootstrapMocks
             var joiner = container.Resolve<INetworkSessionJoiner>();
 
             var userName = $"Player_{Random.Range(0, 301)}";
-            await connector.Connect(userName, TargetServer.Europe);
+            await connector.Connect(userName, _server);
             await joiner.JoinRandom();
         }
 

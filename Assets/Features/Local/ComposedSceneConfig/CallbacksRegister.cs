@@ -91,8 +91,6 @@ namespace Local.ComposedSceneConfig
 
         public void InvokeLoadedCallbacks()
         {
-            Debug.Log(13);
-
             foreach (var load in _loads)
                 load.OnLoaded();
         }

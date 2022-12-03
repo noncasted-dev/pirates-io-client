@@ -16,7 +16,6 @@ namespace Features.GamePlay.Services.Maps.Runtime
 
         public void Construct(IItemFactory factory)
         {
-            Debug.Log($"construct: {_definition.MostProduced.Count}");
             for (var i = 0; i < _definition.MostProduced.Count; i++)
                 _most[i].sprite = factory.Create(_definition.MostProduced[i], 1).BaseData.Icon;
             

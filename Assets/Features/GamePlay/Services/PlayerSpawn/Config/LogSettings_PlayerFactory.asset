@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534a003c3da44481ab07dec33cd39054, type: 3}
   m_Name: LogSettings_PlayerFactory
   m_EditorClassIdentifier: 
-  _isEnabled: 1
+  _isEnabled: 0
   _logs:
     _keys: 00000000
     _values: 01
   _logParameters:
-    Color: 6
     _header: PlayerFactory
     _isHeaderColoredColored: 1
     _isMessageColored: 0
+    Color: 6

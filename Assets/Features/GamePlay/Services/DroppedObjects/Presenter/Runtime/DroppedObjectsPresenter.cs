@@ -55,8 +55,6 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
             targetPosition.y -= _config.DropFromPlayerYOffset;
 
             _dropSender.OnItemDropped(type, count, _playerEntityProvider.Position, targetPosition);
-            
-            Debug.Log($"Drop object: {type}, {count}, {_playerEntityProvider.Position}");
         }
 
         public void DropFromDeath(ItemType type, int count, Vector2 position)
@@ -65,17 +63,11 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
             var target = position + direction * Random.Range(0f, _dropDistance);
             
             _dropSender.OnItemDropped(type, count, position, target);
-            
-            Debug.Log($"Drop object: {type}, {count}, {position}, {target}");
         }
 
         public void OnLoaded()
         {
-            Debug.Log(15);
-
             _itemProvider = _poolProvider.GetPool<IDroppedItem>(_config.DroppedItemPrefab);
-            Debug.Log(16);
-
         }
 
         public void OnEnabled()

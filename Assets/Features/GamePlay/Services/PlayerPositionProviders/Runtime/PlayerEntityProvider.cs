@@ -37,7 +37,6 @@ namespace GamePlay.Services.PlayerPositionProviders.Runtime
         {
             if (_transform == null)
             {
-                Debug.Log("No player assigned");
                 return _lastPosition;
             }
 

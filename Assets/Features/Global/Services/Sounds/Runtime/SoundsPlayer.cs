@@ -64,8 +64,6 @@ namespace Global.Services.Sounds.Runtime
                    || RuntimeManager.HaveAllBanksLoaded == false || RuntimeManager.HaveMasterBanksLoaded == false)
                 await UniTask.Yield();
 
-            Debug.Log("Setup sounds");
-
             AmbInstance = RuntimeManager.CreateInstance(AmbEvent);
             AmbInstance.start();
 
@@ -92,78 +90,63 @@ namespace Global.Services.Sounds.Runtime
         public void OnCityExited()
         {
             RuntimeManager.StudioSystem.setParameterByName("amb_condition", 0f);
-            Debug.Log("open sea");
         }
 
         public void OnPortEntered()
         {
             RuntimeManager.StudioSystem.setParameterByName("music_condition", 1f);
             AmbInstance.setParameterByName("amb_condition", 1f);
-            Debug.Log("port_enter");
         }
 
         public void OnCityEntered()
         {
             RuntimeManager.StudioSystem.setParameterByName("music_condition", 0f);
             AmbInstance.setParameterByName("amb_condition", 2f);
-            Debug.Log("city entered");
         }
 
         public void OnPortExited()
         {
             AmbInstance.setParameterByName("amb_condition", 2f);
-            Debug.Log("port exit");
         }
 
         //Music
         public void OnBattleEntered()
         {
             RuntimeManager.StudioSystem.setParameterByName("music_condition", 2f);
-            Debug.Log("BattleEntered");
         }
 
         public void OnBattleExited()
         {
             RuntimeManager.StudioSystem.setParameterByName("music_condition", 0f);
-            Debug.Log("BattleExited");
         }
 
         //Battle
         public void OnCannonBallShot(Vector2 position)
         {
             PlayShot(0f, position);
-            Debug.Log("boom CannonBall");
         }
 
         public void OnShrapnelShot(Vector2 position)
         {
             PlayShot(1f, position);
-            Debug.Log("boom Shrapnel");
         }
 
         public void OnKnuppelShot(Vector2 position)
         {
             PlayShot(2f, position);
-            Debug.Log("boom Knuppel");
         }
 
         private void PlayShot(float parameter, Vector2 position)
         {
-            Debug.Log(1);
             ShotInstance = RuntimeManager.CreateInstance(ShotEvent);
-            Debug.Log(2);
 
             AttachInstance(ShotInstance, position);
-            Debug.Log(3);
 
             ShotInstance.setParameterByName("shot_type", parameter);
-            Debug.Log(4);
 
             ShotInstance.start();
-            Debug.Log(5);
 
             ShotInstance.release();
-            Debug.Log(6);
         }
 
         //Damage
@@ -217,7 +200,6 @@ namespace Global.Services.Sounds.Runtime
                 OnBattleEntered();
 
             _isInFight = true;
-            Debug.Log("We are damaged!");
         }
 
         //UI
@@ -250,7 +232,6 @@ namespace Global.Services.Sounds.Runtime
         public void OnHealthChanged(float health, GameObject target)
         {
             _health = health;
-            Debug.Log($"Health: {health}");
 
             if (health < 0.5)
             {
@@ -260,8 +241,6 @@ namespace Global.Services.Sounds.Runtime
 
         private void AttachInstance(EventInstance instance, Vector2 position)
         {
-            Debug.Log($"instance: {_fmodInstance == null}");
-
             if (_fmodInstance == null)
             {
                 var fmodObject = new GameObject("FmodInstance");

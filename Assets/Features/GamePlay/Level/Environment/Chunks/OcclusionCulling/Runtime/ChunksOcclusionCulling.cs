@@ -58,7 +58,7 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
             if (_process != null)
                 StopCoroutine(_process);
 
-            _process = StartCoroutine(DisableOnDistance());
+            //_process = StartCoroutine(DisableOnDistance());
         }
 
         private void Stop()

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58dd1d250d4b4d9c87ce0cb49137ddb4, type: 3}
   m_Name: LocalConfig_PlayerFactory
   m_EditorClassIdentifier: 
-  _networkPrefab: {fileID: 770058313661532305, guid: 63238bad100a125489ae6b480d75b97f, type: 3}
+  _networkPrefab: {fileID: 770058313661532305, guid: ea7317afd4e116a4d8a48129655c0dab, type: 3}
+  _botPrefab: {fileID: 770058313661532305, guid: ea7317afd4e116a4d8a48129655c0dab, type: 3}
   _ships:
     _keys: 000000000100000002000000030000000400000005000000060000000700000008000000
     _values:

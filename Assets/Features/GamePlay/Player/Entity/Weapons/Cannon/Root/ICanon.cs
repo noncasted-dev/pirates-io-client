@@ -10,5 +10,6 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Root
         void SetFlipY(bool isFlipped);
         void CancelShoot();
         void Shoot(float angle, float spread);
+        void Shoot(float angle, float spread, int count);
     }
 }

@@ -138,5 +138,28 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 
             _current.Start(shots);
         }
+
+        public void Shoot(float angle, float spread, int count)
+        {
+            Cancel();
+
+            _cancellation = new CancellationTokenSource();
+
+            var provider = _ball;
+
+            _current = new Shot(
+                _updater,
+                _cannonReplicator,
+                _config,
+                provider,
+                _vfx,
+                _shootPoint,
+                _cancellation.Token,
+                ProjectileType.Ball,
+                angle,
+                spread);
+
+            _current.Start(count);
+        }
     }
 }

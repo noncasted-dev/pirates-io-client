@@ -3,18 +3,27 @@ using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Cities.Instance.Root.Runtime;
 using NaughtyAttributes;
 using Pathfinding;
+using Ragon.Client;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace GamePlay.Player.Bots
 {
-    public class BotMover : MonoBehaviour
+    public class BotMover : RagonBehaviour
     {
         private IAstarAI _ai;
         private bool _hasTarget = false;
         private Vector2 _target;
 
         private ICitiesRegistry _citiesRegistry;
+
+        private bool _isBot;
+
+        public override void OnCreatedEntity()
+        {
+            if (Entity.IsMine == true)
+                _isBot = true;
+        }
 
         private void Awake()
         {
@@ -40,6 +49,9 @@ namespace GamePlay.Player.Bots
 
         private void Update()
         {
+            if (_isBot == false)
+                return;
+            
             if (_hasTarget == false)
             {
                 SetTarget();

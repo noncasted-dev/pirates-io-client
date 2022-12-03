@@ -39,6 +39,13 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Root
             await flowHandler.InvokeAsyncAwake();
             flowHandler.InvokeEnable();
             flowHandler.InvokeStart();
+            
+            var bot = GetComponentInParent<IBotCannon>();
+            Debug.Log(transform.parent.name);
+            if (bot == null)
+                Debug.Log("No bot");
+            else
+                bot.Inject(this);
         }
 
         public void Snap(Vector2 position)
@@ -65,7 +72,13 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Root
         {
             _shooter.Shoot(angle, spread);
         }
-        
+
+        public void Shoot(float angle, float spread, int count)
+        {
+            _shooter.Shoot(angle, spread, count);
+
+        }
+
         private void OnEnable()
         {
             if (_wasDisabled == false)

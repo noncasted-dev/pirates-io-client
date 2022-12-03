@@ -3,6 +3,7 @@ using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
 using GamePlay.Player.Entity.Components.DamageProcessors.Runtime;
 using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
+using GamePlay.Player.Entity.Weapons.Cannon.Root;
 using UnityEngine;
 using VContainer;
 
@@ -35,11 +36,26 @@ namespace GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime
         public void OnCityEntered()
         {
             _actionsStatePresenter.DisableShooting();
+            
+            var shooter = GetComponentInParent<BotShooter>();
+            
+            if (shooter != null)
+                shooter.Disable();
         }
 
         public void OnCityExited()
         {
             _actionsStatePresenter.EnableShooting();
+            
+            Invoke(nameof(Wait), 10f);
+        }
+        
+        private void Wait()
+        {
+            var shooter = GetComponentInParent<BotShooter>();
+            
+            if (shooter != null)
+                shooter.Enable();
         }
 
         public void OnPortEntered()

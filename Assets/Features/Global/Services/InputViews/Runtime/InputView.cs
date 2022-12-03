@@ -185,8 +185,11 @@ namespace Global.Services.InputViews.Runtime
         private void OnRangeAttackPerformed(InputAction.CallbackContext context)
         {
             if (EventSystem.current.IsPointerOverGameObject() == true)
+            {
+                Debug.Log("Cancel");
                 return;
-            
+            }
+
             if (_constraintsStorage[InputConstraints.AttackInput] == true)
             {
                 RangeAttackCanceled?.Invoke();

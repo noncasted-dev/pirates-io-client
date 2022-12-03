@@ -53,6 +53,8 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
         public void OnFixedUpdate(float delta)
         {
+            
+            return;
             foreach (var interaction in _interactions)
                 switch (interaction)
                 {

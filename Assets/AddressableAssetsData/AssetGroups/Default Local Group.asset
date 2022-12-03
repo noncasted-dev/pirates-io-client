@@ -697,6 +697,42 @@ MonoBehaviour:
     m_Address: Assets/Features/Global/Services/Sounds/Config/GlobalService_SoundsPlayer.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 7720b5b5f2f1fb742b7de750e1456c09
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Local/Bot_0_Boat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1af5338ae3e40874a985d9e239a0fbf2
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Local/Bot_1_Ketch.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 573d73c44beaf2743ac515ea7d05da30
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Local/Bot_2_Pink.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5dd8d7c7c267753469ae82a8a6866623
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Local/Bot_3_Snow.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7ebdeacccc0c719418ccfdab6f678217
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Local/Bot_4_Brig.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 02f7c8c3a43ae0b458321e9df6d9bb1c
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Local/Bot_5_Tartan.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 033ab230d6eeb9742b5c460119410c33
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Local/Bot_6_Polacre.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 46076f0f72048b24f923bb077745fce2
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Local/Bot_7_Frigate.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 422da46a3113e9e48bc505f5d03988e1
+    m_Address: Assets/Features/GamePlay/Player/Prefabs/Local/Bot_8_FirstRate.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff90fc961e6092f4f9a74128ddcef493, type: 2}
   m_SchemaSet:

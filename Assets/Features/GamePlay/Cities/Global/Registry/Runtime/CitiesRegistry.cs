@@ -36,7 +36,6 @@ namespace GamePlay.Cities.Global.Registry.Runtime
             }
             
             var faction = definition.Faction;
-            Debug.Log(definition.Name + " " + faction);
             var cities = _factionCities[faction];
             var city = cities[definition];
 

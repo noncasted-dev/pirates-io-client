@@ -9,13 +9,13 @@ namespace Global.Services.AssetsFlow.Runtime
         {
             Handle = handle;
             Reference = reference;
-            Key = reference.RuntimeKey;
+            Key = reference.AssetGUID;
             Instance = handle.Result;
         }
 
         public readonly AsyncOperationHandle<T> Handle;
         public readonly T Instance;
-        public readonly object Key;
+        public readonly string Key;
         public readonly AssetReference Reference;
 
         public string AssetName => Reference.Asset.name;

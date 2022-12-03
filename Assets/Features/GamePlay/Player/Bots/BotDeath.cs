@@ -1,0 +1,63 @@
+﻿using GamePlay.Items.Abstract;
+using GamePlay.Player.Entity.Components.StateMachines.Runtime;
+using GamePlay.Player.Entity.Network.Root.Runtime;
+using GamePlay.Player.Entity.States.Abstract;
+using GamePlay.Player.Entity.States.Common;
+using GamePlay.Player.Entity.States.Deaths.Runtime;
+using GamePlay.Player.Entity.Views.Transforms.Runtime;
+using GamePlay.Services.DroppedObjects.Presenter.Runtime;
+using Ragon.Client;
+using UniRx;
+using UnityEngine;
+
+namespace GamePlay.Player.Bots
+{
+    public class BotDeath : IDeath, IState
+    {
+        public BotDeath(
+            IStateMachine stateMachine,
+            DeathStateDefinition definition,
+            PlayerNetworkRoot networkRoot,
+            IDroppedObjectsPresenter droppedObjectsPresenter,
+            IBodyTransform transform
+        )
+        {
+            _stateMachine = stateMachine;
+            _networkRoot = networkRoot;
+            _droppedObjectsPresenter = droppedObjectsPresenter;
+            _transform = transform;
+            Definition = definition;
+        }
+
+        private readonly IStateMachine _stateMachine;
+        private readonly PlayerNetworkRoot _networkRoot;
+        private readonly IDroppedObjectsPresenter _droppedObjectsPresenter;
+        private readonly IBodyTransform _transform;
+
+        private bool _isDead = false;
+
+        public StateDefinition Definition { get; }
+
+        public void Enter()
+        {
+            if (_isDead == true)
+                return;
+            
+            _isDead = true;
+
+            _stateMachine.Enter(this);
+
+            for (var i = 0; i < 3; i++)
+            {
+                _droppedObjectsPresenter.DropFromDeath((ItemType)Random.Range(18, 30), Random.Range(1, 50), _transform.Position);
+            }
+
+            MessageBroker.Default.Publish(new BotDeathEvent());
+            RagonNetwork.Room.DestroyEntity(_networkRoot.gameObject);
+        }
+
+        public void Break()
+        {
+        }
+    }
+}

@@ -7,7 +7,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Root
 {
     public class BotShooter : RagonBehaviour, IBotCannon
     {
-        private const float _shootDelay = 8f;
+        private const float _shootDelay = 5f;
         
         private float _timer;
         private bool _isDisabled = false;   
@@ -66,7 +66,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Root
 
                 Vector2 direction = (remote.position - transform.position).normalized;
                 var angle = direction.ToAngle();
-                _cannon.Shoot(angle, 45f, 5);
+                _cannon.Shoot(angle, 60f, 8);
                 return;
             }
         }

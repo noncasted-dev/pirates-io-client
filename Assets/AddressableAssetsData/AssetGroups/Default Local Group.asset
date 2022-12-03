@@ -25,10 +25,6 @@ MonoBehaviour:
     m_Address: Assets/Scenes/Menu.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 4296669fed8eba84fa497f96039d4dc7
-    m_Address: Assets/Features/GamePlay/Level/Scenes/Level_Environment.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: aace09c47546e5d43866b632d01fa5fc
     m_Address: Assets/Features/GamePlay/Level/Scenes/Level_UI.unity
     m_ReadOnly: 0

@@ -239,10 +239,10 @@ MonoBehaviour:
   version: 1
   smoothType: 0
   subdivisions: 2
-  iterations: 2
+  iterations: 1
   strength: 1
   uniformLength: 1
-  maxSegmentLength: 40
+  maxSegmentLength: 1
   bezierTangentLength: 0.4
   offset: 0.2
   factor: 0.1

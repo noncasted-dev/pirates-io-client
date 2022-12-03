@@ -47,9 +47,13 @@ namespace GamePlay.Player.Bots
 
             _stateMachine.Enter(this);
 
-            for (var i = 0; i < 3; i++)
+            _droppedObjectsPresenter.DropFromDeath(ItemType.Cannon, Random.Range(1, 10), _transform.Position);
+            _droppedObjectsPresenter.DropFromDeath(ItemType.CannonShrapnel, Random.Range(1, 10), _transform.Position);
+            _droppedObjectsPresenter.DropFromDeath(ItemType.CannonKnuppel, Random.Range(1, 10), _transform.Position);
+
+            for (var i = 0; i < 7; i++)
             {
-                _droppedObjectsPresenter.DropFromDeath((ItemType)Random.Range(18, 30), Random.Range(1, 50), _transform.Position);
+                _droppedObjectsPresenter.DropFromDeath((ItemType)Random.Range(18, 30), Random.Range(1, 3), _transform.Position);
             }
 
             MessageBroker.Default.Publish(new BotDeathEvent());

@@ -45,7 +45,7 @@ namespace GamePlay.Player.Bots
         private async UniTask SpawnBot()
         {
             var city = (CityType)Random.Range(1, 29);
-            var shipType = (ShipType)Random.Range(0, 8);
+            var shipType = (ShipType)Random.Range(0, 4);
 
             var spawnPoints = _citiesRegistry.GetCity(city).SpawnPoints;
             var ship = await _factory.CreateBot(spawnPoints.GetRandom(), shipType);

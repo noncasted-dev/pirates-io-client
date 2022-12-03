@@ -182,8 +182,8 @@ MonoBehaviour:
   detailedGizmos: 0
   startEndModifier:
     addPoints: 0
-    exactStartPoint: 3
-    exactEndPoint: 3
+    exactStartPoint: 4
+    exactEndPoint: 0
     useRaycasting: 0
     mask:
       serializedVersion: 2
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 4
   autoRepath:
-    mode: 2
+    mode: 0
     period: 0.5
     sensitivity: 10
     maximumPeriod: 2
@@ -218,7 +218,7 @@ MonoBehaviour:
   enableRotation: 0
   rotationSpeed: 10
   interpolatePathSwitches: 1
-  switchPathInterpolationSpeed: 5
+  switchPathInterpolationSpeed: 10
   targetCompatibility: {fileID: 0}
   repathRateCompatibility: NaN
   canSearchCompability: 0

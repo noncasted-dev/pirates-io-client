@@ -110,7 +110,7 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
         public void OnUpdate(float delta)
         {
-            _currentPosition = _rigidbody.position;
+            //_currentPosition = _rigidbody.position;
             _networkTransform.SetPosition(_currentPosition);
         }
 

@@ -22,11 +22,14 @@ namespace GamePlay.Player.Bots
 
         private void Update()
         {
+            _ai.destination = _target;
+            _ai.SearchPath();
+            
             if (_hasTarget == false)
                 SetTarget();
 
             var distance = Vector2.Distance(transform.position, _target);
-
+            
             if (distance < 30f)
                 SetTarget();
         }

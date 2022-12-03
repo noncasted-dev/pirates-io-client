@@ -1,5 +1,7 @@
-﻿using GamePlay.Cities.Global.Registry.Runtime;
+﻿using System;
+using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Cities.Instance.Root.Runtime;
+using NaughtyAttributes;
 using Pathfinding;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,39 +13,54 @@ namespace GamePlay.Player.Bots
         private IAstarAI _ai;
         private bool _hasTarget = false;
         private Vector2 _target;
-        
+
         private ICitiesRegistry _citiesRegistry;
-        
+
         private void Awake()
         {
             _ai = GetComponent<IAstarAI>();
             _citiesRegistry = FindObjectOfType<CitiesRegistry>();
         }
 
+        private void OnEnable()
+        {
+            _ai.onSearchPath += OnCalculated;
+        }
+
+        private void OnDisable()
+        {
+            _ai.onSearchPath -= OnCalculated;
+        }
+
         private int _frames;
+        [SerializeField] private bool _debug;
+        private bool _calculated;
+
+        private float _timer;
 
         private void Update()
         {
-            _frames++;
-            
-            if (_frames < 200)
-                return;
-
-            _frames = 0;
-            
-            _ai.SearchPath();
+            if (_hasTarget == false)
+            {
+                SetTarget();
+            }
 
             _ai.destination = _target;
-            
-            if (_hasTarget == false)
-                SetTarget();
 
             var distance = Vector2.Distance(transform.position, _target);
-            
+            if (_debug)
+                Debug.Log($"Distance: {distance}");
             if (distance < 30f)
+                _timer += Time.deltaTime;
+
+            if (_timer > 100)
+            {
+                _timer = 0f;
                 SetTarget();
+            }
         }
 
+        [Button("SetTarget")]
         private void SetTarget()
         {
             var city = (CityType)Random.Range(1, 29);
@@ -51,9 +68,18 @@ namespace GamePlay.Player.Bots
             var spawnPoints = _citiesRegistry.GetCity(city).SpawnPoints;
             _target = spawnPoints.GetRandom();
             _ai.destination = _target;
-            
+            Debug.Log("SetTarget");
 
             _hasTarget = true;
+
+            _ai.canMove = true;
+            _ai.SearchPath();
+        }
+
+        private void OnCalculated()
+        {
+            Debug.Log("Calculated");
+            _calculated = true;
         }
     }
 }

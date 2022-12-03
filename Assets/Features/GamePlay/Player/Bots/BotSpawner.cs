@@ -59,7 +59,7 @@ namespace GamePlay.Player.Bots
 
         private async UniTaskVoid Process()
         {
-            for (var i = 0; i < 300; i++)
+            for (var i = 0; i < 150; i++)
                 await SpawnBot();
         }
     }

@@ -94,6 +94,7 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
 
         public void OnPreFixedUpdate(float delta)
         {
+            return;
             var calculatedSpeed = _speedCalculator.GetSpeed();
             _lerpTime += calculatedSpeed * delta * _config.LerpSpeed;
 

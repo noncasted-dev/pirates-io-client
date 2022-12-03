@@ -26,7 +26,7 @@ namespace GamePlay.Player.Bots
         {
             _frames++;
             
-            if (_frames < 100)
+            if (_frames < 200)
                 return;
 
             _frames = 0;

@@ -1,6 +1,7 @@
 ﻿using System;
 using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
+using GamePlay.Common.Damages;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
@@ -8,7 +9,6 @@ using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.States.Deaths.Runtime;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
-using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.Updaters.Runtime.Abstract;

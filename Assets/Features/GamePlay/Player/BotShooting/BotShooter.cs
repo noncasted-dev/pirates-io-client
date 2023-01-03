@@ -1,9 +1,10 @@
 ﻿using Common.Structs;
+using GamePlay.Player.Entity.Weapons.Cannon.Root;
 using GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime;
 using Ragon.Client;
 using UnityEngine;
 
-namespace GamePlay.Player.Entity.Weapons.Cannon.Root
+namespace GamePlay.Player.BotShooting
 {
     public class BotShooter : RagonBehaviour, IBotCannon
     {

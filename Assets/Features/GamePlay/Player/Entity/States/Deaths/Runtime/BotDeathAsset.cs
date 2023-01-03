@@ -1,5 +1,4 @@
-﻿using GamePlay.Player.Bots;
-using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+﻿using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
 using VContainer;

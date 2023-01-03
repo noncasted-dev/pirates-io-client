@@ -1,4 +1,5 @@
 ﻿using System;
+using Common.Local.Services.Abstract.Callbacks;
 using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views;
 using GamePlay.Items.Abstract;
@@ -9,7 +10,6 @@ using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.Reputation.Runtime;
 using Global.Services.InputViews.Runtime;
 using Global.Services.UiStateMachines.Runtime;
-using Local.Services.Abstract.Callbacks;
 using UniRx;
 using UnityEngine;
 using VContainer;

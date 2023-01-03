@@ -6,7 +6,7 @@ using GamePlay.Services.DroppedObjects.Implementation.Items.Runtime;
 using GamePlay.Services.Projectiles.Implementation.Linear.Runtime;
 using UnityEngine;
 
-namespace GamePlay.Services.VFX.Pool.Implementation.Dead
+namespace GamePlay.Services.VFX.Pool.Implementation.Fish
 {
     [DisallowMultipleComponent]
     public class FishVfx : MonoBehaviour, IPoolObject<FishVfx>, IDroppedItem

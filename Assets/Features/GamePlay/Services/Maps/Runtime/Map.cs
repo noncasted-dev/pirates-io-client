@@ -1,11 +1,11 @@
-﻿using Global.Services.InputViews.Runtime;
+﻿using Common.Local.Services.Abstract.Callbacks;
+using Global.Services.InputViews.Runtime;
 using Global.Services.ItemFactories.Runtime;
 using Global.Services.UiStateMachines.Runtime;
-using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using VContainer;
 
-namespace Features.GamePlay.Services.Maps.Runtime
+namespace GamePlay.Services.Maps.Runtime
 {
     public class Map : MonoBehaviour, IMap, IUiState, ILocalSwitchListener
     {

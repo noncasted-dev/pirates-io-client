@@ -1,6 +1,5 @@
-﻿using Common.EditableScriptableObjects.Attributes;
-using Local.ComposedSceneConfig;
-using Local.Services.Abstract;
+﻿using Common.Local.ComposedSceneConfig;
+using Common.Local.Services.Abstract;
 using Menu.Common;
 using Menu.Services.Common.Scope;
 using Menu.Services.MenuLoop.Runtime;

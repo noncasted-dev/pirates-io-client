@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Assertions;
 
-namespace GamePlay.Services.VFX.Pool.Implementation.Dead
+namespace GamePlay.Services.VFX.Pool.Implementation.Fish
 {
     public class FishVfxFactory : IObjectFactory<FishVfx>
     {

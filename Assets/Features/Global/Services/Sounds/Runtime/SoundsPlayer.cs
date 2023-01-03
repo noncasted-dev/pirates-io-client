@@ -2,7 +2,7 @@
 using Cysharp.Threading.Tasks;
 using FMOD.Studio;
 using FMODUnity;
-using GamePlay.Services.Projectiles.Entity;
+using GamePlay.Common.Damages;
 using Global.Services.Common.Abstract;
 using UnityEngine;
 

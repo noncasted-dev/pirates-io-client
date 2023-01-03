@@ -1,4 +1,5 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
+using Common.Local.Services.Abstract;
 using Common.ObjectsPools.Runtime.Abstract;
 using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
@@ -7,27 +8,29 @@ using GamePlay.Services.DroppedObjects.Pool.Runtime;
 using GamePlay.Services.DroppedObjects.Presenter.Runtime;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Runtime.Abstract;
-using Local.Services.Abstract;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
-using VContainer;
 
 namespace GamePlay.Services.DroppedObjects.Bootstrap
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "ObjectsDropper",
         menuName = GamePlayAssetsPaths.ObjectsDropper + "Service")]
     public class ObjectDropperAsset : LocalServiceAsset
     {
-        [SerializeField]  private ObjectDropperConfigAsset _config;
-        [SerializeField] private AssetReference _poolScene;
-        [SerializeField] private DropPoolBootstrapper _poolPrefab;
-        [SerializeField] private DroppedObjectsPresenter _dropperPrefab;
+        [SerializeField] [Indent] private AssetReference _poolScene;
+        [SerializeField] [Indent] private ObjectDropperConfigAsset _config;
+        [SerializeField] [Indent] private DropPoolBootstrapper _poolPrefab;
+        [SerializeField] [Indent] private DroppedObjectsPresenter _dropperPrefab;
+
 
         public override async UniTask Create(
-            IServiceBinder serviceBinder,
-            ICallbacksRegister callbacksRegister,
-            ISceneLoader sceneLoader)
+            IDependencyRegister builder,
+            ILocalServiceBinder serviceBinder,
+            ISceneLoader sceneLoader,
+            ILocalCallbacks callbacks)
         {
             var pool = Instantiate(_poolPrefab);
             pool.name = "Pool_Drop";
@@ -37,15 +40,18 @@ namespace GamePlay.Services.DroppedObjects.Bootstrap
 
             var network = dropper.GetComponent<ObjectDropNetworker>();
 
-            serviceBinder.Register<DropPoolProvider>()
+            builder.Register<DropPoolProvider>()
                 .As<IDropPoolProvider>()
-                .WithParameter<IPoolProvider>(pool.Handler);
+                .WithParameter<IPoolProvider>(pool.Handler)
+                .AsCallbackListener();
 
-            serviceBinder.RegisterComponent(dropper)
+            builder.RegisterComponent(dropper)
                 .As<IDroppedObjectsPresenter>()
-                .WithParameter(_config);
+                .WithParameter(_config)
+                .AsCallbackListener()
+                .AsSelfResolvable();
 
-            serviceBinder.RegisterComponent(network)
+            builder.RegisterComponent(network)
                 .As<INetworkObjectDropSender>()
                 .As<INetworkObjectDropReceiver>();
 
@@ -54,16 +60,9 @@ namespace GamePlay.Services.DroppedObjects.Bootstrap
             var scene = await sceneLoader.Load(new EmptySceneLoadData(_poolScene));
             SceneManager.MoveGameObjectToScene(pool.gameObject, scene.Instance.Scene);
 
-            callbacksRegister.ListenLoopCallbacks(pool);
-            callbacksRegister.ListenLoopCallbacks(dropper);
-            callbacksRegister.ListenContainerCallbacks(pool);
-
+            callbacks.Listen(pool);
+            
             pool.OnSceneLoaded(scene.Instance.Scene);
-        }
-
-        public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
-        {
-            resolver.Resolve<IDroppedObjectsPresenter>();
         }
     }
 }

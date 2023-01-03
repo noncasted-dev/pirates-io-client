@@ -1,11 +1,11 @@
-﻿using Common.ObjectsPools.Runtime.Abstract;
+﻿using Common.Local.Services.Abstract.Callbacks;
+using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
-using GamePlay.Services.VFX.Pool.Implementation.Dead;
+using GamePlay.Services.VFX.Pool.Implementation.Fish;
 using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.ItemFactories.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
-using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;

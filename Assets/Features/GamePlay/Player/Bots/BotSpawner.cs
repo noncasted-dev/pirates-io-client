@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Cities.Instance.Root.Runtime;
 using GamePlay.Player.Entity.Components.Definition;
+using GamePlay.Player.Entity.States.Deaths.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using NaughtyAttributes;
 using UniRx;

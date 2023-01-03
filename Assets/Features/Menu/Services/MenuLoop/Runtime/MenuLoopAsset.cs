@@ -1,6 +1,7 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Common.DiContainer.Abstract;
+using Common.Local.Services.Abstract;
+using Cysharp.Threading.Tasks;
 using Global.Services.ScenesFlow.Runtime.Abstract;
-using Local.Services.Abstract;
 using Menu.Common;
 using UnityEngine;
 using VContainer;
@@ -14,22 +15,18 @@ namespace Menu.Services.MenuLoop.Runtime
         [SerializeField] private MenuLoop _prefab;
 
         public override async UniTask Create(
-            IServiceBinder serviceBinder,
-            ICallbacksRegister callbacksRegister,
-            ISceneLoader sceneLoader)
+            IDependencyRegister builder,
+            ILocalServiceBinder serviceBinder,
+            ISceneLoader sceneLoader,
+            ILocalCallbacks callbacks)
         {
             var loop = Instantiate(_prefab);
             loop.name = "MenuLoop";
 
-            serviceBinder.RegisterComponent(loop);
+            builder.RegisterComponent(loop)
+                .AsCallbackListener();
 
             serviceBinder.AddToModules(loop);
-            callbacksRegister.ListenLoopCallbacks(loop);
-        }
-
-        public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
-        {
-            resolver.Resolve<MenuLoop>();
         }
     }
 }

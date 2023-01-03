@@ -1,4 +1,5 @@
 ﻿using System;
+using GamePlay.Common.Damages;
 using GamePlay.Items.Abstract;
 
 namespace GamePlay.Services.Projectiles.Entity

@@ -1,4 +1,6 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
+using Common.EditableScriptableObjects.Attributes;
+using Common.Local.Services.Abstract;
 using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using GamePlay.Factions.Selections.Loops.Runtime;
@@ -6,35 +8,37 @@ using GamePlay.Factions.Selections.UI.Runtime;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Global.Services.UiStateMachines.Runtime;
-using Local.Services.Abstract;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 namespace GamePlay.Factions.Selections.Bootstrap
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "FactionSelection",
         menuName = GamePlayAssetsPaths.FactionSelection + "Service")]
     public class FactionSelectionAsset : LocalServiceAsset
     {
-        [SerializeField]  private UiConstraints _constraints;
-        [SerializeField] private FactionSelectionLoop _prefab;
-        [SerializeField] private AssetReference _uiScene;
+        [SerializeField] [Indent] private UiConstraints _constraints;
+        [SerializeField] [Indent] private FactionSelectionLoop _prefab;
+        [SerializeField] [Indent] private AssetReference _uiScene;
 
         public override async UniTask Create(
-            IServiceBinder serviceBinder,
-            ICallbacksRegister callbacksRegister,
-            ISceneLoader sceneLoader)
+            IDependencyRegister builder,
+            ILocalServiceBinder serviceBinder,
+            ISceneLoader sceneLoader,
+            ILocalCallbacks callbacks)
         {
             var loop = Instantiate(_prefab);
             loop.name = "FactionSelection";
 
-            serviceBinder.RegisterComponent(loop).As<IFactionSelectionLoop>();
+            builder.RegisterComponent(loop).As<IFactionSelectionLoop>();
             serviceBinder.AddToModules(loop);
 
             var uiSceneData = new TypedSceneLoadData<FactionSelectionUI>(_uiScene);
             var uiScene = await sceneLoader.Load(uiSceneData);
 
-            serviceBinder.RegisterComponent(uiScene.Searched)
+            builder.RegisterComponent(uiScene.Searched)
                 .WithParameter(_constraints)
                 .As<IFactionSelectionUI>();
         }

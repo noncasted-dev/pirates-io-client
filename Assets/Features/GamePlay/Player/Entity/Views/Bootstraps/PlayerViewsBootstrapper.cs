@@ -1,4 +1,5 @@
-﻿using GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime;
+﻿using Common.VFX;
+using GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Root;

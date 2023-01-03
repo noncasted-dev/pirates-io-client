@@ -1,0 +1,7 @@
+﻿{
+  "name": "Common.DiContainer.Runtime",
+  "references": [
+    "GUID:e07e6ccd9241474dbca4e70862df2bc2",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+  ]
+}

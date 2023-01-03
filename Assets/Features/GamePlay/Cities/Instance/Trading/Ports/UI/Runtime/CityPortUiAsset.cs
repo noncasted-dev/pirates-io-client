@@ -1,40 +1,43 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
+using Common.Local.Services.Abstract;
 using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Global.Services.UiStateMachines.Runtime;
-using Local.Services.Abstract;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using VContainer;
 
 namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "CityPort",
         menuName = GamePlayAssetsPaths.CityPort + "Service")]
     public class CityPortUiAsset : LocalServiceAsset
     {
-        [SerializeField]  private UiConstraints _constraints;
-        [SerializeField] private AssetReference _uiScene;
+        [SerializeField] [Indent] private UiConstraints _constraints;
+        [SerializeField] [Indent] private AssetReference _uiScene;
 
         public override async UniTask Create(
-            IServiceBinder serviceBinder,
-            ICallbacksRegister callbacksRegister,
-            ISceneLoader sceneLoader)
+            IDependencyRegister builder,
+            ILocalServiceBinder serviceBinder,
+            ISceneLoader sceneLoader,
+            ILocalCallbacks callbacks)
         {
             var uiSceneData = new TypedSceneLoadData<CityPortUi>(_uiScene);
             var uiScene = await sceneLoader.Load(uiSceneData);
 
-            serviceBinder.RegisterComponent(uiScene.Searched)
+            var ui = uiScene.Searched;
+            
+            builder.RegisterComponent(ui)
                 .WithParameter(_constraints);
-        }
 
-        public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
-        {
-            var ui = resolver.Resolve<CityPortUi>();
-            resolver.Inject(ui.MoneyView);
-            resolver.Inject(ui.TradeHandler);
+            builder.RegisterComponent(ui.MoneyView)
+                .AsCallbackListener();
+            
+            builder.RegisterComponent(ui.TradeHandler)
+                .AsCallbackListener();
         }
     }
 }

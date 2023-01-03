@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Common.Local.Services.Abstract.Callbacks;
 using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Factions.Common;
 using GamePlay.Player.Entity.Components.Definition;
@@ -9,7 +10,6 @@ using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Implementation.Dead;
 using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.Updaters.Runtime.Abstract;
-using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;

@@ -36,6 +36,8 @@ namespace GamePlay.Common.GlobalBootstrapMocks
         
         private void Awake()
         {
+            MessageBroker.Default = new MessageBroker();
+
             Process().Forget();
         }
 

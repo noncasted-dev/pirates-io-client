@@ -3,14 +3,13 @@ using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
-using GamePlay.Player.Entity.States.Deaths.Runtime;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Services.DroppedObjects.Presenter.Runtime;
 using Ragon.Client;
 using UniRx;
 using UnityEngine;
 
-namespace GamePlay.Player.Bots
+namespace GamePlay.Player.Entity.States.Deaths.Runtime
 {
     public class BotDeath : IDeath, IState
     {

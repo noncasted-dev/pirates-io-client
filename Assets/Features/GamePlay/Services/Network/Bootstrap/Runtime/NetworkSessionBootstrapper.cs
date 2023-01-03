@@ -1,7 +1,7 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Common.DiContainer.Abstract;
+using Common.Local.Services.Abstract.Callbacks;
+using Cysharp.Threading.Tasks;
 using GamePlay.Services.Network.Common.EntityProvider.Runtime;
-using Local.Services.Abstract;
-using Local.Services.Abstract.Callbacks;
 using Ragon.Client;
 using UnityEngine;
 
@@ -19,9 +19,9 @@ namespace GamePlay.Services.Network.Bootstrap.Runtime
             RagonNetwork.Room.SceneLoaded();
         }
 
-        public void Bootstrap(IServiceBinder serviceBinder, ICallbacksRegister callbacksRegister)
+        public void Bootstrap(IDependencyRegister builder)
         {
-            serviceBinder.Register<NetworkEventsProvider>()
+            builder.Register<NetworkEventsProvider>()
                 .WithParameter<RagonBehaviour>(this)
                 .As<INetworkSessionEventSender>()
                 .As<INetworkSessionEventListener>();

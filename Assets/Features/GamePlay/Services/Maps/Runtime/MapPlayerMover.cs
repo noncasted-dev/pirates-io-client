@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
-namespace Features.GamePlay.Services.Maps.Runtime
+namespace GamePlay.Services.Maps.Runtime
 {
     public class MapPlayerMover : MonoBehaviour, IUpdatable
     {

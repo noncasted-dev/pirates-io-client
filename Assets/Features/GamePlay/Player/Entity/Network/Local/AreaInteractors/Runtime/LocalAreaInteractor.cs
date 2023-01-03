@@ -1,9 +1,9 @@
 ﻿using GamePlay.Common.Areas.Common.Runtime;
+using GamePlay.Player.BotShooting;
 using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
 using GamePlay.Player.Entity.Components.DamageProcessors.Runtime;
 using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
-using GamePlay.Player.Entity.Weapons.Cannon.Root;
 using UnityEngine;
 using VContainer;
 

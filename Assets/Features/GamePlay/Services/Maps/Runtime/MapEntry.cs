@@ -4,7 +4,7 @@ using Global.Services.ItemFactories.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Features.GamePlay.Services.Maps.Runtime
+namespace GamePlay.Services.Maps.Runtime
 {
     [DisallowMultipleComponent]
     public class MapEntry : MonoBehaviour

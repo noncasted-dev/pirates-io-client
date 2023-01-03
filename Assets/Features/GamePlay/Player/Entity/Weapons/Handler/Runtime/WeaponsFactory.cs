@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using GamePlay.Player.Entity.Setup.Abstract;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Root;
 using GamePlay.Player.Entity.Views.WeaponsRoots.Runtime;

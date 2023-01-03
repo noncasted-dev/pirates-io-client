@@ -1,26 +1,32 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Common.DiContainer.Abstract;
+using Common.Local.Services.Abstract;
+using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using Global.Services.ScenesFlow.Runtime.Abstract;
-using Local.Services.Abstract;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace GamePlay.Services.Network.PlayerDataProvider.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "NetworkPlayerData",
         menuName = GamePlayAssetsPaths.NetworkPlayerData + "Service")]
     public class NetworkPlayerDataAsset : LocalServiceAsset
     {
-        [SerializeField] private NetworkPlayerData _prefab;
+        [SerializeField] [Indent] private NetworkPlayerData _prefab;
 
         public override async UniTask Create(
-            IServiceBinder serviceBinder,
-            ICallbacksRegister callbacksRegister,
-            ISceneLoader sceneLoader)
+            IDependencyRegister builder,
+            ILocalServiceBinder serviceBinder,
+            ISceneLoader sceneLoader,
+            ILocalCallbacks callbacks)
         {
             var data = Instantiate(_prefab);
             data.name = "NetworkPlayerData";
 
-            serviceBinder.RegisterComponent(data).AsImplementedInterfaces();
+            builder
+                .RegisterComponent(data)
+                .AsImplementedInterfaces();
 
             serviceBinder.AddToModules(data);
         }

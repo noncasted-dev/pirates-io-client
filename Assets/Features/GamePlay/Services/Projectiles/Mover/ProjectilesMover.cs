@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
+using Common.Local.Services.Abstract.Callbacks;
 using GamePlay.Common.Damages;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Logs;
 using GamePlay.Services.Projectiles.Mover.Abstract;
 using Global.Services.Sounds.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
-using Local.Services.Abstract.Callbacks;
 using UniRx;
 using Unity.Collections;
 using Unity.Jobs;

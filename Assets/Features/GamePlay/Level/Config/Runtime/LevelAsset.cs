@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using Features.GamePlay.Services.Maps.Runtime;
+using Common.Local.ComposedSceneConfig;
+using Common.Local.Services.Abstract;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime;
 using GamePlay.Common.Paths;
 using GamePlay.Factions.Selections.Bootstrap;
@@ -9,6 +10,7 @@ using GamePlay.Services.DroppedObjects.Bootstrap;
 using GamePlay.Services.FishSpawn.Runtime;
 using GamePlay.Services.LevelCameras.Runtime;
 using GamePlay.Services.LevelLoops.Runtime;
+using GamePlay.Services.Maps.Runtime;
 using GamePlay.Services.Network.Bootstrap.Runtime;
 using GamePlay.Services.Network.PlayerDataProvider.Runtime;
 using GamePlay.Services.PlayerCargos.Bootstrap;
@@ -22,8 +24,6 @@ using GamePlay.Services.TransitionScreens.Runtime;
 using GamePlay.Services.TravelOverlays.Runtime;
 using GamePlay.Services.VFX.Pool.Provider;
 using GamePlay.Services.Wallets.Runtime;
-using Local.ComposedSceneConfig;
-using Local.Services.Abstract;
 using UnityEngine;
 using VContainer.Unity;
 
@@ -32,28 +32,28 @@ namespace GamePlay.Level.Config.Runtime
     [CreateAssetMenu(fileName = "Level", menuName = GamePlayAssetsPaths.Root + "Scene")]
     public class LevelAsset : ComposedSceneAsset
     {
-        [SerializeField]  private LevelEnvironmentAsset _environment;
-        [SerializeField]  private FactionSelectionAsset _factionSelection;
-        [SerializeField]  private LevelCameraAsset _levelCamera;
-        [SerializeField]  private LevelLoopAsset _levelLoop;
-        [SerializeField]  private NetworkPlayerDataAsset _networkPlayerData;
-        [SerializeField]  private NetworkSessionAsset _networkSession;
-        [SerializeField]  private ObjectDropperAsset _objectDropper;
-        [SerializeField]  private PlayerCargoAsset _playerCargo;
+        [SerializeField] private LevelEnvironmentAsset _environment;
+        [SerializeField] private FactionSelectionAsset _factionSelection;
+        [SerializeField] private LevelCameraAsset _levelCamera;
+        [SerializeField] private LevelLoopAsset _levelLoop;
+        [SerializeField] private NetworkPlayerDataAsset _networkPlayerData;
+        [SerializeField] private NetworkSessionAsset _networkSession;
+        [SerializeField] private ObjectDropperAsset _objectDropper;
+        [SerializeField] private PlayerCargoAsset _playerCargo;
 
-        [SerializeField]  private PlayerFactoryAsset _playerFactory;
-        [SerializeField]  private PlayerPositionProviderAsset _playerPositionProvider;
-        [SerializeField]  private ProjectileReplicatorAsset _projectileReplicator;
-        [SerializeField]  private ProjectilesAsset _projectiles;
-        [SerializeField]  private RemotePlayerBuilderAsset _remotePlayerBuilder;
-        [SerializeField]  private TransitionScreenAsset _transitionScreen;
-        [SerializeField]  private VfxPoolAsset _vfxPool;
-        [SerializeField]  private TravelOverlayAsset _travelOverlay;
-        [SerializeField]  private CityPortUiAsset _cityPortUi;
-        [SerializeField]  private WalletAsset _wallet;
-        [SerializeField]  private ReputationAsset _reputation;
-        [SerializeField]  private MapAsset _map;
-        [SerializeField]  private FishSpawnerAsset _fishSpawner;
+        [SerializeField] private PlayerFactoryAsset _playerFactory;
+        [SerializeField] private PlayerPositionProviderAsset _playerPositionProvider;
+        [SerializeField] private ProjectileReplicatorAsset _projectileReplicator;
+        [SerializeField] private ProjectilesAsset _projectiles;
+        [SerializeField] private RemotePlayerBuilderAsset _remotePlayerBuilder;
+        [SerializeField] private TransitionScreenAsset _transitionScreen;
+        [SerializeField] private VfxPoolAsset _vfxPool;
+        [SerializeField] private TravelOverlayAsset _travelOverlay;
+        [SerializeField] private CityPortUiAsset _cityPortUi;
+        [SerializeField] private WalletAsset _wallet;
+        [SerializeField] private ReputationAsset _reputation;
+        [SerializeField] private MapAsset _map;
+        [SerializeField] private FishSpawnerAsset _fishSpawner;
 
         [SerializeField] private LevelScope _scopePrefab;
 

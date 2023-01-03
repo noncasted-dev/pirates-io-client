@@ -1,7 +1,6 @@
 ﻿using GamePlay.Common.Areas.Common.Runtime;
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
-using GamePlay.Player.Entity.Weapons.Cannon.Root;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.Network.Remote.AreaInteractors.Runtime

@@ -1,4 +1,4 @@
-﻿namespace Features.GamePlay.Services.Maps.Runtime
+﻿namespace GamePlay.Services.Maps.Runtime
 {
     public interface IMap
     {

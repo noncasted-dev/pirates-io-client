@@ -1,10 +1,9 @@
-﻿using Local.Services.Abstract;
+﻿using Common.DiContainer.Abstract;
 
 namespace GamePlay.Services.Network.Bootstrap.Runtime
 {
     public interface INetworkSessionBootstrapper
     {
-        void Bootstrap(IServiceBinder serviceBinder,
-            ICallbacksRegister callbacksRegister);
+        void Bootstrap(IDependencyRegister builder);
     }
 }

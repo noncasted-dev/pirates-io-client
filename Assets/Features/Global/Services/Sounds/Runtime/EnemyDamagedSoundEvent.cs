@@ -1,4 +1,4 @@
-﻿using GamePlay.Services.Projectiles.Entity;
+﻿using GamePlay.Common.Damages;
 using UnityEngine;
 
 namespace Global.Services.Sounds.Runtime

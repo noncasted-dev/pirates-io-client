@@ -1,36 +1,39 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
+using Common.Local.Services.Abstract;
 using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using GamePlay.Services.TransitionScreens.Logs;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Global.Services.UiStateMachines.Runtime;
-using Local.Services.Abstract;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace GamePlay.Services.TransitionScreens.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "TransitionScreen",
         menuName = GamePlayAssetsPaths.TransitionScreen + "Service")]
     public class TransitionScreenAsset : LocalServiceAsset
     {
-        [SerializeField]  private TransitionScreenConfigAsset _config;
-        [SerializeField]  private TransitionScreenLogSettings _logSettings;
-        [SerializeField]  private UiConstraints _constraints;
+        [SerializeField] [Indent] private TransitionScreenConfigAsset _config;
+        [SerializeField] [Indent] private TransitionScreenLogSettings _logSettings;
+        [SerializeField] [Indent] private UiConstraints _constraints;
 
-        [SerializeField] private TransitionScreen _prefab;
+        [SerializeField] [Indent] private TransitionScreen _prefab;
 
         public override async UniTask Create(
-            IServiceBinder serviceBinder,
-            ICallbacksRegister callbacksRegister,
-            ISceneLoader sceneLoader)
+            IDependencyRegister builder,
+            ILocalServiceBinder serviceBinder,
+            ISceneLoader sceneLoader,
+            ILocalCallbacks callbacks)
         {
             var transitionScreen = Instantiate(_prefab);
             transitionScreen.name = "TransitionScreen";
 
-            serviceBinder.Register<TransitionScreenLogger>()
+            builder.Register<TransitionScreenLogger>()
                 .WithParameter(_logSettings);
 
-            serviceBinder.RegisterComponent(transitionScreen)
+            builder.RegisterComponent(transitionScreen)
                 .WithParameter(_config)
                 .WithParameter(_constraints)
                 .AsImplementedInterfaces();

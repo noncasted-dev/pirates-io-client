@@ -1,4 +1,5 @@
 ﻿using System;
+using Common.Local.Services.Abstract.Callbacks;
 using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Cities.Instance.Root.Runtime;
@@ -21,7 +22,6 @@ using GamePlay.Services.Wallets.Runtime;
 using Global.Services.CurrentCameras.Runtime;
 using Global.Services.FilesFlow.Runtime.Abstract;
 using Global.Services.ItemFactories.Runtime;
-using Local.Services.Abstract.Callbacks;
 using UniRx;
 using UnityEngine;
 using VContainer;

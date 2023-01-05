@@ -18,7 +18,6 @@ namespace Common.ObjectsPools.Runtime
         {
             foreach (var entry in _entries)
             {
-                Debug.Log(entry.name);
                 var parent = CreateParent(entry.Name, targetScene);
                 var objectHandler = entry.Create(resolver, parent);
 

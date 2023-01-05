@@ -4,6 +4,7 @@ using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Sounds.Runtime;
 using UniRx;
 using UnityEngine;
@@ -28,8 +29,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 
         private void OnEnable()
         {
-            _completionListener = MessageBroker.Default.Receive<TradeCompletedEvent>().Subscribe(OnTradeCompleted);
-            _closeListener = MessageBroker.Default.Receive<PortClosedEvent>().Subscribe(OnClosed);
+            _completionListener = Msg.Listen<TradeCompletedEvent>(OnTradeCompleted);
+            _closeListener = Msg.Listen<PortClosedEvent>(OnClosed);
         }
 
         private void OnDisable()
@@ -51,9 +52,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 
             var data = new PortEnteredEvent(cargo, stock, ships, _storage, shipResources, _storage);
 
-            MessageBroker.Default.Publish(data);
+            Msg.Publish(data);
             
-            MessageBroker.Default.TriggerSound(SoundType.PortEnter);
+            MessageBrokerSoundExtensions.TriggerSound(SoundType.PortEnter);
         }
 
         public void Exit()
@@ -62,9 +63,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
                 return;
             
             var data = new PortExitedEvent();
-            MessageBroker.Default.Publish(data);
+            Msg.Publish(data);
             
-            MessageBroker.Default.TriggerSound(SoundType.PortExit);
+            MessageBrokerSoundExtensions.TriggerSound(SoundType.PortExit);
 
             _isActive = false;
         }
@@ -93,8 +94,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
                 var exited = new PortExitedEvent();
                 var change = new ShipChangeEvent(completed.Result.Ship.Type);
                 
-                MessageBroker.Default.Publish(exited);
-                MessageBroker.Default.Publish(change);
+                Msg.Publish(exited);
+                Msg.Publish(change);
                 return;
             }
             

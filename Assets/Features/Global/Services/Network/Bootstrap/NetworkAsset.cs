@@ -1,6 +1,8 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
+using Cysharp.Threading.Tasks;
 using Global.Common;
 using Global.Services.Common.Abstract;
+using Global.Services.Common.Abstract.Scenes;
 using Global.Services.Network.Connection.Logs;
 using Global.Services.Network.Connection.Runtime;
 using Global.Services.Network.EventsRegistries.Runtime;
@@ -10,25 +12,30 @@ using Global.Services.Network.Session.Join.Logs;
 using Global.Services.Network.Session.Join.Runtime;
 using Global.Services.Network.Session.Leave.Logs;
 using Global.Services.Network.Session.Leave.Runtime;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using VContainer;
-using VContainer.Unity;
 
 namespace Global.Services.Network.Bootstrap
 {
+    [InlineEditor(InlineEditorObjectFieldModes.Boxed)]
     [CreateAssetMenu(fileName = GlobalAssetsPaths.ServicePrefix + "NetworkBootstrap",
         menuName = GlobalAssetsPaths.NetworkBootstrap)]
     public class NetworkAsset : GlobalServiceAsset
     {
-        [SerializeField]  private NetworkConnectionConfigAsset _connectionConfig;
-        [SerializeField]  private NetworkConnectorLogSettings _connectorLogSettings;
-        [SerializeField]  private NetworkInstantiatorLogSettings _instantiatorLogSettings;
-
         [SerializeField] private NetworkConnector _prefab;
-        [SerializeField]  private NetworkSessionJoinLogSettings _sessionJoinLogSettings;
-        [SerializeField]  private NetworkSessionLeaveLogSettings _sessionLeaveLogSettings;
 
-        public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
+        [SerializeField] private NetworkConnectionConfigAsset _connectionConfig;
+
+        [SerializeField] [BoxGroup("Logs")] private NetworkConnectorLogSettings _connectorLogSettings;
+        [SerializeField] [BoxGroup("Logs")] private NetworkInstantiatorLogSettings _instantiatorLogSettings;
+        [SerializeField] [BoxGroup("Logs")] private NetworkSessionJoinLogSettings _sessionJoinLogSettings;
+        [SerializeField] [BoxGroup("Logs")] private NetworkSessionLeaveLogSettings _sessionLeaveLogSettings;
+
+        public override async UniTask Create(
+            IDependencyRegister builder,
+            IGlobalServiceBinder serviceBinder,
+            IGlobalSceneLoader sceneLoader,
+            IGlobalCallbacks callbacks)
         {
             var connector = Instantiate(_prefab);
             connector.name = "Network";
@@ -37,24 +44,26 @@ namespace Global.Services.Network.Bootstrap
             var leaver = connector.GetComponent<NetworkSessionLeaver>();
             var instantiator = connector.GetComponent<NetworkInstantiator>();
 
-            builder.Register<NetworkConnectorLogger>(Lifetime.Scoped)
+            builder.Register<NetworkConnectorLogger>()
                 .WithParameter(_connectorLogSettings);
 
-            builder.Register<NetworkSessionJoinLogger>(Lifetime.Scoped)
+            builder.Register<NetworkSessionJoinLogger>()
                 .WithParameter(_sessionJoinLogSettings);
 
-            builder.Register<NetworkSessionLeaveLogger>(Lifetime.Scoped)
+            builder.Register<NetworkSessionLeaveLogger>()
                 .WithParameter(_sessionLeaveLogSettings);
 
-            builder.Register<NetworkInstantiatorLogger>(Lifetime.Scoped)
+            builder.Register<NetworkInstantiatorLogger>()
                 .WithParameter(_instantiatorLogSettings);
 
             builder.RegisterComponent(instantiator)
-                .As<INetworkInstantiator>();
+                .As<INetworkInstantiator>()
+                .AsCallbackListener();
 
             builder.RegisterComponent(connector)
                 .WithParameter(_connectionConfig)
-                .AsImplementedInterfaces();
+                .AsImplementedInterfaces()
+                .AsCallbackListener();
 
             builder.RegisterComponent(joiner)
                 .As<INetworkSessionJoiner>();
@@ -66,8 +75,6 @@ namespace Global.Services.Network.Bootstrap
             networkRegistry.Register();
 
             serviceBinder.AddToModules(connector);
-            serviceBinder.ListenCallbacks(connector);
-            serviceBinder.ListenCallbacks(instantiator);
         }
     }
 }

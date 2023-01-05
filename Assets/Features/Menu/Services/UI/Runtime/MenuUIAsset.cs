@@ -15,7 +15,7 @@ namespace Menu.Services.UI.Runtime
     [CreateAssetMenu(fileName = MenuAssetsPaths.ServicePrefix + "UI", menuName = MenuAssetsPaths.UI)]
     public class MenuUIAsset : LocalServiceAsset
     {
-        [SerializeField]  private UiConstraints _constraints;
+        [SerializeField] private UiConstraints _constraints;
         [SerializeField] private AssetReference _scene;
 
         public override async UniTask Create(

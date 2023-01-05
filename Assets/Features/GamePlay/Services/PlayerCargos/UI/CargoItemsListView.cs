@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.UI.Events;
+using Global.Services.MessageBrokers.Runtime;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,7 +28,7 @@ namespace GamePlay.Services.PlayerCargos.UI
         
         private void OnEnable()
         {
-            _dropCountListener = MessageBroker.Default.Receive<ItemDropCountChangedEvent>().Subscribe(OnDropCountChanged);
+            _dropCountListener = Msg.Listen<ItemDropCountChangedEvent>(OnDropCountChanged);
         }   
         
         private void OnDisable()

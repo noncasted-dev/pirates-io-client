@@ -3,6 +3,7 @@ using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -135,8 +136,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
             var data = new TransferRequestedEvent(tradable, _origin);
 
-            MessageBroker.Default.Publish(new TradeRequestedEvent());
-            MessageBroker.Default.Publish(data);
+            Msg.Publish(new TradeRequestedEvent());
+            Msg.Publish(data);
         }
 
         private void OnCountChanged(int count)

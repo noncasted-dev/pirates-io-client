@@ -1,5 +1,6 @@
 ﻿using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.UI.Events;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -77,7 +78,7 @@ namespace GamePlay.Services.PlayerCargos.UI
 
             var data = new ItemDropRequestedEvent(_item);
 
-            MessageBroker.Default.Publish(data);
+            Msg.Publish(data);
         }
 
         private void OnCountChanged(int count)

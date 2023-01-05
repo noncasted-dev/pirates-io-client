@@ -51,8 +51,7 @@ namespace GamePlay.Services.PlayerCargos.Bootstrap
                 .WithParameter(_constraints)
                 .AsCallbackListener();
 
-            builder.RegisterComponent(ui.MoneyView)
-                .AsSelfResolvable();
+            builder.Inject(ui.MoneyView);
         }
     }
 }

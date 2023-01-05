@@ -1,31 +1,39 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
+using Cysharp.Threading.Tasks;
 using Global.Common;
 using Global.Services.Common.Abstract;
+using Global.Services.Common.Abstract.Scenes;
 using Global.Services.CurrentCameras.Logs;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using VContainer;
-using VContainer.Unity;
 
 namespace Global.Services.CurrentCameras.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GlobalAssetsPaths.ServicePrefix + "CurrentCamera",
         menuName = GlobalAssetsPaths.CurrentCamera + "Service", order = 1)]
     public class CurrentCameraAsset : GlobalServiceAsset
     {
-        [SerializeField]  private CurrentCameraLogSettings _logSettings;
-        [SerializeField] private CurrentCamera _prefab;
+        [SerializeField] [Indent] private CurrentCameraLogSettings _logSettings;
+        [SerializeField] [Indent] private CurrentCamera _prefab;
 
-        public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
+        public override async UniTask Create(
+            IDependencyRegister builder,
+            IGlobalServiceBinder serviceBinder,
+            IGlobalSceneLoader sceneLoader,
+            IGlobalCallbacks callbacks)
         {
             var currentCamera = Instantiate(_prefab);
             currentCamera.name = "CurrentCamera";
 
-            builder.Register<CurrentCameraLogger>(Lifetime.Singleton)
+            builder.Register<CurrentCameraLogger>()
                 .WithParameter(_logSettings);
-            builder.RegisterComponent(currentCamera).AsImplementedInterfaces();
+
+            builder.RegisterComponent(currentCamera)
+                .As<ICurrentCamera>()
+                .AsCallbackListener();
 
             serviceBinder.AddToModules(currentCamera);
-            serviceBinder.ListenCallbacks(currentCamera);
         }
     }
 }

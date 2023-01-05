@@ -1,5 +1,6 @@
 ﻿using GamePlay.Cities.Instance.Root.Runtime;
 using GamePlay.Common.Areas.Common.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Sounds.Runtime;
 using UniRx;
 using UnityEngine;
@@ -15,9 +16,9 @@ namespace GamePlay.Common.Areas.Implementation.Cities
             interactor.OnCityEntered();
 
             if (interactor.IsLocal == true)
-                MessageBroker.Default.TriggerSound(SoundType.CityEnter);
+                MessageBrokerSoundExtensions.TriggerSound(SoundType.CityEnter);
             
-            MessageBroker.Default.Publish(new CityEnteredEvent(_root.Definition));
+            Msg.Publish(new CityEnteredEvent(_root.Definition));
         }
 
         public void OnExited(IAreaInteractor interactor)
@@ -25,7 +26,7 @@ namespace GamePlay.Common.Areas.Implementation.Cities
             interactor.OnCityExited();
             
             if (interactor.IsLocal == true)
-                MessageBroker.Default.TriggerSound(SoundType.CityExit);
+                MessageBrokerSoundExtensions.TriggerSound(SoundType.CityExit);
         }
     }
 }

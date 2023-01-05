@@ -2,6 +2,7 @@
 using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.States.Respawns.Runtime;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
 using UniRx;
 using UnityEngine;
@@ -36,8 +37,8 @@ namespace GamePlay.Services.TravelOverlays.Runtime.Health
 
         private void OnEnable()
         {
-            _healthListener = MessageBroker.Default.Receive<HealthChangeEvent>().Subscribe(OnHealthChange);
-            _respawnListener = MessageBroker.Default.Receive<PlayerRespawnedEvent>().Subscribe(OnPlayerRespawned);
+            _healthListener = Msg.Listen<HealthChangeEvent>(OnHealthChange);
+            _respawnListener = Msg.Listen<PlayerRespawnedEvent>(OnPlayerRespawned);
             
             _update?.Start();
             

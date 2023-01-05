@@ -3,6 +3,7 @@ using GamePlay.Player.Entity.Components.Healths.Logs;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
 using Ragon.Common;
 using UniRx;
@@ -83,7 +84,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             _amount = _max;
             _fireController.SetFireForce(_amount / (float)_max);
 
-            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
+            Msg.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
             
             _eventSender.ReplicateEvent(new HealthChangeNetworkEvent()
             {
@@ -115,7 +116,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
                 Max = _max
             });
 
-            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
+            Msg.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
         }
 
         public void ApplyDamage(int damage)
@@ -132,7 +133,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             
             _fireController.SetFireForce(_amount / (float)_max);
 
-            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
+            Msg.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
             
             _eventSender.ReplicateEvent(new HealthChangeNetworkEvent()
             {

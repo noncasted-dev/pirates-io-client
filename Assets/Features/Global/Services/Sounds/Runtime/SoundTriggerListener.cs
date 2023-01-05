@@ -1,5 +1,6 @@
 ﻿using System;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using UniRx;
 using UnityEngine;
 
@@ -16,11 +17,10 @@ namespace Global.Services.Sounds.Runtime
 
         private void OnEnable()
         {
-            _triggerListener = MessageBroker.Default.Receive<SoundEvent>().Subscribe(OnSoundTriggered);
-            _positionalTriggerListener = MessageBroker.Default.Receive<PositionalSoundEvent>()
-                .Subscribe(OnPositionalSoundTriggered);
-            _healthListener = MessageBroker.Default.Receive<HealthChangeEvent>().Subscribe(OnHealthChanged);
-            _damageListener = MessageBroker.Default.Receive<EnemyDamagedSoundEvent>().Subscribe(OnEnemyDamaged);
+            _triggerListener = Msg.Listen<SoundEvent>(OnSoundTriggered);
+            _positionalTriggerListener = Msg.Listen<PositionalSoundEvent>(OnPositionalSoundTriggered);
+            _healthListener = Msg.Listen<HealthChangeEvent>(OnHealthChanged);
+            _damageListener = Msg.Listen<EnemyDamagedSoundEvent>(OnEnemyDamaged);
         }
 
         private void OnDisable()

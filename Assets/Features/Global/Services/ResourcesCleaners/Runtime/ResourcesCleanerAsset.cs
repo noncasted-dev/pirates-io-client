@@ -1,31 +1,37 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
+using Cysharp.Threading.Tasks;
 using Global.Common;
 using Global.Services.Common.Abstract;
+using Global.Services.Common.Abstract.Scenes;
 using Global.Services.ResourcesCleaners.Logs;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using VContainer;
-using VContainer.Unity;
 
 namespace Global.Services.ResourcesCleaners.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GlobalAssetsPaths.ServicePrefix + "ResourcesCleaner",
-        menuName = GlobalAssetsPaths.ResourceCleaner + "Service", order = 1)]
+        menuName = GlobalAssetsPaths.ResourceCleaner + "Service")]
     public class ResourcesCleanerAsset : GlobalServiceAsset
     {
-        [SerializeField]  private ResourcesCleanerLogSettings _logSettings;
-        [SerializeField] private ResourcesCleaner _prefab;
+        [SerializeField] [Indent] private ResourcesCleanerLogSettings _logSettings;
+        [SerializeField] [Indent] private ResourcesCleaner _prefab;
 
-        public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
+        public override async UniTask Create(
+            IDependencyRegister builder,
+            IGlobalServiceBinder serviceBinder,
+            IGlobalSceneLoader sceneLoader,
+            IGlobalCallbacks callbacks)
         {
-            var loadingScreen = Instantiate(_prefab);
-            loadingScreen.name = "ResourcesCleaner";
+            var resourcesCleaner = Instantiate(_prefab);
+            resourcesCleaner.name = "ResourcesCleaner";
 
-            builder.RegisterComponent(loadingScreen).AsImplementedInterfaces();
-            builder.Register<ResourcesCleanerLogger>(Lifetime.Scoped)
-                .WithParameter(_logSettings);
+            builder.Register<ResourcesCleanerLogger>().WithParameter(_logSettings);
 
-            serviceBinder.AddToModules(loadingScreen);
-            serviceBinder.ListenCallbacks(loadingScreen);
+            builder.RegisterComponent(resourcesCleaner)
+                .As<IResourcesCleaner>();
+
+            serviceBinder.AddToModules(resourcesCleaner);
         }
     }
 }

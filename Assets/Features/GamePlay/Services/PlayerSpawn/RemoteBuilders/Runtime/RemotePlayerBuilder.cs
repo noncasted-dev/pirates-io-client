@@ -51,7 +51,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         private IUpdater _updater;
         private IVfxPoolProvider _vfxPoolProvider;
         public static RemotePlayerBuilder Instance => _instance;
-        private List<Transform> _remotes = new();
+        private readonly List<Transform> _remotes = new();
 
         public List<Transform> Remotes => _remotes;
 

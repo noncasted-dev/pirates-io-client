@@ -1,5 +1,6 @@
 ﻿using System;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
 using UniRx;
 using UnityEngine;
@@ -36,7 +37,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime
 
         private void OnEnable()
         {
-            _aimListener = MessageBroker.Default.Receive<AimDelayEvent>().Subscribe(OnAim);
+            _aimListener = Msg.Listen<AimDelayEvent>(OnAim);
         }
 
         private void OnDisable()

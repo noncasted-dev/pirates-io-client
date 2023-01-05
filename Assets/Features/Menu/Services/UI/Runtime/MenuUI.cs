@@ -1,4 +1,5 @@
-﻿using Global.Services.Sounds.Runtime;
+﻿using Global.Services.MessageBrokers.Runtime;
+using Global.Services.Sounds.Runtime;
 using Global.Services.UiStateMachines.Runtime;
 using TMPro;
 using UniRx;
@@ -39,14 +40,14 @@ namespace Menu.Services.UI.Runtime
         {
             _playButton.onClick.AddListener(OnPlayClicked);
 
-            MessageBroker.Default.TriggerSound(SoundType.MenuEntered);
+            MessageBrokerSoundExtensions.TriggerSound(SoundType.MenuEntered);
         }
 
         private void OnDisable()
         {
             _playButton.onClick.RemoveListener(OnPlayClicked);
             
-            MessageBroker.Default.TriggerSound(SoundType.MenuExited);
+            MessageBrokerSoundExtensions.TriggerSound(SoundType.MenuExited);
         }
 
         public void Recover()
@@ -96,7 +97,7 @@ namespace Menu.Services.UI.Runtime
                 return;
 
             var clicked = new PlayClickedEvent(userName, _serverSelection.Selected);
-            MessageBroker.Default.Publish(clicked);
+            Msg.Publish(clicked);
         }
     }
 }

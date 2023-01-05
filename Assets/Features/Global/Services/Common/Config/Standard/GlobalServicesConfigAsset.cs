@@ -14,6 +14,7 @@ using Global.Services.InputViews.Runtime;
 using Global.Services.ItemFactories.Runtime;
 using Global.Services.LoadingScreens.Runtime;
 using Global.Services.Loggers.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Network.Bootstrap;
 using Global.Services.PersistentInventories.Runtime;
 using Global.Services.Profiles.Storage;
@@ -22,10 +23,12 @@ using Global.Services.ScenesFlow.Runtime;
 using Global.Services.Sounds.Runtime;
 using Global.Services.UiStateMachines.Runtime;
 using Global.Services.Updaters.Runtime;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Global.Services.Common.Config.Standard
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GlobalAssetsPaths.BootstrapPrefix + "Services",
         menuName = GlobalAssetsPaths.BootstrapConfig)]
     public class GlobalServicesConfigAsset : GlobalServicesConfig
@@ -46,12 +49,13 @@ namespace Global.Services.Common.Config.Standard
         [SerializeField] private SceneObjectsAsset _sceneObject;
         [SerializeField] private DebugConsoleAsset _debugConsole;
         [SerializeField] private NetworkAsset _network;
-        [SerializeField] private ProfileAsset _profile;
-        [SerializeField] private PersistentInventoryAsset _persistentInventory;
-        [SerializeField] private ItemFactoryAsset _itemFactory;
+        [SerializeField] private MessageBrokerAsset _messageBroker;
         [SerializeField] private UiStateMachineAsset _uiStateMachine;
+        [SerializeField] private ProfileAsset _profile;
+        [SerializeField] private ItemFactoryAsset _itemFactory;
+        [SerializeField] private PersistentInventoryAsset _persistentInventory;
         [SerializeField] private SoundsPlayerAsset _soundsPlayer;
-
+        
         public override GlobalServiceAsset[] GetAssets()
         {
             return new GlobalServiceAsset[]
@@ -72,11 +76,10 @@ namespace Global.Services.Common.Config.Standard
                 _sceneObject,
                 _debugConsole,
                 _network,
-                _profile,
-                _persistentInventory,
-                _itemFactory,
+                _messageBroker,
                 _uiStateMachine,
-                _soundsPlayer,
+                _profile,
+                _itemFactory,
             };
         }
     }

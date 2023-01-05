@@ -2,12 +2,12 @@
 using Global.GameLoops.Runtime;
 using Global.Services.Common.Config.Abstract;
 using Global.Services.Common.Scope;
-using UniRx;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
+using ContainerBuilder = Common.DiContainer.Runtime.ContainerBuilder;
 
 namespace Global.Bootstrappers
 {
@@ -15,10 +15,9 @@ namespace Global.Bootstrappers
     public class GameBootstrapper : MonoBehaviour
     {
         [SerializeField] private GlobalScope _scope;
-        [SerializeField] private GameLoopAsset _gameLoop;
         [SerializeField] private AssetReference _servicesScene;
-        [SerializeField] private GameObject _camera;
 
+        [SerializeField] private GameLoopAsset _gameLoop;
         [SerializeField] private GlobalServicesConfig _services;
 
         private void Awake()
@@ -28,13 +27,24 @@ namespace Global.Bootstrappers
 
         private async UniTaskVoid Bootstrap()
         {
-            MessageBroker.Default = new MessageBroker();
-            
             var scene = await Addressables.LoadSceneAsync(_servicesScene, LoadSceneMode.Additive).ToUniTask();
 
-            var binder = new ServiceBinder(scene.Scene);
+            var binder = new GlobalServiceBinder(scene.Scene);
+            var sceneLoader = new GlobalSceneLoader();
+            var callbacks = new GlobalCallbacks();
+            var dependencyRegister = new ContainerBuilder();
 
             binder.AddToModules(_scope);
+
+            var services = _services.GetAssets();
+            var servicesTasks = new UniTask[services.Length];
+
+            var gameLoop = _gameLoop.Create(dependencyRegister, binder);
+
+            for (var i = 0; i < servicesTasks.Length; i++)
+                servicesTasks[i] = services[i].Create(dependencyRegister, binder, sceneLoader, callbacks);
+
+            await UniTask.WhenAll(servicesTasks);
 
             using (LifetimeScope.Enqueue(OnConfiguration))
             {
@@ -43,19 +53,15 @@ namespace Global.Bootstrappers
 
             void OnConfiguration(IContainerBuilder builder)
             {
-                var services = _services.GetAssets();
-
-                foreach (var service in services)
-                    service.Create(builder, binder);
-
-                _gameLoop.Create(builder, binder);
+                dependencyRegister.RegisterAll(builder);
             }
 
-            Destroy(_camera);
+            dependencyRegister.ResolveAllWithCallbacks(_scope.Container, callbacks);
 
-            binder.InvokeFlowCallbacks();
+            await callbacks.InvokeFlowCallbacks();
 
-            _scope.Container.Resolve<GameLoop>().Begin();
+            gameLoop.OnAwake();
+            gameLoop.Begin();
         }
     }
 }

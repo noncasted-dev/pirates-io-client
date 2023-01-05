@@ -13,12 +13,12 @@ namespace Global.Services.Network.Connection.Logs
         private readonly ILogger _logger;
         private readonly NetworkConnectorLogSettings _settings;
 
-        public void OnAttempt(string ip, ushort port)
+        public void OnAttempt(string ip)
         {
             if (_settings.IsAvailable(NetworkConnectorLogType.Attempt) == false)
                 return;
 
-            _logger.Log($"Connection attempt: ip: {ip}, port: {port}", _settings.LogParameters);
+            _logger.Log($"Connection attempt: ip: {ip}", _settings.LogParameters);
         }
 
         public void OnSuccess()

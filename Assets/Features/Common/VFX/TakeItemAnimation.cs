@@ -1,5 +1,6 @@
 using System;
 using GamePlay.Services.PlayerCargos.Storage.Events;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace Common.VFX
 
         private void OnEnable()
         {
-            _itemListener = MessageBroker.Default.Receive<CargoAddEvent>().Subscribe(OnItemReceived);
+            _itemListener = Msg.Listen<CargoAddEvent>(OnItemReceived);
             _callback.Construct(Deactivate);
         }
 

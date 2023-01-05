@@ -4,6 +4,7 @@ using GamePlay.Player.Entity.States.Deaths.Runtime;
 using GamePlay.Services.DroppedObjects.Presenter.Runtime;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using Global.Services.FilesFlow.Runtime.Abstract;
+using Global.Services.MessageBrokers.Runtime;
 using UniRx;
 using UnityEngine;
 using VContainer;
@@ -37,7 +38,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
         private void OnEnable()
         {
-            _deathListener = MessageBroker.Default.Receive<PlayerDeathEvent>().Subscribe(OnDeath);
+            _deathListener = Msg.Listen<PlayerDeathEvent>(OnDeath);
         }
         
         private void OnDisable()

@@ -2,6 +2,7 @@
 using GamePlay.Common.Damages;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Selector.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -33,8 +34,8 @@ namespace GamePlay.Services.TravelOverlays.Runtime
 
         private void OnEnable()
         {
-            _selectListener = MessageBroker.Default.Receive<ProjectileSelectedEvent>().Subscribe(OnSelected);
-            _amountListener = MessageBroker.Default.Receive<ProjectileAmountChangedEvent>().Subscribe(OnAmountChanged);
+            _selectListener = Msg.Listen<ProjectileSelectedEvent>(OnSelected);
+            _amountListener = Msg.Listen<ProjectileAmountChangedEvent>(OnAmountChanged);
 
             _button.onClick.AddListener(OnClicked);
 

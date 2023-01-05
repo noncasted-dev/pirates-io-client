@@ -10,33 +10,44 @@ namespace Common.Local.ComposedSceneConfig
     public class LocalCallbacks : ILocalCallbacks
     {
         private readonly List<ILocalAsyncAwakeListener> _asyncAwakes = new();
-        private readonly List<ILocalAwakeCallbackListener> _awakes = new();
-        private readonly List<ILocalLoadCallbackListener> _loads = new();
+        private readonly List<ILocalAwakeListener> _awakes = new();
+        private readonly List<ILocalLoadListener> _loads = new();
+
+        private readonly List<ILocalSwitchListener> _switches = new();
+
         private readonly List<ILocalContainerBuildListener> _registers = new();
         private readonly List<IDependencyResolver> _resolvers = new();
-        private readonly List<ILocalSwitchCallbackListener> _switches = new();
 
-        public IReadOnlyList<ILocalSwitchCallbackListener> SwitchCallbacks => _switches;
+        private readonly List<ILocalBootstrappedListener> _bootstraps = new();
+        private readonly List<ILocalAsyncBootstrappedListener> _asyncBootstraps = new();
+
+        public IReadOnlyList<ILocalSwitchListener> SwitchCallbacks => _switches;
 
         public void Listen(object service)
         {
-            if (service is ILocalAwakeCallbackListener awake)
+            if (service is ILocalAwakeListener awake)
                 _awakes.Add(awake);
 
             if (service is ILocalAsyncAwakeListener asyncAwake)
                 _asyncAwakes.Add(asyncAwake);
 
-            if (service is ILocalSwitchCallbackListener switchCallback)
+            if (service is ILocalSwitchListener switchCallback)
                 _switches.Add(switchCallback);
 
-            if (service is ILocalLoadCallbackListener bootstrap)
-                _loads.Add(bootstrap);
+            if (service is ILocalLoadListener load)
+                _loads.Add(load);
 
             if (service is ILocalContainerBuildListener register)
                 _registers.Add(register);
 
             if (service is IDependencyResolver resolver)
                 _resolvers.Add(resolver);
+
+            if (service is ILocalBootstrappedListener bootstrap)
+                _bootstraps.Add(bootstrap);
+
+            if (service is ILocalAsyncBootstrappedListener asyncBootstrap)
+                _asyncBootstraps.Add(asyncBootstrap);
         }
 
         public void InvokeAwakeCallbacks()
@@ -65,6 +76,22 @@ namespace Common.Local.ComposedSceneConfig
         {
             foreach (var load in _loads)
                 load.OnLoaded();
+        }
+
+        public void InvokeBootstrapCallbacks()
+        {
+            foreach (var bootstrap in _bootstraps)
+                bootstrap.OnBootstrapped();
+        }
+        
+        public async UniTask InvokeAsyncBootstrapCallbacks()
+        {
+            var tasks = new UniTask[_asyncBootstraps.Count];
+
+            for (var i = 0; i < tasks.Length; i++)
+                tasks[i] = _asyncBootstraps[i].OnBootstrappedAsync();
+
+            await UniTask.WhenAll(tasks);
         }
 
         public void Resolve(IObjectResolver objectResolver)

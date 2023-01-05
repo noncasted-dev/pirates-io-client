@@ -10,6 +10,7 @@ using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Logs;
 using GamePlay.Services.Reputation.Runtime;
 using Global.Services.AssetsFlow.Runtime.Abstract;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Network.Instantiators.Runtime;
 using Global.Services.Profiles.Storage;
 using Ragon.Client;
@@ -84,7 +85,7 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
             var resources = playerTransform.GetComponent<IAreaInteractor>().Resources;
             _entityPresenter.AssignPlayer(entity, networkTransform, resources);
 
-            MessageBroker.Default.Publish(new PlayerSpawnedEvent());
+            Msg.Publish(new PlayerSpawnedEvent());
 
             return root;
         }

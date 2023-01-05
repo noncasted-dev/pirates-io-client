@@ -3,6 +3,7 @@ using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Services.Reputation.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -38,9 +39,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views
 
         private void OnEnable()
         {
-            _healthListener = MessageBroker.Default.Receive<HealthChangeEvent>().Subscribe(OnHealthChanged);
+            _healthListener = Msg.Listen<HealthChangeEvent>(OnHealthChanged);
             _reputationListener =
-                MessageBroker.Default.Receive<ReputationChangedEvent>().Subscribe(OnReputationChanged);
+                Msg.Listen<ReputationChangedEvent>(OnReputationChanged);
         }
 
         private void OnDisable()

@@ -1,0 +1,72 @@
+﻿using Cysharp.Threading.Tasks;
+using Ragon.Client;
+
+namespace Global.Services.Network.Session.Join.Runtime
+{
+    public class SessionCreateAttempt : IRagonListener
+    {
+        private readonly UniTaskCompletionSource<NetworkSessionJoinResultType> _completion = new();
+
+        private string _failMessage = string.Empty;
+
+        public string FailMessage => _failMessage;
+
+        public void OnLevel(string sceneName)
+        {
+            _completion.TrySetResult(NetworkSessionJoinResultType.Success);
+        }
+
+        public void OnFailed(string message)
+        {
+            _failMessage = message;
+
+            _completion.TrySetResult(NetworkSessionJoinResultType.Fail);
+        }
+
+        public void OnAuthorized(string playerId, string playerName)
+        {
+        }
+
+        public void OnJoined()
+        {
+        }
+
+        public void OnLeaved()
+        {
+        }
+
+        public void OnConnected()
+        {
+        }
+
+        public void OnDisconnected()
+        {
+        }
+
+        public void OnPlayerJoined(RagonPlayer player)
+        {
+        }
+
+        public void OnPlayerLeft(RagonPlayer player)
+        {
+        }
+
+        public void OnOwnerShipChanged(RagonPlayer player)
+        {
+        }
+
+        public async UniTask<NetworkSessionJoinResultType> Create()
+        {
+            RagonNetwork.AddListener(this);
+
+            RagonNetwork.Session.Create("game", 1, 300);
+            var result = await _completion.Task;
+            
+            await UniTask.Yield();
+
+            RagonNetwork.RemoveListener(this);
+
+            return result;
+        }
+    }
+}

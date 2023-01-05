@@ -1,26 +1,33 @@
-﻿using Global.Common;
+﻿using Common.DiContainer.Abstract;
+using Cysharp.Threading.Tasks;
+using Global.Common;
 using Global.Services.Common.Abstract;
+using Global.Services.Common.Abstract.Scenes;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using VContainer;
-using VContainer.Unity;
 
 namespace Global.Services.Loggers.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GlobalAssetsPaths.ServicePrefix + "Logger",
-        menuName = GlobalAssetsPaths.Logger + "Service", order = 1)]
+        menuName = GlobalAssetsPaths.Logger + "Service")]
     public class LoggerAsset : GlobalServiceAsset
     {
-        [SerializeField] private Logger _prefab;
+        [SerializeField] [Indent] private Logger _prefab;
 
-        public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
+        public override async UniTask Create(
+            IDependencyRegister builder,
+            IGlobalServiceBinder serviceBinder,
+            IGlobalSceneLoader sceneLoader,
+            IGlobalCallbacks callbacks)
         {
             var logger = Instantiate(_prefab);
             logger.name = "Logger";
 
-            builder.RegisterComponent(logger).AsImplementedInterfaces();
+            builder.RegisterComponent(logger)
+                .As<ILogger>();
 
             serviceBinder.AddToModules(logger);
-            serviceBinder.ListenCallbacks(logger);
         }
     }
 }

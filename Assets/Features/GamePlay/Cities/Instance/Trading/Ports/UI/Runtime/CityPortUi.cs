@@ -9,6 +9,7 @@ using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.Reputation.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Profiles.Storage;
 using Global.Services.Sounds.Runtime;
 using Global.Services.UiStateMachines.Runtime;
@@ -80,9 +81,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void OnEnable()
         {
-            _enterListener = MessageBroker.Default.Receive<PortEnteredEvent>().Subscribe(OnEntered);
-            _exitListener = MessageBroker.Default.Receive<PortExitedEvent>().Subscribe(OnExited);
-            _requestListener = MessageBroker.Default.Receive<TradeRequestedEvent>().Subscribe(OnTradeRequested);
+            _enterListener = Msg.Listen<PortEnteredEvent>(OnEntered);
+            _exitListener = Msg.Listen<PortExitedEvent>(OnExited);
+            _requestListener = Msg.Listen<TradeRequestedEvent>(OnTradeRequested);
 
             _tradeBody.SetActive(false);
 
@@ -138,7 +139,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _shipView.Setup(data.ShipResources, _reputation);
             _tradeHandler.Setup(data.CityStorage);
             
-            MessageBroker.Default.TriggerSound(SoundType.UiOpen);
+            MessageBrokerSoundExtensions.TriggerSound(SoundType.UiOpen);
         }
 
         private void OnExited(PortExitedEvent data)
@@ -160,7 +161,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             
             var completed = new TradeCompletedEvent(Redraw, result);
 
-            MessageBroker.Default.Publish(completed);
+            Msg.Publish(completed);
         }
 
         private void Redraw(
@@ -182,7 +183,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void OnCloseClicked()
         {
-            MessageBroker.Default.Publish(new PortClosedEvent());
+            Msg.Publish(new PortClosedEvent());
         }
     }
 }

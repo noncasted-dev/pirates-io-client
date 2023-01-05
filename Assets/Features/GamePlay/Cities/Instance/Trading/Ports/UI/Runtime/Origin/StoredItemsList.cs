@@ -4,6 +4,7 @@ using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
+using Global.Services.MessageBrokers.Runtime;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,8 +40,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
         private void OnEnable()
         {
-            _removeListener = MessageBroker.Default.Receive<TransferCanceledEvent>().Subscribe(OnTransferCanceled);
-            _tradeAddListener = MessageBroker.Default.Receive<TradeAddedEvent>().Subscribe(OnTradeAdd);
+            _removeListener = Msg.Listen<TransferCanceledEvent>(OnTransferCanceled);
+            _tradeAddListener = Msg.Listen<TradeAddedEvent>(OnTradeAdd);
         }
 
         private void OnDisable()

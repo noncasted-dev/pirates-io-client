@@ -9,6 +9,7 @@ using GamePlay.Services.PlayerCargos.UI.Events;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.Reputation.Runtime;
 using Global.Services.InputViews.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.UiStateMachines.Runtime;
 using UniRx;
 using UnityEngine;
@@ -69,8 +70,8 @@ namespace GamePlay.Services.PlayerCargos.UI
         {
             _inputView.InventoryPerformed += OnInventoryOpenPerformed;
             
-            _cargoChangedListener = MessageBroker.Default.Receive<CargoChangedEvent>().Subscribe(OnCargoChanged);
-            _dropListener = MessageBroker.Default.Receive<ItemDropRequestedEvent>().Subscribe(OnDropRequested);
+            _cargoChangedListener = Msg.Listen<CargoChangedEvent>(OnCargoChanged);
+            _dropListener = Msg.Listen<ItemDropRequestedEvent>(OnDropRequested);
         }
 
         public void OnDisabled()

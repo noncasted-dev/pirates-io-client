@@ -16,13 +16,12 @@ namespace Global.Services.AssetsFlow.Tests
             _factory.Construct(_loader, _unloader, flowLogger);
         }
 
-        [SerializeField] private AssetInstantiatorFactory _factory;
-        [SerializeField] private AssetLoader _loader;
-
         [SerializeField] private AssetsFlowLogSettings _logSettings;
         [SerializeField] private AssetReference _reference;
-        [SerializeField] private AssetsReferencesStorage _storage;
+        [SerializeField] private AssetLoader _loader;
         [SerializeField] private AssetUnloader _unloader;
+        [SerializeField] private AssetsReferencesStorage _storage;
+        [SerializeField] private AssetInstantiatorFactory _factory;
 
         public AssetsFlowLogSettings LogSettings => _logSettings;
         public AssetReference Reference => _reference;

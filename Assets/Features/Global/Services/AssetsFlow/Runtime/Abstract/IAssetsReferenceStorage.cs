@@ -2,9 +2,9 @@
 {
     public interface IAssetsReferenceStorage
     {
-        bool Contains(string key);
+        bool Contains(object key);
         void Add<T>(AssetLoadResult<T> result);
         void Remove<T>(AssetLoadResult<T> result);
-        AssetLoadResult<T> GetResult<T>(string key);
+        AssetLoadResult<T> GetResult<T>(object key);
     }
 }

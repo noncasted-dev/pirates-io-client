@@ -17,7 +17,22 @@ MonoBehaviour:
     _keys: 00000000
     _values: 01
   _logParameters:
-    Color: 6
-    _header: ResourcesCleaner
-    _isHeaderColoredColored: 1
     _isMessageColored: 0
+    _color: {r: 0, g: 0, b: 0, a: 0}
+    _headers:
+    - {fileID: 3660647189743423669}
+--- !u!114 &3660647189743423669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5271532ca2141769281f3f4ccfae783, type: 3}
+  m_Name: LoggerHeader_ResourcesCleaner
+  m_EditorClassIdentifier: 
+  _name: ResourceCleaner
+  _isColored: 1
+  _color: {r: 0.7176471, g: 0.227451, b: 0.18431373, a: 1}

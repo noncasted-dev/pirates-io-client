@@ -2,8 +2,9 @@
 using Global.Services.CameraUtilities.Logs;
 using UnityEditor;
 
-namespace Global.Services.Loggers.Editor.Services.Utils
+namespace Global.Services.Loggers.Editor.Services.Cameras
 {
+    [ReadOnlyDictionaryPriority]
     [CustomPropertyDrawer(typeof(CameraUtilsLogs))]
     public class CameraUtilsLogsDrawer : ReadonlyDictionaryPropertyDrawer
     {

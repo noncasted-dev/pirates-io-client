@@ -87,7 +87,7 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             _mover.Remove(_projectile);
             _droppedCallback?.Invoke();
             
-            MessageBroker.Default.TriggerSound(PositionalSoundType.ProjectileDropped, _transform.position);
+            MessageBrokerSoundExtensions.TriggerSound(PositionalSoundType.ProjectileDropped, _transform.position);
         }
     }
 }

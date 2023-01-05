@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Global.Services.UiStateMachines.Runtime
 {
@@ -18,14 +17,14 @@ namespace Global.Services.UiStateMachines.Runtime
             _recoveredCallback = recoveredCallback;
         }
 
-        public readonly IUiState State;
-        private readonly StateHandle _head;
-
         private readonly Action<IUiState> _exitedCallback;
+        private readonly StateHandle _head;
         private readonly Action<StateHandle> _recoveredCallback;
+        private readonly List<StateHandle> _removeQueue = new();
 
         private readonly List<StateHandle> _stack = new();
-        private readonly List<StateHandle> _removeQueue = new();
+
+        public readonly IUiState State;
 
         public string Name => State.Name;
 
@@ -47,12 +46,8 @@ namespace Global.Services.UiStateMachines.Runtime
         public void Exit(bool withDispose)
         {
             if (_stack.Count != 0)
-            {
                 foreach (var stateHandle in _stack)
-                {
                     stateHandle.Exit(withDispose);
-                }
-            }
 
             if (withDispose == true)
                 _head?.RemoveFromStack(this);

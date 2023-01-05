@@ -3,6 +3,7 @@ using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Player.Entity.Components.Definition;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -48,7 +49,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             gameObject.SetActive(true);
 
             var tradeChange = new TradeAddedEvent(_item.Item, _origin, tradable.Cost, 1);
-            MessageBroker.Default.Publish(tradeChange);
+            Msg.Publish(tradeChange);
 
             var ship = tradable.Item as ShipItem;
             
@@ -74,8 +75,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             var cancel = new TransferCanceledEvent(_item.Item, _origin);
             var removed = new TradeRemovedEvent(_item.Item, _origin);
 
-            MessageBroker.Default.Publish(cancel);
-            MessageBroker.Default.Publish(removed);
+            Msg.Publish(cancel);
+            Msg.Publish(removed);
         }
     }
 }

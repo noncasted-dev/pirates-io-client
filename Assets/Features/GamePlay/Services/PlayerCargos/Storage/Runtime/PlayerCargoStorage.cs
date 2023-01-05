@@ -3,6 +3,7 @@ using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Events;
 using GamePlay.Services.Saves.Definitions;
 using Global.Services.FilesFlow.Runtime.Abstract;
+using Global.Services.MessageBrokers.Runtime;
 using UniRx;
 using UnityEngine;
 using VContainer;
@@ -32,7 +33,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             {
                 _items[type].Add(item.Count);
                 OnChanged();
-                MessageBroker.Default.Publish(new CargoAddEvent(item));
+                Msg.Publish(new CargoAddEvent(item));
 
                 return;
             }
@@ -40,7 +41,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             _items[type] = item;
             OnChanged();
             
-            MessageBroker.Default.Publish(new CargoAddEvent(item));
+            Msg.Publish(new CargoAddEvent(item));
         }
 
         public void Reduce(ItemType type, int amount)
@@ -110,7 +111,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         private void OnChanged()
         {
             var data = new CargoChangedEvent(Items, GetWeight());
-            MessageBroker.Default.Publish(data);
+            Msg.Publish(data);
 
             var save = _fileLoader.LoadOrCreate<ShipSave>();
             

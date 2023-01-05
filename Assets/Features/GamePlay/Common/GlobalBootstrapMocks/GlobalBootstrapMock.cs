@@ -1,44 +1,46 @@
 ﻿using Cysharp.Threading.Tasks;
 using GamePlay.Level.Config.Runtime;
 using Global.Bootstrappers;
-using Global.GameLoops.Runtime;
+using Global.GameLoops.Abstract;
 using Global.Services.Common.Config.Abstract;
 using Global.Services.Common.Scope;
 using Global.Services.Network.Connection.Runtime;
 using Global.Services.Network.Session.Join.Runtime;
 using Global.Services.ScenesFlow.Runtime.Abstract;
-using NaughtyAttributes;
-using UniRx;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
+using ContainerBuilder = Common.DiContainer.Runtime.ContainerBuilder;
 
 namespace GamePlay.Common.GlobalBootstrapMocks
 {
     [DisallowMultipleComponent]
     public class GlobalBootstrapMock : MonoBehaviour
     {
+        private static bool _isBootstrapped = false;
+
         [SerializeField] private GlobalScope _scope;
-        [SerializeField] private GameLoopAsset _gameLoop;
+        [SerializeField] private GlobalGameLoopAsset _gameLoop;
         [SerializeField] private LevelAsset _level;
         [SerializeField] private AssetReference _servicesScene;
-            
-        [SerializeField] private GlobalServicesConfig _services;
-        [SerializeField] private TargetServer _server;
 
-        [Button("ClearMessageBroker")]
-        private void ClearMessageBroker()
-        {
-            MessageBroker.Default = new MessageBroker();
-        }
-        
+        [SerializeField] private GlobalServicesConfig _services;
+
         private void Awake()
         {
-            MessageBroker.Default = new MessageBroker();
+            if (_isBootstrapped == true)
+                return;
+
+            _isBootstrapped = true;
 
             Process().Forget();
+        }
+
+        private void OnDestroy()
+        {
+            _isBootstrapped = false;
         }
 
         private async UniTask Process()
@@ -51,9 +53,22 @@ namespace GamePlay.Common.GlobalBootstrapMocks
         {
             var scene = await Addressables.LoadSceneAsync(_servicesScene, LoadSceneMode.Additive).ToUniTask();
 
-            var binder = new ServiceBinder(scene.Scene);
+            var binder = new GlobalServiceBinder(scene.Scene);
+            var sceneLoader = new GlobalSceneLoader();
+            var callbacks = new GlobalCallbacks();
+            var dependencyRegister = new ContainerBuilder();
 
             binder.AddToModules(_scope);
+
+            var services = _services.GetAssets();
+            var servicesTasks = new UniTask[services.Length];
+
+            _gameLoop.Create(dependencyRegister, binder);
+
+            for (var i = 0; i < servicesTasks.Length; i++)
+                servicesTasks[i] = services[i].Create(dependencyRegister, binder, sceneLoader, callbacks);
+
+            await UniTask.WhenAll(servicesTasks);
 
             using (LifetimeScope.Enqueue(OnConfiguration))
             {
@@ -62,26 +77,17 @@ namespace GamePlay.Common.GlobalBootstrapMocks
 
             void OnConfiguration(IContainerBuilder builder)
             {
-                var services = _services.GetAssets();
-
-                foreach (var service in services)
-                    service.Create(builder, binder);
-
-                _gameLoop.Create(builder, binder);
+                dependencyRegister.RegisterAll(builder);
             }
 
-            var container = _scope.Container;
+            dependencyRegister.ResolveAllWithCallbacks(_scope.Container, callbacks);
 
-            container.Resolve<GameLoop>();
+            await callbacks.InvokeFlowCallbacks();
 
-            binder.InvokeFlowCallbacks();
-
-            var connector = container.Resolve<INetworkConnector>();
-            var joiner = container.Resolve<INetworkSessionJoiner>();
-
-            var userName = $"Player_{Random.Range(0, 301)}";
-            await connector.Connect(userName, _server);
-            await joiner.JoinRandom();
+            var connector = _scope.Container.Resolve<INetworkConnector>();
+            await connector.Connect("Test", TargetServer.USA_SanFrancisco);
+            var joiner = _scope.Container.Resolve<INetworkSessionJoiner>();
+            await joiner.Create();
         }
 
         private async UniTask BootstrapLocal()

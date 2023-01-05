@@ -33,7 +33,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
 
             builder.RegisterComponent(remoteBuilder)
                 .WithParameter(_config)
-                .AsSelfResolvable();
+                .AsCallbackListener();
 
             builder.RegisterComponent(pool)
                 .AsCallbackListener();

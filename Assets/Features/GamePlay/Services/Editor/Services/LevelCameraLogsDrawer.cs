@@ -4,6 +4,7 @@ using UnityEditor;
 
 namespace GamePlay.Services.Editor.Services
 {
+    [ReadOnlyDictionaryPriority]
     [CustomPropertyDrawer(typeof(LevelCameraLogs))]
     public class LevelCameraLogsDrawer : ReadonlyDictionaryPropertyDrawer
     {

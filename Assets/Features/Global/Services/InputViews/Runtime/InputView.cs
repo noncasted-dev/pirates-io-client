@@ -1,6 +1,6 @@
 ﻿using System;
 using Global.Services.CameraUtilities.Runtime;
-using Global.Services.Common.Abstract;
+using Global.Services.Common.Abstract.Callbacks;
 using Global.Services.InputViews.Constraints;
 using Global.Services.InputViews.ConstraintsStorage;
 using Global.Services.InputViews.Logs;
@@ -185,10 +185,7 @@ namespace Global.Services.InputViews.Runtime
         private void OnRangeAttackPerformed(InputAction.CallbackContext context)
         {
             if (EventSystem.current.IsPointerOverGameObject() == true)
-            {
-                Debug.Log("Cancel");
                 return;
-            }
 
             if (_constraintsStorage[InputConstraints.AttackInput] == true)
             {

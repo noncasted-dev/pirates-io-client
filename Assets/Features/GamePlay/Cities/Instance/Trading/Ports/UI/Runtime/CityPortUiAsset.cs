@@ -33,8 +33,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             builder.RegisterComponent(ui)
                 .WithParameter(_constraints);
 
-            builder.RegisterComponent(ui.MoneyView)
-                .AsCallbackListener();
+            builder.Inject(ui.MoneyView);
             
             builder.RegisterComponent(ui.TradeHandler)
                 .AsCallbackListener();

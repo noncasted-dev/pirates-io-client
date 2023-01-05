@@ -14,11 +14,11 @@ namespace Global.Services.AssetsFlow.Runtime
             _logger = logger;
         }
 
-        private readonly Dictionary<string, object> _references = new();
+        private readonly Dictionary<object, object> _references = new();
 
         private AssetsFlowLogger _logger;
 
-        public bool Contains(string key)
+        public bool Contains(object key)
         {
             return _references.ContainsKey(key);
         }
@@ -26,7 +26,7 @@ namespace Global.Services.AssetsFlow.Runtime
         public void Add<T>(AssetLoadResult<T> result)
         {
             _logger.OnStorageAdd(result.AssetName);
-            
+
             _references.Add(result.Key, result);
         }
 
@@ -37,7 +37,7 @@ namespace Global.Services.AssetsFlow.Runtime
             _references.Remove(result.Key);
         }
 
-        public AssetLoadResult<T> GetResult<T>(string key)
+        public AssetLoadResult<T> GetResult<T>(object key)
         {
             var result = _references[key] as AssetLoadResult<T>;
 

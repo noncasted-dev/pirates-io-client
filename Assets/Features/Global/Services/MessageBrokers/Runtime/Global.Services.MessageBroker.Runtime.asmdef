@@ -1,0 +1,11 @@
+﻿{
+  "name": "Global.Services.MessageBroker.Runtime",
+  "references": [
+    "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+    "GUID:401398c75a71e5444a495125c9dd1a21",
+    "GUID:fb9b00a9a42c4c1459774b1ef88fcd74",
+    "GUID:e07e6ccd9241474dbca4e70862df2bc2",
+    "GUID:f51ebe6a0ceec4240a699833d6309b23",
+    "GUID:faccf34a192b48e5a4dd7e445eda4772"
+  ]
+}

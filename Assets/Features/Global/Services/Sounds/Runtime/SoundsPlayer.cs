@@ -4,6 +4,7 @@ using FMOD.Studio;
 using FMODUnity;
 using GamePlay.Common.Damages;
 using Global.Services.Common.Abstract;
+using Global.Services.Common.Abstract.Callbacks;
 using UnityEngine;
 
 namespace Global.Services.Sounds.Runtime

@@ -6,6 +6,7 @@ using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Level.Environment.Chunks.Instance;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using NaughtyAttributes;
 using UniRx;
 using UnityEngine;
@@ -44,7 +45,7 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
 
         protected override void OnEnabled()
         {
-            _playerSpawnListener = MessageBroker.Default.Receive<PlayerSpawnedEvent>().Subscribe(Begin);
+            _playerSpawnListener = Msg.Listen<PlayerSpawnedEvent>(Begin);
         }
 
         protected override void OnDisabled()

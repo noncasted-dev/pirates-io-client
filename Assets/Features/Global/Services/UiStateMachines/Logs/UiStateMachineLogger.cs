@@ -68,7 +68,7 @@ namespace Global.Services.UiStateMachines.Logs
 
             _logger.Log($"No {name} state in stack to exit", _settings.LogParameters);
         }
-        
+
         public void OnNoPreviousStates()
         {
             if (_settings.IsAvailable(UiStateMachineLogType.NoPreviousStates) == false)

@@ -18,9 +18,9 @@ namespace Global.Services.ResourcesCleaners.Runtime
 
         public async UniTask CleanUp()
         {
-            //GC.Collect();
+            GC.Collect();
 
-            //await Resources.UnloadUnusedAssets();
+            await Resources.UnloadUnusedAssets();
 
             _logger.OnCleaned();
         }

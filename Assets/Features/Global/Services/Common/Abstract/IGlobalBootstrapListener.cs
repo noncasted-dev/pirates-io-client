@@ -1,4 +1,4 @@
-﻿namespace Global.Services.Common.Abstract
+﻿namespace Global.Services.Common.Abstract.Callbacks
 {
     public interface IGlobalBootstrapListener
     {

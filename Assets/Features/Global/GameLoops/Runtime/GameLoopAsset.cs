@@ -1,32 +1,37 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
 using Global.Common;
+using Global.GameLoops.Abstract;
 using Global.GameLoops.Logs;
 using Global.Services.Common.Abstract;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using VContainer;
-using VContainer.Unity;
 
 namespace Global.GameLoops.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GlobalAssetsPaths.ServicePrefix + "Global",
-        menuName = GlobalAssetsPaths.GameLoop + "Service", order = 0)]
-    public class GameLoopAsset : GlobalServiceAsset
+        menuName = GlobalAssetsPaths.GameLoop + "Service")]
+    public class GameLoopAsset : GlobalGameLoopAsset
     {
-        [SerializeField]  private GameLoopLogSettings _logSettings;
-        [SerializeField] private GameLoop _prefab;
+        [SerializeField] [Indent] private GameLoopLogSettings _logSettings;
 
-        public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
+        [SerializeField] [Indent] private GameLoop _prefab;
+
+        public override GlobalGameLoop Create(IDependencyRegister register, IGlobalServiceBinder binder)
         {
             var gameLoop = Instantiate(_prefab);
             gameLoop.name = "GameLoop";
 
-            builder.Register<GameLoopLogger>(Lifetime.Scoped)
+            register.Register<GameLoopLogger>()
                 .WithParameter(_logSettings);
 
-            builder.RegisterComponent(gameLoop).AsImplementedInterfaces();
+            register.RegisterComponent(gameLoop)
+                .AsImplementedInterfaces()
+                .AsSelfResolvable();
 
-            serviceBinder.ListenCallbacks(gameLoop);
-            serviceBinder.AddToModules(gameLoop);
+            binder.AddToModules(gameLoop);
+
+            return gameLoop;
         }
     }
 }

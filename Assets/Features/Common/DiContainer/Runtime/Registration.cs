@@ -22,6 +22,7 @@ namespace Common.DiContainer.Runtime
         public IRegistration AsCallbackListener()
         {
             _isListeningCallbacks = true;
+            _isSelfResolvable = true;
 
             return AsSelfResolvable();
         }

@@ -1,20 +1,26 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
+using Cysharp.Threading.Tasks;
 using Global.Common;
 using Global.Services.Common.Abstract;
+using Global.Services.Common.Abstract.Scenes;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using VContainer;
-using VContainer.Unity;
 
 namespace Global.Services.ItemFactories.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GlobalAssetsPaths.ServicePrefix + "ItemFactory",
         menuName = GlobalAssetsPaths.ItemFactory + "Service")]
     public class ItemFactoryAsset : GlobalServiceAsset
     {
-        [SerializeField]  private ItemFactoryConfigAsset _config;
-        [SerializeField] private ItemFactory _prefab;
+        [SerializeField] [Indent] private ItemFactoryConfigAsset _config;
+        [SerializeField] [Indent] private ItemFactory _prefab;
 
-        public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
+        public override async UniTask Create(
+            IDependencyRegister builder,
+            IGlobalServiceBinder serviceBinder,
+            IGlobalSceneLoader sceneLoader,
+            IGlobalCallbacks callbacks)
         {
             var factory = Instantiate(_prefab);
             factory.name = "ItemFactory";

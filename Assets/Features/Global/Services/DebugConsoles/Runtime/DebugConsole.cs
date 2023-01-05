@@ -1,4 +1,4 @@
-﻿using Global.Services.Common.Abstract;
+﻿using Global.Services.Common.Abstract.Callbacks;
 using Global.Services.InputViews.Runtime;
 using IngameDebugConsole;
 using UnityEngine;
@@ -15,9 +15,8 @@ namespace Global.Services.DebugConsoles.Runtime
             _inputView = inputView;
         }
 
-        [SerializeField] private GameObject _body;
-
         [SerializeField] private DebugLogManager _console;
+        [SerializeField] private GameObject _body;
 
         private IInputView _inputView;
 

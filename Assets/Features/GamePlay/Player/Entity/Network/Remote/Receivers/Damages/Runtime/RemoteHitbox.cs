@@ -5,6 +5,7 @@ using GamePlay.Factions.Common;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Sounds.Runtime;
 using Ragon.Client;
 using UniRx;
@@ -51,13 +52,13 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
             direction.Normalize();
             explosion.transform.RotateAlong(direction);
             
-            MessageBroker.Default.Publish(new EnemyDamagedSoundEvent(gameObject, damage.Type));
+            Msg.Publish(new EnemyDamagedSoundEvent(gameObject, damage.Type));
 
             if (isProjectileLocal == true)
             {
                 _eventSender.ReplicateEvent(damageEvent);
                 
-                MessageBroker.Default.Publish(new RemoteDamagedEvent(_faction));
+                Msg.Publish(new RemoteDamagedEvent(_faction));
             }
         }
 

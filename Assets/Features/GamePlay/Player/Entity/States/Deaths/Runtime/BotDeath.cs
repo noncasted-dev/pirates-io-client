@@ -5,6 +5,7 @@ using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Services.DroppedObjects.Presenter.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Ragon.Client;
 using UniRx;
 using UnityEngine;
@@ -55,7 +56,7 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
                 _droppedObjectsPresenter.DropFromDeath((ItemType)Random.Range(18, 30), Random.Range(1, 3), _transform.Position);
             }
 
-            MessageBroker.Default.Publish(new BotDeathEvent());
+            Msg.Publish(new BotDeathEvent());
             RagonNetwork.Room.DestroyEntity(_networkRoot.gameObject);
         }
 

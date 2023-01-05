@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Items.Abstract;
+using Global.Services.MessageBrokers.Runtime;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -41,8 +42,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             _cells.Clear();
             CalculateVerticalSize(_cells.Count);
 
-            _transferListener = MessageBroker.Default.Receive<TransferRequestedEvent>().Subscribe(AddItem);
-            _removeListener = MessageBroker.Default.Receive<TransferCanceledEvent>().Subscribe(RemoveItem);
+            _transferListener = Msg.Listen<TransferRequestedEvent>(AddItem);
+            _removeListener = Msg.Listen<TransferCanceledEvent>(RemoveItem);
         }
 
         private void OnDisable()

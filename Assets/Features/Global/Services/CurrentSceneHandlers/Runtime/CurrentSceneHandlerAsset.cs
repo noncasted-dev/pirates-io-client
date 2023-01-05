@@ -1,38 +1,38 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
+using Cysharp.Threading.Tasks;
 using Global.Common;
 using Global.Services.Common.Abstract;
+using Global.Services.Common.Abstract.Scenes;
 using Global.Services.CurrentSceneHandlers.Logs;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using VContainer;
-using VContainer.Unity;
 
 namespace Global.Services.CurrentSceneHandlers.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GlobalAssetsPaths.ServicePrefix + "CurrentSceneHandler",
-        menuName = GlobalAssetsPaths.CurrentSceneHandler + "Service",
-        order = 1)]
+        menuName = GlobalAssetsPaths.CurrentSceneHandler + "Service")]
     public class CurrentSceneHandlerAsset : GlobalServiceAsset
     {
-        [SerializeField]  private CurrentSceneHandlerLogSettings _logSettings;
-        [SerializeField] private CurrentSceneHandler _prefab;
+        [SerializeField] [Indent] private CurrentSceneHandlerLogSettings _logSettings;
+        [SerializeField] [Indent] private CurrentSceneHandler _prefab;
 
-        public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
+        public override async UniTask Create(
+            IDependencyRegister builder,
+            IGlobalServiceBinder serviceBinder,
+            IGlobalSceneLoader sceneLoader,
+            IGlobalCallbacks callbacks)
         {
             var sceneHandler = Instantiate(_prefab);
             sceneHandler.name = "CurrentSceneHandler";
 
-            var global = SceneManager.GetActiveScene();
-
-            builder.Register<CurrentSceneHandlerLogger>(Lifetime.Scoped)
+            builder.Register<CurrentSceneHandlerLogger>()
                 .WithParameter(_logSettings);
 
             builder.RegisterComponent(sceneHandler)
-                .WithParameter(global)
                 .As<ICurrentSceneHandler>();
 
             serviceBinder.AddToModules(sceneHandler);
-            serviceBinder.ListenCallbacks(sceneHandler);
         }
     }
 }

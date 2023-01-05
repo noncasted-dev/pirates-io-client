@@ -1,7 +1,6 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using Ragon.Client;
-using UnityEngine;
 
 namespace Global.Services.Network.Connection.Runtime
 {
@@ -26,34 +25,6 @@ namespace Global.Services.Network.Connection.Runtime
         public void OnConnected()
         {
             _connectionCompletion.TrySetResult(NetworkConnectResultType.Success);
-        }
-        
-        public async UniTask<NetworkConnectResultType> Connect(string userName)
-        {
-            RagonNetwork.AddListener(this);
-
-            Debug.Log("Connect connect wss");
-            RagonNetwork.Connect($"wss://{_ip}", 0);
-
-            var result = await _connectionCompletion.Task;
-
-            if (result == NetworkConnectResultType.Fail)
-            {
-                RagonNetwork.RemoveListener(this);
-
-                return result;
-            }
-
-            _isConnected = true;
-
-            RagonNetwork.Session.AuthorizeWithKey("defaultkey", userName, Array.Empty<byte>());
-
-            result = await _authorizationCompletion.Task;
-            await UniTask.Yield();
-
-            RagonNetwork.RemoveListener(this);
-
-            return result;
         }
 
         public void OnFailed(string message)
@@ -97,6 +68,33 @@ namespace Global.Services.Network.Connection.Runtime
 
         public void OnLevel(string sceneName)
         {
+        }
+
+        public async UniTask<NetworkConnectResultType> Connect(string userName)
+        {
+            RagonNetwork.AddListener(this);
+
+            RagonNetwork.Connect($"wss://{_ip}", 0);
+
+            var result = await _connectionCompletion.Task;
+
+            if (result == NetworkConnectResultType.Fail)
+            {
+                RagonNetwork.RemoveListener(this);
+
+                return result;
+            }
+
+            _isConnected = true;
+
+            RagonNetwork.Session.AuthorizeWithKey("defaultkey", userName, Array.Empty<byte>());
+
+            result = await _authorizationCompletion.Task;
+            await UniTask.Yield();
+
+            RagonNetwork.RemoveListener(this);
+
+            return result;
         }
     }
 }

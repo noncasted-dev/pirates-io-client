@@ -1,26 +1,33 @@
-﻿using Global.Common;
+﻿using Common.DiContainer.Abstract;
+using Cysharp.Threading.Tasks;
+using Global.Common;
 using Global.Services.Common.Abstract;
+using Global.Services.Common.Abstract.Scenes;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using VContainer;
-using VContainer.Unity;
 
 namespace Global.Services.DebugConsoles.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GlobalAssetsPaths.ServicePrefix + "DebugConsole",
         menuName = GlobalAssetsPaths.DebugConsole + "Service")]
     public class DebugConsoleAsset : GlobalServiceAsset
     {
-        [SerializeField] private DebugConsole _prefab;
+        [SerializeField] [Indent] private DebugConsole _prefab;
 
-        public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
+        public override async UniTask Create(
+            IDependencyRegister builder,
+            IGlobalServiceBinder serviceBinder,
+            IGlobalSceneLoader sceneLoader,
+            IGlobalCallbacks callbacks)
         {
             var debugConsole = Instantiate(_prefab);
             debugConsole.name = "DebugConsole";
 
-            builder.RegisterComponent(debugConsole);
+            builder.RegisterComponent(debugConsole)
+                .AsCallbackListener();
 
             serviceBinder.AddToModules(debugConsole);
-            serviceBinder.ListenCallbacks(debugConsole);
         }
     }
 }

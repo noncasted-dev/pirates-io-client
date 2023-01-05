@@ -1,23 +1,15 @@
-﻿using System;
-using Ragon.Client;
+﻿using Ragon.Client;
 using UnityEngine;
 
-namespace Global.Services.Network.Connection.Runtime
+namespace Global.Services.Network.Loop.Runtime
 {
     public class NetworkDisconnectHandler : MonoBehaviour, IRagonListener
     {
-        [SerializeField] private GameObject _disconnectNotification;
-
-        private void Awake()
-        {
-            _disconnectNotification.SetActive(false);
-        }
-
         private void OnEnable()
         {
             RagonNetwork.AddListener(this);
         }
-        
+
         private void OnDisable()
         {
             RagonNetwork.RemoveListener(this);
@@ -25,7 +17,6 @@ namespace Global.Services.Network.Connection.Runtime
 
         public void OnAuthorized(string playerId, string playerName)
         {
-            
         }
 
         public void OnJoined()
@@ -46,7 +37,6 @@ namespace Global.Services.Network.Connection.Runtime
 
         public void OnDisconnected()
         {
-            _disconnectNotification.SetActive(true);
         }
 
         public void OnPlayerJoined(RagonPlayer player)

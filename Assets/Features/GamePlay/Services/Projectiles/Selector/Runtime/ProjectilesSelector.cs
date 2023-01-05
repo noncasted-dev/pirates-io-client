@@ -4,6 +4,7 @@ using GamePlay.Common.Damages;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Events;
 using GamePlay.Services.Projectiles.Entity;
+using Global.Services.MessageBrokers.Runtime;
 using UniRx;
 using UnityEngine;
 
@@ -28,7 +29,7 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
 
         private void OnEnable()
         {
-            _cargoListener = MessageBroker.Default.Receive<CargoChangedEvent>().Subscribe(OnCargoChanged);
+            _cargoListener = Msg.Listen<CargoChangedEvent>(OnCargoChanged);
         }
 
         private void OnDisable()
@@ -62,7 +63,7 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
             _selected = type;
             
             var select = new ProjectileSelectedEvent(type);
-            MessageBroker.Default.Publish(select);
+            Msg.Publish(select);
         }
 
         public bool CanShoot()
@@ -96,7 +97,7 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
             var count = items[item].Count;
             _projectiles[type] = count;
             
-            MessageBroker.Default.Publish(new ProjectileAmountChangedEvent(type, count));
+            Msg.Publish(new ProjectileAmountChangedEvent(type, count));
         }
     }
 }

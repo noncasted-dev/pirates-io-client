@@ -4,6 +4,7 @@ using UnityEditor;
 
 namespace GamePlay.Services.Editor.Services
 {
+    [ReadOnlyDictionaryPriority]
     [CustomPropertyDrawer(typeof(TransitionScreenLogs))]
     public class TransitionScreenLogsDrawer : ReadonlyDictionaryPropertyDrawer
     {

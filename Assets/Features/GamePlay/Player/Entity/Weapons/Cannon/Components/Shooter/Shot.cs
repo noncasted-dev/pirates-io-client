@@ -120,7 +120,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                     parameters.Distance);
 
                 if (i == 0)
-                    MessageBroker.Default.TriggerSound(PositionalSoundType.CannonBallShot, shootPosition);
+                    MessageBrokerSoundExtensions.TriggerSound(PositionalSoundType.CannonBallShot, shootPosition);
             }
 
             if (_shotCounter == _shotsCount || _cancellation.IsCancellationRequested == true)

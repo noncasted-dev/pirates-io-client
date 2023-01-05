@@ -148,7 +148,7 @@ namespace GamePlay.Services.Projectiles.Mover
                 if (damageReceiver.IsLocal == true && projectile.Actions.IsLocal == false)
                 {
                     Debug.Log("On damage local");
-                    MessageBroker.Default.TriggerSound(PositionalSoundType.DamageReceived, data.CurrentPosition);
+                    MessageBrokerSoundExtensions.TriggerSound(PositionalSoundType.DamageReceived, data.CurrentPosition);
 
                     projectile.Actions.Destroy();
                     return;

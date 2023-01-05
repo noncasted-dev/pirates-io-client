@@ -1,4 +1,4 @@
-﻿using Global.Services.Common.Abstract;
+﻿using Global.Services.Common.Abstract.Callbacks;
 using Global.Services.GlobalCameras.Logs;
 using UnityEngine;
 using VContainer;
@@ -15,10 +15,20 @@ namespace Global.Services.GlobalCameras.Runtime
         }
 
         private Camera _camera;
+        private AudioListener _listener;
         private GlobalCameraLogger _logger;
+
+        private void Update()
+        {
+            if (Camera.allCamerasCount > 1)
+                DisableListener();
+            else
+                EnableListener();
+        }
 
         public void OnAwake()
         {
+            _listener = GetComponent<AudioListener>();
             _camera = GetComponent<Camera>();
         }
 
@@ -40,12 +50,14 @@ namespace Global.Services.GlobalCameras.Runtime
 
         public void EnableListener()
         {
+            _listener.enabled = true;
 
             _logger.OnListenerEnabled();
         }
 
         public void DisableListener()
         {
+            _listener.enabled = false;
 
             _logger.OnListenerDisabled();
         }

@@ -1,7 +1,6 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using Global.Services.Network.Session.Join.Logs;
-using NaughtyAttributes;
 using UnityEngine;
 using VContainer;
 
@@ -25,6 +24,33 @@ namespace Global.Services.Network.Session.Join.Runtime
             var attempt = new SessionJoinAttempt();
 
             var result = await attempt.Join();
+
+            switch (result)
+            {
+                case NetworkSessionJoinResultType.Success:
+                {
+                    _joinLogger.OnSuccess();
+                    return NetworkSessionJoinResultType.Success;
+                }
+                case NetworkSessionJoinResultType.Fail:
+                {
+                    _joinLogger.OnFailed(attempt.FailMessage);
+                    return NetworkSessionJoinResultType.Fail;
+                }
+                default:
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+
+        public async UniTask<NetworkSessionJoinResultType> Create()
+        {
+            _joinLogger.OnAttempted();
+
+            var attempt = new SessionCreateAttempt();
+
+            var result = await attempt.Create();
 
             switch (result)
             {

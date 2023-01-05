@@ -1,11 +1,12 @@
-﻿using Global.Services.Updaters.Logs;
+﻿using Global.Services.Common.Abstract.Callbacks;
+using Global.Services.Updaters.Logs;
 using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
 using VContainer;
 
 namespace Global.Services.Updaters.Runtime
 {
-    public class Updater : MonoBehaviour, IUpdater, IUpdateSpeedModifier, IUpdateSpeedSetter
+    public class Updater : MonoBehaviour, IUpdater, IUpdateSpeedModifier, IUpdateSpeedSetter, IGlobalBootstrapListener
     {
         [Inject]
         private void Construct(UpdaterLogger logger)
@@ -20,6 +21,7 @@ namespace Global.Services.Updaters.Runtime
         private readonly UpdatablesHandler<IPreUpdatable> _preUpdatables = new();
         private readonly UpdatablesHandler<IUpdateSpeedModifiable> _speedModifiables = new();
         private readonly UpdatablesHandler<IUpdatable> _updatables = new();
+        private bool _isBootstrapped;
 
         private UpdaterLogger _logger;
 
@@ -27,6 +29,9 @@ namespace Global.Services.Updaters.Runtime
 
         private void Update()
         {
+            if (_isBootstrapped == false)
+                return;
+
             var delta = Time.deltaTime * _speed;
 
             _preUpdatables.Fetch();
@@ -45,6 +50,9 @@ namespace Global.Services.Updaters.Runtime
 
         private void FixedUpdate()
         {
+            if (_isBootstrapped == false)
+                return;
+
             var delta = Time.fixedDeltaTime * _speed;
 
             _preFixedUpdatables.Fetch();
@@ -65,6 +73,11 @@ namespace Global.Services.Updaters.Runtime
                 updatable.OnPostFixedUpdate(delta);
 
             _logger.OnPostFixedUpdateCalled(_updatables.Count);
+        }
+
+        public void OnBootstrapped()
+        {
+            _isBootstrapped = true;
         }
 
         public void Add(IPreUpdatable updatable)

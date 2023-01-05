@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Handling.Result;
 using Global.Services.ScenesFlow.Runtime.Abstract;
+using UnityEngine;
 
 namespace Common.Local.ComposedSceneConfig
 {

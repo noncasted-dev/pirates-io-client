@@ -10,6 +10,7 @@ using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Services.DroppedObjects.Presenter.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Dead;
 using GamePlay.Services.VFX.Pool.Provider;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Sounds.Runtime;
 using Ragon.Client;
 using UniRx;
@@ -69,8 +70,8 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
 
                 _objectProvider.Get(_transform.Position);
 
-                MessageBroker.Default.Publish(new PlayerDeathEvent());
-                MessageBroker.Default.TriggerSound(PositionalSoundType.Death, _transform.Position);
+                Msg.Publish(new PlayerDeathEvent());
+                MessageBrokerSoundExtensions.TriggerSound(PositionalSoundType.Death, _transform.Position);
             }
             else
             {
@@ -87,7 +88,7 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
                     _droppedObjectsPresenter.DropFromDeath((ItemType)Random.Range(18, 30), Random.Range(1, 3), _transform.Position);
                 }
 
-                MessageBroker.Default.Publish(new BotDeathEvent());
+                Msg.Publish(new BotDeathEvent());
                 RagonNetwork.Room.DestroyEntity(_root.gameObject);
             }
         }

@@ -22,6 +22,7 @@ using GamePlay.Services.Wallets.Runtime;
 using Global.Services.CurrentCameras.Runtime;
 using Global.Services.FilesFlow.Runtime.Abstract;
 using Global.Services.ItemFactories.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using UniRx;
 using UnityEngine;
 using VContainer;
@@ -95,8 +96,8 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
         public void OnEnabled()
         {
-            _deathListener = MessageBroker.Default.Receive<PlayerDeathEvent>().Subscribe(OnPlayerDeath);
-            _shipChangeListener = MessageBroker.Default.Receive<ShipChangeEvent>().Subscribe(OnShipChanged);
+            _deathListener = Msg.Listen<PlayerDeathEvent>(OnPlayerDeath);
+            _shipChangeListener = Msg.Listen<ShipChangeEvent>(OnShipChanged);
         }
 
         public void OnDisabled()

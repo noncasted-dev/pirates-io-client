@@ -2,6 +2,7 @@
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.Reputation.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -36,10 +37,10 @@ namespace GamePlay.Services.TravelOverlays.Runtime
             UpdateData();
 
             _reputationListener =
-                MessageBroker.Default.Receive<ReputationChangedEvent>().Subscribe(OnReputationChanged);
+                Msg.Listen<ReputationChangedEvent>(OnReputationChanged);
             
             _resourcesListener =
-                MessageBroker.Default.Receive<ResourcesChangedEvent>().Subscribe(OnResourcesChanged);
+                Msg.Listen<ResourcesChangedEvent>(OnResourcesChanged);
         }
 
         private void OnDisable()

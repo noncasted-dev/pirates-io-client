@@ -5,6 +5,7 @@ using GamePlay.Cities.Instance.Root.Runtime;
 using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Player.Entity.States.Deaths.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using NaughtyAttributes;
 using UniRx;
 using UnityEngine;
@@ -21,7 +22,7 @@ namespace GamePlay.Player.Bots
 
         private void OnEnable()
         {
-            _deathListener = MessageBroker.Default.Receive<BotDeathEvent>().Subscribe(OnBotDeath);
+            _deathListener = Msg.Listen<BotDeathEvent>(OnBotDeath);
         }
 
         private void OnDisable()

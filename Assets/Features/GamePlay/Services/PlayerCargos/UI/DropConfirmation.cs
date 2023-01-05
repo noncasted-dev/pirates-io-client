@@ -2,6 +2,7 @@
 using Cysharp.Threading.Tasks;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.UI.Events;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -87,7 +88,7 @@ namespace GamePlay.Services.PlayerCargos.UI
             _count.text = count.ToString();
 
             var data = new ItemDropCountChangedEvent(_item, count);
-            MessageBroker.Default.Publish(data);
+            Msg.Publish(data);
         }
     }
 }

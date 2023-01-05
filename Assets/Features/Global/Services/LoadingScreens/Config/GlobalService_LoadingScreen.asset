@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: GlobalService_LoadingScreen
   m_EditorClassIdentifier: 
   _logSettings: {fileID: 11400000, guid: 8cdb02bf0c2af0148ac73b1f0467cd00, type: 2}
-  _constraints: {fileID: 11400000, guid: 5a43ebf679110494ab9633e4ab3074dc, type: 2}
-  _prefab: {fileID: 6782102528447005030, guid: 04ce4845fd341ad4a8b4c32af2821964, type: 3}
+  _scene:
+    m_AssetGUID: 81db3772e20060e4fa843bd53ffd6f6b
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

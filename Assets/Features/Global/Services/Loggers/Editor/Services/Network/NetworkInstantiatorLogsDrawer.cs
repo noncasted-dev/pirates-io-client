@@ -4,6 +4,7 @@ using UnityEditor;
 
 namespace Global.Services.Loggers.Editor.Services.Network
 {
+    [ReadOnlyDictionaryPriority]
     [CustomPropertyDrawer(typeof(NetworkInstantiatorLogs))]
     public class NetworkInstantiatorLogsDrawer : ReadonlyDictionaryPropertyDrawer
     {

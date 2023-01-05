@@ -17,11 +17,12 @@ namespace Global.Services.UiStateMachines.Runtime
             _constraintsStorage = constraintsStorage;
         }
 
-        private readonly Stack<StateHandle> _stack = new();
         private readonly Dictionary<IUiState, StateHandle> _handles = new();
 
-        private IUiState _head;
+        private readonly Stack<StateHandle> _stack = new();
         private IInputConstraintsStorage _constraintsStorage;
+
+        private IUiState _head;
         private UiStateMachineLogger _logger;
 
         public void EnterAsSingle(IUiState state)
@@ -39,7 +40,7 @@ namespace Global.Services.UiStateMachines.Runtime
 
             if (_handles.ContainsKey(state) == true)
                 _handles.Remove(state);
-            
+
             _handles.Add(state, handle);
 
             _head = state;

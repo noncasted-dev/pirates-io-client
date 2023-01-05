@@ -8,6 +8,7 @@ using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.Reputation.Runtime;
 using GamePlay.Services.Wallets.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -70,8 +71,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
         private void OnEnable()
         {
-            _playerListener = MessageBroker.Default.Receive<TradeAddedEvent>().Subscribe(OnTradeAdd);
-            _stockListener = MessageBroker.Default.Receive<TradeRemovedEvent>().Subscribe(OnTradeRemoved);
+            _playerListener = Msg.Listen<TradeAddedEvent>(OnTradeAdd);
+            _stockListener = Msg.Listen<TradeRemovedEvent>(OnTradeRemoved);
 
             _delta.text = "0";
 

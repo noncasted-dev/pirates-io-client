@@ -12,12 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e36cfeb8f24ddc8769b5ffe1d64e22, type: 3}
   m_Name: LogSettings_GameLoop
   m_EditorClassIdentifier: 
-  _isEnabled: 0
+  _isEnabled: 1
   _logs:
     _keys: 000000000100000002000000
     _values: 010101
   _logParameters:
-    _header: GameLoop
-    _isHeaderColoredColored: 1
     _isMessageColored: 0
-    Color: 2
+    _color: {r: 0, g: 0, b: 0, a: 0}
+    _headers:
+    - {fileID: 9176311032612051663}
+--- !u!114 &9176311032612051663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5271532ca2141769281f3f4ccfae783, type: 3}
+  m_Name: LoggerHeader_GameLoop
+  m_EditorClassIdentifier: 
+  _name: GameLoop
+  _isColored: 1
+  _color: {r: 0.23137257, g: 0.29803923, b: 0.65882355, a: 1}

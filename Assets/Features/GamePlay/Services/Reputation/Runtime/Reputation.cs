@@ -5,6 +5,7 @@ using GamePlay.Factions.Common;
 using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
 using GamePlay.Services.Saves.Definitions;
 using Global.Services.FilesFlow.Runtime.Abstract;
+using Global.Services.MessageBrokers.Runtime;
 using NaughtyAttributes;
 using UniRx;
 using UnityEngine;
@@ -46,8 +47,8 @@ namespace GamePlay.Services.Reputation.Runtime
 
         private void OnEnable()
         {
-            _damageListener = MessageBroker.Default.Receive<RemoteDamagedEvent>().Subscribe(OnRemoteDamaged);
-            _cityEnterListener = MessageBroker.Default.Receive<CityEnteredEvent>().Subscribe(OnCityEntered);
+            _damageListener = Msg.Listen<RemoteDamagedEvent>(OnRemoteDamaged);
+            _cityEnterListener = Msg.Listen<CityEnteredEvent>(OnCityEntered);
         }
 
         private void OnDisable()
@@ -67,14 +68,14 @@ namespace GamePlay.Services.Reputation.Runtime
         {
             _value += add;
             
-            MessageBroker.Default.Publish(new ReputationChangedEvent(_value));
+            Msg.Publish(new ReputationChangedEvent(_value));
         }
 
         public void Reduce(int reduce)
         {
             _value -= reduce;
 
-            MessageBroker.Default.Publish(new ReputationChangedEvent(_value));
+            Msg.Publish(new ReputationChangedEvent(_value));
         }
 
         public void OnFactionSelected(FactionType faction)

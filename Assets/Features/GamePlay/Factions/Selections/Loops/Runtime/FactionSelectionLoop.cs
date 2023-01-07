@@ -18,8 +18,9 @@ namespace GamePlay.Factions.Selections.Loops.Runtime
             _ui = ui;
         }
 
-        private IFactionSelectionUI _ui;
         private IReputationPresenter _reputation;
+
+        private IFactionSelectionUI _ui;
 
         public async UniTask<CityDefinition> SelectAsync()
         {
@@ -28,7 +29,7 @@ namespace GamePlay.Factions.Selections.Loops.Runtime
             var city = await _ui.SelectAsync();
 
             _reputation.OnFactionSelected(city.Faction);
-            
+
             _ui.Close();
 
             return city;

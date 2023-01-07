@@ -18,7 +18,7 @@ namespace GamePlay.Level.Environment.Chunks.Editor
 
                 var x = int.Parse(numbers[0]);
                 var y = int.Parse(numbers[1]);
-                
+
                 Undo.RecordObject(chunk, "Construct chunk");
                 chunk.OnRename(x, y);
                 Undo.RecordObject(chunk, "Construct chunk.");

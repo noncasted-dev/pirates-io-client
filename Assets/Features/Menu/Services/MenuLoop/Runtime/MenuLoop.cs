@@ -6,7 +6,6 @@ using Global.Services.Network.Connection.Runtime;
 using Global.Services.Network.Session.Join.Runtime;
 using Global.Services.Profiles.Storage;
 using Menu.Services.UI.Runtime;
-using UniRx;
 using UnityEngine;
 using VContainer;
 

@@ -5,7 +5,6 @@ using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Events;
 using GamePlay.Services.Projectiles.Entity;
 using Global.Services.MessageBrokers.Runtime;
-using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Services.Projectiles.Selector.Runtime
@@ -14,16 +13,14 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
     {
         private readonly Dictionary<ProjectileType, int> _projectiles = new();
 
-        private ProjectileType _selected = ProjectileType.Ball;
-        
         private IDisposable _cargoListener;
 
-        public ProjectileType Selected => _selected;
-        
+        private ProjectileType _selected = ProjectileType.Ball;
+
         private void Awake()
         {
             _projectiles[ProjectileType.Fishnet] = 999999;
-            
+
             Select(ProjectileType.Fishnet);
         }
 
@@ -37,6 +34,8 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
             _cargoListener?.Dispose();
         }
 
+        public ProjectileType Selected => _selected;
+
         public int GetAmount(ProjectileType type)
         {
             if (_projectiles.ContainsKey(type) == false)
@@ -48,7 +47,7 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
         public bool CanSelect(ProjectileType type)
         {
             var amount = GetAmount(type);
-            
+
             if (amount == 0)
                 return false;
 
@@ -59,9 +58,9 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
         {
             if (CanSelect(type) == false)
                 return;
-            
+
             _selected = type;
-            
+
             var select = new ProjectileSelectedEvent(type);
             Msg.Publish(select);
         }
@@ -96,7 +95,7 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
 
             var count = items[item].Count;
             _projectiles[type] = count;
-            
+
             Msg.Publish(new ProjectileAmountChangedEvent(type, count));
         }
     }

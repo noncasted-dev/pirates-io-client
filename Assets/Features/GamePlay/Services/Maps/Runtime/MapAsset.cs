@@ -8,12 +8,12 @@ using Global.Services.UiStateMachines.Runtime;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using VContainer;
 
 namespace GamePlay.Services.Maps.Runtime
 {
     [InlineEditor]
-    [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "Map", menuName = GamePlayAssetsPaths.Map + "Service")]
+    [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "Map",
+        menuName = GamePlayAssetsPaths.Map + "Service")]
     public class MapAsset : LocalServiceAsset
     {
         [SerializeField] [Indent] private AssetReference _mapScene;
@@ -28,7 +28,7 @@ namespace GamePlay.Services.Maps.Runtime
             var sceneData = new TypedSceneLoadData<Map>(_mapScene);
             var mapScene = await sceneLoader.Load(sceneData);
             var map = mapScene.Searched;
-            
+
             builder.RegisterComponent(map)
                 .WithParameter(_constraints)
                 .As<IMap>()

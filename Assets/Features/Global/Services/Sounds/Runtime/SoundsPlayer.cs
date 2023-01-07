@@ -4,7 +4,6 @@ using FMOD.Studio;
 using FMODUnity;
 using GamePlay.Common.Damages;
 using Global.Services.Common.Abstract;
-using Global.Services.Common.Abstract.Callbacks;
 using UnityEngine;
 
 namespace Global.Services.Sounds.Runtime
@@ -15,21 +14,16 @@ namespace Global.Services.Sounds.Runtime
     {
         [Space(30)] [Header("Battle")] [SerializeField]
         public EventReference ShotEvent;
-        public FMOD.Studio.EventInstance ShotInstance;
 
         public EventReference DamageEvent;
-        public FMOD.Studio.EventInstance DamageInstance;
 
         public EventReference DamageReceivedEvent;
-        public FMOD.Studio.EventInstance DamageReceivedInstance;
 
         [Space(30)] [Header("Ambience")] [SerializeField]
         public EventReference AmbEvent;
-        public FMOD.Studio.EventInstance AmbInstance;
 
         [Space(30)] [Header("Music")] [SerializeField]
         public EventReference MusicEvent;
-        public FMOD.Studio.EventInstance MusicInstance;
 
         [Space(30)] [Header("UI")] [SerializeField]
         public EventReference UiOpenedEvent;
@@ -40,17 +34,34 @@ namespace Global.Services.Sounds.Runtime
 
         [Space(30)] [Header("FX")] [SerializeField]
         public EventReference BurningEvent;
-        public EventInstance BurningInstance;
 
         [SerializeField] private float _fightExitSpeed = 1f;
         [SerializeField] private float _fightSecondsPerHit = 1f;
 
         private float _fightTime;
-        private bool _isInFight;
-
-        private float _health = 1f;
 
         private Transform _fmodInstance;
+
+        private float _health = 1f;
+        private bool _isInFight;
+        public EventInstance AmbInstance;
+        public EventInstance BurningInstance;
+        public EventInstance DamageInstance;
+        public EventInstance DamageReceivedInstance;
+        public EventInstance MusicInstance;
+        public EventInstance ShotInstance;
+
+        private void Update()
+        {
+            BurningInstance.setParameterByName("health", _health);
+            _fightTime -= _fightExitSpeed * Time.deltaTime;
+
+            if (_fightTime < 0f && _isInFight == true)
+            {
+                _isInFight = false;
+                OnBattleExited();
+            }
+        }
 
         public void OnBootstrapped()
         {
@@ -73,18 +84,6 @@ namespace Global.Services.Sounds.Runtime
 
             BurningInstance = RuntimeManager.CreateInstance(BurningEvent);
             BurningInstance.start();
-        }
-
-        private void Update()
-        {
-            BurningInstance.setParameterByName("health", _health);
-            _fightTime -= _fightExitSpeed * Time.deltaTime;
-
-            if (_fightTime < 0f && _isInFight == true)
-            {
-                _isInFight = false;
-                OnBattleExited();
-            }
         }
 
         //Amb
@@ -234,10 +233,7 @@ namespace Global.Services.Sounds.Runtime
         {
             _health = health;
 
-            if (health < 0.5)
-            {
-                MusicInstance.setParameterByName("music_intencity", 2f);
-            }
+            if (health < 0.5) MusicInstance.setParameterByName("music_intencity", 2f);
         }
 
         private void AttachInstance(EventInstance instance, Vector2 position)

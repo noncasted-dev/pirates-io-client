@@ -36,9 +36,9 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
         }
 
         [SerializeField] private float _dropDistance;
-        
+
         private readonly DroppedObjectsStorage _storage = new();
-        
+
         private ObjectDropperConfigAsset _config;
         private INetworkObjectDropReceiver _dropReceiver;
         private INetworkObjectDropSender _dropSender;
@@ -61,7 +61,7 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
         {
             var direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
             var target = position + direction * Random.Range(0f, _dropDistance);
-            
+
             _dropSender.OnItemDropped(type, count, position, target);
         }
 

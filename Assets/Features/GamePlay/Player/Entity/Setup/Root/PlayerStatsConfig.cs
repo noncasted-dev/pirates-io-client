@@ -27,7 +27,7 @@ namespace GamePlay.Player.Entity.Setup.Root
 
         [SerializeField] private string _name = "Frigate";
         [SerializeField] private Sprite _icon;
-        
+
         [SerializeField] private int _baseHealth;
         [SerializeField] private int _regenerationInTick = 30;
 
@@ -40,26 +40,26 @@ namespace GamePlay.Player.Entity.Setup.Root
 
         [SerializeField] private int _baseTeam;
         [SerializeField] private int _baseMaxTeam;
-        
+
         [SerializeField] private int _shallowDamage = 5;
         [SerializeField] private bool _isShallowIgnored;
         [SerializeField] private float _cameraSize;
-        
-        private IShipResourcesPresenter _resources;
         private IHealth _health;
-        private IPlayerCargoStorage _storage;
         private ILevelCamera _levelCamera;
+
+        private IShipResourcesPresenter _resources;
+        private IPlayerCargoStorage _storage;
 
         public void OnAwake()
         {
             if (_storage.Items.ContainsKey(ItemType.Cannon) == true)
                 _resources.SetCannons(_storage.Items[ItemType.Cannon].Count);
-            
+
             _health.SetMaxHealth(_baseHealth, _regenerationInTick);
 
             _resources.SetName(_name);
             _resources.SetIcon(_icon);
-            
+
             _resources.SetMaxWeight(_baseMaxWeight);
             _resources.SetMaxSpeed(_baseMaxSpeed);
 

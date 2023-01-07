@@ -4,7 +4,6 @@ using GamePlay.Services.PlayerCargos.Storage.Events;
 using GamePlay.Services.Saves.Definitions;
 using Global.Services.FilesFlow.Runtime.Abstract;
 using Global.Services.MessageBrokers.Runtime;
-using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -18,7 +17,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             _fileSaver = fileSaver;
             _fileLoader = fileLoader;
         }
-    
+
         private readonly Dictionary<ItemType, IItem> _items = new();
         private IFileLoader _fileLoader;
         private IFileSaver _fileSaver;
@@ -40,7 +39,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
             _items[type] = item;
             OnChanged();
-            
+
             Msg.Publish(new CargoAddEvent(item));
         }
 
@@ -53,7 +52,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             }
 
             _items[type].Reduce(amount);
-            
+
             OnChanged();
 
             if (_items[type].Count == 0)
@@ -72,12 +71,6 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             OnChanged();
         }
 
-        public void Clear()
-        {
-            _items.Clear();
-            OnChanged();
-        }
-        
         public IItem[] ToArray()
         {
             var items = new IItem[_items.Count];
@@ -92,7 +85,18 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
             return items;
         }
-        
+
+        public void UpdateState()
+        {
+            OnChanged();
+        }
+
+        public void Clear()
+        {
+            _items.Clear();
+            OnChanged();
+        }
+
         public int GetWeight()
         {
             var weight = 0;
@@ -102,11 +106,6 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
             return weight;
         }
-        
-        public void UpdateState()
-        {
-            OnChanged();   
-        }
 
         private void OnChanged()
         {
@@ -114,7 +113,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             Msg.Publish(data);
 
             var save = _fileLoader.LoadOrCreate<ShipSave>();
-            
+
             save.Items.Clear();
             save.Count.Clear();
 

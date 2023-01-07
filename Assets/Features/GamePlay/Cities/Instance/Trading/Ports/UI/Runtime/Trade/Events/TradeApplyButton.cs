@@ -12,12 +12,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events
         [SerializeField] private Button _button;
         [SerializeField] private Image _image;
 
-        public event Action Clicked;
-        
         private void OnEnable()
         {
             OnUnavailable();
-            
+
             _button.onClick.AddListener(OnClicked);
         }
 
@@ -25,6 +23,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events
         {
             _button.onClick.RemoveListener(OnClicked);
         }
+
+        public event Action Clicked;
 
         public void OnAvailable()
         {

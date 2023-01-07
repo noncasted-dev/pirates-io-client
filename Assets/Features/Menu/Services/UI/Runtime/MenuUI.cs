@@ -2,7 +2,6 @@
 using Global.Services.Sounds.Runtime;
 using Global.Services.UiStateMachines.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -29,12 +28,9 @@ namespace Menu.Services.UI.Runtime
         [SerializeField] private GameObject _loginBody;
 
         [SerializeField] private ServerSelection _serverSelection;
-        
+
         private UiConstraints _constraints;
         private IUiStateMachine _uiStateMachine;
-
-        public UiConstraints Constraints => _constraints;
-        public string Name => "MainMenu";
 
         private void OnEnable()
         {
@@ -46,20 +42,8 @@ namespace Menu.Services.UI.Runtime
         private void OnDisable()
         {
             _playButton.onClick.RemoveListener(OnPlayClicked);
-            
+
             MessageBrokerSoundExtensions.TriggerSound(SoundType.MenuExited);
-        }
-
-        public void Recover()
-        {
-            _loginBody.SetActive(true);
-            _loadingBody.SetActive(false);
-        }
-
-        public void Exit()
-        {
-            _loginBody.SetActive(false);
-            _loadingBody.SetActive(false);
         }
 
         public void OnLogin()
@@ -87,6 +71,21 @@ namespace Menu.Services.UI.Runtime
         public void OnSuccess()
         {
             _uiStateMachine.Exit(this);
+        }
+
+        public UiConstraints Constraints => _constraints;
+        public string Name => "MainMenu";
+
+        public void Recover()
+        {
+            _loginBody.SetActive(true);
+            _loadingBody.SetActive(false);
+        }
+
+        public void Exit()
+        {
+            _loginBody.SetActive(false);
+            _loadingBody.SetActive(false);
         }
 
         private void OnPlayClicked()

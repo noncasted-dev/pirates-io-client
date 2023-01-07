@@ -1,5 +1,4 @@
-﻿using System;
-using Common.ObjectsPools.Runtime.Abstract;
+﻿using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
 using GamePlay.Common.Damages;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
@@ -45,20 +44,37 @@ namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
         }
 
         private const float _shallowTickDuration = 3f;
-        
+
         private readonly DamageConfigAsset _config;
         private readonly IDeath _death;
         private readonly IObjectProvider<AnimatedVfx> _explosion;
         private readonly ISpriteFlash _flash;
 
         private readonly IHealth _health;
+        private readonly IShipResources _resources;
         private readonly ISail _sail;
         private readonly IBodyTransform _transform;
         private readonly IUpdater _updater;
-        private readonly IShipResources _resources;
 
         private float _shallowTime;
-        
+
+        public void OnUpdate(float delta)
+        {
+            _shallowTime += delta;
+
+            if (_shallowTime < _shallowTickDuration)
+                return;
+
+            _shallowTime = 0f;
+
+            _health.ApplyDamage(_resources.ShallowDamage);
+
+            if (_health.IsAlive == false)
+                _death.Enter();
+            else
+                _flash.Flash(_config.FlashTime);
+        }
+
         private void OnDamageReceived(RagonPlayer player, DamageEvent damage)
         {
             _health.ApplyDamage(damage.Amount);
@@ -100,23 +116,6 @@ namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
         public void OnShallowExited()
         {
             _updater.Remove(this);
-        }
-
-        public void OnUpdate(float delta)
-        {
-            _shallowTime += delta;
-            
-            if (_shallowTime < _shallowTickDuration)
-                return;
-
-            _shallowTime = 0f;
-            
-            _health.ApplyDamage(_resources.ShallowDamage);
-            
-            if (_health.IsAlive == false)
-                _death.Enter();
-            else
-                _flash.Flash(_config.FlashTime);
         }
     }
 }

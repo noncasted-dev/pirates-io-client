@@ -9,7 +9,7 @@ namespace GamePlay.Items.Implementation
     public class CannonFishnetAsset : ItemAsset
     {
         public override ItemType Type => ItemType.CannonFishnet;
-    
+
         protected override IItem BuildItem(BaseItemData data, int count)
         {
             return new Item(data, count);

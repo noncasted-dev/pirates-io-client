@@ -7,7 +7,7 @@
             Health = health;
             MaxHealth = maxHealth;
         }
-        
+
         public readonly int Health;
         public readonly int MaxHealth;
     }

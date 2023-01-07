@@ -6,7 +6,7 @@
         {
             Reputation = reputation;
         }
-        
+
         public readonly int Reputation;
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Common.Local.Services.Abstract.Callbacks;
 using GamePlay.Common.Damages;
-using GamePlay.Services.Projectiles.Entity;
 using Global.Services.InputViews.Runtime;
 
 namespace GamePlay.Services.Projectiles.Selector.Runtime
@@ -12,10 +11,11 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
             _selector = selector;
             _inputView = inputView;
         }
-        
-        private readonly IProjectileSelector _selector;
+
         private readonly IInputView _inputView;
-        
+
+        private readonly IProjectileSelector _selector;
+
         public void OnEnabled()
         {
             _inputView.SelectFirstProjectilePerformed += OnFirstPressed;
@@ -36,17 +36,17 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
         {
             _selector.Select(ProjectileType.Ball);
         }
-        
+
         private void OnSecondPressed()
         {
             _selector.Select(ProjectileType.Knuppel);
         }
-        
+
         private void OnThirdPressed()
         {
             _selector.Select(ProjectileType.Shrapnel);
         }
-        
+
         private void OnForthPressed()
         {
             _selector.Select(ProjectileType.Fishnet);

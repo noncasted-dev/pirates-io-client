@@ -1,7 +1,6 @@
-﻿using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+﻿using Common.DiContainer.Abstract;
 using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
-using VContainer;
 using static GamePlay.Player.Entity.Setup.Path.PlayerAssetsPaths;
 
 namespace GamePlay.Player.Entity.States.Deaths.Runtime
@@ -12,17 +11,12 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
     {
         [SerializeField] private DeathStateDefinition _def;
 
-        public override void Register(IContainerBuilder builder)
+        public override void Register(IDependencyRegister builder)
         {
-            builder.Register<BotDeath>(Lifetime.Scoped)
+            builder.Register<BotDeath>()
                 .WithParameter(_def)
                 .As<IDeath>()
-                .AsSelf();
-        }
-
-        public override void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)
-        {
-            callbackRegister.Add(resolver.Resolve<BotDeath>());
+                .AsCallbackListener();
         }
     }
 }

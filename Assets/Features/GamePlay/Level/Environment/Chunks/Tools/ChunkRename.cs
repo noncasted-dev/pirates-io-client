@@ -25,7 +25,7 @@ namespace GamePlay.Level.Environment.Chunks.Tools
                 chunk.name = $"Chunk_{x}_{y}";
                 var component = chunk.GetComponent<Chunk>();
                 component.OnRename(x, y);
-                
+
                 chunk.transform.position = _start + new Vector2(x * 64, -y * 64);
 
                 x++;

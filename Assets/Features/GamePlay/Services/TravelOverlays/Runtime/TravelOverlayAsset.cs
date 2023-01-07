@@ -28,7 +28,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime
             var uiSceneData = new TypedSceneLoadData<TravelOverlay>(_uiScene);
             var uiScene = await sceneLoader.Load(uiSceneData);
             var overlay = uiScene.Searched;
-            
+
             builder.RegisterComponent(overlay)
                 .WithParameter(_constraints)
                 .As<ITravelOverlay>()

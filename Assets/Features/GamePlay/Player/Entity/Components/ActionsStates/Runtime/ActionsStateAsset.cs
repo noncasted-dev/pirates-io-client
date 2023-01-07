@@ -1,7 +1,7 @@
-﻿using GamePlay.Player.Entity.Components.Abstract;
+﻿using Common.DiContainer.Abstract;
+using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Player.Entity.Components.ActionsStates.Runtime
 {
@@ -9,9 +9,9 @@ namespace GamePlay.Player.Entity.Components.ActionsStates.Runtime
         menuName = PlayerAssetsPaths.ActionsState + "Component")]
     public class ActionsStateAsset : PlayerComponentAsset
     {
-        public override void Register(IContainerBuilder builder)
+        public override void Register(IDependencyRegister builder)
         {
-            builder.Register<ActionsState>(Lifetime.Scoped)
+            builder.Register<ActionsState>()
                 .As<IActionsStatePresenter>()
                 .As<IActionsStateProvider>();
         }

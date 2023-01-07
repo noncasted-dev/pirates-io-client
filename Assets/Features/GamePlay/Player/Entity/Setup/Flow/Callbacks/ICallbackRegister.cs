@@ -2,6 +2,6 @@
 {
     public interface ICallbackRegister
     {
-        void Add<T>(T component);
+        void Listen<T>(T component);
     }
 }

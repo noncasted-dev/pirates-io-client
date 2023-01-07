@@ -1,6 +1,5 @@
 ﻿using Common.RagonUtils;
 using GamePlay.Common.Damages;
-using GamePlay.Services.Projectiles.Entity;
 using Ragon.Client;
 using Ragon.Common;
 using UnityEngine;
@@ -39,7 +38,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
         {
             _amount = serializer.ReadInt();
             _origin = serializer.ReadVector();
-            _type = (ProjectileType) serializer.ReadInt();
+            _type = (ProjectileType)serializer.ReadInt();
         }
     }
 }

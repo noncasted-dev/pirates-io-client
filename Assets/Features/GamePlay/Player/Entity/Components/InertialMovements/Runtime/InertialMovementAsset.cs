@@ -1,10 +1,8 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Components.InertialMovements.Logs;
-using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
 {
@@ -12,26 +10,21 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
         menuName = PlayerAssetsPaths.InertialMovement + "Component")]
     public class InertialMovementAsset : PlayerComponentAsset
     {
-        [SerializeField]  private InertialMovementConfigAsset _config;
-        [SerializeField]  private InertialMovementLogSettings _logSettings;
+        [SerializeField] private InertialMovementConfigAsset _config;
+        [SerializeField] private InertialMovementLogSettings _logSettings;
 
-        public override void Register(IContainerBuilder builder)
+        public override void Register(IDependencyRegister builder)
         {
-            builder.Register<InertialMovementLogger>(Lifetime.Scoped)
+            builder.Register<InertialMovementLogger>()
                 .WithParameter(_logSettings);
 
-            builder.Register<InertialMovementInput>(Lifetime.Scoped);
+            builder.Register<InertialMovementInput>()
+                .AsCallbackListener();
 
-            builder.Register<InertialMovement>(Lifetime.Scoped)
+            builder.Register<InertialMovement>()
                 .WithParameter(_config)
                 .As<IInertialMovement>()
-                .AsSelf();
-        }
-
-        public override void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)
-        {
-            callbackRegister.Add(resolver.Resolve<InertialMovement>());
-            callbackRegister.Add(resolver.Resolve<InertialMovementInput>());
+                .AsCallbackListener();
         }
     }
 }

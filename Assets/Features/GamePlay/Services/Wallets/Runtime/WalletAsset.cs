@@ -16,8 +16,8 @@ namespace GamePlay.Services.Wallets.Runtime
         [SerializeField] [Indent] private Wallet _prefab;
 
         public override async UniTask Create(
-            IDependencyRegister builder, 
-            ILocalServiceBinder serviceBinder, 
+            IDependencyRegister builder,
+            ILocalServiceBinder serviceBinder,
             ISceneLoader sceneLoader,
             ILocalCallbacks callbacks)
         {
@@ -27,7 +27,7 @@ namespace GamePlay.Services.Wallets.Runtime
             builder.RegisterComponent(wallet)
                 .As<IWallet>()
                 .As<IWalletPresenter>();
-            
+
             serviceBinder.AddToModules(wallet);
         }
     }

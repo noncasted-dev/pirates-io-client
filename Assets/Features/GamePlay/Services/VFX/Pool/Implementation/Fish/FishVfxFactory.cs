@@ -40,7 +40,7 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Fish
         public FishVfx Create(Vector2 position, float angle = 0)
         {
             var vfx = _instantiator.Instantiate(position, angle, _parent);
-            
+
             Assert.IsNotNull(vfx);
 
             return vfx;

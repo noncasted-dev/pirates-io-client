@@ -29,12 +29,13 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             var uiScene = await sceneLoader.Load(uiSceneData);
 
             var ui = uiScene.Searched;
-            
+
             builder.RegisterComponent(ui)
-                .WithParameter(_constraints);
+                .WithParameter(_constraints)
+                .AsSelfResolvable();
 
             builder.Inject(ui.MoneyView);
-            
+
             builder.RegisterComponent(ui.TradeHandler)
                 .AsCallbackListener();
         }

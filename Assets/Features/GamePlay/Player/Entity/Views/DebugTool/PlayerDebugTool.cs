@@ -12,7 +12,7 @@ namespace GamePlay.Player.Entity.Views.DebugTool
         {
             _death = death;
         }
-        
+
         private IDeath _death;
 
         [Button("Kill")]

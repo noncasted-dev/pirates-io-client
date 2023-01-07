@@ -13,7 +13,9 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             _resourcesPresenter = resourcesPresenter;
             _sail = sail;
         }
-        
+
+        private const int _speedModifier = 7;
+
         private readonly IShipResources _resources;
         private readonly IShipResourcesPresenter _resourcesPresenter;
         private readonly ISail _sail;
@@ -23,7 +25,7 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
         public float GetSpeed()
         {
             var sail = _sail.Strength / 100f;
-            
+
             var loadDelta = _resources.Weight / (float)_resources.MaxWeight;
             var load = 1f - (loadDelta - 1f);
 
@@ -35,8 +37,10 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
                 speed *= 0.8f;
 
             _resourcesPresenter.SetSpeed(Mathf.CeilToInt(speed));
-            
-            return speed / 7;
+
+            var result = speed / _speedModifier;
+
+            return result;
         }
 
         public void OnShallowEntered()

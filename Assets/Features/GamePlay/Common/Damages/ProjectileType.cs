@@ -1,6 +1,6 @@
 ﻿namespace GamePlay.Common.Damages
 {
-    public enum ProjectileType : int
+    public enum ProjectileType
     {
         Ball,
         Knuppel,

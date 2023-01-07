@@ -22,13 +22,32 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Root
             _cannonTransform = cannonTransform;
         }
 
-        private bool _wasDisabled;
-        
         private ICannonTransform _cannonTransform;
+        private IFlowHandler _flowHandler;
 
         private IShooter _shooter;
         private ICannonSprite _sprite;
-        private IFlowHandler _flowHandler;
+
+        private bool _wasDisabled;
+
+        private void OnEnable()
+        {
+            if (_wasDisabled == false)
+                return;
+
+            _flowHandler.InvokeEnable();
+        }
+
+        private void OnDisable()
+        {
+            _wasDisabled = true;
+            _flowHandler.InvokeDisable();
+        }
+
+        private void OnDestroy()
+        {
+            _flowHandler.InvokeDestroy();
+        }
 
         public string Name => gameObject.name;
 
@@ -39,9 +58,9 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Root
             await flowHandler.InvokeAsyncAwake();
             flowHandler.InvokeEnable();
             flowHandler.InvokeStart();
-            
+
             var bot = GetComponentInParent<IBotCannon>();
-            
+
             if (bot == null)
                 Debug.Log("No bot");
             else
@@ -76,26 +95,6 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Root
         public void Shoot(float angle, float spread, int count)
         {
             _shooter.Shoot(angle, spread, count);
-
-        }
-
-        private void OnEnable()
-        {
-            if (_wasDisabled == false)
-                return;
-            
-            _flowHandler.InvokeEnable();
-        }
-
-        private void OnDisable()
-        {
-            _wasDisabled = true;
-            _flowHandler.InvokeDisable();
-        }
-
-        private void OnDestroy()
-        {
-            _flowHandler.InvokeDestroy();
         }
     }
 }

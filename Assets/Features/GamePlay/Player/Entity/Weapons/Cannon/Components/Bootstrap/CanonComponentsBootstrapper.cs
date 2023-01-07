@@ -1,8 +1,7 @@
-﻿using GamePlay.Player.Entity.Components.Abstract;
+﻿using Common.DiContainer.Abstract;
+using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Setup.Bootstrap;
-using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Bootstrap
 {
@@ -11,16 +10,10 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Bootstrap
     {
         [SerializeField] private PlayerComponentAsset[] _assets;
 
-        public void OnBuild(IContainerBuilder builder)
+        public void OnBuild(IDependencyRegister builder)
         {
             foreach (var asset in _assets)
                 asset.Register(builder);
-        }
-
-        public void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)
-        {
-            foreach (var asset in _assets)
-                asset.Resolve(resolver, callbackRegister);
         }
     }
 }

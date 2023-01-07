@@ -10,7 +10,6 @@ using GamePlay.Services.Projectiles.Implementation.Linear.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.Sounds.Runtime;
-using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -72,7 +71,7 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
             projectile.Fire(direction, parameters, false, creatorId);
             var vfx = _vfx.Get(data.Position);
             vfx.transform.rotation = Quaternion.Euler(0f, 0f, data.Angle);
-            
+
             MessageBrokerSoundExtensions.TriggerSound(PositionalSoundType.CannonBallShot, data.Position);
         }
     }

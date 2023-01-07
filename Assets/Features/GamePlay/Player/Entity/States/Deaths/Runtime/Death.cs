@@ -13,7 +13,6 @@ using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Sounds.Runtime;
 using Ragon.Client;
-using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.States.Deaths.Runtime
@@ -38,18 +37,17 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
             Definition = definition;
         }
 
-        private readonly IStateMachine _stateMachine;
-        private readonly IVfxPoolProvider _vfxPoolProvider;
         private readonly IShipConfig _config;
-        private readonly IBodyTransform _transform;
         private readonly IDroppedObjectsPresenter _droppedObjectsPresenter;
         private readonly PlayerNetworkRoot _root;
+
+        private readonly IStateMachine _stateMachine;
+        private readonly IBodyTransform _transform;
+        private readonly IVfxPoolProvider _vfxPoolProvider;
 
         private bool _isDead = false;
 
         private IObjectProvider<DeadShipVfx> _objectProvider;
-
-        public StateDefinition Definition { get; }
 
         public void OnAwake()
         {
@@ -80,18 +78,21 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
                 _stateMachine.Enter(this);
 
                 _droppedObjectsPresenter.DropFromDeath(ItemType.Cannon, Random.Range(1, 10), _transform.Position);
-                _droppedObjectsPresenter.DropFromDeath(ItemType.CannonShrapnel, Random.Range(1, 10), _transform.Position);
-                _droppedObjectsPresenter.DropFromDeath(ItemType.CannonKnuppel, Random.Range(1, 10), _transform.Position);
+                _droppedObjectsPresenter.DropFromDeath(ItemType.CannonShrapnel, Random.Range(1, 10),
+                    _transform.Position);
+                _droppedObjectsPresenter.DropFromDeath(ItemType.CannonKnuppel, Random.Range(1, 10),
+                    _transform.Position);
 
                 for (var i = 0; i < 7; i++)
-                {
-                    _droppedObjectsPresenter.DropFromDeath((ItemType)Random.Range(18, 30), Random.Range(1, 3), _transform.Position);
-                }
+                    _droppedObjectsPresenter.DropFromDeath((ItemType)Random.Range(18, 30), Random.Range(1, 3),
+                        _transform.Position);
 
                 Msg.Publish(new BotDeathEvent());
                 RagonNetwork.Room.DestroyEntity(_root.gameObject);
             }
         }
+
+        public StateDefinition Definition { get; }
 
         public void Break()
         {

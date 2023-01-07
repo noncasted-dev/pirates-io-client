@@ -14,7 +14,7 @@ namespace GamePlay.Common.SceneObjects.Global
         menuName = GlobalAssetsPaths.SceneObjects + "Service")]
     public class SceneObjectsAsset : GlobalServiceAsset
     {
-        [SerializeField]  private SceneObjectLogSettings _logSettings;
+        [SerializeField] private SceneObjectLogSettings _logSettings;
 
         public override async UniTask Create(
             IDependencyRegister builder,

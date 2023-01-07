@@ -1,5 +1,4 @@
 ﻿using Global.Services.MessageBrokers.Runtime;
-using UniRx;
 using UnityEngine;
 
 namespace Global.Services.Sounds.Runtime
@@ -11,7 +10,7 @@ namespace Global.Services.Sounds.Runtime
             var data = new SoundEvent(sound);
             Msg.Publish(data);
         }
-        
+
         public static void TriggerSound(
             PositionalSoundType sound,
             Vector2 position,

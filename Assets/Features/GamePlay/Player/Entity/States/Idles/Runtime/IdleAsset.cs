@@ -1,9 +1,8 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Setup.Path;
 using GamePlay.Player.Entity.States.Idles.Logs;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Player.Entity.States.Idles.Runtime
 {
@@ -11,15 +10,15 @@ namespace GamePlay.Player.Entity.States.Idles.Runtime
         menuName = PlayerAssetsPaths.Idle + "State")]
     public class IdleAsset : PlayerComponentAsset
     {
-        [SerializeField]  private IdleDefinition _definition;
-        [SerializeField]  private IdleLogSettings _logSettings;
+        [SerializeField] private IdleDefinition _definition;
+        [SerializeField] private IdleLogSettings _logSettings;
 
-        public override void Register(IContainerBuilder builder)
+        public override void Register(IDependencyRegister builder)
         {
-            builder.Register<IdleLogger>(Lifetime.Scoped)
+            builder.Register<IdleLogger>()
                 .WithParameter(_logSettings);
 
-            builder.Register<Idle>(Lifetime.Scoped)
+            builder.Register<Idle>()
                 .As<IIdle>()
                 .WithParameter(_definition);
         }

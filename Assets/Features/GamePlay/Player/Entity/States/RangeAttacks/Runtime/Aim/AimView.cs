@@ -41,7 +41,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim
 
         public async UniTask<AimResult> AimAsync()
         {
-            _animator.Play("Appear",0,0f);
+            _animator.Play("Appear", 0, 0f);
             _left.gameObject.SetActive(true);
             _right.gameObject.SetActive(true);
             _middle.gameObject.SetActive(true);

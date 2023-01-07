@@ -1,4 +1,8 @@
 ﻿{
   "name": "GamePlay.Player.Views.DebugTool",
-  "references":[ "GUID:b0214a6008ed146ff8f122a6a9c2f6cc", "GUID:c4f71e0b631016a4db9b73be47757b2a", "GUID:776d03a35f1b52c4a9aed9f56d7b4229" ]
+  "references": [
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:c4f71e0b631016a4db9b73be47757b2a",
+    "GUID:776d03a35f1b52c4a9aed9f56d7b4229"
+  ]
 }

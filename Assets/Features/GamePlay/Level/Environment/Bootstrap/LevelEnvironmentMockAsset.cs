@@ -18,8 +18,7 @@ namespace GamePlay.Level.Environment.Bootstrap
             ILocalCallbacks callbacks)
         {
             var bootstrapper = FindObjectOfType<EnvironmentBootstrapper>();
-            builder.RegisterComponent(bootstrapper)
-                .AsCallbackListener();
+            callbacks.Listen(bootstrapper);
         }
     }
 }

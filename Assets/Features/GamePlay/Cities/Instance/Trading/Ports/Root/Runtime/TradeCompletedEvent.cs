@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Items.Abstract;
-using GamePlay.Items.Implementation;
 
 namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 {
@@ -19,7 +18,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             RedrawCallback = redrawCallback;
             Result = result;
         }
-        
+
         public readonly Action<
             IReadOnlyList<IItem>,
             IReadOnlyList<IItem>,

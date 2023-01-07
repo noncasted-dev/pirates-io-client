@@ -22,10 +22,10 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
         }
 
         private readonly IAssetInstantiatorFactory _instantiatorFactory;
-        private readonly IUpdater _updater;
         private readonly Transform _parent;
 
         private readonly AssetReference _reference;
+        private readonly IUpdater _updater;
 
         private IAssetInstantiator<DroppedItem> _instantiator;
 

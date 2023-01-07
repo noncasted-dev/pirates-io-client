@@ -1,9 +1,8 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Setup.Path;
 using GamePlay.Player.Entity.States.None.Logs;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Player.Entity.States.None.Runtime
 {
@@ -11,15 +10,15 @@ namespace GamePlay.Player.Entity.States.None.Runtime
         menuName = PlayerAssetsPaths.None + "State")]
     public class NoneAsset : PlayerComponentAsset
     {
-        [SerializeField]  private NoneLogSettings _logSettings;
-        [SerializeField]  private NoneDefinition _definition;
+        [SerializeField] private NoneLogSettings _logSettings;
+        [SerializeField] private NoneDefinition _definition;
 
-        public override void Register(IContainerBuilder builder)
+        public override void Register(IDependencyRegister builder)
         {
-            builder.Register<NoneLogger>(Lifetime.Scoped)
+            builder.Register<NoneLogger>()
                 .WithParameter(_logSettings);
 
-            builder.Register<None>(Lifetime.Scoped)
+            builder.Register<None>()
                 .WithParameter(_definition)
                 .As<INone>();
         }

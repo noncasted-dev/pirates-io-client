@@ -1,7 +1,5 @@
 ﻿using GamePlay.Common.Damages;
-using Global.Services.Sounds.Runtime;
 using Ragon.Client;
-using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime

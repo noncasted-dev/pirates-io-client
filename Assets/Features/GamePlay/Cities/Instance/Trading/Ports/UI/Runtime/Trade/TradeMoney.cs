@@ -19,7 +19,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
                 gameObject.SetActive(false);
             else
                 gameObject.SetActive(true);
-            
+
             _cost.text = $"{amount}";
         }
     }

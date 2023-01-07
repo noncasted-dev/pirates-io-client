@@ -1,5 +1,4 @@
-﻿using Common.EditableScriptableObjects.Attributes;
-using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
+﻿using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.Setup.Path;
@@ -12,9 +11,9 @@ namespace GamePlay.Player.Entity.Setup.Editor
         menuName = PlayerAssetsPaths.Config + "Components")]
     public class PlayerComponentsConfig : ScriptableObject
     {
-        [SerializeField]  private InertialMovementAsset _inertialMovement;
-        [SerializeField]  private RotationAsset _rotation;
-        [SerializeField]  private StateMachineAsset _stateMachine;
-        [SerializeField]  private WeaponsHandlerAsset _weaponsHandler;
+        [SerializeField] private InertialMovementAsset _inertialMovement;
+        [SerializeField] private RotationAsset _rotation;
+        [SerializeField] private StateMachineAsset _stateMachine;
+        [SerializeField] private WeaponsHandlerAsset _weaponsHandler;
     }
 }

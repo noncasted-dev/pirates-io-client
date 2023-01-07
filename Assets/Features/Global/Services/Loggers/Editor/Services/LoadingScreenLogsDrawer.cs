@@ -2,7 +2,7 @@
 using Global.Services.LoadingScreens.Logs;
 using UnityEditor;
 
-namespace Global.Services.Loggers.Editor.Services.UI
+namespace Global.Services.Loggers.Editor.Services
 {
     [ReadOnlyDictionaryPriority]
     [CustomPropertyDrawer(typeof(LoadingScreenLogs))]

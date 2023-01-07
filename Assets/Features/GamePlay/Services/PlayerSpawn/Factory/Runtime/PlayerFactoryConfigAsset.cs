@@ -18,12 +18,12 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
 
         public GameObject NetworkPrefab => _networkPrefab;
         public GameObject BotPrefab => _botPrefab;
-        
+
         public AssetReference GetShip(ShipType type)
         {
             return _ships[type].Local;
         }
-        
+
         public AssetReference GetBotShip(ShipType type)
         {
             return _botShips[(int)type];

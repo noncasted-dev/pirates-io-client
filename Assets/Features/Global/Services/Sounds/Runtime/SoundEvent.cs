@@ -6,7 +6,7 @@
         {
             Type = type;
         }
-        
+
         public readonly SoundType Type;
     }
 }

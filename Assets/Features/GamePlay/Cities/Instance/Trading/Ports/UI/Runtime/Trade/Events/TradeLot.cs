@@ -9,13 +9,13 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events
             Item = item;
             Type = item.BaseData.Type;
         }
-        
+
         public readonly IItem Item;
         public readonly ItemType Type;
 
         private int _count;
         private int _totalPrice;
-        
+
         public int Count => _count;
         public int TotalPrice => _totalPrice;
 

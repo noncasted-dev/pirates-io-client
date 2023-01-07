@@ -16,7 +16,7 @@ namespace GamePlay.Level.Environment.Chunks.Instance
         {
             _scenes = new List<ChunkSceneData>();
         }
-        
+
         public void Add(AssetReference scene, string path)
         {
             _scenes.Add(new ChunkSceneData(scene, path));

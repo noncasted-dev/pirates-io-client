@@ -14,7 +14,6 @@ using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Network.Instantiators.Runtime;
 using Global.Services.Profiles.Storage;
 using Ragon.Client;
-using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -44,89 +43,11 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
         }
 
         private PlayerFactoryConfigAsset _configAsset;
-
-        private LevelScope _scope;
-        private PlayerFactoryLogger _logger;
-
-        private INetworkInstantiator _networkInstantiator;
-        private IProfileStorageProvider _profileStorageProvider;
         private IPlayerEntityPresenter _entityPresenter;
         private IAssetInstantiatorFactory _instantiatorFactory;
-        private IReputation _reputation;
+        private PlayerFactoryLogger _logger;
 
-        public async UniTask<IPlayerRoot> Create(Vector2 position, ShipType type)
-        {
-            var payload = new PlayerPayload(_profileStorageProvider.UserName, type, _reputation.Faction);
-
-            var networkObject = await _networkInstantiator.Instantiate<PlayerNetworkRoot, PlayerPayload>(
-                _configAsset.NetworkPrefab,
-                position,
-                payload);
-
-            var prefab = _configAsset.GetShip(type);
-            var instantiator = _instantiatorFactory.Create<GameObject>(prefab);
-            var playerObject = await instantiator.InstantiateAsync(Vector2.zero);
-
-            var playerTransform = playerObject.transform;
-            var networkTransform = networkObject.transform;
-            var entity = networkTransform.GetComponent<RagonEntity>();
-
-            playerTransform.parent = networkTransform;
-            playerTransform.localPosition = Vector3.zero;
-
-            _logger.OnInstantiated(position);
-
-            var bootstrapper = playerObject.GetComponent<IPlayerBootstrapper>();
-
-            await bootstrapper.Bootstrap(_scope);
-
-            var root = playerObject.GetComponent<IPlayerRoot>();
-
-            var resources = playerTransform.GetComponent<IAreaInteractor>().Resources;
-            _entityPresenter.AssignPlayer(entity, networkTransform, resources);
-
-            Msg.Publish(new PlayerSpawnedEvent());
-
-            return root;
-        }
-
-        public async UniTask<IPlayerRoot> CreateBot(Vector2 position, ShipType type)
-        {
-            var payload = new PlayerPayload(GetName(), type, _reputation.Faction);
-
-            var networkObject = await _networkInstantiator.Instantiate<PlayerNetworkRoot, PlayerPayload>(
-                _configAsset.NetworkPrefab,
-                position,
-                payload);
-
-            var prefab = _configAsset.GetBotShip(type);
-            var instantiator = _instantiatorFactory.Create<GameObject>(prefab);
-            var playerObject = await instantiator.InstantiateAsync(Vector2.zero);
-
-            var playerTransform = playerObject.transform;
-            var networkTransform = networkObject.transform;
-            var entity = networkTransform.GetComponent<RagonEntity>();
-
-            playerTransform.parent = networkTransform;
-            playerTransform.localPosition = Vector3.zero;
-
-            _logger.OnInstantiated(position);
-
-            var bootstrapper = playerObject.GetComponent<IPlayerBootstrapper>();
-
-            await bootstrapper.Bootstrap(_scope);
-
-            var root = playerObject.GetComponent<IPlayerRoot>();
-
-            return root;
-        }
-
-        private string GetName()
-        {
-            return _names[Random.Range(0, _names.Count)];
-        }
-
-        private List<string> _names = new()
+        private readonly List<string> _names = new()
         {
             "nging_with_my_gnomies          ",
             "osier-daddy                    ",
@@ -622,7 +543,85 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
 
             "kokonuts                       ",
 
-            "cherry-picked                  ",
+            "cherry-picked                  "
         };
+
+        private INetworkInstantiator _networkInstantiator;
+        private IProfileStorageProvider _profileStorageProvider;
+        private IReputation _reputation;
+
+        private LevelScope _scope;
+
+        public async UniTask<IPlayerRoot> Create(Vector2 position, ShipType type)
+        {
+            var payload = new PlayerPayload(_profileStorageProvider.UserName, type, _reputation.Faction);
+
+            var networkObject = await _networkInstantiator.Instantiate<PlayerNetworkRoot, PlayerPayload>(
+                _configAsset.NetworkPrefab,
+                position,
+                payload);
+
+            var prefab = _configAsset.GetShip(type);
+            var instantiator = _instantiatorFactory.Create<GameObject>(prefab);
+            var playerObject = await instantiator.InstantiateAsync(Vector2.zero);
+
+            var playerTransform = playerObject.transform;
+            var networkTransform = networkObject.transform;
+            var entity = networkTransform.GetComponent<RagonEntity>();
+
+            playerTransform.parent = networkTransform;
+            playerTransform.localPosition = Vector3.zero;
+
+            _logger.OnInstantiated(position);
+
+            var bootstrapper = playerObject.GetComponent<IPlayerBootstrapper>();
+
+            await bootstrapper.Bootstrap(_scope);
+
+            var root = playerObject.GetComponent<IPlayerRoot>();
+
+            var resources = playerTransform.GetComponent<IAreaInteractor>().Resources;
+            _entityPresenter.AssignPlayer(entity, networkTransform, resources);
+
+            Msg.Publish(new PlayerSpawnedEvent());
+
+            return root;
+        }
+
+        public async UniTask<IPlayerRoot> CreateBot(Vector2 position, ShipType type)
+        {
+            var payload = new PlayerPayload(GetName(), type, _reputation.Faction);
+
+            var networkObject = await _networkInstantiator.Instantiate<PlayerNetworkRoot, PlayerPayload>(
+                _configAsset.NetworkPrefab,
+                position,
+                payload);
+
+            var prefab = _configAsset.GetBotShip(type);
+            var instantiator = _instantiatorFactory.Create<GameObject>(prefab);
+            var playerObject = await instantiator.InstantiateAsync(Vector2.zero);
+
+            var playerTransform = playerObject.transform;
+            var networkTransform = networkObject.transform;
+            var entity = networkTransform.GetComponent<RagonEntity>();
+
+            playerTransform.parent = networkTransform;
+            playerTransform.localPosition = Vector3.zero;
+
+            _logger.OnInstantiated(position);
+
+            var bootstrapper = playerObject.GetComponent<IPlayerBootstrapper>();
+
+            await bootstrapper.Bootstrap(_scope);
+
+            var root = playerObject.GetComponent<IPlayerRoot>();
+
+            return root;
+        }
+
+        private string GetName()
+        {
+            return _names[Random.Range(0, _names.Count)];
+        }
     }
 }

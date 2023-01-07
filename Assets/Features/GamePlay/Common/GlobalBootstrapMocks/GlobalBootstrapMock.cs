@@ -85,7 +85,7 @@ namespace GamePlay.Common.GlobalBootstrapMocks
             await callbacks.InvokeFlowCallbacks();
 
             var connector = _scope.Container.Resolve<INetworkConnector>();
-            await connector.Connect("Test", TargetServer.USA_SanFrancisco);
+            await connector.Connect("Test", TargetServer.Europe);
             var joiner = _scope.Container.Resolve<INetworkSessionJoiner>();
             await joiner.Create();
         }

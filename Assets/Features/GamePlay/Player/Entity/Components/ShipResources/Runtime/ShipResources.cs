@@ -4,7 +4,6 @@ using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Services.PlayerCargos.Storage.Events;
 using Global.Services.MessageBrokers.Runtime;
-using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
@@ -21,25 +20,25 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 
         private readonly IHealth _health;
         private readonly ISail _sail;
-
-        private string _name;
-        private Sprite _icon;
-
-        private int _maxWeight;
-        private int _weight;
-
-        private int _maxCannons;
         private int _cannons;
 
+        private IDisposable _cargoChangedListener;
+        private Sprite _icon;
+        private bool _isIgnored;
+
+        private int _maxCannons;
+
         private float _maxSpeed;
-        private int _speed;
 
         private int _maxTeam;
-        private int _team;
 
-        private IDisposable _cargoChangedListener;
-        private bool _isIgnored;
+        private int _maxWeight;
+
+        private string _name;
         private int _shallowDamage;
+        private int _speed;
+        private int _team;
+        private int _weight;
 
         public string Name => _name;
         public Sprite Icon => _icon;
@@ -64,18 +63,6 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         public event Action<int, int> CannonsChanged;
         public event Action<int, int> SpeedChanged;
         public event Action<int, int> TeamChanged;
-        
-        public void OnEnabled()
-        {
-            _cargoChangedListener = Msg.Listen<CargoChangedEvent>(OnCargoChanged);
-            _sail.Changed += OnSailChanged;
-        }
-        
-        public void OnDisabled()
-        {
-            _cargoChangedListener?.Dispose();
-            _sail.Changed -= OnSailChanged;
-        }
 
         public void SetName(string name)
         {
@@ -86,13 +73,13 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         {
             _icon = icon;
         }
-        
+
         public void SetMaxWeight(int maxWeight)
         {
             _maxWeight = maxWeight;
 
             WeightChanged?.Invoke(_weight, _maxWeight);
-            
+
             Msg.Publish(new ResourcesChangedEvent(this));
         }
 
@@ -131,7 +118,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         public void SetTeam(int team)
         {
             _team = team;
-            
+
             TeamChanged?.Invoke(_team, _maxTeam);
             Msg.Publish(new ResourcesChangedEvent(this));
         }
@@ -139,7 +126,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         public void SetMaxSpeed(float maxSpeed)
         {
             _maxSpeed = maxSpeed;
-            
+
             SpeedChanged?.Invoke(_speed, (int)_maxSpeed);
             Msg.Publish(new ResourcesChangedEvent(this));
         }
@@ -147,7 +134,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         public void SetSpeed(int speed)
         {
             _speed = speed;
-            
+
             SpeedChanged?.Invoke(_speed, (int)_maxSpeed);
             Msg.Publish(new ResourcesChangedEvent(this));
         }
@@ -162,17 +149,28 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
             _shallowDamage = damage;
         }
 
+        public void OnEnabled()
+        {
+            _cargoChangedListener = Msg.Listen<CargoChangedEvent>(OnCargoChanged);
+            _sail.Changed += OnSailChanged;
+        }
+
+        public void OnDisabled()
+        {
+            _cargoChangedListener?.Dispose();
+            _sail.Changed -= OnSailChanged;
+        }
+
         private void OnSailChanged()
         {
             Msg.Publish(new ResourcesChangedEvent(this));
         }
-        
+
         private void OnCargoChanged(CargoChangedEvent data)
         {
             SetWeight(data.Weight);
 
             foreach (var (type, item) in data.Items)
-            {
                 switch (type)
                 {
                     case ItemType.Cannon:
@@ -182,7 +180,6 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
                         SetTeam(item.Count);
                         break;
                 }
-            }
         }
     }
 }

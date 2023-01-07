@@ -1,7 +1,7 @@
 ﻿using Ragon.Client;
 using UnityEngine;
 
-namespace Global.Services.Network.Loop.Runtime
+namespace Global.Services.Network.Connection.Runtime
 {
     public class NetworkDisconnectHandler : MonoBehaviour, IRagonListener
     {

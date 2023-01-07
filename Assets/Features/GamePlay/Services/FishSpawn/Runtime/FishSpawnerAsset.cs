@@ -5,7 +5,6 @@ using GamePlay.Common.Paths;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Services.FishSpawn.Runtime
 {

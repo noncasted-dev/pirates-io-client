@@ -8,8 +8,9 @@
             _isCanceled = false;
         }
 
-        private float _progress;
         private bool _isCanceled;
+
+        private float _progress;
 
         public float Progress => _progress;
         public bool IsCanceled => _isCanceled;

@@ -7,7 +7,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
     {
         public int Current;
         public int Max;
-    
+
         public void Serialize(RagonSerializer serializer)
         {
             serializer.WriteInt(Current);

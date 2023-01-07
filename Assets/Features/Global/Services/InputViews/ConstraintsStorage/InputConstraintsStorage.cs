@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Global.Services.InputViews.Constraints;
 using Global.Services.InputViews.Logs;
-using UnityEngine;
 
 namespace Global.Services.InputViews.ConstraintsStorage
 {
@@ -18,9 +17,9 @@ namespace Global.Services.InputViews.ConstraintsStorage
                 _constraints.Add(constraint, 0);
         }
 
-        private readonly InputViewLogger _logger;
-
         private readonly Dictionary<InputConstraints, int> _constraints = new();
+
+        private readonly InputViewLogger _logger;
 
         public bool this[InputConstraints key] => _constraints[key] > 0;
 

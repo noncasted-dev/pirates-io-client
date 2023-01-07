@@ -55,7 +55,7 @@ namespace Global.Services.Common.Config.Standard
         [SerializeField] private ItemFactoryAsset _itemFactory;
         [SerializeField] private PersistentInventoryAsset _persistentInventory;
         [SerializeField] private SoundsPlayerAsset _soundsPlayer;
-        
+
         public override GlobalServiceAsset[] GetAssets()
         {
             return new GlobalServiceAsset[]
@@ -79,7 +79,7 @@ namespace Global.Services.Common.Config.Standard
                 _messageBroker,
                 _uiStateMachine,
                 _profile,
-                _itemFactory,
+                _itemFactory
             };
         }
     }

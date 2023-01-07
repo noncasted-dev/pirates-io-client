@@ -16,7 +16,7 @@ namespace GamePlay.Services.Reputation.Runtime
         [SerializeField] [Indent] private Reputation _prefab;
 
         public override async UniTask Create(
-            IDependencyRegister builder, 
+            IDependencyRegister builder,
             ILocalServiceBinder serviceBinder,
             ISceneLoader sceneLoader,
             ILocalCallbacks callbacks)

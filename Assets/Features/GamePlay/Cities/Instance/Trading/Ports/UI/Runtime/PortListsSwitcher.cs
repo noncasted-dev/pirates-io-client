@@ -8,7 +8,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
     {
         [SerializeField] private Button _marketButton;
         [SerializeField] private Button _shipButton;
-        
+
         [SerializeField] private GameObject _marketRoot;
         [SerializeField] private GameObject _shipRoot;
 
@@ -16,7 +16,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         {
             _marketButton.onClick.AddListener(OnMarketClicked);
             _shipButton.onClick.AddListener(OnShipClicked);
-            
+
             _marketRoot.SetActive(true);
             _shipRoot.SetActive(false);
         }
@@ -26,13 +26,13 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _marketButton.onClick.RemoveListener(OnMarketClicked);
             _shipButton.onClick.RemoveListener(OnShipClicked);
         }
-        
+
         private void OnMarketClicked()
         {
             _marketRoot.SetActive(true);
             _shipRoot.SetActive(false);
         }
-        
+
         private void OnShipClicked()
         {
             _marketRoot.SetActive(false);

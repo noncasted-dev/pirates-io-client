@@ -4,7 +4,6 @@ using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Items.Abstract;
 using Global.Services.MessageBrokers.Runtime;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,14 +18,14 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         [SerializeField] private RectTransform _contentRect;
         [SerializeField] private float _cellHeight = 60f;
         [SerializeField] private ItemOrigin _origin;
-
-        private readonly Dictionary<ItemType, TradeView> _cells = new();
         private readonly List<TradeView> _available = new();
 
-        private IDisposable _transferListener;
-        private IDisposable _removeListener;
-        
+        private readonly Dictionary<ItemType, TradeView> _cells = new();
+
         private IPriceProvider _priceProvider;
+        private IDisposable _removeListener;
+
+        private IDisposable _transferListener;
 
         private void Awake()
         {

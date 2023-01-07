@@ -23,13 +23,10 @@ namespace GamePlay.Factions.Selections.UI.Runtime
         [SerializeField] private CitySelectionApprovement _approvement;
         [SerializeField] private FactionEntry[] _entries;
 
-        private UniTaskCompletionSource<CityDefinition> _selectionCompletion;
-
         private UiConstraints _constraints;
-        private IUiStateMachine _uiStateMachine;
 
-        public UiConstraints Constraints => _constraints;
-        public string Name => "FactionSelection";
+        private UniTaskCompletionSource<CityDefinition> _selectionCompletion;
+        private IUiStateMachine _uiStateMachine;
 
         private void OnEnable()
         {
@@ -41,15 +38,6 @@ namespace GamePlay.Factions.Selections.UI.Runtime
         {
             foreach (var entry in _entries)
                 entry.Selected -= OnSelectedClicked;
-        }
-
-        public void Recover()
-        {
-            _body.SetActive(true);
-        }
-
-        public void Exit()
-        {
         }
 
         public void Open()
@@ -80,6 +68,18 @@ namespace GamePlay.Factions.Selections.UI.Runtime
             }
 
             throw new ArgumentException();
+        }
+
+        public UiConstraints Constraints => _constraints;
+        public string Name => "FactionSelection";
+
+        public void Recover()
+        {
+            _body.SetActive(true);
+        }
+
+        public void Exit()
+        {
         }
 
         private void OnSelectedClicked(CityDefinition city)

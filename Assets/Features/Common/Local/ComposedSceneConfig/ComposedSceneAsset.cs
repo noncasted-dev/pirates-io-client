@@ -60,12 +60,12 @@ namespace Common.Local.ComposedSceneConfig
             builder.ResolveAllWithCallbacks(scope.Container, selfCallbacks);
 
             selfCallbacks.Resolve(scope.Container);
-            
+
             selfCallbacks.InvokeAwakeCallbacks();
             await selfCallbacks.InvokeAsyncAwakeCallbacks();
 
             selfCallbacks.InvokeEnableCallback();
-            
+
             selfCallbacks.InvokeBootstrapCallbacks();
             await selfCallbacks.InvokeAsyncBootstrapCallbacks();
 

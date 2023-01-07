@@ -5,7 +5,6 @@ using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Player.Entity.Components.Definition;
 using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,14 +15,14 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         [SerializeField] private Image _icon;
         [SerializeField] private Button _removeButton;
         [SerializeField] private TMP_Text _cost;
-        
+
         [SerializeField] private TMP_Text _health;
         [SerializeField] private TMP_Text _weight;
         [SerializeField] private TMP_Text _team;
         [SerializeField] private TMP_Text _cannons;
         [SerializeField] private TMP_Text _speed;
         [SerializeField] private TMP_Text _name;
-        
+
         private TradableItem _item;
         private ItemOrigin _origin;
 
@@ -52,7 +51,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             Msg.Publish(tradeChange);
 
             var ship = tradable.Item as ShipItem;
-            
+
             _health.text = ship.MaxHealth.ToString();
             _weight.text = ship.MaxWeight.ToString();
             _team.text = ship.MaxTeam.ToString();

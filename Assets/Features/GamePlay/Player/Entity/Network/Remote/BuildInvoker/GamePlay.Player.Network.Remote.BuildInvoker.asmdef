@@ -1,21 +1,21 @@
 {
-    "name": "GamePlay.Player.Network.Remote.BuildInvoker",
-    "rootNamespace": "",
-    "references": [
-        "GUID:861b1281dab914af69d87c4345d0b1a2",
-        "GUID:8b811e177471a084e92a2dfb33078774",
-        "GUID:364bfbd2908041158cb87effef797737",
-        "GUID:57d592813d0da5d4c862e153f707ff80",
-        "GUID:96951d1161b4413458249663239c0b64",
-        "GUID:0b0b2266bcde4b75af0b0cecc7e29fea"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "GamePlay.Player.Network.Remote.BuildInvoker",
+  "rootNamespace": "",
+  "references": [
+    "GUID:861b1281dab914af69d87c4345d0b1a2",
+    "GUID:8b811e177471a084e92a2dfb33078774",
+    "GUID:364bfbd2908041158cb87effef797737",
+    "GUID:57d592813d0da5d4c862e153f707ff80",
+    "GUID:96951d1161b4413458249663239c0b64",
+    "GUID:0b0b2266bcde4b75af0b0cecc7e29fea"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }

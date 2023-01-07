@@ -5,7 +5,7 @@ using GamePlay.Level.Config.Runtime;
 using Global.GameLoops.Abstract;
 using Global.GameLoops.Flow;
 using Global.GameLoops.Logs;
-using Global.Services.Common.Abstract.Callbacks;
+using Global.Services.Common.Abstract;
 using Global.Services.Common.Scope;
 using Global.Services.CurrentCameras.Runtime;
 using Global.Services.CurrentSceneHandlers.Runtime;

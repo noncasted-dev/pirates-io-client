@@ -11,8 +11,6 @@ namespace GamePlay.Factions.Selections.UI.Runtime
         [SerializeField] private CityDefinition _definition;
         [SerializeField] private Button _button;
 
-        public event Action<CityDefinition> Selected;
-        
         private void OnEnable()
         {
             _button.onClick.AddListener(OnClicked);
@@ -22,6 +20,8 @@ namespace GamePlay.Factions.Selections.UI.Runtime
         {
             _button.onClick.RemoveListener(OnClicked);
         }
+
+        public event Action<CityDefinition> Selected;
 
         private void OnClicked()
         {

@@ -20,16 +20,23 @@ namespace GamePlay.Services.TravelOverlays.Runtime.Health
             _ySize = _actual.sizeDelta.y;
         }
 
-        private readonly IUpdater _updater;
         private readonly RectTransform _actual;
         private readonly RectTransform _damage;
 
         private readonly float _length;
         private readonly float _speed;
+
+        private readonly IUpdater _updater;
         private readonly float _ySize;
+        private bool _isStarted;
 
         private float _targetLength;
-        private bool _isStarted;
+
+        public void OnUpdate(float delta)
+        {
+            var length = Mathf.MoveTowards(_damage.sizeDelta.x, _targetLength, _speed * delta);
+            _damage.sizeDelta = new Vector2(length, _ySize);
+        }
 
         public void Start()
         {
@@ -37,28 +44,22 @@ namespace GamePlay.Services.TravelOverlays.Runtime.Health
                 return;
 
             _isStarted = true;
-            
+
             _updater.Add(this);
         }
 
         public void Stop()
         {
             _isStarted = false;
-            
+
             _updater.Remove(this);
         }
 
         public void OnHealthChanged(int health, int maxHealth)
         {
-            var healthLength = (health / (float)maxHealth) * _length;
+            var healthLength = health / (float)maxHealth * _length;
             _actual.sizeDelta = new Vector2(healthLength, _ySize);
             _targetLength = healthLength;
-        }
-
-        public void OnUpdate(float delta)
-        {
-            var length = Mathf.MoveTowards(_damage.sizeDelta.x, _targetLength, _speed * delta);
-            _damage.sizeDelta = new Vector2(length, _ySize);
         }
     }
 }

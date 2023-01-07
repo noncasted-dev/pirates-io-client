@@ -9,13 +9,13 @@ using Random = UnityEngine.Random;
 namespace GamePlay.Services.VFX.Pool.Implementation.Animated
 {
     [DisallowMultipleComponent]
-   // [RequireComponent(typeof(Animator))]
+    // [RequireComponent(typeof(Animator))]
     public class AnimatedVfx : MonoBehaviour, IPoolObject<AnimatedVfx>
     {
+        private static readonly int Play = Animator.StringToHash("Play");
         [SerializeField] private List<GameObject> _skinVariants;
         [SerializeField] private float _duration;
         [SerializeField] private UnityEvent _callOnEnd;
-        private static readonly int Play = Animator.StringToHash("Play");
 
         private Animator _animator;
         private Action<AnimatedVfx> _returnToPool;
@@ -37,7 +37,7 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Animated
         {
             if (_skinVariants.Count > 0)
             {
-                var randomId = (int)(Random.value * (float)_skinVariants.Count);
+                var randomId = (int)(Random.value * _skinVariants.Count);
                 for (var i = 0; i < _skinVariants.Count; i++)
                     _skinVariants[i].SetActive(randomId == i);
             }
@@ -48,6 +48,7 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Animated
             }
 
             StartCoroutine(DelayCallEnd());
+
             IEnumerator DelayCallEnd()
             {
                 yield return new WaitForSeconds(_duration);

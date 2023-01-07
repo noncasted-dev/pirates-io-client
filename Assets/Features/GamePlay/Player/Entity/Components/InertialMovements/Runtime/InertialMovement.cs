@@ -28,8 +28,8 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
         private readonly InertialMovementLogger _logger;
 
         private readonly IRigidBody _rigidBody;
-        private readonly IUpdater _updater;
         private readonly ISpeedCalculator _speedCalculator;
+        private readonly IUpdater _updater;
         private Vector2 _currentDirection;
 
         private bool _isEnabled;
@@ -94,13 +94,13 @@ namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
 
         public void OnPreFixedUpdate(float delta)
         {
-            return;
             var calculatedSpeed = _speedCalculator.GetSpeed();
+            var speed = calculatedSpeed * delta;
+
             _lerpTime += calculatedSpeed * delta * _config.LerpSpeed;
 
             var progress = _curve.Evaluate(_lerpTime, _startDirection, _targetDirection);
             _currentDirection = Vector2.Lerp(_startDirection, _targetDirection, progress);
-            var speed = calculatedSpeed * delta;
 
             _rigidBody.Move(_currentDirection, speed);
 

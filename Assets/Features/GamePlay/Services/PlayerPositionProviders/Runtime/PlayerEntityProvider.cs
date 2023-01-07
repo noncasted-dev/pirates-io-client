@@ -4,19 +4,15 @@ using UnityEngine;
 
 namespace GamePlay.Services.PlayerPositionProviders.Runtime
 {
-    public class PlayerEntityProvider : 
+    public class PlayerEntityProvider :
         MonoBehaviour,
         IPlayerEntityPresenter,
         IPlayerEntityProvider
     {
-        private Vector2 _lastPosition = Vector2.zero;
-        
         private RagonEntity _entity;
-        private Transform _transform;
+        private Vector2 _lastPosition = Vector2.zero;
         private IShipResources _resources;
-
-        public Vector2 Position => GetPosition();
-        public IShipResources Resources => _resources;
+        private Transform _transform;
 
         public void AssignPlayer(
             RagonEntity entity,
@@ -33,15 +29,15 @@ namespace GamePlay.Services.PlayerPositionProviders.Runtime
             RagonNetwork.Room.DestroyEntity(_entity.gameObject);
         }
 
+        public Vector2 Position => GetPosition();
+        public IShipResources Resources => _resources;
+
         private Vector2 GetPosition()
         {
-            if (_transform == null)
-            {
-                return _lastPosition;
-            }
+            if (_transform == null) return _lastPosition;
 
             _lastPosition = _transform.position;
-            
+
             return _lastPosition;
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+using ICallbackRegister = Common.DiContainer.Abstract.ICallbackRegister;
 
 namespace GamePlay.Player.Entity.Setup.Flow
 {
@@ -12,13 +13,13 @@ namespace GamePlay.Player.Entity.Setup.Flow
         private readonly List<IStartCallback> _starts = new();
         private readonly List<ISwitchCallbacks> _switches = new();
 
-        public void Add<T>(T component)
+        public void Listen(object listener)
         {
-            TryAddToList(_awakes, component);
-            TryAddToList(_asyncAwakes, component);
-            TryAddToList(_starts, component);
-            TryAddToList(_switches, component);
-            TryAddToList(_destroys, component);
+            TryAddToList(_awakes, listener);
+            TryAddToList(_asyncAwakes, listener);
+            TryAddToList(_starts, listener);
+            TryAddToList(_switches, listener);
+            TryAddToList(_destroys, listener);
         }
 
         public void InvokeAwake()

@@ -2,20 +2,10 @@
 {
     public class Perlin
     {
-        public static double OctavePerlin(double x, double y, double z, int octaves, double persistence)
+        static Perlin()
         {
-            double total = 0;
-            double frequency = 1;
-            double amplitude = 1;
-            for (var i = 0; i < octaves; i++)
-            {
-                total += perlin(x * frequency, y * frequency, z * frequency) * amplitude;
-
-                amplitude *= persistence;
-                frequency *= 2;
-            }
-
-            return total;
+            p = new int[512];
+            for (var x = 0; x < 512; x++) p[x] = permutation[x % 256];
         }
 
         private static readonly int[] permutation =
@@ -38,13 +28,20 @@
 
         private static readonly int[] p; // Doubled permutation to avoid overflow
 
-        static Perlin()
+        public static double OctavePerlin(double x, double y, double z, int octaves, double persistence)
         {
-            p = new int[512];
-            for (var x = 0; x < 512; x++)
+            double total = 0;
+            double frequency = 1;
+            double amplitude = 1;
+            for (var i = 0; i < octaves; i++)
             {
-                p[x] = permutation[x % 256];
+                total += perlin(x * frequency, y * frequency, z * frequency) * amplitude;
+
+                amplitude *= persistence;
+                frequency *= 2;
             }
+
+            return total;
         }
 
         public static double perlin(double x, double y, double z)
@@ -64,7 +61,8 @@
             var ab = p[a + 1] + zi; // 0 and 255.  We then add y to it and plug that into p[], and add z to that.
             var b = p[xi + 1] + yi; // Then, we get another random value by adding 1 to that and putting it into p[]
             var ba = p[b] + zi; // and add z to it.  We do the whole thing over again starting with x+1.  Later
-            var bb = p[b + 1] + zi; // we plug aa, ab, ba, and bb back into p[] along with their +1's to get another set.
+            var bb = p[b + 1] +
+                     zi; // we plug aa, ab, ba, and bb back into p[] along with their +1's to get another set.
             // in the end we have 8 values between 0 and 255 - one for each vertex on the unit cube.
             // These are all interpolated together using u, v, and w below.
 
@@ -91,7 +89,9 @@
                 u);
             y2 = lerp(x1, x2, v);
 
-            return (lerp(y1, y2, w) + 1) / 2; // For convenience we bound it to 0 - 1 (theoretical min/max before is -1 - 1)
+            return
+                (lerp(y1, y2, w) + 1) /
+                2; // For convenience we bound it to 0 - 1 (theoretical min/max before is -1 - 1)
         }
 
         public static double grad(int hash, double x, double y, double z)

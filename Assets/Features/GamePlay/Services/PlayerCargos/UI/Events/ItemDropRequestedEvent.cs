@@ -9,7 +9,7 @@ namespace GamePlay.Services.PlayerCargos.UI.Events
             Item = item;
             Type = item.BaseData.Type;
         }
-        
+
         public readonly IItem Item;
         public readonly ItemType Type;
     }

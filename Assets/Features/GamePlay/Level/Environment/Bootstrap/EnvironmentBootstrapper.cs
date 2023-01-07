@@ -14,7 +14,8 @@ using VContainer;
 
 namespace GamePlay.Level.Environment.Bootstrap
 {
-    public class EnvironmentBootstrapper : MonoBehaviour, ILevelBootstrapper, ILocalContainerBuildListener, IDependencyResolver
+    public class EnvironmentBootstrapper : MonoBehaviour, ILevelBootstrapper, ILocalContainerBuildListener,
+        IDependencyResolver
     {
         [SerializeField] private SceneObjectsHandler _sceneObjects;
         [SerializeField] private CitiesRegistry _citiesRegistry;
@@ -23,25 +24,24 @@ namespace GamePlay.Level.Environment.Bootstrap
         [SerializeField] private CityStorage[] _storages;
         [SerializeField] private CityPort[] _ports;
 
-        public void OnContainerBuild(IDependencyRegister builder)
-        {
-            builder.RegisterComponent(_sceneObjects).As<ISceneObjectsHandler>();
-            builder.RegisterComponent(_citiesRegistry).As<ICitiesRegistry>();
-            builder.RegisterComponent(_chunksCulling);
-        }
-        
         public void Resolve(IObjectResolver resolver)
         {
-            resolver.Resolve<ChunksOcclusionCulling>();
-            
             var itemFactory = resolver.Resolve<IItemFactory>();
             var cargoStorage = resolver.Resolve<IPlayerCargoStorage>();
-            
+
             foreach (var target in _storages)
                 target.Construct(itemFactory);
-            
+
             foreach (var target in _ports)
                 target.Construct(cargoStorage);
+        }
+
+        public void OnContainerBuild(IDependencyRegister builder)
+        {
+            Debug.Log("Build");
+            builder.RegisterComponent(_sceneObjects).As<ISceneObjectsHandler>();
+            builder.RegisterComponent(_citiesRegistry).As<ICitiesRegistry>();
+            builder.RegisterComponent(_chunksCulling).AsSelfResolvable();
         }
 
         [Button("ScanStorages")]
@@ -49,7 +49,7 @@ namespace GamePlay.Level.Environment.Bootstrap
         {
             _storages = FindObjectsOfType<CityStorage>();
         }
-        
+
         [Button("ScanPorts")]
         private void ScanPorts()
         {

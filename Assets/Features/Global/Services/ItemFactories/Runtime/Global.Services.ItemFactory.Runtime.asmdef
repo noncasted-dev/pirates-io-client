@@ -2,7 +2,8 @@
   "name": "Global.Services.ItemFactory.Runtime",
   "references": [
     "GUID:e2b1c00d8d9b440888bd9f6a58105dd3",
-    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc","GUID:cdfd058b393524bddbb7e850e0d53c8e",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+    "GUID:cdfd058b393524bddbb7e850e0d53c8e",
     "GUID:fb9b00a9a42c4c1459774b1ef88fcd74",
     "GUID:401398c75a71e5444a495125c9dd1a21",
     "GUID:304598a766c781247877f81511375f98",

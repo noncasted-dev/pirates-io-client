@@ -1,19 +1,19 @@
 {
-    "name": "Global.Services.InputView.Editor",
-    "rootNamespace": "",
-    "references": [
-        "GUID:d945054fb520ae0408f2ec087ffa5163",
-        "GUID:b03721a1eeb8491da187242f7870dca2"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "Global.Services.InputView.Editor",
+  "rootNamespace": "",
+  "references": [
+    "GUID:d945054fb520ae0408f2ec087ffa5163",
+    "GUID:b03721a1eeb8491da187242f7870dca2"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }

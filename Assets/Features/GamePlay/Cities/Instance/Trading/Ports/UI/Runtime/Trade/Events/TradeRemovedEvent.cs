@@ -12,7 +12,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events
         }
 
         public readonly IItem Item;
-        public readonly ItemType Type;
         public readonly ItemOrigin Origin;
+        public readonly ItemType Type;
     }
 }

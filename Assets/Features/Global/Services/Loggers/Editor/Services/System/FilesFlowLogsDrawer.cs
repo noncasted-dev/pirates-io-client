@@ -2,7 +2,7 @@
 using Global.Services.FilesFlow.Logs;
 using UnityEditor;
 
-namespace Global.Services.Loggers.Editor.Services.Assets
+namespace Global.Services.Loggers.Editor.Services.System
 {
     [ReadOnlyDictionaryPriority]
     [CustomPropertyDrawer(typeof(FilesFlowLogs))]

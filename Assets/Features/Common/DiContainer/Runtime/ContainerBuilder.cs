@@ -8,8 +8,8 @@ namespace Common.DiContainer.Runtime
 {
     public class ContainerBuilder : IDependencyRegister, IDependenciesBuilder
     {
-        private readonly List<IRegistrationBuilder> _registrations = new();
         private readonly List<IInjectionBuilder> _injections = new();
+        private readonly List<IRegistrationBuilder> _registrations = new();
 
         public void RegisterAll(IContainerBuilder builder)
         {
@@ -30,7 +30,7 @@ namespace Common.DiContainer.Runtime
         {
             foreach (var registration in _registrations)
                 registration.ResolveWithCallbacks(resolver, callbackRegistry);
-            
+
             foreach (var injection in _injections)
                 injection.Inject(resolver);
         }
@@ -57,7 +57,7 @@ namespace Common.DiContainer.Runtime
         public void Inject<T>(T component) where T : MonoBehaviour
         {
             var injection = new Injection(component);
-            
+
             _injections.Add(injection);
         }
     }

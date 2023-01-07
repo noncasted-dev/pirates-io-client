@@ -22,7 +22,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Death.Runtime
 
             listener.AddListener<HealthChangeNetworkEvent>(OnHealthReceived);
         }
-        
+
         private readonly FireController _controller;
         private readonly IObjectProvider<DeadShipVfx> _deadShip;
         private readonly Transform _transform;

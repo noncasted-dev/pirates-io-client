@@ -43,24 +43,24 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         }
 
         private readonly ICannonReplicator _cannonReplicator;
+        private readonly IPlayerCargoStorage _cargo;
         private readonly IShooterConfig _config;
         private readonly IProjectilesPoolProvider _projectilesPoolProvider;
-        private readonly IShootPoint _shootPoint;
         private readonly IShipResources _resources;
+        private readonly IProjectileSelector _selector;
+        private readonly IShootPoint _shootPoint;
 
         private readonly IUpdater _updater;
         private readonly IVfxPoolProvider _vfxPoolProvider;
-        private readonly IProjectileSelector _selector;
-        private readonly IPlayerCargoStorage _cargo;
-        private CancellationTokenSource _cancellation;
 
         private IObjectProvider<LinearProjectile> _ball;
-        private IObjectProvider<LinearProjectile> _knuppel;
-        private IObjectProvider<LinearProjectile> _shrapnel;
-        private IObjectProvider<LinearProjectile> _fishnet;
-        private IObjectProvider<AnimatedVfx> _vfx;
+        private CancellationTokenSource _cancellation;
 
         private Shot _current;
+        private IObjectProvider<LinearProjectile> _fishnet;
+        private IObjectProvider<LinearProjectile> _knuppel;
+        private IObjectProvider<LinearProjectile> _shrapnel;
+        private IObjectProvider<AnimatedVfx> _vfx;
 
         public void OnAwake()
         {
@@ -71,7 +71,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 
             _vfx = _vfxPoolProvider.GetPool<AnimatedVfx>(_config.Vfx);
         }
-        
+
         public void OnDestroyed()
         {
             Cancel();
@@ -82,7 +82,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
             _cancellation?.Cancel();
             _cancellation?.Dispose();
             _cancellation = null;
-            
+
             _current?.Cancel();
             _current = null;
         }
@@ -117,7 +117,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
                 var reduceCount = (int)(shots / 10f);
                 if (reduceCount < 1)
                     reduceCount = 1;
-                
+
                 _cargo.Reduce(item, reduceCount);
             }
             else

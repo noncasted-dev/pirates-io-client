@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Common.EditableScriptableObjects.Attributes;
 using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.Sprites.Logs;
@@ -29,22 +28,13 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
         [SerializeField] private Material _defaultMaterial;
         [SerializeField] private Material _flash;
 
-        [SerializeField]  private SpriteViewLogSettings _logSettings;
+        [SerializeField] private SpriteViewLogSettings _logSettings;
         [SerializeField] private List<SpriteRenderer> _subSprites;
         [SerializeField] private GameObject _scaleFlipped;
 
         private SpriteViewLogger _logger;
 
         private SpriteRenderer _sprite;
-
-        public Material Material
-        {
-            get
-            {
-                _logger.OnMaterialUsed(_sprite.material);
-                return _sprite.material;
-            }
-        }
 
         public void OnAwake()
         {
@@ -80,7 +70,7 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
         {
             _sprite.flipX = isFlipped;
             if (_scaleFlipped)
-                _scaleFlipped.transform.localScale = isFlipped ? new Vector3(-1,1,1) : new Vector3(1,1,1) ;
+                _scaleFlipped.transform.localScale = isFlipped ? new Vector3(-1, 1, 1) : new Vector3(1, 1, 1);
 
             if (flipSubSprites == true)
                 foreach (var subSprite in _subSprites)
@@ -98,13 +88,22 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
                 _ => _sprite.flipX
             };
             if (_scaleFlipped)
-                _scaleFlipped.transform.localScale = _sprite.flipX ? new Vector3(-1,1,1) : new Vector3(1,1,1) ;
+                _scaleFlipped.transform.localScale = _sprite.flipX ? new Vector3(-1, 1, 1) : new Vector3(1, 1, 1);
 
             if (flipSubSprites == true)
                 foreach (var subSprite in _subSprites)
                     subSprite.flipX = _sprite.flipX;
 
             _logger.OnFlippedAlong(direction);
+        }
+
+        public Material Material
+        {
+            get
+            {
+                _logger.OnMaterialUsed(_sprite.material);
+                return _sprite.material;
+            }
         }
 
         public void SetMaterial(Material material)

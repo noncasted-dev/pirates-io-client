@@ -19,7 +19,7 @@ namespace GamePlay.Services.PlayerCargos.Bootstrap
     public class PlayerCargoAsset : LocalServiceAsset
     {
         [SerializeField] [Indent] private UiConstraints _constraints;
-        
+
         [SerializeField] [Indent] private PlayerCargo _prefab;
         [SerializeField] [Indent] private AssetReference _travelScene;
 
@@ -36,7 +36,7 @@ namespace GamePlay.Services.PlayerCargos.Bootstrap
 
             builder.RegisterComponent(storage)
                 .As<IPlayerCargoStorage>();
-            
+
             builder.RegisterComponent(cargo)
                 .As<IPlayerCargo>()
                 .AsCallbackListener();

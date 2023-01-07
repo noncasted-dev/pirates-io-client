@@ -2,7 +2,6 @@
 using GamePlay.Services.PlayerCargos.UI.Events;
 using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +18,7 @@ namespace GamePlay.Services.PlayerCargos.UI
         private void OnEnable()
         {
             _transferButton.onClick.AddListener(OnTransferClicked);
-            
+
             if (_item == null)
                 return;
 
@@ -39,7 +38,7 @@ namespace GamePlay.Services.PlayerCargos.UI
         public void AssignItem(IItem item)
         {
             _item = item;
-            
+
             gameObject.SetActive(true);
             _transferButton.gameObject.SetActive(true);
 
@@ -64,13 +63,12 @@ namespace GamePlay.Services.PlayerCargos.UI
         public void Disable()
         {
             _item = null;
-            
+
             if (gameObject == null)
                 return;
-            
+
             gameObject.SetActive(false);
         }
-
 
         private void OnTransferClicked()
         {

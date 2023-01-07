@@ -1,4 +1,9 @@
 ﻿{
   "name": "GamePlay.Services.Saves.Definitions",
-  "references":[ "GUID:a4182e0fc36241546bac99752244695b", "GUID:364bfbd2908041158cb87effef797737", "GUID:e2b1c00d8d9b440888bd9f6a58105dd3", "GUID:6d5a6f5224634f189e022f57902eb067" ]
+  "references": [
+    "GUID:a4182e0fc36241546bac99752244695b",
+    "GUID:364bfbd2908041158cb87effef797737",
+    "GUID:e2b1c00d8d9b440888bd9f6a58105dd3",
+    "GUID:6d5a6f5224634f189e022f57902eb067"
+  ]
 }

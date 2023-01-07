@@ -1,5 +1,4 @@
 ﻿using GamePlay.Common.Damages;
-using GamePlay.Services.Projectiles.Entity;
 
 namespace GamePlay.Services.Projectiles.Mover.Abstract
 {

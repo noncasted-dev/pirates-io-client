@@ -4,7 +4,6 @@ using Cysharp.Threading.Tasks;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Menu.Common;
 using UnityEngine;
-using VContainer;
 
 namespace Menu.Services.MenuLoop.Runtime
 {

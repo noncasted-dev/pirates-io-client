@@ -2,7 +2,7 @@
 using Global.Services.AssetsFlow.Logs;
 using UnityEditor;
 
-namespace Global.Services.Loggers.Editor.Services.Assets
+namespace Global.Services.Loggers.Editor.Services
 {
     [ReadOnlyDictionaryPriority]
     [CustomPropertyDrawer(typeof(AssetsFlowLogs))]

@@ -1,12 +1,11 @@
-﻿using GamePlay.Common.SceneObjects.Runtime;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace GamePlay.Common.Areas.Common.Runtime
 {
     public class AreaRoot : MonoBehaviour
     {
         [SerializeField] private AreaTrigger _trigger;
-        
+
         private IArea _area;
 
         private void Awake()

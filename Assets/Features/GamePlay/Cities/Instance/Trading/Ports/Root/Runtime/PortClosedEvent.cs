@@ -2,6 +2,5 @@
 {
     public readonly struct PortClosedEvent
     {
-        
     }
 }

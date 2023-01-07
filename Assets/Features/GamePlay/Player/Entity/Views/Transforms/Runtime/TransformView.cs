@@ -45,7 +45,7 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 
         public void SetLocalPosition(Vector2 position)
         {
-           // _transform.localPosition = position;
+            // _transform.localPosition = position;
 
             //_logger.OnLocalPositionSet(position);
         }

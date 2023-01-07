@@ -25,7 +25,6 @@ namespace GamePlay.Services.DroppedObjects.Bootstrap
         [SerializeField] [Indent] private DropPoolBootstrapper _poolPrefab;
         [SerializeField] [Indent] private DroppedObjectsPresenter _dropperPrefab;
 
-
         public override async UniTask Create(
             IDependencyRegister builder,
             ILocalServiceBinder serviceBinder,
@@ -61,7 +60,7 @@ namespace GamePlay.Services.DroppedObjects.Bootstrap
             SceneManager.MoveGameObjectToScene(pool.gameObject, scene.Instance.Scene);
 
             callbacks.Listen(pool);
-            
+
             pool.OnSceneLoaded(scene.Instance.Scene);
         }
     }

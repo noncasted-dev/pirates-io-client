@@ -1,10 +1,8 @@
 ﻿using System;
 using GamePlay.Common.Damages;
-using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Selector.Runtime;
 using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -26,9 +24,9 @@ namespace GamePlay.Services.TravelOverlays.Runtime
         [SerializeField] private Button _button;
 
         [SerializeField] private ProjectileType _type;
+        private IDisposable _amountListener;
 
         private IDisposable _selectListener;
-        private IDisposable _amountListener;
 
         private IProjectileSelector _selector;
 

@@ -1,9 +1,7 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
 using GamePlay.Player.Entity.Components.Abstract;
-using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Player.Entity.States.Deaths.Runtime
 {
@@ -11,19 +9,14 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
         menuName = PlayerAssetsPaths.Death + "State")]
     public class DeathAsset : PlayerComponentAsset
     {
-        [SerializeField]  private DeathStateDefinition _definition;
+        [SerializeField] private DeathStateDefinition _definition;
 
-        public override void Register(IContainerBuilder builder)
+        public override void Register(IDependencyRegister builder)
         {
-            builder.Register<Death>(Lifetime.Scoped)
+            builder.Register<Death>()
                 .WithParameter(_definition)
                 .As<IDeath>()
-                .AsSelf();
-        }
-
-        public override void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)
-        {
-            callbackRegister.Add(resolver.Resolve<Death>());
+                .AsCallbackListener();
         }
     }
 }

@@ -19,12 +19,9 @@ namespace GamePlay.Services.TravelOverlays.Runtime
         [SerializeField] private GameObject _body;
         [SerializeField] private GameObject _menuBody;
         [SerializeField] private Button _menuButton;
-        
+
         private UiConstraints _constraints;
         private IUiStateMachine _stateMachine;
-
-        public UiConstraints Constraints => _constraints;
-        public string Name => "TravelOverlay";
 
         private void Awake()
         {
@@ -35,7 +32,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime
         {
             _menuButton.onClick.AddListener(OnMenuClicked);
         }
-        
+
         private void OnDisable()
         {
             _menuButton.onClick.RemoveListener(OnMenuClicked);
@@ -44,10 +41,13 @@ namespace GamePlay.Services.TravelOverlays.Runtime
         public void Open()
         {
             _stateMachine.EnterAsSingle(this);
-            
+
             _body.SetActive(true);
             _menuBody.SetActive(false);
         }
+
+        public UiConstraints Constraints => _constraints;
+        public string Name => "TravelOverlay";
 
         public void Recover()
         {

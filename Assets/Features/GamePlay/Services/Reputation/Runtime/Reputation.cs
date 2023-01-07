@@ -7,7 +7,6 @@ using GamePlay.Services.Saves.Definitions;
 using Global.Services.FilesFlow.Runtime.Abstract;
 using Global.Services.MessageBrokers.Runtime;
 using NaughtyAttributes;
-using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -22,7 +21,7 @@ namespace GamePlay.Services.Reputation.Runtime
             _fileSaver = fileSaver;
             _fileLoader = fileLoader;
         }
-        
+
         [SerializeField] [ReadOnly] private int _value;
         [SerializeField] private float _percentFromMoney = 0.01f;
 
@@ -31,19 +30,14 @@ namespace GamePlay.Services.Reputation.Runtime
         [SerializeField] private Sprite _hollandFlag;
         [SerializeField] private Sprite _spainFlag;
         [SerializeField] private Sprite _pirateFlag;
-        
-        private FactionType _faction;
-        private CityDefinition _lastCity;
+        private IDisposable _cityEnterListener;
 
         private IDisposable _damageListener;
-        private IDisposable _cityEnterListener;
+
+        private FactionType _faction;
         private IFileLoader _fileLoader;
         private IFileSaver _fileSaver;
-
-        public int Value => _value;
-        public Sprite Flag => GetFlag();
-        public FactionType Faction => _faction;
-        public CityDefinition LastCity => _lastCity;
+        private CityDefinition _lastCity;
 
         private void OnEnable()
         {
@@ -57,6 +51,11 @@ namespace GamePlay.Services.Reputation.Runtime
             _cityEnterListener?.Dispose();
         }
 
+        public int Value => _value;
+        public Sprite Flag => GetFlag();
+        public FactionType Faction => _faction;
+        public CityDefinition LastCity => _lastCity;
+
         public int ConvertFromMoney(int spend)
         {
             var add = Mathf.CeilToInt(spend * _percentFromMoney);
@@ -67,7 +66,7 @@ namespace GamePlay.Services.Reputation.Runtime
         public void Add(int add)
         {
             _value += add;
-            
+
             Msg.Publish(new ReputationChangedEvent(_value));
         }
 
@@ -103,7 +102,7 @@ namespace GamePlay.Services.Reputation.Runtime
         private void OnCityEntered(CityEnteredEvent data)
         {
             _lastCity = data.City;
-            
+
             var save = _fileLoader.LoadOrCreate<ShipSave>();
             save.LastCity = data.City.Name;
             _fileSaver.Save(save);

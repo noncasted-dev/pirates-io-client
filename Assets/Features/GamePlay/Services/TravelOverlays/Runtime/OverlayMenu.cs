@@ -8,15 +8,6 @@ namespace GamePlay.Services.TravelOverlays.Runtime
 {
     public class OverlayMenu : MonoBehaviour
     {
-        [SerializeField] private Settings _settings;
-
-        [SerializeField] private Button _cargoButton;
-        [SerializeField] private Button _mapButton;
-        [SerializeField] private Button _settingsButton;
-        
-        private PlayerCargoUI _cargo;
-        private Map _map;
-
         [Inject]
         private void Construct(PlayerCargoUI cargo, Map map)
         {
@@ -24,13 +15,22 @@ namespace GamePlay.Services.TravelOverlays.Runtime
             _cargo = cargo;
         }
 
+        [SerializeField] private Settings _settings;
+
+        [SerializeField] private Button _cargoButton;
+        [SerializeField] private Button _mapButton;
+        [SerializeField] private Button _settingsButton;
+
+        private PlayerCargoUI _cargo;
+        private Map _map;
+
         private void OnEnable()
         {
             _cargoButton.onClick.AddListener(OnCargoClicked);
             _mapButton.onClick.AddListener(OnMapClicked);
             _settingsButton.onClick.AddListener(OnSettingsClicked);
         }
-        
+
         private void OnDisable()
         {
             _cargoButton.onClick.RemoveListener(OnCargoClicked);

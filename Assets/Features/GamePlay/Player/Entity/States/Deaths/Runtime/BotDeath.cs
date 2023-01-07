@@ -7,7 +7,6 @@ using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Services.DroppedObjects.Presenter.Runtime;
 using Global.Services.MessageBrokers.Runtime;
 using Ragon.Client;
-using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.States.Deaths.Runtime
@@ -29,20 +28,19 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
             Definition = definition;
         }
 
-        private readonly IStateMachine _stateMachine;
-        private readonly PlayerNetworkRoot _networkRoot;
         private readonly IDroppedObjectsPresenter _droppedObjectsPresenter;
+        private readonly PlayerNetworkRoot _networkRoot;
+
+        private readonly IStateMachine _stateMachine;
         private readonly IBodyTransform _transform;
 
         private bool _isDead = false;
-
-        public StateDefinition Definition { get; }
 
         public void Enter()
         {
             if (_isDead == true)
                 return;
-            
+
             _isDead = true;
 
             _stateMachine.Enter(this);
@@ -52,13 +50,14 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
             _droppedObjectsPresenter.DropFromDeath(ItemType.CannonKnuppel, Random.Range(1, 10), _transform.Position);
 
             for (var i = 0; i < 7; i++)
-            {
-                _droppedObjectsPresenter.DropFromDeath((ItemType)Random.Range(18, 30), Random.Range(1, 3), _transform.Position);
-            }
+                _droppedObjectsPresenter.DropFromDeath((ItemType)Random.Range(18, 30), Random.Range(1, 3),
+                    _transform.Position);
 
             Msg.Publish(new BotDeathEvent());
             RagonNetwork.Room.DestroyEntity(_networkRoot.gameObject);
         }
+
+        public StateDefinition Definition { get; }
 
         public void Break()
         {

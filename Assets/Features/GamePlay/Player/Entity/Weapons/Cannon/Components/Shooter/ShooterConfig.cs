@@ -11,13 +11,13 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         }
 
         private readonly ShooterConfigAsset _asset;
+        public int ShotsAmount => _asset.ShotsAmount;
 
         public AssetReference Ball => _asset.Ball;
         public AssetReference Knuppel => _asset.Knuppel;
         public AssetReference Shrapnel => _asset.Shrapnel;
         public AssetReference Fishnet => _asset.Fishnet;
         public AssetReference Vfx => _asset.Vfx;
-        public int ShotsAmount => _asset.ShotsAmount;
         public float ShotsDelay => _asset.ShotsDelay;
         public float ShotRandomDelay => _asset.ShotRandomDelay;
         public float RandomDistance => _asset.RandomDistance;

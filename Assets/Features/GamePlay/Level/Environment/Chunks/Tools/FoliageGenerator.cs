@@ -62,7 +62,7 @@ namespace GamePlay.Level.Environment.Chunks.Tools
                 var perlin = Perlin.perlin(rawPosition.x, rawPosition.y, 0);
 
                 Debug.Log(perlin);
-                
+
                 if (perlin < _propsAmount)
                     continue;
 

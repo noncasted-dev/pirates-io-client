@@ -11,8 +11,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events
             Origin = origin;
         }
 
-        public readonly TradableItem Tradable;
         public readonly ItemOrigin Origin;
+
+        public readonly TradableItem Tradable;
 
         public ItemType Type => Tradable.Item.BaseData.Type;
     }

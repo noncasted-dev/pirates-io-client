@@ -1,11 +1,9 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Components.Rotations.Logs;
 using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
-using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Player.Entity.Components.Rotations.Runtime
 {
@@ -13,33 +11,28 @@ namespace GamePlay.Player.Entity.Components.Rotations.Runtime
         menuName = PlayerAssetsPaths.Rotation + "Component")]
     public class RotationAsset : PlayerComponentAsset
     {
-        [SerializeField]  private RotationAnimatorFloatAsset _animatorFloatAsset;
-        [SerializeField]  private RotationLogSettings _logSettings;
+        [SerializeField] private RotationAnimatorFloatAsset _animatorFloatAsset;
+        [SerializeField] private RotationLogSettings _logSettings;
 
-        public override void Register(IContainerBuilder builder)
+        public override void Register(IDependencyRegister builder)
         {
             var animatorFloat = _animatorFloatAsset.CreateFloat();
 
-            builder.Register<RotationLogger>(Lifetime.Scoped)
+            builder.Register<RotationLogger>()
                 .WithParameter(_logSettings);
 
-            builder.Register<Rotation>(Lifetime.Scoped)
+            builder.Register<Rotation>()
                 .As<IRotation>()
-                .AsSelf();
+                .AsCallbackListener();
 
-            builder.Register<SpriteRotation>(Lifetime.Scoped)
+            builder.Register<SpriteRotation>()
                 .As<ISpriteRotation>()
                 .AsSelf();
 
-            builder.Register<AnimatorRotation>(Lifetime.Scoped)
+            builder.Register<AnimatorRotation>()
                 .WithParameter(animatorFloat)
                 .As<IAnimatorRotation>()
                 .AsSelf();
-        }
-
-        public override void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)
-        {
-            callbackRegister.Add(resolver.Resolve<Rotation>());
         }
     }
 }

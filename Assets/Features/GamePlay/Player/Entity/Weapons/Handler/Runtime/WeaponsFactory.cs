@@ -2,7 +2,6 @@
 using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Abstract;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
-using GamePlay.Player.Entity.Setup.Root;
 using GamePlay.Player.Entity.Views.WeaponsRoots.Runtime;
 using GamePlay.Player.Entity.Weapons.Cannon.Root;
 using GamePlay.Player.Entity.Weapons.Common.Bootstrap.Runtime;

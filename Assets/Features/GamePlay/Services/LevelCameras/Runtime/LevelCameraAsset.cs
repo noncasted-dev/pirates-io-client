@@ -1,5 +1,4 @@
 ﻿using Common.DiContainer.Abstract;
-using Common.EditableScriptableObjects.Attributes;
 using Common.Local.Services.Abstract;
 using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;

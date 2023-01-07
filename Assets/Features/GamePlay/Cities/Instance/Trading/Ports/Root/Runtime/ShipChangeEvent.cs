@@ -8,7 +8,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
         {
             Ship = ship;
         }
-        
+
         public readonly ShipType Ship;
     }
 }

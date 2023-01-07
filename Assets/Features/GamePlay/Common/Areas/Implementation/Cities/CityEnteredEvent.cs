@@ -8,7 +8,7 @@ namespace GamePlay.Common.Areas.Implementation.Cities
         {
             City = city;
         }
-        
+
         public readonly CityDefinition City;
     }
 }

@@ -28,7 +28,7 @@ namespace GamePlay.Services.Network.Bootstrap.Runtime
             SceneManager.SetActiveScene(sceneLoadResult.Instance.Scene);
 
             var bootstrapper = sceneLoadResult.Searched;
-            
+
             bootstrapper.Bootstrap(builder);
 
             callbacks.Listen(bootstrapper);

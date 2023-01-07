@@ -15,14 +15,14 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
         [SerializeField] private AssetReference _knuppel;
         [SerializeField] private AssetReference _shrapnel;
         [SerializeField] private AssetReference _fishnet;
-        
+
         [SerializeField] [Min(0f)] private float _pushForce;
         [SerializeField] [Min(0f)] private float _randomDistance;
         [SerializeField] [Min(0f)] private float _shotRandomDelay;
         [SerializeField] [Min(0f)] private int _shotsAmount;
         [SerializeField] [Min(0f)] private float _shotsDelay;
         [SerializeField] [Min(0f)] private float _speed;
-        
+
         [SerializeField] private AssetReference _vfx;
 
         public int ShotsAmount => _shotsAmount;

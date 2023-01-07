@@ -1,4 +1,4 @@
-﻿using Global.Services.Common.Abstract.Callbacks;
+﻿using Global.Services.Common.Abstract;
 using Global.Services.Updaters.Logs;
 using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;

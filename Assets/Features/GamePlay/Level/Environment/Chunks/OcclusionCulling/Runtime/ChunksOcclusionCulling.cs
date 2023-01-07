@@ -8,10 +8,8 @@ using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using Global.Services.MessageBrokers.Runtime;
 using NaughtyAttributes;
-using UniRx;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 using VContainer;
 
@@ -29,14 +27,14 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
         [SerializeField] private float _cullingRate = 5f;
         [SerializeField] private float _cullingDistance = 100f;
 
-        private WaitForSeconds _wait;
+        private readonly List<ChunkHandler> _loaded = new();
 
         private IPlayerEntityProvider _playerEntity;
-
-        private Coroutine _process;
         private IDisposable _playerSpawnListener;
 
-        private readonly List<ChunkHandler> _loaded = new();
+        private Coroutine _process;
+
+        private WaitForSeconds _wait;
 
         private void Awake()
         {
@@ -59,7 +57,7 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
             if (_process != null)
                 StopCoroutine(_process);
 
-            //_process = StartCoroutine(DisableOnDistance());
+            _process = StartCoroutine(DisableOnDistance());
         }
 
         private void Stop()
@@ -74,7 +72,7 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
         private IEnumerator DisableOnDistance()
         {
             var toUnload = new List<ChunkHandler>();
-            
+
             foreach (var chunk in _loaded)
             {
                 var distance = Vector2.Distance(chunk.Position, _playerEntity.Position);
@@ -108,7 +106,7 @@ namespace GamePlay.Level.Environment.Chunks.OcclusionCulling.Runtime
         private async UniTaskVoid LoadScene(ChunkHandler chunk)
         {
             chunk.MarkAsLoaded();
-            
+
             var handle = Addressables.LoadSceneAsync(chunk.Scene, LoadSceneMode.Additive);
             var result = await handle.ToUniTask();
 

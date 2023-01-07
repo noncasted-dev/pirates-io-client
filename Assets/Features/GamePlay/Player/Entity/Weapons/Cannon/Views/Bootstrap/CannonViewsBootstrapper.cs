@@ -1,10 +1,8 @@
-﻿using GamePlay.Player.Entity.Setup.Bootstrap;
-using GamePlay.Player.Entity.Setup.Flow.Callbacks;
+﻿using Common.DiContainer.Abstract;
+using GamePlay.Player.Entity.Setup.Bootstrap;
 using GamePlay.Player.Entity.Weapons.Cannon.Views.Sprites.Runtime;
 using GamePlay.Player.Entity.Weapons.Cannon.Views.Transforms;
 using UnityEngine;
-using VContainer;
-using VContainer.Unity;
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Views.Bootstrap
 {
@@ -14,16 +12,10 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Views.Bootstrap
         [SerializeField] private CannonSprite _sprite;
         [SerializeField] private CannonTransform _transform;
 
-        public void OnBuild(IContainerBuilder builder)
+        public void OnBuild(IDependencyRegister builder)
         {
             builder.RegisterComponent(_sprite).As<ICannonSprite>();
             builder.RegisterComponent(_transform).As<ICannonTransform>();
-        }
-
-        public void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)
-        {
-            callbackRegister.Add(_sprite);
-            callbackRegister.Add(_transform);
         }
     }
 }

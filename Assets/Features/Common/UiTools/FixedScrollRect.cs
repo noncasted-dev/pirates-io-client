@@ -7,7 +7,7 @@ namespace Common.UiTools
         protected override void LateUpdate()
         {
             base.LateUpdate();
-            
+
             if (verticalScrollbar)
                 verticalScrollbar.size = 0f;
         }
@@ -15,7 +15,7 @@ namespace Common.UiTools
         public override void Rebuild(CanvasUpdate executing)
         {
             base.Rebuild(executing);
-            
+
             if (verticalScrollbar == true)
                 verticalScrollbar.size = 0f;
         }

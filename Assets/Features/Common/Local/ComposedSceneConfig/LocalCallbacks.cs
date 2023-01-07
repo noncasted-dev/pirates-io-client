@@ -1,25 +1,25 @@
 ﻿using System.Collections.Generic;
+using Common.DiContainer.Abstract;
 using Common.Local.Services.Abstract;
 using Common.Local.Services.Abstract.Callbacks;
 using Cysharp.Threading.Tasks;
 using VContainer;
-using IDependencyRegister = Common.DiContainer.Abstract.IDependencyRegister;
 
 namespace Common.Local.ComposedSceneConfig
 {
     public class LocalCallbacks : ILocalCallbacks
     {
         private readonly List<ILocalAsyncAwakeListener> _asyncAwakes = new();
+        private readonly List<ILocalAsyncBootstrappedListener> _asyncBootstraps = new();
         private readonly List<ILocalAwakeListener> _awakes = new();
-        private readonly List<ILocalLoadListener> _loads = new();
 
-        private readonly List<ILocalSwitchListener> _switches = new();
+        private readonly List<ILocalBootstrappedListener> _bootstraps = new();
+        private readonly List<ILocalLoadListener> _loads = new();
 
         private readonly List<ILocalContainerBuildListener> _registers = new();
         private readonly List<IDependencyResolver> _resolvers = new();
 
-        private readonly List<ILocalBootstrappedListener> _bootstraps = new();
-        private readonly List<ILocalAsyncBootstrappedListener> _asyncBootstraps = new();
+        private readonly List<ILocalSwitchListener> _switches = new();
 
         public IReadOnlyList<ILocalSwitchListener> SwitchCallbacks => _switches;
 
@@ -83,7 +83,7 @@ namespace Common.Local.ComposedSceneConfig
             foreach (var bootstrap in _bootstraps)
                 bootstrap.OnBootstrapped();
         }
-        
+
         public async UniTask InvokeAsyncBootstrapCallbacks()
         {
             var tasks = new UniTask[_asyncBootstraps.Count];

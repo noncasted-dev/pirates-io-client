@@ -4,7 +4,6 @@ using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.UI.Events;
 using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,10 +46,10 @@ namespace GamePlay.Services.PlayerCargos.UI
 
             _name.text = item.BaseData.Name;
             _icon.sprite = item.BaseData.Icon;
-            
+
             _slider.minValue = 1;
             _slider.maxValue = item.Count;
-            
+
             _completion = new UniTaskCompletionSource<DropConfirmationResultType>();
 
             var result = await _completion.Task;

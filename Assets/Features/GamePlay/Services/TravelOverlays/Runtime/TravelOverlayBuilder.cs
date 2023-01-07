@@ -2,7 +2,6 @@
 using Common.Local.Services.Abstract.Callbacks;
 using GamePlay.Services.TravelOverlays.Runtime.Health;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Services.TravelOverlays.Runtime
 {

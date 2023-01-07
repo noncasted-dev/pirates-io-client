@@ -11,7 +11,7 @@ namespace GamePlay.Player.Entity.Network.Remote.AreaInteractors.Runtime
         [SerializeField] private Collider2D _collision;
         [SerializeField] private Collider2D _hitbox;
         [SerializeField] private PlayerSpriteView _spriteView;
-        
+
         public bool IsLocal => false;
         public IShipResources Resources => new EmptyResources();
 
@@ -27,7 +27,6 @@ namespace GamePlay.Player.Entity.Network.Remote.AreaInteractors.Runtime
             _collision.isTrigger = false;
         }
 
-        
         public void OnPortEntered()
         {
             _spriteView.Disable(true);
@@ -40,7 +39,6 @@ namespace GamePlay.Player.Entity.Network.Remote.AreaInteractors.Runtime
 
         public void OnShallowEntered()
         {
-            
         }
 
         public void OnShallowExited()

@@ -1,4 +1,4 @@
-﻿using Global.Services.Common.Abstract.Callbacks;
+﻿using Global.Services.Common.Abstract;
 using Global.Services.GlobalCameras.Logs;
 using UnityEngine;
 using VContainer;

@@ -4,17 +4,17 @@
     {
         CityEnter,
         CityExit,
-        
+
         PortEnter,
         PortExit,
-        
+
         BattleEnter,
         BattleExit,
 
         UiOpen,
         OverButton,
         ButtonClick,
-        
+
         MenuEntered,
         MenuExited
     }

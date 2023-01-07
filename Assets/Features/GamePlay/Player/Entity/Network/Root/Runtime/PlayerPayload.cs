@@ -21,9 +21,10 @@ namespace GamePlay.Player.Entity.Network.Root.Runtime
             _shipType = shipType;
         }
 
-        private string _userName;
-        private ShipType _shipType;
         private FactionType _faction;
+        private ShipType _shipType;
+
+        private string _userName;
 
         public string UserName => _userName;
         public ShipType ShipType => _shipType;

@@ -6,7 +6,6 @@ using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Services.Reputation.Runtime;
 using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,10 +23,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         [SerializeField] private TMP_Text _name;
 
         [SerializeField] private Button _transferButton;
+        private bool _isAvailable = false;
 
         private ShipItem _item;
         private ItemOrigin _origin;
-        private bool _isAvailable = false;
 
         private void OnEnable()
         {

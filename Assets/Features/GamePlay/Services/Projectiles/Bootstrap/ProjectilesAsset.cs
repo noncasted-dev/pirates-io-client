@@ -14,7 +14,6 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
-using VContainer;
 
 namespace GamePlay.Services.Projectiles.Bootstrap
 {

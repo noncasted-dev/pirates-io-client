@@ -51,9 +51,8 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         private IUpdater _updater;
         private IVfxPoolProvider _vfxPoolProvider;
         public static RemotePlayerBuilder Instance => _instance;
-        private readonly List<Transform> _remotes = new();
 
-        public List<Transform> Remotes => _remotes;
+        public List<Transform> Remotes { get; } = new();
 
         public void OnAwake()
         {
@@ -67,9 +66,9 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
 
         public void Build(GameObject remotePlayer, ShipType shipType, FactionType faction)
         {
-            _remotes.Add(remotePlayer.transform);
+            Remotes.Add(remotePlayer.transform);
             var prefab = _config.GetShip(shipType);
-            
+
             var deadShipPool
                 = _vfxPoolProvider.GetPool<DeadShipVfx>(_config.GetDead(shipType));
 

@@ -5,7 +5,6 @@ using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +27,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         {
             _removeButton.onClick.AddListener(OnTransferClicked);
             _countSlider.onValueChanged.AddListener(OnSliderValueChanged);
-            
+
             _countSlider.value = 1f;
         }
 
@@ -93,10 +92,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         {
             if (_item == null)
                 return;
-            
+
             var total = UpdatePrice();
             var count = (int)value;
-            
+
             var tradeChange = new TradeAddedEvent(_item.Item, _origin, total, count);
             Msg.Publish(tradeChange);
         }

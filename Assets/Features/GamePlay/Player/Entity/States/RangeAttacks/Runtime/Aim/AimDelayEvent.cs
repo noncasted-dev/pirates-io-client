@@ -6,7 +6,7 @@
         {
             Delay = delay;
         }
-        
+
         public readonly float Delay;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using Global.Services.Common.Abstract.Callbacks;
+using Global.Services.Common.Abstract;
 using Global.Services.Network.Instantiators.Logs;
 using Ragon.Client;
 using UnityEngine;

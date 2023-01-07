@@ -13,7 +13,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 
             Ship = shipItem;
         }
-        
+
         public readonly bool IsContainingShip;
         public readonly ShipItem Ship;
     }

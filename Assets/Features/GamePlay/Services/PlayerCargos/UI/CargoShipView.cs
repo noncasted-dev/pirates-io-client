@@ -4,7 +4,6 @@ using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Services.Reputation.Runtime;
 using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,10 +23,10 @@ namespace GamePlay.Services.PlayerCargos.UI
         [SerializeField] private TMP_Text _team;
 
         private IDisposable _healthListener;
+        private IReputation _playerReputation;
         private IDisposable _reputationListener;
 
         private IShipResources _resources;
-        private IReputation _playerReputation;
 
         private void OnEnable()
         {

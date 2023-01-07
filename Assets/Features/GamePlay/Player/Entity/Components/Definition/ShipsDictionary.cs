@@ -6,6 +6,5 @@ namespace GamePlay.Player.Entity.Components.Definition
     [Serializable]
     public class ShipsDictionary : ReadOnlyDictionary<ShipType, TradableShipConfig>
     {
-        
     }
 }

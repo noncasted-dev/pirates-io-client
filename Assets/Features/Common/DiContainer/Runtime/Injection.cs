@@ -12,7 +12,7 @@ namespace Common.DiContainer.Runtime
         }
 
         private readonly MonoBehaviour _target;
-        
+
         public void Inject(IObjectResolver resolver)
         {
             resolver.Inject(_target);

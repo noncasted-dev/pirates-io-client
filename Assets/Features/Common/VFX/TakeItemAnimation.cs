@@ -2,7 +2,6 @@ using System;
 using GamePlay.Services.PlayerCargos.Storage.Events;
 using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 
 namespace Common.VFX
@@ -13,7 +12,7 @@ namespace Common.VFX
         [SerializeField] private TMP_Text _tmp;
         [SerializeField] private GameObject _body;
         [SerializeField] private TakeItemAnimatorCallback _callback;
-        
+
         private IDisposable _itemListener;
 
         private void OnEnable()
@@ -30,7 +29,7 @@ namespace Common.VFX
         private void OnItemReceived(CargoAddEvent data)
         {
             Debug.Log("item received");
-            StartAnimation(data.Item.BaseData.Icon, data.Item.Count);    
+            StartAnimation(data.Item.BaseData.Icon, data.Item.Count);
         }
 
         private void StartAnimation(Sprite icon, int add_count)

@@ -2,7 +2,7 @@
 using Global.Services.CurrentSceneHandlers.Logs;
 using UnityEditor;
 
-namespace Global.Services.Loggers.Editor.Services.Scenes
+namespace Global.Services.Loggers.Editor.Services.Utils
 {
     [ReadOnlyDictionaryPriority]
     [CustomPropertyDrawer(typeof(CurrentSceneHandlerLogs))]

@@ -8,7 +8,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
         {
             Faction = faction;
         }
-        
+
         public readonly FactionType Faction;
     }
 }

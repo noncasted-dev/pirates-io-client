@@ -8,11 +8,12 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Knuppel
     public class RandomSpriteAndRotation : MonoBehaviour
     {
         [SerializeField] private List<Sprite> sprites;
-        [SerializeField] private SpriteRenderer renderer;    
+        [SerializeField] private SpriteRenderer renderer;
+
         private void OnEnable()
         {
-            renderer.transform.rotation = quaternion.Euler(0,0, Random.value * 360f);
-            renderer.sprite = sprites[(int) (Random.value * sprites.Count)];
+            renderer.transform.rotation = quaternion.Euler(0, 0, Random.value * 360f);
+            renderer.sprite = sprites[(int)(Random.value * sprites.Count)];
         }
     }
 }

@@ -44,11 +44,8 @@ namespace GamePlay.Player.Entity.Components.Definition
         }
 
         public readonly ShipType Type;
-        
-        private int _count;
-        public event Action<int> CountChanged;
 
-        public BaseItemData BaseData { get; }
+        private int _count;
         public int MaxTeam { get; }
         public int MaxWeight { get; }
         public int MaxCannons { get; }
@@ -56,6 +53,9 @@ namespace GamePlay.Player.Entity.Components.Definition
         public int Price { get; }
         public int MaxSpeed { get; }
         public int RequiredReputation { get; }
+        public event Action<int> CountChanged;
+
+        public BaseItemData BaseData { get; }
 
         public int Count => _count;
 
@@ -91,7 +91,8 @@ namespace GamePlay.Player.Entity.Components.Definition
 
             if (_count < 0)
             {
-                Debug.LogError($"Item {BaseData.Name} count should be greater than zero: reduce: {amount}, result: {_count}.");
+                Debug.LogError(
+                    $"Item {BaseData.Name} count should be greater than zero: reduce: {amount}, result: {_count}.");
                 _count = 0;
             }
 

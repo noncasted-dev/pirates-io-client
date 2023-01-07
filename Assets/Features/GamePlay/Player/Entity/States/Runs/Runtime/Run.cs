@@ -64,7 +64,6 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             if (_isStarted == false)
                 return;
 
-            _inertialMovement.Disable();
             _stateMachine.Exit();
         }
 
@@ -90,6 +89,7 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
 
             _isStarted = false;
             _spriteRotation.Stop();
+            _inertialMovement.Disable();
 
             _logger.OnBroke();
         }

@@ -1,7 +1,6 @@
 ﻿using System;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
 using Global.Services.MessageBrokers.Runtime;
-using UniRx;
 using UnityEngine;
 
 namespace Global.Services.Sounds.Runtime
@@ -9,11 +8,11 @@ namespace Global.Services.Sounds.Runtime
     public class SoundTriggerListener : MonoBehaviour
     {
         [SerializeField] private SoundsPlayer _player;
+        private IDisposable _damageListener;
+        private IDisposable _healthListener;
+        private IDisposable _positionalTriggerListener;
 
         private IDisposable _triggerListener;
-        private IDisposable _positionalTriggerListener;
-        private IDisposable _healthListener;
-        private IDisposable _damageListener;
 
         private void OnEnable()
         {

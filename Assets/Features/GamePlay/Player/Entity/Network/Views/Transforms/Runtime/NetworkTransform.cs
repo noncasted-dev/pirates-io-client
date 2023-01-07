@@ -9,6 +9,7 @@ namespace GamePlay.Player.Entity.Network.Views.Transforms.Runtime
     {
         [SerializeField] private float _interpolationBreakDistance = 1f;
         [SerializeField] private float _interpolationSpeed = 1f;
+
         private readonly RagonVector3 _position = new(Vector3.zero, RagonAxis.XY);
 
         private Vector2 _lastReplicated;

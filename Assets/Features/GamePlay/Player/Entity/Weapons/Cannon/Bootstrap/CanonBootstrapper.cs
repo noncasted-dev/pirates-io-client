@@ -6,6 +6,7 @@ using GamePlay.Player.Entity.Weapons.Common.Root;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using ContainerBuilder = Common.DiContainer.Runtime.ContainerBuilder;
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Bootstrap
 {
@@ -24,6 +25,8 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Bootstrap
             _builders = GetComponents<IPlayerContainerBuilder>();
             var scope = GetComponent<WeaponScope>();
 
+            var proxyBuilder = new ContainerBuilder();
+
             using (LifetimeScope.EnqueueParent(parent))
             {
                 using (LifetimeScope.Enqueue(OnConfiguration))
@@ -32,26 +35,27 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Bootstrap
                 }
             }
 
+            void OnConfiguration(IContainerBuilder builder)
+            {
+                var root = GetComponent<IWeapon>();
+
+                builder.RegisterComponent(root);
+
+                foreach (var containerBuilder in _builders)
+                    containerBuilder.OnBuild(proxyBuilder);
+
+                proxyBuilder.RegisterAll(builder);
+            }
+
             var flowHandler = new FlowHandler();
 
-            foreach (var containerBuilder in _builders)
-                containerBuilder.Resolve(scope.Container, flowHandler);
+            proxyBuilder.ResolveAllWithCallbacks(scope.Container, flowHandler);
 
             var root = GetComponent<IWeapon>();
 
             await root.OnBootstrapped(flowHandler, scope);
 
             return root;
-        }
-
-        private void OnConfiguration(IContainerBuilder builder)
-        {
-            var root = GetComponent<IWeapon>();
-
-            builder.RegisterComponent(root);
-
-            foreach (var containerBuilder in _builders)
-                containerBuilder.OnBuild(builder);
         }
     }
 }

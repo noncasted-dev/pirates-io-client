@@ -3,8 +3,8 @@ using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,7 +27,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         {
             _removeButton.onClick.AddListener(OnTransferClicked);
             _countSlider.onValueChanged.AddListener(OnSliderValueChanged);
-            
+
             _countSlider.value = 1f;
         }
 
@@ -92,12 +92,12 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         {
             if (_item == null)
                 return;
-            
+
             var total = UpdatePrice();
             var count = (int)value;
-            
+
             var tradeChange = new TradeAddedEvent(_item.Item, _origin, total, count);
-            MessageBroker.Default.Publish(tradeChange);
+            Msg.Publish(tradeChange);
         }
 
         private void OnTransferClicked()
@@ -107,8 +107,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             var cancel = new TransferCanceledEvent(_item.Item, _origin);
             var removed = new TradeRemovedEvent(_item.Item, _origin);
 
-            MessageBroker.Default.Publish(cancel);
-            MessageBroker.Default.Publish(removed);
+            Msg.Publish(cancel);
+            Msg.Publish(removed);
         }
     }
 }

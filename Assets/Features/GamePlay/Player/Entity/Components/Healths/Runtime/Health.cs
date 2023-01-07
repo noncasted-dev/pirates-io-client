@@ -1,10 +1,10 @@
-﻿using GamePlay.Player.Entity.Components.Healths.Logs;
+﻿using Common.VFX;
+using GamePlay.Player.Entity.Components.Healths.Logs;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
-using Ragon.Common;
-using UniRx;
 
 namespace GamePlay.Player.Entity.Components.Healths.Runtime
 {
@@ -25,49 +25,23 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
         }
 
         private const float _tickDuration = 5f;
-
-        private readonly HealthLogger _logger;
-        private readonly IUpdater _updater;
         private readonly FireController _fireController;
 
-        private int _max;
+        private readonly HealthLogger _logger;
+        private readonly IBodyTransform _transform;
+        private readonly IUpdater _updater;
         private int _amount;
+        private readonly IPlayerEventSender _eventSender;
+
+        private int _max;
+        private int _regenerationInTick;
 
         private float _tickTime;
-        private int _regenerationInTick;
-        private IPlayerEventSender _eventSender;
-        private readonly IBodyTransform _transform;
 
         public int Max => _max;
         public int Amount => _amount;
         public bool IsAlive => _amount > 0;
 
-        public void OnEnabled()
-        {
-            _updater.Add(this);
-            _fireController.SetFireForce(1f);
-        }
-
-        public void OnDisabled()
-        {
-            _updater.Remove(this);
-        }
-        
-        public void OnUpdate(float delta)
-        {
-            _tickTime += delta;
-            
-            if (_tickTime < _tickDuration)
-                return;
-
-            _tickTime = 0f;
-            
-            if (_amount == _max)
-                return;
-            
-            Heal(_regenerationInTick);
-        }
-        
         public void SetMaxHealth(int maxHealth, int regenerationInTick)
         {
             _regenerationInTick = regenerationInTick;
@@ -78,13 +52,13 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
         public void Respawn()
         {
             _logger.OnRespawned(_max);
-            
+
             _amount = _max;
             _fireController.SetFireForce(_amount / (float)_max);
 
-            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
-            
-            _eventSender.ReplicateEvent(new HealthChangeNetworkEvent()
+            Msg.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
+
+            _eventSender.ReplicateEvent(new HealthChangeNetworkEvent
             {
                 Current = _amount,
                 Max = _max
@@ -105,16 +79,16 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
                 _amount = _max;
 
             _fireController.SetFireForce(_amount / (float)_max);
-            
+
             _logger.OnHealed(add, _amount);
-            
-            _eventSender.ReplicateEvent(new HealthChangeNetworkEvent()
+
+            _eventSender.ReplicateEvent(new HealthChangeNetworkEvent
             {
                 Current = _amount,
                 Max = _max
             });
 
-            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
+            Msg.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
         }
 
         public void ApplyDamage(int damage)
@@ -128,16 +102,42 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
             _amount -= damage;
 
             _logger.OnDamaged(damage, _amount);
-            
+
             _fireController.SetFireForce(_amount / (float)_max);
 
-            MessageBroker.Default.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
-            
-            _eventSender.ReplicateEvent(new HealthChangeNetworkEvent()
+            Msg.Publish(new HealthChangeEvent(_amount, _max, _transform.GameObject));
+
+            _eventSender.ReplicateEvent(new HealthChangeNetworkEvent
             {
                 Current = _amount,
                 Max = _max
             });
+        }
+
+        public void OnEnabled()
+        {
+            _updater.Add(this);
+            _fireController.SetFireForce(1f);
+        }
+
+        public void OnDisabled()
+        {
+            _updater.Remove(this);
+        }
+
+        public void OnUpdate(float delta)
+        {
+            _tickTime += delta;
+
+            if (_tickTime < _tickDuration)
+                return;
+
+            _tickTime = 0f;
+
+            if (_amount == _max)
+                return;
+
+            Heal(_regenerationInTick);
         }
     }
 }

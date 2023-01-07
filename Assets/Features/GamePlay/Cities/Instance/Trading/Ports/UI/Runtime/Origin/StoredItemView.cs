@@ -3,8 +3,8 @@ using GamePlay.Cities.Instance.Trading.Ports.Root.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,10 +17,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         [SerializeField] private TMP_Text _cost;
         [SerializeField] private TMP_Text _name;
         [SerializeField] private Button _transferButton;
+        private bool _isActive;
 
         private IItem _item;
         private ItemOrigin _origin;
-        private bool _isActive;
         private int _price;
 
         private IPriceProvider _priceProvider;
@@ -28,7 +28,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         private void OnEnable()
         {
             _transferButton.onClick.AddListener(OnTransferClicked);
-            
+
             if (_item == null)
                 return;
 
@@ -38,7 +38,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         private void OnDisable()
         {
             _transferButton.onClick.RemoveListener(OnTransferClicked);
-            
+
             if (_item == null)
                 return;
 
@@ -51,29 +51,25 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
             _origin = origin;
             _item = item;
             _isActive = false;
-            
+
             gameObject.SetActive(true);
             _transferButton.gameObject.SetActive(true);
 
-            if (item.BaseData.Type == ItemType.Cotton)
-                Debug.Log($"Cotton: {item.Count}");
-            
             _icon.sprite = item.BaseData.Icon;
             _count.text = item.Count.ToString();
             _name.text = item.BaseData.Name;
-            
+
             var price = _priceProvider.GetPrice(item.BaseData.Type);
             _cost.text = price.ToString();
 
             OnCountChanged(_item.Count);
-
         }
 
         public void OnTransferedItemCountChange(int count)
         {
             if (_item == null)
                 return;
-            
+
             var delta = _item.Count - count;
 
             _count.text = delta.ToString();
@@ -88,7 +84,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         {
             if (_item != null && _isActive == true)
                 _priceProvider.Unfreeze(_item.BaseData.Type);
-            
+
             gameObject.SetActive(false);
             _item = null;
 
@@ -99,7 +95,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         {
             if (_item == null)
                 return;
-            
+
             gameObject.SetActive(true);
             _count.text = _item.Count.ToString();
             _priceProvider.Unfreeze(_item.BaseData.Type);
@@ -128,7 +124,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         {
             if (_item == null)
                 return;
-            
+
             _priceProvider.Freeze(_item.BaseData.Type);
 
             _isActive = true;
@@ -138,8 +134,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
             var data = new TransferRequestedEvent(tradable, _origin);
 
-            MessageBroker.Default.Publish(new TradeRequestedEvent());
-            MessageBroker.Default.Publish(data);
+            Msg.Publish(new TradeRequestedEvent());
+            Msg.Publish(data);
         }
 
         private void OnCountChanged(int count)

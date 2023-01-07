@@ -31,26 +31,13 @@ namespace GamePlay.Services.TransitionScreens.Runtime
 
         [SerializeField] private GameObject _canvas;
         private TransitionScreenConfigAsset _config;
+        private UiConstraints _constraints;
 
         private Fade _current;
         private TransitionScreenLogger _logger;
+        private IUiStateMachine _uiStateMachine;
 
         private IUpdater _updater;
-        private IUiStateMachine _uiStateMachine;
-        private UiConstraints _constraints;
-
-        public UiConstraints Constraints => _constraints;
-        public string Name => "TransitionScreen";
-
-        public void Recover()
-        {
-            ToPlayerRespawn();
-        }
-
-        public void Exit()
-        {
-            _canvas.SetActive(false);
-        }
 
         public void ToPlayerRespawn()
         {
@@ -104,6 +91,19 @@ namespace GamePlay.Services.TransitionScreens.Runtime
             _canvas.SetActive(false);
 
             _uiStateMachine.Exit(this);
+        }
+
+        public UiConstraints Constraints => _constraints;
+        public string Name => "TransitionScreen";
+
+        public void Recover()
+        {
+            ToPlayerRespawn();
+        }
+
+        public void Exit()
+        {
+            _canvas.SetActive(false);
         }
     }
 }

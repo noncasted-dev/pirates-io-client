@@ -6,7 +6,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
     {
         void SetName(string name);
         void SetIcon(Sprite icon);
-        
+
         void SetMaxWeight(int maxWeight);
         void SetWeight(int weight);
 

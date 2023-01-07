@@ -4,6 +4,7 @@ using UnityEditor;
 
 namespace Common.ObjectsPools.Editor
 {
+    [ReadOnlyDictionaryPriority]
     [CustomPropertyDrawer(typeof(ObjectsPoolLogs))]
     public class ObjectsPoolLogsDrawer : ReadonlyDictionaryPropertyDrawer
     {

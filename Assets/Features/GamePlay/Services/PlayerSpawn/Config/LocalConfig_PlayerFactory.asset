@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58dd1d250d4b4d9c87ce0cb49137ddb4, type: 3}
   m_Name: LocalConfig_PlayerFactory
   m_EditorClassIdentifier: 
-  _networkPrefab: {fileID: 770058313661532305, guid: 63238bad100a125489ae6b480d75b97f, type: 3}
+  _networkPrefab: {fileID: 770058313661532305, guid: ea7317afd4e116a4d8a48129655c0dab, type: 3}
+  _botPrefab: {fileID: 770058313661532305, guid: ea7317afd4e116a4d8a48129655c0dab, type: 3}
   _ships:
     _keys: 000000000100000002000000030000000400000005000000060000000700000008000000
     _values:
@@ -25,3 +26,40 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 68a8bd6fbf45be0409fbc1a65c98c80e, type: 2}
     - {fileID: 11400000, guid: a1ec91721290a5b40b0b38ba2fc01cc7, type: 2}
     - {fileID: 11400000, guid: 9fb27f1f227c5d24aa05b64fb657fb9d, type: 2}
+  _botShips:
+  - m_AssetGUID: 7720b5b5f2f1fb742b7de750e1456c09
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 1af5338ae3e40874a985d9e239a0fbf2
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 573d73c44beaf2743ac515ea7d05da30
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 5dd8d7c7c267753469ae82a8a6866623
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 7ebdeacccc0c719418ccfdab6f678217
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 02f7c8c3a43ae0b458321e9df6d9bb1c
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 033ab230d6eeb9742b5c460119410c33
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 46076f0f72048b24f923bb077745fce2
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 422da46a3113e9e48bc505f5d03988e1
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

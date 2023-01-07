@@ -3,7 +3,7 @@ using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Events;
 using GamePlay.Services.Saves.Definitions;
 using Global.Services.FilesFlow.Runtime.Abstract;
-using UniRx;
+using Global.Services.MessageBrokers.Runtime;
 using UnityEngine;
 using VContainer;
 
@@ -17,7 +17,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             _fileSaver = fileSaver;
             _fileLoader = fileLoader;
         }
-    
+
         private readonly Dictionary<ItemType, IItem> _items = new();
         private IFileLoader _fileLoader;
         private IFileSaver _fileSaver;
@@ -32,15 +32,15 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             {
                 _items[type].Add(item.Count);
                 OnChanged();
-                MessageBroker.Default.Publish(new CargoAddEvent(item));
+                Msg.Publish(new CargoAddEvent(item));
 
                 return;
             }
 
             _items[type] = item;
             OnChanged();
-            
-            MessageBroker.Default.Publish(new CargoAddEvent(item));
+
+            Msg.Publish(new CargoAddEvent(item));
         }
 
         public void Reduce(ItemType type, int amount)
@@ -52,7 +52,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             }
 
             _items[type].Reduce(amount);
-            
+
             OnChanged();
 
             if (_items[type].Count == 0)
@@ -71,12 +71,6 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
             OnChanged();
         }
 
-        public void Clear()
-        {
-            _items.Clear();
-            OnChanged();
-        }
-        
         public IItem[] ToArray()
         {
             var items = new IItem[_items.Count];
@@ -91,7 +85,18 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
             return items;
         }
-        
+
+        public void UpdateState()
+        {
+            OnChanged();
+        }
+
+        public void Clear()
+        {
+            _items.Clear();
+            OnChanged();
+        }
+
         public int GetWeight()
         {
             var weight = 0;
@@ -101,19 +106,14 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
             return weight;
         }
-        
-        public void UpdateState()
-        {
-            OnChanged();   
-        }
 
         private void OnChanged()
         {
             var data = new CargoChangedEvent(Items, GetWeight());
-            MessageBroker.Default.Publish(data);
+            Msg.Publish(data);
 
             var save = _fileLoader.LoadOrCreate<ShipSave>();
-            
+
             save.Items.Clear();
             save.Count.Clear();
 

@@ -6,7 +6,7 @@ namespace GamePlay.Player.Entity.Components.Healths.Runtime
     {
         int Strength { get; }
 
-        event Action Changed; 
+        event Action Changed;
 
         void Damage(float damage);
     }

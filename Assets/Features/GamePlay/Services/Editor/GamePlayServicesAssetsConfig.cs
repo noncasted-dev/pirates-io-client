@@ -1,5 +1,4 @@
-﻿using Common.EditableScriptableObjects.Attributes;
-using GamePlay.Common.Paths;
+﻿using GamePlay.Common.Paths;
 using GamePlay.Level.Environment.Bootstrap;
 using GamePlay.Services.LevelCameras.Runtime;
 using GamePlay.Services.LevelLoops.Runtime;
@@ -15,12 +14,12 @@ namespace GamePlay.Services.Editor
         menuName = GamePlayAssetsPaths.Config + "ServicesAssets")]
     public class GamePlayServicesAssetsConfig : ScriptableObject
     {
-        [SerializeField]  private LevelCameraAsset _levelCamera;
-        [SerializeField]  private LevelEnvironmentAsset _levelEnvironment;
-        [SerializeField]  private LevelLoopAsset _levelLoop;
-        [SerializeField]  private PlayerFactoryAsset _playerFactory;
-        [SerializeField]  private ProjectilesAsset _projectiles;
-        [SerializeField]  private TransitionScreenAsset _transitionScreen;
-        [SerializeField]  private VfxPoolAsset _vfxPool;
+        [SerializeField] private LevelCameraAsset _levelCamera;
+        [SerializeField] private LevelEnvironmentAsset _levelEnvironment;
+        [SerializeField] private LevelLoopAsset _levelLoop;
+        [SerializeField] private PlayerFactoryAsset _playerFactory;
+        [SerializeField] private ProjectilesAsset _projectiles;
+        [SerializeField] private TransitionScreenAsset _transitionScreen;
+        [SerializeField] private VfxPoolAsset _vfxPool;
     }
 }

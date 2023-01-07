@@ -3,7 +3,6 @@ using GamePlay.Common.Damages;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Mover.Abstract;
 using Global.Services.Sounds.Runtime;
-using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
@@ -27,36 +26,29 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             _transform = transform;
             _projectile = projectile;
             _mover = mover;
-            _type = type;
+            Type = type;
         }
 
+        private readonly Action _collidedCallback;
+        private readonly Action _droppedCallback;
+
         private readonly IProjectilesMover _mover;
-        private readonly ProjectileType _type;
         private readonly LinearProjectile _projectile;
 
+        private readonly Action<LinearProjectile> _returnToPool;
+
         private readonly Transform _transform;
+
+        private readonly Action _triggeredCallback;
         private string _creatorId;
         private bool _isLocal;
 
         private ShootParams _shootParams;
-        
-        private readonly Action _triggeredCallback;
-        private readonly Action _collidedCallback;
-        private readonly Action _droppedCallback;
-        
-        private readonly Action<LinearProjectile> _returnToPool;
 
         public bool IsLocal => _isLocal;
         public string CreatorId => _creatorId;
-        public ProjectileType Type => _type;
+        public ProjectileType Type { get; }
 
-        public void Setup(ShootParams shootParams, bool isLocal, string creatorId)
-        {
-            _creatorId = creatorId;
-            _shootParams = shootParams;
-            _isLocal = isLocal;
-        }
-        
         public void OnTriggered(IDamageReceiver damageReceiver)
         {
             _mover.Remove(_projectile);
@@ -65,7 +57,7 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             var damage = new Damage(
                 _shootParams.Damage,
                 _transform.position,
-                _type);
+                Type);
 
             damageReceiver.ReceiveDamage(damage, IsLocal);
         }
@@ -82,12 +74,19 @@ namespace GamePlay.Services.Projectiles.Implementation.Linear.Runtime
             _collidedCallback?.Invoke();
         }
 
+        public void Setup(ShootParams shootParams, bool isLocal, string creatorId)
+        {
+            _creatorId = creatorId;
+            _shootParams = shootParams;
+            _isLocal = isLocal;
+        }
+
         public void OnDropped()
         {
             _mover.Remove(_projectile);
             _droppedCallback?.Invoke();
-            
-            MessageBroker.Default.TriggerSound(PositionalSoundType.ProjectileDropped, _transform.position);
+
+            MessageBrokerSoundExtensions.TriggerSound(PositionalSoundType.ProjectileDropped, _transform.position);
         }
     }
 }

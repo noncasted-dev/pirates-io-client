@@ -3,8 +3,7 @@ using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.States.Deaths.Runtime;
 using GamePlay.Services.DroppedObjects.Presenter.Runtime;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
-using Global.Services.FilesFlow.Runtime.Abstract;
-using UniRx;
+using Global.Services.MessageBrokers.Runtime;
 using UnityEngine;
 using VContainer;
 
@@ -24,7 +23,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         }
 
         private IDisposable _deathListener;
-        
+
         private IDroppedObjectsPresenter _dropper;
         private IPlayerEntityProvider _entityProvider;
 
@@ -37,9 +36,9 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
 
         private void OnEnable()
         {
-            _deathListener = MessageBroker.Default.Receive<PlayerDeathEvent>().Subscribe(OnDeath);
+            _deathListener = Msg.Listen<PlayerDeathEvent>(OnDeath);
         }
-        
+
         private void OnDisable()
         {
             _deathListener?.Dispose();
@@ -57,10 +56,10 @@ namespace GamePlay.Services.PlayerCargos.Storage.Runtime
         private void OnDeath(PlayerDeathEvent data)
         {
             var center = _entityProvider.Position;
-            
+
             foreach (var (type, item) in _storage.Items)
                 _dropper.DropFromDeath(type, item.Count, center);
-            
+
             _storage.Clear();
         }
     }

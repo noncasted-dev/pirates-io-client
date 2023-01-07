@@ -4,5 +4,6 @@
     {
         void Cancel();
         void Shoot(float angle, float spread);
+        void Shoot(float angle, float spread, int count);
     }
 }

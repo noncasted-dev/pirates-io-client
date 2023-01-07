@@ -9,7 +9,7 @@ namespace GamePlay.Items.Implementation
     public class CannonKnuppelAsset : ItemAsset
     {
         public override ItemType Type => ItemType.CannonKnuppel;
-    
+
         protected override IItem BuildItem(BaseItemData data, int count)
         {
             return new Item(data, count);

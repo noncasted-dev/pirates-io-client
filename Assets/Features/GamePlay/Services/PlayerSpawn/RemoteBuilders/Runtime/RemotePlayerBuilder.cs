@@ -1,4 +1,6 @@
-﻿using Common.ObjectsPools.Runtime.Abstract;
+﻿using System.Collections.Generic;
+using Common.Local.Services.Abstract.Callbacks;
+using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Factions.Common;
 using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Player.Entity.Network.Remote.Bootstrap;
@@ -8,7 +10,6 @@ using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Implementation.Dead;
 using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.Updaters.Runtime.Abstract;
-using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
@@ -37,20 +38,21 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         }
 
         private static RemotePlayerBuilder _instance;
-        
+
         [SerializeField] private AssetReference _hitExplosionReference;
         [SerializeField] private RemoteViewsPool _pool;
 
         private RemoteBuilderConfigAsset _config;
-        
+
         private IObjectProvider<AnimatedVfx> _hitExplosionPool;
 
         private ILogger _logger;
         private IProjectileReplicator _replicator;
         private IUpdater _updater;
         private IVfxPoolProvider _vfxPoolProvider;
-
         public static RemotePlayerBuilder Instance => _instance;
+
+        public List<Transform> Remotes { get; } = new();
 
         public void OnAwake()
         {
@@ -64,11 +66,12 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
 
         public void Build(GameObject remotePlayer, ShipType shipType, FactionType faction)
         {
+            Remotes.Add(remotePlayer.transform);
             var prefab = _config.GetShip(shipType);
-            
-            var deadShipPool 
+
+            var deadShipPool
                 = _vfxPoolProvider.GetPool<DeadShipVfx>(_config.GetDead(shipType));
-            
+
             var viewProvider = _pool.Handler.GetPool<PlayerRemoteView>(prefab);
             var view = viewProvider.Get(Vector2.zero);
 

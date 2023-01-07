@@ -1,4 +1,4 @@
-﻿using GamePlay.Services.Projectiles.Entity;
+﻿using GamePlay.Common.Damages;
 
 namespace GamePlay.Services.Projectiles.Selector.Runtime
 {
@@ -9,7 +9,7 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
             Type = type;
             Amount = amount;
         }
-        
+
         public readonly ProjectileType Type;
         public readonly int Amount;
     }

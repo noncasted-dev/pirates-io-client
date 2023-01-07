@@ -5,10 +5,10 @@
         CannonBallShot,
         ShrapnelShot,
         KnuppelShot,
-        
+
         ProjectileDropped,
         EnemyDamaged,
         DamageReceived,
-        Death,
+        Death
     }
 }

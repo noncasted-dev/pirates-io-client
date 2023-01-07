@@ -1,5 +1,4 @@
-﻿using Common.EditableScriptableObjects.Attributes;
-using GamePlay.Level.Environment.Chunks.Instance;
+﻿using GamePlay.Level.Environment.Chunks.Instance;
 using UnityEngine;
 
 namespace GamePlay.Level.Environment.Chunks.Tools
@@ -7,7 +6,7 @@ namespace GamePlay.Level.Environment.Chunks.Tools
     [DisallowMultipleComponent]
     public class ChunkBorderDrawer : MonoBehaviour
     {
-        [SerializeField]  private ChunkConfigAsset _config;
+        [SerializeField] private ChunkConfigAsset _config;
 
         private void OnDrawGizmos()
         {

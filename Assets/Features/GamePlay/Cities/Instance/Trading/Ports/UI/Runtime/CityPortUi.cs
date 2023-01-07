@@ -9,11 +9,11 @@ using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.Reputation.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Profiles.Storage;
 using Global.Services.Sounds.Runtime;
 using Global.Services.UiStateMachines.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -55,20 +55,17 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         [SerializeField] private TradeMoney _tradeMoney;
 
         [SerializeField] private Button _closeButton;
-        
-        private IDisposable _enterListener;
-        private IDisposable _exitListener;
-        private IDisposable _requestListener;
 
         private UiConstraints _constraints;
 
-        private IUiStateMachine _stateMachine;
-        private IProfileStorageProvider _profileStorageProvider;
+        private IDisposable _enterListener;
+        private IDisposable _exitListener;
         private IPlayerCargoStorage _playerCargoStorage;
+        private IProfileStorageProvider _profileStorageProvider;
         private IReputation _reputation;
+        private IDisposable _requestListener;
 
-        public UiConstraints Constraints => _constraints;
-        public string Name => "Port";
+        private IUiStateMachine _stateMachine;
         public MoneyView MoneyView => _moneyView;
         public TradeMoney TradeMoney => _tradeMoney;
         public TradeHandler TradeHandler => _tradeHandler;
@@ -80,9 +77,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void OnEnable()
         {
-            _enterListener = MessageBroker.Default.Receive<PortEnteredEvent>().Subscribe(OnEntered);
-            _exitListener = MessageBroker.Default.Receive<PortExitedEvent>().Subscribe(OnExited);
-            _requestListener = MessageBroker.Default.Receive<TradeRequestedEvent>().Subscribe(OnTradeRequested);
+            _enterListener = Msg.Listen<PortEnteredEvent>(OnEntered);
+            _exitListener = Msg.Listen<PortExitedEvent>(OnExited);
+            _requestListener = Msg.Listen<TradeRequestedEvent>(OnTradeRequested);
 
             _tradeBody.SetActive(false);
 
@@ -96,11 +93,14 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _enterListener?.Dispose();
             _exitListener?.Dispose();
             _requestListener?.Dispose();
-            
+
             _closeButton.onClick.RemoveListener(OnCloseClicked);
-            
+
             _tradeHandler.Completed -= OnTradeCompleted;
         }
+
+        public UiConstraints Constraints => _constraints;
+        public string Name => "Port";
 
         public void Recover()
         {
@@ -117,28 +117,28 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _stateMachine.EnterAsSingle(this);
 
             _nickName.text = _profileStorageProvider.UserName;
-            
+
             _body.SetActive(true);
-            
+
             _storedView.gameObject.SetActive(false);
             _stockView.gameObject.SetActive(false);
-            
+
             _storedView.gameObject.SetActive(true);
             _stockView.gameObject.SetActive(true);
             _tradeBody.SetActive(false);
-            
+
             _storedView.Fill(data.Cargo, data.PriceProvider);
 
             _stockView.Fill(data.Stock, data.PriceProvider);
             _stockShips.Fill(data.Ships, _reputation);
-            
+
             _cargoTrade.Setup(data.PriceProvider);
             _stockTrade.Setup(data.PriceProvider);
-            
+
             _shipView.Setup(data.ShipResources, _reputation);
             _tradeHandler.Setup(data.CityStorage);
-            
-            MessageBroker.Default.TriggerSound(SoundType.UiOpen);
+
+            MessageBrokerSoundExtensions.TriggerSound(SoundType.UiOpen);
         }
 
         private void OnExited(PortExitedEvent data)
@@ -157,10 +157,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
         private void OnTradeCompleted(TradeResult result)
         {
             _tradeBody.SetActive(false);
-            
+
             var completed = new TradeCompletedEvent(Redraw, result);
 
-            MessageBroker.Default.Publish(completed);
+            Msg.Publish(completed);
         }
 
         private void Redraw(
@@ -172,7 +172,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
             _shipView.ResetStats();
 
             _tradeBody.SetActive(false);
-            
+
             _shipView.ResetStats();
 
             _storedView.Fill(cargo, priceProvider);
@@ -182,7 +182,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime
 
         private void OnCloseClicked()
         {
-            MessageBroker.Default.Publish(new PortClosedEvent());
+            Msg.Publish(new PortClosedEvent());
         }
     }
 }

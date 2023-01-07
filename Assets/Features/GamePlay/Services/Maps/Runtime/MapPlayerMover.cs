@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
-namespace Features.GamePlay.Services.Maps.Runtime
+namespace GamePlay.Services.Maps.Runtime
 {
     public class MapPlayerMover : MonoBehaviour, IUpdatable
     {
@@ -32,10 +32,39 @@ namespace Features.GamePlay.Services.Maps.Runtime
         private IPlayerEntityProvider _player;
         private IUpdater _updater;
 
+        public void OnUpdate(float timeDelta)
+        {
+            var levelWidth = Vector2.Distance(
+                _levelLeftBottom.transform.position,
+                _levelRightBottom.transform.position);
+
+            var levelHeight = Vector2.Distance(
+                _levelLeftBottom.transform.position,
+                _levelLeftTop.transform.position);
+
+            var levelPlayer = _player.Position;
+
+            var xProgress = (levelPlayer.x + Mathf.Abs(_levelLeftBottom.transform.position.x)) / levelWidth;
+            var yProgress = (levelPlayer.y + Mathf.Abs(_levelLeftBottom.transform.position.y)) / levelHeight;
+
+            var mapWidth = Vector2.Distance(
+                _mapLeftBottom.anchoredPosition,
+                _mapRightBottom.anchoredPosition);
+
+            var mapHeight = Vector2.Distance(
+                _mapLeftBottom.anchoredPosition,
+                _mapLeftTop.anchoredPosition);
+
+            var progress = new Vector2(xProgress, yProgress);
+            var position = _mapLeftBottom.anchoredPosition + new Vector2(mapWidth, mapHeight) * progress;
+
+            _playerView.anchoredPosition = position;
+        }
+
         public void OnOpened()
         {
             _updater.Add(this);
-            
+
             Canvas.ForceUpdateCanvases();
 
             _content.anchoredPosition =
@@ -46,35 +75,6 @@ namespace Features.GamePlay.Services.Maps.Runtime
         public void OnClosed()
         {
             _updater.Remove(this);
-        }
-
-        public void OnUpdate(float timeDelta)
-        {
-            var levelWidth = Vector2.Distance(
-                    _levelLeftBottom.transform.position,
-                    _levelRightBottom.transform.position);
-            
-            var levelHeight = Vector2.Distance(
-                _levelLeftBottom.transform.position,
-                _levelLeftTop.transform.position);
-
-            var levelPlayer = _player.Position;
-      
-            var xProgress = (levelPlayer.x + Mathf.Abs(_levelLeftBottom.transform.position.x)) / levelWidth;
-            var yProgress = (levelPlayer.y + Mathf.Abs(_levelLeftBottom.transform.position.y)) / levelHeight;
-            
-            var mapWidth = Vector2.Distance(
-                _mapLeftBottom.anchoredPosition,
-                _mapRightBottom.anchoredPosition);
-            
-            var mapHeight = Vector2.Distance(
-                _mapLeftBottom.anchoredPosition,
-                _mapLeftTop.anchoredPosition);
-
-            var progress = new Vector2(xProgress, yProgress);
-            var position = _mapLeftBottom.anchoredPosition + new Vector2(mapWidth, mapHeight) * progress;
-            
-            _playerView.anchoredPosition = position;
         }
     }
 }

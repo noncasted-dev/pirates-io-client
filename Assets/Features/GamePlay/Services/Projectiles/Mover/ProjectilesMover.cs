@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
+using Common.Local.Services.Abstract.Callbacks;
 using GamePlay.Common.Damages;
-using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Logs;
 using GamePlay.Services.Projectiles.Mover.Abstract;
 using Global.Services.Sounds.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
-using Local.Services.Abstract.Callbacks;
-using UniRx;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
@@ -62,10 +60,7 @@ namespace GamePlay.Services.Projectiles.Mover
             var jobHandle = job.Schedule(array.Length, 1);
             jobHandle.Complete();
 
-            for (var i = 0; i < job.Projectiles.Length; i++)
-            {
-                CheckCollision(_projectiles[i], job.Projectiles[i]);
-            }
+            for (var i = 0; i < job.Projectiles.Length; i++) CheckCollision(_projectiles[i], job.Projectiles[i]);
 
             array.Dispose();
         }
@@ -148,7 +143,7 @@ namespace GamePlay.Services.Projectiles.Mover
                 if (damageReceiver.IsLocal == true && projectile.Actions.IsLocal == false)
                 {
                     Debug.Log("On damage local");
-                    MessageBroker.Default.TriggerSound(PositionalSoundType.DamageReceived, data.CurrentPosition);
+                    MessageBrokerSoundExtensions.TriggerSound(PositionalSoundType.DamageReceived, data.CurrentPosition);
 
                     projectile.Actions.Destroy();
                     return;

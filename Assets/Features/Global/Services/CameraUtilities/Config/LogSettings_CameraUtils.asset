@@ -17,7 +17,22 @@ MonoBehaviour:
     _keys: 0000000001000000
     _values: 0101
   _logParameters:
-    Color: 4
-    _header: CameraUtils
-    _isHeaderColoredColored: 1
     _isMessageColored: 0
+    _color: {r: 0, g: 0, b: 0, a: 0}
+    _headers:
+    - {fileID: 8810178737084673510}
+--- !u!114 &8810178737084673510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5271532ca2141769281f3f4ccfae783, type: 3}
+  m_Name: LoggerHeader_CameraUtils
+  m_EditorClassIdentifier: 
+  _name: CameraUtils
+  _isColored: 1
+  _color: {r: 0.9490197, g: 0.7607844, b: 0.21568629, a: 1}

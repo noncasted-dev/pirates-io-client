@@ -10,18 +10,18 @@ namespace GamePlay.Services.Saves.Definitions
     [Serializable]
     public class ShipSave : SaveData
     {
-        public ShipSave(string saveName) : base(saveName)
-        {
-        }
-        
-        public ShipSave() : base(nameof(SaveData))
-        {
-        }
-
         public CityType LastCity;
         public ShipType ShipType;
         public List<ItemType> Items = new();
         public List<int> Count = new();
         public int Money;
+
+        public ShipSave(string saveName) : base(saveName)
+        {
+        }
+
+        public ShipSave() : base(nameof(SaveData))
+        {
+        }
     }
 }

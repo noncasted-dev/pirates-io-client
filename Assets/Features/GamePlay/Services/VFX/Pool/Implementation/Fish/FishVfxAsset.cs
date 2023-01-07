@@ -5,7 +5,7 @@ using Global.Services.AssetsFlow.Runtime.Abstract;
 using UnityEngine;
 using VContainer;
 
-namespace GamePlay.Services.VFX.Pool.Implementation.Dead
+namespace GamePlay.Services.VFX.Pool.Implementation.Fish
 {
     [CreateAssetMenu(fileName = "FishVfx_PoolEntry", menuName = GamePlayAssetsPaths.VFX + "Fish")]
     public class FishVfxAsset : PoolEntryAsset

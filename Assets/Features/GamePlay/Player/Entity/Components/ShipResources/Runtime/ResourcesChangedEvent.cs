@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
+﻿namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 {
     public readonly struct ResourcesChangedEvent
     {
@@ -8,7 +6,7 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
         {
             Resources = resources;
         }
-        
+
         public readonly IShipResources Resources;
     }
 }

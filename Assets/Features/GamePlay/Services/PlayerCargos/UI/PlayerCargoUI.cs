@@ -1,4 +1,5 @@
 ﻿using System;
+using Common.Local.Services.Abstract.Callbacks;
 using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Views;
 using GamePlay.Items.Abstract;
@@ -8,9 +9,8 @@ using GamePlay.Services.PlayerCargos.UI.Events;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.Reputation.Runtime;
 using Global.Services.InputViews.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.UiStateMachines.Runtime;
-using Local.Services.Abstract.Callbacks;
-using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -42,24 +42,21 @@ namespace GamePlay.Services.PlayerCargos.UI
         [SerializeField] private DropConfirmation _drop;
         [SerializeField] private CargoShipView _shipView;
         [SerializeField] private MoneyView _money;
-        
-        private UiConstraints _constraints;
-        
-        private IInputView _inputView;
-        private IPlayerCargoStorage _storage;
-        private IPlayerEntityProvider _entityProvider;
-        private IReputation _reputation;
+
+        private IPlayerCargo _cargo;
 
         private IDisposable _cargoChangedListener;
-        private IDisposable _dropListener;
-        
-        private IPlayerCargo _cargo;
-        private IUiStateMachine _uiStateMachine;
 
-        public UiConstraints Constraints => _constraints;
-        public string Name => "Cargo";
+        private UiConstraints _constraints;
+        private IDisposable _dropListener;
+        private IPlayerEntityProvider _entityProvider;
+
+        private IInputView _inputView;
+        private IReputation _reputation;
+        private IPlayerCargoStorage _storage;
+        private IUiStateMachine _uiStateMachine;
         public MoneyView MoneyView => _money;
-        
+
         private void Start()
         {
             _body.SetActive(false);
@@ -68,27 +65,42 @@ namespace GamePlay.Services.PlayerCargos.UI
         public void OnEnabled()
         {
             _inputView.InventoryPerformed += OnInventoryOpenPerformed;
-            
-            _cargoChangedListener = MessageBroker.Default.Receive<CargoChangedEvent>().Subscribe(OnCargoChanged);
-            _dropListener = MessageBroker.Default.Receive<ItemDropRequestedEvent>().Subscribe(OnDropRequested);
+
+            _cargoChangedListener = Msg.Listen<CargoChangedEvent>(OnCargoChanged);
+            _dropListener = Msg.Listen<ItemDropRequestedEvent>(OnDropRequested);
         }
 
         public void OnDisabled()
         {
             _inputView.InventoryPerformed -= OnInventoryOpenPerformed;
-            
+
             _cargoChangedListener.Dispose();
             _dropListener.Dispose();
+        }
+
+        public UiConstraints Constraints => _constraints;
+        public string Name => "Cargo";
+
+        public void Recover()
+        {
+            _shipView.Setup(_entityProvider.Resources, _reputation);
+            _body.SetActive(true);
+            _grid.Fill(_storage.ToArray());
+        }
+
+        public void Exit()
+        {
+            _body.SetActive(false);
         }
 
         private void OnCargoChanged(CargoChangedEvent data)
         {
             if (_body.activeSelf == false)
                 return;
-            
+
             Redraw(data.ToArray());
         }
-        
+
         private void OnInventoryOpenPerformed()
         {
             if (_body.activeSelf == true)
@@ -108,7 +120,7 @@ namespace GamePlay.Services.PlayerCargos.UI
         public void Open()
         {
             _uiStateMachine.EnterAsStack(this);
-            
+
             _shipView.Setup(_entityProvider.Resources, _reputation);
             _body.SetActive(true);
             _grid.Fill(_storage.ToArray());
@@ -117,7 +129,7 @@ namespace GamePlay.Services.PlayerCargos.UI
         public void Close()
         {
             _uiStateMachine.Exit(this);
-            
+
             _body.SetActive(false);
         }
 
@@ -147,18 +159,6 @@ namespace GamePlay.Services.PlayerCargos.UI
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-        }
-        
-        public void Recover()
-        {
-            _shipView.Setup(_entityProvider.Resources, _reputation);
-            _body.SetActive(true);
-            _grid.Fill(_storage.ToArray());
-        }
-
-        public void Exit()
-        {
-            _body.SetActive(false);
         }
     }
 }

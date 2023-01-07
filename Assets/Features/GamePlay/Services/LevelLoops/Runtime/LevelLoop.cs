@@ -1,4 +1,5 @@
 ﻿using System;
+using Common.Local.Services.Abstract.Callbacks;
 using Cysharp.Threading.Tasks;
 using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Cities.Instance.Root.Runtime;
@@ -21,8 +22,7 @@ using GamePlay.Services.Wallets.Runtime;
 using Global.Services.CurrentCameras.Runtime;
 using Global.Services.FilesFlow.Runtime.Abstract;
 using Global.Services.ItemFactories.Runtime;
-using Local.Services.Abstract.Callbacks;
-using UniRx;
+using Global.Services.MessageBrokers.Runtime;
 using UnityEngine;
 using VContainer;
 
@@ -71,57 +71,36 @@ namespace GamePlay.Services.LevelLoops.Runtime
             _levelCamera = levelCamera;
         }
 
-        private IDisposable _deathListener;
-        private IDisposable _shipChangeListener;
-        
+        private IPlayerCargoStorage _cargo;
+
         private ICitiesRegistry _citiesRegistry;
         private ICurrentCamera _currentCamera;
-        private ILevelCamera _levelCamera;
-        
+
+        private IDisposable _deathListener;
+        private IPlayerEntityPresenter _entityPresenter;
+
         private IFactionSelectionLoop _factionSelection;
+        private IFileLoader _fileLoader;
+        private IFileSaver _fileSaver;
+        private IItemFactory _itemFactory;
+        private ILevelCamera _levelCamera;
 
         private LevelLoopLogger _logger;
         private IPlayerFactory _playerFactory;
+        private IReputation _reputation;
         private ISceneObjectsHandler _sceneObjects;
+        private IDisposable _shipChangeListener;
         private ITransitionScreen _transitionScreen;
         private ITravelOverlay _travelOverlay;
-        private IPlayerEntityPresenter _entityPresenter;
-        private IItemFactory _itemFactory;
-        private IPlayerCargoStorage _cargo;
-        private IReputation _reputation;
-        private IFileLoader _fileLoader;
-        private IFileSaver _fileSaver;
         private IWalletPresenter _walletPresenter;
-
-        public void OnEnabled()
-        {
-            _deathListener = MessageBroker.Default.Receive<PlayerDeathEvent>().Subscribe(OnPlayerDeath);
-            _shipChangeListener = MessageBroker.Default.Receive<ShipChangeEvent>().Subscribe(OnShipChanged);
-        }
-
-        public void OnDisabled()
-        {
-            _deathListener?.Dispose();
-            _shipChangeListener?.Dispose();
-        }
 
         public void OnLoaded()
         {
-            Debug.Log(17);
-
             _sceneObjects.InvokeFullStartup();
 
-            Debug.Log(18);
-
-            
             _currentCamera.SetCamera(_levelCamera.Camera);
 
-            Debug.Log(19);
-
-            
             _logger.OnLoaded();
-
-            Debug.Log(20);
 
             if (_fileLoader.Load(out ShipSave save) == false)
             {
@@ -131,11 +110,23 @@ namespace GamePlay.Services.LevelLoops.Runtime
             {
                 for (var i = 0; i < save.Items.Count; i++)
                     _cargo.Add(_itemFactory.Create(save.Items[i], save.Count[i]));
-                
+
                 _walletPresenter.Set(save.Money);
 
                 ProcessRespawn(save.ShipType, save.LastCity).Forget();
             }
+        }
+
+        public void OnEnabled()
+        {
+            _deathListener = Msg.Listen<PlayerDeathEvent>(OnPlayerDeath);
+            _shipChangeListener = Msg.Listen<ShipChangeEvent>(OnShipChanged);
+        }
+
+        public void OnDisabled()
+        {
+            _deathListener?.Dispose();
+            _shipChangeListener?.Dispose();
         }
 
         private async UniTask Begin()
@@ -144,43 +135,32 @@ namespace GamePlay.Services.LevelLoops.Runtime
             var ball = _itemFactory.Create(ItemType.CannonBall, 90);
             var shrapnel = _itemFactory.Create(ItemType.CannonKnuppel, 30);
             var knuppel = _itemFactory.Create(ItemType.CannonShrapnel, 30);
-            Debug.Log(21);
-            
+
             _cargo.Add(cannons);
             _cargo.Add(ball);
             _cargo.Add(shrapnel);
             _cargo.Add(knuppel);
-            
-            Debug.Log(22);
-            
+
             var selectedCity = await _factionSelection.SelectAsync();
             _transitionScreen.ToPlayerRespawn();
 
             var cityInstance = _citiesRegistry.GetCity(selectedCity);
             var spawnPosition = cityInstance.SpawnPoints.GetRandom();
-            
-            _logger.OnPlayerSpawn();
-            
-            Debug.Log(23);
 
+            _logger.OnPlayerSpawn();
 
             var player = await _playerFactory.Create(spawnPosition, ShipType.Boat);
 
             _levelCamera.Teleport(player.Transform.position);
             _levelCamera.StartFollow(player.Transform);
-            
-            Debug.Log(24);
-
 
             await _transitionScreen.FadeOut();
 
             _travelOverlay.Open();
 
             player.Respawn();
-            
-            Debug.Log(25);
         }
-        
+
         private async UniTaskVoid ProcessRespawn(ShipType ship, CityType city)
         {
             _logger.OnPlayerSpawn();
@@ -189,18 +169,18 @@ namespace GamePlay.Services.LevelLoops.Runtime
 
             var cityInstance = _citiesRegistry.GetCity(city);
             var spawnPosition = cityInstance.SpawnPoints.GetRandom();
-            
+
             var player = await _playerFactory.Create(spawnPosition, ship);
 
             _levelCamera.Teleport(player.Transform.position);
             _levelCamera.StartFollow(player.Transform);
 
             await _transitionScreen.FadeOut();
-        
+
             _travelOverlay.Open();
-            
+
             player.Respawn();
-            
+
             _cargo.UpdateState();
         }
 
@@ -212,24 +192,24 @@ namespace GamePlay.Services.LevelLoops.Runtime
         private void OnPlayerDeath(PlayerDeathEvent data)
         {
             _entityPresenter.DestroyPlayer();
-            
+
             var save = _fileLoader.LoadOrCreate<ShipSave>();
-            
+
             save.ShipType = ShipType.Boat;
             save.Items.Clear();
             save.Count.Clear();
-            
+
             _fileSaver.Save(save);
 
             Begin().Forget();
         }
-        
+
         private void OnShipChanged(ShipChangeEvent data)
         {
             var save = _fileLoader.LoadOrCreate<ShipSave>();
             save.ShipType = data.Ship;
             _fileSaver.Save(save);
-            
+
             ProcessRespawn(data.Ship).Forget();
         }
 
@@ -255,7 +235,7 @@ namespace GamePlay.Services.LevelLoops.Runtime
             await _transitionScreen.FadeOut();
 
             player.Respawn();
-            
+
             _cargo.UpdateState();
         }
     }

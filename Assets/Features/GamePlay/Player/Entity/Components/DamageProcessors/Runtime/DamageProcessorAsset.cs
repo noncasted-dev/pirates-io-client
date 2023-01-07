@@ -1,10 +1,8 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
-using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Path;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
 {
@@ -12,18 +10,13 @@ namespace GamePlay.Player.Entity.Components.DamageProcessors.Runtime
         menuName = PlayerAssetsPaths.Damage + "Component")]
     public class DamageProcessorAsset : PlayerComponentAsset
     {
-        [SerializeField]  private DamageConfigAsset _config;
+        [SerializeField] private DamageConfigAsset _config;
 
-        public override void Register(IContainerBuilder builder)
+        public override void Register(IDependencyRegister builder)
         {
-            builder.Register<DamageProcessor>(Lifetime.Scoped)
+            builder.Register<DamageProcessor>()
                 .WithParameter(_config)
-                .AsSelf();
-        }
-
-        public override void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)
-        {
-            resolver.Resolve<DamageProcessor>();
+                .AsSelfResolvable();
         }
     }
 }

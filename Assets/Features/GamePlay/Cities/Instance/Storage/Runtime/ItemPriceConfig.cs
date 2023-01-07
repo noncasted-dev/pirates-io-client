@@ -7,6 +7,13 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
     [Serializable]
     public class ItemPriceConfig
     {
+        [SerializeField] [Min(1)] private int _medianCost = 1;
+        [SerializeField] [Min(1)] private int _curveHeight = 100;
+        [SerializeField] [Min(1)] private int _medianCount = 100;
+        [SerializeField] [Min(1)] private int _maxItems = 100;
+        [SerializeField] [Min(1)] private int _lackProductionSpeedPerSecond = 10;
+        [SerializeField] private ItemType _type;
+
         public ItemPriceConfig(
             int cost,
             int height,
@@ -22,13 +29,6 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             _lackProductionSpeedPerSecond = speed;
             _type = type;
         }
-        
-        [SerializeField] [Min(1)] private int _medianCost = 1;
-        [SerializeField] [Min(1)] private int _curveHeight = 100;
-        [SerializeField] [Min(1)] private int _medianCount = 100;
-        [SerializeField] [Min(1)] private int _maxItems = 100;
-        [SerializeField] [Min(1)] private int _lackProductionSpeedPerSecond = 10;
-        [SerializeField] private ItemType _type;
 
         public int MedianCost => _medianCost;
         public int CurveHeight => _curveHeight;

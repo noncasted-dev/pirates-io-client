@@ -1,8 +1,8 @@
 ﻿using System;
-using GamePlay.Services.Projectiles.Entity;
+using GamePlay.Common.Damages;
 using GamePlay.Services.Projectiles.Selector.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -24,16 +24,16 @@ namespace GamePlay.Services.TravelOverlays.Runtime
         [SerializeField] private Button _button;
 
         [SerializeField] private ProjectileType _type;
+        private IDisposable _amountListener;
 
         private IDisposable _selectListener;
-        private IDisposable _amountListener;
 
         private IProjectileSelector _selector;
 
         private void OnEnable()
         {
-            _selectListener = MessageBroker.Default.Receive<ProjectileSelectedEvent>().Subscribe(OnSelected);
-            _amountListener = MessageBroker.Default.Receive<ProjectileAmountChangedEvent>().Subscribe(OnAmountChanged);
+            _selectListener = Msg.Listen<ProjectileSelectedEvent>(OnSelected);
+            _amountListener = Msg.Listen<ProjectileAmountChangedEvent>(OnAmountChanged);
 
             _button.onClick.AddListener(OnClicked);
 

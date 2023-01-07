@@ -4,6 +4,7 @@ using UnityEditor;
 
 namespace Global.Services.Loggers.Editor.Services.System
 {
+    [ReadOnlyDictionaryPriority]
     [CustomPropertyDrawer(typeof(FilesFlowLogs))]
     public class FilesFlowLogsDrawer : ReadonlyDictionaryPropertyDrawer
     {

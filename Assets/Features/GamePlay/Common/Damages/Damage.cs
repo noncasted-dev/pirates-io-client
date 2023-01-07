@@ -1,5 +1,4 @@
-﻿using GamePlay.Services.Projectiles.Entity;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace GamePlay.Common.Damages
 {

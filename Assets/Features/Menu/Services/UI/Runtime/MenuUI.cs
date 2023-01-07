@@ -1,7 +1,7 @@
-﻿using Global.Services.Sounds.Runtime;
+﻿using Global.Services.MessageBrokers.Runtime;
+using Global.Services.Sounds.Runtime;
 using Global.Services.UiStateMachines.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -28,37 +28,22 @@ namespace Menu.Services.UI.Runtime
         [SerializeField] private GameObject _loginBody;
 
         [SerializeField] private ServerSelection _serverSelection;
-        
+
         private UiConstraints _constraints;
         private IUiStateMachine _uiStateMachine;
-
-        public UiConstraints Constraints => _constraints;
-        public string Name => "MainMenu";
 
         private void OnEnable()
         {
             _playButton.onClick.AddListener(OnPlayClicked);
 
-            MessageBroker.Default.TriggerSound(SoundType.MenuEntered);
+            MessageBrokerSoundExtensions.TriggerSound(SoundType.MenuEntered);
         }
 
         private void OnDisable()
         {
             _playButton.onClick.RemoveListener(OnPlayClicked);
-            
-            MessageBroker.Default.TriggerSound(SoundType.MenuExited);
-        }
 
-        public void Recover()
-        {
-            _loginBody.SetActive(true);
-            _loadingBody.SetActive(false);
-        }
-
-        public void Exit()
-        {
-            _loginBody.SetActive(false);
-            _loadingBody.SetActive(false);
+            MessageBrokerSoundExtensions.TriggerSound(SoundType.MenuExited);
         }
 
         public void OnLogin()
@@ -88,6 +73,21 @@ namespace Menu.Services.UI.Runtime
             _uiStateMachine.Exit(this);
         }
 
+        public UiConstraints Constraints => _constraints;
+        public string Name => "MainMenu";
+
+        public void Recover()
+        {
+            _loginBody.SetActive(true);
+            _loadingBody.SetActive(false);
+        }
+
+        public void Exit()
+        {
+            _loginBody.SetActive(false);
+            _loadingBody.SetActive(false);
+        }
+
         private void OnPlayClicked()
         {
             var userName = _nameInput.text;
@@ -96,7 +96,7 @@ namespace Menu.Services.UI.Runtime
                 return;
 
             var clicked = new PlayClickedEvent(userName, _serverSelection.Selected);
-            MessageBroker.Default.Publish(clicked);
+            Msg.Publish(clicked);
         }
     }
 }

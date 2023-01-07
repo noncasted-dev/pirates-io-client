@@ -11,13 +11,14 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Dead
     [DisallowMultipleComponent]
     public class DeadShipVfx : MonoBehaviour, IPoolObject<DeadShipVfx>
     {
+        private static readonly int Play = Animator.StringToHash("Play");
         [SerializeField] private float _destroyDelay;
         [SerializeField] private float _disappearDelay;
 
         [SerializeField] private List<GameObject> _skinVariants;
         [SerializeField] private UnityEvent _disappearStartedCallback;
-        
-        private static readonly int Play = Animator.StringToHash("Play");
+
+        [SerializeField] private List<ParticleSystem> _particleSystems;
 
         private Animator _animator;
         private Action<DeadShipVfx> _returnToPool;
@@ -39,7 +40,7 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Dead
         {
             if (_skinVariants.Count > 0)
             {
-                var randomId = (int)(Random.value * (float)_skinVariants.Count);
+                var randomId = (int)(Random.value * _skinVariants.Count);
                 for (var i = 0; i < _skinVariants.Count; i++)
                     _skinVariants[i].SetActive(randomId == i);
             }
@@ -58,22 +59,21 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Dead
         {
             var destroyDelay = (int)(_destroyDelay * 1000);
             var token = this.GetCancellationTokenOnDestroy();
-            
+
             await UniTask.Delay(destroyDelay, false, PlayerLoopTiming.Update, token);
-            
+
             var disappearDelay = (int)(_disappearDelay * 1000);
             _disappearStartedCallback?.Invoke();
             StopParticles();
 
             await UniTask.Delay(destroyDelay, false, PlayerLoopTiming.Update, token);
-            
+
             _returnToPool?.Invoke(this);
         }
 
-        [SerializeField] private List<ParticleSystem> _particleSystems;
         public void StopParticles()
         {
-            foreach (var p in _particleSystems)            
+            foreach (var p in _particleSystems)
                 p.Stop();
         }
     }

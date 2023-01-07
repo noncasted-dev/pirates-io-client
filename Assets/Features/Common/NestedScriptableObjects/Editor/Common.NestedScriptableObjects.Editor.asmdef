@@ -1,0 +1,6 @@
+﻿{
+  "name": "Common.NestedScriptableObjects.Editor",
+  "references": [
+    "GUID:9f12b849425b4eee835913da917e6c20"
+  ]
+}

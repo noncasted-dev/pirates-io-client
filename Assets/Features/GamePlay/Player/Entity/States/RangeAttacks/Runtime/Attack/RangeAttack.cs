@@ -14,8 +14,7 @@ using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Config;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Player.Entity.Weapons.Handler.Runtime;
 using GamePlay.Services.Projectiles.Selector.Runtime;
-using UniRx;
-using UnityEngine;
+using Global.Services.MessageBrokers.Runtime;
 
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
 {
@@ -51,7 +50,6 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         }
 
         private readonly IActionsStateProvider _actionsStateProvider;
-        private readonly IProjectileSelector _selector;
 
         private readonly IAimView _aim;
         private readonly IRangeAttackConfig _config;
@@ -59,13 +57,14 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
         private readonly AttackDelay _delay;
         private readonly IInertialMovement _inertialMovement;
         private readonly RangeAttackLogger _logger;
+
+        private readonly IShipResources _resources;
+        private readonly IProjectileSelector _selector;
         private readonly ISpriteRotation _spriteRotation;
         private readonly ISpriteTransform _spriteTransform;
 
         private readonly IStateMachine _stateMachine;
         private readonly IWeaponsHandler _weapons;
-        
-        private readonly IShipResources _resources;
 
         private bool _hasInput;
         private bool _isStarted;
@@ -90,7 +89,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
 
             if (_selector.CanShoot() == false)
                 return;
-            
+
             if (_resources.Cannons <= 0)
                 return;
 
@@ -157,7 +156,7 @@ namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime.Attack
                     _spriteTransform.Impact(direction, impactParams.Distance, impactParams.Time);
 
                     _weapons.Canon.Shoot(aim.Angle, aim.Spread);
-                    MessageBroker.Default.Publish(new AimDelayEvent(_config.Delay));
+                    Msg.Publish(new AimDelayEvent(_config.Delay));
                     break;
                 case AimResultType.Broke:
                     _hasInput = false;

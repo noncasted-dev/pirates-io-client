@@ -34,11 +34,9 @@ namespace GamePlay.Player.Entity.Views.Transforms.Runtime
         {
             _last?.Stop();
         }
-        
-        
+
         public void OnEnabled()
         {
-            
         }
     }
 }

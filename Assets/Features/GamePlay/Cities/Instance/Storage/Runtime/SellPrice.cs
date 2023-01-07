@@ -7,7 +7,7 @@
             Median = median;
             Total = total;
         }
-        
+
         public readonly int Median;
         public readonly int Total;
     }

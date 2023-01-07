@@ -2,8 +2,8 @@
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.Reputation.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -24,22 +24,22 @@ namespace GamePlay.Services.TravelOverlays.Runtime
         [SerializeField] private TMP_Text _sail;
         [SerializeField] private TMP_Text _load;
         [SerializeField] private TMP_Text _speed;
+        private IPlayerEntityProvider _entityProvider;
+
+        private IReputation _reputation;
 
         private IDisposable _reputationListener;
         private IDisposable _resourcesListener;
-
-        private IReputation _reputation;
-        private IPlayerEntityProvider _entityProvider;
 
         private void OnEnable()
         {
             UpdateData();
 
             _reputationListener =
-                MessageBroker.Default.Receive<ReputationChangedEvent>().Subscribe(OnReputationChanged);
-            
+                Msg.Listen<ReputationChangedEvent>(OnReputationChanged);
+
             _resourcesListener =
-                MessageBroker.Default.Receive<ResourcesChangedEvent>().Subscribe(OnResourcesChanged);
+                Msg.Listen<ResourcesChangedEvent>(OnResourcesChanged);
         }
 
         private void OnDisable()
@@ -61,7 +61,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime
             OnSpeedChanged(resources.Speed);
             OnSailChanged(resources.Sail);
         }
-        
+
         private void UpdateData()
         {
             if (_reputation == null || _entityProvider == null || _entityProvider.Resources == null)
@@ -81,7 +81,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime
         {
             _speed.text = current.ToString();
         }
-   
+
         private void OnWeightChanged(int current, int max)
         {
             var load = (current / (float)max).ToString("#0%");

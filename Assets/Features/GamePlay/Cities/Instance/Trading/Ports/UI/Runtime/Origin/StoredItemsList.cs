@@ -4,7 +4,7 @@ using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
-using UniRx;
+using Global.Services.MessageBrokers.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,9 +19,9 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         [SerializeField] private RectTransform _contentRect;
         [SerializeField] private ItemOrigin _origin;
         [SerializeField] private float _cellHeight = 60f;
+        private readonly List<StoredItemView> _available = new();
 
         private readonly Dictionary<ItemType, StoredItemView> _cells = new();
-        private readonly List<StoredItemView> _available = new();
 
         private IDisposable _removeListener;
         private IDisposable _tradeAddListener;
@@ -37,10 +37,16 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
                 cell.Disable();
         }
 
+        private void Update()
+        {
+            foreach (var cell in _cells)
+                cell.Value.UpdatePrice();
+        }
+
         private void OnEnable()
         {
-            _removeListener = MessageBroker.Default.Receive<TransferCanceledEvent>().Subscribe(OnTransferCanceled);
-            _tradeAddListener = MessageBroker.Default.Receive<TradeAddedEvent>().Subscribe(OnTradeAdd);
+            _removeListener = Msg.Listen<TransferCanceledEvent>(OnTransferCanceled);
+            _tradeAddListener = Msg.Listen<TradeAddedEvent>(OnTradeAdd);
         }
 
         private void OnDisable()
@@ -61,29 +67,23 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
             foreach (var cell in _available)
                 cell.Disable();
-            
+
             _cells.Clear();
-            
+
             AddCellsOnDemand(items.Count);
 
             foreach (var item in items)
             {
                 var cell = _available[0];
                 _available.RemoveAt(0);
-                
+
                 cell.AssignItem(item, _origin, priceProvider);
                 _cells.Add(item.BaseData.Type, cell);
             }
-            
+
             CalculateVerticalSize(items.Count);
         }
-        
-        private void Update()
-        {
-            foreach (var cell in _cells)
-                cell.Value.UpdatePrice();
-        }
-        
+
         private void OnTransferCanceled(TransferCanceledEvent data)
         {
             if (data.Origin != _origin)
@@ -93,7 +93,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
             cell.OnTransferCanceled();
         }
-        
+
         private void OnTradeAdd(TradeAddedEvent data)
         {
             if (data.Origin != _origin)

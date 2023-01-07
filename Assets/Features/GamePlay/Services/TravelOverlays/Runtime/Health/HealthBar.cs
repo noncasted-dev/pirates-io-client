@@ -2,8 +2,8 @@
 using GamePlay.Player.Entity.Components.Healths.Runtime;
 using GamePlay.Player.Entity.States.Respawns.Runtime;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
-using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -27,20 +27,20 @@ namespace GamePlay.Services.TravelOverlays.Runtime.Health
         [SerializeField] private RectTransform _actual;
         [SerializeField] private RectTransform _damage;
         [SerializeField] private RectTransform _root;
-        
+        private IPlayerEntityProvider _entityProvider;
+
         private IDisposable _healthListener;
         private IDisposable _respawnListener;
-        
+
         private HealthUpdate _update;
-        private IPlayerEntityProvider _entityProvider;
 
         private void OnEnable()
         {
-            _healthListener = MessageBroker.Default.Receive<HealthChangeEvent>().Subscribe(OnHealthChange);
-            _respawnListener = MessageBroker.Default.Receive<PlayerRespawnedEvent>().Subscribe(OnPlayerRespawned);
-            
+            _healthListener = Msg.Listen<HealthChangeEvent>(OnHealthChange);
+            _respawnListener = Msg.Listen<PlayerRespawnedEvent>(OnPlayerRespawned);
+
             _update?.Start();
-            
+
             if (_entityProvider == null || _entityProvider.Resources == null)
                 return;
 
@@ -52,7 +52,7 @@ namespace GamePlay.Services.TravelOverlays.Runtime.Health
         {
             _healthListener?.Dispose();
             _respawnListener?.Dispose();
-            
+
             _update?.Stop();
         }
 

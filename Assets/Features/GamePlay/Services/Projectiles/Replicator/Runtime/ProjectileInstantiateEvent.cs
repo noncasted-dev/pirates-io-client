@@ -1,4 +1,4 @@
-﻿using GamePlay.Services.Projectiles.Entity;
+﻿using GamePlay.Common.Damages;
 using Ragon.Client;
 using Ragon.Common;
 using UnityEngine;

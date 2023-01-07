@@ -15,6 +15,11 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
         IDroppedItem,
         IUpdatable
     {
+        public void Construct(IUpdater updater)
+        {
+            _updater = updater;
+        }
+
         private static readonly int Play = Animator.StringToHash("Play");
 
         [SerializeField] [ReadOnly] private string _name;
@@ -22,36 +27,30 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
 
         [SerializeField] [CurveRange(0f, 0f, 1f, 1f)]
         private AnimationCurve _curve;
-        
+
         [SerializeField] private float _collectImmunityTime = 5f;
         [SerializeField] private float _flyHeight = 1f;
         [SerializeField] private float _flyTime = 1f;
 
         [SerializeField] private Animator _animator;
         [SerializeField] private Collider2D _collider;
-        
+
         [SerializeField] private GameObject _flyState;
         [SerializeField] private GameObject _landedState;
-        
-        private int _id;
-        private IItem _item;
+        private Action<IDroppedItem> _collectedCallback;
 
         private float _flyProgress;
 
-        private Action<DroppedItem> _returnToPool;
-        private Action<IDroppedItem> _collectedCallback;
+        private int _id;
+        private IItem _item;
         private Vector2 _origin;
+
+        private Action<DroppedItem> _returnToPool;
         private Vector2 _target;
         private IUpdater _updater;
 
         public int Id => _id;
         public IItem Item => _item;
-        public GameObject GameObject => gameObject;
-
-        public void Construct(IUpdater updater)
-        {
-            _updater = updater;
-        }
 
         public void Drop(
             int id,
@@ -82,6 +81,8 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
             _returnToPool?.Invoke(this);
         }
 
+        public GameObject GameObject => gameObject;
+
         public void SetPosition(Vector2 position)
         {
             transform.position = position;
@@ -101,7 +102,7 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
             _collider.enabled = false;
             _landedState.SetActive(false);
             _flyState.SetActive(true);
-            
+
             _updater.Add(this);
 
             ActivateCollider().Forget();
@@ -112,14 +113,6 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
             _updater.Remove(this);
 
             _collider.enabled = false;
-        }
-
-        private async UniTaskVoid ActivateCollider()
-        {
-            var delay = (int)(_collectImmunityTime * 1000f);
-            await UniTask.Delay(delay, false, PlayerLoopTiming.Update, this.GetCancellationTokenOnDestroy());
-
-            _collider.enabled = true;
         }
 
         public void OnUpdate(float delta)
@@ -139,8 +132,16 @@ namespace GamePlay.Services.DroppedObjects.Implementation.Items.Runtime
 
             var position = Vector2.Lerp(_origin, _target, progress);
             position.y += height;
-            
+
             transform.position = position;
+        }
+
+        private async UniTaskVoid ActivateCollider()
+        {
+            var delay = (int)(_collectImmunityTime * 1000f);
+            await UniTask.Delay(delay, false, PlayerLoopTiming.Update, this.GetCancellationTokenOnDestroy());
+
+            _collider.enabled = true;
         }
     }
 }

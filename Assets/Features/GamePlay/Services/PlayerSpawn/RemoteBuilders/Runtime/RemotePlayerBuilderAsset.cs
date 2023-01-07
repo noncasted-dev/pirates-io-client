@@ -1,54 +1,47 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
+using Common.Local.Services.Abstract;
 using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using Global.Services.ScenesFlow.Handling.Data;
 using Global.Services.ScenesFlow.Runtime.Abstract;
-using Local.Services.Abstract;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
-using VContainer;
 
 namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "RemotePlayerBuilder",
         menuName = GamePlayAssetsPaths.RemotePlayerBuilder + "Service")]
     public class RemotePlayerBuilderAsset : LocalServiceAsset
     {
-        [SerializeField] private AssetReference _poolScene;
-        [SerializeField] private RemotePlayerBuilder _prefab;
-        [SerializeField]  private RemoteBuilderConfigAsset _config;
+        [SerializeField] [Indent] private AssetReference _poolScene;
+        [SerializeField] [Indent] private RemotePlayerBuilder _prefab;
+        [SerializeField] [Indent] private RemoteBuilderConfigAsset _config;
 
         public override async UniTask Create(
-            IServiceBinder serviceBinder,
-            ICallbacksRegister callbacksRegister,
-            ISceneLoader sceneLoader)
+            IDependencyRegister builder,
+            ILocalServiceBinder serviceBinder,
+            ISceneLoader sceneLoader,
+            ILocalCallbacks callbacks)
         {
-            var builder = Instantiate(_prefab);
-            builder.name = "RemotePlayerBuilder";
+            var remoteBuilder = Instantiate(_prefab);
+            remoteBuilder.name = "RemotePlayerBuilder";
 
-            var pool = builder.GetComponent<RemoteViewsPool>();
+            var pool = remoteBuilder.GetComponent<RemoteViewsPool>();
 
-            serviceBinder.RegisterComponent(builder)
+            builder.RegisterComponent(remoteBuilder)
                 .WithParameter(_config)
-                .AsSelf();
+                .AsCallbackListener();
 
-            serviceBinder.RegisterComponent(pool)
-                .AsSelf();
+            builder.RegisterComponent(pool)
+                .AsCallbackListener();
 
             var scene = await sceneLoader.Load(new EmptySceneLoadData(_poolScene));
-            SceneManager.MoveGameObjectToScene(builder.gameObject, scene.Instance.Scene);
+            SceneManager.MoveGameObjectToScene(remoteBuilder.gameObject, scene.Instance.Scene);
 
             pool.OnSceneLoaded(scene.Instance.Scene);
-        }
-
-        public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
-        {
-            callbacksRegister.ListenLoopCallbacks(resolver.Resolve<RemotePlayerBuilder>());
-
-            var pool = resolver.Resolve<RemoteViewsPool>();
-            callbacksRegister.ListenContainerCallbacks(pool);
-            callbacksRegister.ListenLoopCallbacks(pool);
         }
     }
 }

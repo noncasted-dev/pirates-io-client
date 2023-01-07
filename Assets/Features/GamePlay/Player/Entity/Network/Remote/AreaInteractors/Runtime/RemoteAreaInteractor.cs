@@ -39,7 +39,6 @@ namespace GamePlay.Player.Entity.Network.Remote.AreaInteractors.Runtime
 
         public void OnShallowEntered()
         {
-            
         }
 
         public void OnShallowExited()

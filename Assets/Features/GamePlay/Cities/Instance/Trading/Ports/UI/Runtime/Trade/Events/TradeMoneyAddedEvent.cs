@@ -7,7 +7,7 @@
             Origin = origin;
             Amount = amount;
         }
-        
+
         public readonly ItemOrigin Origin;
         public readonly int Amount;
     }

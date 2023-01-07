@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using GamePlay.Common.Damages;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.Storage.Events;
 using GamePlay.Services.Projectiles.Entity;
-using UniRx;
+using Global.Services.MessageBrokers.Runtime;
 using UnityEngine;
 
 namespace GamePlay.Services.Projectiles.Selector.Runtime
@@ -12,28 +13,28 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
     {
         private readonly Dictionary<ProjectileType, int> _projectiles = new();
 
-        private ProjectileType _selected = ProjectileType.Ball;
-        
         private IDisposable _cargoListener;
 
-        public ProjectileType Selected => _selected;
-        
+        private ProjectileType _selected = ProjectileType.Ball;
+
         private void Awake()
         {
             _projectiles[ProjectileType.Fishnet] = 999999;
-            
+
             Select(ProjectileType.Fishnet);
         }
 
         private void OnEnable()
         {
-            _cargoListener = MessageBroker.Default.Receive<CargoChangedEvent>().Subscribe(OnCargoChanged);
+            _cargoListener = Msg.Listen<CargoChangedEvent>(OnCargoChanged);
         }
 
         private void OnDisable()
         {
             _cargoListener?.Dispose();
         }
+
+        public ProjectileType Selected => _selected;
 
         public int GetAmount(ProjectileType type)
         {
@@ -46,7 +47,7 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
         public bool CanSelect(ProjectileType type)
         {
             var amount = GetAmount(type);
-            
+
             if (amount == 0)
                 return false;
 
@@ -57,11 +58,11 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
         {
             if (CanSelect(type) == false)
                 return;
-            
+
             _selected = type;
-            
+
             var select = new ProjectileSelectedEvent(type);
-            MessageBroker.Default.Publish(select);
+            Msg.Publish(select);
         }
 
         public bool CanShoot()
@@ -94,8 +95,8 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
 
             var count = items[item].Count;
             _projectiles[type] = count;
-            
-            MessageBroker.Default.Publish(new ProjectileAmountChangedEvent(type, count));
+
+            Msg.Publish(new ProjectileAmountChangedEvent(type, count));
         }
     }
 }

@@ -9,14 +9,14 @@ namespace GamePlay.Level.Environment.Chunks.Editor
     public static class ChunksToScenesConverter
     {
         private const string _path = "Assets/Features/GamePlay/Level/Scenes/Chunks/";
-        
+
         [MenuItem("Tools/ConvertChunksToScenes")]
         public static void ConvertChunksToScenes()
         {
             var chunks = Object.FindObjectsOfType<Chunk>();
 
             foreach (var chunk in chunks)
-                CreateScene(chunk);    
+                CreateScene(chunk);
         }
 
         private static void CreateScene(Chunk chunk)

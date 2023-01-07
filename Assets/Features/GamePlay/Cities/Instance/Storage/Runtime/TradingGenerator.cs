@@ -4,12 +4,12 @@ using System.Linq;
 using GamePlay.Cities.Instance.Root.Runtime;
 using GamePlay.Items.Abstract;
 using NaughtyAttributes;
-
+using UnityEngine;
+using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor.SceneManagement;
 using UnityEditor;
 #endif
-using UnityEngine;
 
 namespace GamePlay.Cities.Instance.Storage.Runtime
 {
@@ -55,12 +55,12 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
         private void GenerateTrading()
         {
 #if UNITY_EDITOR
-            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+            EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
 #endif
             var cities = FindObjectsOfType<CityStorage>().ToList();
 
             cities = cities.OrderBy(t => (int)GetDefinition(t).Name).ToList();
-            
+
             foreach (var storage in cities)
             {
                 storage.Clear();
@@ -80,19 +80,19 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             foreach (var storage in cities)
             {
                 var city = GetCity(storage);
-                
+
                 foreach (var (item, config) in _trades)
                 {
                     if (city != config.City)
                         continue;
-                    
+
                     var others = new List<CityStorage>();
                     others.AddRange(cities);
                     others.Remove(storage);
                     GenerateTrade(item, config, storage, others);
                 }
             }
-            
+
             // foreach (var (item, config) in _trades)
             // {
             //     var city = FindStorage(config.City, cities);
@@ -103,7 +103,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
             // }
 
 #if UNITY_EDITOR
-            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+            EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
 #endif
         }
 
@@ -120,13 +120,10 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 .OrderByDescending(t => CompareDistance(storage, t)).ToList();
 
             var result = "";
-            foreach (var other in others)
-            {
-                result += $"{GetDefinition(other).Name} ";
-            }
-            
+            foreach (var other in others) result += $"{GetDefinition(other).Name} ";
+
             Debug.Log($"Origin: {result}");
-            
+
             var count = others.Count;
 
             var mainConfig = new ItemPriceConfig(
@@ -135,7 +132,7 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
                 config.MedianCount,
                 config.MaxItems,
                 config.ProductionSpeed, itemType);
-            
+
 #if UNITY_EDITOR
             Undo.RecordObject(storage, "Assign tradable");
 #endif
@@ -146,16 +143,13 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 #endif
 
             var mostCounter = 0;
-            
+
             var reversed = others
                 .OrderBy(t => CompareDistance(storage, t)).ToList();
-            
+
             result = "";
-            foreach (var other in reversed)
-            {
-                result += $"{GetDefinition(other).Name} ";
-            }
-            
+            foreach (var other in reversed) result += $"{GetDefinition(other).Name} ";
+
             Debug.Log($"Reversed: {result}");
 
             foreach (var other in reversed)
@@ -170,16 +164,16 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 #endif
                 definition.AddMost(itemType);
                 mostCounter++;
-                
+
 #if UNITY_EDITOR
                 Undo.RecordObject(definition, "Assigned");
                 EditorUtility.SetDirty(definition);
 #endif
-                
+
                 if (mostCounter == 2)
                     break;
             }
-            
+
             var leastCounter = 0;
 
             foreach (var other in others)
@@ -194,12 +188,12 @@ namespace GamePlay.Cities.Instance.Storage.Runtime
 #endif
                 definition.AddLeast(itemType);
                 leastCounter++;
-                
+
 #if UNITY_EDITOR
                 Undo.RecordObject(definition, "Assigned");
                 EditorUtility.SetDirty(definition);
 #endif
-                
+
                 if (leastCounter == 3)
                     break;
             }

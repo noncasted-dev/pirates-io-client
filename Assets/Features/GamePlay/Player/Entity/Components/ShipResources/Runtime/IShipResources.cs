@@ -21,9 +21,9 @@ namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 
         int MaxTeam { get; }
         int Team { get; }
-        
+
         int Sail { get; }
-        
+
         bool IsShallowIgnored { get; }
         int ShallowDamage { get; }
 

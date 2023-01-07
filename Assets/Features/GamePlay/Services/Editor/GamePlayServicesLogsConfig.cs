@@ -1,5 +1,4 @@
-﻿using Common.EditableScriptableObjects.Attributes;
-using GamePlay.Common.Paths;
+﻿using GamePlay.Common.Paths;
 using GamePlay.Services.LevelCameras.Logs;
 using GamePlay.Services.Projectiles.Logs;
 using GamePlay.Services.TransitionScreens.Logs;
@@ -11,8 +10,8 @@ namespace GamePlay.Services.Editor
         menuName = GamePlayAssetsPaths.Config + "Logs")]
     public class GamePlayServicesLogsConfig : ScriptableObject
     {
-        [SerializeField]  private LevelCameraLogSettings _levelCamera;
-        [SerializeField]  private ProjectilesLogSettings _projectiles;
-        [SerializeField]  private TransitionScreenLogSettings _transitionScreen;
+        [SerializeField] private LevelCameraLogSettings _levelCamera;
+        [SerializeField] private ProjectilesLogSettings _projectiles;
+        [SerializeField] private TransitionScreenLogSettings _transitionScreen;
     }
 }

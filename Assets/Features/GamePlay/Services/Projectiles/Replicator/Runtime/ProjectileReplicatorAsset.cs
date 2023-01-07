@@ -1,38 +1,36 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Common.DiContainer.Abstract;
+using Common.Local.Services.Abstract;
+using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using Global.Services.ScenesFlow.Runtime.Abstract;
-using Local.Services.Abstract;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Services.Projectiles.Replicator.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "ProjectilesReplicator",
         menuName = GamePlayAssetsPaths.ProjectilesReplicator + "Service")]
     public class ProjectileReplicatorAsset : LocalServiceAsset
     {
-        [SerializeField] private ProjectileReplicatorConfigAsset _config;
-        [SerializeField] private ProjectileReplicator _prefab;
+        [SerializeField] [Indent] private ProjectileReplicatorConfigAsset _config;
+        [SerializeField] [Indent] private ProjectileReplicator _prefab;
 
         public override async UniTask Create(
-            IServiceBinder serviceBinder,
-            ICallbacksRegister callbacksRegister,
-            ISceneLoader sceneLoader)
+            IDependencyRegister builder,
+            ILocalServiceBinder serviceBinder,
+            ISceneLoader sceneLoader,
+            ILocalCallbacks callbacks)
         {
             var replicator = Instantiate(_prefab);
             replicator.name = "ProjectilesReplicator";
 
-            serviceBinder.RegisterComponent(replicator)
+            builder.RegisterComponent(replicator)
                 .WithParameter(_config)
-                .As<IProjectileReplicator>();
+                .As<IProjectileReplicator>()
+                .AsCallbackListener();
 
             serviceBinder.AddToModules(replicator);
-            callbacksRegister.ListenLoopCallbacks(replicator);
-        }
-
-        public override void OnResolve(IObjectResolver resolver, ICallbacksRegister callbacksRegister)
-        {
-            resolver.Resolve<IProjectileReplicator>();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Global.Services.Sounds.Runtime
             Position = position;
             Target = target;
         }
-        
+
         public readonly PositionalSoundType Type;
         public readonly Vector2 Position;
         public readonly GameObject Target;

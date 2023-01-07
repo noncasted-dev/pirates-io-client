@@ -1,4 +1,5 @@
 ﻿using GamePlay.Common.Areas.Common.Runtime;
+using GamePlay.Player.BotShooting;
 using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
 using GamePlay.Player.Entity.Components.DamageProcessors.Runtime;
 using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
@@ -25,9 +26,9 @@ namespace GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime
         }
 
         private IActionsStatePresenter _actionsStatePresenter;
+        private DamageProcessor _damageProcessor;
         private IShipResources _resources;
         private ISpeedCalculator _speedCalculator;
-        private DamageProcessor _damageProcessor;
 
         public bool IsLocal => true;
         public IShipResources Resources => _resources;
@@ -35,11 +36,18 @@ namespace GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime
         public void OnCityEntered()
         {
             _actionsStatePresenter.DisableShooting();
+
+            var shooter = GetComponentInParent<BotShooter>();
+
+            if (shooter != null)
+                shooter.Disable();
         }
 
         public void OnCityExited()
         {
             _actionsStatePresenter.EnableShooting();
+
+            Invoke(nameof(Wait), 10f);
         }
 
         public void OnPortEntered()
@@ -54,7 +62,7 @@ namespace GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime
         {
             if (_resources.IsShallowIgnored == true)
                 return;
-            
+
             _speedCalculator.OnShallowEntered();
             _damageProcessor.OnShallowEntered();
         }
@@ -66,6 +74,14 @@ namespace GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime
 
             _speedCalculator.OnShallowExited();
             _damageProcessor.OnShallowExited();
+        }
+
+        private void Wait()
+        {
+            var shooter = GetComponentInParent<BotShooter>();
+
+            if (shooter != null)
+                shooter.Enable();
         }
     }
 }

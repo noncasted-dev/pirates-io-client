@@ -1,11 +1,11 @@
-﻿using Global.Services.InputViews.Runtime;
+﻿using Common.Local.Services.Abstract.Callbacks;
+using Global.Services.InputViews.Runtime;
 using Global.Services.ItemFactories.Runtime;
 using Global.Services.UiStateMachines.Runtime;
-using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using VContainer;
 
-namespace Features.GamePlay.Services.Maps.Runtime
+namespace GamePlay.Services.Maps.Runtime
 {
     public class Map : MonoBehaviour, IMap, IUiState, ILocalSwitchListener
     {
@@ -25,14 +25,11 @@ namespace Features.GamePlay.Services.Maps.Runtime
         [SerializeField] private GameObject _body;
         [SerializeField] private MapPlayerMover _mover;
         [SerializeField] private MapEntry[] _entries;
-        
-        private IUiStateMachine _uiStateMachine;
         private UiConstraints _constraints;
-        private IInputView _inputView;
         private IItemFactory _factory;
+        private IInputView _inputView;
 
-        public UiConstraints Constraints => _constraints;
-        public string Name => "Map";
+        private IUiStateMachine _uiStateMachine;
         public MapPlayerMover Mover => _mover;
 
         private void Awake()
@@ -44,7 +41,7 @@ namespace Features.GamePlay.Services.Maps.Runtime
         {
             foreach (var entry in _entries)
                 entry.Construct(_factory);
-            
+
             _inputView.MapPerformed += Switch;
         }
 
@@ -67,6 +64,9 @@ namespace Features.GamePlay.Services.Maps.Runtime
                 _body.SetActive(true);
             }
         }
+
+        public UiConstraints Constraints => _constraints;
+        public string Name => "Map";
 
         public void Recover()
         {

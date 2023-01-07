@@ -15,6 +15,7 @@ namespace GamePlay.Level.Environment.Chunks.Editor
 
         private const int _x = 28;
         private const int _y = 16;
+
 //piska
         [MenuItem("Tools/ScanChunks")]
         public static void ScanChunks()
@@ -22,8 +23,8 @@ namespace GamePlay.Level.Environment.Chunks.Editor
             var prefab = Resources.Load<ChunkHandler>("ChunkHandler");
             var scenesList = Resources.Load<ScenesList>("ScenesList");
 
-             foreach (var scene in scenesList.Scenes)
-                 CreateHandler(prefab, scene).Forget();
+            foreach (var scene in scenesList.Scenes)
+                CreateHandler(prefab, scene).Forget();
         }
 
         [MenuItem("Tools/ScanScenes")]
@@ -46,7 +47,7 @@ namespace GamePlay.Level.Environment.Chunks.Editor
             foreach (var entry in group.entries)
             {
                 var reference = new AssetReference(entry.guid);
-                
+
                 Undo.RecordObject(scenesList, "List fill");
                 scenesList.Add(reference, entry.AssetPath);
                 Undo.RecordObject(scenesList, "List fill");
@@ -62,10 +63,8 @@ namespace GamePlay.Level.Environment.Chunks.Editor
             Chunk chunk = null;
 
             foreach (var rootObject in scene.GetRootGameObjects())
-            {
                 if (rootObject.TryGetComponent(out chunk) == true)
                     break;
-            }
 
             var chunkHandler = Object.Instantiate(prefab, chunk.transform.position, Quaternion.identity);
             chunkHandler.name = $"ChunkHandler_{chunk.X}_{chunk.Y}";

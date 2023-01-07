@@ -1,6 +1,5 @@
-﻿using Common.EditableScriptableObjects.Attributes;
-using Local.ComposedSceneConfig;
-using Local.Services.Abstract;
+﻿using Common.Local.ComposedSceneConfig;
+using Common.Local.Services.Abstract;
 using Menu.Common;
 using Menu.Services.Common.Scope;
 using Menu.Services.MenuLoop.Runtime;
@@ -13,10 +12,10 @@ namespace Menu.Bootstrap
     [CreateAssetMenu(fileName = "Menu", menuName = MenuAssetsPaths.Root + "Scene")]
     public class MenuAsset : ComposedSceneAsset
     {
-        [SerializeField]  private MenuLoopAsset _loop;
+        [SerializeField] private MenuLoopAsset _loop;
 
         [SerializeField] private MenuScope _scopePrefab;
-        [SerializeField]  private MenuUIAsset _ui;
+        [SerializeField] private MenuUIAsset _ui;
 
         protected override LocalServiceAsset[] AssignServices()
         {

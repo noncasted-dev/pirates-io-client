@@ -108,8 +108,8 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
 
         public void OnUpdate(float delta)
         {
-            _currentPosition = _rigidbody.position;
-            _networkTransform.SetPosition(_currentPosition);
+            //_currentPosition = _rigidbody.position;
+            //_networkTransform.SetPosition(_currentPosition);
         }
 
         private Vector2 ProcessMove(Vector2 direction, float distance)

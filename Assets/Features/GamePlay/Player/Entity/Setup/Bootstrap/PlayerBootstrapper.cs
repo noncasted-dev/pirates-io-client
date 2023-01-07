@@ -2,10 +2,10 @@
 using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Abstract;
 using GamePlay.Player.Entity.Setup.Flow;
-using GamePlay.Player.Entity.Setup.Root;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using ContainerBuilder = Common.DiContainer.Runtime.ContainerBuilder;
 
 namespace GamePlay.Player.Entity.Setup.Bootstrap
 {
@@ -18,14 +18,16 @@ namespace GamePlay.Player.Entity.Setup.Bootstrap
         public async UniTask Bootstrap(LifetimeScope parent)
         {
             var rootBuilders = GetComponentsInParent<IPlayerContainerBuilder>().ToList();
-            var bodyBuilders = GetComponents<IPlayerContainerBuilder>().ToList();
+            var attachedBuilders = GetComponents<IPlayerContainerBuilder>().ToList();
 
-            foreach (var builder in bodyBuilders)
-                rootBuilders.Remove(builder);
+            foreach (var attachedBuilder in attachedBuilders)
+                rootBuilders.Remove(attachedBuilder);
 
-            _builders = rootBuilders.Concat(bodyBuilders).ToArray();
+            _builders = rootBuilders.Concat(attachedBuilders).ToArray();
 
             var scope = GetComponent<PlayerScope>();
+
+            var builder = new ContainerBuilder();
 
             using (LifetimeScope.EnqueueParent(parent))
             {
@@ -35,24 +37,25 @@ namespace GamePlay.Player.Entity.Setup.Bootstrap
                 }
             }
 
+            void OnConfiguration(IContainerBuilder container)
+            {
+                var root = GetComponent<IPlayerRoot>();
+
+                container.RegisterComponent(root);
+
+                foreach (var target in _builders)
+                    target.OnBuild(builder);
+
+                builder.RegisterAll(container);
+            }
+
             var flowHandler = new FlowHandler();
 
-            foreach (var containerBuilder in _builders)
-                containerBuilder.Resolve(scope.Container, flowHandler);
+            builder.ResolveAllWithCallbacks(scope.Container, flowHandler);
 
             var root = scope.Container.Resolve<IPlayerRoot>();
 
             await root.OnBootstrapped(flowHandler, scope);
-        }
-
-        private void OnConfiguration(IContainerBuilder builder)
-        {
-            var root = GetComponent<IPlayerRoot>();
-
-            builder.RegisterComponent(root);
-
-            foreach (var containerBuilder in _builders)
-                containerBuilder.OnBuild(builder);
         }
     }
 }

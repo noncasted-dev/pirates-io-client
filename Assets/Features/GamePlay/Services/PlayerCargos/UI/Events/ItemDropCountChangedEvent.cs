@@ -9,8 +9,9 @@ namespace GamePlay.Services.PlayerCargos.UI.Events
             Count = count;
             Type = item.BaseData.Type;
         }
-        
-        public readonly ItemType Type;
+
         public readonly int Count;
+
+        public readonly ItemType Type;
     }
 }

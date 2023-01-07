@@ -81,7 +81,7 @@ namespace GamePlay.Level.Environment.Tools
 
                 if (_ground.HasTile(upPosition) == true)
                     queuedSand.Add(upPosition);
-                
+
                 var downPosition = tilePosition;
                 downPosition.y -= 1;
 

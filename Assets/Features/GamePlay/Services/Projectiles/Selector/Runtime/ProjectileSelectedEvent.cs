@@ -1,4 +1,4 @@
-﻿using GamePlay.Services.Projectiles.Entity;
+﻿using GamePlay.Common.Damages;
 
 namespace GamePlay.Services.Projectiles.Selector.Runtime
 {
@@ -6,9 +6,9 @@ namespace GamePlay.Services.Projectiles.Selector.Runtime
     {
         public ProjectileSelectedEvent(ProjectileType type)
         {
-            Type = type;    
+            Type = type;
         }
-        
+
         public readonly ProjectileType Type;
     }
 }

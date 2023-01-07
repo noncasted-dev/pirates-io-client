@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerCargos.UI.Events;
-using UniRx;
+using Global.Services.MessageBrokers.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,25 +11,25 @@ namespace GamePlay.Services.PlayerCargos.UI
     public class CargoItemsListView : MonoBehaviour
     {
         [SerializeField] private CargoItemCell _cellPrefab;
-        
+
         [SerializeField] private Transform _cellsRoot;
         [SerializeField] private VerticalLayoutGroup _layout;
         [SerializeField] private RectTransform _contentRect;
         [SerializeField] private float _cellHeight = 60f;
+        private readonly List<CargoItemCell> _all = new();
+        private readonly List<CargoItemCell> _available = new();
 
         private readonly Dictionary<ItemType, CargoItemCell> _cells = new();
-        private readonly List<CargoItemCell> _available = new();
-        private readonly List<CargoItemCell> _all = new();
-        
+
         private IDisposable _dropCountListener;
 
         private bool _isInitialized;
-        
+
         private void OnEnable()
         {
-            _dropCountListener = MessageBroker.Default.Receive<ItemDropCountChangedEvent>().Subscribe(OnDropCountChanged);
-        }   
-        
+            _dropCountListener = Msg.Listen<ItemDropCountChangedEvent>(OnDropCountChanged);
+        }
+
         private void OnDisable()
         {
             _dropCountListener?.Dispose();
@@ -44,34 +44,34 @@ namespace GamePlay.Services.PlayerCargos.UI
             {
                 if (cell == null)
                     continue;
-                
+
                 cell.Disable();
             }
 
             _cells.Clear();
             _available.Clear();
             _available.AddRange(_all);
-            
+
             AddCellsOnDemand(items.Count);
 
             foreach (var item in items)
             {
                 var cell = _available[0];
                 _available.RemoveAt(0);
-            
+
                 cell.AssignItem(item);
                 _cells.Add(item.BaseData.Type, cell);
             }
 
             CalculateVerticalSize(items.Count);
         }
-        
+
         private void OnDropCountChanged(ItemDropCountChangedEvent data)
         {
             var cell = _cells[data.Type];
             cell.OnTransferedItemCountChange(data.Count);
         }
-        
+
         private void AddCellsOnDemand(int total)
         {
             var delta = total - _available.Count;

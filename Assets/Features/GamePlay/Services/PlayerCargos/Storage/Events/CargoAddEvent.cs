@@ -8,7 +8,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Events
         {
             Item = item;
         }
-        
+
         public readonly IItem Item;
     }
 }

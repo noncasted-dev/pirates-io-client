@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Common.EditableScriptableObjects.Attributes;
 using Common.ObjectsPools.Runtime.Abstract;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -19,7 +18,6 @@ namespace Common.ObjectsPools.Runtime
         {
             foreach (var entry in _entries)
             {
-                Debug.Log(entry.name);
                 var parent = CreateParent(entry.Name, targetScene);
                 var objectHandler = entry.Create(resolver, parent);
 
@@ -42,10 +40,7 @@ namespace Common.ObjectsPools.Runtime
 
         public void InstantiateStartupInstances()
         {
-            foreach (var objectHandler in _pools)
-            {
-                objectHandler.Value.InstantiateStartupInstances();
-            }
+            foreach (var objectHandler in _pools) objectHandler.Value.InstantiateStartupInstances();
         }
 
         public IObjectProvider<T> GetPool<T>(AssetReference reference)

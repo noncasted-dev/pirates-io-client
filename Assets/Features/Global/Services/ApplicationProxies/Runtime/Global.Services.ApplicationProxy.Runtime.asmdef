@@ -2,9 +2,13 @@
   "name": "Global.Services.ApplicationProxy.Runtime",
   "references": [
     "GUID:401398c75a71e5444a495125c9dd1a21",
-    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc","GUID:cdfd058b393524bddbb7e850e0d53c8e",
+    "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
     "GUID:fb9b00a9a42c4c1459774b1ef88fcd74",
     "GUID:304598a766c781247877f81511375f98",
-    "GUID:4605541f607da904dae402c32b1457e3"
+    "GUID:4605541f607da904dae402c32b1457e3",
+    "GUID:e07e6ccd9241474dbca4e70862df2bc2",
+    "GUID:f51ebe6a0ceec4240a699833d6309b23",
+    "GUID:b866f43c529259c4ea031a5a042e4abd",
+    "GUID:e3dc7fe48b4f474f89ff47c5a364a3a2"
   ]
 }

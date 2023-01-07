@@ -7,7 +7,7 @@
             Type = type;
             Count = count;
         }
-        
+
         public readonly DropConfirmationResultType Type;
         public readonly int Count;
 
@@ -15,7 +15,7 @@
         {
             return new DropConfirmationResult(DropConfirmationResultType.Canceled, 0);
         }
-        
+
         public static DropConfirmationResult Applied(int count)
         {
             return new DropConfirmationResult(DropConfirmationResultType.Applied, count);

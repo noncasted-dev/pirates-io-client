@@ -10,7 +10,7 @@ namespace GamePlay.Services.PlayerCargos.Storage.Events
             Items = items;
             Weight = weight;
         }
-        
+
         public readonly IReadOnlyDictionary<ItemType, IItem> Items;
         public readonly int Weight;
 

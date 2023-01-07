@@ -1,5 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
-using Local.ComposedSceneConfig;
+﻿using Common.Local.ComposedSceneConfig;
+using Cysharp.Threading.Tasks;
 
 namespace Global.Services.CurrentSceneHandlers.Runtime
 {

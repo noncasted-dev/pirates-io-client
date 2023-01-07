@@ -5,9 +5,9 @@ using GamePlay.Factions.Common;
 using GamePlay.Player.Entity.Network.Root.Runtime;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Sounds.Runtime;
 using Ragon.Client;
-using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
@@ -32,12 +32,12 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
         [SerializeField] private DamageConfigAsset _config;
 
         [SerializeField] private PlayerSpriteView _sprite;
-        
+
         private IPlayerEventSender _eventSender;
         private IObjectProvider<AnimatedVfx> _explosion;
+        private FactionType _faction;
 
         private PlayerNetworkRoot _root;
-        private FactionType _faction;
 
         public bool IsLocal => _root.IsLocal;
         public string Id => _root.Entity.Owner.Id;
@@ -50,14 +50,14 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
             var direction = damage.Origin - (Vector2)_root.transform.position;
             direction.Normalize();
             explosion.transform.RotateAlong(direction);
-            
-            MessageBroker.Default.Publish(new EnemyDamagedSoundEvent(gameObject, damage.Type));
+
+            Msg.Publish(new EnemyDamagedSoundEvent(gameObject, damage.Type));
 
             if (isProjectileLocal == true)
             {
                 _eventSender.ReplicateEvent(damageEvent);
-                
-                MessageBroker.Default.Publish(new RemoteDamagedEvent(_faction));
+
+                Msg.Publish(new RemoteDamagedEvent(_faction));
             }
         }
 

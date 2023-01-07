@@ -1,6 +1,8 @@
 ﻿using System;
+using Common.Local.ComposedSceneConfig;
 using Cysharp.Threading.Tasks;
 using GamePlay.Level.Config.Runtime;
+using Global.GameLoops.Abstract;
 using Global.GameLoops.Flow;
 using Global.GameLoops.Logs;
 using Global.Services.Common.Abstract;
@@ -9,17 +11,16 @@ using Global.Services.CurrentCameras.Runtime;
 using Global.Services.CurrentSceneHandlers.Runtime;
 using Global.Services.GlobalCameras.Runtime;
 using Global.Services.LoadingScreens.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.ScenesFlow.Runtime.Abstract;
-using Local.ComposedSceneConfig;
 using Menu.Bootstrap;
 using Menu.Services.MenuLoop.Runtime;
-using UniRx;
 using UnityEngine;
 using VContainer;
 
 namespace Global.GameLoops.Runtime
 {
-    public class GameLoop : MonoBehaviour, IMenuLoader, ILevelLoader, IGlobalAwakeListener
+    public class GameLoop : GlobalGameLoop, IMenuLoader, ILevelLoader, IGlobalAwakeListener
     {
         [Inject]
         private void Construct(
@@ -61,9 +62,9 @@ namespace Global.GameLoops.Runtime
             _playFromMenuEvent?.Dispose();
         }
 
-        public void OnAwake()
+        public override void OnAwake()
         {
-            _playFromMenuEvent = MessageBroker.Default.Receive<PlayFromMenuEvent>().Subscribe(OnPlayFromMenu);
+            _playFromMenuEvent = Msg.Listen<PlayFromMenuEvent>(OnPlayFromMenu);
         }
 
         public void LoadLevel()
@@ -80,7 +81,7 @@ namespace Global.GameLoops.Runtime
             LoadScene(_menu).Forget();
         }
 
-        public void Begin()
+        public override void Begin()
         {
             _logger.OnBegin();
 
@@ -102,20 +103,12 @@ namespace Global.GameLoops.Runtime
             var unload = _currentSceneHandler.Unload();
             var result = await asset.Load(_scope, _loader);
 
-            Debug.Log(11);
-
             await unload;
             await _currentSceneHandler.FinalizeUnloading();
 
-            Debug.Log(12);
-
-            
             _currentSceneHandler.OnLoaded(result);
             _globalCamera.Disable();
             _loadingScreen.Hide();
-            
-            Debug.Log(13);
-
 
             result.OnLoaded();
         }

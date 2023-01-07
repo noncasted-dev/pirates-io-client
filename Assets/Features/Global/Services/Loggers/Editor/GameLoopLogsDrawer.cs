@@ -4,6 +4,7 @@ using UnityEditor;
 
 namespace Global.Services.Loggers.Editor
 {
+    [ReadOnlyDictionaryPriority]
     [CustomPropertyDrawer(typeof(GameLoopLogs))]
     public class GameLoopLogsDrawer : ReadonlyDictionaryPropertyDrawer
     {

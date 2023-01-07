@@ -17,7 +17,7 @@ MonoBehaviour:
     _keys: 00000000010000000200000003000000
     _values: 01010101
   _logParameters:
-    Color: 1
     _header: Transform
     _isHeaderColoredColored: 1
     _isMessageColored: 0
+    Color: 1

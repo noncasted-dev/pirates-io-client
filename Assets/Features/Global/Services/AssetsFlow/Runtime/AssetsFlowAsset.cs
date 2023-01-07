@@ -1,21 +1,28 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
+using Cysharp.Threading.Tasks;
 using Global.Common;
 using Global.Services.AssetsFlow.Logs;
+using Global.Services.AssetsFlow.Runtime.Abstract;
 using Global.Services.Common.Abstract;
+using Global.Services.Common.Abstract.Scenes;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using VContainer;
-using VContainer.Unity;
 
 namespace Global.Services.AssetsFlow.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = GlobalAssetsPaths.ServicePrefix + "AssetsFlow",
         menuName = GlobalAssetsPaths.AssetsFlow + "Service", order = 1)]
     public class AssetsFlowAsset : GlobalServiceAsset
     {
-        [SerializeField]  private AssetsFlowLogSettings _logSettings;
-        [SerializeField] private AssetLoader _prefab;
+        [SerializeField] [Indent] private AssetsFlowLogSettings _logSettings;
+        [SerializeField] [Indent] private AssetLoader _prefab;
 
-        public override void Create(IContainerBuilder builder, IServiceBinder serviceBinder)
+        public override async UniTask Create(
+            IDependencyRegister builder,
+            IGlobalServiceBinder serviceBinder,
+            IGlobalSceneLoader sceneLoader,
+            IGlobalCallbacks callbacks)
         {
             var loader = Instantiate(_prefab);
             loader.name = "AssetsFlow";
@@ -24,20 +31,26 @@ namespace Global.Services.AssetsFlow.Runtime
             var storage = loader.GetComponent<AssetsReferencesStorage>();
             var instantiatorFabric = loader.GetComponent<AssetInstantiatorFactory>();
 
-            builder.Register<AssetsFlowLogger>(Lifetime.Scoped)
+            builder.Register<AssetsFlowLogger>()
                 .WithParameter(_logSettings);
 
-            builder.RegisterComponent(loader).AsImplementedInterfaces();
-            builder.RegisterComponent(unloader).AsImplementedInterfaces();
-            builder.RegisterComponent(storage).AsImplementedInterfaces();
-            builder.RegisterComponent(instantiatorFabric).AsImplementedInterfaces();
+            builder.RegisterComponent(loader)
+                .As<IAssetLoader>()
+                .AsCallbackListener();
+
+            builder.RegisterComponent(unloader)
+                .As<IAssetUnloader>()
+                .AsCallbackListener();
+
+            builder.RegisterComponent(storage)
+                .As<IAssetsReferenceStorage>()
+                .AsCallbackListener();
+
+            builder.RegisterComponent(instantiatorFabric)
+                .As<IAssetInstantiatorFactory>()
+                .AsCallbackListener();
 
             serviceBinder.AddToModules(loader);
-
-            serviceBinder.ListenCallbacks(loader);
-            serviceBinder.ListenCallbacks(unloader);
-            serviceBinder.ListenCallbacks(storage);
-            serviceBinder.ListenCallbacks(instantiatorFabric);
         }
     }
 }

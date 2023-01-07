@@ -1,8 +1,8 @@
-﻿using GamePlay.Services.LevelCameras.Logs;
+﻿using Common.Local.Services.Abstract.Callbacks;
+using GamePlay.Services.LevelCameras.Logs;
 using Global.Services.CurrentCameras.Runtime;
 using Global.Services.InputViews.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
-using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using VContainer;
 
@@ -75,7 +75,7 @@ namespace GamePlay.Services.LevelCameras.Runtime
 
             _logger.OnTeleport(position);
         }
- 
+
         public void SetSize(float size)
         {
             _camera.orthographicSize = size;

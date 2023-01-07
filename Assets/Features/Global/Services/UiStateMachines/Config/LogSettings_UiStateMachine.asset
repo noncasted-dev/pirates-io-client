@@ -17,7 +17,23 @@ MonoBehaviour:
     _keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
     _values: 01010101010101010101
   _logParameters:
-    _header: UiStateMachine
-    _isHeaderColoredColored: 1
     _isMessageColored: 0
-    Color: 6
+    _color: {r: 0, g: 0, b: 0, a: 0}
+    _headers:
+    - {fileID: 11400000, guid: ea24648e7d6f7fb4788b6c7f05dcd05f, type: 2}
+    - {fileID: 3913129464335327628}
+--- !u!114 &3913129464335327628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5271532ca2141769281f3f4ccfae783, type: 3}
+  m_Name: LoggerHeader_UiStateMachine
+  m_EditorClassIdentifier: 
+  _name: UiStateMachine
+  _isColored: 1
+  _color: {r: 0.41960788, g: 0.7803922, b: 0.67058825, a: 1}

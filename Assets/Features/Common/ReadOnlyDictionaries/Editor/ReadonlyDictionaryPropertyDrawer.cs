@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEditor;
 using UnityEngine;
 
 namespace Common.ReadOnlyDictionaries.Editor
 {
+    [CustomPropertyDrawer(typeof(ReadOnlyDictionary<,>))]
     public abstract class ReadonlyDictionaryPropertyDrawer : PropertyDrawer
     {
         private const string _keysName = "_keys";
@@ -26,7 +28,9 @@ namespace Common.ReadOnlyDictionaries.Editor
 
             if (IsCollapsed == true)
             {
-                EditorGUI.PropertyField(labelPosition, property, label, IsCollapsed);
+                EditorGUI.indentLevel++;
+
+                EditorGUI.PropertyField(labelPosition, property, label, false);
 
                 if (property.isExpanded == false)
                 {
@@ -34,12 +38,14 @@ namespace Common.ReadOnlyDictionaries.Editor
                     return;
                 }
 
-                EditorGUI.indentLevel++;
+                EditorGUI.LabelField(labelPosition, label);
             }
             else
             {
                 EditorGUI.LabelField(labelPosition, label);
             }
+
+            EditorGUI.indentLevel++;
 
             var linePosition = position;
             linePosition.y += EditorGUIUtility.singleLineHeight;
@@ -56,6 +62,8 @@ namespace Common.ReadOnlyDictionaries.Editor
 
             if (IsCollapsed == true)
                 EditorGUI.indentLevel--;
+
+            EditorGUI.indentLevel--;
 
             EditorGUI.EndProperty();
         }

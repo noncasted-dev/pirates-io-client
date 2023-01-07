@@ -1,6 +1,7 @@
-﻿using GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime;
+﻿using Common.DiContainer.Abstract;
+using Common.VFX;
+using GamePlay.Player.Entity.Network.Local.AreaInteractors.Runtime;
 using GamePlay.Player.Entity.Setup.Bootstrap;
-using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Setup.Root;
 using GamePlay.Player.Entity.States.RangeAttacks.Runtime.Aim;
 using GamePlay.Player.Entity.Views.DebugTool;
@@ -13,8 +14,6 @@ using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using GamePlay.Player.Entity.Views.Transforms.Runtime;
 using GamePlay.Player.Entity.Views.WeaponsRoots.Runtime;
 using UnityEngine;
-using VContainer;
-using VContainer.Unity;
 
 namespace GamePlay.Player.Entity.Views.Bootstraps
 {
@@ -34,40 +33,58 @@ namespace GamePlay.Player.Entity.Views.Bootstraps
         [SerializeField] private PlayerDebugTool _debug;
         [SerializeField] private FireController _fireController;
         [SerializeField] private PlayerStatsConfig _statsConfig;
-        
-        public void OnBuild(IContainerBuilder builder)
+
+        public void OnBuild(IDependencyRegister builder)
         {
-            builder.RegisterComponent(_sprite).AsImplementedInterfaces();
-            builder.RegisterComponent(_transform).As<IBodyTransform>();
-            builder.RegisterComponent(_rotationPoint).AsImplementedInterfaces();
-            builder.RegisterComponent(_rigidBody).AsImplementedInterfaces();
-            builder.RegisterComponent(_weaponsRoot).AsImplementedInterfaces();
-            builder.RegisterComponent(_aim).AsImplementedInterfaces();
-            builder.RegisterComponent(_shootPoint).AsImplementedInterfaces();
-            builder.RegisterComponent(_spriteTransform).As<ISpriteTransform>();
-            builder.RegisterComponent(_areaInteractor);
-            builder.RegisterComponent(_objectsCollector);
-            builder.RegisterComponent(_debug);
-            builder.RegisterComponent(_fireController);
-            builder.RegisterComponent(_statsConfig);
-            
+            builder.RegisterComponent(_sprite)
+                .AsImplementedInterfaces()
+                .AsCallbackListener();
+
+            builder.RegisterComponent(_transform)
+                .As<IBodyTransform>()
+                .AsCallbackListener();
+
+            builder.RegisterComponent(_rotationPoint)
+                .AsImplementedInterfaces()
+                .AsCallbackListener();
+
+            builder.RegisterComponent(_rigidBody)
+                .AsImplementedInterfaces()
+                .AsCallbackListener();
+
+            builder.RegisterComponent(_weaponsRoot)
+                .AsImplementedInterfaces()
+                .AsCallbackListener();
+
+            builder.RegisterComponent(_aim)
+                .AsImplementedInterfaces()
+                .AsCallbackListener();
+
+            builder.RegisterComponent(_shootPoint)
+                .AsImplementedInterfaces()
+                .AsCallbackListener();
+
+            builder.RegisterComponent(_spriteTransform)
+                .As<ISpriteTransform>()
+                .AsCallbackListener();
+
+            builder.RegisterComponent(_areaInteractor)
+                .AsCallbackListener();
+
+            builder.RegisterComponent(_objectsCollector)
+                .AsCallbackListener();
+
+            builder.RegisterComponent(_debug)
+                .AsCallbackListener();
+
+            builder.RegisterComponent(_fireController)
+                .AsCallbackListener();
+
+            builder.RegisterComponent(_statsConfig)
+                .AsCallbackListener();
+
             builder.RegisterComponent(_config)
                 .As<IShipConfig>();
-        }
-
-        public void Resolve(IObjectResolver resolver, ICallbackRegister callbackRegister)
-        {
-            callbackRegister.Add(_sprite);
-            callbackRegister.Add(_transform);
-            callbackRegister.Add(_rotationPoint);
-            callbackRegister.Add(_rigidBody);
-            callbackRegister.Add(_weaponsRoot);
-            callbackRegister.Add(_spriteTransform);
-            callbackRegister.Add(_statsConfig);
-            resolver.Resolve<LocalAreaInteractor>();
-            resolver.Resolve<PlayerObjectsCollector>();
-            resolver.Resolve<PlayerDebugTool>();
-            resolver.Resolve<PlayerStatsConfig>();
         }
     }
 }

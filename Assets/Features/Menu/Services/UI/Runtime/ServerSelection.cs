@@ -14,11 +14,11 @@ namespace Menu.Services.UI.Runtime
         [SerializeField] private GameObject _euNotSelected;
         [SerializeField] private GameObject _sanFranciscoNotSelected;
         [SerializeField] private GameObject _newYorkNotSelected;
-        
+
         [SerializeField] private GameObject _euSelected;
         [SerializeField] private GameObject _sanFranciscoSelected;
         [SerializeField] private GameObject _newYorkSelected;
-        
+
         private TargetServer _selected;
 
         public TargetServer Selected => _selected;
@@ -34,7 +34,7 @@ namespace Menu.Services.UI.Runtime
             _sanFranciscoButton.onClick.AddListener(OnSanFranciscoClicked);
             _newYorkButton.onClick.AddListener(OnNewYorkClicked);
         }
-        
+
         private void OnDisable()
         {
             _euButton.onClick.RemoveListener(OnEuropeClicked);
@@ -45,7 +45,7 @@ namespace Menu.Services.UI.Runtime
         private void OnEuropeClicked()
         {
             _selected = TargetServer.Europe;
-            
+
             DisableAll();
 
             _euNotSelected.SetActive(false);
@@ -55,7 +55,7 @@ namespace Menu.Services.UI.Runtime
         private void OnSanFranciscoClicked()
         {
             _selected = TargetServer.USA_SanFrancisco;
-            
+
             DisableAll();
 
             _sanFranciscoNotSelected.SetActive(false);
@@ -65,7 +65,7 @@ namespace Menu.Services.UI.Runtime
         private void OnNewYorkClicked()
         {
             _selected = TargetServer.USA_NewYork;
-            
+
             DisableAll();
 
             _newYorkNotSelected.SetActive(false);
@@ -77,7 +77,7 @@ namespace Menu.Services.UI.Runtime
             _euSelected.SetActive(false);
             _sanFranciscoSelected.SetActive(false);
             _newYorkSelected.SetActive(false);
-            
+
             _euNotSelected.SetActive(true);
             _sanFranciscoNotSelected.SetActive(true);
             _newYorkNotSelected.SetActive(true);

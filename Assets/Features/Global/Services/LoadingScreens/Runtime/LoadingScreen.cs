@@ -1,38 +1,29 @@
 ﻿using Global.Services.LoadingScreens.Logs;
-using Global.Services.UiStateMachines.Runtime;
 using UnityEngine;
 using VContainer;
 
 namespace Global.Services.LoadingScreens.Runtime
 {
     [DisallowMultipleComponent]
-    public class LoadingScreen : MonoBehaviour, ILoadingScreen, IUiState
+    public class LoadingScreen : MonoBehaviour, ILoadingScreen
     {
         [Inject]
-        private void Construct(
-            IUiStateMachine uiStateMachine,
-            UiConstraints constraints,
-            LoadingScreenLogger logger)
+        private void Construct(LoadingScreenLogger logger)
         {
-            _uiStateMachine = uiStateMachine;
-            _constraints = constraints;
             _logger = logger;
         }
 
         [SerializeField] private GameObject _canvas;
 
-        private UiConstraints _constraints;
-        private IUiStateMachine _uiStateMachine;
-
         private LoadingScreenLogger _logger;
 
-        public UiConstraints Constraints => _constraints;
-        public string Name => "LoadingScreen";
+        private void Awake()
+        {
+            _canvas.SetActive(false);
+        }
 
         public void Show()
         {
-            _uiStateMachine.EnterAsSingle(this);
-
             _canvas.SetActive(true);
 
             _logger.OnShown();
@@ -43,17 +34,6 @@ namespace Global.Services.LoadingScreens.Runtime
             _canvas.SetActive(false);
 
             _logger.OnHidden();
-
-            _uiStateMachine.Exit(this);
-        }
-
-        public void Recover()
-        {
-            Show();
-        }
-
-        public void Exit()
-        {
         }
     }
 }

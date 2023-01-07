@@ -22,7 +22,7 @@ namespace GamePlay.Player.Entity.Components.Definition
         [SerializeField] private AssetReference _local;
         [SerializeField] private AssetReference _remote;
         [SerializeField] private AssetReference _dead;
-        
+
         public override ItemType Type => _type;
         public AssetReference Local => _local;
         public AssetReference Remote => _remote;

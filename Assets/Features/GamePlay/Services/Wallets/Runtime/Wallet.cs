@@ -15,7 +15,7 @@ namespace GamePlay.Services.Wallets.Runtime
             _fileSaver = fileSaver;
             _fileLoader = fileLoader;
         }
-        
+
         [SerializeField] [ReadOnly] private int _money = 1000000;
         private IFileLoader _fileLoader;
         private IFileSaver _fileSaver;
@@ -26,9 +26,8 @@ namespace GamePlay.Services.Wallets.Runtime
 
         public void Set(int money)
         {
-            Debug.Log($"Set money: {money}");
             _money = money;
-            
+
             var save = _fileLoader.LoadOrCreate<ShipSave>();
             save.Money = _money;
             _fileSaver.Save(save);
@@ -43,7 +42,7 @@ namespace GamePlay.Services.Wallets.Runtime
             }
 
             _money += add;
-            
+
             var save = _fileLoader.LoadOrCreate<ShipSave>();
             save.Money = _money;
             _fileSaver.Save(save);
@@ -66,7 +65,7 @@ namespace GamePlay.Services.Wallets.Runtime
                 Debug.Log("Money dropped below zero.");
                 _money = 0;
             }
-            
+
             var save = _fileLoader.LoadOrCreate<ShipSave>();
             save.Money = _money;
             _fileSaver.Save(save);

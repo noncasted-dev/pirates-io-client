@@ -4,8 +4,8 @@ using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade.Events;
 using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Services.Reputation.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,10 +23,10 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
         [SerializeField] private TMP_Text _name;
 
         [SerializeField] private Button _transferButton;
+        private bool _isAvailable = false;
 
         private ShipItem _item;
         private ItemOrigin _origin;
-        private bool _isAvailable = false;
 
         private void OnEnable()
         {
@@ -96,8 +96,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin
 
             var data = new TransferRequestedEvent(tradable, _origin);
 
-            MessageBroker.Default.Publish(new TradeRequestedEvent());
-            MessageBroker.Default.Publish(data);
+            Msg.Publish(new TradeRequestedEvent());
+            Msg.Publish(data);
 
             gameObject.SetActive(false);
         }

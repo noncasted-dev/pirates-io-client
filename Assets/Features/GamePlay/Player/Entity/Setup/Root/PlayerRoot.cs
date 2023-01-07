@@ -24,14 +24,33 @@ namespace GamePlay.Player.Entity.Setup.Root
         }
 
         [SerializeField] private Collider2D[] _colliders;
+        private IFlowHandler _flowHandler;
 
-        private bool _wasDisabled;
-        
         private INone _none;
 
         private IRespawn _respawn;
         private IRotationPoint _rotationPoint;
-        private IFlowHandler _flowHandler;
+
+        private bool _wasDisabled;
+
+        private void OnEnable()
+        {
+            if (_wasDisabled == false)
+                return;
+
+            _flowHandler.InvokeEnable();
+        }
+
+        private void OnDisable()
+        {
+            _wasDisabled = true;
+            _flowHandler.InvokeDisable();
+        }
+
+        private void OnDestroy()
+        {
+            _flowHandler.InvokeDestroy();
+        }
 
         public Transform Transform => _rotationPoint.Transform;
 
@@ -50,27 +69,8 @@ namespace GamePlay.Player.Entity.Setup.Root
         {
             foreach (var switchableCollider in _colliders)
                 switchableCollider.enabled = true;
-            
+
             _respawn.Enter();
-        }
-
-        private void OnEnable()
-        {
-            if (_wasDisabled == false)
-                return;
-            
-            _flowHandler.InvokeEnable();
-        }
-
-        private void OnDisable()
-        {
-            _wasDisabled = true;
-            _flowHandler.InvokeDisable();
-        }
-
-        private void OnDestroy()
-        {
-            _flowHandler.InvokeDestroy();
         }
     }
 }

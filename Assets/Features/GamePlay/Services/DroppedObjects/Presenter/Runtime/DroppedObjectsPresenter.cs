@@ -1,11 +1,11 @@
-﻿using Common.ObjectsPools.Runtime.Abstract;
+﻿using Common.Local.Services.Abstract.Callbacks;
+using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.DroppedObjects.Implementation.Items.Runtime;
 using GamePlay.Services.DroppedObjects.Network.Runtime;
 using GamePlay.Services.DroppedObjects.Pool.Runtime;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using Global.Services.ItemFactories.Runtime;
-using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using VContainer;
 
@@ -36,9 +36,9 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
         }
 
         [SerializeField] private float _dropDistance;
-        
+
         private readonly DroppedObjectsStorage _storage = new();
-        
+
         private ObjectDropperConfigAsset _config;
         private INetworkObjectDropReceiver _dropReceiver;
         private INetworkObjectDropSender _dropSender;
@@ -55,27 +55,19 @@ namespace GamePlay.Services.DroppedObjects.Presenter.Runtime
             targetPosition.y -= _config.DropFromPlayerYOffset;
 
             _dropSender.OnItemDropped(type, count, _playerEntityProvider.Position, targetPosition);
-            
-            Debug.Log($"Drop object: {type}, {count}, {_playerEntityProvider.Position}");
         }
 
         public void DropFromDeath(ItemType type, int count, Vector2 position)
         {
             var direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
             var target = position + direction * Random.Range(0f, _dropDistance);
-            
+
             _dropSender.OnItemDropped(type, count, position, target);
-            
-            Debug.Log($"Drop object: {type}, {count}, {position}, {target}");
         }
 
         public void OnLoaded()
         {
-            Debug.Log(15);
-
             _itemProvider = _poolProvider.GetPool<IDroppedItem>(_config.DroppedItemPrefab);
-            Debug.Log(16);
-
         }
 
         public void OnEnabled()

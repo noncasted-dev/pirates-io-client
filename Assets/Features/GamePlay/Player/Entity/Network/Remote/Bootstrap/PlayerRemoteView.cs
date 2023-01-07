@@ -1,5 +1,6 @@
 ﻿using System;
 using Common.ObjectsPools.Runtime.Abstract;
+using Common.VFX;
 using GamePlay.Factions.Common;
 using GamePlay.Player.Entity.Network.Remote.Receivers.Cannons.Runtime;
 using GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime;
@@ -12,7 +13,6 @@ using GamePlay.Services.Projectiles.Replicator.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Implementation.Dead;
 using Global.Services.Updaters.Runtime.Abstract;
-using Ragon.Client;
 using TMPro;
 using UnityEngine;
 using ILogger = Global.Services.Loggers.Runtime.ILogger;
@@ -45,10 +45,10 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
             var _ = new HealthReceiver(_fireController, networkRoot, deadShip, transform);
 
             _hitbox.Construct(networkRoot, networkRoot, networkRoot, explosion, faction);
-            
+
             foreach (var switchableCollider in _colliders)
                 switchableCollider.enabled = true;
-            
+
             networkRoot.SetDestroyCallback(OnDestroyedEntity);
             _nickName.text = networkRoot.Entity.GetSpawnPayload<PlayerPayload>().UserName;
         }
@@ -61,7 +61,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
         [SerializeField] private TMP_Text _nickName;
 
         [SerializeField] private Collider2D[] _colliders;
-        
+
         private Action<PlayerRemoteView> _returnToPool;
 
         public GameObject GameObject => gameObject;

@@ -1,7 +1,8 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Common.DiContainer.Abstract;
+using Common.Local.Services.Abstract;
+using Cysharp.Threading.Tasks;
 using GamePlay.Common.Paths;
 using Global.Services.ScenesFlow.Runtime.Abstract;
-using Local.Services.Abstract;
 using UnityEngine;
 
 namespace GamePlay.Level.Environment.Bootstrap
@@ -10,12 +11,14 @@ namespace GamePlay.Level.Environment.Bootstrap
         menuName = GamePlayAssetsPaths.Environment + "Mock")]
     public class LevelEnvironmentMockAsset : LevelEnvironmentAsset
     {
-        public override async UniTask Create(IServiceBinder serviceBinder, ICallbacksRegister callbacksRegister,
-            ISceneLoader sceneLoader)
+        public override async UniTask Create(
+            IDependencyRegister builder,
+            ILocalServiceBinder serviceBinder,
+            ISceneLoader sceneLoader,
+            ILocalCallbacks callbacks)
         {
             var bootstrapper = FindObjectOfType<EnvironmentBootstrapper>();
-            serviceBinder.RegisterComponent(bootstrapper);
-            callbacksRegister.ListenContainerCallbacks(bootstrapper);
+            callbacks.Listen(bootstrapper);
         }
     }
 }

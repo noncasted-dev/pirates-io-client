@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Assertions;
 
-namespace GamePlay.Services.VFX.Pool.Implementation.Dead
+namespace GamePlay.Services.VFX.Pool.Implementation.Fish
 {
     public class FishVfxFactory : IObjectFactory<FishVfx>
     {
@@ -40,7 +40,7 @@ namespace GamePlay.Services.VFX.Pool.Implementation.Dead
         public FishVfx Create(Vector2 position, float angle = 0)
         {
             var vfx = _instantiator.Instantiate(position, angle, _parent);
-            
+
             Assert.IsNotNull(vfx);
 
             return vfx;

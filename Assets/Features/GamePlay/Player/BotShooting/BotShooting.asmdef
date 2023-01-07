@@ -1,0 +1,20 @@
+{
+  "name": "BotShooting",
+  "rootNamespace": "",
+  "references": [
+    "GUID:c244304ea4cb7c2479aecc8c3a79d6a7",
+    "GUID:8b811e177471a084e92a2dfb33078774",
+    "GUID:5a6ca98db01d77741890b42e259b7291",
+    "GUID:233fe32ee80fe2948881dd4bfd16d13c",
+    "GUID:861b1281dab914af69d87c4345d0b1a2"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

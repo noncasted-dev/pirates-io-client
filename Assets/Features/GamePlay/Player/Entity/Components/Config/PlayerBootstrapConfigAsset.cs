@@ -1,5 +1,4 @@
-﻿using Common.EditableScriptableObjects.Attributes;
-using GamePlay.Player.Entity.Components.Abstract;
+﻿using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
 using GamePlay.Player.Entity.Components.DamageProcessors.Runtime;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
@@ -24,24 +23,24 @@ namespace GamePlay.Player.Entity.Components.Config
         menuName = PlayerAssetsPaths.Config + "Bootstrap")]
     public class PlayerBootstrapConfigAsset : PlayerBootstrapConfig
     {
-        [Header("Components")] [SerializeField] 
+        [Header("Components")] [SerializeField]
         private RotationAsset _rotation;
-        [SerializeField]  private StateMachineAsset _stateMachine;
-        [SerializeField]  private InertialMovementAsset _inertialMovement;
+        [SerializeField] private StateMachineAsset _stateMachine;
+        [SerializeField] private InertialMovementAsset _inertialMovement;
 
-        [Space(50)] [Header("States")] [SerializeField] 
+        [Space(50)] [Header("States")] [SerializeField]
         private FloatingStateAsset _floating;
-        [SerializeField]  private IdleAsset _idle;
-        [SerializeField]  private NoneAsset _none;
-        [SerializeField]  private RespawnAsset _respawn;
-        [SerializeField]  private RunAsset _run;
-        [SerializeField]  private RangeAttackAsset _range;
-        [SerializeField]  private WeaponsHandlerAsset _weaponsHandler;
-        [SerializeField]  private DeathAsset _death;
-        [SerializeField]  private HealthAsset _health;
-        [SerializeField]  private DamageProcessorAsset _damageProcessor;
-        [SerializeField]  private ActionsStateAsset _actionsState;
-        [SerializeField]  private ShipResourcesAsset _shipResources;
+        [SerializeField] private IdleAsset _idle;
+        [SerializeField] private NoneAsset _none;
+        [SerializeField] private RespawnAsset _respawn;
+        [SerializeField] private RunAsset _run;
+        [SerializeField] private RangeAttackAsset _range;
+        [SerializeField] private WeaponsHandlerAsset _weaponsHandler;
+        [SerializeField] private DeathAsset _death;
+        [SerializeField] private HealthAsset _health;
+        [SerializeField] private DamageProcessorAsset _damageProcessor;
+        [SerializeField] private ActionsStateAsset _actionsState;
+        [SerializeField] private ShipResourcesAsset _shipResources;
 
         public override PlayerComponentAsset[] GetAssets()
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Origin.Events;
 using GamePlay.Items.Abstract;
-using UniRx;
+using Global.Services.MessageBrokers.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,14 +18,14 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         [SerializeField] private RectTransform _contentRect;
         [SerializeField] private float _cellHeight = 60f;
         [SerializeField] private ItemOrigin _origin;
-
-        private readonly Dictionary<ItemType, TradeView> _cells = new();
         private readonly List<TradeView> _available = new();
 
-        private IDisposable _transferListener;
-        private IDisposable _removeListener;
-        
+        private readonly Dictionary<ItemType, TradeView> _cells = new();
+
         private IPriceProvider _priceProvider;
+        private IDisposable _removeListener;
+
+        private IDisposable _transferListener;
 
         private void Awake()
         {
@@ -41,8 +41,8 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
             _cells.Clear();
             CalculateVerticalSize(_cells.Count);
 
-            _transferListener = MessageBroker.Default.Receive<TransferRequestedEvent>().Subscribe(AddItem);
-            _removeListener = MessageBroker.Default.Receive<TransferCanceledEvent>().Subscribe(RemoveItem);
+            _transferListener = Msg.Listen<TransferRequestedEvent>(AddItem);
+            _removeListener = Msg.Listen<TransferCanceledEvent>(RemoveItem);
         }
 
         private void OnDisable()

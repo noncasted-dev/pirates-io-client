@@ -8,8 +8,8 @@ using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
 using GamePlay.Services.Reputation.Runtime;
 using GamePlay.Services.Wallets.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -44,34 +44,27 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
         private readonly Dictionary<ItemType, TradeLot> _player = new();
         private readonly Dictionary<ItemType, TradeLot> _stock = new();
 
-        private int _cityMoney;
-        private int _playerMoney;
-        private int _playerTotalMoney;
+        private IPlayerCargoStorage _cargo;
 
-        private ShipItem _ship;
+        private int _cityMoney;
+        private ICityStorage _cityStorage;
 
         private IDisposable _playerListener;
-        private IDisposable _stockListener;
-
-        private IPlayerCargoStorage _cargo;
-        private IWalletPresenter _walletPresenter;
-        private IWallet _wallet;
-        private ICityStorage _cityStorage;
+        private int _playerMoney;
+        private int _playerTotalMoney;
         private IReputationPresenter _reputationPresenter;
+
+        private ShipItem _ship;
+        private IDisposable _stockListener;
+        private IWallet _wallet;
+        private IWalletPresenter _walletPresenter;
 
         public bool IsActive => gameObject.activeSelf;
 
-        public event Action<TradeResult> Completed;
-
-        public event Action<int> WeightUpdated;
-        public event Action<int> CannonsUpdated;
-        public event Action<int> TeamUpdated;
-        public event Action<int> ReputationUpdated;
-
         private void OnEnable()
         {
-            _playerListener = MessageBroker.Default.Receive<TradeAddedEvent>().Subscribe(OnTradeAdd);
-            _stockListener = MessageBroker.Default.Receive<TradeRemovedEvent>().Subscribe(OnTradeRemoved);
+            _playerListener = Msg.Listen<TradeAddedEvent>(OnTradeAdd);
+            _stockListener = Msg.Listen<TradeRemovedEvent>(OnTradeRemoved);
 
             _delta.text = "0";
 
@@ -96,6 +89,13 @@ namespace GamePlay.Cities.Instance.Trading.Ports.UI.Runtime.Trade
 
             _applyApplyButton.Clicked -= OnApplyClicked;
         }
+
+        public event Action<TradeResult> Completed;
+
+        public event Action<int> WeightUpdated;
+        public event Action<int> CannonsUpdated;
+        public event Action<int> TeamUpdated;
+        public event Action<int> ReputationUpdated;
 
         public void Setup(ICityStorage cityStorage)
         {

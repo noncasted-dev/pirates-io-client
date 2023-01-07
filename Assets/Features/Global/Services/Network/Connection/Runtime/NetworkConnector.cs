@@ -37,7 +37,7 @@ namespace Global.Services.Network.Connection.Runtime
         public async UniTask<NetworkConnectResultType> Connect(string userName, TargetServer target)
         {
             var ip = _config.GetRoute(target);
-            _logger.OnAttempt(ip, 0);
+            _logger.OnAttempt(ip);
 
             var attempt = new ConnectionAttempt(ip);
 

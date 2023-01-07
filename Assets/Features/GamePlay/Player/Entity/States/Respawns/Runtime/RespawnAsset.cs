@@ -1,9 +1,8 @@
-﻿using Common.EditableScriptableObjects.Attributes;
+﻿using Common.DiContainer.Abstract;
 using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Setup.Path;
 using GamePlay.Player.Entity.States.Respawns.Logs;
 using UnityEngine;
-using VContainer;
 
 namespace GamePlay.Player.Entity.States.Respawns.Runtime
 {
@@ -11,16 +10,16 @@ namespace GamePlay.Player.Entity.States.Respawns.Runtime
         menuName = PlayerAssetsPaths.Respawn + "State")]
     public class RespawnAsset : PlayerComponentAsset
     {
-        [SerializeField]  private RespawnConfigAsset _config;
-        [SerializeField]  private RespawnDefinition _definition;
-        [SerializeField]  private RespawnLogSettings _logSettings;
+        [SerializeField] private RespawnConfigAsset _config;
+        [SerializeField] private RespawnDefinition _definition;
+        [SerializeField] private RespawnLogSettings _logSettings;
 
-        public override void Register(IContainerBuilder builder)
+        public override void Register(IDependencyRegister builder)
         {
-            builder.Register<RespawnLogger>(Lifetime.Scoped)
+            builder.Register<RespawnLogger>()
                 .WithParameter(_logSettings);
 
-            builder.Register<Respawn>(Lifetime.Scoped)
+            builder.Register<Respawn>()
                 .As<IRespawn>()
                 .WithParameter(_config)
                 .WithParameter(_definition);

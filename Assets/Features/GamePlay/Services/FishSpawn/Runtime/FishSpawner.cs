@@ -1,11 +1,11 @@
-﻿using Common.ObjectsPools.Runtime.Abstract;
+﻿using Common.Local.Services.Abstract.Callbacks;
+using Common.ObjectsPools.Runtime.Abstract;
 using GamePlay.Items.Abstract;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
-using GamePlay.Services.VFX.Pool.Implementation.Dead;
+using GamePlay.Services.VFX.Pool.Implementation.Fish;
 using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.ItemFactories.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
-using Local.Services.Abstract.Callbacks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
@@ -17,7 +17,7 @@ namespace GamePlay.Services.FishSpawn.Runtime
         [Inject]
         private void Construct(
             IUpdater updater,
-            IPlayerEntityProvider provider, 
+            IPlayerEntityProvider provider,
             IVfxPoolProvider vfxPoolProvider,
             IItemFactory itemFactory)
         {
@@ -31,21 +31,21 @@ namespace GamePlay.Services.FishSpawn.Runtime
         [SerializeField] private float _spawnRate;
         [SerializeField] private float _spawnDistance;
         [SerializeField] private int _dropCount = 10;
-        
-        private float _time;
-        
-        private IUpdater _updater;
         private IPlayerEntityProvider _entity;
-        private IVfxPoolProvider _vfxPoolProvider;
+        private IItemFactory _itemFactory;
 
         private IObjectProvider<FishVfx> _provider;
-        private IItemFactory _itemFactory;
+
+        private float _time;
+
+        private IUpdater _updater;
+        private IVfxPoolProvider _vfxPoolProvider;
 
         public void OnAwake()
         {
             _provider = _vfxPoolProvider.GetPool<FishVfx>(_fish);
         }
-        
+
         public void OnEnabled()
         {
             _updater.Add(this);
@@ -55,11 +55,11 @@ namespace GamePlay.Services.FishSpawn.Runtime
         {
             _updater.Remove(this);
         }
-        
+
         public void OnUpdate(float delta)
         {
             _time += delta;
-            
+
             if (_time < _spawnRate)
                 return;
 
@@ -73,5 +73,5 @@ namespace GamePlay.Services.FishSpawn.Runtime
 
             fish.Drop(0, null, item, Vector2.zero, Vector2.zero);
         }
-    }   
+    }
 }

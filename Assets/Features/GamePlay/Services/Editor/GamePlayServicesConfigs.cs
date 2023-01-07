@@ -1,5 +1,4 @@
-﻿using Common.EditableScriptableObjects.Attributes;
-using GamePlay.Common.Paths;
+﻿using GamePlay.Common.Paths;
 using GamePlay.Services.LevelCameras.Runtime;
 using GamePlay.Services.Projectiles.Mover;
 using GamePlay.Services.TransitionScreens.Runtime;
@@ -11,8 +10,8 @@ namespace GamePlay.Services.Editor
         menuName = GamePlayAssetsPaths.Config + "ServicesConfigs")]
     public class GamePlayServicesConfigs : ScriptableObject
     {
-        [SerializeField]  private LevelCameraConfigAsset _levelCamera;
-        [SerializeField]  private ProjectilesMoverConfigAsset _projectiles;
-        [SerializeField]  private TransitionScreenConfigAsset _transitionScreen;
+        [SerializeField] private LevelCameraConfigAsset _levelCamera;
+        [SerializeField] private ProjectilesMoverConfigAsset _projectiles;
+        [SerializeField] private TransitionScreenConfigAsset _transitionScreen;
     }
 }

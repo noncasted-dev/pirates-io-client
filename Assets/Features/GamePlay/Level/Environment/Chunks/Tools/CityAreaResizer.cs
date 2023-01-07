@@ -16,7 +16,7 @@ namespace GamePlay.Level.Environment.Chunks.Tools
             foreach (var resizer in resizers)
                 resizer.Resize();
         }
-        
+
         private void Resize()
         {
             var radius = _collider.radius;

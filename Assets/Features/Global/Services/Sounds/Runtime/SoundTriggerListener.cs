@@ -1,6 +1,6 @@
 ﻿using System;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
-using UniRx;
+using Global.Services.MessageBrokers.Runtime;
 using UnityEngine;
 
 namespace Global.Services.Sounds.Runtime
@@ -8,19 +8,18 @@ namespace Global.Services.Sounds.Runtime
     public class SoundTriggerListener : MonoBehaviour
     {
         [SerializeField] private SoundsPlayer _player;
+        private IDisposable _damageListener;
+        private IDisposable _healthListener;
+        private IDisposable _positionalTriggerListener;
 
         private IDisposable _triggerListener;
-        private IDisposable _positionalTriggerListener;
-        private IDisposable _healthListener;
-        private IDisposable _damageListener;
 
         private void OnEnable()
         {
-            _triggerListener = MessageBroker.Default.Receive<SoundEvent>().Subscribe(OnSoundTriggered);
-            _positionalTriggerListener = MessageBroker.Default.Receive<PositionalSoundEvent>()
-                .Subscribe(OnPositionalSoundTriggered);
-            _healthListener = MessageBroker.Default.Receive<HealthChangeEvent>().Subscribe(OnHealthChanged);
-            _damageListener = MessageBroker.Default.Receive<EnemyDamagedSoundEvent>().Subscribe(OnEnemyDamaged);
+            _triggerListener = Msg.Listen<SoundEvent>(OnSoundTriggered);
+            _positionalTriggerListener = Msg.Listen<PositionalSoundEvent>(OnPositionalSoundTriggered);
+            _healthListener = Msg.Listen<HealthChangeEvent>(OnHealthChanged);
+            _damageListener = Msg.Listen<EnemyDamagedSoundEvent>(OnEnemyDamaged);
         }
 
         private void OnDisable()

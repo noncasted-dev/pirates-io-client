@@ -1,11 +1,11 @@
 ﻿using System;
+using Common.Local.Services.Abstract.Callbacks;
 using Cysharp.Threading.Tasks;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Network.Connection.Runtime;
 using Global.Services.Network.Session.Join.Runtime;
 using Global.Services.Profiles.Storage;
-using Local.Services.Abstract.Callbacks;
 using Menu.Services.UI.Runtime;
-using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -36,7 +36,7 @@ namespace Menu.Services.MenuLoop.Runtime
 
         private void OnEnable()
         {
-            _playEvent = MessageBroker.Default.Receive<PlayClickedEvent>().Subscribe(OnPlayClicked);
+            _playEvent = Msg.Listen<PlayClickedEvent>(OnPlayClicked);
         }
 
         private void OnDisable()
@@ -90,7 +90,7 @@ namespace Menu.Services.MenuLoop.Runtime
                 {
                     _menuUI.OnSuccess();
                     var playFromMenu = new PlayFromMenuEvent();
-                    MessageBroker.Default.Publish(playFromMenu);
+                    Msg.Publish(playFromMenu);
                     break;
                 }
                 case NetworkSessionJoinResultType.Fail:

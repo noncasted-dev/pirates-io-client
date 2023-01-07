@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GamePlay.Player.Entity.Components.Healths.Runtime
+﻿namespace GamePlay.Player.Entity.Components.Healths.Runtime
 {
     public interface IHealth
     {

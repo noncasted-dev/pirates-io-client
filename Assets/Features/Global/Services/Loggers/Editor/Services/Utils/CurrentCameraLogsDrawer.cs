@@ -4,6 +4,7 @@ using UnityEditor;
 
 namespace Global.Services.Loggers.Editor.Services.Utils
 {
+    [ReadOnlyDictionaryPriority]
     [CustomPropertyDrawer(typeof(CurrentCameraLogs))]
     public class CurrentCameraLogsDrawer : ReadonlyDictionaryPropertyDrawer
     {

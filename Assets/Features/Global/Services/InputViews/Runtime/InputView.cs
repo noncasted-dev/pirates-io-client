@@ -32,19 +32,6 @@ namespace Global.Services.InputViews.Runtime
         private Controls.GamePlayActions _gamePlay;
 
         private InputViewLogger _logger;
-        
-        public event Action<Vector2> MovementPerformed;
-        public event Action MovementCanceled;
-        public event Action RangeAttackPerformed;
-        public event Action RangeAttackCanceled;
-        public event Action RangeAttackBreakPerformed;
-        public event Action InventoryPerformed;
-        public event Action MapPerformed;
-        public event Action SelectFirstProjectilePerformed;
-        public event Action SelectSecondProjectilePerformed;
-        public event Action SelectThirdProjectilePerformed;
-        public event Action SelectForthProjectilePerformed;
-        public event Action DebugConsolePreformed;
 
         private void OnDestroy()
         {
@@ -63,6 +50,19 @@ namespace Global.Services.InputViews.Runtime
 
             Listen();
         }
+
+        public event Action<Vector2> MovementPerformed;
+        public event Action MovementCanceled;
+        public event Action RangeAttackPerformed;
+        public event Action RangeAttackCanceled;
+        public event Action RangeAttackBreakPerformed;
+        public event Action InventoryPerformed;
+        public event Action MapPerformed;
+        public event Action SelectFirstProjectilePerformed;
+        public event Action SelectSecondProjectilePerformed;
+        public event Action SelectThirdProjectilePerformed;
+        public event Action SelectForthProjectilePerformed;
+        public event Action DebugConsolePreformed;
 
         public float GetAngleFrom(Vector2 from)
         {
@@ -124,7 +124,7 @@ namespace Global.Services.InputViews.Runtime
             _gamePlay.Map.performed += OnMapPerformed;
 
             _debug.Console.performed += OnDebugConsolePreformed;
-            
+
             _gamePlay.SelectFirstProjectile.performed += OnSelectFirstProjectilePerformed;
             _gamePlay.SelectSecondProjectile.performed += OnSelectSecondProjectilePerformed;
             _gamePlay.SelectThirdProjectile.performed += OnSelectThirdProjectilePerformed;
@@ -141,7 +141,7 @@ namespace Global.Services.InputViews.Runtime
             _gamePlay.RangeAttackBreak.performed -= OnRangeAttackBreakPerformed;
 
             _gamePlay.Inventory.performed -= OnInventoryPerformed;
-            
+
             _gamePlay.Map.performed -= OnMapPerformed;
 
             _gamePlay.SelectFirstProjectile.performed -= OnSelectFirstProjectilePerformed;
@@ -186,7 +186,7 @@ namespace Global.Services.InputViews.Runtime
         {
             if (EventSystem.current.IsPointerOverGameObject() == true)
                 return;
-            
+
             if (_constraintsStorage[InputConstraints.AttackInput] == true)
             {
                 RangeAttackCanceled?.Invoke();
@@ -238,10 +238,10 @@ namespace Global.Services.InputViews.Runtime
                 _logger.OnInputCanceledWithConstraint(InputConstraints.InventoryInput);
                 return;
             }
-            
+
             InventoryPerformed?.Invoke();
         }
-        
+
         private void OnMapPerformed(InputAction.CallbackContext context)
         {
             if (_constraintsStorage[InputConstraints.Map] == true)
@@ -249,7 +249,7 @@ namespace Global.Services.InputViews.Runtime
                 _logger.OnInputCanceledWithConstraint(InputConstraints.Map);
                 return;
             }
-            
+
             MapPerformed?.Invoke();
         }
 
@@ -257,17 +257,17 @@ namespace Global.Services.InputViews.Runtime
         {
             SelectFirstProjectilePerformed?.Invoke();
         }
-        
+
         private void OnSelectSecondProjectilePerformed(InputAction.CallbackContext context)
         {
             SelectSecondProjectilePerformed?.Invoke();
         }
-        
+
         private void OnSelectThirdProjectilePerformed(InputAction.CallbackContext context)
         {
             SelectThirdProjectilePerformed?.Invoke();
         }
-        
+
         private void OnSelectForthProjectilePerformed(InputAction.CallbackContext context)
         {
             SelectForthProjectilePerformed?.Invoke();

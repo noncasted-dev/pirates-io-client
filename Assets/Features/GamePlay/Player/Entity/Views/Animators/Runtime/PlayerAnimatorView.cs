@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
-using Common.EditableScriptableObjects.Attributes;
 using Cysharp.Threading.Tasks;
 using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.Views.Animators.Logs;
@@ -19,7 +18,7 @@ namespace GamePlay.Player.Entity.Views.Animators.Runtime
             _logger = new AnimatorLogger(logger, _logSettings);
         }
 
-        [SerializeField]  private AnimatorLogSettings _logSettings;
+        [SerializeField] private AnimatorLogSettings _logSettings;
 
         [SerializeField] private List<SubAnimator> _subAnimators;
 

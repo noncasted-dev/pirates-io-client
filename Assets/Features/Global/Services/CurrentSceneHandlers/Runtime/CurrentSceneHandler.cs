@@ -1,10 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Common.Local.ComposedSceneConfig;
+using Cysharp.Threading.Tasks;
 using Global.Services.CurrentSceneHandlers.Logs;
 using Global.Services.ResourcesCleaners.Runtime;
 using Global.Services.ScenesFlow.Runtime.Abstract;
-using Local.ComposedSceneConfig;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using VContainer;
 
 namespace Global.Services.CurrentSceneHandlers.Runtime
@@ -15,17 +14,14 @@ namespace Global.Services.CurrentSceneHandlers.Runtime
         private void Construct(
             ISceneUnloader unloader,
             IResourcesCleaner resourcesCleaner,
-            CurrentSceneHandlerLogger logger,
-            Scene global)
+            CurrentSceneHandlerLogger logger)
         {
             _logger = logger;
             _unloader = unloader;
             _resourcesCleaner = resourcesCleaner;
-            _global = global;
         }
 
         private ComposedSceneLoadResult _current;
-        private Scene _global;
         private CurrentSceneHandlerLogger _logger;
 
         private IResourcesCleaner _resourcesCleaner;
@@ -40,8 +36,6 @@ namespace Global.Services.CurrentSceneHandlers.Runtime
 
         public async UniTask Unload()
         {
-            SceneManager.SetActiveScene(_global);
-
             if (_current == null)
             {
                 _logger.OnNoCurrentSceneError();

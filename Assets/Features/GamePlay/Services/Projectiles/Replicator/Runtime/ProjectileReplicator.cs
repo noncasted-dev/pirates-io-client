@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using Common.Local.Services.Abstract.Callbacks;
 using Common.ObjectsPools.Runtime.Abstract;
 using Common.Structs;
+using GamePlay.Common.Damages;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.Projectiles.Entity;
 using GamePlay.Services.Projectiles.Factory;
@@ -8,8 +10,6 @@ using GamePlay.Services.Projectiles.Implementation.Linear.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.Sounds.Runtime;
-using Local.Services.Abstract.Callbacks;
-using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -71,8 +71,8 @@ namespace GamePlay.Services.Projectiles.Replicator.Runtime
             projectile.Fire(direction, parameters, false, creatorId);
             var vfx = _vfx.Get(data.Position);
             vfx.transform.rotation = Quaternion.Euler(0f, 0f, data.Angle);
-            
-            MessageBroker.Default.TriggerSound(PositionalSoundType.CannonBallShot, data.Position);
+
+            MessageBrokerSoundExtensions.TriggerSound(PositionalSoundType.CannonBallShot, data.Position);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Sprites.Runtime
     {
         [SerializeField] private SpriteRenderer[] _spriteRenderers;
         [SerializeField] private Transform[] _scale;
-        
+
         private Vector2 _previousPosition;
 
         private void FixedUpdate()
@@ -31,15 +31,11 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Sprites.Runtime
             };
 
             if (isFLipped == true)
-            {
                 foreach (var scalable in _scale)
                     scalable.localScale = new Vector3(-1, 1, 1f);
-            }
             else
-            {
                 foreach (var scalable in _scale)
                     scalable.localScale = new Vector3(1, 1, 1f);
-            }
             foreach (var spriteRenderer in _spriteRenderers)
                 spriteRenderer.flipX = isFLipped;
 

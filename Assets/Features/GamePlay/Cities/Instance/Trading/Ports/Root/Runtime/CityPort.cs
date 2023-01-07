@@ -1,38 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using GamePlay.Cities.Instance.Storage.Runtime;
+using GamePlay.Common.SceneObjects.Runtime;
 using GamePlay.Items.Abstract;
 using GamePlay.Player.Entity.Components.ShipResources.Runtime;
 using GamePlay.Services.PlayerCargos.Storage.Runtime;
+using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Sounds.Runtime;
-using UniRx;
 using UnityEngine;
 
 namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 {
-    public class CityPort : MonoBehaviour
+    public class CityPort : SceneObject
     {
-        public void Construct(
-            IPlayerCargoStorage playerCargoStorage)
+        public void Construct(IPlayerCargoStorage playerCargoStorage)
         {
             _playerCargoStorage = playerCargoStorage;
         }
 
         [SerializeField] private CityStorage _storage;
+        private IDisposable _closeListener;
+        private IDisposable _completionListener;
 
         private bool _isActive;
-        private IDisposable _completionListener;
-        private IDisposable _closeListener;
-        
+
         private IPlayerCargoStorage _playerCargoStorage;
 
-        private void OnEnable()
+        protected override void OnEnabled()
         {
-            _completionListener = MessageBroker.Default.Receive<TradeCompletedEvent>().Subscribe(OnTradeCompleted);
-            _closeListener = MessageBroker.Default.Receive<PortClosedEvent>().Subscribe(OnClosed);
+            _completionListener = Msg.Listen<TradeCompletedEvent>(OnTradeCompleted);
+            _closeListener = Msg.Listen<PortClosedEvent>(OnClosed);
         }
 
-        private void OnDisable()
+        protected override void OnDisabled()
         {
             _completionListener?.Dispose();
             _closeListener?.Dispose();
@@ -40,33 +40,31 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
 
         public void Enter(IShipResources shipResources)
         {
-            if (_isActive == true) 
+            if (_isActive == true)
                 return;
-            
-            Debug.Log($"Entered: {transform.parent.name}");
-            
+
             _isActive = true;
-            
+
             var stock = ToArray(_storage.Items);
             var cargo = ToArray(_playerCargoStorage.Items);
             var ships = ToArray(_storage.Ships);
 
             var data = new PortEnteredEvent(cargo, stock, ships, _storage, shipResources, _storage);
 
-            MessageBroker.Default.Publish(data);
-            
-            MessageBroker.Default.TriggerSound(SoundType.PortEnter);
+            Msg.Publish(data);
+
+            MessageBrokerSoundExtensions.TriggerSound(SoundType.PortEnter);
         }
 
         public void Exit()
         {
             if (_isActive == false)
                 return;
-            
+
             var data = new PortExitedEvent();
-            MessageBroker.Default.Publish(data);
-            
-            MessageBroker.Default.TriggerSound(SoundType.PortExit);
+            Msg.Publish(data);
+
+            MessageBrokerSoundExtensions.TriggerSound(SoundType.PortExit);
 
             _isActive = false;
         }
@@ -86,7 +84,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
         }
 
         private void OnTradeCompleted(TradeCompletedEvent completed)
-        {   
+        {
             if (_isActive == false)
                 return;
 
@@ -94,18 +92,18 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
             {
                 var exited = new PortExitedEvent();
                 var change = new ShipChangeEvent(completed.Result.Ship.Type);
-                
-                MessageBroker.Default.Publish(exited);
-                MessageBroker.Default.Publish(change);
+
+                Msg.Publish(exited);
+                Msg.Publish(change);
                 return;
             }
-            
+
             _storage.UnfreezeAll();
-            
+
             var stock = ToArray(_storage.Items);
             var cargo = ToArray(_playerCargoStorage.Items);
             var ships = ToArray(_storage.Ships);
-            
+
             completed.RedrawCallback?.Invoke(stock, cargo, ships, _storage);
         }
 
@@ -113,7 +111,7 @@ namespace GamePlay.Cities.Instance.Trading.Ports.Root.Runtime
         {
             if (_isActive == false)
                 return;
-            
+
             Exit();
         }
     }

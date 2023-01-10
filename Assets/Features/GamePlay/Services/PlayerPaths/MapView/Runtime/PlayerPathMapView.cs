@@ -25,7 +25,6 @@ namespace Features.GamePlay.Services.PlayerPaths.MapView.Runtime
 
         public void OnEnabled()
         {
-            Debug.Log("Map view listen");
             _buildListener = Msg.Listen<PlayerPathBuildEvent>(OnBuild);
             _cancelListener = Msg.Listen<PlayerPathCancelEvent>(OnCanceled);
         }
@@ -103,8 +102,6 @@ namespace Features.GamePlay.Services.PlayerPaths.MapView.Runtime
             {
                 var distance = Vector2.Distance(points[i - 1], points[i]);
                 length += distance;
-                
-                Debug.Log($"Distance {i - 1} -> {i} = {distance}");
             }
 
             return length;

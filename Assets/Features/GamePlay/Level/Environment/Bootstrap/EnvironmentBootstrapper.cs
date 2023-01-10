@@ -38,7 +38,6 @@ namespace GamePlay.Level.Environment.Bootstrap
 
         public void OnContainerBuild(IDependencyRegister builder)
         {
-            Debug.Log("Build");
             builder.RegisterComponent(_sceneObjects).As<ISceneObjectsHandler>();
             builder.RegisterComponent(_citiesRegistry).As<ICitiesRegistry>();
             builder.RegisterComponent(_chunksCulling).AsSelfResolvable();

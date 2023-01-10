@@ -25,7 +25,6 @@ namespace Features.GamePlay.Services.PlayerPaths.TargetSelection.Runtime
 
         public void OnEnabled()
         {
-            Debug.Log("Listen");
             _spawnListener = Msg.Listen<PlayerSpawnedEvent>(OnPlayerSpawned);
             _cancelListener = Msg.Listen<PlayerPathCancelEvent>(OnCanceled);
             _buildListener = Msg.Listen<PlayerPathBuildEvent>(OnBuild);

@@ -60,11 +60,7 @@ namespace GamePlay.Player.Entity.Weapons.Cannon.Root
             flowHandler.InvokeStart();
 
             var bot = GetComponentInParent<IBotCannon>();
-
-            if (bot == null)
-                Debug.Log("No bot");
-            else
-                bot.Inject(this);
+            bot?.Inject(this);
         }
 
         public void Snap(Vector2 position)

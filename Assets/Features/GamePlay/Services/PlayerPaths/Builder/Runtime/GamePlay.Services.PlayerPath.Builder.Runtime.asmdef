@@ -1,0 +1,4 @@
+﻿{
+  "name": "GamePlay.Services.PlayerPath.Builder.Runtime",
+  "references":[ "GUID:6d5a6f5224634f189e022f57902eb067", "GUID:ccd954329382b474a93d18fc27ad59eb", "GUID:b0214a6008ed146ff8f122a6a9c2f6cc", "GUID:efa45043feb7e4147a305b73b5cea642", "GUID:945b411f987943f8b3f8db87a2ec49b7", "GUID:d9f46c6e9c234d76a541bba16133c094", "GUID:9b51a48d04164033bd0ea196e24c1113", "GUID:f51ebe6a0ceec4240a699833d6309b23", "GUID:67f67dcce9d9e8a43a8e45bc1fe5534c", "GUID:736c4910aad47b541a8d2813ec862bcd" ]
+}

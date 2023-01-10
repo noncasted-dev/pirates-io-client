@@ -6,7 +6,7 @@ using GamePlay.Player.Entity.States.Common;
 
 namespace GamePlay.Player.Entity.Components.StateMachines.Runtime
 {
-    public class StateMachine : IStateMachine, ISwitchCallbacks
+    public class StateMachine : IStateMachine, IPlayerSwitchListener
     {
         public StateMachine(StateMachineLogger logger)
         {

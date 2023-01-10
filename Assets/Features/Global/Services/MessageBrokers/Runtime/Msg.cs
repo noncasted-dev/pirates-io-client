@@ -7,7 +7,7 @@ namespace Global.Services.MessageBrokers.Runtime
     {
         private static IMessageBroker _messageBroker;
 
-        public static void Inject(IMessageBroker messageBroker)
+        internal static void Inject(IMessageBroker messageBroker)
         {
             _messageBroker = messageBroker;
         }

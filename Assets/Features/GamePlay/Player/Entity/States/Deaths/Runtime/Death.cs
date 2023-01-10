@@ -17,7 +17,7 @@ using UnityEngine;
 
 namespace GamePlay.Player.Entity.States.Deaths.Runtime
 {
-    public class Death : IDeath, IState, IAwakeCallback
+    public class Death : IDeath, IState, IPlayerAwakeListener
     {
         public Death(
             IStateMachine stateMachine,

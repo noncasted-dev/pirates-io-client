@@ -6,7 +6,7 @@ using ILogger = Global.Services.Loggers.Runtime.ILogger;
 
 namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 {
-    public class TransformView : MonoBehaviour, IAwakeCallback
+    public class TransformView : MonoBehaviour, IPlayerAwakeListener
     {
         [SerializeField] private TransformLogSettings _logSettings;
         private TransformLogger _logger;

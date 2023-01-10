@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GamePlay.Player.Entity.Components.InertialMovements.Runtime
 {
-    public class InertialMovementInput : ISwitchCallbacks
+    public class InertialMovementInput : IPlayerSwitchListener
     {
         public InertialMovementInput(IInputView input, IInertialMovement movement)
         {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1671869f3d60498aaf5333fb1e6b7301, type: 3}
   m_Name: LogSettings_InertialMovement
   m_EditorClassIdentifier: 
-  _isEnabled: 1
+  _isEnabled: 0
   _logs:
     _keys: 0000000001000000020000000300000004000000050000000600000007000000
     _values: 0101010101010101

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GamePlay.Player.Entity.Views.RotationPoint
 {
-    public class PlayerRotationPoint : MonoBehaviour, IAwakeCallback, IRotationPoint
+    public class PlayerRotationPoint : MonoBehaviour, IPlayerAwakeListener, IRotationPoint
     {
         private Transform _transform;
 

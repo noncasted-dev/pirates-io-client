@@ -6,7 +6,10 @@ namespace GamePlay.Services.PlayerPositionProviders.Runtime
 {
     public interface IPlayerEntityPresenter
     {
-        void AssignPlayer(RagonEntity entity, Transform playerTransform, IShipResources shipResources);
+        void AssignPlayer(
+            RagonEntity entity,
+            Transform playerTransform,
+            IShipResources shipResources);
         void DestroyPlayer();
     }
 }

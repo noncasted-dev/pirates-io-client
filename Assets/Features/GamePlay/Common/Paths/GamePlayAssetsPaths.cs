@@ -40,6 +40,7 @@
         public const string Reputation = _services + "Reputation/";
         public const string Map = _services + "Map/";
         public const string FishSpawner = _services + "FishSpawner/";
+        public const string PlayerPath = _services + "PlayerPath/";
 
         public const string NetworkBootstrapper = _network + "Bootstrapper/";
         public const string RemotePlayerBuilder = _network + "RemotePlayerBuilder/";

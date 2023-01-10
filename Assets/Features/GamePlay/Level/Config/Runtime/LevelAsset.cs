@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Common.Local.ComposedSceneConfig;
 using Common.Local.Services.Abstract;
+using Features.GamePlay.Services.PlayerPaths.Bootstrap;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime;
 using GamePlay.Common.Paths;
 using GamePlay.Factions.Selections.Bootstrap;
@@ -54,6 +55,7 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField] private ReputationAsset _reputation;
         [SerializeField] private MapAsset _map;
         [SerializeField] private FishSpawnerAsset _fishSpawner;
+        [SerializeField] private PlayerPathAsset _path;
 
         [SerializeField] private LevelScope _scopePrefab;
 
@@ -81,7 +83,8 @@ namespace GamePlay.Level.Config.Runtime
                 _wallet,
                 _reputation,
                 _map,
-                _fishSpawner
+                _fishSpawner,
+                _path
             };
 
             return list.ToArray();

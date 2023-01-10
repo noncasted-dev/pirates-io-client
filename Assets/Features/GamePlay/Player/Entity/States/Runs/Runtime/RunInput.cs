@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GamePlay.Player.Entity.States.Runs.Runtime
 {
-    public class RunInput : ISwitchCallbacks
+    public class RunInput : IPlayerSwitchListener
     {
         public RunInput(IInputView input, IRun run, RunLogger logger)
         {

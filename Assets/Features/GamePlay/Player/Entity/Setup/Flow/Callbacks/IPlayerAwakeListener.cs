@@ -1,6 +1,6 @@
 ﻿namespace GamePlay.Player.Entity.Setup.Flow.Callbacks
 {
-    public interface IAwakeCallback
+    public interface IPlayerAwakeListener
     {
         void OnAwake();
     }

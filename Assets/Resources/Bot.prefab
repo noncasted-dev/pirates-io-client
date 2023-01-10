@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4419000740720352894}
   - component: {fileID: 949260187531335275}
   - component: {fileID: 4936619114817934188}
+  - component: {fileID: 4375728062232106690}
   m_Layer: 6
   m_Name: Bot
   m_TagString: Untagged
@@ -150,3 +151,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4375728062232106690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770058313661532305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542862ec7e264a86b4a17b0971db6bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _debug: 0

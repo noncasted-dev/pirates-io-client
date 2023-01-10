@@ -25,13 +25,13 @@ namespace GamePlay.Services.Maps.Runtime
         [SerializeField] private GameObject _body;
         [SerializeField] private MapPlayerMover _mover;
         [SerializeField] private MapEntry[] _entries;
+        
         private UiConstraints _constraints;
+        
         private IItemFactory _factory;
         private IInputView _inputView;
-
         private IUiStateMachine _uiStateMachine;
-        public MapPlayerMover Mover => _mover;
-
+        
         private void Awake()
         {
             _body.SetActive(false);

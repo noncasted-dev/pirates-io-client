@@ -4,6 +4,7 @@ using GamePlay.Player.Entity.Components.StateMachines.Runtime;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
 using GamePlay.Player.Entity.States.Runs.Logs;
+using Global.Services.MessageBrokers.Runtime;
 using UnityEngine;
 
 namespace GamePlay.Player.Entity.States.Runs.Runtime
@@ -101,6 +102,8 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
             _inertialMovement.Enable();
             _spriteRotation.Start();
             _isStarted = true;
+
+            Msg.Publish(new PlayerMovementStateEnteredEvent());
         }
     }
 }

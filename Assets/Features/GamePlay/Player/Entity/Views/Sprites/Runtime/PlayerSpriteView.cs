@@ -12,7 +12,7 @@ namespace GamePlay.Player.Entity.Views.Sprites.Runtime
     [RequireComponent(typeof(SpriteRenderer))]
     public class PlayerSpriteView :
         MonoBehaviour,
-        IAwakeCallback,
+        IPlayerAwakeListener,
         ISpriteSwitcher,
         ISpriteMaterial,
         ISpriteFlipper,

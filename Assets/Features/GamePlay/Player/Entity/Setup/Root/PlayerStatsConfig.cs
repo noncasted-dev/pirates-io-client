@@ -10,7 +10,7 @@ using VContainer;
 namespace GamePlay.Player.Entity.Setup.Root
 {
     [DisallowMultipleComponent]
-    public class PlayerStatsConfig : MonoBehaviour, IAwakeCallback
+    public class PlayerStatsConfig : MonoBehaviour, IPlayerAwakeListener
     {
         [Inject]
         private void Construct(

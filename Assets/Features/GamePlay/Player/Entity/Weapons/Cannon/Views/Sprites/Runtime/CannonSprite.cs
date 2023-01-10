@@ -6,7 +6,7 @@ using VContainer;
 namespace GamePlay.Player.Entity.Weapons.Cannon.Views.Sprites.Runtime
 {
     [DisallowMultipleComponent]
-    public class CannonSprite : MonoBehaviour, IAwakeCallback, ISwitchCallbacks, ICannonSprite
+    public class CannonSprite : MonoBehaviour, IPlayerAwakeListener, IPlayerSwitchListener, ICannonSprite
     {
         [Inject]
         private void Construct(ISpriteView spriteView)

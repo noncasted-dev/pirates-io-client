@@ -29,14 +29,14 @@ namespace GamePlay.Services.Maps.Runtime
             var mapScene = await sceneLoader.Load(sceneData);
             var map = mapScene.Searched;
 
+            var bootstrapper = map.GetComponent<MapBootstrapper>();
+
             builder.RegisterComponent(map)
                 .WithParameter(_constraints)
                 .As<IMap>()
-                .AsSelf()
                 .AsCallbackListener();
 
-            builder.RegisterComponent(map.Mover)
-                .AsSelfResolvable();
+            bootstrapper.Bootstrap(builder, callbacks);
         }
     }
 }

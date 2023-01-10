@@ -5,7 +5,7 @@ using Global.Services.InputViews.Runtime;
 
 namespace GamePlay.Player.Entity.States.RangeAttacks.Runtime
 {
-    public class RangeAttackInput : ISwitchCallbacks
+    public class RangeAttackInput : IPlayerSwitchListener
     {
         public RangeAttackInput(
             IInputView input,

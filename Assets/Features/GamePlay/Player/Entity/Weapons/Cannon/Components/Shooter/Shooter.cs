@@ -18,7 +18,7 @@ using UnityEngine;
 
 namespace GamePlay.Player.Entity.Weapons.Cannon.Components.Shooter
 {
-    public class Shooter : IShooter, IAwakeCallback, IDestroyCallback
+    public class Shooter : IShooter, IPlayerAwakeListener, IPlayerDestroyListener
     {
         public Shooter(
             IUpdater updater,

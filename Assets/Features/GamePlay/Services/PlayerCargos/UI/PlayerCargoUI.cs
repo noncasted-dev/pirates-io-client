@@ -55,6 +55,7 @@ namespace GamePlay.Services.PlayerCargos.UI
         private IReputation _reputation;
         private IPlayerCargoStorage _storage;
         private IUiStateMachine _uiStateMachine;
+        
         public MoneyView MoneyView => _money;
 
         private void Start()

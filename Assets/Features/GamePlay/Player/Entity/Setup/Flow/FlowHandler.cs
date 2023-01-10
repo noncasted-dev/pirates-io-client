@@ -7,11 +7,11 @@ namespace GamePlay.Player.Entity.Setup.Flow
 {
     public class FlowHandler : IFlowHandler, ICallbackRegister
     {
-        private readonly List<IAsyncAwakeCallback> _asyncAwakes = new();
-        private readonly List<IAwakeCallback> _awakes = new();
-        private readonly List<IDestroyCallback> _destroys = new();
-        private readonly List<IStartCallback> _starts = new();
-        private readonly List<ISwitchCallbacks> _switches = new();
+        private readonly List<IPlayerAsyncAwakeListener> _asyncAwakes = new();
+        private readonly List<IPlayerAwakeListener> _awakes = new();
+        private readonly List<IPlayerDestroyListener> _destroys = new();
+        private readonly List<IPlayerStartListener> _starts = new();
+        private readonly List<IPlayerSwitchListener> _switches = new();
 
         public void Listen(object listener)
         {

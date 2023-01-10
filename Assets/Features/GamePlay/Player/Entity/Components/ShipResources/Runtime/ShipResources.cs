@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace GamePlay.Player.Entity.Components.ShipResources.Runtime
 {
-    public class ShipResources : IShipResources, IShipResourcesPresenter, ISwitchCallbacks
+    public class ShipResources : IShipResources, IShipResourcesPresenter, IPlayerSwitchListener
     {
         public ShipResources(
             IHealth health,

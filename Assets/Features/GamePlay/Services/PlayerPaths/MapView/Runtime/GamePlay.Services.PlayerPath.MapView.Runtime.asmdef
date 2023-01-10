@@ -1,0 +1,4 @@
+﻿{
+  "name": "GamePlay.Services.PlayerPath.MapView.Runtime",
+  "references":[ "GUID:46a301e2ca1747ada0164fa55dee2556", "GUID:67f67dcce9d9e8a43a8e45bc1fe5534c", "GUID:9b51a48d04164033bd0ea196e24c1113", "GUID:13a6fdc14ca9df84eb8019bc66fa9e5d", "GUID:4660e71e7cd44d9a8339e9b646704d0d", "GUID:5a6ca98db01d77741890b42e259b7291" ]
+}

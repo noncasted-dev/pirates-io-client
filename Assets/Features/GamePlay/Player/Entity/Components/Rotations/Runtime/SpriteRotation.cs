@@ -1,7 +1,9 @@
 ﻿using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
+using GamePlay.Player.Entity.Views.RigidBodies.Runtime;
 using GamePlay.Player.Entity.Views.Sprites.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
+using UnityEngine;
 
 namespace GamePlay.Player.Entity.Components.Rotations.Runtime
 {
@@ -9,11 +11,11 @@ namespace GamePlay.Player.Entity.Components.Rotations.Runtime
     {
         public SpriteRotation(
             ISpriteFlipper spriteFlipper,
-            IInertialMovement inertialMovement,
+            IRigidBody rigidBody,
             IUpdater updater)
         {
             _spriteFlipper = spriteFlipper;
-            _inertialMovement = inertialMovement;
+            _rigidBody = rigidBody;
             _updater = updater;
         }
 
@@ -22,7 +24,10 @@ namespace GamePlay.Player.Entity.Components.Rotations.Runtime
         private readonly IRotation _rotation;
 
         private readonly ISpriteFlipper _spriteFlipper;
+        private readonly IRigidBody _rigidBody;
         private readonly IUpdater _updater;
+
+        private Vector2 _previousPosition;
 
         public void ResetRotation()
         {
@@ -31,7 +36,9 @@ namespace GamePlay.Player.Entity.Components.Rotations.Runtime
 
         public void RotateX(bool rotateSubSprites)
         {
-            switch (_inertialMovement.XDirection)
+            var direction = _rigidBody.Position - _previousPosition;
+            
+            switch (direction.x)
             {
                 case > 0f:
                     _spriteFlipper.SetFlipX(false, rotateSubSprites);
@@ -40,10 +47,13 @@ namespace GamePlay.Player.Entity.Components.Rotations.Runtime
                     _spriteFlipper.SetFlipX(true, rotateSubSprites);
                     break;
             }
+            
+            _previousPosition = _rigidBody.Position;
         }
 
         public void Start()
         {
+            _previousPosition = _rigidBody.Position;
             _updater.Add(this);
         }
 

@@ -11,7 +11,7 @@ using UnityEngine.AddressableAssets;
 
 namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
 {
-    public class WeaponsFactory : IWeaponsFactory, IDestroyCallback
+    public class WeaponsFactory : IWeaponsFactory, IPlayerDestroyListener
     {
         public WeaponsFactory(
             PlayerScope scope,

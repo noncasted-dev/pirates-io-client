@@ -6,7 +6,7 @@ using VContainer;
 namespace GamePlay.Player.Entity.Weapons.Cannon.Views.Animators.Runtime
 {
     [DisallowMultipleComponent]
-    public class CannonAnimator : SubAnimator, ISwitchCallbacks
+    public class CannonAnimator : SubAnimator, IPlayerSwitchListener
     {
         [Inject]
         private void Construct(

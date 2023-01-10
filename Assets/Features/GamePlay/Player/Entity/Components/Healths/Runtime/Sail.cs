@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GamePlay.Player.Entity.Components.Healths.Runtime
 {
-    public class Sail : ISail, ISwitchCallbacks, IUpdatable
+    public class Sail : ISail, IPlayerSwitchListener, IUpdatable
     {
         public Sail(IUpdater updater)
         {

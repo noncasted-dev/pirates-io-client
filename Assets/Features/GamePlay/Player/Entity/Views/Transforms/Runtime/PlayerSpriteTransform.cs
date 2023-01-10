@@ -6,7 +6,7 @@ using ILogger = Global.Services.Loggers.Runtime.ILogger;
 
 namespace GamePlay.Player.Entity.Views.Transforms.Runtime
 {
-    public class PlayerSpriteTransform : TransformView, ISpriteTransform, ISwitchCallbacks
+    public class PlayerSpriteTransform : TransformView, ISpriteTransform, IPlayerSwitchListener
     {
         [Inject]
         public void Construct(ILogger logger, IUpdater updater)

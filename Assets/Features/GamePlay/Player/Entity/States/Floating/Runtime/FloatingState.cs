@@ -7,7 +7,7 @@ using GamePlay.Player.Entity.States.Runs.Runtime;
 
 namespace GamePlay.Player.Entity.States.Floating.Runtime
 {
-    public class FloatingState : IFloatingState, ISwitchCallbacks
+    public class FloatingState : IFloatingState, IPlayerSwitchListener
     {
         public FloatingState(
             IStateMachine stateMachine,

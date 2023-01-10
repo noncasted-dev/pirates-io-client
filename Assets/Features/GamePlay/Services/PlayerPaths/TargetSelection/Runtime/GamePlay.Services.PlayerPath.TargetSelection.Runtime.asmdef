@@ -1,0 +1,4 @@
+﻿{
+  "name": "GamePlay.Services.PlayerPath.TargetSelection.Runtime",
+  "references":[ "GUID:6d5a6f5224634f189e022f57902eb067", "GUID:364bfbd2908041158cb87effef797737", "GUID:83ce38e36fba9474f9b9472e950ae2e6", "GUID:9b51a48d04164033bd0ea196e24c1113", "GUID:4660e71e7cd44d9a8339e9b646704d0d", "GUID:67f67dcce9d9e8a43a8e45bc1fe5534c", "GUID:46a301e2ca1747ada0164fa55dee2556" ]
+}

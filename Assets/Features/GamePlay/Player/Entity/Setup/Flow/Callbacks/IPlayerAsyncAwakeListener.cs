@@ -2,7 +2,7 @@
 
 namespace GamePlay.Player.Entity.Setup.Flow.Callbacks
 {
-    public interface IAsyncAwakeCallback
+    public interface IPlayerAsyncAwakeListener
     {
         UniTask OnAsyncAwake();
     }

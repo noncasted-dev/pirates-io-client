@@ -17,7 +17,7 @@ TagManager:
   - Player_ObjectsCollector
   - Player_Projectile
   - Fish
-  - 
+  - PathBlock
   - 
   - PlayerCannonShootArea
   - CollectableObject

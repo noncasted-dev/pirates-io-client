@@ -10,7 +10,7 @@ using ILogger = Global.Services.Loggers.Runtime.ILogger;
 namespace GamePlay.Player.Entity.Views.Animators.Runtime
 {
     [DisallowMultipleComponent]
-    public class PlayerAnimatorView : MonoBehaviour, IAwakeCallback, IAnimatorView
+    public class PlayerAnimatorView : MonoBehaviour, IPlayerAwakeListener, IAnimatorView
     {
         [Inject]
         private void Construct(ILogger logger)

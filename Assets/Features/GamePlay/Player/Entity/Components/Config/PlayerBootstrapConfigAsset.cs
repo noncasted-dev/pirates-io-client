@@ -1,4 +1,5 @@
-﻿using GamePlay.Player.Entity.Components.Abstract;
+﻿using Features.GamePlay.Player.Entity.States.PathFollowing.Runtime;
+using GamePlay.Player.Entity.Components.Abstract;
 using GamePlay.Player.Entity.Components.ActionsStates.Runtime;
 using GamePlay.Player.Entity.Components.DamageProcessors.Runtime;
 using GamePlay.Player.Entity.Components.Healths.Runtime;
@@ -41,6 +42,7 @@ namespace GamePlay.Player.Entity.Components.Config
         [SerializeField] private DamageProcessorAsset _damageProcessor;
         [SerializeField] private ActionsStateAsset _actionsState;
         [SerializeField] private ShipResourcesAsset _shipResources;
+        [SerializeField] private PathFollowerAsset _pathFollower;
 
         public override PlayerComponentAsset[] GetAssets()
         {
@@ -60,7 +62,8 @@ namespace GamePlay.Player.Entity.Components.Config
                 _health,
                 _damageProcessor,
                 _actionsState,
-                _shipResources
+                _shipResources,
+                _pathFollower
             };
         }
     }

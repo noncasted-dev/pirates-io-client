@@ -7,7 +7,6 @@ namespace GamePlay.Common.Areas.Implementation.Shallow
     {
         public void OnEntered(IAreaInteractor interactor)
         {
-            Debug.Log("Entered");
             interactor.OnShallowEntered();
         }
 

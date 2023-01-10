@@ -14,8 +14,8 @@ namespace GamePlay.Player.Entity.Views.RigidBodies.Runtime
     [RequireComponent(typeof(CapsuleCollider2D))]
     public class PlayerRigidBody : MonoBehaviour,
         IRigidBody,
-        IAwakeCallback,
-        ISwitchCallbacks,
+        IPlayerAwakeListener,
+        IPlayerSwitchListener,
         IFixedUpdatable,
         IUpdatable
     {

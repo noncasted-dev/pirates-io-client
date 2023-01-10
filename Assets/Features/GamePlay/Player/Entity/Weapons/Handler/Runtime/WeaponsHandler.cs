@@ -4,7 +4,7 @@ using GamePlay.Player.Entity.Weapons.Cannon.Root;
 
 namespace GamePlay.Player.Entity.Weapons.Handler.Runtime
 {
-    public class WeaponsHandler : IWeaponsHandler, IAsyncAwakeCallback
+    public class WeaponsHandler : IWeaponsHandler, IPlayerAsyncAwakeListener
     {
         public WeaponsHandler(
             DefaultWeaponsConfig config,

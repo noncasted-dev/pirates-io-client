@@ -8,7 +8,7 @@ using Global.Services.Updaters.Runtime.Abstract;
 
 namespace GamePlay.Player.Entity.Components.Healths.Runtime
 {
-    public class Health : IHealth, ISwitchCallbacks, IUpdatable
+    public class Health : IHealth, IPlayerSwitchListener, IUpdatable
     {
         public Health(
             HealthLogger logger,

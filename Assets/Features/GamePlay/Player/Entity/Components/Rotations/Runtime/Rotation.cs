@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace GamePlay.Player.Entity.Components.Rotations.Runtime
 {
-    public class Rotation : IPreUpdatable, IRotation, ISwitchCallbacks
+    public class Rotation : IPreUpdatable, IRotation, IPlayerSwitchListener
     {
         public Rotation(
             IInputView input,

@@ -21,6 +21,7 @@ namespace Global.Services.Sounds.Runtime
             IGlobalSceneLoader sceneLoader,
             IGlobalCallbacks callbacks)
         {
+            return;
             var soundsPlayer = Instantiate(_prefab);
             soundsPlayer.name = "SoundsPlayer";
 

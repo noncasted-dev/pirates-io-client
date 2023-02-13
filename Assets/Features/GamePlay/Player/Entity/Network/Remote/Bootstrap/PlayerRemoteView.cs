@@ -27,7 +27,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
             IProjectileReplicator projectileReplicator,
             IObjectProvider<AnimatedVfx> explosion,
             IObjectProvider<DeadShipVfx> deadShip,
-            PlayerNetworkRoot networkRoot,
+            LocalPlayerRoot root,
             FactionType faction)
         {
             _spriteTransform.Construct(logger, updater);
@@ -38,19 +38,19 @@ namespace GamePlay.Player.Entity.Network.Remote.Bootstrap
 
             var cannonReceiver = new CannonReceiver(
                 _spriteTransform,
-                networkRoot,
+                root,
                 projectileReplicator,
                 _config);
 
-            var _ = new HealthReceiver(_fireController, networkRoot, deadShip, transform);
+            var _ = new HealthReceiver(_fireController, root, deadShip, transform);
 
-            _hitbox.Construct(networkRoot, networkRoot, networkRoot, explosion, faction);
+            _hitbox.Construct(root, root, root, explosion, faction);
 
             foreach (var switchableCollider in _colliders)
                 switchableCollider.enabled = true;
 
-            networkRoot.SetDestroyCallback(OnDestroyedEntity);
-            _nickName.text = networkRoot.Entity.GetSpawnPayload<PlayerPayload>().UserName;
+            root.SetDestroyCallback(OnDestroyedEntity);
+            _nickName.text = root.Entity.GetSpawnPayload<PlayerPayload>().UserName;
         }
 
         [SerializeField] private PlayerSpriteTransform _spriteTransform;

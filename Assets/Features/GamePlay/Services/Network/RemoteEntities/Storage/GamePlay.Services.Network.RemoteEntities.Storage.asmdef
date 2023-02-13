@@ -1,0 +1,17 @@
+{
+    "name": "GamePlay.Services.Network.RemoteEntities.Storage",
+    "rootNamespace": "",
+    "references": [
+        "GUID:dcaaa57ad3e743bca7272022ff38c88c",
+        "GUID:861b1281dab914af69d87c4345d0b1a2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

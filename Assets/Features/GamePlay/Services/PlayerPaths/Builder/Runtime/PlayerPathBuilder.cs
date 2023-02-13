@@ -1,6 +1,5 @@
 ﻿using System;
 using Common.Local.Services.Abstract.Callbacks;
-using Features.GamePlay.Services.PlayerPaths.TargetSelection.Runtime;
 using GamePlay.Cities.Global.Registry.Runtime;
 using GamePlay.Player.Entity.States.Runs.Runtime;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
@@ -9,7 +8,7 @@ using Pathfinding;
 using UnityEngine;
 using VContainer;
 
-namespace Features.GamePlay.Services.PlayerPaths.Builder.Runtime
+namespace GamePlay.Services.PlayerPaths.Builder.Runtime
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Seeker))]

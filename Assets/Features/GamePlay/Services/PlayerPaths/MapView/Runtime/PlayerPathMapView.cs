@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using Common.Local.Services.Abstract.Callbacks;
 using Common.Structs;
-using Features.GamePlay.Services.PlayerPaths.Builder.Runtime;
 using GamePlay.Services.Maps.Runtime;
+using GamePlay.Services.PlayerPaths.Builder.Runtime;
 using Global.Services.MessageBrokers.Runtime;
 using UnityEngine;
 
-namespace Features.GamePlay.Services.PlayerPaths.MapView.Runtime
+namespace GamePlay.Services.PlayerPaths.MapView.Runtime
 {
     [DisallowMultipleComponent]
     public class PlayerPathMapView : MonoBehaviour, ILocalSwitchListener

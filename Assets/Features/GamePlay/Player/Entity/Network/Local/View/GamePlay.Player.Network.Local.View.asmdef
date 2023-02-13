@@ -1,0 +1,21 @@
+{
+    "name": "GamePlay.Player.Network.Local.View",
+    "rootNamespace": "",
+    "references": [
+        "GUID:57d592813d0da5d4c862e153f707ff80",
+        "GUID:421a0f1829814a2793e20c82081bddc9",
+        "GUID:aaedc93bbf702d34e8e6d773e0108d7c",
+        "GUID:464731c1bcae44119a7577147c694dbc",
+        "GUID:dcaaa57ad3e743bca7272022ff38c88c",
+        "GUID:861b1281dab914af69d87c4345d0b1a2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

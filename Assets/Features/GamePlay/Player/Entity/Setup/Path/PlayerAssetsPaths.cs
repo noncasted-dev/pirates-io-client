@@ -37,6 +37,7 @@
         public const string Damage = _components + "Damage/";
         public const string ShipResources = _components + "ShipResources/";
         public const string PathFollow = _states + "PathFollow/";
+        public const string Boarding = _states + "Boarding/";
 
         public const string Animator = _views + "Animator/";
         public const string RigidBodies = _views + "Animator/";

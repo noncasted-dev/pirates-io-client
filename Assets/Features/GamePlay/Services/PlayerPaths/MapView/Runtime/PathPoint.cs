@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Features.GamePlay.Services.PlayerPaths.MapView.Runtime
+namespace GamePlay.Services.PlayerPaths.MapView.Runtime
 {
     public class PathPoint
     {

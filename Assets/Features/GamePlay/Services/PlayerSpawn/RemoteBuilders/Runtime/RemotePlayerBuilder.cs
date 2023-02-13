@@ -5,11 +5,14 @@ using GamePlay.Factions.Common;
 using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Player.Entity.Network.Remote.Bootstrap;
 using GamePlay.Player.Entity.Network.Root.Runtime;
+using GamePlay.Services.Network.RemoteEntities.Entity;
+using GamePlay.Services.Network.RemoteEntities.Storage;
 using GamePlay.Services.Projectiles.Replicator.Runtime;
 using GamePlay.Services.VFX.Pool.Implementation.Animated;
 using GamePlay.Services.VFX.Pool.Implementation.Dead;
 using GamePlay.Services.VFX.Pool.Provider;
 using Global.Services.Updaters.Runtime.Abstract;
+using Ragon.Client;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
@@ -28,8 +31,10 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
             ILogger logger,
             IProjectileReplicator replicator,
             IVfxPoolProvider vfxPoolProvider,
+            IRemotePlayersRegistry registry,
             RemoteBuilderConfigAsset config)
         {
+            _registry = registry;
             _vfxPoolProvider = vfxPoolProvider;
             _updater = updater;
             _logger = logger;
@@ -50,6 +55,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
         private IProjectileReplicator _replicator;
         private IUpdater _updater;
         private IVfxPoolProvider _vfxPoolProvider;
+        private IRemotePlayersRegistry _registry;
         public static RemotePlayerBuilder Instance => _instance;
 
         public List<Transform> Remotes { get; } = new();
@@ -64,7 +70,7 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
             _hitExplosionPool = _vfxPoolProvider.GetPool<AnimatedVfx>(_hitExplosionReference);
         }
 
-        public void Build(GameObject remotePlayer, ShipType shipType, FactionType faction)
+        public void Build(GameObject remotePlayer, ShipType shipType, FactionType faction, RagonEntity entity)
         {
             Remotes.Add(remotePlayer.transform);
             var prefab = _config.GetShip(shipType);
@@ -80,8 +86,10 @@ namespace GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime
 
             viewTransform.parent = rootTransform;
             viewTransform.localPosition = Vector3.zero;
+            
+            _registry.Add(new RemotePlayer(entity));
 
-            var networkRoot = rootTransform.GetComponent<PlayerNetworkRoot>();
+            var networkRoot = rootTransform.GetComponent<LocalPlayerRoot>();
 
             view.Construct(
                 _logger,

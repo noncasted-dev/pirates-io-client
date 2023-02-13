@@ -3,7 +3,7 @@ using GamePlay.Player.Entity.Views.RigidBodies.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
 using UnityEngine;
 
-namespace Features.GamePlay.Player.Entity.States.PathFollowing.Runtime
+namespace GamePlay.Player.Entity.States.PathFollowing.Runtime
 {
     public class PathMovement : IPreFixedUpdatable
     {

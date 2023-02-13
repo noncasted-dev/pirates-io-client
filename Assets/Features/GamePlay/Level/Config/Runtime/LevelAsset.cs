@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Common.Local.ComposedSceneConfig;
 using Common.Local.Services.Abstract;
-using Features.GamePlay.Services.PlayerPaths.Bootstrap;
 using GamePlay.Cities.Instance.Trading.Ports.UI.Runtime;
 using GamePlay.Common.Paths;
 using GamePlay.Factions.Selections.Bootstrap;
@@ -14,7 +13,9 @@ using GamePlay.Services.LevelLoops.Runtime;
 using GamePlay.Services.Maps.Runtime;
 using GamePlay.Services.Network.Bootstrap.Runtime;
 using GamePlay.Services.Network.PlayerDataProvider.Runtime;
+using GamePlay.Services.Network.RemoteEntities.Bootstrap;
 using GamePlay.Services.PlayerCargos.Bootstrap;
+using GamePlay.Services.PlayerPaths.Bootstrap;
 using GamePlay.Services.PlayerPositionProviders.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using GamePlay.Services.PlayerSpawn.RemoteBuilders.Runtime;
@@ -25,11 +26,14 @@ using GamePlay.Services.TransitionScreens.Runtime;
 using GamePlay.Services.TravelOverlays.Runtime;
 using GamePlay.Services.VFX.Pool.Provider;
 using GamePlay.Services.Wallets.Runtime;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 using VContainer.Unity;
 
 namespace GamePlay.Level.Config.Runtime
 {
+    [InlineEditor]
     [CreateAssetMenu(fileName = "Level", menuName = GamePlayAssetsPaths.Root + "Scene")]
     public class LevelAsset : ComposedSceneAsset
     {
@@ -56,6 +60,7 @@ namespace GamePlay.Level.Config.Runtime
         [SerializeField] private MapAsset _map;
         [SerializeField] private FishSpawnerAsset _fishSpawner;
         [SerializeField] private PlayerPathAsset _path;
+        [FormerlySerializedAs("_remotePlayersStorage")] [SerializeField] private RemotePlayersRegistryAsset _remotePlayersRegistry;
 
         [SerializeField] private LevelScope _scopePrefab;
 
@@ -84,7 +89,8 @@ namespace GamePlay.Level.Config.Runtime
                 _reputation,
                 _map,
                 _fishSpawner,
-                _path
+                _path,
+                _remotePlayersRegistry
             };
 
             return list.ToArray();

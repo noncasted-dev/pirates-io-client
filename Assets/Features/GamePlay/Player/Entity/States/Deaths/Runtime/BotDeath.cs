@@ -16,20 +16,20 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
         public BotDeath(
             IStateMachine stateMachine,
             DeathStateDefinition definition,
-            PlayerNetworkRoot networkRoot,
+            LocalPlayerRoot root,
             IDroppedObjectsPresenter droppedObjectsPresenter,
             IBodyTransform transform
         )
         {
             _stateMachine = stateMachine;
-            _networkRoot = networkRoot;
+            _root = root;
             _droppedObjectsPresenter = droppedObjectsPresenter;
             _transform = transform;
             Definition = definition;
         }
 
         private readonly IDroppedObjectsPresenter _droppedObjectsPresenter;
-        private readonly PlayerNetworkRoot _networkRoot;
+        private readonly LocalPlayerRoot _root;
 
         private readonly IStateMachine _stateMachine;
         private readonly IBodyTransform _transform;
@@ -54,7 +54,7 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
                     _transform.Position);
 
             Msg.Publish(new BotDeathEvent());
-            RagonNetwork.Room.DestroyEntity(_networkRoot.gameObject);
+            RagonNetwork.Room.DestroyEntity(_root.gameObject);
         }
 
         public StateDefinition Definition { get; }

@@ -35,4 +35,5 @@ MonoBehaviour:
   _map: {fileID: 11400000, guid: 21d2cefe82411db478f1993401574cf2, type: 2}
   _fishSpawner: {fileID: 11400000, guid: eec516ef65c1998469bccac7181e6e54, type: 2}
   _path: {fileID: 11400000, guid: 743797ce5dc15b8488ce8387ab7b0562, type: 2}
+  _remotePlayersRegistry: {fileID: 11400000, guid: 84780ecf1287b7946999268092d457a6, type: 2}
   _scopePrefab: {fileID: 6256164544057903142, guid: 739bd40898e14fe4ebe3aa07b287a0fb, type: 3}

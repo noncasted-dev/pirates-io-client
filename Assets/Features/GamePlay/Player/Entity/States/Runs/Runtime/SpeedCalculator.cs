@@ -21,6 +21,7 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
         private readonly ISail _sail;
 
         private bool _isInShallow;
+        private bool _isBoarding;
 
         public float GetSpeed()
         {
@@ -35,6 +36,9 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
 
             if (_isInShallow == true)
                 speed *= 0.8f;
+
+            if (_isBoarding == true)
+                speed *= 0.5f;
 
             _resourcesPresenter.SetSpeed(Mathf.CeilToInt(speed));
 
@@ -51,6 +55,16 @@ namespace GamePlay.Player.Entity.States.Runs.Runtime
         public void OnShallowExited()
         {
             _isInShallow = false;
+        }
+
+        public void OnBoardingEntered()
+        {
+            _isBoarding = true;
+        }
+
+        public void OnBoardingExited()
+        {
+            _isBoarding = false;
         }
     }
 }

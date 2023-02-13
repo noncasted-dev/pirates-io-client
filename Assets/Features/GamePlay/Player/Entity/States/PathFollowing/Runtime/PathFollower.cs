@@ -1,5 +1,4 @@
 ﻿using System;
-using Features.GamePlay.Services.PlayerPaths.Builder.Runtime;
 using GamePlay.Player.Entity.Components.InertialMovements.Runtime;
 using GamePlay.Player.Entity.Components.Rotations.Runtime.Abstract;
 using GamePlay.Player.Entity.Components.StateMachines.Runtime;
@@ -7,11 +6,11 @@ using GamePlay.Player.Entity.Setup.Flow.Callbacks;
 using GamePlay.Player.Entity.States.Abstract;
 using GamePlay.Player.Entity.States.Common;
 using GamePlay.Player.Entity.Views.RigidBodies.Runtime;
+using GamePlay.Services.PlayerPaths.Builder.Runtime;
 using Global.Services.MessageBrokers.Runtime;
 using Global.Services.Updaters.Runtime.Abstract;
-using UnityEngine;
 
-namespace Features.GamePlay.Player.Entity.States.PathFollowing.Runtime
+namespace GamePlay.Player.Entity.States.PathFollowing.Runtime
 {
     public class PathFollower : IState, IPlayerSwitchListener
     {

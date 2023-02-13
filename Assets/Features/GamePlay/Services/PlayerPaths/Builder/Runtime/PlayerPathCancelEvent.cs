@@ -1,4 +1,4 @@
-﻿namespace Features.GamePlay.Services.PlayerPaths.Builder.Runtime
+﻿namespace GamePlay.Services.PlayerPaths.Builder.Runtime
 {
     public readonly struct PlayerPathCancelEvent
     {

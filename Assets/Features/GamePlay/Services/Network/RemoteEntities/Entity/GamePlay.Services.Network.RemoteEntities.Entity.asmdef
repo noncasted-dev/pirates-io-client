@@ -1,0 +1,18 @@
+{
+    "name": "GamePlay.Services.Network.RemoteEntities.Entity",
+    "rootNamespace": "",
+    "references": [
+        "GUID:861b1281dab914af69d87c4345d0b1a2",
+        "GUID:421a0f1829814a2793e20c82081bddc9",
+        "GUID:1218f73bc7cb413984f1f02ea89fbb01"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -15,7 +15,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
     public class RemoteHitbox : MonoBehaviour, IDamageReceiver
     {
         public void Construct(
-            PlayerNetworkRoot root,
+            LocalPlayerRoot root,
             IPlayerEventSender eventSender,
             IPlayerEventListener eventListener,
             IObjectProvider<AnimatedVfx> explosion,
@@ -37,7 +37,7 @@ namespace GamePlay.Player.Entity.Network.Remote.Receivers.Damages.Runtime
         private IObjectProvider<AnimatedVfx> _explosion;
         private FactionType _faction;
 
-        private PlayerNetworkRoot _root;
+        private LocalPlayerRoot _root;
 
         public bool IsLocal => _root.IsLocal;
         public string Id => _root.Entity.Owner.Id;

@@ -85,9 +85,9 @@ namespace GamePlay.Common.GlobalBootstrapMocks
             await callbacks.InvokeFlowCallbacks();
 
             var connector = _scope.Container.Resolve<INetworkConnector>();
-            await connector.Connect("Test", TargetServer.Europe);
+            await connector.Connect("Test_" + Random.Range(0, 100000), TargetServer.Europe);
             var joiner = _scope.Container.Resolve<INetworkSessionJoiner>();
-            await joiner.Create();
+            await joiner.JoinRandom();
         }
 
         private async UniTask BootstrapLocal()

@@ -5,5 +5,7 @@
         float GetSpeed();
         void OnShallowEntered();
         void OnShallowExited();
+        void OnBoardingEntered();
+        void OnBoardingExited();
     }
 }

@@ -1,14 +1,14 @@
 ﻿using System;
 using Common.Local.Services.Abstract.Callbacks;
-using Features.GamePlay.Services.PlayerPaths.Builder.Runtime;
 using GamePlay.Player.Entity.Components.Definition;
 using GamePlay.Services.Maps.Runtime;
+using GamePlay.Services.PlayerPaths.Builder.Runtime;
 using GamePlay.Services.PlayerSpawn.Factory.Runtime;
 using Global.Services.MessageBrokers.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Features.GamePlay.Services.PlayerPaths.TargetSelection.Runtime
+namespace GamePlay.Services.PlayerPaths.TargetSelection.Runtime
 {
     [DisallowMultipleComponent]
     public class PlayerPathTarget : MonoBehaviour, ILocalSwitchListener

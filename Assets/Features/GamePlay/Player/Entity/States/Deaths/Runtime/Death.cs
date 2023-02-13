@@ -25,7 +25,7 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
             IShipConfig config,
             IBodyTransform transform,
             IDroppedObjectsPresenter droppedObjectsPresenter,
-            PlayerNetworkRoot root,
+            LocalPlayerRoot root,
             DeathStateDefinition definition)
         {
             _stateMachine = stateMachine;
@@ -39,7 +39,7 @@ namespace GamePlay.Player.Entity.States.Deaths.Runtime
 
         private readonly IShipConfig _config;
         private readonly IDroppedObjectsPresenter _droppedObjectsPresenter;
-        private readonly PlayerNetworkRoot _root;
+        private readonly LocalPlayerRoot _root;
 
         private readonly IStateMachine _stateMachine;
         private readonly IBodyTransform _transform;

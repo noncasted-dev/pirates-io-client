@@ -1,7 +1,7 @@
 ﻿using GamePlay.Cities.Instance.Root.Runtime;
 using UnityEngine;
 
-namespace Features.GamePlay.Services.PlayerPaths.Builder.Runtime
+namespace GamePlay.Services.PlayerPaths.Builder.Runtime
 {
     public readonly struct PlayerPathBuildEvent
     {

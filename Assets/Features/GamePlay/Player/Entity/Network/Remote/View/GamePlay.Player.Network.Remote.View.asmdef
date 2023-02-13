@@ -1,0 +1,17 @@
+{
+    "name": "GamePlay.Player.Network.Remote.View",
+    "rootNamespace": "",
+    "references": [
+        "GUID:861b1281dab914af69d87c4345d0b1a2",
+        "GUID:421a0f1829814a2793e20c82081bddc9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

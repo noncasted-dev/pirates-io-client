@@ -58,7 +58,7 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
         {
             var payload = new PlayerPayload(_profileStorageProvider.UserName, type, _reputation.Faction);
 
-            var networkObject = await _networkInstantiator.Instantiate<PlayerNetworkRoot, PlayerPayload>(
+            var networkObject = await _networkInstantiator.Instantiate<LocalPlayerRoot, PlayerPayload>(
                 _configAsset.NetworkPrefab,
                 position,
                 payload);
@@ -94,7 +94,7 @@ namespace GamePlay.Services.PlayerSpawn.Factory.Runtime
         {
             var payload = new PlayerPayload(_botNames.GetRandom(), type, _reputation.Faction);
 
-            var networkObject = await _networkInstantiator.Instantiate<PlayerNetworkRoot, PlayerPayload>(
+            var networkObject = await _networkInstantiator.Instantiate<LocalPlayerRoot, PlayerPayload>(
                 _configAsset.NetworkPrefab,
                 position,
                 payload);

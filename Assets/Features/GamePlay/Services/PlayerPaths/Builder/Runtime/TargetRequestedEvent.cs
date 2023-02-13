@@ -1,7 +1,6 @@
-﻿using System;
-using GamePlay.Cities.Instance.Root.Runtime;
+﻿using GamePlay.Cities.Instance.Root.Runtime;
 
-namespace Features.GamePlay.Services.PlayerPaths.TargetSelection.Runtime
+namespace GamePlay.Services.PlayerPaths.Builder.Runtime
 {
     public readonly struct TargetRequestedEvent
     {

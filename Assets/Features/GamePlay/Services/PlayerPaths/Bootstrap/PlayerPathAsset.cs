@@ -1,14 +1,14 @@
 ﻿using Common.DiContainer.Abstract;
 using Common.Local.Services.Abstract;
 using Cysharp.Threading.Tasks;
-using Features.GamePlay.Services.PlayerPaths.Builder.Runtime;
-using Features.GamePlay.Services.PlayerPaths.GameView.Runtime;
 using GamePlay.Common.Paths;
+using GamePlay.Services.PlayerPaths.Builder.Runtime;
+using GamePlay.Services.PlayerPaths.GameView.Runtime;
 using Global.Services.ScenesFlow.Runtime.Abstract;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Features.GamePlay.Services.PlayerPaths.Bootstrap
+namespace GamePlay.Services.PlayerPaths.Bootstrap
 {
     [InlineEditor]
     [CreateAssetMenu(fileName = GamePlayAssetsPaths.ServicePrefix + "PlayerPath",

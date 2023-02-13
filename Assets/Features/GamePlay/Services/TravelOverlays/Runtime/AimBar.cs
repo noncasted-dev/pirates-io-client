@@ -79,7 +79,6 @@ namespace GamePlay.Services.TravelOverlays.Runtime
             _bar.SetActive(true);
             var rect = _background.rect;
             var width = rect.width;
-            var height = rect.width;
 
             _fill.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width);
 

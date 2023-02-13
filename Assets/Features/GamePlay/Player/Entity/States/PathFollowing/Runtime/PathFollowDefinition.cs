@@ -2,7 +2,7 @@
 using GamePlay.Player.Entity.States.Common;
 using UnityEngine;
 
-namespace Features.GamePlay.Player.Entity.States.PathFollowing.Runtime
+namespace GamePlay.Player.Entity.States.PathFollowing.Runtime
 {
     [CreateAssetMenu(fileName = PlayerAssetsPaths.DefinitionPrefix + "PathFollow",
         menuName = PlayerAssetsPaths.PathFollow + "Definition")]
